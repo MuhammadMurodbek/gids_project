@@ -1,0 +1,42 @@
+#BUTTONS
+    button-amount:50,
+    button-type: 1->contained, 2->outlined
+
+#INPUTS
+    input-amount:69,
+    input-type: 1->input, 2->textArea
+
+#CHECKBOX
+    check-amount:50,
+    check-type: 1->simple,
+
+#CALENDAR
+    calendar-amount:50,
+    calendar-type: 1->input, 2-> ui-calendar
+
+#PROGRESS
+    progress-amount:50,
+    progress-type: 1,
+
+#ACORDION
+    accordion-amount:1,
+    accordion-type: 1,
+
+#FOOTER
+    footer-amount:every-page,
+    footer-type: 1
+
+#HEADER
+    header-amount:every-page,
+    header-type: 1,
+
+#RATE
+    rate-amount:40,
+    rate-type: 5,
+
+#APPLICATION
+    app-amount:infinite,
+    app-type:1,
+
+
+
