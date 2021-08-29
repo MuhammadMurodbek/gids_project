@@ -1,0 +1,11 @@
+├──>AUTHENTICATION
+|   ├──enter & registration: [/auth]
+|   ├──email: [/auth/verify]
+|   └──(items...) 
+
+├──>MAIN
+|   ├──entrance: [/]
+|   ├──choose your gid: [/gids]
+|   ├──about platform: [/about-platform] ->frame7
+|   ├──about platform: [/] ->frame7
+|   └──question: [/info] -> frame6
