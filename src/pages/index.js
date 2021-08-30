@@ -1,8 +1,9 @@
 import React from 'react';
+import Button from "../components/button/contained"
 const Index = () => {
     return (
         <div>
-            pages
+            <Button>sffg</Button>
         </div>
     )
 }
