@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Import = () => {
+const Index = () => {
     return (
         <div>
-            Import.js ...working
+            wrapper
         </div>
     )
 }
 
-export default Import
+export default Index
