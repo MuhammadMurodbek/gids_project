@@ -7,5 +7,13 @@
 |   ├──entrance: [/]
 |   ├──choose your gid: [/gids]
 |   ├──about platform: [/about-platform] ->frame7
-|   ├──about platform: [/] ->frame7
+|   ├──connect: [/connect] ->frame8
+|   ├──application for gids: [/application-for-gids] ->frame9
+|   ├──arizalar-royxati: [/application-list] ->frame10
 |   └──question: [/info] -> frame6
+
+├──>ACCOUNT
+|   ├──account: [/account]
+|   ├──account by id : [/account/id]
+|   └──(items...) 
+
