@@ -1,8 +1,13 @@
+import React from 'react';
+import MainPage from "./pages"
+import GlobalStyle from "./styles/global"
+
 function App() {
   return (
-    <div>
-      hello
-    </div>
+    <React.Fragment>
+      <GlobalStyle/>
+      <MainPage/>
+    </React.Fragment>
   );
 }
 
