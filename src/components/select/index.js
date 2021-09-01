@@ -1,17 +1,12 @@
 import React from 'react'
 import Select from "react-select"
-
+import {Wrapper} from "./index.style"
+import "./style.css"
 const Index = (props) => {
-    const customStyles = {
-        control: () => ({
-            // none of react-select's styles are passed to <Control />
-            width: 'auto',
-          }),
-    }
     return (
-        <>
-            <Select {...props} width='500px'/>            
-        </>
+        <Wrapper width={props.width}>
+            <Select {...props}/>            
+        </Wrapper>
     )
 }
 

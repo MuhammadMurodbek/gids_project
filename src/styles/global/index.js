@@ -14,6 +14,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: 16px;
     line-height: 20px;
   }
+  
 `;
  
 export default GlobalStyle;
