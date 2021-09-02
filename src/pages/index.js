@@ -4,6 +4,8 @@ import Input from "../components/input"
 import Select from "../components/select"
 import Calendar from "../components/calendar"
 import Navbar from '../components/navbar';
+import Footer from "../components/footer"
+import {Wrapper} from "./index.style"
 import {
     BrowserRouter as Router,
     Route,
@@ -22,10 +24,10 @@ const Index = () => {
         setState(value);
     }
     return (
-        <>
         <Router>
+        <Wrapper>
             <Navbar/>
-            <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop:10}}>
+            <div className="main-part">
                 <Input width="200px" placeholder="text..."/>
                 <Button>asdfasdfsffg</Button>
                 <Select 
@@ -36,8 +38,9 @@ const Index = () => {
                 />
                 <Calendar width="180px"/>
             </div>
+            <Footer/>
+        </Wrapper>
         </Router> 
-        </>
     )
 }
 

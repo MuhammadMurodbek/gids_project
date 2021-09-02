@@ -3,22 +3,33 @@ import { Navbar } from './index.style'
 import Logo from "../../assets/img/logo.png"
 import {FlexContainer} from "../../styles/flex.container"
 import ButtonNavbar from "../button.navbar"
+import Select from "../select"
+import {UserOutlined} from "@ant-design/icons"
+import { NavLink } from 'react-router-dom'
+
 const Index = () => {
     return (
         <>
            <Navbar>
-               <div>
+               <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
+                <div>
                     <img src={Logo} alt="safsf"/>
-               </div>
-               <FlexContainer width="100%" alignItems="center" justifyContent="space-between"> 
-                    <ButtonNavbar title="Select" url="/sda"/>
-                    <ButtonNavbar title="Select" url="/sdsd"/>
-                    <ButtonNavbar title="Select" url="/sdd"/>
-                    <ButtonNavbar title="Select" url="/sdf"/>
+                </div>
+                <FlexContainer width="100%" alignItems="center" justifyContent="space-around"> 
+                    <ButtonNavbar title="Gid yoki tarjimonni tanlash" url="/sda"/>
+                    <ButtonNavbar title="Gid va tarjimonlar uchun" url="/sdsd"/>
+                    <ButtonNavbar title="Blog" url="/sdd"/>
+                    <ButtonNavbar title="Ariza qoldirish" url="/sdf"/>
+                </FlexContainer>
+                <FlexContainer width="200px">
+                    <Select width="120px" paddingX="4" backgroundColor="#fff" placeholder="uz"/>
+                        <FlexContainer width="100%" alignItems="center" justifyContent="center">
+                            <NavLink to="/kirish" style={{color:'#333'}}>
+                                <UserOutlined />{" "}<span>Kirish</span>
+                            </NavLink>
+                        </FlexContainer>
+                </FlexContainer>
                </FlexContainer>
-               <div>
-
-               </div>
            </Navbar>
         </>
     )
