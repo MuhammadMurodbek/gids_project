@@ -10,6 +10,5 @@ export const Wrapper = styled.div`
         width: 100%;
         height: auto;
         margin-bottom: auto;
-        background-color:red;
     }
 `
