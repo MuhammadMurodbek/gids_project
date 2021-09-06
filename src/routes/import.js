@@ -1,11 +1,3 @@
-import React from 'react'
+import MainPage from "../pages/main"
 
-const Import = () => {
-    return (
-        <div>
-            Import.js ...working
-        </div>
-    )
-}
-
-export default Import
+export {MainPage}
