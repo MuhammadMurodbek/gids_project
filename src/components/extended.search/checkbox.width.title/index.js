@@ -5,8 +5,9 @@ import Checkbox from "../../checkbox"
 const Index = (props) => {
     return (
         <Wrapper>
-            <Checkbox name={props.name1}/>             
-            <Checkbox name={props.name2}/>            
+            <div className="title-header-checkbox">Tarjimonning jinsi</div>
+            <Checkbox className="check" name={props.name1}/>             
+            <Checkbox className="check" name={props.name2}/>            
         </Wrapper>
     )
 }

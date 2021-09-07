@@ -1,13 +1,27 @@
 import React from 'react'
-import {Radio} from "antd"
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
+import {Wrapper} from "./index.style"
 
 const Index = () => {
+    const [value, setValue] = React.useState('female');
+
+    const handleChange = (event) => {
+        setValue(event.target.value);
+    }
     return (
-        <Radio.Group style={{display: 'flex', flexDirection: 'column'}}>
-            <Radio value={null}>uzb</Radio>
-            <Radio value={null}>uzb</Radio>
-            <Radio value={null}>uzb</Radio>
-        </Radio.Group>
+        <Wrapper>
+            <div className="title-header-radio">Kim kerakligini tanlang</div>
+            <FormControl component="fieldset">
+            <RadioGroup aria-label="gender" name="gender1" value={value} onChange={handleChange}>
+                <FormControlLabel value="gid" control={<Radio />} label={<span>Gid</span>} />
+                <FormControlLabel value="translator" control={<Radio />} label={<span>Tarjimon</span>} />
+                <FormControlLabel value="writer" control={<Radio />} label={<span>Yozma tarjimon</span>} />
+            </RadioGroup>
+            </FormControl>
+        </Wrapper>
     )
 }
 

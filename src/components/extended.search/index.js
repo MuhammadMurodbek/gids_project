@@ -9,7 +9,7 @@ import Button from "./button.component"
 const Index = () => {
     return (
         <Wrapper width="350px">
-            <span className="title">Kengaytirilgan qidiruv</span>
+            <div className="title-header">Kengaytirilgan qidiruv</div>
             <RadioGroup/>   
             <Selection title="Davlat"/>
             <Selection title="Shahar"/>
@@ -18,7 +18,9 @@ const Index = () => {
             <RadioGroup/>  
             <Selection title="Til"/>
             <CheckBoxContainer name1="Erkak" name2="Ayol"/>
-            <Button width="280px" name="Qidiruv"/>
+            <div className="button-wrapper">
+                <Button width="280px" name="Qidiruv"/>
+            </div>
         </Wrapper>
     )
 }
