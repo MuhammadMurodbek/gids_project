@@ -1,14 +1,19 @@
 import React from 'react'
 // import { FlexContainer } from '../../styles/flex.container'
-import {WrapperAll, ComponentOne, ComponentTwo} from "./index.style"
+import {WrapperAll} from "./index.style"
 // import MainPicture from "../../assets/img/mainFirst.svg"
 // import SecPicture from "../../assets/img/sec_con.svg"
 // import Select from '../../components/select'
 // import Calendar from '../../components/calendar'
 // import Button from "../../components/button"
+import ExtSearch from "../../components/extended.search"
+
 const Index = () => {
     return (
         <WrapperAll>
+            {/* <RadioComponent/> */}
+            <ExtSearch/>
+            hello
             {/* <ComponentOne>
                <FlexContainer width="100%" alignItems="flex-start" justifyContent="space-between">
                     <div className="container_one">
