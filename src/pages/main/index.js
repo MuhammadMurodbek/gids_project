@@ -1,17 +1,10 @@
 import React from 'react'
-// import { FlexContainer } from '../../styles/flex.container'
 import {WrapperAll} from "./index.style"
-// import MainPicture from "../../assets/img/mainFirst.svg"
-// import SecPicture from "../../assets/img/sec_con.svg"
-// import Select from '../../components/select'
-// import Calendar from '../../components/calendar'
-// import Button from "../../components/button"
 import ExtSearch from "../../components/extended.search"
 
 const Index = () => {
     return (
         <WrapperAll>
-            {/* <RadioComponent/> */}
             <ExtSearch/>
             hello
             {/* <ComponentOne>

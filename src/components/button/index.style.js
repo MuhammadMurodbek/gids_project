@@ -1,6 +1,7 @@
 import styled from "styled-components"
 
 export const Button = styled.button`
+    width:${(value)=>value.width};
     padding:16px 32px;
     font-family: Montserrat;
     font-style: normal;
@@ -16,7 +17,6 @@ export const Button = styled.button`
 `
 export const ButtonWrapper = styled.div`
     display: inline-block;
-    width:auto;
     height:auto;
     padding:0;
     overflow: hidden;

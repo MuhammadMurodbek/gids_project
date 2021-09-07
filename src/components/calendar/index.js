@@ -15,7 +15,7 @@ const Index = (props) => {
                     format={dateFormatList} 
                     style={{border:'none', outline: 'none', width:'100%', backgroundColor:'transparent'}}
                 />
-            </Space>,
+            </Space>
         </Calendar>
     )
 }
