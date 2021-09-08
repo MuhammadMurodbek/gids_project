@@ -6,7 +6,7 @@ export const ImgWrapper = styled.div`
 
     img{
         width: ${value=>value.width};
-        height: auto;
+        height: ${value=>value.height ? value.height : "auto"};
         object-fit: cover;
     }
 `

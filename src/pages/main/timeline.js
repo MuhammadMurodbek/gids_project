@@ -21,42 +21,48 @@ export default function App() {
       <VerticalTimeline className="timeline-container">
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
-          contentStyle={{ background: "#fff", color: "#fff" }}
-          iconStyle={{ background: "rgb(20, 20, 20)", color: "#fff", marginTop: "200px"}}
+          contentStyle={{ background: "#fff", color: "#000" }}
+          iconStyle={{ background: "rgb(20, 20, 20)", color: "#fff", marginTop: "125px"}}
           icon={<AssignmentTurnedInIcon />}
         >
-            <div>
-                <ImageContainer width="400px" src={TimeLine_1}/>
+            <div className="wrapper">
+                <ImageContainer width="200px" src={TimeLine_1}/>
+                <div className="wrapper-text">Ro'yxatdan o'tasiz</div>
+                <p>Avvalo platformadan Git/Tarjimon yokida Mijoz sifatida ro’yhattan o’tasiz.</p>
             </div>
         </VerticalTimelineElement>
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
-        //   date="2010 - 2011"
-          iconStyle={{ background: "rgb(20, 20, 20)", color: "#fff", marginTop: "200px" }}
+          iconStyle={{ background: "rgb(20, 20, 20)", color: "#fff", marginTop: "125px" }}
           icon={<AttachFileIcon />}
         >
-            <div>
-                <ImageContainer width="400px" src={TimeLine_2}/>
+            <div className="wrapper">
+                <ImageContainer width="200px" src={TimeLine_2}/>
+                <div className="wrapper-text">So'rov qoldirasiz</div>
+                <p>Mijoz so‘rov qoldirishi mumkin yokida o‘zi Git/Tarjimoni tanlashi mumkin.</p>
             </div>
         </VerticalTimelineElement>
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
-        //   date="2008 - 2010"
-          iconStyle={{ background: "rgb(20,20,20)", color: "#fff", marginTop: "200px" }}
+          iconStyle={{ background: "rgb(20,20,20)", color: "#fff", marginTop: "125px" }}
           icon={<PhoneForwardedIcon />}
         >
-            <div>
-                <ImageContainer width="400px" src={TimeLine_3}/>
+            <div className="wrapper">
+                <ImageContainer width="250px" src={TimeLine_3}/>
+                <div className="wrapper-text">Aloqaga chiqiladi</div>
+                <p>Tarjimon/Git tanlangandan so’ng, aloqaga chiqib kelishib olinadi va ish boshlanadi.</p>
+                
             </div>
         </VerticalTimelineElement>
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
-        //   date="2006 - 2008"
-          iconStyle={{ background: "rgb(20,20,20)", color: "#fff", marginTop: "200px" }}
+          iconStyle={{ background: "rgb(20,20,20)", color: "#fff", marginTop: "125px" }}
           icon={<BusinessCenterIcon />}
         >
-            <div>
-                <ImageContainer width="400px" src={TimeLine_4}/>
+            <div className="wrapper">
+                <ImageContainer width="250px" src={TimeLine_4}/>
+                <div className="wrapper-text">Ish boshlanadi</div>
+                <p>Aloqa chiqib ish kelishib olgningizdan so’ng ishni boshlaysiz</p>
             </div>
         </VerticalTimelineElement>
       </VerticalTimeline>

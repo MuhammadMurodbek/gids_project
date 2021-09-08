@@ -66,7 +66,7 @@ export const ComponentThree = styled.div`
     .vertical-timeline::before{
         background:#333;
         height:77%;
-        transform: translateY(240px);
+        transform: translateY(190px);
     }
     .vertical-timeline-element-content.bounce-in{
         box-shadow:none;
@@ -78,18 +78,41 @@ export const ComponentThree = styled.div`
             width:100%;
             margin:60px 0;
             font-size:28px;
-            font-weight:700;
+            font-weight:bold;
             text-align:center;
+            color:#000;
         }
         .timeline-container{
-            margin-top: 20px;
+            transform: translateY(-50px);
+            /* background-color: red; */
+            /* height:435px; */
+            /* margin-top: 20px; */
         }
     }
     .vertical-timeline-element--work{
-        /* transform: translateY(-40%) !important; */
+        .wrapper{
+            height:250px;
+            text-align:center;
+            .wrapper-text{
+                font-size: 18px;
+                font-weight:bold;
+                margin:30px 0 10px;
+            }
+        }
     }
     .sc-idOiZg.peBBw{
         text-align:center;
+    }
+`
+export const ComponentFour = styled.div`
+    width: 100%;
+    padding:10px 30px;
+
+    .container{
+        .title-container{
+            padding-left:25px;
+            font-weight:600;
+        }
     }
 `
 
