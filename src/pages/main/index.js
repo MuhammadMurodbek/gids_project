@@ -1,73 +1,69 @@
 import React from 'react'
-import {WrapperAll} from "./index.style"
+import {WrapperAll, ComponentOne, ComponentTwo, ComponentThree} from "./index.style"
 import ExtSearch from "../../components/extended.search"
+import mainPicture from "../../assets/img/mainFirst.svg"
+import Grid from '@material-ui/core/Grid';
+import Button from "../../components/button"
+import ImgContainer from "../../components/img.container"
+import imageSecond from "../../assets/img/sec_con.svg"
+import imageThird from "../../assets/img/main_picture_3.svg"
+import {FlexContainer} from "../../styles/flex.container"
+import TimeLine from "./timeline"
 
 const Index = () => {
     return (
         <WrapperAll>
-            <ExtSearch/>
-            hello
-            {/* <ComponentOne>
-               <FlexContainer width="100%" alignItems="flex-start" justifyContent="space-between">
-                    <div className="container_one">
-                        <div className="container_one-inner"> 
-                            <span className="title">Kengaytirilgan qidiruv</span>
-                            <div>
-                                <span>Kim kerakligini tanlang</span>
-                                <div>
-                                    <span><input type="radio"/>Gid</span>
-                                    <span><input type="radio"/>Tarjimon</span>
-                                    <span><input type="radio"/>Yozma tarjimon </span>
-                                </div>
-                            </div>
-                            <div>
-                                <span>Davlat</span>
-                                <div><Select/></div>
-                            </div>
-                            <div>
-                                <span>Davlat</span>
-                                <div><Select/></div>
-                            </div>
-                            <div>
-                                <span>Sana</span>
-                                <div><Calendar/></div>
-                                <div><Calendar/></div>
-                            </div>
-                            <div>
-                                <span><input type="radio" />Onlayn</span>
-                                <span><input type="radio" />Barchasi</span>
-                            </div>
-                            <div>
-                                <span>Til</span>
-                                <div><Select/></div>
-                            </div>
-                            <div>
-                                <span><input type="checkbox"/>Erkak</span>
-                                <span><input type="checkbox"/>Ayol</span>
-                            </div>
-                            <div>
-                                <Button>Qidirish</Button>
-                            </div>
+            <ComponentOne>
+                <Grid container spacing={1}>
+                    <Grid item md={4} sm={12}>
+                        <ExtSearch/>
+                    </Grid>
+                    <Grid item md={8} sm={12}>
+                        <div className="right-part">
+                            <div>Dunyo bo'ylab ishonchli gidlar va tarjimonlarni taklif qilamiz</div>
+                            <img src={mainPicture} alt="guvd"/>
                         </div>
-                    </div>
-                    <div className="container_two">
-                        <h2>Dunyo bo'ylab ishonchli gidlar va tarjimonlarni taklif qilamiz</h2>
-                        <div>
-                            <img src={MainPicture} alt="asdad"/>
-                        </div>
-                    </div>
-                </FlexContainer> 
+                    </Grid>
+                </Grid>
             </ComponentOne>
+
             <ComponentTwo>
-                <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
-                    <div>
-                        <span></span>
-                    </div>
-                    <div>
-                        <img src={SecPicture} alt="guvd"/>
-                    </div>
-                </FlexContainer>
-            </ComponentTwo> */}
+                <div className="title-second-main-container">Biz nima taklif qilamz</div>
+                <Grid container spacing={1}>
+                    <Grid item md={6} sm={12}>
+                        <div className="container-2-1">
+                            <div className="title-second-main-container-text">Tadbirkorlar uchun</div>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam modi provident dignissimos accusamus optio aliquam assumenda omnis nisi quae fuga consequatur, numquam recusandae accusantium dolore, ipsum iure suscipit sed quia?</p>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga, minima.</p>
+                            <FlexContainer width="370px" justifyContent="space-between">
+                                <Button>Ariza qoldirish</Button>
+                                <Button type="outlined">Gidni tanlash</Button>
+                            </FlexContainer>
+                        </div>
+                    </Grid>
+                    <Grid item md={6} sm={12}>
+                        <ImgContainer src={imageSecond} width="500px"/>
+                    </Grid>
+                </Grid>
+                <Grid container spacing={1}>
+                    <Grid item md={6} sm={12}>
+                        <ImgContainer src={imageThird} width="500px"/>
+                    </Grid>
+                    <Grid item md={6} sm={12}>
+                        <div className="container-2-1">
+                            <div className="title-second-main-container-text">Gidlar uchun</div>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam modi provident dignissimos accusamus optio aliquam assumenda omnis nisi quae fuga consequatur, numquam recusandae accusantium dolore, ipsum iure suscipit sed quia?</p>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga, minima.</p>
+                            <div>
+                                <Button>Ro'yxatdan o'tish</Button>
+                            </div>
+                        </div>
+                    </Grid>
+                </Grid>
+            </ComponentTwo>
+            <ComponentThree>
+                <TimeLine/>
+            </ComponentThree>
         </WrapperAll>
     )
 }

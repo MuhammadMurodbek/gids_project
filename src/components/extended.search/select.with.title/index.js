@@ -5,7 +5,7 @@ import {Wrapper} from "./index.style"
 const Index = (props) => {
     return (
         <Wrapper>
-            <span className="title">{props.title}</span>
+            <div className="title">{props.title}</div>
             <Select/>
         </Wrapper>
     )

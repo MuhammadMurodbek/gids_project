@@ -6,6 +6,8 @@ export const Wrapper = styled.div`
     height: auto;
     padding:10px;
     padding-top:55px;
+    padding-bottom:25px;
+    margin: 25px auto 0;
     box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
     
     .title-header{

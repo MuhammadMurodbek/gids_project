@@ -23,6 +23,7 @@ const GlobalStyle = createGlobalStyle`
     color: #fafcfa;
     text-decoration: none;
   }
+  
 `;
  
 export default GlobalStyle;

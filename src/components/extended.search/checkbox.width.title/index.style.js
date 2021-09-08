@@ -9,5 +9,7 @@ export const Wrapper = styled.div`
     }
     .check{
         margin:10px 0;
+        color:green;
     }
+    
 `

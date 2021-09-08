@@ -5,7 +5,7 @@ import {Wrapper} from "./index.style"
 const Index = (props) => {
     return (
         <Wrapper>
-            <span>{props.title}</span>
+            <div className="title">{props.title}</div>
             <Calendar width={props.width}/>
         </Wrapper>
     )
