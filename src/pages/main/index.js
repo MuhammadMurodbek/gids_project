@@ -13,10 +13,12 @@ import ImgContainer from "../../components/img.container"
 import imageSecond from "../../assets/img/sec_con.svg"
 import imageThird from "../../assets/img/main_picture_3.svg"
 import {FlexContainer} from "../../styles/flex.container"
-import TimeLine from "./timeline"
+import TimeLine from "./external/timeline"
 import {TextTitle} from "../../styles/textTitle/index.style"
+import {Container} from "../../styles/container/index.style"
 import buttonImage from "../../assets/img/container_main_page/Button.svg"
 import { Paper } from '@material-ui/core';
+import SliderComponent from "./external/slider"
 
 const Index = () => {
     return (
@@ -78,7 +80,7 @@ const Index = () => {
                     <Grid item sm={12} md={4}>
                         <Paper style={{overflow: 'hidden'}}>
                             <div className="container">
-                                <ImgContainer width="100%" height="270px" src="https://obfm.uz/uploads/2020/07/andijon.jpg"/>
+                                <ImgContainer width="100%" height="270px" src="https://thumbs.dreamstime.com/b/registan-old-public-square-samarkand-uzbekistan-heart-ancient-city-150740312.jpg"/>
                                 <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
                                     <div className="title-container">Andijon</div>
                                     <a href="/df">
@@ -116,9 +118,11 @@ const Index = () => {
                             </div>
                         </Paper>
                     </Grid>
-                    
                 </Grid>
             </ComponentFour>
+            <Container padding="20px">
+                <SliderComponent/>
+            </Container>
         </WrapperAll>
     )
 }

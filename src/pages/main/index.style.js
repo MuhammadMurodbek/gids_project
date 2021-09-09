@@ -3,6 +3,9 @@ import styled from "styled-components"
 export const WrapperAll = styled.div`
     width: 100%;
     padding:10px;
+    .slider-component{
+        background-color:transparent;
+    }
 `
 export const ComponentOne = styled.div`
     flex-grow: 1;
@@ -115,4 +118,3 @@ export const ComponentFour = styled.div`
         }
     }
 `
-

@@ -8,11 +8,11 @@ import AttachFileIcon from '@material-ui/icons/AttachFile';
 import AssignmentTurnedInIcon from '@material-ui/icons/AssignmentTurnedIn';
 import BusinessCenterIcon from '@material-ui/icons/BusinessCenter';
 import "react-vertical-timeline-component/style.min.css";
-import ImageContainer from "../../components/img.container"
-import TimeLine_1 from "../../assets/img/timeline/timeline_1.svg"
-import TimeLine_2 from "../../assets/img/timeline/timeline_2.svg"
-import TimeLine_3 from "../../assets/img/timeline/timeline_3.svg"
-import TimeLine_4 from "../../assets/img/timeline/timeline_4.svg"
+import ImageContainer from "../../../components/img.container"
+import TimeLine_1 from "../../../assets/img/timeline/timeline_1.svg"
+import TimeLine_2 from "../../../assets/img/timeline/timeline_2.svg"
+import TimeLine_3 from "../../../assets/img/timeline/timeline_3.svg"
+import TimeLine_4 from "../../../assets/img/timeline/timeline_4.svg"
 
 export default function App() {
   return (
