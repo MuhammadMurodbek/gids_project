@@ -6,6 +6,10 @@ export const WrapperAll = styled.div`
     .slider-component{
         background-color:transparent;
     }
+
+    .awssld__controls__arrow-right, .awssld__controls__arrow-left {
+        transform:scale(0.7);
+    }
 `
 export const ComponentOne = styled.div`
     flex-grow: 1;
