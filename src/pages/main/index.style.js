@@ -86,7 +86,7 @@ export const ComponentThree = styled.div`
     width:100%;
     .vertical-timeline::before{
         background:#333;
-        height:77%;
+        height:74%;
         transform: translateY(190px);
     }
     .vertical-timeline-element-content.bounce-in{

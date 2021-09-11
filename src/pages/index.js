@@ -9,7 +9,7 @@ const Index = () => {
             <Layout>
                 <Switch>
                     {routes.map((item,index)=>(
-                        <Route key={index} path={item.url} component={item.component}/>
+                        <Route key={index} exact path={item.url} component={item.component}/>
                     ))}
                 </Switch>
             </Layout>

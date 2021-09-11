@@ -1,6 +1,7 @@
 import styled from "styled-components"
 
 export const InputWrapper = styled.div`
+    width: ${value=>value.widht ? value.widht.width : '100%'};
     display: inline-block;
     position: relative;
     padding: 10px;
@@ -10,7 +11,7 @@ export const InputWrapper = styled.div`
 export const Input = styled.input`
     position: relative;
     top:3px;
-    width:${prev=>prev.width};
+    width: 100%;
     height: auto;
     padding: 2px 10px;
     margin-top: 10px;

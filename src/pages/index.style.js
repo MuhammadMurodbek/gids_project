@@ -13,10 +13,5 @@ export const Wrapper = styled.div`
         margin-bottom: auto;
     }
 
-    .application-last{
-        position:relative;
-        left:0; bottom:0;
-        width:100%;
-        background-color: red;
-    }
+    
 `

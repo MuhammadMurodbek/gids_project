@@ -15,7 +15,7 @@ const Index = () => {
                 <div>
                     <img src={Logo} alt="safsf"/>
                 </div>
-                <FlexContainer width="100%" alignItems="center" justifyContent="space-around"> 
+                <FlexContainer width="80%" alignItems="center" justifyContent="space-around"> 
                     <ButtonNavbar title="Gid yoki tarjimonni tanlash" url="/sda"/>
                     <ButtonNavbar title="Gid va tarjimonlar uchun" url="/sdsd"/>
                     <ButtonNavbar title="Blog" url="/sdd"/>
@@ -24,7 +24,7 @@ const Index = () => {
                 <FlexContainer width="200px">
                     <Select width="120px" paddingX="4" backgroundColor="#fff" placeholder="uz"/>
                         <FlexContainer width="100%" alignItems="center" justifyContent="center">
-                            <NavLink to="/kirish" style={{color:'#333'}}>
+                            <NavLink to="/auth" style={{color:'#333'}}>
                                 <UserOutlined />{" "}<span>Kirish</span>
                             </NavLink>
                         </FlexContainer>
