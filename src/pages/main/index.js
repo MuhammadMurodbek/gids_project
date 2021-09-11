@@ -4,6 +4,7 @@ import {WrapperAll,
     ComponentTwo, 
     ComponentThree,
     ComponentFour,
+    ContainerLast,
 } from "./index.style"
 import ExtSearch from "../../components/extended.search"
 import mainPicture from "../../assets/img/mainFirst.svg"
@@ -22,6 +23,7 @@ import SliderComponent from "./external/slider"
 
 const Index = () => {
     return (
+        <>
         <WrapperAll>
             <ComponentOne>
                 <Grid container spacing={1}>
@@ -108,7 +110,7 @@ const Index = () => {
                     <Grid item sm={12} md={4}>
                         <Paper style={{overflow: 'hidden'}}>
                             <div className="container">
-                                <ImgContainer width="100%" height="270px" src="https://scontent.ftas1-2.fna.fbcdn.net/v/t1.6435-9/122034850_1076792456072768_846414578007195059_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=6e5ad9&_nc_ohc=WHKbsgi5DrkAX8BORTE&_nc_ht=scontent.ftas1-2.fna&oh=461ee87b01105e1fb5114f1a850458e6&oe=615E7786"/>
+                                <ImgContainer width="100%" height="270px" src="https://static.scientificamerican.com/sciam/cache/file/4E0744CD-793A-4EF8-B550B54F7F2C4406_source.jpg?w=590&h=800&ACB6A419-81EB-4B9C-B846FD8EBFB16FBE"/>
                                 <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
                                     <div className="title-container">Andijon</div>
                                     <a href="/df">
@@ -124,6 +126,16 @@ const Index = () => {
                 <SliderComponent/>
             </Container>
         </WrapperAll>
+        <ContainerLast>
+            <div className="application-last">
+                <TextTitle width="50%" left="auto" right="auto" bottom="40px">Xoziroq o’zingiz uchun Git tanlang yoki shunchaki ariza qoldiring.</TextTitle>
+                <FlexContainer width="380px" margin="0 auto" alignItems="center" justifyContent="space-between">
+                    <Button>Ariza qoldirish</Button>
+                    <Button type="outlined">Gitni tanlash</Button>
+                </FlexContainer>
+            </div>
+        </ContainerLast>
+        </>
     )
 }
 

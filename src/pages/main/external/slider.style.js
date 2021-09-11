@@ -1,12 +1,28 @@
 import styled from "styled-components"
 
-export const SliderContainer = styled.div`
+export const Wrapper = styled.div`
     width: 100%;
+    height: auto;
+    /* background-color: green; */
+
+    .slider-component{
+        text-align: center;
+    }
+    .slider-component > div{
+        padding: 10px;
+    }
+`
+
+export const SliderContainer = styled.div`
+    width: 80% !important;
+    max-width:1000px;
     height: 100%;
+    position: relative;
+    top:0px;
     border-radius: 4px;
     text-align: center;
     overflow: hidden;
-    box-shadow: 3px 4px 12px -7px rgba(0, 0, 0, 0.5);
+    box-shadow: 5px 6px 10px -7px rgba(0, 0, 0, 0.5);
 `
 export const stylesBgColor = {
     backgroundColor: 'transparent',

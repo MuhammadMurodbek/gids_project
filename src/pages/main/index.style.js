@@ -1,16 +1,30 @@
 import styled from "styled-components"
 
 export const WrapperAll = styled.div`
+    position: relative;
     width: 100%;
     padding:10px;
     .slider-component{
         background-color:transparent;
     }
-
-    .awssld__controls__arrow-right, .awssld__controls__arrow-left {
-        transform:scale(0.7);
+    .left-icon{
+        position:absolute;
+        top:50%; left:0px;
+        transform:translateY(-50%); 
+        cursor:pointer;
     }
-`
+    .right-icon{
+        position:absolute;
+        top:50%; right:0px;
+        transform:translateY(-50%); 
+        cursor:pointer;
+        z-index: 12;
+    }
+    .application-last-container{
+        background-color: green;
+    }
+`;
+
 export const ComponentOne = styled.div`
     flex-grow: 1;
     .paper{
@@ -121,4 +135,12 @@ export const ComponentFour = styled.div`
             font-weight:600;
         }
     }
+`
+export const ContainerLast = styled.div`
+    width: 100%;
+    padding:40px 0;
+    margin-top:20px;
+    text-align:center;
+    background-color: #F2F8F2;
+
 `
