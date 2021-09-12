@@ -50,6 +50,12 @@ const useStyles = makeStyles( ( theme ) => ( {
         width: 500,
         fontFamily:'Montserrat',
     },
+    indicator: {
+        backgroundColor: "#326A32",
+    },
+    tab:{
+        color:'red'
+    }
 } ) );
 
 export default function FullWidthTabs () {
@@ -64,7 +70,6 @@ export default function FullWidthTabs () {
     const handleChangeIndex = ( index ) => {
         setValue( index );
     };
-
     return (
         <Wrapper>
             <Container>
@@ -73,13 +78,12 @@ export default function FullWidthTabs () {
                         <Tabs
                             value={ value }
                             onChange={ handleChange }
-                            indicatorColor="primary"
-                            textColor="primary"
                             variant="fullWidth"
+                            TabIndicatorProps={{ className: classes.indicator }}
                             aria-label="full width tabs example"
                         >
-                            <Tab label={ <span>Kirish</span> } { ...a11yProps( 0 ) } />
-                            <Tab label={ <span>Registratsiya</span> } { ...a11yProps( 1 ) } />
+                            <Tab label={ <span style={value === 0 ? {color:'#326A32'}:{color:'#666'}} >Kirish</span> } { ...a11yProps( 0 ) } />
+                            <Tab label={ <span style={value === 1 ? {color:'#326A32'}:{color:'#666'}}>Registratsiya</span> } { ...a11yProps( 1 ) } />
                         </Tabs>
                     </AppBar>
                     <SwipeableViews

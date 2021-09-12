@@ -34,3 +34,13 @@ export const InputLabel = styled.span`
     color:#212121;
     z-index: 2;
 `
+export const Eye = styled.div`
+    position: absolute;
+    right:-10px; top:18px;
+    width:50px;
+    height:50px;
+    z-index:10;
+    .far{
+        cursor:pointer;
+    }
+`

@@ -10,6 +10,9 @@ export const Wrapper = styled.div`
     .sc-cxFLGX.dhdUK{
         margin:50px 0;
     }
+    .MuiTab-wrapper{
+        color: #326A32 !important;
+    }
 `
 export const Container = styled.div`
     /* width:400px; */
