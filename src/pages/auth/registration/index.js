@@ -48,6 +48,7 @@ const useStyles = makeStyles( ( theme ) => ( {
     root: {
         backgroundColor: theme.palette.background.paper,
         width: 500,
+        height: 'auto',
         fontFamily:'Montserrat',
     },
     indicator: {
@@ -89,6 +90,7 @@ export default function FullWidthTabs () {
                     <SwipeableViews
                         axis={ theme.direction === 'rtl' ? 'x-reverse' : 'x' }
                         index={ value }
+                        animateHeight
                         onChangeIndex={ handleChangeIndex }
                     >
                         <div value={ value } index={ 0 } dir={ theme.direction }>

@@ -9,18 +9,18 @@ const Index = () => {
                 <TextInput title="E-mail kiriting" width="100%"/>
             </Container>
             <Container>
-                <TextInput title="Password kiriting" width="100%"/>
+                <TextInput title="Password kiriting" password={true} width="100%"/>
             </Container>
             <Container>
                 <TextInput title="E-mail kiriting" width="100%"/>
             </Container>
             <Container>
-                <TextInput title="Password kiriting" width="100%"/>
+                <TextInput title="Password kiriting" password={true} width="100%"/>
             </Container>
             <Container>
-                <TextInput title="Password kiriting" width="100%"/>
+                <TextInput title="Password kiriting" password={true} width="100%"/>
             </Container>
-            <Container>
+            <Container className="text-right">
                 <Button>Kirish</Button>
             </Container>
         </div>

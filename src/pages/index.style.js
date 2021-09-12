@@ -12,6 +12,5 @@ export const Wrapper = styled.div`
         height: auto;
         margin-bottom: auto;
     }
-
     
 `

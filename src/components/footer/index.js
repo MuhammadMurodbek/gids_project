@@ -1,11 +1,20 @@
 import React from 'react'
 import {FooterWrapper} from "./index.style"
 import {FlexContainer} from "../../styles/flex.container"
+import {useLocation} from "react-router-dom"
+
 const Index = () => {
+    const location = useLocation()
     return (
         <>
-            <FooterWrapper>
-                <FlexContainer width="100%" alignItems="flex-start" justifyContent="space-around" className="first-container">
+            <FooterWrapper padding={location.pathname === "/auth" ? '0px':"10px 0 0"}>
+                <FlexContainer
+                    width="100%" 
+                    alignItems="flex-start" 
+                    justifyContent="space-around" 
+                    className="first-container"
+                    style={location.pathname === "/auth" ? {display:"none"}:null}
+                >
                     <div className="flex-items">
                         <span>BIZNING SERVIS</span>
                         <ul>
@@ -31,7 +40,13 @@ const Index = () => {
                         </ul>
                     </div>
                 </FlexContainer>
-                <FlexContainer width="300px" alignItems="center" justifyContent="space-around" className="second-container" >
+                <FlexContainer 
+                    width="300px" 
+                    alignItems="center" 
+                    justifyContent="space-around" 
+                    className="second-container"
+                    style={location.pathname === "/auth" ? {display:"none"}:null} 
+                >
                     <span><a href="/sd"><i className="fab fa-telegram"></i></a></span>
                     <span><a href="/sd"><i className="fab fa-facebook"></i></a></span>
                     <span><a href="/sd"><i className="fab fa-instagram"></i></a></span>

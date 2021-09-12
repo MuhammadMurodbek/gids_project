@@ -2,13 +2,13 @@ import styled from "styled-components"
 export const Wrapper = styled.div`
     width: 100%;
     min-height: 80vh;
-    margin:50x 0;
+    margin:20x 0;
     display:flex;
     align-items: flex-start;
     justify-content:center;
 
     .sc-cxFLGX.dhdUK{
-        margin:50px 0;
+        margin:35px 0;
     }
     .MuiTab-wrapper{
         color: #326A32 !important;
@@ -26,4 +26,7 @@ export const Container = styled.div`
     .MuiAppBar-colorDefault{
         background-color:#fff;
     }
+`
+export const Authorization = styled.div`
+    /* background-color:green; */
 `

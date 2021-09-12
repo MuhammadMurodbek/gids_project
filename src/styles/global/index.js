@@ -4,6 +4,18 @@ const GlobalStyle = createGlobalStyle`
   *,*:before, *:after{
       box-sizing: border-box;
   }
+  *::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: #326a32;
+    border-radius: 50px;
+  }
   body {
     width: 100%;
     margin: 0;
@@ -23,7 +35,9 @@ const GlobalStyle = createGlobalStyle`
     color: #fafcfa;
     text-decoration: none;
   }
-  
+  .text-right{
+    text-align: right;
+  }
 `;
  
 export default GlobalStyle;
