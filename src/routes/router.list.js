@@ -8,5 +8,13 @@ export const routes = [
     {
         url:'/auth',
         component:ListRouter.Auth
+    },
+    {
+        url:'/about',
+        component:ListRouter.About
+    },
+    {
+        url:'/forgits',
+        component:ListRouter.forgits
     }
 ]

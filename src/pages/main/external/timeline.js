@@ -3,10 +3,10 @@ import {
   VerticalTimeline,
   VerticalTimelineElement
 } from "react-vertical-timeline-component";
-import PhoneForwardedIcon from '@material-ui/icons/PhoneForwarded';
-import AttachFileIcon from '@material-ui/icons/AttachFile';
-import AssignmentTurnedInIcon from '@material-ui/icons/AssignmentTurnedIn';
-import BusinessCenterIcon from '@material-ui/icons/BusinessCenter';
+import AttachFileIcon from '@material-ui/icons/AttachFile'
+import PhoneForwardedIcon from '@material-ui/icons/PhoneForwarded'
+import BusinessCenterIcon from '@material-ui/icons/BusinessCenter'
+import AssignmentTurnedInIcon from '@material-ui/icons/AssignmentTurnedIn'
 import "react-vertical-timeline-component/style.min.css";
 import ImageContainer from "../../../components/img.container"
 import TimeLine_1 from "../../../assets/img/timeline/timeline_1.svg"

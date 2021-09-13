@@ -142,5 +142,4 @@ export const ContainerLast = styled.div`
     margin-top:20px;
     text-align:center;
     background-color: #F2F8F2;
-
 `
