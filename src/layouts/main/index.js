@@ -2,13 +2,16 @@ import React from 'react'
 import {Wrapper} from "./index.style"
 import Navbar from '../../components/navbar';
 import Footer from "../../components/footer"
+import {useLocation} from "react-router-dom"
 
 const Index = ({children}) => {
+    const location = useLocation()
+    const checkFooter = location.pathname === "/auth" || location.pathname === "/auth/verify"
     return (
         <Wrapper>
             <Navbar/>
                 <div className="main-part">{children}</div>
-            <Footer/>
+                {checkFooter ? null:<Footer/>}
         </Wrapper>
     )
 }
