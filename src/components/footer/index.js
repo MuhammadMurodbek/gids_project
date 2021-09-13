@@ -7,13 +7,13 @@ const Index = () => {
     const location = useLocation()
     return (
         <>
-            <FooterWrapper padding={location.pathname === "/auth" ? '0px':"10px 0 0"}>
+            <FooterWrapper padding={(location.pathname === "/auth" || location.pathname==="/auth/verify") ? '0px':"10px 0 0"}>
                 <FlexContainer
                     width="100%" 
                     alignItems="flex-start" 
                     justifyContent="space-around" 
                     className="first-container"
-                    style={location.pathname === "/auth" ? {display:"none"}:null}
+                    style={(location.pathname === "/auth" || location.pathname==="/auth/verify") ? {display:"none"}:null}
                 >
                     <div className="flex-items">
                         <span>BIZNING SERVIS</span>
@@ -45,7 +45,7 @@ const Index = () => {
                     alignItems="center" 
                     justifyContent="space-around" 
                     className="second-container"
-                    style={location.pathname === "/auth" ? {display:"none"}:null} 
+                    style={(location.pathname === "/auth" || location.pathname==="/auth/verify") ? {display:"none"}:null} 
                 >
                     <span><a href="/sd"><i className="fab fa-telegram"></i></a></span>
                     <span><a href="/sd"><i className="fab fa-facebook"></i></a></span>

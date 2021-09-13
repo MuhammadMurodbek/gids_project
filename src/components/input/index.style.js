@@ -5,6 +5,7 @@ export const InputWrapper = styled.div`
     display: inline-block;
     position: relative;
     padding: 10px;
+    margin:${value=>value.margin};
     background-color:#FAFCFA;
     border-radius: 4px;
 `

@@ -10,7 +10,7 @@ const Index = (props) => {
         setCheck(true)
     }
     return (
-        <InputWrapper className="wrapper-input" width={props.width}>  
+        <InputWrapper className="wrapper-input" width={props.width} margin={props.margin}>  
             <InputLabel className="label-input">{props.title}</InputLabel>
             <Input className="input-inner" type={(check && props.password) ? "password":"text"} label="asdfdsf" {...props} />
             {
