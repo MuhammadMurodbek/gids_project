@@ -9,7 +9,7 @@ const Index = (props) => {
         <WrapperRoundImage width={width} height={height} radius={radius}>
             <ImageContainer src={src} width="100%" height="100%"/>  
             <button>
-                <ImageContainer src={playBtn} width="50px" height="50px"/>
+                <ImageContainer src={playBtn} width="30px" height="30px"/>
             </button>          
         </WrapperRoundImage>
     )

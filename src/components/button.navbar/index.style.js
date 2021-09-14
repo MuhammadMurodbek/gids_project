@@ -1,10 +1,11 @@
 import styled from 'styled-components'
 import {NavLink} from "react-router-dom"
+import {mainGreen} from "../../styles/global/colors"
 
 export const NavLinkWrapper = styled.div`
     .active{
         color:#fafcfa !important;
-        background-color: #326A32;
+        background-color: ${mainGreen};
         padding:10px 32px;
     }
 `
@@ -18,6 +19,6 @@ export const ButtonNavbar = styled(NavLink)`
     color:#333;
     font-weight: 500;
     &:hover{
-        color: #326A32;
+        color: ${mainGreen};
     }
 `

@@ -8,10 +8,10 @@ import Button from "../../button"
 const Index = () => {
     return (
         <WrapperInfoBtn>
-            <FlexContainer width="100%" alignItems="center" justifyContent="space-between" flexDirection="column">
-                <FlexContainer width="100%" alignItems="center" justifyContent="space-around">
-                    <CheckCircleOutlineIcon/>
-                    <div><VisibilityIcon/> 2016</div>
+            <FlexContainer width="100%" height="100%" alignItems="center" justifyContent="space-between" flexDirection="column">
+                <FlexContainer width="auto" alignItems="center" justifyContent="center" className="fl-container">
+                    <CheckCircleOutlineIcon className="icon"/>
+                    <FlexContainer width="auto" alignItems="center" className="count"><VisibilityIcon/>{" "}2016</FlexContainer>
                 </FlexContainer>
                 <Button>Ko'rish</Button>
             </FlexContainer>

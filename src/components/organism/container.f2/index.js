@@ -6,24 +6,25 @@ import Info from "../../molecules/info.f2"
 import RoundImageContainer from "../../molecules/round.img.f2"
 import InfoBtn from "../../molecules/info.btn.f2"
 import RoundImage from "../../../assets/img/choosegid/round.svg"
+import { Grid } from '@material-ui/core'
 
 const Index = () => {
     return (
         <WrapperContainer>
-            <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
-                <Container>
+            <Grid container spacing={1}>
+                <Grid item sm={3}>
                     <FlexContainer width="100%" alignItems="center" justifyContent="space-between" flexDirection="column">
-                        <RoundImageContainer src={RoundImage}/>
+                        <RoundImageContainer src={RoundImage} width="100px" height="auto"/>
                         <Info/>
                     </FlexContainer>
-                </Container>
-                <Container>
+                </Grid>
+                <Grid item sm={6}>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias culpa sit labore distinctio nobis quas iure eos dolores laudantium, deserunt, fugit, perspiciatis exercitationem fuga repudiandae pariatur nihil eaque facilis laboriosam.
-                </Container>
-                <Container>
+                </Grid>
+                <Grid item sm={3}>
                     <InfoBtn/>
-                </Container>
-            </FlexContainer>
+                </Grid>
+            </Grid>
         </WrapperContainer>
     )
 }

@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import {mainGreen} from "../../styles/global/colors"
 
 export const Button = styled.button`
     width:${(value)=>value.width};
@@ -9,12 +10,12 @@ export const Button = styled.button`
     font-weight: normal;
     font-size: 16px;
     line-height: 20px;
-    color: ${(value)=>value.type === "outlined" ? "#326A32":"#fff"};
+    color: ${(value)=>value.type === "outlined" ? `${mainGreen}`:"#fff"};
     cursor: pointer;
-    border:${(value)=>value.type === "outlined" ? "0.122rem solid #326A32": "0.122rem solid transparent"};
+    border:${(value)=>value.type === "outlined" ? `0.122rem solid ${mainGreen}`: "0.122rem solid transparent"};
     border-radius: 4px;
-    background-color:#326A32;
-    background-color: ${(value)=>value.type === "outlined" ? "transparent":"#326A32"};
+    background-color:${mainGreen};
+    background-color: ${(value)=>value.type === "outlined" ? "transparent":`${mainGreen}`};
 `
 export const ButtonWrapper = styled.div`
     display: inline-block;
