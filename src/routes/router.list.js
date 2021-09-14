@@ -18,6 +18,10 @@ export const routes = [
         component:ListRouter.About
     },
     {
+        url:'/gids',
+        component:ListRouter.ChooseGids,
+    },
+    {
         url:'/forgits',
         component:ListRouter.forgits
     }

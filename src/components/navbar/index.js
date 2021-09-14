@@ -16,7 +16,7 @@ const Index = () => {
                     <img src={Logo} alt="safsf"/>
                 </div>
                 <FlexContainer width="80%" alignItems="center" justifyContent="space-around"> 
-                    <ButtonNavbar title="Gid yoki tarjimonni tanlash" url="/sda"/>
+                    <ButtonNavbar title="Gid yoki tarjimonni tanlash" url="/gids"/>
                     <ButtonNavbar title="Gid va tarjimonlar uchun" url="/sdsd"/>
                     <ButtonNavbar title="Blog" url="/sdd"/>
                     <ButtonNavbar title="Ariza qoldirish" url="/sdf"/>

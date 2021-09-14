@@ -6,5 +6,6 @@ export const FlexContainer = styled.div`
     display: flex;
     align-items: ${value=>value.alignItems};
     justify-content: ${value=>value.justifyContent};
+    flex-direction: ${value=>value.flexDirection ? value.flexDirection:'row'};
     margin: ${value=>value.margin}
 `
