@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import {mainGreen} from "../../styles/global/colors"
+import {mainGreen} from "../../../styles/global/colors"
 
 export const Button = styled.button`
     width:${(value)=>value.width};

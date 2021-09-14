@@ -2,8 +2,8 @@ import React from 'react'
 import {ContainerVerify} from "./index.style"
 import {FlexContainer} from "../../../styles/flex.container"
 import { TextTitle } from '../../../styles/textTitle/index.style'
-import TextInput from "../../../components/input"
-import { Button } from '../../../components/button/index.style'
+import TextInput from "../../../components/atom/input"
+import  Button  from '../../../components/atom/button'
 import { Container } from '../../../styles/container/index.style'
 const Index = () => {
     return (

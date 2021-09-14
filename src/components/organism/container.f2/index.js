@@ -7,6 +7,8 @@ import RoundImageContainer from "../../molecules/round.img.f2"
 import InfoBtn from "../../molecules/info.btn.f2"
 import RoundImage from "../../../assets/img/choosegid/round.svg"
 import { Grid } from '@material-ui/core'
+import { TextTitle } from '../../../styles/textTitle/index.style'
+import TruncateText from "../../molecules/text.truncate"
 
 const Index = () => {
     return (
@@ -19,7 +21,9 @@ const Index = () => {
                     </FlexContainer>
                 </Grid>
                 <Grid item sm={6}>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias culpa sit labore distinctio nobis quas iure eos dolores laudantium, deserunt, fugit, perspiciatis exercitationem fuga repudiandae pariatur nihil eaque facilis laboriosam.
+                    <TextTitle align="left" font="20px">Abdusattor Ergashev</TextTitle>
+                    <div className="gid-info-personal">33 yosh | <span>Gid va tarjimon</span> </div>
+                    <TruncateText line={3} text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi in repellat quas saepe praesentium quibusdam earum maxime ea eos velit delectus, sed optio animi rerum officiis aut vitae quidem! Ipsa."/>
                 </Grid>
                 <Grid item sm={3}>
                     <InfoBtn/>

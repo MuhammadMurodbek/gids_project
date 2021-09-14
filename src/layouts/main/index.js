@@ -1,7 +1,7 @@
 import React from 'react'
 import {Wrapper} from "./index.style"
-import Navbar from '../../components/navbar';
-import Footer from "../../components/footer"
+import Navbar from '../../components/templates/navbar';
+import Footer from "../../components/templates/footer"
 import {useLocation} from "react-router-dom"
 
 const Index = ({children}) => {

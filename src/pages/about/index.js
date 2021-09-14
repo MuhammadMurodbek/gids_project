@@ -1,6 +1,6 @@
 import React from 'react';
 import { Wrapper, ComponentTwo } from './index.style';
-import Button from "../../components/button";
+import Button from "../../components/atom/button";
 import Grid from '@material-ui/core/Grid';
 import { FlexContainer } from '../../styles/flex.container';
 import ImgContainer from '../../components/img.container';

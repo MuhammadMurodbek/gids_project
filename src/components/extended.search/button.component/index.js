@@ -1,7 +1,7 @@
 import React from 'react'
-import Button from "../../button"
+import Button from "../../atom/button"
 import {Wrapper} from "./index.style"
-import SearchIcon from "../../../assets/img/search_icon.svg"
+// import SearchIcon from "../../../assets/img/search_icon.svg"
 const Index = (props) => {
     return (
         <Wrapper>

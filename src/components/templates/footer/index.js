@@ -1,6 +1,6 @@
 import React from 'react'
 import {FooterWrapper} from "./index.style"
-import {FlexContainer} from "../../styles/flex.container"
+import {FlexContainer} from "../../../styles/flex.container"
 import {useLocation} from "react-router-dom"
 
 const Index = () => {

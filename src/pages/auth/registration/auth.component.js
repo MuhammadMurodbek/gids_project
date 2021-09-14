@@ -1,7 +1,7 @@
 import React from 'react'
-import TextInput from "../../../components/input"
+import TextInput from "../../../components/atom/input"
 import {Container} from "../../../styles/container/index.style"
-import Button from "../../../components/button"
+import Button from "../../../components/atom/button"
 import {Authorization} from "./index.style"
 const Index = () => {
     return (
