@@ -9,8 +9,8 @@ import {WrapperAll,
 import ExtSearch from "../../components/extended.search"
 import mainPicture from "../../assets/img/mainFirst.svg"
 import Grid from '@material-ui/core/Grid';
-import Button from "../../components/button"
-import ImgContainer from "../../components/img.container"
+import Button from "../../components/atom/button"
+import ImgContainer from "../../components/molecules/img.container"
 import imageSecond from "../../assets/img/sec_con.svg"
 import imageThird from "../../assets/img/main_picture_3.svg"
 import {FlexContainer} from "../../styles/flex.container"

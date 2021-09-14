@@ -1,10 +1,17 @@
 import React from 'react'
-import TextInput from "../../../components/input"
+import TextInput from "../../../components/atom/input"
 import {Container} from "../../../styles/container/index.style"
-import Button from "../../../components/button"
+import Button from "../../../components/atom/button"
+import {useHistory} from "react-router-dom"
+
 const Index = () => {
+    const history = useHistory();
+    const onSubmit = (e) => {
+        e.preventDefault();
+        history.push("/auth/verify")
+    }
     return (
-        <div>
+        <form onSubmit={onSubmit}>
             <Container>
                 <TextInput title="E-mail kiriting" width="100%"/>
             </Container>
@@ -23,7 +30,7 @@ const Index = () => {
             <Container className="text-right">
                 <Button>Kirish</Button>
             </Container>
-        </div>
+        </form>
     )
 }
 

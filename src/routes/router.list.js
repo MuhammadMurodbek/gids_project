@@ -10,8 +10,16 @@ export const routes = [
         component:ListRouter.Auth
     },
     {
+        url:"/auth/verify",
+        component:ListRouter.Verify
+    },
+    {
         url:'/about',
         component:ListRouter.About
+    },
+    {
+        url:'/gids',
+        component:ListRouter.ChooseGids,
     },
     {
         url:'/forgits',

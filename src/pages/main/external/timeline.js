@@ -8,7 +8,7 @@ import PhoneForwardedIcon from '@material-ui/icons/PhoneForwarded'
 import BusinessCenterIcon from '@material-ui/icons/BusinessCenter'
 import AssignmentTurnedInIcon from '@material-ui/icons/AssignmentTurnedIn'
 import "react-vertical-timeline-component/style.min.css";
-import ImageContainer from "../../../components/img.container"
+import ImageContainer from "../../../components/molecules/img.container"
 import TimeLine_1 from "../../../assets/img/timeline/timeline_1.svg"
 import TimeLine_2 from "../../../assets/img/timeline/timeline_2.svg"
 import TimeLine_3 from "../../../assets/img/timeline/timeline_3.svg"

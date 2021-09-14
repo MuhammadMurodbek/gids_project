@@ -1,5 +1,5 @@
 import React from 'react'
-import Select from "../../select"
+import Select from "../../atom/select"
 import {Wrapper} from "./index.style"
 
 const Index = (props) => {

@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { Wrapper, ComponentTwo, Title, TextColor, Takliflar, Savollar, ContainerLast } from './index.style';
-import Button from "../../components/button";
+import Button from "../../components/atom/button";
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 
 import { FlexContainer } from '../../styles/flex.container';
-import ImgContainer from '../../components/img.container';
+import ImgContainer from '../../components/molecules/img.container';
 import img1 from '../../assets/img/forgits/img1.svg';
 import taklif1 from '../../assets/img/forgits/taklif1.svg'
 import taklif2 from '../../assets/img/forgits/taklif2.svg'

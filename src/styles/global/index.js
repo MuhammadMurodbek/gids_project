@@ -35,14 +35,9 @@ const GlobalStyle = createGlobalStyle`
     color: #fafcfa;
     text-decoration: none;
   }
-<<<<<<< HEAD
-  
-  
-=======
   .text-right{
     text-align: right;
   }
->>>>>>> bf600b2f7fbc2b92deaf165da069e43cd338ed01
 `;
  
 export default GlobalStyle;

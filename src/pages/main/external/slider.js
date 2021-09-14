@@ -3,7 +3,7 @@ import React from 'react'
 import Slider from "react-slick"
 import 'react-awesome-slider/dist/styles.css';
 import {Container} from "../../../styles/container/index.style"
-import ImageContainer from "../../../components/img.container"
+import ImageContainer from "../../../components/molecules/img.container"
 import {SliderContainer, Wrapper} from "./slider.style"
 import {TextTitle} from "../../../styles/textTitle/index.style"
 import {FlexContainer} from "../../../styles/flex.container"

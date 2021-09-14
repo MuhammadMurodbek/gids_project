@@ -1,5 +1,5 @@
 import React from 'react'
-import Calendar from '../../calendar'
+import Calendar from '../../atom/calendar'
 import {Wrapper} from "./index.style"
 
 const Index = (props) => {
