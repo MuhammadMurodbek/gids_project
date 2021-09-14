@@ -23,6 +23,14 @@ export const routes = [
     },
     {
         url:'/forgits',
-        component:ListRouter.forgits
+        component:ListRouter.Forgits
+    },
+    {
+        url:'/connect',
+        component:ListRouter.Connect
+    },
+    {
+        url: './application',
+        component:ListRouter.Application
     }
 ]
