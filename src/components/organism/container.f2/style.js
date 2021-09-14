@@ -10,4 +10,11 @@ export const WrapperContainer = styled.div`
             font-weight: 600;
         }
     }
+    .gid-info-personal-text{
+        font-size: 13px;
+
+        span{
+            font-weight: 600;
+        }
+    }
 `

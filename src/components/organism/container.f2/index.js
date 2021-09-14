@@ -11,6 +11,8 @@ import { TextTitle } from '../../../styles/textTitle/index.style'
 import TruncateText from "../../molecules/text.truncate"
 
 const Index = () => {
+    // const truncateText =  
+    // console.log(truncateText.props.children[2], truncateText)
     return (
         <WrapperContainer>
             <Grid container spacing={1}>
@@ -23,7 +25,12 @@ const Index = () => {
                 <Grid item sm={6}>
                     <TextTitle align="left" font="20px">Abdusattor Ergashev</TextTitle>
                     <div className="gid-info-personal">33 yosh | <span>Gid va tarjimon</span> </div>
-                    <TruncateText line={3} text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi in repellat quas saepe praesentium quibusdam earum maxime ea eos velit delectus, sed optio animi rerum officiis aut vitae quidem! Ipsa."/>
+                    <div className="gid-info-personal-text"><span>Xizmatlar (shaharlar):</span>Uzbekistan, Turkiya, Yaponiya</div>
+                    <div className="gid-info-personal-text"><span>Tillar:O'zbek, Turk, Ingliz, Rus</span></div>
+                    <div className="gid-info-personal-text"> 
+                        <span>O'zim haqimda:</span>  
+                        <TruncateText line={3} text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt incidunt, tempore praesentium, consectetur fugit minima facilis iure quos veritatis, voluptatum minus. Neque voluptates maxime suscipit est rem beatae, veritatis consequuntur!"/>
+                    </div>
                 </Grid>
                 <Grid item sm={3}>
                     <InfoBtn/>
