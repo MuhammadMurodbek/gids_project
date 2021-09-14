@@ -40,7 +40,7 @@ export default function index() {
                     </Grid>
                     <Grid item md={6} >
                         <Grid item md={6} >
-                            <InputLabel width="300px" placeholder="Familyangizni kiriting" />
+                            <InputLabel width="300px" placeholder="Familya kiriting" />
                         </Grid>
                     </Grid>
                 </Grid>
