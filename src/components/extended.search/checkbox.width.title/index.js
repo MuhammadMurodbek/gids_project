@@ -1,6 +1,6 @@
 import React from 'react'
 import {Wrapper} from "./index.style"
-import Checkbox from "../../checkbox"
+import Checkbox from "../../atom/checkbox"
 
 const Index = (props) => {
     return (

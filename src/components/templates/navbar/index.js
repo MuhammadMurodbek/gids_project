@@ -2,8 +2,8 @@ import React from 'react'
 import { Navbar } from './index.style'
 import Logo from "../../../assets/img/logo.png"
 import {FlexContainer} from "../../../styles/flex.container"
-import ButtonNavbar from "../../button.navbar"
-import Select from "../../select"
+import ButtonNavbar from "../../molecules/button.navbar"
+import Select from "../../atom/select"
 import {UserOutlined} from "@ant-design/icons"
 import { NavLink } from 'react-router-dom'
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import {WrapperRoundImage} from "./style"
-import ImageContainer from "../../img.container"
+import ImageContainer from "../img.container"
 import playBtn from "../../../assets/img/choosegid/playbtn.svg"
 
 const Index = (props) => {

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import {NavLink} from "react-router-dom"
-import {mainGreen} from "../../styles/global/colors"
+import {mainGreen} from "../../../styles/global/colors"
 
 export const NavLinkWrapper = styled.div`
     .active{
