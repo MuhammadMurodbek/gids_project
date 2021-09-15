@@ -5,6 +5,7 @@ import { TextTitle } from '../../styles/textTitle/index.style'
 import {Wrapper} from './style'
 import ExtendedSearch from "../../components/extended.search"
 import ContainerMap from "../../components/templates/container.temp.f2"
+import Button  from '../../components/atom/button'
 const Index = () => {
     return (
         <Wrapper>

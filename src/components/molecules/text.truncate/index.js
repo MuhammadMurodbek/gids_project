@@ -1,18 +1,14 @@
 import React from 'react'
-import TextTruncate from "react-text-truncate"
+import Truncate from 'react-truncate';
 import {Wrapper} from "./style"
 
 const Index = (props) => {
     const {text, line} = props
     return (
-        <Wrapper>
-            <TextTruncate
-                line={line || 5}
-                element="span"
-                truncateText="…"
-                text={text}
-                // textTruncateChild={<a href="#">Read on</a>}  
-            />
+        <Wrapper width={props.width} margin={props.margin}>
+            <Truncate lines={line || 5} ellipsis={<span>...</span>}>
+                <pre>&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; {text}</pre>
+            </Truncate>
         </Wrapper>
     )
 }

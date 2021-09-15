@@ -11,26 +11,33 @@ import { TextTitle } from '../../../styles/textTitle/index.style'
 import TruncateText from "../../molecules/text.truncate"
 
 const Index = () => {
-    // const truncateText =  
-    // console.log(truncateText.props.children[2], truncateText)
     return (
         <WrapperContainer>
             <Grid container spacing={1}>
                 <Grid item sm={3}>
-                    <FlexContainer width="100%" alignItems="center" justifyContent="space-between" flexDirection="column">
-                        <RoundImageContainer src={RoundImage} width="100px" height="auto"/>
-                        <Info/>
-                    </FlexContainer>
+                    <Container margin="20px 0 0 0">
+                        <FlexContainer width="100%" alignItems="center" justifyContent="space-between" flexDirection="column">
+                            <RoundImageContainer src={RoundImage} width="100px" height="auto"/>
+                            <Info/>
+                        </FlexContainer>
+                    </Container>
                 </Grid>
                 <Grid item sm={6}>
-                    <TextTitle align="left" font="20px">Abdusattor Ergashev</TextTitle>
-                    <div className="gid-info-personal">33 yosh | <span>Gid va tarjimon</span> </div>
-                    <div className="gid-info-personal-text"><span>Xizmatlar (shaharlar):</span>Uzbekistan, Turkiya, Yaponiya</div>
-                    <div className="gid-info-personal-text"><span>Tillar:O'zbek, Turk, Ingliz, Rus</span></div>
-                    <div className="gid-info-personal-text"> 
-                        <span>O'zim haqimda:</span>  
-                        <TruncateText line={3} text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt incidunt, tempore praesentium, consectetur fugit minima facilis iure quos veritatis, voluptatum minus. Neque voluptates maxime suscipit est rem beatae, veritatis consequuntur!"/>
-                    </div>
+                    <Container margin="30px 0 0 0">
+                        <TextTitle align="left" font="20px">Abdusattor Ergashev</TextTitle>
+                        <div className="gid-info-personal">33 yosh | <span>Gid va tarjimon</span> </div>
+                        <div className="gid-info-personal-text top"><div className="text">Xizmatlar (shaharlar):</div>Uzbekistan, Turkiya, Yaponiya</div>
+                        <div className="gid-info-personal-text"><div className="text">Tillar:</div>O'zbek, Turk, Ingliz, Rus</div>
+                        <div className="gid-info-personal-text"> 
+                            <div className="text">O'zim haqimda:</div>  
+                            <TruncateText 
+                                width="auto" 
+                                margin="-20px 0 0 0"
+                                line={6}
+                                text={<p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi suscipit at repellat consequatur. Accusamus exercitationem velit nobis explicabo, recusandae eos deserunt quasi, nostrum omnis amet commodi unde, mollitia facere autem! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum fugiat eveniet a molestias sint quam totam alias at eos esse incidunt delectus, voluptas possimus expedita. Aspernatur inventore repellat consectetur atque!</p>}
+                            />
+                        </div>
+                    </Container>
                 </Grid>
                 <Grid item sm={3}>
                     <InfoBtn/>
