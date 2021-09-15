@@ -5,7 +5,8 @@ import { TextTitle } from '../../styles/textTitle/index.style'
 import {Wrapper} from './style'
 import ExtendedSearch from "../../components/extended.search"
 import ContainerMap from "../../components/templates/container.temp.f2"
-import Button  from '../../components/atom/button'
+import ImageContainer from "../../components/molecules/img.container"
+import Adds from "../../assets/img/choosegid/adds.jpg"
 const Index = () => {
     return (
         <Wrapper>
@@ -14,6 +15,12 @@ const Index = () => {
                 <Grid container spacing={1}>
                     <Grid item sm={4}>
                         <ExtendedSearch/>
+                        <Container margin="15px 0" >
+                            <ImageContainer src={Adds} width="350px"/>
+                        </Container>
+                        <Container margin="15px 0" >
+                            <ImageContainer src={Adds} width="350px"/>
+                        </Container>
                     </Grid>
                     <Grid item sm={8}>
                         <Container>
