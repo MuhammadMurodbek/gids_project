@@ -3,6 +3,7 @@ import styled from "styled-components"
 export const WrapperContainer = styled.div`
     width: 100%;
     height: auto;
+    margin-bottom: 25px;
     padding:20px 0;
     overflow: hidden;
     box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.12);
