@@ -2,10 +2,6 @@ import * as ListRouter from "./import"
 
 export const routes = [
     {
-        url:'/',
-        component:ListRouter.MainPage
-    },
-    {
         url:'/auth',
         component:ListRouter.Auth
     },
@@ -30,7 +26,11 @@ export const routes = [
         component:ListRouter.Connect
     },
     {
-        url: './application',
+        url: '/application',
         component:ListRouter.Application
-    }
+    },
+    {
+        url:'/main',
+        component:ListRouter.MainPage
+    },
 ]

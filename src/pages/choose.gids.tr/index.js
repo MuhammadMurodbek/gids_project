@@ -10,7 +10,7 @@ import Adds from "../../assets/img/choosegid/adds.jpg"
 const Index = () => {
     return (
         <Wrapper>
-            <TextTitle>O'zingiz uchun gid tanlang</TextTitle>
+            <TextTitle top="40px" bottom="30px">O'zingiz uchun gid tanlang</TextTitle>
             <Container>
                 <Grid container spacing={1}>
                     <Grid item sm={4}>
