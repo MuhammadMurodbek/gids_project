@@ -5,5 +5,5 @@ export const Container = styled.div`
     padding: ${value=>value.padding ? value.padding : '10px'};
     margin:${value=>value.margin};
     box-shadow: ${value=>value.boxShadow};
-    
+    text-align: ${value=>value.textAlign}
 `

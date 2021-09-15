@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import {mainGreen} from "../../styles/global/colors"
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.form`
     width: 100%;
     height: auto;
 
@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
 export const Title = styled.div`
     width: 100%;
     height: auto;
-    padding:15px;
+    padding:20px;
     text-align: left;
     color:#fff;
     font-size:20px;

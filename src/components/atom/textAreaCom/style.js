@@ -8,7 +8,7 @@ export const InputWrapper = styled.div`
     border-radius: 4px;
 `
 
-export const Input = styled.input`
+export const Input = styled.textarea`
     position: relative;
     top:3px;
     width: ${value=>value.width};

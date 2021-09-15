@@ -23,5 +23,6 @@ export const ButtonWrapper = styled.div`
     padding:0;
     overflow: hidden;
     border-radius: 4px;
+    margin:${value=>value.margin}
     /* box-shadow: 0 0 2px 1px #999; */
 `
