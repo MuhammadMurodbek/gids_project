@@ -33,4 +33,8 @@ export const routes = [
         url:'/main',
         component:ListRouter.MainPage
     },
+    {
+        url:'/application-form',
+        component:ListRouter.FillOutApplication,
+    }
 ]

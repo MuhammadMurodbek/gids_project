@@ -19,7 +19,7 @@ const Index = () => {
                     <ButtonNavbar title="Gid yoki tarjimonni tanlash" url="/gids"/>
                     <ButtonNavbar title="Gid va tarjimonlar uchun" url="/main" />
                     <ButtonNavbar title="Blog" url="/sdd"/>
-                    <ButtonNavbar title="Ariza qoldirish" url="/sdf"/>
+                    <ButtonNavbar title="Ariza qoldirish" url="/application-form"/>
                 </FlexContainer>
                 <FlexContainer width="200px">
                     <Select width="120px" paddingX="4" backgroundColor="#fff" placeholder="uz"/>

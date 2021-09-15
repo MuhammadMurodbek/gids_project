@@ -6,5 +6,6 @@ import Connect from "../pages/connect";
 import Application from '../pages/application';
 import Verify from "../pages/auth/verify"
 import ChooseGids from "../pages/choose.gids.tr"
+import FillOutApplication from "../pages/fill.application"
  
-export {MainPage, Auth, About,Forgits, Verify, ChooseGids, Connect, Application}
+export {MainPage, Auth, About,Forgits, Verify, ChooseGids, Connect, Application, FillOutApplication}
