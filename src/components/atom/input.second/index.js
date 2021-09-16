@@ -1,9 +1,9 @@
 import React from 'react'
 import { InputWrapper, Input } from './style'
-
+ 
 const Index = (props) => {
     return (
-        <InputWrapper>
+        <InputWrapper width={props.width}>
             <Input {...props}/>
         </InputWrapper>
     )

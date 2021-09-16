@@ -6,7 +6,7 @@ const Index = (props) => {
     return (
         <Wrapper>
             <div className="title">{props.title}</div>
-            <Select/>
+            <Select placeholder={props.placeholder}/>
         </Wrapper>
     )
 }

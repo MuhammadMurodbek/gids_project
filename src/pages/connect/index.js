@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Wrapper } from './index.style';
 import { TextTitle } from '../../styles/textTitle/index.style';
 import { Grid } from '@material-ui/core';
@@ -6,8 +6,25 @@ import imgtg from '../../assets/img/connect/icontg.svg';
 import imgfac from '../../assets/img/connect/iconfac.svg';
 import imginsta from '../../assets/img/connect/insta.svg';
 import InputLabel from '../../components/molecules/input.labeled';
+import TextAreaComp from '../../components/atom/textarea'
+import Button from "../../components/atom/button";
+import CloseIcon from '@material-ui/icons/Close';
 
-export default function index() {
+import Modal from 'react-awesome-modal';
+
+
+export default function Index() {
+
+    const [state, setState] = useState(false);
+    function openModal() {
+        setState(true);
+    }
+    function closeModal() {
+        setState(false)
+    }
+
+
+
     return (
         <div>
             <Wrapper>
@@ -34,16 +51,48 @@ export default function index() {
                     Savol jo‘natish
                 </TextTitle>
 
-                <Grid  container spacing={1} diracti>
-                    <Grid justifyContent="center" item md={6} >
-                        <InputLabel  width="300px" placeholder="Ismingizni kiriting" />
+                <Grid container spacing={1} diraction justifyContent="center">
+                    <Grid item md={4} sm={12}>
+                        <InputLabel label="Isim" width="390px" placeholder="Ismingizni kiriting" />
                     </Grid>
-                    <Grid item md={6} >
-                        <Grid item md={6} >
-                            <InputLabel width="300px" placeholder="F kiriting" />
-                        </Grid>
+                    <Grid item md={4} sm={12}>
+                        <InputLabel label="Familya" width="390px" placeholder="Familyangizni kiriting" />
                     </Grid>
                 </Grid>
+                <Grid container spacing={1} diraction justifyContent="center">
+                    <Grid item md={4} sm={12} >
+                        <InputLabel label="Email" width="390px" placeholder="Email’lingizni yozing" />
+                    </Grid>
+                    <Grid item md={4} sm={12} >
+                        <InputLabel label="Telefon" width="390px" placeholder="Telefon raqamingizni yozing" />
+                    </Grid>
+                </Grid>
+
+                <Grid container spacing={1} direction justifyContent="center">
+                    <Grid item md={8} sm={12}>
+                        <TextAreaComp label="Savol" width="100%" height="170px" />
+                    </Grid>
+                </Grid>
+                <Grid container justifyContent="flex-end" md={10}  >
+                    <Button className="btnC" type="button" onClick={openModal}>Jo'natish</Button>
+                </Grid>
+
+
+                <section>
+                    <Modal 
+                    visible={state}
+                     width="700"
+                     height="200"
+                     effect="fadeInUp" 
+                       onClickAway={closeModal}>
+                        <div className="modaldiv">
+                           <div className="closebtn">  <CloseIcon className="pointx" onClick={ closeModal} /></div>
+                            <h1 className="modaltitle">Savolingiz Muvaffaqiyatli qabul qilindi</h1>
+                            <p>Qisqa vaqt ichida o‘rganib chiqib, tez orada javob berishga harakat qilamiz.</p>
+                           
+                        </div>
+                    </Modal>
+                </section>
 
             </Wrapper>
         </div>

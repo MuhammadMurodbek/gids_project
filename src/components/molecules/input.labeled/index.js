@@ -5,7 +5,7 @@ import Input from "../../atom/input.second"
 const Index = (props) => {
     return (
         <Wrapper width={props.width}>
-            <Label >isim</Label>
+            <Label>{props.label}</Label>
             <Input {...props}/>
         </Wrapper>
     )

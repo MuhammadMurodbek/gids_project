@@ -30,7 +30,12 @@ export const routes = [
         component:ListRouter.Connect
     },
     {
-        url: './application',
-        component:ListRouter.Application
+        url:'/request',
+        component:ListRouter.Request
+    },
+    {
+        url:'/fullrequest',
+        component:ListRouter.Fullrequest
     }
+
 ]

@@ -1,17 +1,19 @@
 import styled from "styled-components";
-
 export const InputWrapper = styled.div`
     width:${value=>value.width};
+    height: ${value=>value.height};
     display: inline-block;
     position: relative;
     padding: 10px;
     background-color:#FAFCFA;
     border-radius: 4px;
+    margin:20px 0 ;
 `
 
-export const Input = styled.input`
+export const Input = styled.textarea`
     position: relative;
     top:3px;
+    background-color: red;
     width: 100%;
     height: auto;
     padding: 4px 10px;

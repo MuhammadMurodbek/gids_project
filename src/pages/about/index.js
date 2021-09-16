@@ -5,7 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import { FlexContainer } from '../../styles/flex.container';
 import ImgContainer from '../../components/molecules/img.container';
 import img1 from '../../assets/img/about/aboutimg.svg';
-
+ 
 
 export default function index() {
     return (
