@@ -3,6 +3,7 @@ import TextInput from "../../../components/atom/input"
 import {Container} from "../../../styles/container/index.style"
 import Button from "../../../components/atom/button"
 import {useHistory} from "react-router-dom"
+import Select from "../../../components/atom/select"
 
 const Index = () => {
     const history = useHistory();
@@ -13,10 +14,11 @@ const Index = () => {
     return (
         <form onSubmit={onSubmit}>
             <Container>
-                <TextInput title="E-mail kiriting" width="100%"/>
+                <TextInput title="Ismingizni yozing" width="100%"/>
             </Container>
             <Container>
-                <TextInput title="Password kiriting" password={true} width="100%"/>
+                <Select placeholder="Tarjimon"/>
+                {/* <TextInput title="Password kiriting" password={true} width="100%"/> */}
             </Container>
             <Container>
                 <TextInput title="E-mail kiriting" width="100%"/>
