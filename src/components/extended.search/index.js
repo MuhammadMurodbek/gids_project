@@ -11,8 +11,8 @@ const Index = () => {
         <Wrapper width="350px">
             <div className="title-header">Kengaytirilgan qidiruv</div>
             <RadioGroup/>   
-            <Selection title="Davlat"/>
-            <Selection title="Shahar"/>
+            <Selection title="Davlat" placeholder="Davlat kiriting"/>
+            <Selection title="Shahar" placeholder="Shahar kiriting"/>
             <CalendarComponent title="Sana" />
             <CalendarComponent/>
             <RadioGroup/>  

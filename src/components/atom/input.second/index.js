@@ -1,6 +1,6 @@
 import React from 'react'
-import { InputWrapper, Input } from './style'
-
+import { Input } from './style'
+ 
 const Index = (props) => {
     return (
         // <InputWrapper>

@@ -25,10 +25,10 @@ export const routes = [
         url:'/connect',
         component:ListRouter.Connect
     },
-    {
-        url: '/application',
-        component:ListRouter.Application
-    },
+    // {
+    //     url: '/application',
+    //     component:ListRouter.Application
+    // },
     {
         url:'/main',
         component:ListRouter.MainPage
@@ -36,5 +36,14 @@ export const routes = [
     {
         url:'/application-form',
         component:ListRouter.FillOutApplication,
+    },
+    {
+        url:'/request',
+        component:ListRouter.Request
+    },
+    {
+        url:'/fullrequest',
+        component:ListRouter.Fullrequest
     }
+
 ]

@@ -1,23 +1,23 @@
 import styled from "styled-components";
-
 export const InputWrapper = styled.div`
-    /* width:'100%'; */
+    width:${value=>value.width};
+    height: ${value=>value.height};
     display: inline-block;
     position: relative;
     padding: 10px;
     background-color:#FAFCFA;
     border-radius: 4px;
+    margin:20px 0 ;
 `
 
-export const Input = styled.input`
+export const Input = styled.textarea`
     position: relative;
     top:3px;
-    width: ${value=>value.width};
+    background-color: red;
+    width: 100%;
     height: auto;
-    padding: 18px 20px;
+    padding: 4px 10px;
     border:none;
-    background-color:#FAFCFA;
-    border-radius: 4px;
     font-family: Montserrat;
     font-style: normal;
     font-weight: normal;
@@ -25,5 +25,6 @@ export const Input = styled.input`
     line-height: 20px;
     outline: none;
     color:#212121;
+    background-color: transparent;
     z-index: 4;
 `
