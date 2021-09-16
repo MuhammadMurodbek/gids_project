@@ -143,7 +143,7 @@ export default function Index() {
                         </Accordion>
                     </div>
                 </Savollar>
-                
+
                 <ContainerLast>
                     <div className="application-last">
                         <TextTitle width="50%" left="auto" right="auto" bottom="40px">Xoziroq ro’yhattan o’ting, ma’lumotlaringizni to’ldiring va o’z karyerangizni boshlang!</TextTitle>

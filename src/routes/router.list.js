@@ -25,12 +25,21 @@ export const routes = [
         url:'/connect',
         component:ListRouter.Connect
     },
-    {
-        url: '/application',
-        component:ListRouter.Application
-    },
+    // {
+    //     url: '/application',
+    //     component:ListRouter.Application
+    // },
     {
         url:'/main',
         component:ListRouter.MainPage
     },
+    {
+        url:'/request',
+        component:ListRouter.Request
+    },
+    {
+        url:'/fullrequest',
+        component:ListRouter.Fullrequest
+    }
+
 ]
