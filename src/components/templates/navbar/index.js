@@ -18,7 +18,7 @@ const Index = () => {
                 <FlexContainer width="80%" alignItems="center" justifyContent="space-around"> 
                     <ButtonNavbar title="Gid yoki tarjimonni tanlash" url="/gids"/>
                     <ButtonNavbar title="Gid va tarjimonlar uchun" url="/main" />
-                    <ButtonNavbar title="Blog" url="/sdd"/>
+                    <ButtonNavbar title="Blog" url="/about"/>
                     <ButtonNavbar title="Ariza qoldirish" url="/application-form"/>
                 </FlexContainer>
                 <FlexContainer width="200px">
