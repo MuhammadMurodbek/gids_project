@@ -25,10 +25,6 @@ export const routes = [
         url:'/connect',
         component:ListRouter.Connect
     },
-    // {
-    //     url: '/application',
-    //     component:ListRouter.Application
-    // },
     {
         url:'/main',
         component:ListRouter.MainPage
@@ -44,6 +40,10 @@ export const routes = [
     {
         url:'/fullrequest',
         component:ListRouter.Fullrequest
+    },
+    {
+        url:'/gid-personal',
+        component:ListRouter.GidPersonal
     }
 
 ]

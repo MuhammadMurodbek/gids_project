@@ -3,10 +3,10 @@ import Button from '../../atom/button'
 import ContainerMap from "../../organism/container.f2"
 import {Wrapper, ButtonWrapper} from "./style"
 
-function Containers(n){
-    for(var i = 0; i < n; i++)
-        return <ContainerMap/>
-}
+// function Containers(n){
+//     for(var i = 0; i < n; i++)
+//         return <ContainerMap/>
+// }
 
 const Index = () => {
     return (
