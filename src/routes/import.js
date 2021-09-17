@@ -6,7 +6,6 @@ import Connect from "../pages/connect";
 import Verify from "../pages/auth/verify"
 import ChooseGids from "../pages/choose.gids.tr"
 import FillOutApplication from "../pages/fill.application"
- 
 import Request from '../pages/request'
 import Fullrequest from '../pages/follRequest' 
 
