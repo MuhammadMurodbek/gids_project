@@ -14,7 +14,7 @@ import { TextTitle } from '../../styles/textTitle/index.style'
 const Index = () => {
     return (
         <Wrapper>
-            <TextTitle top="60px" bottom="20px">Git va tarjimonlar uchun ariza qoldirish/TextTitle>
+            <TextTitle top="60px" bottom="20px">Git va tarjimonlar uchun ariza qoldirish</TextTitle>
             <Container width="90%" padding="0" margin="40px auto" boxShadow={shadow}> 
                 <Title>Vazifa tavsifi</Title>
                 <Container padding="30px">
