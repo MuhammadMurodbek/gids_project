@@ -5,7 +5,8 @@ export const Wrapper = styled.div`
     width: 100%;
     height: auto;
     padding:30px 70px;
-    margin:30px 0;
+    margin-top:30px;
+    margin-bottom:80px;
     .container-shadow{
         position: relative;
         z-index: 10;
