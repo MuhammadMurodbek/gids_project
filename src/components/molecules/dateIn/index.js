@@ -10,7 +10,7 @@ export default function index() {
     return (
         <Wrapper>
             <Grid container justifyContent="center" spacing={1} direction="row" >
-                <Select width="250px" />
+                <Select width="250px" placeholder="Shaharni kiriting" />
                 <Date/>
                 <Date/>
                 <div className="searchI">
