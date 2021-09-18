@@ -90,6 +90,7 @@ export default function FullWidthTabs(props) {
         <SwipeableViews
           axis={theme.direction === "rtl" ? "x-reverse" : "x"}
           index={value}
+          // animateHeight
           onChangeIndex={handleChangeIndex}
         >
           {tabs.length > 0

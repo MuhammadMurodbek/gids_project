@@ -14,7 +14,8 @@ export const Input = styled.input`
     top:3px;
     width: ${value=>value.width};
     height: auto;
-    padding: 18px 20px;
+    padding:${value=>value.padding ? value.padding : '18px 20px'};
+    padding-right: ${value=>value.paddingRight};
     border:none;
     background-color:#FAFCFA;
     border-radius: 4px;
