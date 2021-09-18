@@ -2,6 +2,7 @@ import styled from "styled-components"
 
 export const FlexContainer = styled.div`
     width: ${value=>value.width};
+    max-width: ${value=>value.maxWidth};
     height: ${value=>value.height};
     display: flex;
     align-items: ${value=>value.alignItems};

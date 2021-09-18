@@ -8,7 +8,7 @@ import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import {Wrapper} from "./style"
-
+import {mainGreen} from "../../../styles/global/colors"
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -63,21 +63,26 @@ export default function FullWidthTabs(props) {
           <Tabs
             value={value}
             onChange={handleChange}
-            // indicatorColor="primary"
             textColor="inherit"
             variant="fullWidth"
-            style={{width:'70%', margin:"0 auto", color:"#000"}}
+            style={{width:'70%', margin:"0 auto", color:"#000", position:"relative"}}
             aria-label="full width tabs example"
-            // selectionFollowsFocus={true}
             TabIndicatorProps={{ 
                 style: {
+                  // backgroundColor:mainGreen
                     display: "none",
                 },
               }}
           >
             {tabs.length > 0
               ? tabs.map((item, index) => (
-                  <Tab label={item.label} {...a11yProps(index)} className={value === index ? "active":"text-transform"} />
+                  <Tab 
+                    key={index} 
+                    label={item.label} 
+                    {...a11yProps(index)} 
+                    style={{ padding:"10px 0"}}
+                    className={value === index ? "active":"text-transform"} 
+                  />
                 ))
               : null}
           </Tabs>
@@ -89,9 +94,9 @@ export default function FullWidthTabs(props) {
         >
           {tabs.length > 0
             ? tabs.map((item, index) => (
-                <TabPanel value={value} index={index} dir={theme.direction}>
+                <div key={index} value={value} index={index} dir={theme.direction}>
                   {item.component}
-                </TabPanel>
+                </div>
               ))
             : null}
         </SwipeableViews>
