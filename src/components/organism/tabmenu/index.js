@@ -80,7 +80,7 @@ export default function FullWidthTabs(props) {
                     key={index} 
                     label={item.label} 
                     {...a11yProps(index)} 
-                    style={{ padding:"10px 0"}}
+                    // style={{ padding:"5px 0"}}
                     className={value === index ? "active":"text-transform"} 
                   />
                 ))

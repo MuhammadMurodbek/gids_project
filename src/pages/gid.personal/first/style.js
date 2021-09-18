@@ -1,5 +1,4 @@
 import styled from "styled-components"
-// import {shadow} from "../../../styles/global/colors"
 
 export const Wrapper = styled.div`
     width: 100%;
