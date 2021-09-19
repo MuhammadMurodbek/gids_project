@@ -48,7 +48,16 @@ export const routes = [
     },
     {
         url:'/fulldata',
-        component:ListRouter.FullData
+        component:ListRouter.FullData,
+    },
+    {
+        url:'/gid-personal',
+        component:ListRouter.GidPersonal
+    },
+    {
+        url:'/article',
+        component:ListRouter.Article
     }
+
 
 ]

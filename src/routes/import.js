@@ -7,8 +7,27 @@ import Verify from "../pages/auth/verify";
 import ChooseGids from "../pages/choose.gids.tr";
 import FillOutApplication from "../pages/fill.application";
 import FullData from '../pages/fullData';
- 
 import Request from '../pages/request';
 import Fullrequest from '../pages/follRequest'; 
 import Cities from '../pages/cities';
-export {MainPage, Auth, About, Forgits, Verify, ChooseGids, Connect, Request, Fullrequest, FillOutApplication, Cities,FullData}
+import  GidPersonal from '../pages/gid.personal';
+ import Article from '../pages/article';
+ 
+
+export {
+    MainPage, 
+    Auth, 
+    About,
+    Forgits, 
+    Verify, 
+    ChooseGids, 
+    Connect, 
+    Request, 
+    Fullrequest, 
+    FillOutApplication,
+    GidPersonal, 
+    Cities,
+    FullData,
+    Article,
+
+}

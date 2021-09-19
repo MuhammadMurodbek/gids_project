@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Wrapper, ComponentTwo, Title, TextColor, Takliflar, Savollar, ContainerLast } from './index.style';
 import Button from "../../components/atom/button";
 import Grid from '@material-ui/core/Grid';
@@ -25,8 +25,6 @@ const useStyles = makeStyles((theme) => ({
     heading: {
         fontSize: theme.typography.pxToRem(15),
         fontWeight: theme.typography.fontWeightRegular,
-        fontWeight: '600',
-        fontSize: '20'
     }
 }));
 

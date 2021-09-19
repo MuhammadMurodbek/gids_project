@@ -9,7 +9,6 @@ export const Wrapper = styled.div`
     }
     .imgBukhara{
         position: relative;
-         
     }
 
     .msa{
@@ -24,8 +23,8 @@ export const Wrapper = styled.div`
       color:${mainGreen};
   }
   .text-xitoy__more{
-      padding: 0 !important;
-      margin-top: 20px;
+      padding: 10px 0 !important;
+      /* margin-top: 20px; */
   }
   .msa2{
      
@@ -86,7 +85,7 @@ export const Wrapper = styled.div`
     top: -70px;
     left: 50%;
     transform:translate(-50%);
-    box-shadow: 0px 30px 30px #EDEDED;
+    box-shadow: 0px 20px 20px #EDEDED;
     
     .Abukhara-title{
         background-color:${mainGreen};
@@ -101,6 +100,8 @@ export const Wrapper = styled.div`
         margin: 0;
         font-weight: 600;
     }
-     
+     .Abukhara-text-more{
+         padding: 20px;
+     }
    
  `
