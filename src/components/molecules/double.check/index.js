@@ -1,5 +1,4 @@
 import React from 'react'
-// import {Wrapper} from "./style"
 import Checkbox from "../../atom/checkbox"
 import { FlexContainer } from '../../../styles/flex.container'
 

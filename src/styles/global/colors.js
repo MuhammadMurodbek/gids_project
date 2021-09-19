@@ -6,4 +6,6 @@ const mainTitleColor ='rgba(0, 0, 0, 1)';
 
 const mainTextColor = 'rgba(0, 0, 0, 1)';
 
-export {mainGreen, mainHeaderColor, mainTitleColor, mainTextColor}
+const shadow = '0px 4px 8px 0px rgba(0, 0, 0, 0.12)'
+
+export {shadow,mainGreen, mainHeaderColor, mainTitleColor, mainTextColor}

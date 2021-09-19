@@ -3,6 +3,7 @@ import MainPage from "./pages"
 import GlobalStyle from "./styles/global"
 
 function App() {
+  document.title="Guides interpreters"
   return (
     <React.Fragment>
       <GlobalStyle/>
