@@ -1,4 +1,5 @@
 {
+  "homepage": "http://MuhammadMurodbek.github.io/gids_project",
   "name": "g1ds",
   "version": "0.1.0",
   "private": true,
@@ -12,7 +13,6 @@
     "@testing-library/user-event": "^12.1.10",
     "antd": "^4.16.13",
     "axios": "^0.21.1",
-    "gh-pages": "^3.2.3",
     "moment": "^2.29.1",
     "netlify-cli": "^6.9.6",
     "react": "^17.0.2",
@@ -36,6 +36,8 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
+    "predeploy":"npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -58,5 +60,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^3.2.3"
   }
 }
