@@ -42,6 +42,7 @@ export const Request = styled.div`
     .textS{
         color: #fff;
         margin-left: 15px;
+        font-size: 15px;
        
     }
     .a11{
@@ -49,9 +50,7 @@ export const Request = styled.div`
         /* align-items: center; */
         font-size: 12px;
     }
-    .item33{
-        margin-left: 40px;
-    }
+     
     .sana{
         color: #84A684;
         display: flex;

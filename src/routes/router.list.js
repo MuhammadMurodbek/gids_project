@@ -25,6 +25,7 @@ export const routes = [
         url:'/connect',
         component:ListRouter.Connect
     },
+    
     {
         url:'/main',
         component:ListRouter.MainPage
@@ -42,8 +43,21 @@ export const routes = [
         component:ListRouter.Fullrequest
     },
     {
+        url:'/cities',
+        component:ListRouter.Cities
+    },
+    {
+        url:'/fulldata',
+        component:ListRouter.FullData,
+    },
+    {
         url:'/gid-personal',
         component:ListRouter.GidPersonal
+    },
+    {
+        url:'/article',
+        component:ListRouter.Article
     }
+
 
 ]

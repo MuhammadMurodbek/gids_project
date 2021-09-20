@@ -53,11 +53,6 @@ export const FlexContainer = styled.div`
 
 
 
-
-
-
-
-
 export const ComponentTwo = styled.div`
         width: 100%;
         padding:10px 20px;
