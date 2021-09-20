@@ -1,6 +1,7 @@
 import React from 'react'
 import {WrapperForm} from "./style"
 import InputLabeled from "../../molecules/input.labeled"
+import SelectLabeled from "../../molecules/select.labeled"
 import { Grid } from '@material-ui/core'
 
 const Index = () => {
@@ -21,10 +22,10 @@ const Index = () => {
             </Grid>
             <Grid container spacing={2}>
                 <Grid item sm={12} md={6}>
-                    <InputLabeled width="100%"/>
+                    <SelectLabeled width="100%" label="Davlat" placeholder="Davlat kiriting"/>
                 </Grid>
                 <Grid item sm={12} md={6}>
-                    <InputLabeled/>
+                    <SelectLabeled width="100%" label="Shahar" placeholder="Shahar kiriting"/>
                 </Grid>
             </Grid>
         </WrapperForm>
