@@ -11,8 +11,8 @@ import Request from '../pages/request';
 import Fullrequest from '../pages/follRequest'; 
 import Cities from '../pages/cities';
 import  GidPersonal from '../pages/gid.personal';
- import Article from '../pages/article';
- 
+import Article from '../pages/article';
+import GidPersonalWider from "../pages/gid.personal.wider";
 
 export {
     MainPage, 
@@ -29,5 +29,5 @@ export {
     Cities,
     FullData,
     Article,
-
+    GidPersonalWider,
 }

@@ -7,7 +7,7 @@ import Button from "../../atom/button"
 const Index = () => {
     return (
         <Wrapper>
-            <Container width="100%" textAlign="center">
+            <Container width="100%" textAlign="center" className="cursor-pointer">
                 <ImageUploadContainer width="180px" height="180px" radius="50%" align="center"/>
             </Container>
             <Container padding="10px 50px 0" margin="20px 0">

@@ -41,6 +41,7 @@ const GlobalStyle = createGlobalStyle`
   .boxShadow{
     box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.08);
   }
+  
 `;
  
 export default GlobalStyle;
