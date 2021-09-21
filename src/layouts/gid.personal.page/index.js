@@ -5,7 +5,7 @@ import {Container} from "../../styles/container/index.style"
 const Index = ({children}) => {
     return (
         <Wrapper>
-            <Container padding="20px" className="container-shadow" boxShadow={shadowSecond}>
+            <Container padding='0' className="container-shadow" boxShadow={shadowSecond}>
                 {children}
             </Container>
         </Wrapper>
