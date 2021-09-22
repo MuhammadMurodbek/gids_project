@@ -7,7 +7,12 @@ export const WrapperContainer = styled.div`
     padding:20px 0;
     overflow: hidden;
     box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.12);
-
+    p{
+        font-size: 14px;
+    }
+    p.mini{
+        font-size: 13px;
+    }
     .gid-info-personal{
             font-size:15px;
         .text{
@@ -25,5 +30,23 @@ export const WrapperContainer = styled.div`
     }
     .gid-info-personal-text.top{
         margin-top:10px;
+    }
+`
+export const ContainerBottom = styled.div`
+    display:flex;
+    width: 100%;
+    height: auto;
+    .inner-div{
+        /* display: inline-block; */
+        font-size: 14px;
+        span{
+            font-size: 13px;
+        }
+        span.title{
+            font-weight: 600;
+        }
+    }
+    .inner-div+.inner-div{
+        min-width: 100px;
     }
 `

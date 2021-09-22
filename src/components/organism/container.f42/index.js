@@ -1,7 +1,7 @@
 import React from 'react'
 import { FlexContainer } from '../../../styles/flex.container'
 import {Container} from "../../../styles/container/index.style"
-import {WrapperContainer} from "./style"
+import {WrapperContainer, ContainerBottom} from "./style"
 // import Info from "../../molecules/info.f42"
 import ImageContainer from "../../molecules/img.container"
 import InfoBtn from "../../molecules/info.f42"
@@ -27,21 +27,20 @@ const Index = () => {
                                 <div className="gid-info-personal-text"><div className="text">Ingliz tili</div> - Ogzaki va yozma</div>
                             </Container>
                         </FlexContainer>
-                        {/* <div className="gid-info-personal-text"> 
-                                    <div className="text">O'zim haqimda:</div>  
-                                    <TruncateText 
-                                        width="auto" 
-                                        margin="-20px 0 0 0"
-                                        line={6}
-                                        text={<p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi suscipit at repellat consequatur. Accusamus exercitationem velit nobis explicabo, recusandae eos deserunt quasi, nostrum omnis amet commodi unde, mollitia facere autem! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum fugiat eveniet a molestias sint quam totam alias at eos esse incidunt delectus, voluptas possimus expedita. Aspernatur inventore repellat consectetur atque!</p>}
-                                    />
-                                </div> */}
                     </Container>
                 </Grid>
                 <Grid item sm={3}>
                     <InfoBtn/>
                 </Grid>
             </Grid>
+            <Container padding="30px">
+                <TextTitle font="15px" fontWeight="600" align="left" color="#326A32">Ozim haqimda</TextTitle>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et, molestias consectetur. Repellat sint animi beatae quisquam et ut minima ratione, facilis voluptate consequatur culpa possimus sit nisi illum voluptates at asperiores tempora voluptatem doloremque! Provident illo et obcaecati neque, quam cumque perspiciatis tempore sit dolores, pariatur modi. Repellendus sit, culpa quasi, sunt ratione voluptate recusandae veniam laborum soluta a nulla accusantium adipisci vitae minima odit? Quos minus fugiat, incidunt harum eveniet fuga, provident repellat, qui quas illum reiciendis quam blanditiis quo cum aliquid vitae repellendus natus iusto! Placeat architecto, consequatur porro sint enim vitae earum eveniet quia, error consequuntur quas!</p>
+                <ContainerBottom>
+                    <div className="inner-div"> <span className="title">Qatnashgan tadbirlarim:</span> <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, architecto.</span> </div>
+                    <div className="inner-div"> <span className="title">Yili:</span> <span>2021</span> </div>
+                </ContainerBottom>
+            </Container>
         </WrapperContainer>
     )
 }
