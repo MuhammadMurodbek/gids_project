@@ -25,6 +25,8 @@ const GlobalStyle = createGlobalStyle`
     font-weight: normal;
     font-size: 16px;
     line-height: 20px;
+    /* pointer-events: none !important;
+    cursor:none !important; */
   }
   ul{
     padding:0;
@@ -41,7 +43,10 @@ const GlobalStyle = createGlobalStyle`
   .boxShadow{
     box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.08);
   }
-  
+  .cursor-pointer{
+    cursor: pointer;
+  }
+
 `;
  
 export default GlobalStyle;
