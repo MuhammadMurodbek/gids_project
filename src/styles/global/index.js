@@ -30,7 +30,7 @@ const GlobalStyle = createGlobalStyle`
   }
   ul{
     padding:0;
-    list-style-type: none
+    list-style-type: none;
   }
   a{
     display: inline-block;
@@ -45,6 +45,9 @@ const GlobalStyle = createGlobalStyle`
   }
   .cursor-pointer{
     cursor: pointer;
+  }
+  .border-div{
+    margin:0 !important;
   }
 
 `;
