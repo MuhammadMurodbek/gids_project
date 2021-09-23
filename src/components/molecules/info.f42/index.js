@@ -3,7 +3,6 @@ import { FlexContainer } from '../../../styles/flex.container'
 import {WrapperInfoBtn} from "./style"
 import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
 import VisibilityIcon from '@material-ui/icons/Visibility';
-import Button from "../../atom/button"
 
 const Index = () => {
     return (

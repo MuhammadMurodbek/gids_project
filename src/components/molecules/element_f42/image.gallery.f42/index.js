@@ -26,15 +26,15 @@ export default function CustomImageList() {
       rowHeight={230}
       gap={1}
     >
-      {itemData.map((item) => {
+      {itemData.map((item, index) => {
         const cols = item.featured ? 2 : 1;
         const rows = item.featured ? 2 : 1;
 
         return (
-          <ImageListItem key={item.img} cols={cols} rows={rows}>
+          <ImageListItem key={index} cols={cols} rows={rows}>
             <img
               {...srcset(item.img, 250, 200, rows, cols)}
-              alt={item.title}
+              alt={item.title || "sdfasd"}
               loading="lazy"
             />
             <ImageListItemBar

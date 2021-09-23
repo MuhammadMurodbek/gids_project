@@ -58,7 +58,7 @@ export default function index() {
                         <p>Rus tili, Ingiliz tili</p>
                     </div>
                     <div className="tafsilot-text">
-                        <b> <ImageContainer src={til} /></b>
+                        <b> <ImageContainer src={til}/></b>
                         <b>Odamlar soni: </b>
                         <p>4 kishi</p>
                     </div>

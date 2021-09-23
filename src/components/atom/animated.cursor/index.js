@@ -1,6 +1,5 @@
 import React from "react";
 import AnimatedCursor from "react-animated-cursor"
-import {mainGreen} from "../../../styles/global/colors"
 export default function App() {
   return (
     <div className="App">

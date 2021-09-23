@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { Wrapper } from './index.style';
 import { Grid } from '@material-ui/core';
 import img2 from '../../assets/img/request/2.svg';
@@ -19,7 +19,7 @@ export default function index() {
                     <Grid item md={7}>
                         <Grid className="msa" container spacing={1}>
                             <Grid className="imte12" item md={12}>
-                                <p className="xitoy-text">Xitoygagi safar</p>
+                                <span className="xitoy-text">Xitoygagi safar</span>
                                 <div className="title-div-text">
                                     <img className="img0" src={img2} alt="adsf" />
                                     23.01.2021
@@ -32,7 +32,7 @@ export default function index() {
                             </Grid>
 
                             <Grid className="text-xitoy__more" item md={12}>
-
+                                <div>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu et auctor ornare scelerisque ipsum posuere nec. Egestas tellus suspendisse donec arcu adipiscing tellus accumsan. Faucibus pellentesque pretium luctus et. Massa felis risus commodo morbi id semper fringilla ultricies ante. Dui rutrum elit convallis viverra quam odio consequat. Nunc in nisi, ipsum at turpis. Mattis urna venenatis bibendum nunc sit. Gravida odio sagittis aliquam faucibus ultricies ultrices lectus lorem sed. Ut habitant hendrerit justo, ultrices eu amet. Pulvinar ultricies duis sit quis sit praesent donec. Tortor neque, lacinia augue nunc pellentesque interdum. Consectetur egestas vitae semper quis tristique sit. <br /><br />
                                 Bibendum sit nisi, leo metus. Consectetur lobortis metus pharetra, porttitor diam mi bibendum luctus sit. Dui feugiat morbi donec fringilla mauris est. Sit libero massa proin rhoncus varius tempor pellentesque arcu. Elementum vitae integer rutrum congue. Sit integer pretium sit rutrum.
                                 Morbi tempus volutpat, viverra integer malesuada sollicitudin. Tristique sapien facilisis pellentesque elementum egestas senectus nec. Senectus lectus tellus massa mattis cras. Arcu fringilla metus diam aliquam enim sed sodales amet. Odio urna, mi id congue amet convallis. Nullam vitae mattis mollis mauris, id. <br /><br />Tincidunt habitant turpis pretium ut ac donec sit amet, rutrum. Rhoncus diam lacus sed enim est eu. Sem sem libero id proin.
@@ -45,6 +45,8 @@ export default function index() {
                                 Semper proin velit interdum nunc. Sit eget velit in faucibus euismod mollis. Lacinia diam adipiscing scelerisque et non accumsan, in sed. Vestibulum at eu diam lorem risus mollis ac vestibulum congue. In massa risus facilisi velit ullamcorper. Risus enim, risus molestie rutrum pulvinar. Turpis enim, lorem platea nulla tellus quam senectus mi, diam. Pellentesque amet, et, libero donec eu proin mus ipsum integer. Euismod pellentesque tellus dignissim amet in. Vitae faucibus ultrices facilisis vel a. Sed nibh pretium tincidunt id. Ipsum consectetur vulputate nibh neque. Integer sed tristique quis penatibus est nam sit sem risus.<br /><br />
                                 Quam a ultricies tempus, id est pellentesque egestas et id. Augue donec bibendum eget dui mattis. Vitae, aliquam varius cras tempor ornare diam elementum pulvinar. Urna tempor ac egestas in at . Sit eget at ultrices nibh egestas risus. Vel integer lectus mattis sapien. Nibh eu massa viverra diam maecenas ut sed. Congue enim sapien, cursus aliquam commodo mattis ultrices. Lectus amet eu molestie interdum vel bibendum mattis morbi. Aliquet nec consectetur fringilla id metus blandit non, hendrerit enim. Adipiscing ante massa fames libero mi ultrices nisl, enim id. Sed nibh.
 
+                                </div>
+                                
                             </Grid>
                             <Grid   item md={12}  className="mualif" >
                                 

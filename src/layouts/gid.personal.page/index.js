@@ -1,6 +1,6 @@
 import React from 'react'
 import {Wrapper} from "./style"
-import {shadowSecond} from "../../styles/global/colors"
+// import {shadowSecond} from "../../styles/global/colors"d
 import {Container} from "../../styles/container/index.style"
 const Index = ({children}) => {
     return (
