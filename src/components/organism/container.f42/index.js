@@ -14,7 +14,7 @@ const Index = () => {
     return (
         <WrapperContainer>
             <Grid container spacing={1}>
-                <Grid item sm={9}>
+                <Grid item xs={11} sm={9}>
                     <Container margin="25px 0 0 20px">
                         <FlexContainer width="100%" alignItems="flex-start" justifyContent="space-between" >
                             <ImageContainer src={RoundImage} width="160px" height="auto" round="50%" style={{backgroundColor:'red'}}/>
@@ -29,7 +29,7 @@ const Index = () => {
                         </FlexContainer>
                     </Container>
                 </Grid>
-                <Grid item sm={3}>
+                <Grid item xs={1} sm={3}>
                     <InfoBtn/>
                 </Grid>
             </Grid>
