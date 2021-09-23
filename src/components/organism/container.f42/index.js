@@ -66,8 +66,8 @@ const Index = () => {
             <WrapperContainer>
                 <Container padding="0 20px">    
                     <Grid container spacing={1}>
-                        <Grid item xs={12} sm={6}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam, amet.</Grid>
-                        <Grid item xs={12} sm={6}><ProgressTitle/></Grid>
+                        <Grid item sm={12} md={4}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam, amet.</Grid>
+                        <Grid item sm={12} md={8}><ProgressTitle/></Grid>
                     </Grid>
                 </Container>
             </WrapperContainer>

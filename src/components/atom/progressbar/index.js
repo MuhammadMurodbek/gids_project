@@ -10,7 +10,6 @@ const Index = (props) => {
             <div className="title">{percent}%</div>
             <Line 
                 percent={percent || "10"} 
-                showPercent={true}
                 strokeWidth={strokeWidth || "4"} 
                 trailWidth={4} 
                 strokeColor={mainGreen} 
