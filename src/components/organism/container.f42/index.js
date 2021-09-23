@@ -2,7 +2,7 @@ import React from 'react'
 import { FlexContainer } from '../../../styles/flex.container'
 import {Container} from "../../../styles/container/index.style"
 import {WrapperContainer, ContainerBottom, Wrapper} from "./style"
-// import Info from "../../molecules/info.f42"
+import ImageGallery from "../../molecules/element_f42/image.gallery.f42"
 import ImageContainer from "../../molecules/img.container"
 import InfoBtn from "../../molecules/info.f42"
 import RoundImage from "../../../assets/img/choosegid/round.svg"
@@ -10,6 +10,8 @@ import { Grid } from '@material-ui/core'
 import { TextTitle } from '../../../styles/textTitle/index.style'
 import SecondInfoCard from "../../molecules/element_f42/container_2.f42"
 import ThirdInfoCard from "../../molecules/element_f42/container_3.f42"
+import Title from "../../atom/element_f42/title.container.f42"
+import ProgressTitle from "../../molecules/element_f42/progress.title"
 // import TruncateText from "../../molecules/text.truncate"
 
 const Index = () => {
@@ -53,6 +55,20 @@ const Index = () => {
             <WrapperContainer>
                 <Container padding="0 10px">
                     <ThirdInfoCard/>
+                </Container>
+            </WrapperContainer>
+            <WrapperContainer>
+                <Container padding="0 20px">
+                    <Title text="Gallery"/>
+                    <ImageGallery/>
+                </Container>
+            </WrapperContainer>
+            <WrapperContainer>
+                <Container padding="0 20px">    
+                    <Grid container spacing={1}>
+                        <Grid item xs={12} sm={6}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam, amet.</Grid>
+                        <Grid item xs={12} sm={6}><ProgressTitle/></Grid>
+                    </Grid>
                 </Container>
             </WrapperContainer>
         </Wrapper>
