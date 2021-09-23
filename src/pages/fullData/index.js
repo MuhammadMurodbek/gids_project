@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Wrapper } from './index.style';
+ import { Wrapper } from './index.style';
 import { Grid } from '@material-ui/core';
 import img2 from '../../assets/img/request/2.svg';
 import img3 from '../../assets/img/request/3.svg';
