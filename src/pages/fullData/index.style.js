@@ -42,7 +42,10 @@ export const Wrapper = styled.div`
     .mualif-b{
       margin-right: 10px;
     }
-     
+     .mualif-text{
+       display: flex;
+       width: 100%;
+     }
     .del-edit{
       margin-left: 30px;
       padding: 10px;

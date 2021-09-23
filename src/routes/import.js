@@ -10,9 +10,9 @@ import FullData from '../pages/fullData';
 import Request from '../pages/request';
 import Fullrequest from '../pages/follRequest'; 
 import Cities from '../pages/cities';
-import  GidPersonal from '../pages/gid.personal';
- import Article from '../pages/article';
- 
+import GidPersonal from '../pages/gid.personal';
+import Article from '../pages/article';
+import AnsverMyapp from '../pages/ansverMyapplication';
 
 export {
     MainPage, 
@@ -29,5 +29,5 @@ export {
     Cities,
     FullData,
     Article,
-
+    AnsverMyapp
 }
