@@ -14,7 +14,8 @@ function srcset(image, width, height, rows = 1, cols = 1) {
   };
 }
 
-export default function CustomImageList() {
+export default function CustomImageList(props) {
+  // const {listData, width, height} = props;
   return (
     <ImageList
       sx={{

@@ -10,5 +10,5 @@ export const FlexContainer = styled.div`
     flex-direction: ${value=>value.flexDirection ? value.flexDirection:'row'};
     margin: ${value=>value.margin};
     gap: ${value=>value.gap};
-
+    flex-wrap: ${value=>value.flexWrap};
 `

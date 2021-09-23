@@ -1,6 +1,7 @@
 import styled from "styled-components"
 
 export const WrapperInfoF2 = styled.div`
+    display: inline-block;
     width:${value=>value.width};
     height:${value=>value.height};
     margin-left:20px;
