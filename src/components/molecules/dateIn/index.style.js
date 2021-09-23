@@ -3,10 +3,9 @@ import {mainGreen} from "../../../styles/global/colors";
 
  export const Wrapper = styled.div`
     width: 90%;
-    margin:0 auto;
+    margin:50px auto;
     padding-top: 10px;
-    /* background-color: red; */
-    margin-bottom: 50px;
+     margin-bottom: 50px;
     .searchI{
         background-color:${mainGreen};
         padding: 10px 15px;

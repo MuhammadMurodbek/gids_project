@@ -9,6 +9,7 @@ import {shadow} from "../../../styles/global/colors"
 import { FlexContainer } from '../../../styles/flex.container'
 import icon1 from "../../../assets/img/gid-personal/icon_1.svg"
 import icon2 from "../../../assets/img/gid-personal/icon_2.svg"
+
 const Index = () => {
     return (
         <Wrapper>

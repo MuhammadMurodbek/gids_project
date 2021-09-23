@@ -13,6 +13,9 @@ import Cities from '../pages/cities';
 import  GidPersonal from '../pages/gid.personal';
 import Article from '../pages/article';
 import GidPersonalWider from "../pages/gid.personal.wider";
+// import GidPersonal from '../pages/gid.personal';
+// import Article from '../pages/article';
+import AnswerMyapp from '../pages/ansverMyapplication';
 
 export {
     MainPage, 
@@ -30,4 +33,5 @@ export {
     FullData,
     Article,
     GidPersonalWider,
+    AnswerMyapp
 }

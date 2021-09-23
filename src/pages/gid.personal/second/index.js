@@ -1,9 +1,10 @@
 import React from 'react'
+import Myaplcation from '../../my.application'
 
 const Index = () => {
     return (
         <div>
-            2
+            <Myaplcation/>
         </div>
     )
 }

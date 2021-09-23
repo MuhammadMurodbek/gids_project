@@ -25,7 +25,6 @@ export const routes = [
         url:'/connect',
         component:ListRouter.Connect
     },
-    
     {
         url:'/main',
         component:ListRouter.MainPage
@@ -61,6 +60,10 @@ export const routes = [
     {
         url:'/article',
         component:ListRouter.Article
+    },
+    {
+        url:'/answer-me',
+        component:ListRouter.AnswerMyapp
     }
 
 
