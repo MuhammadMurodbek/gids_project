@@ -1,5 +1,5 @@
 import React from 'react'
-// import { Line } from 'rc-progress';
+import {mainGreen} from "../../../styles/global/colors"
 import { Progress } from 'antd';
 import {Wrapper} from "./style"
 
@@ -10,6 +10,7 @@ const Index = (props) => {
             <Progress 
                 percent={percent} 
                 strokeLinecap="square"
+                strokeColor={mainGreen}
                 showInfo={true} 
                 type="line"
             />

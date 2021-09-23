@@ -12,6 +12,8 @@ import SecondInfoCard from "../../molecules/element_f42/container_2.f42"
 import ThirdInfoCard from "../../molecules/element_f42/container_3.f42"
 import Title from "../../atom/element_f42/title.container.f42"
 import ProgressTitle from "../../molecules/element_f42/progress.title"
+import ProgressInfo from "../../molecules/element_f42/rate.part.f42"
+
 // import TruncateText from "../../molecules/text.truncate"
 
 const Index = () => {
@@ -64,9 +66,10 @@ const Index = () => {
                 </Container>
             </WrapperContainer>
             <WrapperContainer>
-                <Container padding="0 20px">    
+                <Container padding="0 20px"> 
+                    <Title text="Mijozlarning fikrlari"/>   
                     <Grid container spacing={1}>
-                        <Grid item sm={12} md={4}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam, amet.</Grid>
+                        <Grid item sm={12} md={4}><ProgressInfo/></Grid>
                         <Grid item sm={12} md={8}><ProgressTitle/></Grid>
                     </Grid>
                 </Container>
