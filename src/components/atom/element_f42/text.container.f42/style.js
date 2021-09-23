@@ -5,6 +5,11 @@ export const ContainerBottom = styled.div`
     height: auto;
     margin-right:20px;
 
+    i{
+        margin-right:10px;
+        font-size: 12px;
+    }
+
     .inner-div{
         font-size: 14px;
         span{
