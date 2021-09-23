@@ -7,13 +7,14 @@ import { Grid } from '@material-ui/core';
 import xitoy from '../../assets/img/citiyes/xitoy2.png';
 import ImgContainer from "../../components/molecules/img.container";
 import ad from '../../assets/img/citiyes/ad.png'
+
 import delbtn from '../../assets/img/citiyes/buttondel.svg';
 import edit from '../../assets/img/citiyes/buttonedit.svg';
 import Button from '../../components/atom/button';
 import CitiLeftPart from '../../components/organism/citiesLeftPart'
 
 
-export default function index() {
+export default function Index() {
     return (
         <div>
             <Wrapper>
