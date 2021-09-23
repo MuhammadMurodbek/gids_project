@@ -18,7 +18,7 @@ const Index = () => {
             <Container padding="20px" boxShadow={shadow}>
                 <MediaPlayer />
             </Container>
-            <Container padding="20px" boxShadow={shadow}>
+            <Container padding="20px" margin="20px 0" boxShadow={shadow}>
                 <ImageGallery />
             </Container>
         </Wrapper>
