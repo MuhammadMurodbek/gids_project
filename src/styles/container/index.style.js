@@ -7,4 +7,8 @@ export const Container = styled.div`
     margin:${value=>value.margin};
     box-shadow: ${value=>value.boxShadow};
     text-align: ${value=>value.textAlign};
+    background: ${value=>value.backgroundColor};
+    position:${value=>value.position};
+    z-index:${value=>value.zIndex};
+    /* background-color:red; */
 `

@@ -7,8 +7,8 @@ const Index = (props) => {
         <Rate 
             {...props}
             allowHalf 
-            defaultValue={2.5} 
-            style={{color:mainGreen, fontSize:25}}
+            defaultValue={props.value || 2.5} 
+            style={{color:mainGreen, fontSize:props.size || 25}}
         />
     )
 }

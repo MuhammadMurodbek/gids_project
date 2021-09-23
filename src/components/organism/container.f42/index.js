@@ -13,7 +13,8 @@ import ThirdInfoCard from "../../molecules/element_f42/container_3.f42"
 import Title from "../../atom/element_f42/title.container.f42"
 import ProgressTitle from "../../molecules/element_f42/progress.title"
 import ProgressInfo from "../../molecules/element_f42/rate.part.f42"
-
+import CommentPart from "../../molecules/element_f42/comment.f42"
+import Button from "../../atom/button"
 // import TruncateText from "../../molecules/text.truncate"
 
 const Index = () => {
@@ -68,10 +69,26 @@ const Index = () => {
             <WrapperContainer>
                 <Container padding="0 20px"> 
                     <Title text="Mijozlarning fikrlari"/>   
-                    <Grid container spacing={1}>
+                    <Grid container spacing={1} style={{marginBottom:60}}>
                         <Grid item sm={12} md={4}><ProgressInfo/></Grid>
                         <Grid item sm={12} md={8}><ProgressTitle/></Grid>
                     </Grid>
+                    <CommentPart/>
+                    <CommentPart/>
+                    <CommentPart/>
+                    <CommentPart/>
+                    <CommentPart/>
+                    <CommentPart/>
+                    <Container 
+                        position="relative"
+                        padding="60px 0 0" 
+                        margin="-60px 0 0" 
+                        textAlign="left" 
+                        zIndex="40"
+                        backgroundColor="linear-gradient(to top, #fff, rgba(255,255,255,0.6))"
+                    >
+                        <Button type="outlined">Ko'proq yuklash</Button>
+                    </Container>
                 </Container>
             </WrapperContainer>
         </Wrapper>
