@@ -1,9 +1,9 @@
 import styled from "styled-components"
 
 export const ContainerBottom = styled.div`
-    display: inline-block;
+    display: ${value=>value.display ? value.display : 'inline-block'};
     height: auto;
-    margin-right:15px;
+    margin-right:20px;
 
     .inner-div{
         font-size: 14px;

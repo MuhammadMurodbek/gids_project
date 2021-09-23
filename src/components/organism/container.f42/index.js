@@ -9,6 +9,7 @@ import RoundImage from "../../../assets/img/choosegid/round.svg"
 import { Grid } from '@material-ui/core'
 import { TextTitle } from '../../../styles/textTitle/index.style'
 import SecondInfoCard from "../../molecules/element_f42/container_2.f42"
+import ThirdInfoCard from "../../molecules/element_f42/container_3.f42"
 // import TruncateText from "../../molecules/text.truncate"
 
 const Index = () => {
@@ -45,8 +46,13 @@ const Index = () => {
                 </Container>
             </WrapperContainer>
             <WrapperContainer>
-                <Container>
+                <Container padding="0 10px">
                     <SecondInfoCard/>
+                </Container>
+            </WrapperContainer>
+            <WrapperContainer>
+                <Container padding="0 10px">
+                    <ThirdInfoCard/>
                 </Container>
             </WrapperContainer>
         </Wrapper>
