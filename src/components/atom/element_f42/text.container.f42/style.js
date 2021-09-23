@@ -1,8 +1,10 @@
 import styled from "styled-components"
 
 export const ContainerBottom = styled.div`
-    width: 100%;
+    display: inline-block;
     height: auto;
+    margin-right:15px;
+
     .inner-div{
         font-size: 14px;
         span{

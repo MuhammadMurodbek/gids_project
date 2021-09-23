@@ -5,3 +5,11 @@ export const Wrapper = styled.div`
     padding:15px;
 
 `
+export const TextWrapper = styled.div`
+    width: 100%;
+    .text_box{
+        display: inline-block;
+
+    }
+    
+`

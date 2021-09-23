@@ -4,7 +4,16 @@ const Index = (props) => {
     const {text} = props;
     return (
         <>
-            <TextTitle font="15px" fontWeight="600" align="left" color="#326A32">{text}</TextTitle>
+            <TextTitle 
+                font="15px" 
+                fontWeight="600" 
+                align="left" 
+                color="#326A32"
+                bottom="10px"
+                top="-10px"
+            >
+                {text}
+            </TextTitle>
         </>
     )
 }
