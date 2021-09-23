@@ -1,5 +1,5 @@
 import React from 'react'
-import {TextTitle} from "../../../styles/textTitle/index.style"
+import {TextTitle} from "../../../../styles/textTitle/index.style"
 const Index = (props) => {
     const {text} = props;
     return (
