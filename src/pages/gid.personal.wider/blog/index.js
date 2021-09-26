@@ -16,7 +16,7 @@ const Index = () => {
     return (
         <Layout>
             <TitleComponent>
-                <TextTitle font="26px">Maqola yozish</TextTitle>
+                <TextTitle font="26px" bottom="20px">Maqola yozish</TextTitle>
                 <Link to="/" className="link">
                     <div className="title-left"> <ImageContainer width="auto" src={icon}/> ortga qaytish </div>
                 </Link>

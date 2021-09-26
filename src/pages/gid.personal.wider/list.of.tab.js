@@ -1,8 +1,8 @@
 import First from "./first"
 import Second from "./second"
-import Third from "./third"
-import Fourth from "./fourth"
-
+import Calendar from "./calendar"
+import Fourth from "./blog"
+import Settings from "./settings"
 export const tabs = [
     {
         label:<div className="border-div first">Profilni ko'rish</div>,
@@ -14,7 +14,7 @@ export const tabs = [
     },
     {
         label:<div className="border-div">Kalendar</div>,
-        component:<Third/>,
+        component:<Calendar/>,
     },
     {
         label:<div className="border-div">Blog</div>,
@@ -26,6 +26,6 @@ export const tabs = [
     },
     {
         label:<div className="border-div">Sozlamalar</div>,
-        component:<Third/>,
+        component:<Settings/>,
     },
 ];
