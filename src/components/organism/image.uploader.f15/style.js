@@ -19,6 +19,12 @@ export const Wrapper = styled.div`
     .sc-fbNZge.eDujWm{
         margin:0;
     }
+    .sc-euMpEg.bzUgsx{
+        svg{
+            color:red !important;
+            transform:scale(0.7) !important;
+        }
+    }
     .sc-bXDkGd.dkEfrw{
         text-align: center;
         height:auto;
@@ -27,6 +33,15 @@ export const Wrapper = styled.div`
             height:40px;
             margin-top: 3px;
             margin-left: 3px;
+            background-color: red;
+            color:red !important;
+        }
+    }
+    .sc-gInthZ.eJXCRa{
+        img{
+            width:100%;
+            height:100%;
+            object-fit:cover !important;
         }
     }
 `

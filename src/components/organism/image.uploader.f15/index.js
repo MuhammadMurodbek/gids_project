@@ -5,7 +5,7 @@ import {Wrapper}  from "./style"
 import {mainGreen} from "../../../styles/global/colors"
 
 function App(props) {
-  const {width, height, radius} = props  
+  const {width, height, radius, minHeight, maxHeight} = props  
   const [imageSrc, setImageSrc] = useState()
 
   const handleImageSelect = (e) => {
@@ -21,6 +21,8 @@ function App(props) {
             style={{
               width: width,
               height: height,
+              // minHeight: minHeight,
+              // maxHeight: maxHeight,
               background: mainGreen,
               borderRadius: radius,
               border:"none",

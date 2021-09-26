@@ -1,39 +1,44 @@
 import React from 'react'
-import { Container } from '../../../styles/container/index.style'
-import {Wrapper, TitleContainer} from "./style"
+import {TitleComponent} from "./style"
+import Layout from "../../../layouts/gid.personal.page"
+import {TextTitle}  from "../../../styles/textTitle/index.style"
+import icon from "../../../assets/img/chev_right.png"
+import ImageContainer from "../../../components/molecules/img.container"
+import {Link} from "react-router-dom"
+import {Container} from "../../../styles/container/index.style"
 import {shadow} from "../../../styles/global/colors"
 import { Grid } from '@material-ui/core'
-import InputLabeled from "../../../components/molecules/input.labeled"
+import InputLabel from "../../../components/molecules/input.labeled"
+import AreaLabeled from "../../../components/molecules/area.labeled"
+import ImageUploader from "../../../components/organism/image.uploader.f15"
 import Button from "../../../components/atom/button"
-
 const Index = () => {
     return (
-        <Wrapper>
-            <Container padding="0" boxShadow={shadow} className="container4">
-                <TitleContainer>
-                    <Grid container spacing={5}>
-                        <Grid item xs={6}>Kontaktlar</Grid>
-                        <Grid item xs={6}>Parolni yangilash</Grid>
+        <Layout>
+            <TitleComponent>
+                <TextTitle font="26px">Maqola yozish</TextTitle>
+                <Link to="/" className="link">
+                    <div className="title-left"> <ImageContainer width="auto" src={icon}/> ortga qaytish </div>
+                </Link>
+            </TitleComponent>
+            <Container boxShadow={shadow} padding="20px">
+                <Grid container spacing={2}>
+                    <Grid item xs={12} md={4} >
+                        <InputLabel width="100%" label="Maqola nomi" placeholder="Maqolangiz nomini kiriting..."/>
+                        <AreaLabeled width="100%" label="Teglar" placeholder="Teg yozing..."/>
                     </Grid>
-                </TitleContainer>
-                <Container padding="20px 40px">
-                    <Grid container spacing={5}>
-                        <Grid item xs={6}>
-                            <InputLabeled width="100%" label="Telefon" placeholder="Raqamingizni kiriting"/>
-                            <InputLabeled width="100%" label="Email" placeholder="Pochtangizni kiriting"/>
-                        </Grid>
-                        <Grid item xs={6}>
-                            <InputLabeled width="100%" label="Email" placeholder="Pochtangizni kiriting"/>
-                            <InputLabeled width="100%" label="Yangi parol" placeholder="Yangi parolni kiriting" password/>
-                            <InputLabeled width="100%" label="Parolni tasdiqlang" placeholder="Yangi parolni qayta kiriting" password/>
-                        </Grid>
+                    <Grid item xs={12} md={8}>
+                        <ImageUploader width="100%" height="460px"/>
                     </Grid>
+                </Grid>
+                <Container padding="0" margin="70px 0 0">
+                    <AreaLabeled width="100%" label="Text" placeholder="Maqola yozing..."/>
                 </Container>
-                <Container textAlign="right" padding="30px">
-                    <Button>Saqlash</Button>
+                <Container padding="20px 0 0" textAlign="right">
+                    <Button>Joylamoq</Button>
                 </Container>
             </Container>
-        </Wrapper>
+        </Layout>
     )
 }
 

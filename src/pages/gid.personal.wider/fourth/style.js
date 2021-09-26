@@ -19,3 +19,25 @@ export const TitleContainer = styled.div`
     background-color:${mainGreen};
     color:#fff;
 `
+
+export const TitleComponent = styled.div`
+    position:relative;
+    width:100%;
+    height: auto;
+    .fa-chevron-right{
+        color:${mainGreen};
+    }
+    .link{
+        color:${mainGreen};
+    }
+    .title-left{
+        position:absolute;
+        top:10px; right:0;
+        display:flex;
+        flex-direction: row;
+        align-items:center;
+        gap:10px;
+        /* width:200px; */
+        /* background-color: red; */
+    }
+`
