@@ -1,5 +1,5 @@
 import First from "./first"
-import Second from "./second"
+import Second from "./edit"
 import Calendar from "./calendar"
 import Fourth from "./blog"
 import Settings from "./settings"

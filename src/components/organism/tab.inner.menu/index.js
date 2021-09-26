@@ -1,10 +1,11 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import {Wrapper} from "./style"
+import * as React from "react";
+import PropTypes from "prop-types";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
+import { Wrapper } from "./style";
+import {mainGreen} from "../../../styles/global/colors"
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -34,11 +35,12 @@ TabPanel.propTypes = {
 function a11yProps(index) {
   return {
     id: `simple-tab-${index}`,
-    'aria-controls': `simple-tabpanel-${index}`,
+    "aria-controls": `simple-tabpanel-${index}`,
   };
 }
 
-export default function BasicTabs() {
+export default function BasicTabs(props) {
+  const { tabs } = props;
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
@@ -46,21 +48,33 @@ export default function BasicTabs() {
   };
 
   return (
-      <Wrapper>
-        <Box sx={{ width: '100%' }}>
-        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-            <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
+    <Wrapper>
+      <Box sx={{ width: "100%" }}>
+        <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+          <Tabs
+            value={value}
+            onChange={handleChange}
+            aria-label="basic tabs example"
+            style={{width: "100%"}}
+            TabIndicatorProps={{
+                style: {
+                    backgroundColor: mainGreen
+                }
+            }}
+          >
             {tabs.length > 0
-                ? tabs.map((item, index) => (
-                    <Tab
-                        key={index}
-                        label={item.label}
-                        {...a11yProps(index)}
-                        // className={value === index ? 'active' : 'text-transform'}
-                    />
-                    ))
-                : null}
-            </Tabs>
+              ? tabs.map((item, index) => (
+                  <Tab
+                    key={index}
+                    label={item.label}
+                    disableRipple
+                    style={value===index ? {color: mainGreen}:null}
+                    {...a11yProps(index)}
+                    className={value === index ? 'active' : 'text-transform'}
+                  />
+                ))
+              : null}
+          </Tabs>
         </Box>
         {tabs.length > 0
           ? tabs.map((item, index) => (
@@ -69,8 +83,7 @@ export default function BasicTabs() {
               </TabPanel>
             ))
           : null}
-        </Box>
+      </Box>
     </Wrapper>
   );
 }
-

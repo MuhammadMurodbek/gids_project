@@ -1,10 +1,10 @@
 import React from 'react'
-
+import {Wrapper} from './style'
 const Index = () => {
     return (
-        <div>
-            2
-        </div>
+        <Wrapper>
+            bio
+        </Wrapper>
     )
 }
 
