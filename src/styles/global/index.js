@@ -3,6 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyle = createGlobalStyle`
   *,*:before, *:after{
       box-sizing: border-box;
+      font-family: Montserrat !important;
   }
   *::-webkit-scrollbar {
     width: 5px;
@@ -20,7 +21,7 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     margin: 0;
     padding: 0;
-    font-family: Montserrat;
+    font-family: Montserrat !important;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;

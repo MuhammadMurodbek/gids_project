@@ -16,6 +16,11 @@ export const Wrapper = styled.div`
             color:red !important;
         }
     }
+    .sc-dFJtaz.HHlKl{
+        svg{
+            width:40px;
+        }
+    }
     .sc-fbNZge.eDujWm{
         margin:0;
     }

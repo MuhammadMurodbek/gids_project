@@ -36,4 +36,8 @@ export const Wrapper = styled.div`
         position:relative;
         top:10px;
     }
+
+    .MuiBox-root.css-19kzrtu{
+        padding:0 !important;
+    }
 `
