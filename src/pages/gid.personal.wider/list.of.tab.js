@@ -1,8 +1,9 @@
 import First from "./first"
-import Second from "./edit"
+import Edit from "./edit"
 import Calendar from "./calendar"
 import Fourth from "./blog"
 import Settings from "./settings"
+import Reklama from "./reklama"
 export const tabs = [
     {
         label:<div className="border-div first">Profilni ko'rish</div>,
@@ -10,7 +11,7 @@ export const tabs = [
     },
     {
         label:<div className="border-div">Tahrirlash</div>,
-        component:<Second/>,
+        component:<Edit/>,
     },
     {
         label:<div className="border-div">Kalendar</div>,
@@ -22,7 +23,7 @@ export const tabs = [
     },
     {
         label:<div className="border-div">Reklama</div>,
-        component:<Second/>,
+        component:<Reklama/>,
     },
     {
         label:<div className="border-div">Sozlamalar</div>,
