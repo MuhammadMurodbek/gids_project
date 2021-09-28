@@ -13,6 +13,9 @@ import Cities from '../pages/cities';
 import GidPersonal from '../pages/gid.personal';
 import Article from '../pages/article';
 import AnsverMyapp from '../pages/ansverMyapplication';
+import Blog from '../pages/blog';
+import Advertising from '../pages/advertising';
+
 
 export {
     MainPage, 
@@ -29,5 +32,7 @@ export {
     Cities,
     FullData,
     Article,
-    AnsverMyapp
+    AnsverMyapp,
+    Blog,
+    Advertising,
 }

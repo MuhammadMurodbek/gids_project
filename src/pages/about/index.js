@@ -8,7 +8,7 @@ import img1 from '../../assets/img/about/aboutimg.svg';
  
 
 export default function index() {
-    return (
+    return ( 
 
         <Wrapper>
             <ComponentTwo>

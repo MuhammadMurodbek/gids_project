@@ -60,6 +60,14 @@ export const routes = [
     {
         url:'/answer-me',
         component:ListRouter.AnsverMyapp
+    },
+    {
+        url:'/blog',
+        component:ListRouter.Blog
+    },
+    {
+        url:'/advertising',
+        component:ListRouter.Advertising
     }
 
 

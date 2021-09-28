@@ -9,4 +9,15 @@ export const Wrapper = styled.div`
     .text-div{
         padding: 10px 0;
     }
+    .text-link{
+        color: #326A32;
+        display: flex;
+        margin-top: 15px;
+        text-align: center;
+    }
+    .arrow__readmore{
+        font-size: 15px;
+        margin-top: 3px;
+        margin-left: 10px;
+    }
 `
