@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import ImageUpload from 'image-upload-react'
 import 'image-upload-react/dist/index.css'
 import {Wrapper}  from "./style"
-import {mainGreen} from "../../../styles/global/colors"
 
 function App(props) {
   const {width, height, radius} = props  
@@ -21,10 +20,11 @@ function App(props) {
             style={{
               width: width,
               height: height,
-              background: mainGreen,
+              background: "#e3e3e3a6",
               borderRadius: radius,
               border:"none",
               overflow: 'hidden',
+              boxShadow: '2px 3px 10px -5px rgba(0, 0, 0, 0.1)'
             }}
           />
       </Wrapper>
