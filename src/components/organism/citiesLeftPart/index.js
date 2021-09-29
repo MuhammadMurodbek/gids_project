@@ -6,7 +6,8 @@ import { Link } from 'react-router-dom'
 import Truncate from 'react-truncate';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import ImgContainer from "../../../components/molecules/img.container"
- 
+// import xitoy from '../../../assets/img/citiyes/xitoy.png';
+
 
 export default function index(props) {
     const {url, title, kalendar, hteg, lines, text , btnText  } = props

@@ -5,19 +5,19 @@ import Fourth from "./fourth"
 
 export const tabs = [
     {
-        label:<div className="border-div first">First</div>,
+        label:<p className="border-div first">First</p>,
         component:<First/>,
     },
     {
-        label:<div className="border-div">Second</div>,
+        label:<p className="border-div">Second</p>,
         component:<Second/>,
     },
     {
-        label:<div className="border-div">Third</div>,
+        label:<p className="border-div">Third</p>,
         component:<Third/>,
     },
     {
-        label:<div className="border-div">Fourth</div>,
+        label:<p className="border-div">Fourth</p>,
         component:<Fourth/>,
     },
 ];

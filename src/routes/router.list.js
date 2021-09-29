@@ -54,6 +54,10 @@ export const routes = [
         component:ListRouter.GidPersonal
     },
     {
+        url:'/gid-personal-wider',
+        component:ListRouter.GidPersonalWider
+    },
+    {
         url:'/article',
         component:ListRouter.Article
     },
@@ -68,7 +72,8 @@ export const routes = [
     {
         url:'/advertising',
         component:ListRouter.Advertising
-    }
+    },
+    
 
 
 ]

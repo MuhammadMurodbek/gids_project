@@ -10,13 +10,16 @@ import FullData from '../pages/fullData';
 import Request from '../pages/request';
 import Fullrequest from '../pages/follRequest'; 
 import Cities from '../pages/cities';
-import GidPersonal from '../pages/gid.personal';
+import  GidPersonal from '../pages/gid.personal';
 import Article from '../pages/article';
 import AnsverMyapp from '../pages/ansverMyapplication';
 import Blog from '../pages/blog';
 import Advertising from '../pages/advertising';
-
-
+ 
+import GidPersonalWider from "../pages/gid.personal.wider";
+// import GidPersonal from '../pages/gid.personal';
+// import Article from '../pages/article';
+ 
 export {
     MainPage, 
     Auth, 
@@ -35,4 +38,6 @@ export {
     AnsverMyapp,
     Blog,
     Advertising,
+    GidPersonalWider,
+    
 }

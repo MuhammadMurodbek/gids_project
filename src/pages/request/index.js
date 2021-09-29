@@ -1,18 +1,18 @@
 import React from 'react'
-import { Wrapper, Request } from './index.style'
+import { Wrapper} from './index.style'
 import { TextTitle } from '../../styles/textTitle/index.style'
-import { Grid } from '@material-ui/core'
+// import { Grid } from '@material-ui/core'
 import InDate from '../../components/molecules/dateIn'
-import user from '../../assets/img/request/user1.svg';
-import cal from '../../assets/img/request/cal.svg';
-import gps from '../../assets/img/request/gps.svg';
-import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+// import user from '../../assets/img/request/user1.svg';
+// import cal from '../../assets/img/request/cal.svg';
+// import gps from '../../assets/img/request/gps.svg';
+// import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import Button from "../../components/atom/button";
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import Requests from '../../components/organism/request/';
 
 
-export default function index() {
+export default function Index() {
     return (
         <Wrapper>
             <TextTitle top="100px" bottom="50px">

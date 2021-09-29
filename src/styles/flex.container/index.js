@@ -8,5 +8,7 @@ export const FlexContainer = styled.div`
     align-items: ${value=>value.alignItems};
     justify-content: ${value=>value.justifyContent};
     flex-direction: ${value=>value.flexDirection ? value.flexDirection:'row'};
-    margin: ${value=>value.margin}
+    margin: ${value=>value.margin};
+    gap: ${value=>value.gap};
+    flex-wrap: ${value=>value.flexWrap};
 `
