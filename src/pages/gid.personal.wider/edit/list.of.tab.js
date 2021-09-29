@@ -25,7 +25,7 @@ export const tabs = [
     },
     {
         label:<div className="border-div">Xizmatlar</div>,
-        component:<Gallery/>,
+        component:<Service/>,
     },
     
     {
@@ -34,6 +34,6 @@ export const tabs = [
     },
     {
         label:<div className="border-div">Galereya</div>,
-        component:<Service/>,
+        component:<Gallery/>,
     },
 ];
