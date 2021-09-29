@@ -21,12 +21,13 @@ export const tabs = [
     },
     {
         label:<div className="border-div">Tillar bilishi</div>,
-        component:<Gallery/>,
+        component:<Lang/>,
     },
     {
         label:<div className="border-div">Xizmatlar</div>,
-        component:<Lang/>,
+        component:<Gallery/>,
     },
+    
     {
         label:<div className="border-div">Narxlar</div>,
         component:<Price/>,

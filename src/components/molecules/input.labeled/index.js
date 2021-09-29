@@ -3,7 +3,7 @@ import {Wrapper, Label, Eye} from "./style"
 import Input from "../../atom/input.second"
 
 const Index = (props) => {
-    const {width, label, password} = props
+    const {width, label, password, sizeLabel} = props
     const [check, setCheck] = useState(true)
     const handleChangeOpen = () => {
         setCheck(false)
@@ -13,7 +13,7 @@ const Index = (props) => {
     }
     return (
         <Wrapper width={width}>
-            <Label>{label}</Label>
+            <Label size={sizeLabel}>{label}</Label>
             <Input {...props} type={(check && password) ? "password":"text"} label="asdfdsf" paddingRight={password ? "45px":null}/>
             {
                 password  ? 

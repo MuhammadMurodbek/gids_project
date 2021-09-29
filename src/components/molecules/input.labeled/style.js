@@ -7,6 +7,7 @@ export const Wrapper = styled.div`
 `
 export const Label = styled.div`
     font-weight: 600;
+    font-size:${a=>a.size};
     margin: 10px;
     margin-top: 20px;
     text-align: left;

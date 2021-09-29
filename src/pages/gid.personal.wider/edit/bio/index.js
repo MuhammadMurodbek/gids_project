@@ -17,18 +17,18 @@ const Index = () => {
                 </Grid>
                 <Grid item xs={12} md={9}>
                     <Grid container spacing={1}>
-                        <Grid item xs={12} md={4}><InputLabeled width="100%" label="Familiya" placeholder="Familiyangizni yozing..."/></Grid>
-                        <Grid item xs={12} md={4}><InputLabeled width="100%" label="Ism" placeholder="Ismingizni yozing..."/></Grid>
-                        <Grid item xs={12} md={4}><InputLabeled width="100%" label="Otangizni ismi" placeholder="Otangizni ismini yozing..."/></Grid>
+                        <Grid item xs={12} md={4}><InputLabeled sizeLabel="15px" width="100%" label="Familiya" placeholder="Familiyangizni yozing..."/></Grid>
+                        <Grid item xs={12} md={4}><InputLabeled sizeLabel="15px" width="100%" label="Ism" placeholder="Ismingizni yozing..."/></Grid>
+                        <Grid item xs={12} md={4}><InputLabeled sizeLabel="15px" width="100%" label="Otangizni ismi" placeholder="Otangizni ismini yozing..."/></Grid>
                     </Grid> 
                     <Grid container spacing={1}>
-                        <Grid item xs={12} md={4}><CalendarLabel width="100%" label="Sana"/></Grid>
-                        <Grid item xs={12} md={4}><DoubleRadio label="Jinsi" name1="Erkak" name2="Ayol"/></Grid>
+                        <Grid item xs={12} md={4}><CalendarLabel sizeLabel="15px" width="100%" label="Sana"/></Grid>
+                        <Grid item xs={12} md={4}><DoubleRadio sizeLabel="15px" label="Jinsi" name1="Erkak" name2="Ayol"/></Grid>
                         <Grid item xs={12} md={4}></Grid>
                     </Grid> 
                     <Grid container spacing={1}>
-                        <Grid item xs={12} md={4}><SelectLabeled width="100%" label="Mamlakat"/></Grid>
-                        <Grid item xs={12} md={4}><SelectLabeled width="100%" label="Shahar"/></Grid>
+                        <Grid item xs={12} md={4}><SelectLabeled sizeLabel="15px" width="100%" label="Mamlakat"/></Grid>
+                        <Grid item xs={12} md={4}><SelectLabeled sizeLabel="15px" width="100%" label="Shahar"/></Grid>
                         <Grid item xs={12} md={4}></Grid>
                     </Grid> 
                 </Grid>
