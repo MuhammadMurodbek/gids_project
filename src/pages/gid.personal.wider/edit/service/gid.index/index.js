@@ -7,7 +7,7 @@ import { FlexContainer } from '../../../../../styles/flex.container'
 import { Grid } from '@mui/material'
 import SelectLabeled from "../../../../../components/molecules/select.labeled"
 import DeleteIcon from '@material-ui/icons/Delete';
-// import AddIcon from '@material-ui/icons/Add'
+import AddIcon from '@material-ui/icons/Add'
 import Button from "../../../../../components/atom/button"
 const GidIndex = () => {
     return (
@@ -18,7 +18,7 @@ const GidIndex = () => {
                     <DoubleCheck flexDirection="column" name1="Ekskursiyalar" name2="Sinxron tarjima"/>
                     <DoubleCheck flexDirection="column" name1="Og'zaki tarjima (ketma-ket)" name2="Yozma tarjima"/>
                 </FlexContainer>
-                <Container padding="10px 0" margin="10px 0">
+                <Container padding="10px 0" margin="10px 0" textAlign="right">
                     <Grid container spacing={1}>
                         <Grid item xs={10} sm={10} md={11}>
                             <Grid container spacing={1}>
@@ -28,9 +28,12 @@ const GidIndex = () => {
                         </Grid>
                         <Grid item xs={2} sm={2} md={1}>
                             <Button type="outlined"> <DeleteIcon className="icon"/> </Button>
-                            {/* <Button><AddIcon className="icon"/></Button> */}
                         </Grid>
                     </Grid>
+                    <Button><AddIcon className="icon"/></Button>
+                </Container>
+                <Container padding="10px 0" margin="20px 0" textAlign="right">
+                    <Button>Saqlash</Button>
                 </Container>
             </Container>
         </Wrapper>

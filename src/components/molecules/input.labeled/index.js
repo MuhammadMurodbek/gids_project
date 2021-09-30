@@ -1,7 +1,9 @@
 import React,{useState} from 'react'
 import {Wrapper, Label, Eye} from "./style"
 import Input from "../../atom/input.second"
-
+import RemoveRedEyeOutlinedIcon from '@material-ui/icons/RemoveRedEyeOutlined';
+import VisibilityOffOutlinedIcon from '@material-ui/icons/VisibilityOffOutlined';
+import {mainGreen} from "../../../styles/global/colors"
 const Index = (props) => {
     const {width, label, password, sizeLabel} = props
     const [check, setCheck] = useState(true)
@@ -20,8 +22,8 @@ const Index = (props) => {
                     <Eye>
                         {
                             !check ? 
-                            <i className="far fa-eye" onClick={handleChangeClose}></i>:
-                            <i className="far fa-eye-slash" onClick={handleChangeOpen}></i>
+                            <RemoveRedEyeOutlinedIcon onClick={handleChangeClose} style={{color:mainGreen}}/>:
+                            <VisibilityOffOutlinedIcon onClick={handleChangeOpen} style={{color:mainGreen}}/>
                         }
                     </Eye>
                 :

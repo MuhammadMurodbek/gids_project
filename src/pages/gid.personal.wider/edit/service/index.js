@@ -1,6 +1,7 @@
 import React from 'react'
 import {Wrapper} from './style'
-import GidIndex from "./gid.index"
+import Translator from "./translator.index"
+// import GidIndex from "./gid.index"
 // import SelectLabeled from "../../../../components/molecules/select.labeled"
 // import TextLabeled from "../../../../components/molecules/input.labeled"
 // import { Grid } from '@material-ui/core'
@@ -11,7 +12,8 @@ import GidIndex from "./gid.index"
 const Index = () => {
     return (
         <Wrapper>
-            <GidIndex/>
+            <Translator/>
+            {/* <GidIndex/> */}
             {/* <Grid container spacing={1}>
                 <Grid item xs={12} sm={6} md={3}>
                     <TextLabeled width="100%" sizeLabel="15px"   label="Bir kunlik ish hajmingiz"/>
