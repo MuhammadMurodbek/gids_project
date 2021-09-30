@@ -2,14 +2,14 @@ import { Grid } from '@material-ui/core'
 import React from 'react'
 import {Wrapper} from './style'
 import TextLabeled from "../../../../components/molecules/input.labeled"
-import CalendarLabeled from "../../../../components/molecules/calendar.labeled"
+// import CalendarLabeled from "../../../../components/molecules/calendar.labeled"
 import Button from "../../../../components/atom/button"
 import { FlexContainer } from '../../../../styles/flex.container'
 import DeleteIcon from '@material-ui/icons/Delete';
 import AddIcon from '@material-ui/icons/Add'
 import { Container } from '../../../../styles/container/index.style'
-import SelectLabeled from "../../../../components/molecules/select.labeled"
-import DoubleTime from "../../../../components/molecules/double.time.labeled"
+// import SelectLabeled from "../../../../components/molecules/select.labeled"
+// import DoubleTime from "../../../../components/molecules/double.time.labeled"
 const Index = () => {
     return (
         <Wrapper>
