@@ -1,26 +1,26 @@
 import React from 'react';
-import { Wrapper, Wrapper01, Wrapper02 } from './style';
+import { Wrapper, Wrapper01} from './style';
 import { TextTitle } from '../../../styles/textTitle/index.style'
 import { Grid } from '@material-ui/core';
 import ImgContainer from '../../../components/molecules/img.container';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
 import Button from "../../../components/atom/button";
-import RadioButtonUncheckedIcon from '@material-ui/icons/RadioButtonUnchecked';
-import Radio from '@mui/material/Radio';
-import RadioGroup from '@mui/material/RadioGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import FormControl from '@mui/material/FormControl';
-import FormLabel from '@mui/material/FormLabel';
+// import RadioButtonUncheckedIcon from '@material-ui/icons/RadioButtonUnchecked';
+// import Radio from '@mui/material/Radio';
+// import RadioGroup from '@mui/material/RadioGroup';
+// import FormControlLabel from '@mui/material/FormControlLabel';
+// import FormControl from '@mui/material/FormControl';
+// import FormLabel from '@mui/material/FormLabel';
 
 
 
 import true400 from '../../../assets/img/advertasing/truebg.svg';
 import fols from '../../../assets/img/advertasing/fols.svg';
 import ckashalok from '../../../assets/img/advertasing/kashlok.svg';
-import click from '../../../assets/img/advertasing/click400.svg';
-import payme from '../../../assets/img/advertasing/payme400.svg';
-import paynet from '../../../assets/img/advertasing/paynet400.svg';
+// import click from '../../../assets/img/advertasing/click400.svg';
+// import payme from '../../../assets/img/advertasing/payme400.svg';
+// import paynet from '../../../assets/img/advertasing/paynet400.svg';
 import { Link } from 'react-router-dom';
 
 
