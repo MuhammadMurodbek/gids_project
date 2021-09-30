@@ -46,8 +46,8 @@ export default function Index() {
                             Magna nam est morbi molestie vel nunc. Donec metus, senectus a convallis quis scelerisque. Risus magna tellus ante sollicitudin vehicula quis commodo sceleorbi. Elit ultricies nisi, maecenas turpis pulvinar ultrices. Eros, placerat lacinia diam lorem ultrices sem ullamcorper blandit lorem. Urna sodales dictumst amet, ornare et, morbi quis ut arcu. Ac tortor senectus consequat vulputate eleifend magna. Aliquam quis faucibus in tincidunt lacus, fusce. Sagittis accumsan, amet risus natoque eu quis dictum. Egestas nisl quis maecenas euismod. Ultrices eget feugiat bibendum fringilla.
                             Magna nam est morbi molestie vel nunc. Donec metus, senectus a convallis quis scelerisque.
                             "
-                            
-                             
+
+
                         />
 
 
@@ -68,16 +68,15 @@ export default function Index() {
                             </div>
                         </Grid>
 
-
-
-
                     </Grid>
 
-                    <Grid className="msa2" item md={4}>
-                        <div className="imgad" ><ImgContainer src={ad} width="70%" /></div>
-                        <div className="imgad" ><ImgContainer src={ad} width="70%" /></div>
-                        <div className="imgad" ><ImgContainer src={ad} width="70%" /></div>
-
+                    <Grid item md={3}>
+                        
+                            <div className="imgad" ><ImgContainer src={ad} width="90%" /></div>
+                            <div className="imgad" ><ImgContainer src={ad} width="90%" /></div>
+                            <div className="imgad" ><ImgContainer src={ad} width="90%" /></div>
+                            <div className="imgad" ><ImgContainer src={ad} width="90%" /></div>
+                         
                     </Grid>
 
                 </Grid>

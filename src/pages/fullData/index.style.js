@@ -4,6 +4,10 @@ export const Wrapper = styled.div`
     width: 100%;
     padding: 50px 0;
 
+    .msa2{
+      background-color: red;
+      margin-left:60px;
+    }
     .imte12{
       display: flex;
       align-items: center;

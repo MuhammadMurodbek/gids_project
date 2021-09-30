@@ -100,20 +100,9 @@ export const  Wrapper02 = styled.div`
     .cashlok02{
         background-color: red;
     }
-    .pay{
-        box-shadow:0px 5px 5px #BBBDBB;
-        position: relative;
-         text-align: center;
-         width: 300px;
-         height: 300px;
-         margin-right: 20px;
-        padding-top:30%;
-    }
-    .pay2{
-        background-color: #EEF7EE;
-    }
+  c
     .cashlok{
-         margin: 30px 0;
+        margin: 30px 0;
         display: flex;
     }
     .payment{
@@ -146,7 +135,7 @@ export const  Wrapper02 = styled.div`
     box-shadow:0px 5px 5px #BBBDBB;
     display: flex;
     margin-bottom: 20px;
-    padding: 8px;
+    padding: 10px;
     width:340px;
  }
  .div-Radio p, .div-Radio-02 p{

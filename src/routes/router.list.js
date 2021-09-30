@@ -73,6 +73,14 @@ export const routes = [
         url:'/advertising',
         component:ListRouter.Advertising
     },
+    {
+        url:'/pay',
+        component:ListRouter.Pay
+    },
+    {
+        url:'reklama',
+        component:ListRouter.Reklama
+    }
     
 
 

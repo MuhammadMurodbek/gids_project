@@ -7,4 +7,7 @@ export const  Wrapper = styled.div`
     .imgad{
      margin-bottom: 30px;
     }
+    .msa2{
+        margin-right: 0 !important;
+    }
 `

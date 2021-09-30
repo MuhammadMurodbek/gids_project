@@ -15,7 +15,7 @@ export default function Index() {
                 Blog
             </TextTitle>
 
-            <Grid justifyContent="center" container spacing={1}>
+            <Grid   container spacing={1} justifyContent="center">
                 <Grid item md={7}>
 
                     <CitiLeftPart
@@ -30,8 +30,7 @@ export default function Index() {
                     <CitiLeftPart
                         title="Xitoyga sayoxat"
                         kalendar="23.01.2021"
-                        hteg="Biznes, 
-                Xitoy"
+                        hteg="Biznes, Xitoy"
                         lines="10"
                         url={xitoy}
                         text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ac tristique volutpat commodo, sed risus, vitae. Habitant donec pellentesque et facilisis urna. Venenatis, mauris elementum netus morbi. Elit ultricies nisi, maecenas turpis pulvinar ultrices. Eros, placerat lacinia diam lorem ultrices sem ullamcorper blandit lorem. Urna sodales dictumst amet, ornare et, morbi quis ut arcu. Ac tortor senectus consequat vulputate eleifend magna. Aliquam quis faucibus in tincidunt lacus, fusce. Sagittis accumsan, amet risus natoque eu quis dictum. Egestas nisl quis maecenas euismod. Ultrices eget feugiat bibendum fringilla.
@@ -54,10 +53,10 @@ export default function Index() {
                 </Grid>
 
                 <Grid className="msa2" item md={4}>
-                    <div className="imgad" ><ImgContainer src={ad} width="70%" /></div>
-                    <div className="imgad" ><ImgContainer src={ad} width="70%" /></div>
-                    <div className="imgad" ><ImgContainer src={ad} width="70%" /></div>
-                    <div className="imgad" ><ImgContainer src={ad} width="70%" /></div>
+                    <div className="imgad" ><ImgContainer src={ad} width="80%" /></div>
+                    <div className="imgad" ><ImgContainer src={ad} width="80%" /></div>
+                    <div className="imgad" ><ImgContainer src={ad} width="80%" /></div>
+                    <div className="imgad" ><ImgContainer src={ad} width="80%" /></div>
                 </Grid>
             </Grid>
 

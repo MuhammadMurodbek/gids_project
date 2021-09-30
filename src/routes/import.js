@@ -17,6 +17,8 @@ import Blog from '../pages/blog';
 import Advertising from '../pages/advertising';
  
 import GidPersonalWider from "../pages/gid.personal.wider";
+import Pay from '../pages/gid.personal.wider/reklama.pay';
+import Reklama from '../pages/gid.personal.wider/reklama';
 // import GidPersonal from '../pages/gid.personal';
 // import Article from '../pages/article';
  
@@ -39,5 +41,6 @@ export {
     Blog,
     Advertising,
     GidPersonalWider,
-    
+    Pay,
+    Reklama,
 }
