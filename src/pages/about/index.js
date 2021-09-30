@@ -5,10 +5,10 @@ import Grid from '@material-ui/core/Grid';
 import { FlexContainer } from '../../styles/flex.container';
 import ImgContainer from '../../components/molecules/img.container';
 import img1 from '../../assets/img/about/aboutimg.svg';
- 
+import { Link } from 'react-router-dom'; 
 
 export default function index() {
-    return (
+    return ( 
 
         <Wrapper>
             <ComponentTwo>
@@ -21,7 +21,9 @@ export default function index() {
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam modi provident dignissimos accusamus optio aliquam assumenda omnis nisi quae fuga consequatur, numquam recusandae accusantium dolore, ipsum iure suscipit sed quia?</p>
                             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga, minima.</p>
                             <FlexContainer width="370px" justifyContent="space-between">
+                                <Link to="/connect">
                                 <Button type="outlined">Bog’lanish</Button>
+                                </Link>
                             </FlexContainer>
                         </div>
                     </Grid>

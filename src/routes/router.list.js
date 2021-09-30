@@ -63,8 +63,25 @@ export const routes = [
     },
     {
         url:'/answer-me',
-        component:ListRouter.AnswerMyapp
+        component:ListRouter.AnsverMyapp
+    },
+    {
+        url:'/blog',
+        component:ListRouter.Blog
+    },
+    {
+        url:'/advertising',
+        component:ListRouter.Advertising
+    },
+    {
+        url:'/pay',
+        component:ListRouter.Pay
+    },
+    {
+        url:'reklama',
+        component:ListRouter.Reklama
     }
+    
 
 
 ]

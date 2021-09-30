@@ -14,7 +14,6 @@ export const FooterWrapper = styled.div`
         margin:15px auto;
 
         span{
-            padding:4px 6px;
             border-radius: 50%;
             background-color:#fff;
             text-align:center;

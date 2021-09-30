@@ -4,6 +4,7 @@ import Calendar from "./calendar"
 import Fourth from "./blog"
 import Settings from "./settings"
 import Reklama from "./reklama"
+
 export const tabs = [
     {
         label:<div className="border-div first">Profilni ko'rish</div>,

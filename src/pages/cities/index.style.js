@@ -27,7 +27,6 @@ export const Wrapper = styled.div`
       /* margin-top: 20px; */
   }
   .msa2{
-     
       padding:15px;
       margin-left: 15px;
   }
