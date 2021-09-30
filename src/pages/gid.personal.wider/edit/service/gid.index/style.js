@@ -1,10 +1,11 @@
 import styled from "styled-components"
-
 export const Wrapper = styled.div`
     width: 100%;
     height: auto;
-    
-    .fCSNeF,.bqWjhY{
+
+    .bqWjhY{
+        position: relative;
+        /* top:50px; */
         padding:9px 13px !important;
     }
     .icon{
