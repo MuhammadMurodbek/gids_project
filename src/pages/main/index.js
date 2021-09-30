@@ -137,8 +137,8 @@ const Index = () => {
                 <div className="application-last">
                     <TextTitle width="50%" left="auto" right="auto" bottom="40px">Xoziroq o’zingiz uchun Git tanlang yoki shunchaki ariza qoldiring.</TextTitle>
                     <FlexContainer width="380px" margin="0 auto" alignItems="center" justifyContent="space-between">
-                        <Button>Ariza qoldirish</Button>
-                        <Button type="outlined">Gitni tanlash</Button>
+                      <Link to="/application-form"><Button>Ariza qoldirish</Button></Link>
+                       <Link to="/gids"> <Button type="outlined">Gitni tanlash</Button></Link> 
                     </FlexContainer>
                 </div>
             </ContainerLast>
