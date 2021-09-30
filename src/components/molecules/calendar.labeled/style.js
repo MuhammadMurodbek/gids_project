@@ -2,11 +2,13 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
     position: relative;
+    top:3px;
     width:${v=>v.width ? v.width:"auto"};
-   
+
 `
 export const Label = styled.div`
     font-weight: 600;
+    font-size:${a=>a.size};
     margin: 10px;
     margin-top: 20px;
     text-align: left;
@@ -17,7 +19,7 @@ export const Input = styled.input`
     top:3px;
     width: 100%;
     height: auto;
-    padding: 2px 10px;
+    padding: 3px 10px;
     padding-right: 40px;
     margin-top: 10px;
     border:none;

@@ -14,7 +14,7 @@ const Index = (props) => {
                     defaultValue={moment('01/01/2015 ', dateFormatList[0])} 
                     format={dateFormatList} 
                     
-                    style={{border:'none', outline: 'none', width:'100%', backgroundColor:'transparent'}}
+                    style={{border:'none', outline: 'none', width:'100%', backgroundColor:'transparent', padding:"5px 0"}}
                 />
             </Space>
         </Calendar>

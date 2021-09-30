@@ -5,10 +5,13 @@ export const Container = styled.div`
     max-width: ${value=>value.maxWidth};
     padding: ${value=>value.padding ? value.padding : '10px'};
     margin:${value=>value.margin};
+    margin-bottom: ${a=>a.marginBottom};
     box-shadow: ${value=>value.boxShadow};
     text-align: ${value=>value.textAlign};
     background: ${value=>value.backgroundColor};
     position:${value=>value.position};
+    bottom:${a=>a.bottom};
+    top:${a=>a.top};
     z-index:${value=>value.zIndex};
     /* background-color:red; */
 `

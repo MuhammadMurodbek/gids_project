@@ -1,5 +1,5 @@
 import styled from "styled-components"
-
+import {mainGreen} from "../../../styles/global/colors"
 export const Wrapper = styled.div`
     width:${value=>value.width ? value.width : '100%'};
     height: auto;
@@ -19,6 +19,9 @@ export const Wrapper = styled.div`
     .sc-dFJtaz.HHlKl{
         svg{
             width:40px;
+            path{
+                color:${mainGreen};
+            }
         }
     }
     .sc-fbNZge.eDujWm{
