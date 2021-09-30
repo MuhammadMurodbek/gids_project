@@ -17,6 +17,7 @@ import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -40,7 +41,9 @@ export default function Index() {
                             <div className="container-2-1">
                                 <Title> O'z shahringizda <TextColor>Tarjimon</TextColor>  yoki <TextColor>Git</TextColor> sifatida ro'yxatdan o'ting</Title>
                                 <FlexContainer width="370px" justifyContent="space-between">
-                                    <Button type="outlined">Ro'yhatdan o'tish</Button>
+                                   <Link to="/auth"> 
+                                   <Button type="outlined">Ro'yhatdan o'tish</Button>
+                                   </Link>
                                 </FlexContainer>
                             </div>
                         </Grid>
@@ -146,7 +149,9 @@ export default function Index() {
                     <div className="application-last">
                         <TextTitle width="50%" left="auto" right="auto" bottom="40px">Xoziroq ro’yhattan o’ting, ma’lumotlaringizni to’ldiring va o’z karyerangizni boshlang!</TextTitle>
                         <FlexContainer width="380px" margin="0 auto" alignItems="center" justifyContent="center">
-                            <Button className="button-s">Ariza qoldirish</Button>
+                           <Link to="/application-form"> 
+                                <Button className="button-s">Ariza qoldirish</Button>
+                           </Link>
                         </FlexContainer>
                     </div>
                 </ContainerLast>
