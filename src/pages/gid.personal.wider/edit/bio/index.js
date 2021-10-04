@@ -9,6 +9,7 @@ import SelectLabeled from "../../../../components/molecules/select.labeled"
 import { Container } from '../../../../styles/container/index.style'
 import TextArea from "../../../../components/molecules/area.labeled"
 import { TextTitle } from '../../../../styles/textTitle/index.style'
+import GroupImageUpload from "../../../../components/templates/group.image.upload"
 const Index = () => {
     return (
         <Wrapper>
@@ -39,7 +40,8 @@ const Index = () => {
             </Container>
             <Container padding="10px 0">
                 <TextTitle font="16px" align="left" top="15px">Sertifikat va diplomlaringiz bo‘lsa shu yerga yuklang</TextTitle>
-                <Grid container spacing={1}>
+                <GroupImageUpload/>
+                {/* <Grid container spacing={1}>
                     <Grid item xs={12} sm={6} md={3}>
                         <ImageUpload width="100%" height="230px" radius="1px"/>
                     </Grid>
@@ -52,7 +54,7 @@ const Index = () => {
                     <Grid item xs={12} sm={6} md={3}>
                         <ImageUpload width="100%" height="230px" radius="1px"/>
                     </Grid>
-                </Grid>
+                </Grid> */}
             </Container>
         </Wrapper>
     )
