@@ -27,7 +27,9 @@ export default class Example extends React.Component {
   render() {
     return (
       <div style={{textAlign:'center'}}>
-        <div style={{fontWeight:'bold', fontSize:'15px', margin:"10px 0", transform: 'translateX(-10px)'}}>Gid\Tarjimonning band kunlari</div>
+        {
+          this.props.title === "no" ? null:<div style={{fontWeight:'bold', fontSize:'15px', margin:"10px 0", transform: 'translateX(-10px)'}}>Gid\Tarjimonning band kunlari</div>
+        }
         <DayPicker
           selectedDays={this.state.selectedDays}
           onDayClick={this.handleDayClick}
