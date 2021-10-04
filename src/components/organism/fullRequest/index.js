@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Wrapper } from './style'
+import { Link } from 'react-router-dom'
 import { Grid } from '@material-ui/core';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import ImageContainer from "../../../components/molecules/img.container"
@@ -12,20 +13,34 @@ import odamlar from '../../../assets/img/request/odamlar.svg';
 import Button from "../../../components/atom/button";
 import til from '../../../assets/img/request/til.svg';
 import imgpen from '../../../assets/img/request/pen#fff.svg';
-import ImgContainer from "../../../components/molecules/img.container"
+import ImgContainer from "../../../components/molecules/img.container";
+import CloseIcon from '@material-ui/icons/Close';
+import Modal from 'react-awesome-modal';
 
-export default function index(props) {
+
+export default function Index(props) {
+
+    const [state, setState] = useState(false);
+    function openModal() {
+        setState(true);
+    }
+    function closeModal() {
+        setState(false)
+    }
+
 
     const { btnText, url } = props
     return (
         <Wrapper>
+
+
             <Grid container spacing={1} direction="row" justifyContent="center" className="freque">
                 <Grid className="gridTitle" item md={4}>
                     <b className="idb">Id: </b>
                     <b className="idb">#071364754</b>
                 </Grid>
                 <Grid className="gridTitle2" item md={6}>
-                    <p className="comback"> <ArrowBackIcon className="arrole" />  arizlar ro’yhatiga qaytish</p>
+                    <Link to="/request" className="comback"> <ArrowBackIcon className="arrole" />  arizlar ro’yhatiga qaytish</Link>
                 </Grid>
             </Grid>
 
@@ -67,7 +82,7 @@ export default function index(props) {
                         <b>Odamlar soni: </b>
                         <p>4 kishi</p>
                     </div>
-                    <Button type="button" className="btnRequest">
+                    <Button onClick={openModal} type="button" className="btnRequest">
                         {btnText}
                     </Button>
                 </Grid>
@@ -86,6 +101,27 @@ export default function index(props) {
                     <p className="f-sana"> 23.06.21</p>
                 </Grid>
             </Grid>
+
+            <section>
+                <Modal
+                    visible={state}
+                    width="900"
+                    height="450"
+                    effect="fadeInUp"
+                    onClickAway={closeModal}>
+                    <div className="modaldiv">
+                        <div className="closebtn">
+                            <CloseIcon className="pointx" onClick={closeModal} />
+                        </div>
+                        <h1 className="modaltitle">Xabaringizni yozing</h1>
+                        
+
+                    </div>
+                </Modal>
+            </section>
+
+
+
         </Wrapper>
     )
 }

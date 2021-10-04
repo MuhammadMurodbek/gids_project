@@ -13,7 +13,7 @@ const Index = () => {
                 <TitleContainer>
                     <Grid container spacing={5}>
                         <Grid item xs={6}>Kontaktlar</Grid>
-                        <Grid item xs={6}>Parolni yangilash</Grid>
+                        <Grid item xs={6}>Parolni o'zgartirish</Grid>
                     </Grid>
                 </TitleContainer>
                 <Container padding="20px 40px">

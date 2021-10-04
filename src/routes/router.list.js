@@ -78,7 +78,7 @@ export const routes = [
         component:ListRouter.Pay
     },
     {
-        url:'reklama',
+        url:'/reklama',
         component:ListRouter.Reklama
     }
     

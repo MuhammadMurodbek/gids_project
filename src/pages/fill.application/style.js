@@ -8,6 +8,26 @@ export const Wrapper = styled.form`
     .wrap-grid{
         margin:20px 0;
     }
+
+    .modaldiv{
+        padding: 40px;
+        padding-top: 10px;
+    }   
+    .closebtn{
+        display: flex;
+        justify-content: flex-end;
+        padding:10px ;
+    }
+    .pointx{
+        cursor: pointer;
+    }
+    .modaltitle{
+         color:#36BF76;
+         font-style: normal;
+         font-weight: bold;
+         font-size: 32px;
+         line-height: 120%;
+    }
 `
 export const Title = styled.div`
     width: 100%;

@@ -108,7 +108,7 @@ const Index = () => {
                                         <div className="title-container">Andijon</div>
                                         <a href="/cities">
                                             <ImgContainer src={buttonImage} />
-                                        </a>
+                                 ``       </a>
                                     </FlexContainer>
                                 </div>
                             </Paper>

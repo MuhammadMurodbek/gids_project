@@ -78,4 +78,20 @@ export const Wrapper = styled.div`
         font-size: 13px !important;
         color:#717171 !important;
     }
+
+            /* modal */
+ 
+    .closebtn{
+        display: flex;
+        justify-content: flex-end;
+        padding:10px ;
+    }
+    .pointx{
+        cursor: pointer;
+    }
+    .modaltitle{
+        text-align: center;
+        color: black;
+        font-weight: 600;
+    }
  `

@@ -1,7 +1,7 @@
 import React from 'react'
 import {FooterWrapper} from "./index.style"
 import {FlexContainer} from "../../../styles/flex.container"
-import {useLocation} from "react-router-dom"
+import {useLocation, Link} from "react-router-dom"
 import tg from '../../../assets/img/footer/tg.svg'
 import f from '../../../assets/img/footer/f.svg'
 import i from '../../../assets/img/footer/i.svg'
@@ -20,25 +20,25 @@ const Index = () => {
                     <div className="flex-items">
                         <span>BIZNING SERVIS</span>
                         <ul>
-                            <li><a href="/gids"> Gid yoki tarjimonlik tanlash</a></li>
-                            <li><a href="/forgits"> Gid yoki tarjimonlar uchun</a></li>
-                            <li><a href="/about"> Platforma haqida</a></li>
-                            <li><a href="/blog"> Blog</a></li>
+                            <li><Link to="/gids"> Gid yoki tarjimonlik tanlash</Link></li>
+                            <li><Link to="/forgits"> Gid yoki tarjimonlar uchun</Link></li>
+                            <li><Link to="/about"> Platforma haqida</Link></li>
+                            <li><Link to="/blog"> Blog</Link></li>
                         </ul>
                     </div>
                     <div className="flex-items">
                         <span>KONTAKTLARIMIZ</span>
                         <ul>
-                            <li><a href="/l">salom@git.uz</a></li>
-                            <li><a href="/l">+998 91 555 44 33</a> </li>
-                            <li><a href="/connect">Savol jo'natish</a> </li>
+                            <li><Link to="/l">salom@git.uz</Link></li>
+                            <li><Link to="/l">+998 91 555 44 33</Link> </li>
+                            <li><Link to="/connect">Savol jo'natish</Link> </li>
                         </ul>
                     </div>
                     <div className="flex-items">
                         <span>HUQUQIY MA'LUMOTLAR</span>
                         <ul>
-                            <li><a href="/p"> Foydalanish shartlari</a> </li>
-                            <li><a href="/p"> Maxfiylik siyosati va cookie siyosati</a> </li>
+                            <li><Link to="/p"> Foydalanish shartlari</Link> </li>
+                            <li><Link to="/p"> Maxfiylik siyosati va cookie siyosati</Link> </li>
                         </ul>
                     </div>
                 </FlexContainer>
@@ -49,9 +49,9 @@ const Index = () => {
                     className="second-container"
                     style={(location.pathname === "/auth" || location.pathname==="/auth/verify") ? {display:"none"}:null} 
                 >
-                    <span><a href="/sd"><img src={tg} alt="tg" /></a></span>
-                    <span><a href="/sd"><img src={f}  alt="f" /></a></span>
-                    <span><a href="/sd"><img src={i}  alt="i" /></a></span>
+                    <span><Link to="/sd"><img src={tg} alt="tg" /></Link></span>
+                    <span><Link to="/sd"><img src={f}  alt="f" /></Link></span>
+                    <span><Link to="/sd"><img src={i}  alt="i" /></Link></span>
                 </FlexContainer>
                 <div className="footer-bottom-comp">
                     <span>Copyright 2021 Gits.uz - All rights reserved.</span>

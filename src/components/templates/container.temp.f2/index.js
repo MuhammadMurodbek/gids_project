@@ -2,6 +2,8 @@ import React from 'react'
 import Button from '../../atom/button'
 import ContainerMap from "../../organism/container.f2"
 import {Wrapper, ButtonWrapper} from "./style"
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
+
 const Index = () => {
     return (
         <Wrapper>
@@ -12,7 +14,7 @@ const Index = () => {
             <ContainerMap/>
             <ContainerMap/>
             <ButtonWrapper>
-                <Button type="outlined"> Davomi {'>'}</Button>
+                <Button type="outlined" className="arrow"> Davomi <ArrowForwardIcon/>  </Button>
             </ButtonWrapper>
         </Wrapper>
     )

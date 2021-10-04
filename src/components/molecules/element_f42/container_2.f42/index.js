@@ -8,14 +8,14 @@ const Index = () => {
         <Wrapper>
             <Title text="Men haqimda:"/>
             <TextWrapper>
-                <Text title="Bitirgan institutim:" text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus, eligendi!"/>
-                <Text title="Yili:" text="2021"/>
-                <Text title="Mutaxxasislik:" text="Tarjimon"/>
-                <Text title="Ish tajribam:" text="4 yil"/>
-                <Text title="Ish joyim:" text="Hiltom hotel"/>
-                <Text title="Ish joyim:" text="Hiltom hotel"/>
-                <Text title="Lavozimim:" text="Manager"/>
-                <Text title="Ish vaqtim:" text="10:00-18:00"/>
+                <Text title=" Bitirgan institutim:" text=" Jahon Tillar Universiteti"/><br/>
+                <Text title="Yili:" text=" 2021"/><br/>
+                <Text title="Mutaxxasislik:" text=" Tarjimon"/><br/>
+                <Text title="Ish tajribam:" text=" 4 yil"/><br/>
+                <Text title="Ish joyim:" text=" Hiltom hotel"/><br/>
+                <Text title="Ish joyim:" text=" Hiltom hotel"/><br/>
+                <Text title="Lavozimim:" text=" Manager"/><br/>
+                <Text title="Ish vaqtim:" text=" 10:00-18:00"/><br/>
             </TextWrapper>
         </Wrapper>
     )
