@@ -27,4 +27,11 @@ export const Wrapper = styled.div`
         margin-top:10px;
     }
 
+    .MuiFormGroup-root.MuiFormGroup-row{
+        flex-direction: column;
+        padding-left: 6px;
+        position: relative;
+        top: -11px;
+    }
+
 `

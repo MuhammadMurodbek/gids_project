@@ -5,7 +5,7 @@ import Selection from "./select.with.title"
 import CalendarComponent from "./data.with.title"
 import CheckBoxContainer from "./checkbox.width.title"
 import Button from "./button.component"
-
+import DoubleRadio from "../molecules/double.radio.labeled"
 const Index = () => {
     return (
         <Wrapper width="350px">
@@ -15,7 +15,7 @@ const Index = () => {
             <Selection title="Shahar" placeholder="Shahar kiriting"/>
             <CalendarComponent title="Sana" />
             <CalendarComponent/>
-            <RadioGroup/>  
+            <DoubleRadio name1="Onlayn" name2="Barchasi"/>
             <Selection title="Til"/>
             <CheckBoxContainer name1="Erkak" name2="Ayol"/>
             <div className="button-wrapper">

@@ -16,5 +16,9 @@ export const Wrapper = styled.div`
     .first{
         margin-right: 60px;
     }
-
+    .double_check{
+        /* display: inline-block; */
+        /* position:relative; */
+        /* top:20px; left:-30px; */
+    }
 `
