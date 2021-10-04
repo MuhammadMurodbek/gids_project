@@ -1,13 +1,27 @@
 import React from 'react'
-import {Wrapper} from "./style"
-import {shadow} from "../../../styles/global/colors"
+import {Wrapper,DayPickerWrapper, ButtonWrapper} from "./style"
 import { Container } from '../../../styles/container/index.style'
-import FormContainer from "../../../components/templates/edit.form.f15"
+import DayPicker from "../../../components/molecules/daypicker"
+import RemoveCircleOutlineIcon from '../../../assets/img/gid-per-wide-calendar/ban.png';
+import CheckCircleOutlineIcon from '../../../assets/img/gid-per-wide-calendar/save.png';
+import { Grid } from '@mui/material'
 const Index = () => {
     return (
         <Wrapper>
-            <Container padding="0" boxShadow={shadow} className="container4">
-                <FormContainer/>
+            <Container width="600px" margin="0 auto" padding="0" className="container4" textAlign="center">
+                <Grid container spacing={0} justifyContent="center" alignItems="center">
+                    <Grid item xs={12} md={6}>
+                        <DayPickerWrapper>
+                            <DayPicker title="no"/>
+                        </DayPickerWrapper>
+                    </Grid>
+                    <Grid item xs={12} md={6}>
+                        <ButtonWrapper>
+                            <button><img src={RemoveCircleOutlineIcon} alt="a"/> &nbsp;&nbsp; Band qilish uchun</button>
+                            <button><img src={CheckCircleOutlineIcon} alt="d"/> &nbsp;&nbsp; Bosh qilish uchun</button>
+                        </ButtonWrapper>
+                    </Grid>
+                </Grid>
             </Container>
         </Wrapper>
     )

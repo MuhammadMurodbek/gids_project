@@ -2,7 +2,7 @@ import React from 'react'
 import { FlexContainer } from '../../../styles/flex.container'
 import {Container} from "../../../styles/container/index.style"
 import {WrapperContainer, ContainerBottom, Wrapper} from "./style"
-import ImageGallery from "../../molecules/element_f42/image.gallery.f42"
+import ImageGallery from "../../molecules/element_f42/Gallery"
 import ImageContainer from "../../molecules/img.container"
 import InfoBtn from "../../molecules/info.f42"
 import RoundImage from "../../../assets/img/choosegid/round.svg"

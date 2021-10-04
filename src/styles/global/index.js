@@ -50,7 +50,7 @@ const GlobalStyle = createGlobalStyle`
   .border-div{
     margin:0 !important;
   }
-
+  
 `;
  
 export default GlobalStyle;

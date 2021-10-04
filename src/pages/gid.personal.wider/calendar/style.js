@@ -11,4 +11,31 @@ export const Wrapper = styled.div`
         position:relative;
         z-index:10;
     }
+    button{
+        outline: none;
+        border: none;
+        background-color:transparent;
+        cursor:pointer;
+    }
+`
+export const DayPickerWrapper = styled.div`
+    /* width: auto; */
+    display: inline-block;
+    /* margin: 10px auto; */
+    margin: 10px 0;
+    margin-left: auto;
+    box-shadow: 0px 8px 16px 0px #00000014;
+    /* box-shadow: 5px 5px 15px -10px #42333399; */
+`
+export const ButtonWrapper = styled.div`
+    display: flex;
+    justify-content: center;
+    gap:10px;
+    flex-direction: column;
+
+    @media (max-width: 955px) {
+        flex-direction:row;
+        margin-top:30px;
+    }
+    /* margin-right: auto; */
 `
