@@ -1,14 +1,10 @@
 import React from 'react';
 import {Wrapper} from './style';
-import Input from '../../../../components/atom/input.second';
-
+import GidPage from "./gid.page"
 const Index = () => {
     return (
         <Wrapper>
-           <div className="narxlar">
-                <p>Bir kunlik xizmatddddd narxi</p>
-                <Input width="90px" />
-           </div>
+            <GidPage/>
         </Wrapper>
     )
 }

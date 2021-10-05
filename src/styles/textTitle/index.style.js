@@ -10,5 +10,10 @@ export const TextTitle = styled.div`
     margin-bottom: ${value=>value.bottom};
     margin-left: ${value=>value.left};
     margin-right: ${value=>value.right};
+    position:${a=>a.position};
+    top: ${a=>a.p_top};
+    bottom: ${a=>a.p_bottom};
+    right: ${a=>a.p_right};
+    left: ${a=>a.p_left};
     color:${value=>value.color ? value.color : '#000'};
 `
