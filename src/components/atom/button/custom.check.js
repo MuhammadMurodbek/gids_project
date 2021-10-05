@@ -1,12 +1,12 @@
 import React from 'react'
 import Button from "."
-import AddIcon from '@material-ui/icons/Add';
+import SaveIcon from "../../../assets/img/gid-per-wide-calendar/save.png"
 import styled from "styled-components"
 const CustomAdd = (props) => {
     const {positionEffect} = props
     return (
         <Wrapper {...positionEffect}>
-            <Button {...props}><AddIcon style={{marginTop:5}}/></Button>
+            <Button {...props} type="outlined"><img src={SaveIcon} alt="s"/></Button>
         </Wrapper>
     )
 }
@@ -19,8 +19,8 @@ export const Wrapper = styled.div`
     bottom: ${alt=>alt.bottom};
     right: ${alt=>alt.right};
     left: ${alt=>alt.left};
-    .sc-bkzYnD.fCSNeF{
-        padding:8px 13px;
+    .sc-bkzYnD.bqWjhY{
+        padding:0;
         border:none;
     }
 `
