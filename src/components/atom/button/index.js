@@ -1,7 +1,7 @@
 import React from 'react'
 import {Button, ButtonWrapper} from "./index.style"
 import Ripples from "react-ripples"
-import  Link  from 'react-router-dom'
+// import  Link  from 'react-router-dom'
 
 const Index = (props) => {
     return (
