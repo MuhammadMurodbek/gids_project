@@ -4,7 +4,7 @@ import {Container} from "../../../../../styles/container/index.style"
 import PriceCurrency from "./price.currency"
 import SelectLabel from '../../../../../components/molecules/select.labeled'
 import { Grid } from '@mui/material';
-import CheckButton from "../../../../../components/atom/button/custom.check"
+import RemoveButton from "../../../../../components/atom/button/custom.remove"
 import AddButton from "../../../../../components/atom/button/custom.add"
 import Button from "../../../../../components/atom/button"
 
@@ -17,7 +17,7 @@ const Index = () => {
                     <Grid alignSelf="center" justifySelf="center" item xs={12} md={4} lg={3}><PriceCurrency title="Bir soatlik xizmat narxi"/></Grid>
                     <Grid alignSelf="center" justifySelf="center" item xs={12} md={4} lg={3}><PriceCurrency title="Bir soatlik xizmat narxi"/></Grid>
                     <Grid alignSelf="center" justifySelf="center" item xs={12} md={4} lg={2}><SelectLabel width="100%" label="Kuniga necha soat" placeholder="24"/></Grid>
-                    <Grid alignSelf="flex-end" justifySelf="flex-start" item xs={12} md={1} lg={1}><CheckButton type="outliled" positionEffect={{position:'relative',top:"3px"}}/></Grid>
+                    <Grid alignSelf="flex-end" justifySelf="flex-start" item xs={12} md={1} lg={1}><RemoveButton/></Grid>
                </Grid>
            </Container>
            <Container>
