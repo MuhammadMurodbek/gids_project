@@ -15,7 +15,7 @@ import Article from '../pages/article';
 import AnsverMyapp from '../pages/ansverMyapplication';
 import Blog from '../pages/blog';
 import Advertising from '../pages/advertising';
- 
+import ResetPassword from "../pages/auth/recover"
 import GidPersonalWider from "../pages/gid.personal.wider";
 import Pay from '../pages/gid.personal.wider/reklama.pay';
 import Reklama from '../pages/gid.personal.wider/reklama';
@@ -43,4 +43,5 @@ export {
     GidPersonalWider,
     Pay,
     Reklama,
+    ResetPassword,
 }

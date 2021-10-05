@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import {mainGreen} from "../../../styles/global/colors"
 export const Wrapper = styled.div`
     width: 100%;
     min-height: 80vh;
@@ -31,4 +32,19 @@ export const Container = styled.div`
 `
 export const Authorization = styled.div`
     /* background-color:green; */
+    .link{
+        color: ${mainGreen};
+        font-size:12px;
+        /* text-decoration:line; */
+        /* margin-left: auto; */
+        /* background-color:red; */
+        /* width:100%; */
+        text-align:right;
+        padding-right: 10px;
+
+        &:hover {
+            text-decoration: underline;
+        }
+        
+    }
 `
