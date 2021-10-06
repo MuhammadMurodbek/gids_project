@@ -2,8 +2,7 @@ import React from 'react'
 import {ImgWrapper} from "./index.styled"
 const Index = (props) => {
     return (
-        <ImgWrapper width={props.width} height={props.height} radius={props.radius}
-         align={props.align} margin={props.margin}>
+        <ImgWrapper width={props.width} height={props.height} radius={props.radius} align={props.align} margin={props.margin} media={props.m_width}>
            <img src={props.src} alt="alt" style={{verticalAlign: 'middle'}}/> 
         </ImgWrapper>
     )

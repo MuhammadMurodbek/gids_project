@@ -9,6 +9,11 @@ export const FlexContainer = styled.div`
     justify-content: ${value=>value.justifyContent};
     flex-direction: ${value=>value.flexDirection ? value.flexDirection:'row'};
     margin: ${value=>value.margin};
+    padding: ${value=>value.padding};
     gap: ${value=>value.gap};
     flex-wrap: ${value=>value.flexWrap};
+
+    @media (max-width:${value=>value.m_width}){
+        display: ${value=>value.m_display};
+    }
 `

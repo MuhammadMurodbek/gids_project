@@ -11,4 +11,13 @@ export const ImgWrapper = styled.div`
         border-radius: ${value=>value.radius ? value.radius : "none"};
         margin:${value=>value.margin ? value.margin : "0"}
     }
+    @media (max-width:${a=>a.media}){
+        width: 320px !important;
+        /* background-color: red; */
+        /* margin: 0 auto; */
+        img{
+            width: 100% !important;
+        }
+    }
+   
 `

@@ -22,19 +22,25 @@ import buttonImage from "../../assets/img/container_main_page/Button.svg"
 import { Paper } from '@material-ui/core';
 import SliderComponent from "./external/slider"
 import {Link} from 'react-router-dom'
+import Box from "@material-ui/core/Box";
+
 const Index = () => {
+    const media = {
+        m_width:"533px",
+
+    }
     return (
         <>
             <WrapperAll>
                 <ComponentOne>
                     <Grid container spacing={1}>
-                        <Grid item md={4} sm={12}>
+                        <Grid item md={4} sm={12} component={Box} display={{xs:"none", sm: "none", md: "inline"}}>
                             <ExtSearch />
                         </Grid>
                         <Grid item md={8} sm={12}>
                             <div className="right-part">
                                 <div>Dunyo bo'ylab ishonchli gidlar va tarjimonlarni taklif qilamiz</div>
-                                <img src={mainPicture} alt="guvd" />
+                                <img src={mainPicture} alt="guvd"/>
                             </div>
                         </Grid>
                     </Grid>
@@ -59,12 +65,12 @@ const Index = () => {
                             </div>
                         </Grid>
                         <Grid item md={6} sm={12}>
-                            <ImgContainer src={imageSecond} width="500px" />
+                            <ImgContainer {...media} src={imageSecond} width="500px" />
                         </Grid>
                     </Grid>
                     <Grid container spacing={1}>
                         <Grid item md={6} sm={12}>
-                            <ImgContainer src={imageThird} width="500px" />
+                            <ImgContainer {...media} src={imageThird} width="500px" />
                         </Grid>
                         <Grid item md={6} sm={12}>
                             <div className="container-2-1">

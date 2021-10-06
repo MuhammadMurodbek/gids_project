@@ -44,6 +44,16 @@ export const ComponentOne = styled.div`
             font-weight: 600;
             text-align: center;
             line-height: 1.4em;
+
+            @media (max-width: 1133px){
+                font-size:24px;
+            }
+            @media (max-width: 1045px){
+                /* background-color:red; */
+                margin-top: 40px;
+                width:100%;
+                padding:0 20px;
+            }
         }
 
         img{
@@ -51,6 +61,13 @@ export const ComponentOne = styled.div`
             width: 760px;
             margin-top:65px;
             object-fit: cover;
+
+            @media (max-width: 1256px){
+                width:460px;
+            }
+            @media (max-width: 540px){
+                width:360px;
+            }
         }
     }
 `
