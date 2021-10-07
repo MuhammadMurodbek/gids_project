@@ -54,14 +54,21 @@ export const ComponentOne = styled.div`
                 width:100%;
                 padding:0 20px;
             }
+            @media (max-width:500px){
+                font-size: 20px;
+            }
         }
 
         img{
-            min-width:400px;
+            /* min-width:400px; */
             width: 760px;
             margin-top:65px;
             object-fit: cover;
 
+            @media (max-width: 444px){
+                width:280px !important;
+                /* background-color:red; */
+            }
             @media (max-width: 1256px){
                 width:460px;
             }
@@ -82,6 +89,18 @@ export const ComponentTwo = styled.div`
         position:relative;
         top:50%;
         transform:translateY(-50%);
+        a{
+            width:200px;
+        }
+        @media (max-width: 447px){
+            width:320px;
+            padding: 20px 0;
+            /* text-align:center; */
+            p{
+                width:320px;
+                font-size:14px;
+            }
+        }
     }
     .title-second-main-container{
         width:100%;
@@ -89,6 +108,14 @@ export const ComponentTwo = styled.div`
         font-size:28px;
         font-weight:700;
         text-align:center;
+
+        @media (max-width: 1045px){
+            font-size:24px;
+        }
+        @media (max-width:500px){
+            font-size: 20px;
+        }
+
     }
     .title-second-main-container-text{
         width:100%;
@@ -96,6 +123,17 @@ export const ComponentTwo = styled.div`
         font-size:22px;
         font-weight:600;
         text-align:left;
+
+        /* @media (max-width: 1045px){
+            font-size:24px;
+        } */
+        @media (max-width:500px){
+            font-size: 16px;
+        }
+        /* p{
+            background-color: red;
+        } */
+        
     }
 
 `

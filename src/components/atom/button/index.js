@@ -5,9 +5,7 @@ import Ripples from "react-ripples"
 
 const Index = (props) => {
     return (
-        <ButtonWrapper width={props.width} margin={props.margin}
-        to={props.url}
-        >
+        <ButtonWrapper width={props.width} margin={props.margin} to={props.url} m_width_btn={props.m_width_btn} m_m_width_btn={props.m_m_width_btn}>
             <Ripples 
                 color={props.type === "outlined" ? "rgba(0,0,0,0.1)":"rgba(255,255,255,0.5)"} 
                 during={1000}

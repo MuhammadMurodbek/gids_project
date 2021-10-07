@@ -14,6 +14,8 @@ export const FlexContainer = styled.div`
     flex-wrap: ${value=>value.flexWrap};
 
     @media (max-width:${value=>value.m_width}){
+        width: ${value=>value.m_m_width};
         display: ${value=>value.m_display};
+        flex-direction: ${value=>value.m_direction};
     }
 `

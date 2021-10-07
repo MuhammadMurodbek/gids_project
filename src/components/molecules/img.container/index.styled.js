@@ -12,12 +12,18 @@ export const ImgWrapper = styled.div`
         margin:${value=>value.margin ? value.margin : "0"}
     }
     @media (max-width:${a=>a.media}){
-        width: 320px !important;
-        /* background-color: red; */
+        display:none;
+        /* position:relative;
+        left:40px;
+        width: 300px !important;
+        
+        text-align: center;
+        margin:0 auto;
+        background-color: red;
         /* margin: 0 auto; */
-        img{
+        /* img{
             width: 100% !important;
-        }
+        }  */
     }
    
 `

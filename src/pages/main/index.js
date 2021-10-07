@@ -27,7 +27,17 @@ import Box from "@material-ui/core/Box";
 const Index = () => {
     const media = {
         m_width:"533px",
-
+    }
+    const mediaFlexButtons = {
+        m_width:"455px",
+        m_m_width:'300px',
+        m_direction:"column",
+    }
+    const mediaBtn = {
+        m_width_btn:"456px",
+        m_m_width_btn:"250px",
+        m_m_font_btn:"14px",
+        m_m_padding:"12px 28px"
     }
     return (
         <>
@@ -53,13 +63,12 @@ const Index = () => {
                             <div className="container-2-1">
                                 <div className="title-second-main-container-text">Tadbirkorlar uchun</div>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam modi provident dignissimos accusamus optio aliquam assumenda omnis nisi quae fuga consequatur, numquam recusandae accusantium dolore, ipsum iure suscipit sed quia?</p>
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga, minima.</p>
-                                <FlexContainer width="370px" justifyContent="space-between">
-                                    <Link to="/application-form">
-                                        <Button   >Ariza qoldirish</Button>
+                                <FlexContainer width="370px" {...mediaFlexButtons} justifyContent="space-between">
+                                    <Link to="/application-form" >
+                                        <Button {...mediaBtn}>Ariza qoldirish</Button>
                                     </Link>
                                    <Link to="/gids">
-                                        <Button type="outlined">Gidni tanlash</Button>
+                                        <Button {...mediaBtn} type="outlined">Gidni tanlash</Button>
                                    </Link>
                                 </FlexContainer>
                             </div>
@@ -76,10 +85,9 @@ const Index = () => {
                             <div className="container-2-1">
                                 <div className="title-second-main-container-text">Gidlar uchun</div>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam modi provident dignissimos accusamus optio aliquam assumenda omnis nisi quae fuga consequatur, numquam recusandae accusantium dolore, ipsum iure suscipit sed quia?</p>
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga, minima.</p>
                                 <div>
                                     <Link to="/auth">
-                                        <Button>Ro'yxatdan o'tish</Button>
+                                        <Button {...mediaBtn}>Ro'yxatdan o'tish</Button>
                                     </Link>
                                 </div>
                             </div>

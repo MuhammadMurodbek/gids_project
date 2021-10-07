@@ -33,3 +33,20 @@ export const styleContainer = {
     height:'auto', 
     margin:"0 auto" 
 }
+export const TimeLineWrapper = styled.div`
+    
+    @media (max-width: 1045px){
+        .timeline-title.title{
+            font-size:24px;
+        }
+    }
+    @media (max-width:500px){
+        .timeline-title.title{
+            font-size: 20px;
+        }
+        .wrapper-text{
+            font-size: 14px !important; 
+        }
+    }
+    
+`
