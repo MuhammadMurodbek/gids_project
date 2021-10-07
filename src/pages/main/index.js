@@ -39,6 +39,19 @@ const Index = () => {
         m_m_font_btn:"14px",
         m_m_padding:"12px 28px"
     }
+
+    const mediaTextField = {
+        m_width:"1045px",
+        m_font_size:"24px",
+    }
+    const mediaTextFieldSec = {
+        m_width_sec:"500px",
+        m_font_size_sec:"20px",
+    }
+    const mediaContainer = {
+        m_width:"500px",
+        m_padding:"10px 0",
+    }
     return (
         <>
             <WrapperAll>
@@ -98,9 +111,35 @@ const Index = () => {
                     <TimeLine />
                 </ComponentThree>
                 <ComponentFour>
-                    <TextTitle top="40px" bottom="60px">Eng ko'p boriladigan shaharlar</TextTitle>
+                    <TextTitle {...mediaTextField} {...mediaTextFieldSec} top="40px" bottom="60px">Eng ko'p boriladigan shaharlar</TextTitle>
                     <Grid container spacing={3}>
-                        <Grid item sm={12} md={4}>
+                        <Grid item xs={12} sm={6} md={4}>
+                            <Paper style={{ overflow: 'hidden' }}>
+                                <div className="container">
+                                    <ImgContainer width="100%" height="270px" src="https://thumbs.dreamstime.com/b/registan-old-public-square-samarkand-uzbekistan-heart-ancient-city-150740312.jpg" />
+                                    <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
+                                        <div className="title-container">Andijon</div>
+                                        <a href="/cities">
+                                            <ImgContainer src={buttonImage} />
+                                        </a>
+                                    </FlexContainer>
+                                </div>
+                            </Paper>
+                        </Grid>
+                        <Grid item xs={12} sm={6} md={4}>
+                            <Paper style={{ overflow: 'hidden' }}>
+                                <div className="container">
+                                    <ImgContainer width="100%" height="270px" src="https://thumbs.dreamstime.com/b/registan-old-public-square-samarkand-uzbekistan-heart-ancient-city-150740312.jpg" />
+                                    <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
+                                        <div className="title-container">Andijon</div>
+                                        <a href="/cities">
+                                            <ImgContainer src={buttonImage} />
+                                        </a>
+                                    </FlexContainer>
+                                </div>
+                            </Paper>
+                        </Grid>
+                        <Grid item xs={12} sm={6} md={4}>
                             <Paper style={{ overflow: 'hidden' }}>
                                 <div className="container">
                                     <ImgContainer width="100%" height="270px" src="https://thumbs.dreamstime.com/b/registan-old-public-square-samarkand-uzbekistan-heart-ancient-city-150740312.jpg" />
@@ -114,36 +153,10 @@ const Index = () => {
                             </Paper>
                         </Grid>
 
-                        <Grid item sm={12} md={4}>
-                            <Paper style={{ overflow: 'hidden' }}>
-                                <div className="container">
-                                    <ImgContainer width="100%" height="270px" src="https://fastly.4sqi.net/img/general/width960/34408156_V8zHq0vay-b9YNJXyr-qkuXYu8T3xKGRehDxJ9YFecA.jpg" />
-                                    <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
-                                        <div className="title-container">Andijon</div>
-                                        <a href="/cities">
-                                            <ImgContainer src={buttonImage} />
-                                 ``       </a>
-                                    </FlexContainer>
-                                </div>
-                            </Paper>
-                        </Grid>
-
-                        <Grid item sm={12} md={4}>
-                            <Paper style={{ overflow: 'hidden' }}>
-                                <div className="container">
-                                    <ImgContainer width="100%" height="270px" src="https://static.scientificamerican.com/sciam/cache/file/4E0744CD-793A-4EF8-B550B54F7F2C4406_source.jpg?w=590&h=800&ACB6A419-81EB-4B9C-B846FD8EBFB16FBE" />
-                                    <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
-                                        <div className="title-container">Andijon</div>
-                                        <a href="/cities">
-                                            <ImgContainer src={buttonImage} />
-                                        </a>
-                                    </FlexContainer>
-                                </div>
-                            </Paper>
-                        </Grid>
+                        
                     </Grid>
                 </ComponentFour>
-                <Container padding="20px">
+                <Container {...mediaContainer} padding="20px">
                     <SliderComponent />
                 </Container>
             </WrapperAll>

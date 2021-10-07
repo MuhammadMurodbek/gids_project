@@ -16,4 +16,11 @@ export const TextTitle = styled.div`
     right: ${a=>a.p_right};
     left: ${a=>a.p_left};
     color:${value=>value.color ? value.color : '#000'};
+
+    @media (max-width: ${a=>a.m_width}){
+        font-size: ${a=>a.m_font_size};
+    }
+    @media (max-width: ${a=>a.m_width_sec}){
+        font-size: ${a=>a.m_font_size_sec};
+    }
 `

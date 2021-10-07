@@ -44,6 +44,16 @@ export const TimeLineWrapper = styled.div`
         .timeline-title.title{
             font-size: 20px;
         }
+        .timeline-part{
+            margin:0;
+            .wrapper-text{
+                width:200px;
+            }
+            p{
+                width:200px;
+                /* background-color: red; */
+            }
+        }
         .wrapper-text{
             font-size: 14px !important; 
         }

@@ -27,6 +27,11 @@ export const WrapperAll = styled.div`
 
 export const ComponentOne = styled.div`
     flex-grow: 1;
+
+    @media (max-width:400px){
+        padding:10px 4px;
+    }
+
     .paper{
         padding: theme.spacing(2);
         text-align: 'center';
@@ -81,6 +86,11 @@ export const ComponentOne = styled.div`
 export const ComponentTwo = styled.div`
     width: 100%;
     padding:10px 20px;
+
+    @media (max-width:400px){
+        padding:10px 4px;
+    }
+
     p{
         margin-bottom: 14px;
     }
@@ -139,6 +149,11 @@ export const ComponentTwo = styled.div`
 `
 export const ComponentThree = styled.div`
     width:100%;
+
+    @media (max-width:400px){
+        padding: 10px 4px;
+    }
+
     .vertical-timeline::before{
         background:#333;
         height:74%;
@@ -183,6 +198,10 @@ export const ComponentThree = styled.div`
 export const ComponentFour = styled.div`
     width: 100%;
     padding:10px 30px;
+    
+    @media (max-width:400px){
+        padding: 10px 4px;
+    }
 
     .container{
         .title-container{
@@ -197,4 +216,8 @@ export const ContainerLast = styled.div`
     margin-top:20px;
     text-align:center;
     background-color: #F2F8F2;
+
+    @media (max-width:400px){
+        padding:10px 4px;
+    }
 `

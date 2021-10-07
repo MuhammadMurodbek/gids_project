@@ -14,4 +14,8 @@ export const Container = styled.div`
     top:${a=>a.top};
     z-index:${value=>value.zIndex};
     /* background-color:red; */
+
+    @media (max-width:${a=>a.m_width}){
+        padding:${a=>a.m_padding};
+    }
 `

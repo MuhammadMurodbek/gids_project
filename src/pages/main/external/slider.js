@@ -44,10 +44,22 @@ const Index = () => {
         nextArrow: <SampleNextArrow />,
         prevArrow: <SamplePrevArrow />
     };
+    const mediaContainer = {
+        m_width:"500px",
+        m_padding:"10px 0",
+    }
+    const mediaTextField = {
+        m_width:"1045px",
+        m_font_size:"24px",
+    }
+    const mediaTextFieldSec = {
+        m_width_sec:"500px",
+        m_font_size_sec:"20px",
+    }
     return (
         <Wrapper>
-            <TextTitle top="50px" bottom="50px">Mijozlarimizning fikrlari</TextTitle>
-            <Container padding="10px 40px" >
+            <TextTitle {...mediaTextField} {...mediaTextFieldSec} top="50px" bottom="50px">Mijozlarimizning fikrlari</TextTitle>
+            <Container {...mediaContainer} padding="10px 40px" >
                 <Slider {...settings} className="slider-component">
                     <SliderContainer>
                         <Grid container spacing={1}>
