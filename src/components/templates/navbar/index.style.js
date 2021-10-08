@@ -18,4 +18,28 @@ export const Navbar = styled.div`
             display:none;
         }
     }
+    
+`
+export const MediaNavbar = styled.div`
+    position: absolute;
+    left:${v=>v.isOpen ? "0":"-100%"};
+    transition: all ease 0.7s;
+    width:100%;
+    height:100vh;
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(12px);
+    z-index: 99;
+    @media (min-width:1256px){
+        display:none;
+    }
+    .btn_close_wrapper{
+        width:100%;
+        text-align: right;
+        button{
+            outline:none;
+            background: transparent;
+            border: none;
+            padding:20px;
+        }
+    }
 `

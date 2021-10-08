@@ -19,8 +19,10 @@ export const TextTitle = styled.div`
 
     @media (max-width: ${a=>a.m_width}){
         font-size: ${a=>a.m_font_size};
+        width:100%;
     }
     @media (max-width: ${a=>a.m_width_sec}){
         font-size: ${a=>a.m_font_size_sec};
+        width:100%;
     }
 `

@@ -9,6 +9,7 @@ import { Link, NavLink } from 'react-router-dom'
 import { navbarMedia, navbarMediaCenter } from "./media"
 import { Turn as Hamburger } from 'hamburger-react'
 import {mainGreen} from "../../../styles/global/colors"
+import MediaNavbar from "./media.navbar"
 const Index = () => {
     const [ isOpen, setOpen ] = useState( false )
     return (
@@ -37,6 +38,7 @@ const Index = () => {
                     </div>
                 </FlexContainer>
             </Navbar>
+            <MediaNavbar isOpen={ isOpen } setOpen={ setOpen}/>
         </>
     )
 }
