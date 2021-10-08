@@ -7,6 +7,11 @@ import f from '../../../assets/img/footer/f.svg'
 import i from '../../../assets/img/footer/i.svg'
 const Index = () => {
     const location = useLocation()
+    const mediaFlexContainer = {
+        m_width:"800px",
+        m_padding:"10px 0",
+        m_textAlign:"center",
+    }
     return (
         <>
             <FooterWrapper padding={(location.pathname === "/auth" || location.pathname==="/auth/verify" || location.pathname==="/reset") ? '0px':"10px 0 0"}>
@@ -15,6 +20,8 @@ const Index = () => {
                     alignItems="flex-start" 
                     justifyContent="space-around" 
                     className="first-container"
+                    flexWrap="wrap"
+                    {...mediaFlexContainer}
                     style={(location.pathname === "/auth" || location.pathname==="/auth/verify" || location.pathname==="/reset") ? {display:"none"}:null}
                 >
                     <div className="flex-items">

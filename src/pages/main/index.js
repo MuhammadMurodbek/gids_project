@@ -27,6 +27,8 @@ import Box from "@material-ui/core/Box";
 const Index = () => {
     const media = {
         m_width:"533px",
+        m_m_width:"300px",
+        m_m_text_align:"center",
     }
     const mediaFlexButtons = {
         m_width:"455px",
@@ -35,7 +37,7 @@ const Index = () => {
     }
     const mediaBtn = {
         m_width_btn:"456px",
-        m_m_width_btn:"250px",
+        m_m_width_btn:"300px",
         m_m_font_btn:"14px",
         m_m_padding:"12px 28px"
     }
@@ -56,11 +58,15 @@ const Index = () => {
         <>
             <WrapperAll>
                 <ComponentOne>
-                    <Grid container spacing={1}>
-                        <Grid item md={4} sm={12} component={Box} display={{xs:"none", sm: "none", md: "inline"}}>
+                    <Grid className="grid_container" container spacing={1}>
+                        <Grid item xs={12} md={4} sm={12} 
+                            component={Box} 
+                            className="grid_container_inner"
+                            // display={{xs:"none", sm: "none", md: "inline"}}
+                        >
                             <ExtSearch />
                         </Grid>
-                        <Grid item md={8} sm={12}>
+                        <Grid item xs={12} md={8} sm={12}>
                             <div className="right-part">
                                 <div>Dunyo bo'ylab ishonchli gidlar va tarjimonlarni taklif qilamiz</div>
                                 <img src={mainPicture} alt="guvd"/>
@@ -71,9 +77,9 @@ const Index = () => {
 
                 <ComponentTwo>
                     <div className="title-second-main-container">Biz nima taklif qilamz</div>
-                    <Grid container spacing={1}>
-                        <Grid item md={6} sm={12}>
-                            <div className="container-2-1">
+                    <Grid container spacing={1} className="grid_container">
+                        <Grid item xs={12} md={6} sm={12}>
+                            <div className="container-2-1 first">
                                 <div className="title-second-main-container-text">Tadbirkorlar uchun</div>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam modi provident dignissimos accusamus optio aliquam assumenda omnis nisi quae fuga consequatur, numquam recusandae accusantium dolore, ipsum iure suscipit sed quia?</p>
                                 <FlexContainer width="370px" {...mediaFlexButtons} justifyContent="space-between">
@@ -86,21 +92,21 @@ const Index = () => {
                                 </FlexContainer>
                             </div>
                         </Grid>
-                        <Grid item md={6} sm={12}>
+                        <Grid item xs={12} md={6} sm={12}>
                             <ImgContainer {...media} src={imageSecond} width="500px" />
                         </Grid>
                     </Grid>
                     <Grid container spacing={1}>
-                        <Grid item md={6} sm={12}>
+                        <Grid item xs={12} md={6} sm={12}>
                             <ImgContainer {...media} src={imageThird} width="500px" />
                         </Grid>
                         <Grid item md={6} sm={12}>
-                            <div className="container-2-1">
+                            <div className="container-2-1 second">
                                 <div className="title-second-main-container-text">Gidlar uchun</div>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam modi provident dignissimos accusamus optio aliquam assumenda omnis nisi quae fuga consequatur, numquam recusandae accusantium dolore, ipsum iure suscipit sed quia?</p>
                                 <div>
                                     <Link to="/auth">
-                                        <Button {...mediaBtn}>Ro'yxatdan o'tish</Button>
+                                        <Button width="300px" {...mediaBtn}>Ro'yxatdan o'tish</Button>
                                     </Link>
                                 </div>
                             </div>
@@ -162,10 +168,10 @@ const Index = () => {
             </WrapperAll>
             <ContainerLast>
                 <div className="application-last">
-                    <TextTitle width="50%" left="auto" right="auto" bottom="40px">Xoziroq o’zingiz uchun Git tanlang yoki shunchaki ariza qoldiring.</TextTitle>
-                    <FlexContainer width="380px" margin="0 auto" alignItems="center" justifyContent="space-between">
-                      <Link to="/application-form"><Button>Ariza qoldirish</Button></Link>
-                       <Link to="/gids"> <Button type="outlined">Gitni tanlash</Button></Link> 
+                    <TextTitle  {...mediaTextField} {...mediaTextFieldSec} width="50%" left="auto" right="auto" bottom="40px">Xoziroq o’zingiz uchun Git tanlang yoki shunchaki ariza qoldiring.</TextTitle>
+                    <FlexContainer {...mediaFlexButtons} width="380px" margin="0 auto" alignItems="center" justifyContent="space-between">
+                      <Link to="/application-form"><Button  {...mediaBtn}>Ariza qoldirish</Button></Link>
+                      <Link to="/gids"> <Button type="outlined"  {...mediaBtn}>Gitni tanlash</Button></Link> 
                     </FlexContainer>
                 </div>
             </ContainerLast>

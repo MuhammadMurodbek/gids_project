@@ -29,6 +29,10 @@ export const FooterWrapper = styled.div`
     }
     .flex-items{
         width: 300px;
+        @media (max-width:600px){
+            width: 100%;
+            margin:10px 0;
+        }
         span{
             font-weight: 700;
             font-size:15px;

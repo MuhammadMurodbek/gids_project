@@ -1,7 +1,7 @@
 import React from 'react'
 import {ImgWrapper} from "./index.styled"
 const Index = (props) => {
-    const {media_height, media_height_value, media_width_value} = props
+    const {media_height, media_height_value, media_width_value, m_m_width, m_m_text_align} = props
     return (
         <ImgWrapper 
             width={props.width} 
@@ -13,6 +13,8 @@ const Index = (props) => {
             media_height={media_height}
             media_height_value={media_height_value}
             media_width_value={media_width_value}
+            m_m_width={m_m_width}
+            m_m_text_align={m_m_text_align}
         >
            <img 
             src={props.src} 
@@ -21,6 +23,7 @@ const Index = (props) => {
             media_height={media_height}
             media_height_value={media_height_value}
             media_width_value={media_width_value}
+            m_m_width={m_m_width}
             /> 
         </ImgWrapper>
     )

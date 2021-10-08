@@ -23,6 +23,14 @@ export const WrapperAll = styled.div`
     .application-last-container{
         background-color: green;
     }
+    @media (max-width: 960px){
+        .grid_container{
+            flex-direction: column-reverse !important;
+        }
+        .grid_container_inner{
+            margin-top:30px;
+        }
+    }
 `;
 
 export const ComponentOne = styled.div`
@@ -90,7 +98,9 @@ export const ComponentTwo = styled.div`
     @media (max-width:400px){
         padding:10px 4px;
     }
-
+    .image_grid_container{
+        background-color:red;
+    }
     p{
         margin-bottom: 14px;
     }
@@ -102,14 +112,13 @@ export const ComponentTwo = styled.div`
         a{
             width:200px;
         }
-        @media (max-width: 447px){
-            width:320px;
-            padding: 20px 0;
-            /* text-align:center; */
-            p{
-                width:320px;
-                font-size:14px;
-            }
+    }
+    .container-2-1.first{
+        @media (max-width:960px){
+            /* background-color:red; */
+            position:relative;
+            top:140px;
+            /* margin-top:50px; */
         }
     }
     .title-second-main-container{

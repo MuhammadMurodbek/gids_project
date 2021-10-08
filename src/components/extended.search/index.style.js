@@ -9,6 +9,10 @@ export const Wrapper = styled.div`
     padding-bottom:25px;
     margin: 25px auto 0;
     box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
+
+    @media (max-width: 960px) {
+        width:100%;
+    }
     
     .title-header{
         width: 100%;
@@ -20,6 +24,11 @@ export const Wrapper = styled.div`
         text-align: center;
         color:#fff;
         background-color: #326A32;
+        @media (max-width: 960px) {
+            color:#326A32;
+            background-color: #EEF7EE;
+            /* width:100%; */
+        }
     }
 
     .button-wrapper{

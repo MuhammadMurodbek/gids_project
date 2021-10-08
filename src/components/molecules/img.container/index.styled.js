@@ -12,7 +12,12 @@ export const ImgWrapper = styled.div`
         margin:${value=>value.margin ? value.margin : "0"}
     }
     @media (max-width:${a=>a.media}){
-        display:none;
+        width: ${a=>a.m_m_width};
+        margin:0 auto;
+        img{
+            width: ${a=>a.m_m_width};
+            height: auto;
+        }
     }
     @media (max-width:${a=>a.media_height}){
         height:${a=>a.media_height_value};

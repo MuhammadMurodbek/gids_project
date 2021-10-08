@@ -20,6 +20,7 @@ export const Button = styled.button`
         width: ${a=>a.m_m_width_btn} !important;
         font-size: ${a=>a.m_m_font_btn} !important;
         padding: ${a=>a.m_m_padding} !important;
+        
     }
 `
 export const ButtonWrapper = styled.div`
@@ -28,6 +29,10 @@ export const ButtonWrapper = styled.div`
     padding:0;
     overflow: hidden;
     border-radius: 4px;
-    margin:${value=>value.margin}
+    margin:${value=>value.margin};
+    @media (max-width: ${a=>a.m_width_btn}){
+        text-align:center;
+    }
+    
     /* box-shadow: 0 0 2px 1px #999; */
 `
