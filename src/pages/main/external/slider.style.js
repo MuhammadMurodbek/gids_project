@@ -11,10 +11,20 @@ export const Wrapper = styled.div`
     .slider-component > div{
         padding: 10px;
     }
+    @media (max-width:600px){
+        .sc-lmoMya.cWarsQ{
+            padding:0;
+        }
+        .slider-component > div{
+        padding: 10px 0;
+        /* background-color:red; */
+    }
+    }
 `
 
 export const SliderContainer = styled.div`
     width: 80% !important;
+    /* background-color:green; */
     max-width:1000px;
     height: 100%;
     position: relative;
@@ -23,6 +33,12 @@ export const SliderContainer = styled.div`
     text-align: center;
     overflow: hidden;
     box-shadow: 5px 6px 10px -7px rgba(0, 0, 0, 0.5);
+
+    @media (min-width:500px){
+        .slick_text{
+            font-size: 14px;
+        }
+    }
 `
 export const stylesBgColor = {
     backgroundColor: 'transparent',

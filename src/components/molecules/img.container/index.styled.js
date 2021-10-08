@@ -13,17 +13,16 @@ export const ImgWrapper = styled.div`
     }
     @media (max-width:${a=>a.media}){
         display:none;
-        /* position:relative;
-        left:40px;
-        width: 300px !important;
-        
-        text-align: center;
-        margin:0 auto;
-        background-color: red;
-        /* margin: 0 auto; */
-        /* img{
-            width: 100% !important;
-        }  */
+    }
+    @media (max-width:${a=>a.media_height}){
+        height:${a=>a.media_height_value};
+        /* width:100% !important; */
+        width:${a=>a.media_width_value} !important;
+        img{
+            /* width:100% !important; */
+            /* width:${a=>a.media_width_value} !important; */
+            height:${a=>a.media_height_value}
+        }
     }
    
 `
