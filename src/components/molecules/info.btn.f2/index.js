@@ -4,10 +4,10 @@ import {WrapperInfoBtn} from "./style"
 import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import Button from "../../atom/button"
-const mediaFlex = {
-    m_m_width:'600px',
-    m_align_items:'right'
-}
+// const mediaFlex = {
+//     m_m_width:'600px',
+//     m_align_items:'right'
+// }
 const mediaButton = {
     m_m_width_btn:'200px',
     m_width_btn:'600px',
