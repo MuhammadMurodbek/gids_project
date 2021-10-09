@@ -18,7 +18,21 @@ export const Navbar = styled.div`
             display:none;
         }
     }
-    
+    .ReactFlagsSelect-module_selectBtn__19wW7{
+        border: none !important;
+        position: relative;
+        top:1.5px;
+
+        .ReactFlagsSelect-module_selectFlag__2q5gC{
+            border-radius: 50%;
+            overflow: hidden;
+
+            svg{
+                transform: scale(1.6);
+                width: 21px;
+            }
+        }
+    }
 `
 export const MediaNavbar = styled.div`
     position: absolute;
@@ -40,6 +54,20 @@ export const MediaNavbar = styled.div`
             background: transparent;
             border: none;
             padding:20px;
+            cursor:pointer;
+        }
+    }
+    .ReactFlagsSelect-module_selectBtn__19wW7{
+        border: none !important;
+
+        .ReactFlagsSelect-module_selectFlag__2q5gC{
+            border-radius: 50%;
+            overflow: hidden;
+
+            svg{
+                transform: scale(1.6);
+                width: 21px;
+            }
         }
     }
 `

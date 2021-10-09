@@ -10,8 +10,10 @@ import { navbarMedia, navbarMediaCenter } from "./media"
 import { Turn as Hamburger } from 'hamburger-react'
 import {mainGreen} from "../../../styles/global/colors"
 import MediaNavbar from "./media.navbar"
+import ReactFlagsSelect from 'react-flags-select';
 const Index = () => {
     const [ isOpen, setOpen ] = useState( false )
+    const [selected, setSelected] = useState('UZ');
     return (
         <>
             <Navbar>
@@ -26,7 +28,14 @@ const Index = () => {
                         <ButtonNavbar title="Ariza qoldirish" url="/application-form" />
                     </FlexContainer>
                     <FlexContainer { ...navbarMedia } width="200px">
-                        <Select width="120px" paddingX="4" backgroundColor="#fff" placeholder="uz" />
+                        <ReactFlagsSelect
+                            // style={{marginTop:5}}
+                            selected={selected}
+                            onSelect={code => setSelected(code)}
+                            countries={[ "UZ", "RU", "US"]}
+                            customLabels={{"US": "en", "UZ":"uz", "RU": "ru"}}
+                        />
+                        {/* <Select width="120px" paddingX="4" backgroundColor="#fff" placeholder="uz" /> */}
                         <FlexContainer width="100%" alignItems="center" justifyContent="center">
                             <NavLink to="/auth" style={ { color: '#333' } }>
                                 <UserOutlined />{ " " }<span>Kirish</span>

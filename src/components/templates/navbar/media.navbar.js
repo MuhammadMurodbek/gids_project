@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {MediaNavbar} from "./index.style"
 import CloseIcon from '@material-ui/icons/Close';
 import { FlexContainer } from "../../../styles/flex.container"
 import ButtonNavbar from "../../molecules/button.navbar"
+import Select from "../../atom/select"
+import ReactFlagsSelect from 'react-flags-select';
+//  import { Us } from 'react-flags-select';
 // import {navbarMediaCenter} from "./media"
 const MediaNavbarContainer = (props) => {
+    const [selected, setSelected] = useState('US');
     const handleClick = () => {
         props.setOpen(false)
     }
@@ -20,6 +24,12 @@ const MediaNavbarContainer = (props) => {
                 <ButtonNavbar title="Gid va tarjimonlar uchun" url="/forgits" />
                 <ButtonNavbar title="Blog" url="/blog" />
                 <ButtonNavbar title="Ariza qoldirish" url="/application-form" />
+                <ReactFlagsSelect
+                    selected={selected}
+                    onSelect={code => setSelected(code)}
+                    countries={[ "UZ", "RU","US"]}
+                    customLabels={{"US": "en", "UZ":"uz", "RU": "ru"}}
+                />
             </FlexContainer>
         </MediaNavbar>
     )
