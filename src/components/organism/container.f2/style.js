@@ -26,4 +26,5 @@ export const WrapperContainer = styled.div`
     .gid-info-personal-text.top{
         margin-top:25px;
     }
+    
 `

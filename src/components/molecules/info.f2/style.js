@@ -6,6 +6,7 @@ export const WrapperInfoF2 = styled.div`
     height:${value=>value.height};
     margin-left:20px;
     margin-top:-20px;
+    /* text-align:left; */
     /* background-color: yellow; */
     .info-item{
         width:100%;
@@ -19,4 +20,5 @@ export const WrapperInfoF2 = styled.div`
             margin-left: 5px;
         }
     }
+    
 `

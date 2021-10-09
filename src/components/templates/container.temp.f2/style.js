@@ -4,7 +4,12 @@ export const Wrapper = styled.div`
     width: 100%;
     height: auto;
     margin-top:15px;
-
+    @media (max-width:600px){
+        .sc-ehSDrC.iuPqWO{
+            /* background-color:red; */
+            margin-right:auto;
+        }
+    }
     .arrow{
         display: flex;
         align-items: center;

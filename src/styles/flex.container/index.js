@@ -19,6 +19,8 @@ export const FlexContainer = styled.div`
         flex-direction: ${value=>value.m_direction};
         padding: ${value=>value.m_padding} !important;
         text-align: ${value=>value.m_textAlign};
+        margin:${a=>a.m_margin};
+        
         /* background-color:red; */
     }
 `

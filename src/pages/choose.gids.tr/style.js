@@ -3,5 +3,11 @@ export const Wrapper = styled.div`
     width: 100%;
     height: auto;
     padding: 10px;
+
+    @media (max-width:962px){
+        .media_grid_flex{
+            flex-direction: column;
+        }
+    }
     
 `

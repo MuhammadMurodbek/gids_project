@@ -6,7 +6,9 @@ import starImg from "../../../assets/img/choosegid/star1.svg"
 import extraImg from "../../../assets/img/choosegid/extra.svg"
 import comment from "../../../assets/img/choosegid/comment.svg"
 import { Grid } from '@material-ui/core'
+
 const Index = () => {
+
     return (
         <WrapperInfoF2> 
             <FlexContainer width="auto" alignItems="center" justifyContent="flex-start" flexDirection="column">
