@@ -20,7 +20,7 @@ export const FlexContainer = styled.div`
         padding: ${value=>value.m_padding} !important;
         text-align: ${value=>value.m_textAlign};
         margin:${a=>a.m_margin};
-        
+        align-items: ${value=>value.m_align_items} !important;
         /* background-color:red; */
     }
 `
