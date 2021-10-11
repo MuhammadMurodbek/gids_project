@@ -13,11 +13,9 @@ export default function index(props) {
     const {url, title, kalendar, hteg, lines, text , btnText  } = props
     return (
         <Wrapper>
-
             <Grid className="msa" container spacing={1}>
                 <CitiesTitle title={title} kalendar={kalendar} hteg={hteg} />
-
-                <Grid imte md={12}>
+                <Grid item md={12}>
                     <ImgContainer width="100%" src={url} />
                 </Grid>
                 <Grid className="text-xitoy__more" item md={12}>

@@ -12,12 +12,19 @@ import Checkbox from "../../components/atom/checkbox"
 import Button from "../../components/atom/button"
 import { TextTitle } from '../../styles/textTitle/index.style'
 import CloseIcon from '@material-ui/icons/Close';
-
+import {mediaTextField, mediaTextFieldSec, mediaBtn} from "../../custom/global.media.variables"
 import Modal from 'react-awesome-modal';
 
 
+const mediaContainer = {
+    m_width: '600px',
+    m_padding: '10px',
+}
+const mediaContainerWidth = {
+    m_width: '600px',
+    m_m_width: '100%',
+}
 const Index = () => {
-
     const [state, setState] = useState(false);
     function openModal() {
         setState(true);
@@ -25,104 +32,107 @@ const Index = () => {
     function closeModal() {
         setState(false)
     }
-
+    const onSubmit = (e) => {
+        e.preventDefault();
+    }
     return (
-        <Wrapper>
-            <TextTitle top="60px" bottom="20px">Git va tarjimonlar uchun ariza qoldirish</TextTitle>
+        <Wrapper onSubmit={onSubmit}>
+            <TextTitle {...mediaTextField} {...mediaTextFieldSec} top="60px" bottom="20px">Git va tarjimonlar uchun ariza qoldirish</TextTitle>
             <Container width="90%" padding="0" margin="40px auto" boxShadow={shadow}>
                 <Title>Vazifa tavsifi</Title>
-                <Container padding="30px">
-                    <Container width="80%" >
+                <Container {...mediaContainer} padding="30px">
+                    <Container {...mediaContainerWidth} width="80%" >
                         <Grid container spacing={1} alignItems="center" className="wrap-grid">
-                            <Grid item sm={12} md={5}>
-                                <div>Kim kerak</div>
+                            <Grid item xs={12} sm={12} md={5}>
+                                <div className="title_inner">Kim kerak</div>
                             </Grid>
-                            <Grid item sm={12} md={7}>
+                            <Grid item xs={12} sm={12} md={7}>
                                 <RadioGroup />
                             </Grid>
                         </Grid>
                         <Grid container spacing={1} alignItems="center" className="wrap-grid">
-                            <Grid item sm={12} md={5}>
-                                <div>Gid/Tarjimon kerak bo'lgan shahar</div>
+                            <Grid item xs={12} sm={12} md={5}>
+                                <div className="title_inner">Gid/Tarjimon kerak bo'lgan shahar</div>
                             </Grid>
-                            <Grid item sm={12} md={7}>
+                            <Grid item xs={12} sm={12} md={7}>
                                 <Grid container spacing={2}>
-                                    <Grid item sm={6}><Select placeholder="Davlat" /></Grid>
-                                    <Grid item sm={6}><Select placeholder="Shahar" /></Grid>
+                                    <Grid item xs={12} sm={6}><Select placeholder="Davlat" /></Grid>
+                                    <Grid item xs={12} sm={6}><Select placeholder="Shahar" /></Grid>
                                 </Grid>
                             </Grid>
                         </Grid>
                         <Grid container spacing={1} alignItems="center" className="wrap-grid">
-                            <Grid item sm={12} md={5}>
-                                <div>Gid/Tarjimon kerak bo'lgan sana</div>
+                            <Grid item xs={12} sm={12} md={5}>
+                                <div className="title_inner">Gid/Tarjimon kerak bo'lgan sana</div>
                             </Grid>
-                            <Grid item sm={12} md={7}>
+                            <Grid item xs={12} sm={12} md={7}>
                                 <Grid container spacing={2}>
-                                    <Grid item sm={6}><Calendar /></Grid>
-                                    <Grid item sm={6}><Calendar /></Grid>
+                                    <Grid item xs={12} sm={6}><Calendar /></Grid>
+                                    <Grid item xs={12} sm={6}><Calendar /></Grid>
                                 </Grid>
                             </Grid>
                         </Grid>
                         <Grid container spacing={1} alignItems="center" className="wrap-grid">
-                            <Grid item sm={12} md={5}>
-                                <div>Gid/Tarjimon bilishi kerak bo'lgan tillar</div>
+                            <Grid item xs={12} sm={12} md={5}>
+                                <div className="title_inner">Gid/Tarjimon bilishi kerak bo'lgan tillar</div>
                             </Grid>
-                            <Grid item sm={12} md={7}>
+                            <Grid item xs={12} sm={12} md={7}>
                                 <Select placeholder="Tilni tanlang" />
                             </Grid>
                         </Grid>
                         <Grid container spacing={1} alignItems="flex-start" className="wrap-grid">
-                            <Grid item sm={12} md={5}>
-                                <div>Nima uchun kerak</div>
+                            <Grid item xs={12} sm={12} md={5}>
+                                <div className="title_inner">Nima uchun kerak</div>
                             </Grid>
-                            <Grid item sm={12} md={7}>
+                            <Grid item xs={12} sm={12} md={7}>
                                 <TextArea cols="20" rows="5" wrap="hard" maxlength="10" placeholder="Misol uchun, shaharni ko’rsatish uchun git kerak...." width="100%" />
                             </Grid>
                         </Grid>
                         <Grid container spacing={1} alignItems="center" className="wrap-grid">
-                            <Grid item sm={12} md={5}>
-                                <div>Taklif etilgan narx</div>
+                            <Grid item xs={12} sm={12} md={5}>
+                                <div className="title_inner">Taklif etilgan narx</div>
                             </Grid>
-                            <Grid item sm={12} md={7}>
+                            <Grid item xs={12} sm={12} md={7}>
                                 <Select placeholder="Narxni tanlang" />
                             </Grid>
                         </Grid>
                         <Grid container spacing={1} alignItems="center" className="wrap-grid">
-                            <Grid item sm={12} md={5}>
-                                <div>Jinsi</div>
+                            <Grid item xs={12} sm={12} md={5}>
+                                <div className="title_inner">Jinsi</div>
                             </Grid>
-                            <Grid item sm={12} md={7}>
+                            <Grid item xs={12} sm={12} md={7}>
                                 <DoubleCheck name1="Erkak" name2="Ayol" width="180px" alignItems="center" justifyContent="space-between" flexDirection="row" />
                             </Grid>
                         </Grid>
                         <Grid container spacing={1} alignItems="center" className="wrap-grid">
-                            <Grid item sm={12} md={5}>
-                                <div>Nechchi kishi bo'lasizlar</div>
+                            <Grid item xs={12} sm={12} md={5}>
+                                <div className="title_inner">Nechchi kishi bo'lasizlar</div>
                             </Grid>
-                            <Grid item sm={12} md={7}>
+                            <Grid item xs={12} sm={12} md={7}>
                                 <Input width="100%" type="number" placeholder="Son kiriting..." />
                             </Grid>
                         </Grid>
                         <Grid container spacing={1} alignItems="center" className="wrap-grid">
-                            <Grid item sm={12} md={5}>
+                            <Grid item xs={12} sm={12} md={5}>
                             </Grid>
-                            <Grid item sm={12} md={7}>
+                            <Grid item xs={12} sm={12} md={7}>
                                 <Checkbox name="Arizani yoborib, siz foydalanuvchi shartnomasiga rozilik bildirasiz*" />
                             </Grid>
                         </Grid>
                     </Container>
                     <Container width="100%" textAlign="center" >
-                        <Button onClick={openModal}>Arizani yuborish</Button>
+                        <Button {...mediaBtn} onClick={openModal}>Arizani yuborish</Button>
                     </Container>
                 </Container>
             </Container>
 
-            <section>
+            <section className="section">
                 <Modal
                     visible={state}
                     width="700"
                     height="200"
                     effect="fadeInUp"
+                    className="modal_container"
                     onClickAway={closeModal}>
                     <div className="modaldiv">
                         <div className="closebtn">  <CloseIcon className="pointx" onClick={closeModal} /></div>

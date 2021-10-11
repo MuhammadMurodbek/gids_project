@@ -18,6 +18,7 @@ export const Container = styled.div`
     @media (max-width:${a=>a.m_width}){
         padding:${a=>a.m_padding};
         display: ${a=>a.m_display};
+        width:${a=>a.m_m_width};
     }
     
 
