@@ -11,3 +11,9 @@ export const mediaImage = {
     m_m_width:"300px",
     m_m_text_align:"center",
 }
+export const mediaBtn = {
+    m_width_btn:"456px",
+    m_m_width_btn:"300px",
+    m_m_font_btn:"14px",
+    m_m_padding:"12px 28px"
+}

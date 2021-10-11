@@ -5,9 +5,9 @@ export const Wrapper = styled.div`
         padding: 10px;  
    `
 export const Title = styled.p`
-        font-weight: 600;
-        font-size: 48px;
-        line-height: 56px;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 56px;
   `
 export const TextColor = styled.span`
     color: ${mainGreen};
@@ -18,6 +18,9 @@ export const Takliflar = styled.div`
         .text{
             padding:0 5px !important;
             /* color:red; */
+        }
+        .sc-lmoMya.bRHnII{
+            margin:20px 0;
         }
     }
         .text1{
@@ -88,6 +91,22 @@ p{
     font-size:22px;
     font-weight:600;
     text-align:left;
+}
+@media (max-width: 600px){
+    &{
+        padding:0px 10px;
+        margin: 10px 0;
+        height:auto; 
+    }
+    .jrhNFr{
+        line-height:36px;
+    }
+    .container-2-1{
+        /* top:160px; */
+        margin-top:30px;
+        text-align:center;
+        /* background: red; */
+    }
 }
 @media (max-width: 960px) {
     .grid_container{

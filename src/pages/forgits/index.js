@@ -3,7 +3,6 @@ import { Wrapper, ComponentTwo, TextColor, Takliflar, Savollar, ContainerLast } 
 import Button from "../../components/atom/button";
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
-import { FlexContainer } from '../../styles/flex.container';
 import ImgContainer from '../../components/molecules/img.container';
 import img1 from '../../assets/img/forgits/img1.svg';
 import taklif1 from '../../assets/img/forgits/taklif1.svg'
@@ -16,7 +15,7 @@ import AccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { Link } from 'react-router-dom';
-import {mediaTextField, mediaTextFieldSec, mediaImage} from "../../custom/global.media.variables"
+import {mediaTextField, mediaTextFieldSec, mediaImage, mediaBtn} from "../../custom/global.media.variables"
 const useStyles = makeStyles((theme) => ({
     root: {
         width: '100%',
@@ -29,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Index() {
     const classes = useStyles();
-
+    const btnType = {btnType: ''}
     return (
         <div>
             <Wrapper>
@@ -40,7 +39,7 @@ export default function Index() {
                                 <TextTitle {...mediaTextField} {...mediaTextFieldSec} align="left" bottom="30px"  font="48px" lineHeight="56px"> O'z shahringizda <TextColor>Tarjimon</TextColor>  yoki <TextColor>Git</TextColor> sifatida ro'yxatdan o'ting</TextTitle>
                                 {/* <FlexContainer width="370px" justifyContent="space-between"> */}
                                    <Link to="/auth"> 
-                                    <Button type="outlined">Ro'yhatdan o'tish</Button>
+                                        <Button {...mediaBtn} >Ro'yhatdan o'tish</Button>
                                    </Link>
                                 {/* </FlexContainer> */}
                             </div>
@@ -79,7 +78,7 @@ export default function Index() {
                         Ko’p beriladigan savollar
                     </TextTitle>
 
-                    <div  >
+                    <div>
                         <Accordion>
                             <AccordionSummary
                                 expandIcon={<ExpandMoreIcon />}
@@ -148,7 +147,7 @@ export default function Index() {
                         <TextTitle {...mediaTextField} {...mediaTextFieldSec} width="50%" left="auto" right="auto" bottom="40px">Xoziroq ro’yhattan o’ting, ma’lumotlaringizni to’ldiring va o’z karyerangizni boshlang!</TextTitle>
                         {/* <FlexContainer width="380px" margin="0 auto" alignItems="center" justifyContent="center"> */}
                            <Link to="/application-form"> 
-                                <Button className="button-s">Ariza qoldirish</Button>
+                                <Button {...mediaBtn} className="button-s">Ariza qoldirish</Button>
                            </Link>
                         {/* </FlexContainer> */}
                     </div>
