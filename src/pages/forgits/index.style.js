@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import {mainGreen} from "../../styles/global/colors"
 export const Wrapper = styled.div`
         width:100%auto;
         padding: 10px;  
@@ -10,10 +10,16 @@ export const Title = styled.p`
         line-height: 56px;
   `
 export const TextColor = styled.span`
-        color: #326A32;
+    color: ${mainGreen};
 `
 export const Takliflar = styled.div`
     margin: 50px 0;
+    @media (max-width: 768px) {
+        .text{
+            padding:0 5px !important;
+            /* color:red; */
+        }
+    }
         .text1{
             text-align: center;
             padding:30px;
@@ -34,6 +40,9 @@ export const Takliflar = styled.div`
 export const Savollar = styled.div`
     padding: 0 100px;
     margin-bottom:100px ;
+    @media (max-width: 768px){
+        padding:10px 0;
+    }
 `
 export const ContainerLast = styled.div`
     width: 100%;
@@ -60,7 +69,6 @@ export const ComponentTwo = styled.div`
 p{
     margin-bottom: 14px;
 }
-
 .container-2-1{
     padding:20px;
     position:relative;
@@ -81,5 +89,16 @@ p{
     font-weight:600;
     text-align:left;
 }
-
+@media (max-width: 960px) {
+    .grid_container{
+        flex-direction:column-reverse;
+    }
+    .container-2-1{
+        width:100%;
+        height:auto;
+        /* background-color:red; */
+        padding:10px 0;
+        top:100px;
+    }
+}
 `
