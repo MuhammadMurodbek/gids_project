@@ -11,7 +11,7 @@ import ImgContainer from "../../components/molecules/img.container"
 export default function Index() {
     return (
         <Wrapper>
-            <TextTitle width="50%" left="auto" right="auto" bottom="70px" top="70px">
+            <TextTitle width="50%" left="auto" right="auto" bottom="30px" top="80px">
                 Blog
             </TextTitle>
 
@@ -52,11 +52,11 @@ export default function Index() {
 
                 </Grid>
 
-                <Grid xs={12} sm={12} className="msa2" item md={4}>
-                    <div className="imgad" ><ImgContainer src={ad} width="80%" /></div>
-                    <div className="imgad" ><ImgContainer src={ad} width="80%" /></div>
-                    <div className="imgad" ><ImgContainer src={ad} width="80%" /></div>
-                    <div className="imgad" ><ImgContainer src={ad} width="80%" /></div>
+                <Grid xs={12} sm={12}  item md={4} className="msa2">
+                    <div className="imgad"><ImgContainer src={ad} width="350px" margin="0 auto" /></div>
+                    <div className="imgad"><ImgContainer src={ad} width="350px" margin="0 auto" /></div>
+                    <div className="imgad"><ImgContainer src={ad} width="350px" margin="0 auto" /></div>
+                    <div className="imgad"><ImgContainer src={ad} width="350px" margin="0 auto" /></div>
                 </Grid>
             </Grid>
 

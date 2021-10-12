@@ -5,7 +5,8 @@ import {mainGreen} from "../../../styles/global/colors"
 
 export const Wrapper = styled.div`
     width: 100%;
-
+    /* background-color:red; */
+    padding:8px 10px;
 
     .msa{
       padding:20px;
@@ -14,7 +15,7 @@ export const Wrapper = styled.div`
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 20px;
+      margin-bottom: 8px;
   }
 
   .xitoy-text{
@@ -26,6 +27,7 @@ export const Wrapper = styled.div`
       color:${mainGreen};
   }
   .title-div-text{
+      display: flex;
       font-weight: 600;
   }
   .img0{
@@ -33,5 +35,14 @@ export const Wrapper = styled.div`
     margin-left: 30px;
     margin-right: 5px;
   }
-
+  @media (max-width: 600px){
+    p,
+    .title-div-text
+    {
+      /* display: block; */
+      flex-direction: column;
+      font-size: 16px !important;
+      /* color:red !important; */
+    }
+  }
 ` 
