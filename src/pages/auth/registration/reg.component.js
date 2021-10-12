@@ -4,7 +4,7 @@ import {Container} from "../../../styles/container/index.style"
 import Button from "../../../components/atom/button"
 import {useHistory} from "react-router-dom"
 import Select from "../../../components/atom/select"
-
+import AuthInput from "../../../components/atom/auth.input"
 const Index = () => {
     const history = useHistory();
     const onSubmit = (e) => {
@@ -14,20 +14,20 @@ const Index = () => {
     return (
         <form onSubmit={onSubmit}>
             <Container>
-                <TextInput title="Ismingizni yozing" width="100%"/>
+                <AuthInput title="Ismingizni yozing" width="100%"/>
             </Container>
             <Container>
                 <Select placeholder="Tarjimon"/>
                 {/* <TextInput title="Password kiriting" password={true} width="100%"/> */}
             </Container>
             <Container>
-                <TextInput title="E-mail kiriting" width="100%"/>
+                <AuthInput title="E-mail kiriting" width="100%"/>
             </Container>
             <Container>
-                <TextInput title="Password kiriting" password={true} width="100%"/>
+                <AuthInput title="Password kiriting" password={true} width="100%"/>
             </Container>
             <Container>
-                <TextInput title="Password kiriting" password={true} width="100%"/>
+                <AuthInput title="Password kiriting" password={true} width="100%"/>
             </Container>
             <Container className="text-right">
                 <Button>Kirish</Button>

@@ -29,6 +29,9 @@ const GlobalStyle = createGlobalStyle`
     /* pointer-events: none !important;
     cursor:none !important; */
   }
+  input{
+    outline:none !important;
+  }
   ul{
     padding:0;
     list-style-type: none;

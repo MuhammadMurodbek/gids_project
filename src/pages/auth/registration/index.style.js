@@ -14,6 +14,12 @@ export const Wrapper = styled.div`
     .MuiTab-wrapper{
         color: #326A32 !important;
     }
+    .sc-gKseQn.iFmfMI{
+        padding: 9px 5px;
+    }
+    .css-1wa3eu0-placeholder{
+        color:#444;
+    }
 `
 export const Container = styled.div`
     /* width:400px; */

@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "Montserrat",
   },
   indicator: {
-    backgroundColor: mainGreen,
+    backgroundColor:'red',
   },
   tab: {
     color: "red",
@@ -75,7 +75,15 @@ export default function BasicTabs() {
                 value={value}
                 onChange={handleChange}
                 aria-label="basic tabs example"
-                TabIndicatorProps={{ className: classes.indicator }}
+                TabIndicatorProps={{
+                  style: {
+                    backgroundColor: mainGreen
+                   }
+                  }}
+                // classes={{
+                //   indicator: classes.indicator
+                // }}
+                // TabIndicatorProps={{ className: classes.indicator }}
                 >
                 <Tab
                     label={
