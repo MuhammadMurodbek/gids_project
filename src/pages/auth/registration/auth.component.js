@@ -11,6 +11,11 @@ const mediaBtn = {
     m_m_font_btn:"14px",
     m_m_padding:"12px 28px"
 }
+const mediaContainerSec = {
+    m_width:"534px",
+    m_padding:"4px",
+    m_text_align:"center"
+}
 const Index = () => {
     return (
         <Authorization>
@@ -24,7 +29,7 @@ const Index = () => {
             <Container width="100%" textAlign="right">
                 <Link to="/reset" className="link">Напомнить пароль</Link>
             </Container>
-            <Container textAlign="center" className="text-right"> 
+            <Container {...mediaContainerSec} className="text-right"> 
                 <Button {...mediaBtn}>Kirish</Button>
             </Container>
         </Authorization>

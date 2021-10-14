@@ -1,5 +1,5 @@
 import React from 'react'
-import TextInput from "../../../components/atom/input"
+// import TextInput from "../../../components/atom/input"
 import {Container} from "../../../styles/container/index.style"
 import Button from "../../../components/atom/button"
 import {useHistory} from "react-router-dom"
