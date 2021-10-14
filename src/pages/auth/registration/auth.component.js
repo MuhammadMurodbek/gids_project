@@ -1,10 +1,16 @@
 import React from 'react'
-import TextInput from "../../../components/atom/input"
+// import TextInput from "../../../components/atom/input"
 import {Container} from "../../../styles/container/index.style"
 import Button from "../../../components/atom/button"
 import {Authorization} from "./index.style"
 import {Link} from "react-router-dom"
 import AuthInput from "../../../components/atom/auth.input"
+const mediaBtn = {
+    m_width_btn:"456px",
+    m_m_width_btn:"260px",
+    m_m_font_btn:"14px",
+    m_m_padding:"12px 28px"
+}
 const Index = () => {
     return (
         <Authorization>
@@ -18,8 +24,8 @@ const Index = () => {
             <Container width="100%" textAlign="right">
                 <Link to="/reset" className="link">Напомнить пароль</Link>
             </Container>
-            <Container className="text-right"> 
-                <Button>Kirish</Button>
+            <Container textAlign="center" className="text-right"> 
+                <Button {...mediaBtn}>Kirish</Button>
             </Container>
         </Authorization>
     )

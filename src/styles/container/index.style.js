@@ -19,6 +19,7 @@ export const Container = styled.div`
         padding:${a=>a.m_padding};
         display: ${a=>a.m_display};
         width:${a=>a.m_m_width};
+        text-align:${a=>a.m_text_align};
     }
     
 

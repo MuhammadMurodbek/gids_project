@@ -68,7 +68,7 @@ export default function BasicTabs() {
   return (
       <Wrapper>
           <Container>
-            <Box sx={{ width: "600px", margin: "0 auto" }}>
+            <Box sx={{ width: "100%", margin: "0 auto" }}>
             <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
                 <Tabs
                 style={{ width: "100%" }}
