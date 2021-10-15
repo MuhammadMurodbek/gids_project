@@ -15,8 +15,10 @@ export const Wrapper = styled.div`
     .flex-item-one{
         flex:1;
         text-align: left;
+
     }
     .flex-item-two{
+        /* text-align: center !important; */
         flex:5;
     }
     .icon-text{
@@ -31,9 +33,23 @@ export const Wrapper = styled.div`
     .icon-text.two{
         margin-left: 25px;
     }
+    @media (max-width: 738px) {
+        &{
+            padding:30px 10px;
+        }
+        .sc-fKFxtB.gfiwCH{
+            margin:0 auto;
+        }
+        .flex-item-two{
+            text-align: center;
+            margin-left:0;
+            margin:20px auto;
+        }
+    }
 `
 
 export const FlexItem = styled.div`
+/* text-align: center; */
     /* width: 100%; */
-    /* background-color: red;/ */
+    /* background-color: red; */
 `

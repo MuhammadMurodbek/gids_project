@@ -9,18 +9,26 @@ import {shadow} from "../../../styles/global/colors"
 import { FlexContainer } from '../../../styles/flex.container'
 import icon1 from "../../../assets/img/gid-personal/icon_1.svg"
 import icon2 from "../../../assets/img/gid-personal/icon_2.svg"
-
+import {mediaTextField, mediaTextFieldSec} from "../../../custom/global.media.variables"
+const mediaFlex = {
+    m_width:'742px',
+    m_direction:"column",
+}
+const mediaImage = {
+    m_width:"745px",
+    m_m_width:'280px',
+} 
 const Index = () => {
     return (
         <Wrapper>
             <Container padding="20px" className="container-shadow" boxShadow={shadow}>
-                <FlexContainer maxWidth="800px">
+                <FlexContainer maxWidth="800px" {...mediaFlex}>
                     <FlexItem className="flex-item-one">
-                        <ImageContainer src={imageRound} width="120px"/>
+                        <ImageContainer {...mediaImage} src={imageRound} width="120px"/>
                     </FlexItem>
                     <FlexItem className="flex-item-two">
                         <FlexContainer flexDirection="column" height="100%" justifyContent="space-around">
-                            <TextTitle left="30px" font="34px" align="left">Abdug’ani Mirsaidov</TextTitle>
+                            <TextTitle {...mediaTextField} {...mediaTextFieldSec} left="30px" font="34px" align="left">Abdug’ani Mirsaidov</TextTitle>
                             <FlexContainer width="100%" margin="0 0 0 30px">
                                 <div className="icon-text"><ImageContainer src={icon1} width="20px"/><div>Angliya, London</div></div>
                                 <div className="icon-text two"><ImageContainer width="20px" src={icon2}/><div>kun.uz company</div></div>
