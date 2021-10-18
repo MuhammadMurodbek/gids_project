@@ -4,13 +4,17 @@ import ImageUploadContainer from "../../organism/image.uploader.f15"
 import EditFormContainer from "../../organism/form.f15"
 import { Container } from '../../../styles/container/index.style'
 import Button from "../../atom/button"
+const mediaContainer = {
+    m_width:'600px',
+    m_padding:"10px 10px 0"
+}
 const Index = () => {
     return (
         <Wrapper>
             <Container width="100%" textAlign="center" className="cursor-pointer">
                 <ImageUploadContainer width="180px" height="180px" radius="50%" align="center"/>
             </Container>
-            <Container padding="10px 50px 0" margin="20px 0">
+            <Container {...mediaContainer} padding="10px 50px 0" margin="20px 0">
                 <EditFormContainer/>
                 <Container width="100%" padding="0" margin="50px 0 0" textAlign="right">
                     <Button>Saqlash</Button>
