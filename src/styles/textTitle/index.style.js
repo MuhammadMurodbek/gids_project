@@ -29,4 +29,8 @@ export const TextTitle = styled.div`
         top:${a=>a.m_top} !important;
         bottom:${a=>a.m_bottom} !important;
     }
+    @media (max-width:${a=>a.m_width_ext}){
+        text-align: ${a=>a.m_text_align_ext};
+        margin:0;
+    }
 `

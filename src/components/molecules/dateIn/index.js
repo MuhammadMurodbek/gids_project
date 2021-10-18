@@ -10,11 +10,14 @@ export default function index() {
     return (
         <Wrapper>
             <Grid container justifyContent="center" spacing={1} direction="row" >
-                <Select width="250px" placeholder="Shaharni kiriting" />
-                <Date/>
-                <Date/>
+                <div className="select_div">
+                    <Select width="100%" placeholder="Shaharni kiriting" />
+                </div>
+                <div className="select_date"><Date/></div>
+                <div className="select_date"><Date/></div>
                 <div className="searchI">
-                    <SearchIcon />
+                    <SearchIcon /> 
+                    <span>Qidiruv</span>
                 </div>
             </Grid>
         </Wrapper>

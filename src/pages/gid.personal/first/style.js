@@ -36,14 +36,35 @@ export const Wrapper = styled.div`
     @media (max-width: 738px) {
         &{
             padding:30px 10px;
+            margin-top:5px;
+        }
+        .icon-text{
+            /* backgrounds: red; */
+            position: relative;
+            left:-7px;
+            margin:0;
         }
         .sc-fKFxtB.gfiwCH{
             margin:0 auto;
+        }
+        .flex-item-one{
+            padding-top:5px;
         }
         .flex-item-two{
             text-align: center;
             margin-left:0;
             margin:20px auto;
+        }
+    }
+    @media (max-width: 500px) {
+        .icon-text{
+            margin-top:6px;
+            position:relative;
+            left:-8px;
+        }
+        .icon-text.two{
+            margin:0;
+            margin-top:3px;
         }
     }
 `

@@ -176,7 +176,7 @@ export default function BasicTabs(props) {
               ? tabs.map((item, index) => (
                   <Tab
                     key={index}
-                    style={{minWidth:'180px'}}
+                    style={{minWidth:'150px'}}
                     label={item.label}
                     {...a11yProps(index)}
                     className={value === index ? 'active' : 'text-transform'}

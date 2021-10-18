@@ -16,20 +16,29 @@ const mediaFlex = {
 }
 const mediaImage = {
     m_width:"745px",
-    m_m_width:'280px',
+    m_m_width:'220px',
 } 
+const mediaTextFieldExternal = {
+    m_width_ext:'500px',
+    m_text_align_ext:'center',
+}
+const mediaFlexFooter = {
+    m_width:'500px',
+    m_margin:'0',
+    m_direction:'column',
+}
 const Index = () => {
     return (
         <Wrapper>
-            <Container padding="20px" className="container-shadow" boxShadow={shadow}>
+            <Container padding="10px" className="container-shadow" boxShadow={shadow}>
                 <FlexContainer maxWidth="800px" {...mediaFlex}>
                     <FlexItem className="flex-item-one">
                         <ImageContainer {...mediaImage} src={imageRound} width="120px"/>
                     </FlexItem>
                     <FlexItem className="flex-item-two">
                         <FlexContainer flexDirection="column" height="100%" justifyContent="space-around">
-                            <TextTitle {...mediaTextField} {...mediaTextFieldSec} left="30px" font="34px" align="left">Abdug’ani Mirsaidov</TextTitle>
-                            <FlexContainer width="100%" margin="0 0 0 30px">
+                            <TextTitle {...mediaTextField} {...mediaTextFieldSec} {...mediaTextFieldExternal} left="30px" font="34px" align="left">Abdug’ani Mirsaidov</TextTitle>
+                            <FlexContainer {...mediaFlexFooter} width="100%" margin="0 0 0 30px">
                                 <div className="icon-text"><ImageContainer src={icon1} width="20px"/><div>Angliya, London</div></div>
                                 <div className="icon-text two"><ImageContainer width="20px" src={icon2}/><div>kun.uz company</div></div>
                             </FlexContainer>

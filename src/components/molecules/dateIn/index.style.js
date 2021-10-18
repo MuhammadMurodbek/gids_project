@@ -6,6 +6,9 @@ import {mainGreen} from "../../../styles/global/colors";
     margin:50px auto;
     padding-top: 10px;
      margin-bottom: 50px;
+    .select_div{
+        width:250px;
+    }
     .searchI{
         background-color:${mainGreen};
         padding: 10px 15px;
@@ -14,6 +17,34 @@ import {mainGreen} from "../../../styles/global/colors";
         align-items: center;
         color: ${(value)=>value.type === "outlined" ? `${mainGreen}`:"#fff"};
         border-radius: 0 5px 5px 0; 
+        span{
+            display: none;
+        }
+    }
+    @media (max-width: 768px){
+        .searchI{
+            span{
+                display: inline-block;
+            }
+            width: 100%;
+            margin:0 15px;
+            border-radius: 5px !important;
+            margin-top:10px;
+        }
+    }
+    @media (max-width: 706px){
+        .select_date,
+        .select_div{
+            width:100%;
+            margin:5px 0;
+        }
+    }
+    @media (max-width:400px){
+        .searchI{
+            margin:0 !important;
+            margin-top:10px !important;
+            /* background-color:red; */
+        }
     }
 `
 
