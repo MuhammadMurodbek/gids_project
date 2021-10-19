@@ -19,22 +19,32 @@ import Button from "../../atom/button"
 const mediaContainer = {
     m_width:"600px",
     m_direction:"column",
-    // m_textAlign:"center",
 }
 const mediaContainerSecond = {
     m_width:"600px",
     m_margin:'25px 0 0 0'
+}
+const mediaContainerSecondText = {
+    m_width:"600px",
+    m_margin:'15px auto 0',
+    m_display:"inline-block",
+    m_m_width:'280px'
+}
+const mediaContainerPadding = {
+    m_width:"600px",
+    m_padding:'0 5px'
 }
 const Index = () => {
     return (
         <Wrapper>
             <WrapperContainer>
                 <Grid container spacing={1}>
-                    <Grid item xs={11} sm={9}>
-                        <Container {...mediaContainerSecond} margin="25px 0 0 20px">
+                    <Grid item xs={12} >
+                        <Container position="relative" {...mediaContainerSecond} margin="25px 0 0 20px">
                             <FlexContainer {...mediaContainer} width="100%" alignItems="flex-start" justifyContent="space-between" >
-                                <ImageContainer src={RoundImage} width="160px" height="auto" round="50%" style={{backgroundColor:'red'}}/>
-                                <Container margin="-10px 0 0 15px">
+                                <div className="info_btn"><InfoBtn/></div>
+                                <ImageContainer src={RoundImage} width="160px" height="auto" round="50%" />
+                                <Container {...mediaContainerSecondText} margin="-10px 0 0 15px">
                                     <TextTitle align="left" bottom="5px" font="20px">Abdusattor Ergashev</TextTitle>
                                     <div className="gid-info-personal">33 yosh | <span>Gid va tarjimon</span> </div>
                                     <div className="gid-info-personal-text top"><div className="text">Xitoy tili</div> - Bemalol (Og'zaki va yozma)</div>
@@ -45,9 +55,8 @@ const Index = () => {
                             </FlexContainer>
                         </Container>
                     </Grid>
-                    <Grid item xs={1} sm={3}>
-                        <InfoBtn/>
-                    </Grid>
+                    {/* <Grid item xs={1} sm={3}>
+                    </Grid> */}
                 </Grid>
                 <Container padding="30px">
                     <TextTitle font="15px" fontWeight="600" align="left" color="#326A32">Ozim haqimda</TextTitle>
@@ -59,23 +68,23 @@ const Index = () => {
                 </Container>
             </WrapperContainer>
             <WrapperContainer>
-                <Container padding="0 10px">
+                <Container {...mediaContainerPadding} padding="0 10px">
                     <SecondInfoCard/>
                 </Container>
             </WrapperContainer>
             <WrapperContainer>
-                <Container padding="0 10px">
+                <Container {...mediaContainerPadding} padding="0 10px">
                     <ThirdInfoCard/>
                 </Container>
             </WrapperContainer>
             <WrapperContainer>
-                <Container padding="0 20px">
+                <Container {...mediaContainerPadding} padding="0 20px">
                     <Title text="Gallery"/>
                     <ImageGallery/>
                 </Container>
             </WrapperContainer>
             <WrapperContainer>
-                <Container padding="0 20px"> 
+                <Container {...mediaContainerPadding} padding="0 20px"> 
                     <Title text="Mijozlarning fikrlari"/>   
                     <Grid container spacing={1} style={{marginBottom:60}}>
                         <Grid item sm={12} md={4}><ProgressInfo/></Grid>

@@ -3,7 +3,12 @@ import styled from "styled-components"
 export const Wrapper = styled.div`
     width: 100%;
     height: auto;
-
+    .info_btn{
+        position: absolute;
+        width:200px;
+        right:0;
+        top:-30px;
+    }
     @media (max-width:600px){
         .sc-fKFxtB.fMHAxL{
             margin:0 auto;

@@ -6,13 +6,17 @@ import {shadow} from "../../../styles/global/colors"
 import DayPicker from "../../molecules/daypicker"
 import MediaPlayer from "../../molecules/element_f42/media.player"
 import ImageGallery from "../../molecules/element_f42/reward.gallery"
+const mediaContainer={
+    m_width:'600px',
+    m_padding:'10px 0',
+}
 const Index = () => {
     return (
         <Wrapper>
             <Container padding="20px" boxShadow={shadow}>
                 <InfoSecond/>
             </Container>
-            <Container margin="20px 0" padding="20px" boxShadow={shadow}>
+            <Container margin="20px 0" {...mediaContainer} padding="20px" boxShadow={shadow}>
                 <DayPicker />
             </Container>
             <Container padding="20px" boxShadow={shadow}>

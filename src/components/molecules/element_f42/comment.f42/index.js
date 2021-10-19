@@ -4,12 +4,15 @@ import Text from "../../../atom/element_f42/text.container.f42"
 import Rate from "../../../atom/rate.starts"
 import { FlexContainer } from '../../../../styles/flex.container'
 import { Container } from '../../../../styles/container/index.style'
-
+const media = {
+    m_width:'600px',
+    // m_margin:'10px 0 0',
+}
 const Index = () => {
     return (
         <Wrapper>
             <RateContainer><Rate size={17}/></RateContainer>
-            <FlexContainer width="100%" flexDirection="column" align="center" justifyContent="space-between" gap="10px">
+            <FlexContainer {...media} width="100%" flexDirection="column" align="center" justifyContent="space-between" gap="10px">
                 <Container maxWidth="80%" padding="5px 0 0 0"><Text title="lorem  consectetur adipisicing elit. lorem  consectetur adipisicing elit A temporibus quis, " /></Container>
                 <Text text="Lorem ipsum dolor sit amet consectetur adipisicing elit. A temporibus quis, praesentium eveniet quae optio amet quibusdam odit doloremque debitis. Accusamus ipsa dolor placeat temporibus molestias nemo perspiciatis quod atque."/>
             </FlexContainer>

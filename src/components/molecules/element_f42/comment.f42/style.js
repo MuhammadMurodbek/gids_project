@@ -11,6 +11,10 @@ export const RateContainer = styled.div`
     /* background-color: green; */
     position: absolute;
     top: 0; right:0;
+    @media (max-width:600px){
+        top:-20px;
+        margin:0 auto;
+    }
     /* width:350px; */
     /* background-color:red; */
 `

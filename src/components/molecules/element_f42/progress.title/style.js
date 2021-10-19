@@ -3,7 +3,12 @@ export const Wrapper = styled.div`
     width: 400px;
     height: auto;
     /* background-color:red; */
-    margin-left:auto;
+    margin:0 auto;
+    @media (max-width:460px){
+        &{
+            width:300px;
+        }
+    }
     .progress-bar{
         flex:6;
         /* background-color:red; */
