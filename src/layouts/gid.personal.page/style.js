@@ -10,4 +10,9 @@ export const Wrapper = styled.div`
         position: relative;
         z-index: 10;
     }
+    @media (max-width:660px){
+        &{
+            padding:10px;
+        }
+    }
 `

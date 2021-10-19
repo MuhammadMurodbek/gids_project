@@ -16,15 +16,23 @@ import ProgressInfo from "../../molecules/element_f42/rate.part.f42"
 import CommentPart from "../../molecules/element_f42/comment.f42"
 import Button from "../../atom/button"
 // import TruncateText from "../../molecules/text.truncate"
-
+const mediaContainer = {
+    m_width:"600px",
+    m_direction:"column",
+    // m_textAlign:"center",
+}
+const mediaContainerSecond = {
+    m_width:"600px",
+    m_margin:'25px 0 0 0'
+}
 const Index = () => {
     return (
         <Wrapper>
             <WrapperContainer>
                 <Grid container spacing={1}>
                     <Grid item xs={11} sm={9}>
-                        <Container margin="25px 0 0 20px">
-                            <FlexContainer width="100%" alignItems="flex-start" justifyContent="space-between" >
+                        <Container {...mediaContainerSecond} margin="25px 0 0 20px">
+                            <FlexContainer {...mediaContainer} width="100%" alignItems="flex-start" justifyContent="space-between" >
                                 <ImageContainer src={RoundImage} width="160px" height="auto" round="50%" style={{backgroundColor:'red'}}/>
                                 <Container margin="-10px 0 0 15px">
                                     <TextTitle align="left" bottom="5px" font="20px">Abdusattor Ergashev</TextTitle>

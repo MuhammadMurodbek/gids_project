@@ -3,6 +3,15 @@ import styled from "styled-components"
 export const Wrapper = styled.div`
     width: 100%;
     height: auto;
+
+    @media (max-width:600px){
+        .sc-fKFxtB.fMHAxL{
+            margin:0 auto;
+        }
+        .sc-iJuVqt.cyvHhH{
+            margin:0;
+        }
+    }
 `
 
 export const WrapperContainer = styled.div`
