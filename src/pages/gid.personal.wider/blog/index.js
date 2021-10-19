@@ -12,13 +12,14 @@ import InputLabel from "../../../components/molecules/input.labeled"
 import AreaLabeled from "../../../components/molecules/area.labeled"
 import ImageUploader from "../../../components/organism/image.uploader.f15"
 import Button from "../../../components/atom/button"
+import {mediaTextField, mediaTextFieldSec} from "../../../custom/global.media.variables"
 const Index = () => {
     return (
         <Layout>
             <TitleComponent>
-                <TextTitle font="26px" bottom="20px">Maqola yozish</TextTitle>
+                <TextTitle {...mediaTextField} {...mediaTextFieldSec} font="26px" bottom="20px">Maqola yozish</TextTitle>
                 <Link to="/" className="link">
-                    <div className="title-left"> <ImageContainer width="auto" src={icon}/> ortga qaytish </div>
+                    <div className="title-left"> <ImageContainer width="auto" src={icon}/> <span>ortga qaytish</span></div>
                 </Link>
             </TitleComponent>
             <Container boxShadow={shadow} padding="20px">

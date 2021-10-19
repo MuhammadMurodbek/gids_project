@@ -14,5 +14,9 @@ export const Wrapper = styled.div`
         &{
             padding:10px;
         }
+        .sc-bsipwG.dGISaw{
+            height:350px !important;
+            background-color: red;
+        }
     }
 `

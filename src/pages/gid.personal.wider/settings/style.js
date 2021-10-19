@@ -12,6 +12,9 @@ export const Wrapper = styled.div`
         position:relative;
         z-index:10;
     }
+    @media (max-width: 760px){
+        padding:30px 5px
+    }
 `
 export const TitleContainer = styled.div`
     width: 100%;

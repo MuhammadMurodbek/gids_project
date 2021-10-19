@@ -5,10 +5,14 @@ import DayPicker from "../../../components/molecules/daypicker"
 import RemoveCircleOutlineIcon from '../../../assets/img/gid-per-wide-calendar/ban.png';
 import CheckCircleOutlineIcon from '../../../assets/img/gid-per-wide-calendar/save.png';
 import { Grid } from '@mui/material'
+const mediaContainer = {
+    m_width:'740px',
+    m_m_width:'300px',
+}
 const Index = () => {
     return (
         <Wrapper>
-            <Container width="600px" margin="0 auto" padding="0" className="container4" textAlign="center">
+            <Container {...mediaContainer} width="600px" margin="0 auto" padding="0" className="container4" textAlign="center">
                 <Grid container spacing={0} justifyContent="center" alignItems="center">
                     <Grid item xs={12} md={6}>
                         <DayPickerWrapper>

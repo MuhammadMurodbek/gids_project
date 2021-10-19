@@ -40,4 +40,14 @@ export const TitleComponent = styled.div`
         /* width:200px; */
         /* background-color: red; */
     }
+    @media (max-width:450px){
+        .title-left{
+            /* font-size:12px; */
+            top:5px;
+            right:5px;
+        }
+        span{
+            display:none;
+        }
+    }
 `

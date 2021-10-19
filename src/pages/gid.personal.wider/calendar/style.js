@@ -17,6 +17,11 @@ export const Wrapper = styled.div`
         background-color:transparent;
         cursor:pointer;
     }
+    @media (max-width:750px){
+        &{
+            padding:30px 5px;
+        }
+    }
 `
 export const DayPickerWrapper = styled.div`
     /* width: auto; */
@@ -36,6 +41,9 @@ export const ButtonWrapper = styled.div`
     @media (max-width: 955px) {
         flex-direction:row;
         margin-top:30px;
+    }
+    @media (max-width: 600px) {
+        flex-direction:column;
     }
     /* margin-right: auto; */
 `
