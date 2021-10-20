@@ -32,5 +32,31 @@ export const ComponentTwo = styled.div`
         font-weight:600;
         text-align:left;
     }
+    
+    @media (max-width:540px){
+        .title-second-main-container-text{
+            font-size: 16px;
+        }
+        .container-2-1{
+            width:100%;
+            padding:10px 0;
+            .text{
+                width:100%;
+                background-color:red;
+            }
+            p{
+                font-size: 14px;
+            }
+        }
+        .text_main{
+            width:100%;
+            /* background-color: red; */
+        }
+    }
+    /* @media (max-width:450px){
+        .container-2-1{
+            width:250px;
+        }
+    } */
 
 `
