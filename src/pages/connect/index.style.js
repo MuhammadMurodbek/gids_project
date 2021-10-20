@@ -9,7 +9,11 @@ export const Wrapper = styled.div`
         font-weight: 600;
 
     }
+    .grid2{
+        width: 200px;
+    }
     .iframe{
+        width: 100%;
         border: none;
     }
     .icons{
@@ -34,5 +38,20 @@ export const Wrapper = styled.div`
     .pointx{
         cursor: pointer;
     }
-
+    .grid_btn{
+        margin-bottom: 50px;
+    }
+    @media (max-width: 700px) {
+        .sc-lmoMya.fECUXu{
+            margin:35px 0;
+        }
+        .iframe{
+            height:400px;
+        }
+    }
+    @media (max-width:550px){
+        .iframe{
+            height:350px;
+        }
+    }
 `
