@@ -94,4 +94,28 @@ export const Wrapper = styled.div`
         color: black;
         font-weight: 600;
     }
+    .sc-dIUeWJ.buScyB{
+        margin: 0 auto;
+        width: 100%;
+        text-align: center;
+    }
+    /* @media (max-width: 960px) {
+        .Fgrid1{
+            margin-right: 0;
+        } 
+    } */
+    @media (max-width:960px) {
+        .gridTitle2{
+            justify-content: flex-start;
+        }
+        .grid_container{
+            flex-direction: column-reverse;
+        }
+        .Fgrid1{
+            margin-right: 0;
+        } 
+        .grid6text.Fgrid2{
+            margin-bottom:15px;
+        }
+    }
  `

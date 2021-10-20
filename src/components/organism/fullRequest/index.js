@@ -32,20 +32,18 @@ export default function Index(props) {
     const { btnText, url } = props
     return (
         <Wrapper>
-
-
             <Grid container spacing={1} direction="row" justifyContent="center" className="freque">
-                <Grid className="gridTitle" item md={4}>
+                <Grid className="gridTitle" item xs={12} md={4}>
                     <b className="idb">Id: </b>
                     <b className="idb">#071364754</b>
                 </Grid>
-                <Grid className="gridTitle2" item md={6}>
+                <Grid className="gridTitle2" item xs={12} md={6}>
                     <Link to="/request" className="comback"> <ArrowBackIcon className="arrole" />  arizlar ro’yhatiga qaytish</Link>
                 </Grid>
             </Grid>
 
-            <Grid container spacing={1} diraction="row" justifyContent="center">
-                <Grid item md={4} className="Fgrid1">
+            <Grid container spacing={1} diraction="row" justifyContent="center" className="grid_container">
+                <Grid item xs={12} md={4} className="Fgrid1">
                     <div className="div1title">Tafsilotlar</div>
                     <div className="tafsilot-text">
                         <b><ImageContainer src={user} /></b>
@@ -87,7 +85,7 @@ export default function Index(props) {
                     </Button>
                 </Grid>
 
-                <Grid className="grid6text  Fgrid2" item md={6}>
+                <Grid className="grid6text  Fgrid2" item xs={12} md={6}>
                     <div>
                         <div className="div1title">Ariza matni</div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In bibendum sodales tristique dolor turpis. Non pretium ante gravida suscipit faucibus lectus aliquet nullam. Justo sapien quam tincidunt lectus laoreet lacus eu sit. Aliquam nulla pellentesque arcu est ullamcorper pretium, elit.</p>

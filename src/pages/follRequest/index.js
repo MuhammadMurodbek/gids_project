@@ -6,9 +6,7 @@ import FullRequest from '../../components/organism/fullRequest';
 export default function index() {
     return (
         <Wrapper>
-            <FullRequest 
-                btnText="Arizaga javob qaytarish"
-            />            
+            <FullRequest btnText="Arizaga javob qaytarish" />            
         </Wrapper>
     )
 }
