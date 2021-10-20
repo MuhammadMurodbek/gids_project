@@ -15,9 +15,9 @@ export default function Index(props) {
                         <img className="img0" src={img2} alt="adsf" />
                         {kalendar}
                     </div>
-                    <div>
+                    <div className="hteg_wrapper">
                         <img className="img0" src={img3} alt="asdf" />
-                        {hteg}
+                       <div className="hteg">{hteg}</div>
                     </div>
                 </div>
             </Grid>

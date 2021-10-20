@@ -35,7 +35,27 @@ export const Wrapper = styled.div`
     margin-left: 30px;
     margin-right: 5px;
   }
+  .hteg_wrapper{
+    width:200px;
+    display: flex;
+    flex-direction: row;
+  }
   @media (max-width: 600px){
+    /* .xitoy-text{
+      font-size: 12px;
+    } */
+    .hteg{
+      min-width:100px;
+      display: flex;
+      /* background-color:red; */
+      flex-direction: row;
+    }
+    .title-div-text{
+      div{
+        display: flex;
+        font-size: 14px;
+      }
+    }
     p,
     .title-div-text
     {
