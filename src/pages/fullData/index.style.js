@@ -67,4 +67,28 @@ export const Wrapper = styled.div`
         display: none;
       }
     }
+    @media (max-width:500px){
+      &{
+        padding:30px 10px;
+      }
+      .mualif{
+        flex-direction: column;
+      }
+      .editbtn{
+        display: flex;
+        justify-content: space-around;
+        margin-right: auto;
+        margin-top: 15px;
+
+      }
+      .del-edit{
+        width: 100px;
+        padding: 7px 0;
+        /* height: 40px; */
+        margin:0;
+      }
+      .mualif-text{
+        font-size: 14px;
+      }
+    }
 `

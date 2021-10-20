@@ -20,4 +20,9 @@ export const Wrapper = styled.div`
         margin-top: 3px;
         margin-left: 10px;
     }
+    @media (max-width: 500px) {
+        .text-div{
+            font-size: 14px;
+        }
+    }
 `
