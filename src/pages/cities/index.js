@@ -7,13 +7,13 @@ import { Grid } from '@material-ui/core'
 import CitiLeftPart from '../../components/organism/citiesLeftPart'
 import ad from '../../assets/img/citiyes/ad.png'
 import xitoy from '../../assets/img/citiyes/xitoy.png';
-
+import {mediaTextField, mediaTextFieldSec} from "../../custom/global.media.variables"
 export default function index() {
     return (
         <Wrapper>
             <div className="imgBukhara">
                 <ImgContainer width="100%" src={bukhara} />
-                <p className="bukhara">Bukhara</p>
+                {/* <p className="bukhara">Bukhara</p> */}
             </div>
             <PerentAB>
                 <AboutB>
@@ -30,12 +30,12 @@ export default function index() {
                 </AboutB>
             </PerentAB>
 
-            <TextTitle width="50%" left="auto" right="auto" bottom="40px">
-                Blog
-            </TextTitle>
+                    <TextTitle {...mediaTextField} {...mediaTextFieldSec} width="100%" left="auto" right="auto" top="10px">
+                        Blog
+                    </TextTitle>
 
             <Grid justifyContent="center" container spacing={1}>
-                <Grid item md={7}>
+                <Grid item xs={11} sm={11} md={7}>
 
                     <CitiLeftPart
                         title="Xitoyga sayoxat"
@@ -74,11 +74,11 @@ export default function index() {
 
                 </Grid>
 
-                <Grid className="msa2" item md={4}>
-                    <div className="imgad" ><ImgContainer src={ad} width="70%" /></div>
-                    <div className="imgad" ><ImgContainer src={ad} width="70%" /></div>
-                    <div className="imgad" ><ImgContainer src={ad} width="70%" /></div>
-                    <div className="imgad" ><ImgContainer src={ad} width="70%" /></div>
+                <Grid className="msa2" item xs={12} sm={12} md={4}>
+                    <div className="imgad" ><ImgContainer src={ad} width="350px" /></div>
+                    <div className="imgad" ><ImgContainer src={ad} width="350px" /></div>
+                    <div className="imgad" ><ImgContainer src={ad} width="350px" /></div>
+                    <div className="imgad" ><ImgContainer src={ad} width="350px" /></div>
                 </Grid>
             </Grid>
 

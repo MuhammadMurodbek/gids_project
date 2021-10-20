@@ -28,7 +28,14 @@ export const Wrapper = styled.div`
   }
   .msa2{
       padding:15px;
+      margin-top:30px;
+      /* margin-right: auto; */
+      /* margin-left: auto; */
       margin-left: 15px;
+
+  }
+  .sc-fKFxtB.cNPZrT{
+    margin: 0 auto;
   }
   .img0{
     margin-bottom: 3px; 
@@ -46,6 +53,7 @@ export const Wrapper = styled.div`
   }
   .bukhara{
     position: absolute;
+    width: 100% !important;
     top:50%;
     left: 50%;
     transform: translate(-50%,-50%);
@@ -69,21 +77,27 @@ export const Wrapper = styled.div`
       margin-left: 10px;
       margin-bottom: -4px;
   }
-
+  @media (max-width: 968px){
+    .msa2{
+        display: none;
+    }
+  }
+ 
 
  `
  export const PerentAB = styled.div`
         width: 100%;
-        height: 300px;
-        position: relative;
+        min-height: 300px;
+        /* position: relative; */
  `
  export const AboutB = styled.div`
     width: 90%;
+    height: auto;
     margin: 10px auto;
-    position: absolute;
-    top: -70px;
-    left: 50%;
-    transform:translate(-50%);
+    /* position: relative; */
+    /* top: -70px; */
+    /* left: 50%; */
+    transform:translateY(-50px);
     box-shadow: 0px 20px 20px #EDEDED;
     
     .Abukhara-title{
