@@ -79,12 +79,10 @@ export const Wrapper = styled.div`
         justify-content: space-around;
         margin-right: auto;
         margin-top: 15px;
-
       }
       .del-edit{
         width: 100px;
         padding: 7px 0;
-        /* height: 40px; */
         margin:0;
       }
       .mualif-text{
