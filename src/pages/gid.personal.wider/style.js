@@ -11,5 +11,9 @@ export const Wrapper = styled.div`
         .css-19kzrtu{
             padding:0;
         }
+        .border-div{
+            min-width:120px;
+            /* padding:0 2px; */
+        }
     }
 `

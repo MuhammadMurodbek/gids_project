@@ -8,7 +8,7 @@ import Service from "./service"
 
 export const tabs = [
     {
-        label:<div className="border-div first">Men haqimda</div>,
+        label:<div className="border-div first">Men <br className="br"/> haqimda</div>,
         component:<Bio/>,
     },
     {

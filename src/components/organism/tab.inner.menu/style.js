@@ -12,7 +12,10 @@ export const Wrapper = styled.div`
             flex: 1 !important;
         }
     }
-
+    button{
+        width: auto;
+        margin:10px;
+    }
     .active{
         flex:1;
         height:40px;

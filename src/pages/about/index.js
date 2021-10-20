@@ -21,7 +21,7 @@ export default function index() {
                 {/* <div className="title-second-main-container">Biz nima taklif qilamz</div> */}
                 <Grid container spacing={1} direction="row"
                     >
-                    <Grid item md={6} sm={12}>
+                    <Grid item xs={12} md={6} sm={12}>
                         <div className="container-2-1">
                             <div className="title-second-main-container-text">Platforma haqida</div>
                             <div className="text_main">
@@ -34,7 +34,7 @@ export default function index() {
                             </FlexContainer>
                         </div>
                     </Grid>
-                    <Grid justifyContent="center" item md={6} sm={12}>
+                    <Grid justifyContent="center" item xs={12} md={6} sm={12}>
                         <ImgContainer {...mediaImage} src={img1} width="500px" />
                     </Grid>
                 </Grid>

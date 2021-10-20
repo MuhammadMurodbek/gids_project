@@ -56,6 +56,9 @@ export default function BasicTabs(props) {
             onChange={handleChange}
             aria-label="basic tabs example"
             style={{width: "100%"}}
+            variant="scrollable"
+            scrollButtons="auto"
+            aria-label="scrollable auto tabs example"
             TabIndicatorProps={{
                 style: {
                     backgroundColor: mainGreen
@@ -68,6 +71,7 @@ export default function BasicTabs(props) {
                     key={index}
                     label={item.label}
                     disableRipple
+                    style={{width:'130px'}}
                     style={value===index ? {color: mainGreen}:null}
                     {...a11yProps(index)}
                     className={value === index ? 'active' : 'text-transform'}
