@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
     width: 100%;
-    padding: 50px 0;
+    padding: 50px 30px;
 
     .msa2{
       background-color: red;
@@ -22,6 +22,9 @@ export const Wrapper = styled.div`
   .text-xitoy__more{
       padding: 0 !important;
       margin-top: 20px;
+  }
+  .image_adds{
+    margin-top: 30px;
   }
   .xitoy-text{
       margin: 0;
@@ -59,5 +62,9 @@ export const Wrapper = styled.div`
       display: flex;
       justify-content: flex-end;
      }
-    
+    @media (max-width:961px){
+      .image_adds{
+        display: none;
+      }
+    }
 `
