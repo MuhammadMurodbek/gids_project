@@ -73,6 +73,28 @@ export const Wrapper = styled.div`
         .title-answers{
             padding:0 10px;
         }
+        .btn-groups{
+            button{
+                width:220px;
+                margin:0;
+            }
+            justify-content:space-between;
+            /* flex-wrap: wrap; */
+            align-items: center !important;/
+            .sc-dIUeW.buScyB{
+                position:relative;
+                top:4px;
+                text-align: center;
+            }
+            .sc-dIUeWJ.buScyB{
+                text-align: center;
+                margin:0 ;
+            }
+        }
+        .btn-Pview{
+            margin:0;
+            margin-top:5px;
+        }
         .feedback-div{
             flex-direction: column;
             margin:8px 0;
@@ -81,9 +103,17 @@ export const Wrapper = styled.div`
                 margin:5px 0;
             }
             .feedback{
-                margin-top:5px;
+                margin-top:8px;
             }
             /* background-color: red; */
+        }
+    }
+    @media (max-width: 530px){
+        .btn-groups{
+            flex-direction: column;
+            button{
+                margin:4px 0;
+            }
         }
     }
 `

@@ -7,7 +7,7 @@ import ImgContainer from "../../components/molecules/img.container"
 import imggid from '../../assets/img/answerMy-application/imggid.svg'
 import star from '../../assets/img/answerMy-application/star.svg'
 import sms from '../../assets/img/answerMy-application/sms.svg'
-// import {mediaImage, mediaImageSecond} from "../../custom/global.media.variables"
+import {mediaBtn} from "../../custom/global.media.variables"
 export const mediaImage = {
     m_width:"960px",
     m_m_width:"280px",
@@ -146,7 +146,7 @@ export default function index() {
 
                         </div>
                         <div className="btn-groups">
-                            <Button type="outlined">O’chirish</Button>
+                            <Button className="btn"type="outlined">O’chirish</Button>
                             <Button className="btn-Pview">Profilni ko’rish</Button>
                         </div>
                     </Grid>
