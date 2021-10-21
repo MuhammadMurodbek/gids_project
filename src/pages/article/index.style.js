@@ -51,4 +51,9 @@ export const AboutTravel = styled.div`
             margin-bottom:0
         }
     }
+    @media (max-width:700px){
+        .aboutT__text{
+            width:90%;
+        }
+    }
 `

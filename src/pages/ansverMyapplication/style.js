@@ -7,11 +7,15 @@ export const Wrapper = styled.div`
         width: 85%;
         padding: 20px;
     }
+    .sc-jUEmfL.bXPgTV{
+        padding:10px 15px;
+    }
     .btnBack{
         float: right !important;
         margin-right: 100px;
 
      }
+     
      .title-answers{
          margin: 50px 0;
          margin-top: 100px;
@@ -42,7 +46,7 @@ export const Wrapper = styled.div`
         margin-left: 20px;
     }
      .feedback-div{
-         display: flex ; 
+        display: flex ; 
         align-items: center;
      }
      .tarjimon span{
@@ -60,5 +64,26 @@ export const Wrapper = styled.div`
     }
     .btn-Pview{
         margin-left:20px;
+    }
+
+    @media (max-width: 700px){
+        .grid-container{
+            width:95% !important;
+        }
+        .title-answers{
+            padding:0 10px;
+        }
+        .feedback-div{
+            flex-direction: column;
+            margin:8px 0;
+            h4{
+                font-size:20px;
+                margin:5px 0;
+            }
+            .feedback{
+                margin-top:5px;
+            }
+            /* background-color: red; */
+        }
     }
 `
