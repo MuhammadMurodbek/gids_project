@@ -29,6 +29,7 @@ export const Wrapper = styled.div`
   .title-div-text{
       display: flex;
       font-weight: 600;
+      /* background-color:red; */
   }
   .img0{
     margin-bottom: 3px; 
@@ -51,6 +52,8 @@ export const Wrapper = styled.div`
       flex-direction: row;
     }
     .title-div-text{
+      width:140px;
+      overflow: hidden;
       div{
         display: flex;
         font-size: 14px;

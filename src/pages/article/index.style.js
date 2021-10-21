@@ -2,7 +2,30 @@ import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
     width: 100%;
- 
+    /* padding: 30px; */
+    
+    .sc-fKFxtB.cNPZrT{
+        margin:0 auto;
+    }
+    .msa2{
+        margin-top:30px;
+    }
+
+    .grid_container{
+        padding:30px;
+    }
+
+    @media (max-width:960px){
+        .msa2{
+            display:none;
+        }
+    }
+
+    @media (max-width:500px){
+        .grid_container{
+            padding:20px 10px;
+        }
+    }
 `
 
 export const AboutTravel = styled.div`
@@ -21,5 +44,11 @@ export const AboutTravel = styled.div`
     .articl_write{
        display: flex;
        justify-content: center;
+    }
+
+    @media (max-width:500px){
+        &{
+            margin-bottom:0
+        }
     }
 `

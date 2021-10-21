@@ -19,8 +19,8 @@ export default function index() {
                 </TextTitle>
             </AboutTravel>
             
-            <Grid justifyContent="center" container spacing={1}>
-                <Grid item md={7}>
+            <Grid justifyContent="center" className="grid_container" container spacing={1}>
+                <Grid item xs={12} md={8}>
 
                     <CitiLeftPart 
                         title="Xitoyga sayoxat"
@@ -68,11 +68,11 @@ export default function index() {
 
                 </Grid>
 
-                <Grid className="msa2" item md={4}>
-                   <ImgContainer src={ad} width="70%"/> 
-                   <ImgContainer src={ad} width="70%"/>
-                   <ImgContainer src={ad} width="70%"/>
-                   <ImgContainer src={ad} width="70%"/>
+                <Grid className="msa2" item xs={12} md={4}>
+                   <ImgContainer src={ad} width="350px" margin="0 0 15px"/> 
+                   <ImgContainer src={ad} width="350px" margin="0 0 15px"/>
+                   <ImgContainer src={ad} width="350px" margin="0 0 15px"/>
+                   <ImgContainer src={ad} width="350px" margin="0 0 15px"/>
                 </Grid>
             </Grid>
 
