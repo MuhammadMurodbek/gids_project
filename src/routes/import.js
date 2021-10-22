@@ -19,6 +19,7 @@ import ResetPassword from "../pages/auth/recover"
 import GidPersonalWider from "../pages/gid.personal.wider";
 import Pay from '../pages/gid.personal.wider/reklama.pay';
 import Reklama from '../pages/gid.personal.wider/reklama';
+import UpdatePassword from "../pages/auth/update"
 // import GidPersonal from '../pages/gid.personal';
 // import Article from '../pages/article';
  
@@ -44,4 +45,5 @@ export {
     Pay,
     Reklama,
     ResetPassword,
+    UpdatePassword,
 }

@@ -10,6 +10,10 @@ export const routes = [
         component:ListRouter.Verify
     },
     {
+        url:'/auth/update-password',
+        component:ListRouter.UpdatePassword
+    },
+    {
         url:"/reset",
         component:ListRouter.ResetPassword
     },

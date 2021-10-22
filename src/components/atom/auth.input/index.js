@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './styles.css';
 // import {InputWrapper} from "./style"
-function TextInput({ type = 'text', label }) {
+function TextInput({ type, label }) {
   const [value, setValue] = useState('');
 
   function handleChange(e) {
@@ -19,8 +19,8 @@ function TextInput({ type = 'text', label }) {
 }
 
 export default function App(props) {
-  const {title, width} = props;
+  const {title, type, width} = props;
   return (
-    <TextInput label={title} />
+    <TextInput label={title} type={type === "password" ? "password" : "text"}/>
   );
 }
