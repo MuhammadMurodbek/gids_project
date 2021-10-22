@@ -2,8 +2,12 @@ import React from 'react';
 import {BrowserRouter as Router, Switch, Route, Redirect} from "react-router-dom";
 import Layout from "../layouts/main"
 import {routes} from "../routes/router.list"
+// import {useSelector, useDispatch} from "react-redux"
 
 const Index = () => {
+    // const selector = useSelector(pre=>pre.reducer_user_type)
+    // console.log(selector)
+
     return (
         <Router>
             <Layout>

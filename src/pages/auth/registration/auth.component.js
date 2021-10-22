@@ -27,7 +27,7 @@ const Index = () => {
                 <AuthInput title="Password kiriting" placeholder="password..." password={true} width="100%"/>
             </Container>
             <Container width="100%" textAlign="right">
-                <Link to="/reset" className="link">Напомнить пароль</Link>
+                <Link to="/auth/reset" className="link">Напомнить пароль</Link>
             </Container>
             <Container {...mediaContainerSec} className="text-right"> 
                 <Button {...mediaBtn}>Kirish</Button>

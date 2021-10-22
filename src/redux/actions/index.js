@@ -1,11 +1,5 @@
-import { postSMS } from "./auth/S_code"
-import { postRegistration } from "./auth_registration"
-import {get_by_Number_Sale_Offer_Action} from './sale/offer/get-by-number'
+import {action_user_type } from "./type.user"
 
 export {
-    postPhoneNumber,
-    postRegistration,
-    postSMS,
-    get_Organisation_All_Data,
-    get_by_Number_Sale_Offer_Action
+    action_user_type,
 }

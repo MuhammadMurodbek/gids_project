@@ -14,7 +14,7 @@ export const routes = [
         component:ListRouter.UpdatePassword
     },
     {
-        url:"/reset",
+        url:"/auth/reset",
         component:ListRouter.ResetPassword
     },
     {

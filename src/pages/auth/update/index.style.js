@@ -3,12 +3,12 @@ import styled from "styled-components"
 export const Wrapper = styled.div`
     width: 100%;
     min-height: 80vh;
-.input-container{
-   margin-bottom:10px;
-}
-`
+    `
 export const ContainerVerify = styled.div`
     width:500px;
+    .input-container{
+       margin-bottom:10px !important;
+    }
     height: auto;
     padding:10px;
     border-radius: 4px;
