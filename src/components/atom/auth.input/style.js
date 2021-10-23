@@ -8,6 +8,16 @@ export const InputWrapper = styled.div`
     margin:${value=>value.margin};
     background-color:#FAFCFA;
     border-radius: 4px;
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:active,
+    input:-webkit-autofill:focus {
+        background-color: transparent !important;
+        /* color: #555 !important;
+        -webkit-box-shadow: 0 0 0 1000px white inset !important;
+        -webkit-text-fill-color: #555555 !important; */
+}
 `
 export const Input = styled.input`
     position: relative;
@@ -38,7 +48,7 @@ export const InputLabel = styled.span`
 
 export const Eye = styled.div`
     position: absolute;
-    right:20px; top:18px;
+    right:20px; top:20px;
     width:20px;
     height:20px;
     z-index:10;

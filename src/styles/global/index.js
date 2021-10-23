@@ -17,6 +17,15 @@ const GlobalStyle = createGlobalStyle`
     background-color: #326a32;
     border-radius: 50px;
   }
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:active,
+  input:-webkit-autofill:focus {
+      background-color: #fafcfa !important;
+      /* color: #555 !important;
+      -webkit-box-shadow: 0 0 0 1000px white inset !important;
+      -webkit-text-fill-color: #555555 !important; */
+  }
   body {
     width: 100%;
     margin: 0;

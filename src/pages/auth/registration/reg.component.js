@@ -5,6 +5,7 @@ import Button from "../../../components/atom/button"
 import {useHistory} from "react-router-dom"
 import Select from "../../../components/atom/select"
 import AuthInput from "../../../components/atom/auth.input"
+import { Grid } from '@mui/material'
 const mediaContainer = {
     m_width:"534px",
     m_padding:"4px"
@@ -28,8 +29,12 @@ const Index = () => {
     }
     return (
         <form onSubmit={onSubmit}>
-            <Container {...mediaContainer}>
-                <AuthInput title="Ismingizni yozing" width="100%"/>
+            <Container width="100%" {...mediaContainer}>
+                <Grid container spacing={1} justifyContent="space-between" alignItems="center">
+                    <Grid item xs={12} md={6}> <AuthInput title="Ismingizni yozing" width="100%"/></Grid>
+                    <Grid item xs={12} md={6}> <AuthInput title="Familiyangizni yozing" width="100%"/></Grid>
+                </Grid>
+                {/* <AuthInput title="Ismingizni yozing" width="100%"/> */}
             </Container>
             <Container {...mediaContainer}>
                 <Select placeholder="Tarjimon"/>
