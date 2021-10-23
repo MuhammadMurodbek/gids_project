@@ -11,7 +11,7 @@ import { Turn as Hamburger } from 'hamburger-react'
 import {mainGreen} from "../../../styles/global/colors"
 import MediaNavbar from "./media.navbar"
 import ReactFlagsSelect from 'react-flags-select';
-import {useSelector, useDispatch} from "react-redux"
+import {useSelector} from "react-redux"
 
 const Index = () => {
     const [ isOpen, setOpen ] = useState( false )

@@ -14,9 +14,11 @@ export const Wrapper = styled.div`
     .MuiTab-wrapper{
         color: #326A32 !important;
     }
-    .sc-gKseQn.iFmfMI{
+    .sc-gKseQn.iFmfMI,
+    .sc-kstqJO.hVfkeN{
         padding: 9px 5px;
     }
+    /* .sc-kstqJO hVfkeN */
     .css-1wa3eu0-placeholder{
         color:#444;
     }
