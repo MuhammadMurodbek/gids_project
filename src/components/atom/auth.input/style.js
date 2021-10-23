@@ -4,7 +4,7 @@ export const InputWrapper = styled.div`
     width: ${value=>value.widht ? value.widht.width : '100%'};
     display: inline-block;
     position: relative;
-    padding: 10px;
+    /* padding: 10px; */
     margin:${value=>value.margin};
     background-color:#FAFCFA;
     border-radius: 4px;
@@ -34,4 +34,15 @@ export const InputLabel = styled.span`
     font-size: 12px;
     color:#212121;
     z-index: 2;
+`
+
+export const Eye = styled.div`
+    position: absolute;
+    right:20px; top:18px;
+    width:20px;
+    height:20px;
+    z-index:10;
+    cursor:pointer;
+    /* .far{
+    } */
 `
