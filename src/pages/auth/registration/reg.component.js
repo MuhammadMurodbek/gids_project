@@ -6,16 +6,19 @@ import Select from "../../../components/atom/select"
 import AuthInput from "../../../components/atom/auth.input"
 import { Grid } from '@mui/material'
 import {mediaContainer, mediaContainerSec, mediaBtn} from "./_media"
+import {useSelector, useDispatch} from "react-redux"
+import {post_auth_reg_action} from "../../../redux/actions"
 
 const Index = () => {
     const history = useHistory();
+    const dispatch = useDispatch();
+    const selector = useSelector(prev=>prev.post_auth_reg_reducer)
     const [stateName, setStateName] = useState('')
     const [stateLast, setStateLast] = useState('')
     const [select, setSelect] = useState(null)
     const [stateEmail, setStateEmail] = useState('')
     const [statePassword, setStatePassword] = useState('')
     const [statePasswordRecover, setStatePasswordRecover] = useState('')
-    // const [stateName, setStateName] = useState('')
     const options = [
         { value: 'chocolate', label: 'Chocolate' },
         { value: 'strawberry', label: 'Strawberry' },
@@ -24,8 +27,12 @@ const Index = () => {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        history.push("/auth/verify")
-        // console.log(select)
+        let objectPost = {
+            username:"otabeksolijonov@mail.ru",
+            password:"major_99"
+        }
+        dispatch(post_auth_reg_action(objectPost))
+        // history.push("/auth/verify")
     }
     return (
         <form onSubmit={onSubmit}>

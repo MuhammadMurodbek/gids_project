@@ -1,5 +1,5 @@
-import {action_user_type } from "./type.user"
+import {post_auth_reg_action } from "./auth/action.reg"
 
 export {
-    action_user_type,
+    post_auth_reg_action,
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import {BrowserRouter as Router, Switch, Route, Redirect} from "react-router-dom";
 import Layout from "../layouts/main"
 import {routes} from "../routes/router.list"
+import ToastContainer from "../components/atom/toast.container"
 // import {useSelector, useDispatch} from "react-redux"
 
 const Index = () => {
@@ -10,6 +11,7 @@ const Index = () => {
 
     return (
         <Router>
+           <ToastContainer/>
             <Layout>
                 <Switch>
                     <Route exact path="/"><Redirect to="/main" /></Route>
