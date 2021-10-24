@@ -12,7 +12,7 @@ import {post_auth_reg_action} from "../../../redux/actions"
 const Index = () => {
     const history = useHistory();
     const dispatch = useDispatch();
-    const selector = useSelector(prev=>prev.post_auth_reg_reducer)
+    const selector = useSelector(prev=>prev)
     const [stateName, setStateName] = useState('')
     const [stateLast, setStateLast] = useState('')
     const [select, setSelect] = useState(null)
@@ -28,12 +28,18 @@ const Index = () => {
     const onSubmit = (e) => {
         e.preventDefault();
         let objectPost = {
-            username:"otabeksolijonov@mail.ru",
-            password:"major_99"
+            
+            first_name: "sdfasf",
+            last_name: "sdfasfsa",
+            password: "1234345345wer",
+            password2: "1234345345wer",
+            role: "gid",
+            username: "tuitstudent2000@gmail.com"
+            
         }
         dispatch(post_auth_reg_action(objectPost))
-        // history.push("/auth/verify")
     }
+    console.log(selector)
     return (
         <form onSubmit={onSubmit}>
             <Container width="100%" {...mediaContainer}>
