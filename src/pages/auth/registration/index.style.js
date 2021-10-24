@@ -22,6 +22,11 @@ export const Wrapper = styled.div`
     .css-1wa3eu0-placeholder{
         color:#444;
     }
+    @media (max-width:896px){
+        .grid_item+.grid_item{
+            margin-top:10px;
+        }
+    }
     @media (max-width: 532px){
         .MuiBox-root.css-19kzrtu{
             padding:2px;
@@ -61,14 +66,9 @@ export const Container = styled.div`
     }
 `
 export const Authorization = styled.div`
-    /* background-color:green; */
     .link{
         color: ${mainGreen};
         font-size:12px;
-        /* text-decoration:line; */
-        /* margin-left: auto; */
-        /* background-color:red; */
-        /* width:100%; */
         text-align:right;
         padding-right: 10px;
 

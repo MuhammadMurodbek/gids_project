@@ -1,15 +1,17 @@
-const dataPost = {
-    data:{}
-}
+// const dataPost = {
+//     data:{}
+// }
 const post_auth_reg_reducer = (state = {}, action) => {
    
     switch(action.type) {
         case "POST_AUTH_REG_0" : return {
             data:action.payload,
-            success:true,
+            status:'success'
         }; 
         
-        case "POST_AUTH_REG_400" : alert("error"); break;
+        case "INT_500" : return {
+            status:'Internal server error'
+        };
         
         default: return state; 
      }

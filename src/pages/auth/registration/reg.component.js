@@ -8,11 +8,11 @@ import { Grid } from '@mui/material'
 import {mediaContainer, mediaContainerSec, mediaBtn} from "./_media"
 import {useSelector, useDispatch} from "react-redux"
 import {post_auth_reg_action} from "../../../redux/actions"
-
+import {toast} from "react-toastify"
 const Index = () => {
     const history = useHistory();
     const dispatch = useDispatch();
-    const selector = useSelector(prev=>prev)
+    const selector = useSelector(prev=>prev.post_auth_reg_reducer)
     const [stateName, setStateName] = useState('')
     const [stateLast, setStateLast] = useState('')
     const [select, setSelect] = useState(null)
@@ -20,32 +20,46 @@ const Index = () => {
     const [statePassword, setStatePassword] = useState('')
     const [statePasswordRecover, setStatePasswordRecover] = useState('')
     const options = [
-        { value: 'chocolate', label: 'Chocolate' },
-        { value: 'strawberry', label: 'Strawberry' },
-        { value: 'vanilla', label: 'Vanilla' },
+        { value: 'gid', label: 'Gid' },
+        { value: 'user', label: 'Foydalanuvchi' },
+        { value: 'translator', label: 'Tarjimon' },
+        { value: 'writer', label: 'Yozma tarjimon' },
       ];
 
     const onSubmit = (e) => {
         e.preventDefault();
         let objectPost = {
             
-            first_name: "sdfasf",
-            last_name: "sdfasfsa",
-            password: "1234345345wer",
-            password2: "1234345345wer",
-            role: "gid",
-            username: "tuitstudent2000@gmail.com"
+            first_name: stateName,
+            last_name: stateLast,
+            password: statePassword,
+            password2: statePasswordRecover,
+            role: select.value,
+            username: stateEmail
             
         }
         dispatch(post_auth_reg_action(objectPost))
     }
-    console.log(selector)
+    React.useMemo(()=>{
+        if(selector.status === 'success'){
+            console.log(selector)
+            toast.success('🦄 Wow so easy!', {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                });
+        }
+    },[selector])
     return (
         <form onSubmit={onSubmit}>
             <Container width="100%" {...mediaContainer}>
                 <Grid container spacing={1} justifyContent="space-between" alignItems="center">
-                    <Grid item xs={12} md={6}> <AuthInput setState={setStateName} title="Ismingizni yozing" width="100%"/></Grid>
-                    <Grid item xs={12} md={6}> <AuthInput setState={setStateLast} title="Familiyangizni yozing" width="100%"/></Grid>
+                    <Grid className="grid_item" item xs={12} md={6}> <AuthInput setState={setStateName} title="Ismingizni yozing" width="100%"/></Grid>
+                    <Grid className="grid_item" item xs={12} md={6}> <AuthInput setState={setStateLast} title="Familiyangizni yozing" width="100%"/></Grid>
                 </Grid>
             </Container>
             <Container {...mediaContainer}>
