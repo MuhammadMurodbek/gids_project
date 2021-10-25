@@ -9,6 +9,7 @@ import { mainGreen } from "../../../styles/global/colors";
 import Authorization from "./auth.component";
 import Registration from "./reg.component";
 import {Wrapper, Container} from "./index.style"
+import Loading from "../../../components/atom/loading.spinner.line"
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.background.paper,
@@ -80,10 +81,6 @@ export default function BasicTabs() {
                     backgroundColor: mainGreen
                    }
                   }}
-                // classes={{
-                //   indicator: classes.indicator
-                // }}
-                // TabIndicatorProps={{ className: classes.indicator }}
                 >
                 <Tab
                     label={

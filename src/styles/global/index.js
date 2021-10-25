@@ -17,6 +17,12 @@ const GlobalStyle = createGlobalStyle`
     background-color: #326a32;
     border-radius: 50px;
   }
+  .MuiLinearProgress-root.MuiLinearProgress-colorPrimary.MuiLinearProgress-indeterminate.css-eglki6-MuiLinearProgress-root{
+    span{
+      background-color: #baeeb89d !important;
+    }
+
+  }
   input:-webkit-autofill,
   input:-webkit-autofill:hover,
   input:-webkit-autofill:active,

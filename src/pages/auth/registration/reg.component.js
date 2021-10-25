@@ -8,11 +8,11 @@ import { Grid } from '@mui/material'
 import {mediaContainer, mediaContainerSec, mediaBtn} from "./_media"
 import {useSelector, useDispatch} from "react-redux"
 import {post_auth_reg_action} from "../../../redux/actions"
-import {toast} from "react-toastify"
 const Index = () => {
     const history = useHistory();
     const dispatch = useDispatch();
     const selector = useSelector(prev=>prev.post_auth_reg_reducer)
+    const [loader, setLoader] = useState(false)
     const [stateName, setStateName] = useState('')
     const [stateLast, setStateLast] = useState('')
     const [select, setSelect] = useState(null)
@@ -29,29 +29,21 @@ const Index = () => {
     const onSubmit = (e) => {
         e.preventDefault();
         let objectPost = {
-            
             first_name: stateName,
             last_name: stateLast,
             password: statePassword,
             password2: statePasswordRecover,
-            role: select.value,
+            role: select.value || '',
             username: stateEmail
-            
         }
+        setLoader(true)
         dispatch(post_auth_reg_action(objectPost))
     }
     React.useMemo(()=>{
         if(selector.status === 'success'){
             console.log(selector)
-            toast.success('🦄 Wow so easy!', {
-                position: "top-center",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                });
+            setLoader(false)
+            history.push('/auth/verify')
         }
     },[selector])
     return (
@@ -64,19 +56,18 @@ const Index = () => {
             </Container>
             <Container {...mediaContainer}>
                 <Select options={options} setState={setSelect} placeholder="Tarjimon"/>
-                {/* <TextInput title="Password kiriting" password={true} width="100%"/> */}
             </Container>
             <Container  {...mediaContainer} >
                 <AuthInput title="E-mail kiriting" width="100%" setState={setStateEmail}/>
             </Container>
             <Container  {...mediaContainer}>
-                <AuthInput title="Password kiriting" setState={setStatePassword} password={true} width="100%"/>
+                <AuthInput title="Parolingizni kiriting" setState={setStatePassword} password={true} width="100%"/>
             </Container>
             <Container  {...mediaContainer}>
-                <AuthInput title="Password kiriting" setState={setStatePasswordRecover} password={true} width="100%"/>
+                <AuthInput title="Parolingizni tasdiqlang" setState={setStatePasswordRecover} password={true} width="100%"/>
             </Container>
             <Container  {...mediaContainerSec}  className="text-right">
-                <Button {...mediaBtn} >Kirish</Button>
+                <Button {...mediaBtn} loader={loader} >Kirish</Button>
             </Container>
         </form>
     )

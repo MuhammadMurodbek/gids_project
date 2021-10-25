@@ -11,6 +11,7 @@ export const Button = styled.button`
     line-height: 20px;
     color: ${(value)=>value.type === "outlined" ? `${mainGreen}`:"#fff"};
     cursor: pointer;
+    /* pointer-events: none; */
     border:${(value)=>value.type === "outlined" ? `0.122rem solid ${mainGreen}`: "0.122rem solid transparent"};
     border-radius: 4px;
     background-color:${mainGreen};
@@ -31,6 +32,17 @@ export const ButtonWrapper = styled.div`
     overflow: hidden;
     border-radius: 4px;
     margin:${value=>value.margin};
+    position:relative;
+    .progress{
+        top:56%; left:16%;
+        position:absolute;
+        transform: translate(-50%,-50%);
+       
+    }
+    .MuiCircularProgress-root.MuiCircularProgress-indeterminate.MuiCircularProgress-colorPrimary.css-18lrjg1-MuiCircularProgress-root{
+        width:20px !important; 
+        height: 20px !important;
+    }
     @media (max-width: ${a=>a.m_width_btn}){
         text-align:center;
         margin:0 auto !important;

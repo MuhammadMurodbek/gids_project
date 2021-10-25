@@ -41,10 +41,12 @@ export const Wrapper = styled.div`
     }
 `
 export const Container = styled.div`
+    position:relative;
     width:600px;
     height: auto;
     padding:10px;
     margin-top:30px;
+    /* overflow: hidden; */
     /* background-color:red; */
     box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.12);
     @media (max-width:800px){

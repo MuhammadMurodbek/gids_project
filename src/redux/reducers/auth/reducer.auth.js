@@ -1,14 +1,11 @@
-// const dataPost = {
-//     data:{}
-// }
-const post_auth_reg_reducer = (state = {}, action) => {
+const post_auth_ent_reducer = (state = {}, action) => {
    
     switch(action.type) {
-        case "POST_AUTH_REG_0" : return {
+        case "POST_AUTH_ENT_0" : return {
             data:action.payload,
             status:'success'
         }; 
-        case "POST_AUTH_REG_429": return {
+        case "POST_AUTH_ENT_429": return {
             status:"429"
         };
         case "INT_500" : return {
@@ -19,4 +16,4 @@ const post_auth_reg_reducer = (state = {}, action) => {
      }
 } 
 
-export default post_auth_reg_reducer
+export default post_auth_ent_reducer
