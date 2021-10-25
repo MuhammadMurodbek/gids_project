@@ -7,14 +7,25 @@ import f from '../../../assets/img/footer/f.svg'
 import i from '../../../assets/img/footer/i.svg'
 const Index = () => {
     const location = useLocation()
+    const {pathname} = location
+    const [check , setCheck] = React.useState(false)
+    React.useEffect(() => {
+        if(pathname.includes('auth')){
+            setCheck(true)
+        }else{
+            setCheck(false)
+        }
+        // console.log("loca "+check)
+    },[])
     const mediaFlexContainer = {
         m_width:"800px",
         m_padding:"10px 0",
         m_textAlign:"center",
     }
+    
     return (
         <>
-            <FooterWrapper padding={(location.pathname === "/auth"|| location.pathname ==="/auth/update-password"|| location.pathname==="/auth/verify" || location.pathname==="/auth/reset") ? '0px':"10px 0 0"}>
+            <FooterWrapper padding={check ? '0px':"10px 0 0"}>
                 <FlexContainer
                     width="100%" 
                     alignItems="flex-start" 
@@ -22,7 +33,7 @@ const Index = () => {
                     className="first-container"
                     flexWrap="wrap"
                     {...mediaFlexContainer}
-                    style={(location.pathname === "/auth"|| location.pathname ==="/auth/update-password"|| location.pathname==="/auth/verify" || location.pathname==="/auth/reset") ? {display:"none"}:null}
+                    style={check ? {display:"none"}:null}
                 >
                     <div className="flex-items">
                         <span>BIZNING SERVIS</span>
@@ -54,13 +65,13 @@ const Index = () => {
                     alignItems="center" 
                     justifyContent="space-around" 
                     className="second-container"
-                    style={(location.pathname === "/auth"|| location.pathname ==="/auth/update-password"|| location.pathname==="/auth/verify" || location.pathname==="/auth/reset") ? {display:"none"}:null} 
+                    style={check ? {display:"none"}:null} 
                 >
                     <span><Link to="/sd"><img src={tg} alt="tg" /></Link></span>
                     <span><Link to="/sd"><img src={f}  alt="f" /></Link></span>
                     <span><Link to="/sd"><img src={i}  alt="i" /></Link></span>
                 </FlexContainer>
-                <div className="footer-bottom-comp">
+                <div className="footer-bottom-comp" style={check ? {display: 'none'}:null}>
                     <span>Copyright 2021 Gits.uz - All rights reserved.</span>
                 </div>
             </FooterWrapper>   

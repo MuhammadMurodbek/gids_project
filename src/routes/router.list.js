@@ -88,8 +88,9 @@ export const routes = [
     {
         url:'/reklama',
         component:ListRouter.Reklama
-    }
-    
-
-
+    },
+    {
+        url:'*',
+        component:ListRouter.notFound
+    },
 ]

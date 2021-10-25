@@ -20,10 +20,12 @@ import GidPersonalWider from "../pages/gid.personal.wider";
 import Pay from '../pages/gid.personal.wider/reklama.pay';
 import Reklama from '../pages/gid.personal.wider/reklama';
 import UpdatePassword from "../pages/auth/update"
+import notFound from "../pages/notFound"
 // import GidPersonal from '../pages/gid.personal';
 // import Article from '../pages/article';
  
 export {
+    notFound,
     MainPage, 
     Auth, 
     About,

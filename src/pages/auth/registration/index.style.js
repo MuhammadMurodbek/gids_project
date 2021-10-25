@@ -45,7 +45,7 @@ export const Container = styled.div`
     width:600px;
     height: auto;
     padding:10px;
-    margin-top:30px;
+    margin:30px 0;
     /* overflow: hidden; */
     /* background-color:red; */
     box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.12);
