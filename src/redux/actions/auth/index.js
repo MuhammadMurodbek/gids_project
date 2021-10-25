@@ -1,5 +1,5 @@
 import axios from "axios"
-import { toast } from "react-toastify"
+// import { toast } from "react-toastify"
 import {headers, baseUrl} from "../../api"
 
 export const postPhoneNumber = (state) => async (dispatch) => {
@@ -13,6 +13,6 @@ export const postPhoneNumber = (state) => async (dispatch) => {
             })
             .catch(() => {})
     }catch(err) {
-        return toast.error("auth server error")
+        // return toast.error("auth server error")
     }
 }
