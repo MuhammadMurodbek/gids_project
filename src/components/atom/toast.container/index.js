@@ -1,20 +1,7 @@
-import React from 'react'
-import { ToastContainer } from 'react-toastify';
+import { Toaster } from 'react-hot-toast';
 
-const Index = () => {
-    return (
-        <ToastContainer
-        position="top-center"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        />
-    )
-}
+const App = () => {
+  return (<Toaster position="bottom-center" reverseOrder={false} />);
+};
 
-export default Index
+export default App;

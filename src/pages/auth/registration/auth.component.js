@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import {Container} from "../../../styles/container/index.style"
 import Button from "../../../components/atom/button"
 import {Authorization} from "./index.style"
@@ -7,6 +7,8 @@ import AuthInput from "../../../components/atom/auth.input"
 import {mediaBtnAuth, mediaContainerSecAuth} from "./_media"
 import {useSelector, useDispatch} from "react-redux"
 import {post_auth_ent_action} from "../../../redux/actions"
+import toast from "react-hot-toast"
+
 const Index = () => {
     const dispatch = useDispatch()
     const selector = useSelector(prev=>prev.post_auth_ent_reducer)
@@ -22,12 +24,15 @@ const Index = () => {
         setLoader(true)
         dispatch(post_auth_ent_action(obj))
     }
-    React.useMemo(()=>{
-        // console.log(selector)
-        if(selector.status === 'success'){
-            // console.log(selector)
+    useEffect(()=>{
+        if(selector.status){
             setLoader(false)
-            // history.push('/auth/verify')
+            switch(selector.status){
+                case 200: return toast.success("Ajoyib")
+                case 400 : return toast.error("Ma'lumotlar to'liq kiritilmagan")
+                case 401 : return toast.error("Foydalanuvchi mavjud emas")
+                default : return null
+            }
         }
     },[selector])
     return (
