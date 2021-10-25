@@ -67,7 +67,7 @@ export const Container = styled.div`
         background-color:#fff;
     }
 `
-export const Authorization = styled.div`
+export const Authorization = styled.form`
     .link{
         color: ${mainGreen};
         font-size:12px;

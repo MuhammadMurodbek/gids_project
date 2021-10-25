@@ -21,7 +21,7 @@ const Index = () => {
     const [statePasswordRecover, setStatePasswordRecover] = useState('')
     const options = [
         { value: 'gid', label: 'Gid' },
-        { value: 'user', label: 'Foydalanuvchi' },
+        { value: 'simple_user', label: 'Foydalanuvchi' },
         { value: 'translator', label: 'Tarjimon' },
         { value: 'writer', label: 'Yozma tarjimon' },
       ];
@@ -33,7 +33,7 @@ const Index = () => {
             last_name: stateLast,
             password: statePassword,
             password2: statePasswordRecover,
-            role: select.value || '',
+            role: select?.value || null,
             username: stateEmail
         }
         setLoader(true)
@@ -41,7 +41,7 @@ const Index = () => {
     }
     React.useMemo(()=>{
         if(selector.status === 'success'){
-            console.log(selector)
+            // console.log(selector)
             setLoader(false)
             history.push('/auth/verify')
         }
