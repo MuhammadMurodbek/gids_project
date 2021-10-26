@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
- 
+import {mainGreen} from "./colors"
 const GlobalStyle = createGlobalStyle`
   *,*:before, *:after{
       box-sizing: border-box;
@@ -22,6 +22,39 @@ const GlobalStyle = createGlobalStyle`
       background-color: #baeeb89d !important;
     }
 
+  }
+  .sc-fWSDcn.iIvpBk{
+    position: absolute;
+    top:30.5%;
+    &::after{
+      color: ${mainGreen} !important;
+    }
+      /* display:none !important; */
+  }
+  .gAPKPk{
+    background-color:#f5faff !important;
+    svg{
+      color: #326a32c5 !important;
+    }
+  }
+  .sc-dwfUuu.cgfRtH{
+    input{
+      color:${mainGreen} !important;
+    }
+    input:focus{
+      border-color: ${mainGreen} !important;
+    }
+  }
+  .iIvpBk:after{
+    border-color: ${mainGreen} transparent ${mainGreen} transparent !important;
+  }
+  .sc-fbkiRW.kwzLdY{
+    background-color:#f5faff !important;
+  }
+  .kwzLdY{
+    svg{
+      color: #326a32c5 !important;
+    }
   }
   input:-webkit-autofill,
   input:-webkit-autofill:hover,

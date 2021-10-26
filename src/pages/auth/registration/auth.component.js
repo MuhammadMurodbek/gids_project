@@ -13,7 +13,9 @@ const Index = () => {
     const dispatch = useDispatch()
     const selector = useSelector(prev=>prev.post_auth_ent_reducer)
     const [stateEmail, setStateEmail] = useState('')
+    const [emailError, setEmailError] = useState({error:false, errorText:''})
     const [statePassword, setStatePassword] = useState('')
+    const [passwordError, setPasswordError] = useState({error:false, errorText:''})
     const [loader, setLoader] = useState(false)
     const onSubmit = (e) => {
         e.preventDefault()
@@ -22,7 +24,14 @@ const Index = () => {
             password: statePassword,
         }
         setLoader(true)
-        dispatch(post_auth_ent_action(obj))
+        if(!(stateEmail.includes('@') || stateEmail.length>0) || statePassword.length<8){
+            if(!(stateEmail.includes('@'))){
+                setEmailError({error: true, errorText:'Email kiritilmagan'})
+            }
+            if(statePassword.length<8){
+               setPasswordError({error: true, errorText:'Parol uchun kamida 8 ta belgidan foydalaning'})
+            }
+        }else dispatch(post_auth_ent_action(obj))
     }
     useEffect(()=>{
         if(selector.status){
@@ -35,13 +44,36 @@ const Index = () => {
             }
         }
     },[selector])
+    useEffect(()=>{
+        if(stateEmail.includes('@') && stateEmail.length > 3){
+            setEmailError({error:false, errorText:null})
+        }
+        if(statePassword.length>0){
+            setPasswordError({error:false, errorText:null})
+        }
+    },[stateEmail, statePassword])
     return (
         <Authorization onSubmit={onSubmit}>
             <Container>
-                <AuthInput setState={setStateEmail} title="E-mail kiriting" width="100%"/>
+                <AuthInput 
+                    setState={setStateEmail} 
+                    title="E-mail kiriting" 
+                    error={emailError.error}
+                    setError={setEmailError}
+                    width="100%"
+                    errorText={emailError.errorText} 
+                />
             </Container>
             <Container>
-                <AuthInput setState={setStatePassword} title="Parolingizni kiriting" placeholder="password..." password={true} width="100%"/>
+                <AuthInput 
+                    setState={setStatePassword} 
+                    title="Parolingizni kiriting"
+                    setError={setStatePassword} 
+                    placeholder="password..." 
+                    password={true} width="100%"
+                    error={passwordError.error}
+                    errorText={passwordError.errorText} 
+                />
             </Container>
             <Container width="100%" textAlign="right">
                 <Link to="/auth/reset" className="link">Напомнить пароль</Link>

@@ -5,11 +5,14 @@ import {mainGreen} from "../../../styles/global/colors"
 import './styles.css';
 import {Eye, InputWrapper} from "./style"
 
-function TextInput({ type, label, setState }) {
+function TextInput({ type, label, setState, error, errorText, setError }) {
   const [value, setValue] = useState('');
 
   function handleChange(e) {
     setValue(e.target.value);
+    if(setError) {
+      setError({error:false, errorText:false})
+    }
     if(setState){
       setState(e.target.value || '');
     }
@@ -17,7 +20,7 @@ function TextInput({ type, label, setState }) {
 
   return (
     <div className="input-container">
-      <input type={type} value={value} name="name" onChange={handleChange} />
+      <input  type={type} value={value} name="name" onChange={handleChange} />
       <label className={value && 'filled'}>
         {label}
       </label>
@@ -26,7 +29,7 @@ function TextInput({ type, label, setState }) {
 }
 
 export default function App(props) {
-  const {title, password, setState} = props;
+  const {title, password, setState, error, errorText, setError} = props;
 
   const [check, setCheck] = useState(true)
   const handleChangeOpen = () => {
@@ -38,7 +41,14 @@ export default function App(props) {
 
   return (
     <InputWrapper>
-      <TextInput setState={setState} label={title} type={(password && check) ? "password" : "text"}/>
+      <TextInput 
+        error={error} 
+        errorText={errorText} 
+        setState={setState} 
+        label={title} 
+        type={(password && check) ? "password" : "text"}
+        setError={setError} 
+      />
       {
         password ? 
           <Eye>
@@ -52,6 +62,9 @@ export default function App(props) {
         :
         null
       }
+      <span style={{position: 'absolute', fontSize:'11px', bottom:-14,  fontStyle:'italic', color:'red'}}>
+        {errorText ? '* ' + errorText:null}
+      </span>
     </InputWrapper>
   );
 }

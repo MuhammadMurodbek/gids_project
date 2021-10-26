@@ -2,7 +2,8 @@ import React, {useState, useEffect} from 'react'
 import {ContainerVerify} from "./index.style"
 import {FlexContainer} from "../../../styles/flex.container"
 import { TextTitle } from '../../../styles/textTitle/index.style'
-import TextInput from "../../../components/atom/auth.input"
+// import TextInput from "../../../components/atom/auth.input"
+import PinInput from "../../../components/atom/pin.input"
 import  Button  from '../../../components/atom/button'
 import { Container } from '../../../styles/container/index.style'
 import {useSelector, useDispatch} from "react-redux"
@@ -36,16 +37,17 @@ const Index = () => {
         <form onSubmit={onSubmit}>
             <FlexContainer width="100%" height="80vh" alignItems="center" justifyContent="center">
                 <ContainerVerify>
-                    <TextTitle font="20px" bottom="15px" top="10px">Emailingizni tasdiqlang</TextTitle>
-                    <Container padding="5px 10px">
+                    {/* <TextTitle font="20px" bottom="15px" top="10px">Emailingizni tasdiqlang</TextTitle> */}
+                    {/* <Container padding="5px 10px">
                         <div>{emailState ? emailState:'email'} poshtasiga kod yuborildi. Ushbu ko’dni pastga tering.</div>
-                    </Container>
+                    </Container> */}
                     <Container>
-                        <TextInput setState={setState} password title="Kodni kiriting" margin="15px 0 35px"/>
+                        <PinInput/>
+                        {/* <TextInput setState={setState} password title="Kodni kiriting" margin="15px 0 35px"/> */}
                     </Container>
-                    <Container className="text-right">
+                    {/* <Container className="text-right">
                         <Button>Tasdiqlash</Button>
-                    </Container>
+                    </Container> */}
                 </ContainerVerify>
             </FlexContainer>
         </form>

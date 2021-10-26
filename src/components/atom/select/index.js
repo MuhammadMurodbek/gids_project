@@ -3,7 +3,7 @@ import Select from "react-select"
 import {Wrapper} from "./index.style"
 import "./style.css"
 const Index = (props) => {
-    const {width, paddingX, margin, backgroundColor, setState} = props
+    const {width, paddingX, margin, backgroundColor, setState, errorText} = props
     const [value, setValue] = useState(null)
     const handleChange = (valueChange) => {
         setValue(valueChange)
@@ -26,7 +26,10 @@ const Index = (props) => {
                 onChange={handleChange}   
                 menuPortalTarget={document.body} 
                 styles={{ menuPortal: base => ({ ...base, zIndex: 9999 }) }} 
-            />            
+            />   
+            <span style={{position: 'absolute', fontSize:'11px', bottom:-14,  fontStyle:'italic', color:'red'}}>
+                {errorText ? '* ' + errorText:null}
+            </span>         
         </Wrapper>
     )
 }

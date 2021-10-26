@@ -6,13 +6,13 @@ const post_auth_reg_reducer = (state = {}, action) => {
     switch(action.type) {
         case "POST_AUTH_REG_0" : return {
             data:action.payload,
-            status:'success'
+            status:200
         }; 
-        case "POST_AUTH_REG_429": return {
-            status:"429"
+        case "POST_AUTH_REG_400": return {
+            status:400,
         };
         case "INT_500" : return {
-            status:'Internal server error'
+            status:500
         };
         
         default: return state; 
