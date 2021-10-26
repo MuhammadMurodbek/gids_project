@@ -1,17 +1,16 @@
+import { toast } from "react-hot-toast";
+
 const post_auth_reg_check_reducer = (state = {}, action) => {
    
     switch(action.type) {
         case "POST_AUTH_REG_CHECK_0" : return {
             data:action.payload,
-            status:'success'
+            status:200
         }; 
-        case "POST_AUTH_REG_CHECK_429": return {
-            status:"429"
-        };
-        case "INT_500" : return {
-            status:'Internal server error'
-        };
-        
+        case "POST_AUTH_REG_CHECK_101": return {
+            data:action.payload,
+            status:400,
+        }
         default: return state; 
      }
 } 

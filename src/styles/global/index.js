@@ -23,9 +23,12 @@ const GlobalStyle = createGlobalStyle`
     }
 
   }
+  .sc-nFqVA.ia-dRsN{
+    position:relative;
+  }
   .sc-fWSDcn.iIvpBk{
     position: absolute;
-    top:30.5%;
+    top:-9px;
     &::after{
       color: ${mainGreen} !important;
     }

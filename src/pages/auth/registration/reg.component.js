@@ -62,7 +62,10 @@ const Index = () => {
             setPasswordRecoverV({...passwordRecoverV, errorText:'Parolni tasdiqlashda xatolik mavjud'})
             setLoader(false)
         }
-        if(check && check_password) dispatch(post_auth_reg_action(objectPost))
+        if(check && check_password) {
+            localStorage.setItem('email',stateEmail)
+            dispatch(post_auth_reg_action(objectPost))
+        }
     }
     React.useEffect(()=>{
         if(selector?.status){

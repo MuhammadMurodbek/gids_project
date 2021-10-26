@@ -4,20 +4,21 @@ import {headers, baseUrl} from "../../api"
 export const post_auth_reg_check_action = (state) => async (dispatch) => {
     await axios.post(`${baseUrl}/api/auth/registration-check/`, state, headers)
         .then(response => {
-            switch(response.status) {
-                case 200: return dispatch({ 
-                    type: "POST_AUTH_REG_CHECK_0",
-                    payload: response.data,
-                })
-                case 429: return dispatch({
-                    type: "POST_AUTH_REG_CHECK_429",
-                })
-                default: return dispatch({ type:"INT_500"})
-            }
-            
+            console.log(response)
+            return dispatch({ 
+                type: "POST_AUTH_REG_CHECK_0",
+                payload: response,
+            })
         })
-        .catch(() => {
-            return dispatch({ type:"INT_500"})
+        .catch((error) => {
+            // console.log(error.sresponse)
+            if(error?.response){
+                return dispatch({ 
+                    type:'POST_AUTH_REG_CHECK_101',
+                    payload:error.response
+                })
+            }
+            // return dispatch({ type:"INT_500"})
         })
     
 }
