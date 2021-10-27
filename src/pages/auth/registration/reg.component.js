@@ -116,8 +116,8 @@ const Index = () => {
             <Container  {...mediaContainer}>
                 <AuthInput errorText={passwordRecoverV.errorText} title="Parolingizni tasdiqlang" setState={setStatePasswordRecover} password={true} width="100%"/>
             </Container>
-            <Container  {...mediaContainerSec}  className="text-right">
-                <Button {...mediaBtn} loader={loader} >Kirish</Button>
+            <Container  {...mediaContainerSec}  className="text-right" margin="20px 0 0">
+                <Button {...mediaBtn} loader={loader}  >Kirish</Button>
             </Container>
         </form>
     )

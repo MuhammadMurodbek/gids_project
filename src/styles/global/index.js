@@ -47,6 +47,16 @@ const GlobalStyle = createGlobalStyle`
     input:focus{
       border-color: ${mainGreen} !important;
     }
+    @media (max-width:395px){
+      &{
+        input{
+          width:45px;
+          height: 45px;
+          margin: 4px !important;
+          padding:0;
+        }
+      }
+    }
   }
   .iIvpBk:after{
     border-color: ${mainGreen} transparent ${mainGreen} transparent !important;
