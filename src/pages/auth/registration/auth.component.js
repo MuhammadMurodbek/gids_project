@@ -33,11 +33,15 @@ const Index = () => {
             }
         }else dispatch(post_auth_ent_action(obj))
     }
+    const Success = (data) => {
+        localStorage.setItem('user_token',JSON.stringify(data))
+        window.location.href="/main"
+    }
     useEffect(()=>{
         if(selector.status){
             setLoader(false)
             switch(selector.status){
-                case 200: return localStorage.setItem('user_token',JSON.stringify(selector?.data?.data))
+                case 200: return Success(selector?.data?.data)
                 case 400 : return toast.error("Ma'lumotlar to'liq kiritilmagan")
                 case 401 : return toast.error("Foydalanuvchi mavjud emas")
                 default : return null

@@ -3,7 +3,9 @@ import {BrowserRouter as Router, Switch, Route, Redirect} from "react-router-dom
 import Layout from "../layouts/main"
 import {routes} from "../routes/router.list"
 import ToastCNT from "../components/atom/toast.container"
+// import { useLocation } from 'react-router-dom';
 const Index = () => {
+    
     return (
         <Router>
             <ToastCNT/>
