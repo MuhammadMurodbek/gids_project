@@ -20,6 +20,8 @@ const YourComponent = () => {
   React.useEffect(()=>{
     if(selector) {
         if(selector.status===200){
+            console.log(selector)
+            localStorage.setItem('user_token',JSON.stringify(selector?.data?.data))
             history.push('/main')
         }
         if(selector.status === 400){

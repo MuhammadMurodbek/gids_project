@@ -25,6 +25,8 @@ import {Link} from 'react-router-dom'
 import Box from "@material-ui/core/Box";
 
 const Index = () => {
+    // let obj=JSON.stringify(JSON.parse(localStorage.getItem("user_token")))
+    // console.log(obj)
     const media = {
         m_width:"533px",
         m_m_width:"300px",
