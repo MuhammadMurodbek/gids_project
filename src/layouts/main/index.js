@@ -6,6 +6,7 @@ import {useLocation} from "react-router-dom"
 import { useJwt } from "react-jwt";
 
 const Index = ({children}) => {
+    
     const location = useLocation()
     const checkFooter = location.pathname === "/auth" || location.pathname === "/auth/verify"
     const token = JSON.parse(localStorage.getItem("user_token")) 
