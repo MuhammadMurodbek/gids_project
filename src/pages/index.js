@@ -4,6 +4,9 @@ import Layout from "../layouts/main"
 import {routes} from "../routes/router.list"
 
 const Index = () => {
+
+    localStorage.setItem("role", "simple_user")
+
     return (
         <Router>
             <Layout>
