@@ -12,6 +12,7 @@ import {mainGreen} from "../../../styles/global/colors"
 import MediaNavbar from "./media.navbar"
 import ReactFlagsSelect from 'react-flags-select';
 import {useSelector} from "react-redux"
+// import {useSelector} from "react"
 
 const Index = () => {
     const [ isOpen, setOpen ] = useState( false )
@@ -19,8 +20,9 @@ const Index = () => {
     const selector = useSelector(prev=>prev.reducer_user_type)
     const getRole = JSON.parse(localStorage.getItem("user_token"))
     const {role} = getRole
-    console.log(role)
-    
+    const authResponse = useSelector(prev=>prev.post_auth_ent_reducer)
+    // const regResponse = useSelector(prev=>prev.post_auth_reg_reducer)
+    console.log(authResponse)
     return (
         <>
             <Navbar>
