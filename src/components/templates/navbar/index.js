@@ -17,7 +17,10 @@ const Index = () => {
     const [ isOpen, setOpen ] = useState( false )
     const [selected, setSelected] = useState('UZ');
     const selector = useSelector(prev=>prev.reducer_user_type)
-
+    const getRole = JSON.parse(localStorage.getItem("user_token"))
+    const {role} = getRole
+    console.log(role)
+    
     return (
         <>
             <Navbar>
@@ -43,9 +46,16 @@ const Index = () => {
                             customLabels={{"US": "en", "UZ":"uz", "RU": "ru"}}
                         />
                         {/* <Select width="120px" paddingX="4" backgroundColor="#fff" placeholder="uz" /> */}
+                       
                         <FlexContainer width="100%" alignItems="center" justifyContent="center">
-                            <NavLink to="/auth" style={ { color: '#333' } }>
-                                <UserOutlined />{ " " }<span>Kirish</span>
+                            <NavLink 
+                            to={role === 'simple_user' ? '/gid-personal' : '/auth'}
+                             style={ { color: '#333' } }>
+                                <UserOutlined />
+                                {
+                                    role === 'simple_user' ? '' : <span>Kirish</span>
+                                }
+                                
                             </NavLink>
                         </FlexContainer>
                     </FlexContainer>
