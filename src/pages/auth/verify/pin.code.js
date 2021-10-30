@@ -20,9 +20,10 @@ const YourComponent = () => {
   React.useEffect(()=>{
     if(selector) {
         if(selector.status===200){
+            const {data} = selector.data
             console.log(selector)
-            localStorage.setItem('user_token',JSON.stringify(selector?.data?.data))
-            history.push('/main')
+            localStorage.setItem('user_token',JSON.stringify(data))
+            window.location.href="/main"
         }
         if(selector.status === 400){
             toast.error("Qaytadan urinib ko'ring")
