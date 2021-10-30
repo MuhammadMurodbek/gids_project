@@ -10,7 +10,11 @@ export const routes = [
         component:ListRouter.Verify
     },
     {
-        url:"/reset",
+        url:'/auth/update-password',
+        component:ListRouter.UpdatePassword
+    },
+    {
+        url:"/auth/reset",
         component:ListRouter.ResetPassword
     },
     {
@@ -88,5 +92,9 @@ export const routes = [
     {
         url:'/history',
         component:ListRouter.History
+    },
+    {
+        url:'*',
+        component:ListRouter.notFound
     }
 ]

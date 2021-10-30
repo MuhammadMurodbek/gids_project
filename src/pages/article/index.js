@@ -7,13 +7,13 @@ import CitiLeftPart from '../../components/organism/citiesLeftPart';
 import ImgContainer from "../../components/molecules/img.container"
 import ad from '../../assets/img/citiyes/ad.png'
 import xitoy from '../../assets/img/citiyes/xitoy.png';
-
+import {mediaTextField, mediaTextFieldSec, mediaBtn} from "../../custom/global.media.variables"
 export default function index() {
     return (
         <Wrapper>
             <AboutTravel>
-                <TextTitle>Safar qalay o‘tdi?</TextTitle>
-                <p className="aboutT__text">Safar qanday o’tgani haqida maqola yozib boshqalarga foyda ulashing ham daromadingizni kengaytiring!</p>
+                <TextTitle {...mediaTextField} {...mediaTextFieldSec}>Safar qalay o‘tdi?</TextTitle>
+                    <p className="aboutT__text">Safar qanday o’tgani haqida maqola yozib boshqalarga foyda ulashing ham daromadingizni kengaytiring!</p>
                 <TextTitle width="50%" left="auto" right="auto" bottom="40px">
                     <Button>Maqola yozish</Button>
                 </TextTitle>

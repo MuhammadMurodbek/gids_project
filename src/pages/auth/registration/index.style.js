@@ -14,11 +14,18 @@ export const Wrapper = styled.div`
     .MuiTab-wrapper{
         color: #326A32 !important;
     }
-    .sc-gKseQn.iFmfMI{
+    .sc-gKseQn.iFmfMI,
+    .sc-kstqJO.hVfkeN{
         padding: 9px 5px;
     }
+    /* .sc-kstqJO hVfkeN */
     .css-1wa3eu0-placeholder{
         color:#444;
+    }
+    @media (max-width:896px){
+        .grid_item+.grid_item{
+            margin-top:10px;
+        }
     }
     @media (max-width: 532px){
         .MuiBox-root.css-19kzrtu{
@@ -34,10 +41,12 @@ export const Wrapper = styled.div`
     }
 `
 export const Container = styled.div`
+    position:relative;
     width:600px;
     height: auto;
     padding:10px;
-    margin-top:30px;
+    margin:30px 0;
+    /* overflow: hidden; */
     /* background-color:red; */
     box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.12);
     @media (max-width:800px){
@@ -58,15 +67,10 @@ export const Container = styled.div`
         background-color:#fff;
     }
 `
-export const Authorization = styled.div`
-    /* background-color:green; */
+export const Authorization = styled.form`
     .link{
         color: ${mainGreen};
         font-size:12px;
-        /* text-decoration:line; */
-        /* margin-left: auto; */
-        /* background-color:red; */
-        /* width:100%; */
         text-align:right;
         padding-right: 10px;
 

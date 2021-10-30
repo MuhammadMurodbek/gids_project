@@ -4,10 +4,8 @@ import { TextTitle } from '../../../styles/textTitle/index.style'
 import { Grid } from '@material-ui/core';
 import ImgContainer from '../../../components/molecules/img.container';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
-import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
+ import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
 import Button from "../../../components/atom/button";
-
-
 import true400 from '../../../assets/img/advertasing/truebg.svg';
 import fols from '../../../assets/img/advertasing/fols.svg';
 import ckashalok from '../../../assets/img/advertasing/kashlok.svg';
@@ -23,9 +21,7 @@ export default function Index() {
                 </TextTitle>
 
                 <Grid container spacing={1} justifyContent="center" className="services history">
-                    <Grid item md="1" className="grid__img">
-                        <ImgContainer src={true400} />
-                    </Grid>
+
                     <Grid item md="11" className="item_md_11">
                         <div className="services_item" >
                             <p className="services_1">Ro'yxatning yuqori qismiga ko'tarish</p>
@@ -38,12 +34,15 @@ export default function Index() {
                     </Grid>
                 </Grid>
                 <div className="historybtn">
-                    <Button className="btn-pey " margin="30px 0" type="outlined">Tarixni ko’rish</Button>
+                    <Link to="/history">
+                        <Button className="btn-pey " margin="30px 0" type="outlined">Tarixni ko’rish</Button>
+                    </Link>
                 </div>
 
                 <TextTitle className="text-title text-title11" bottom="70px" top="70px">
                     Xizmatlarni tanlang
                 </TextTitle>
+
                 <Grid container spacing={1} justifyContent="center" className="services">
                     <Grid item md="1" className="grid__img">
                         <ImgContainer src={true400} />
@@ -58,6 +57,7 @@ export default function Index() {
                         </div>
                     </Grid>
                 </Grid>
+
                 <Grid container spacing={1} justifyContent="center" className="services cervises2">
                     <Grid item md="1" className="grid__img">
                         <ImgContainer src={fols} />
@@ -74,6 +74,7 @@ export default function Index() {
                         </div>
                     </Grid>
                 </Grid>
+
                 <Grid container spacing={1} justifyContent="center" className="services cervises2">
                     <Grid item md="1" className="grid__img">
                         <ImgContainer src={fols} />
@@ -89,9 +90,10 @@ export default function Index() {
                     </Grid>
                 </Grid>
 
-                <TextTitle className="text-title" bottom="70px" top="70px">
+                <TextTitle className="text-title" bottom="50px" top="50px">
                     To‘lov turini tanlang
                 </TextTitle>
+                
                 <Grid container spacing={1}>
                     <Grid item md="6" className="cashlok">
                         <div>

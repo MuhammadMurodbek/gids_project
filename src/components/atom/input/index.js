@@ -2,9 +2,8 @@ import React,{useState} from 'react'
 import {Input, InputWrapper, InputLabel, Eye} from "./index.style"
 import RemoveRedEyeOutlinedIcon from '@material-ui/icons/RemoveRedEyeOutlined';
 import VisibilityOffOutlinedIcon from '@material-ui/icons/VisibilityOffOutlined';
-// import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
-// import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined';
 import {mainGreen} from "../../../styles/global/colors"
+
 const Index = (props) => {
     const [check, setCheck] = useState(true)
     const handleChangeOpen = () => {

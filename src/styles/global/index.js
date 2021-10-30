@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
- 
+import {mainGreen} from "./colors"
 const GlobalStyle = createGlobalStyle`
   *,*:before, *:after{
       box-sizing: border-box;
@@ -16,6 +16,67 @@ const GlobalStyle = createGlobalStyle`
   *::-webkit-scrollbar-thumb {
     background-color: #326a32;
     border-radius: 50px;
+  }
+  .MuiLinearProgress-root.MuiLinearProgress-colorPrimary.MuiLinearProgress-indeterminate.css-eglki6-MuiLinearProgress-root{
+    span{
+      background-color: #baeeb89d !important;
+    }
+
+  }
+  .sc-nFqVA.ia-dRsN{
+    position:relative;
+  }
+  .sc-fWSDcn.iIvpBk{
+    position: absolute;
+    top:-9px;
+    &::after{
+      color: ${mainGreen} !important;
+    }
+      /* display:none !important; */
+  }
+  .gAPKPk{
+    background-color:#f5faff !important;
+    svg{
+      color: #326a32c5 !important;
+    }
+  }
+  .sc-dwfUuu.cgfRtH{
+    input{
+      color:${mainGreen} !important;
+    }
+    input:focus{
+      border-color: ${mainGreen} !important;
+    }
+    @media (max-width:395px){
+      &{
+        input{
+          width:45px;
+          height: 45px;
+          margin: 4px !important;
+          padding:0;
+        }
+      }
+    }
+  }
+  .iIvpBk:after{
+    border-color: ${mainGreen} transparent ${mainGreen} transparent !important;
+  }
+  .sc-fbkiRW.kwzLdY{
+    background-color:#f5faff !important;
+  }
+  .kwzLdY{
+    svg{
+      color: #326a32c5 !important;
+    }
+  }
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:active,
+  input:-webkit-autofill:focus {
+      background-color: #fafcfa !important;
+      /* color: #555 !important;
+      -webkit-box-shadow: 0 0 0 1000px white inset !important;
+      -webkit-text-fill-color: #555555 !important; */
   }
   body {
     width: 100%;

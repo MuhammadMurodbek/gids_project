@@ -18,7 +18,6 @@ export const Wrapper01 = styled.div`
      
 }
 
- 
 `
 export const Wrapper = styled.div`
     width: 100%;
@@ -29,7 +28,7 @@ export const Wrapper = styled.div`
  }
  .services{
     box-shadow:0px 5px 5px #BBBDBB;
-    padding: 15px;
+    padding: 15px 0;
     margin-bottom: 20px;
     cursor: pointer;
 }
@@ -51,19 +50,15 @@ export const Wrapper = styled.div`
      justify-content: center;
  }
  .services_item{
-     width: 600px;
+     width: 700px;
     }
-    .services_1{
-     margin: 0;
-     font-weight: 600;
- }
  .item_md_11{
      display: flex;
      align-items: center;
      justify-content: space-between;
  }
  .cashlok{
-    margin: 30px 0;
+    margin: 0px 0;
      display: flex;
  }
  .pay{
@@ -110,6 +105,12 @@ export const Wrapper = styled.div`
     font-size:13px;
     margin-top: 10px;
 }
+.services_1{
+    padding: 0px;
+     margin: 0;
+     margin-bottom: 10px;
+     font-weight: 600;
+    }
 
 `
 

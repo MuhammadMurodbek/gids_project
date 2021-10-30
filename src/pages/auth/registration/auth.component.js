@@ -1,36 +1,89 @@
-import React from 'react'
-// import TextInput from "../../../components/atom/input"
+import React, {useState, useEffect} from 'react'
 import {Container} from "../../../styles/container/index.style"
 import Button from "../../../components/atom/button"
 import {Authorization} from "./index.style"
 import {Link} from "react-router-dom"
 import AuthInput from "../../../components/atom/auth.input"
-const mediaBtn = {
-    m_width_btn:"456px",
-    m_m_width_btn:"260px",
-    m_m_font_btn:"14px",
-    m_m_padding:"12px 28px"
-}
-const mediaContainerSec = {
-    m_width:"534px",
-    m_padding:"4px",
-    m_text_align:"center"
-}
+import {mediaBtnAuth, mediaContainerSecAuth} from "./_media"
+import {useSelector, useDispatch} from "react-redux"
+import {post_auth_ent_action} from "../../../redux/actions"
+import toast from "react-hot-toast"
+
 const Index = () => {
+    const dispatch = useDispatch()
+    const selector = useSelector(prev=>prev.post_auth_ent_reducer)
+    const [stateEmail, setStateEmail] = useState('')
+    const [emailError, setEmailError] = useState({error:false, errorText:''})
+    const [statePassword, setStatePassword] = useState('')
+    const [passwordError, setPasswordError] = useState({error:false, errorText:''})
+    const [loader, setLoader] = useState(false)
+    const onSubmit = (e) => {
+        e.preventDefault()
+        let obj={
+            username: stateEmail,
+            password: statePassword,
+        }
+        setLoader(true)
+        if(!(stateEmail.includes('@') || stateEmail.length>0) || statePassword.length<8){
+            if(!(stateEmail.includes('@'))){
+                setEmailError({error: true, errorText:'Email kiritilmagan'})
+            }
+            if(statePassword.length<8){
+               setPasswordError({error: true, errorText:'Parol uchun kamida 8 ta belgidan foydalaning'})
+            }
+        }else dispatch(post_auth_ent_action(obj))
+    }
+    const Success = (data) => {
+        localStorage.setItem('user_token',JSON.stringify(data))
+        window.location.href="/main"
+    }
+    useEffect(()=>{
+        if(selector.status){
+            setLoader(false)
+            switch(selector.status){
+                case 200: return Success(selector?.data?.data)
+                case 400 : return toast.error("Ma'lumotlar to'liq kiritilmagan")
+                case 401 : return toast.error("Foydalanuvchi mavjud emas")
+                default : return null
+            }
+        }
+    },[selector])
+    useEffect(()=>{
+        if(stateEmail.includes('@') && stateEmail.length > 3){
+            setEmailError({error:false, errorText:null})
+        }
+        if(statePassword.length>0){
+            setPasswordError({error:false, errorText:null})
+        }
+    },[stateEmail, statePassword])
     return (
-        <Authorization>
+        <Authorization onSubmit={onSubmit}>
             <Container>
-                <AuthInput title="E-mail kiriting" width="100%"/>
-                {/* <TextInput title="E-mail kiriting" width="100%"/> */}
+                <AuthInput 
+                    setState={setStateEmail} 
+                    title="E-mail kiriting" 
+                    error={emailError.error}
+                    setError={setEmailError}
+                    width="100%"
+                    errorText={emailError.errorText} 
+                />
             </Container>
             <Container>
-                <AuthInput title="Password kiriting" placeholder="password..." password={true} width="100%"/>
+                <AuthInput 
+                    setState={setStatePassword} 
+                    title="Parolingizni kiriting"
+                    setError={setStatePassword} 
+                    placeholder="password..." 
+                    password={true} width="100%"
+                    error={passwordError.error}
+                    errorText={passwordError.errorText} 
+                />
             </Container>
             <Container width="100%" textAlign="right">
-                <Link to="/reset" className="link">Напомнить пароль</Link>
+                <Link to="/auth/reset" className="link">Напомнить пароль</Link>
             </Container>
-            <Container {...mediaContainerSec} className="text-right"> 
-                <Button {...mediaBtn}>Kirish</Button>
+            <Container {...mediaContainerSecAuth} className="text-right"> 
+                <Button {...mediaBtnAuth} loader={loader}>Kirish</Button>
             </Container>
         </Authorization>
     )
