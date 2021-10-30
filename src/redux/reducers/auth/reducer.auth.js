@@ -4,6 +4,7 @@ const post_auth_ent_reducer = (state = {}, action) => {
    
     switch(action.type) {
         case "POST_AUTH_ENT_0" : return {
+            state:action.payload,
             data:action.payload,
             status:200
         };
