@@ -10,12 +10,12 @@ const Index = ({children}) => {
     const location = useLocation()
     const checkFooter = location.pathname === "/auth" || location.pathname === "/auth/verify"
     const token = JSON.parse(localStorage.getItem("user_token")) 
-    const { isExpired } = useJwt(token?.access)
+    const {isExpired } = useJwt(token?.access)
     React.useEffect(() => {
-        if(location.pathname !== "/auth"){
-            if(!token || isExpired){
+        if(!(location.pathname.includes("auth"))){
+            if(isExpired){
+                localStorage.clear()
                 window.location.href="/auth"
-                localStorage.clear();
             }
         }
     },[location, isExpired, token])
