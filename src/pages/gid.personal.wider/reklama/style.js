@@ -3,20 +3,21 @@ import { mainGreen } from "../../../styles/global/colors"
 
 export const Wrapper01 = styled.div`
      width: 100%;
+
      .payment{
         background-color: #EEF7EE;
         display: flex;
         justify-content: flex-end;
-        margin: -22px;
+        margin: -22px !important;
     }
     .btn-pey{
-        margin-right: 30px;
+        margin-left: 30px;
     }
     .btn-group{
     margin-right: 100px;
+     
 }
 
- 
 `
 export const Wrapper = styled.div`
     width: 100%;
@@ -27,10 +28,19 @@ export const Wrapper = styled.div`
  }
  .services{
     box-shadow:0px 5px 5px #BBBDBB;
-    padding: 20px;
+    padding: 15px 0;
     margin-bottom: 20px;
     cursor: pointer;
- }
+}
+.history{
+    background: #EEF7EE;
+}
+.historybtn{
+    float: right;
+}
+.text-title11{
+    margin-top: 120px;
+}
  .cervises2{
      background-color: #EEF7EE;
  }
@@ -40,19 +50,15 @@ export const Wrapper = styled.div`
      justify-content: center;
  }
  .services_item{
-     width: 600px;
+     width: 700px;
     }
-    .services_1{
-     margin: 0;
-     font-weight: 600;
- }
  .item_md_11{
      display: flex;
      align-items: center;
      justify-content: space-between;
  }
  .cashlok{
-    margin: 30px 0;
+    margin: 0px 0;
      display: flex;
  }
  .pay{
@@ -90,6 +96,21 @@ export const Wrapper = styled.div`
 .pay2{
     background-color: #EEF7EE;
 }
+.right-prise{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.right-b{
+    font-size:13px;
+    margin-top: 10px;
+}
+.services_1{
+    padding: 0px;
+     margin: 0;
+     margin-bottom: 10px;
+     font-weight: 600;
+    }
 
 `
 
@@ -131,15 +152,15 @@ export const  Wrapper02 = styled.div`
      margin-left: 0 !important;
      text-align: left;
  }
- .div-Radio{
+ /* .div-Radio{
     box-shadow:0px 5px 5px #BBBDBB;
     display: flex;
     margin-bottom: 20px;
     padding: 10px;
     width:340px;
- }
+ } */
+
  .div-Radio p, .div-Radio-02 p{
-     
      margin: 0;
  }
  .div-Radio-02{

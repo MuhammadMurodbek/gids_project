@@ -4,7 +4,7 @@ import Navbar from '../../components/templates/navbar';
 import Footer from "../../components/templates/footer"
 import {useLocation} from "react-router-dom"
 import { useJwt } from "react-jwt";
-import {postResponse} from "../../hooks/response_get"
+// import {postResponse} from "../../hooks/response_get"
 const Index = ({children}) => {
     // const [state, setState] = useState()
     // let token = JSON.parse(localStorage.getItem('user_token'))

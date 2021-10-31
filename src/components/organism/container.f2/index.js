@@ -13,7 +13,9 @@ const media_container = {
     m_width:"600px",
     m_padding:"10px 0",
 }
+
 const Index = () => {
+
     return (
         <WrapperContainer>
             <Grid container spacing={1}>
@@ -29,7 +31,7 @@ const Index = () => {
                     <Container margin="30px 0 0 0">
                         <TextTitle align="left" font="20px">Abdusattor Ergashev</TextTitle>
                         <div className="gid-info-personal">33 yosh | <span>Gid va tarjimon</span> </div>
-                        <div className="gid-info-personal-text top"><div className="text">Xizmatlar (shaharlar):</div>Uzbekistan, Turkiya, Yaponiya</div>
+                        <div className="gid-info-personal-text top"> <div className="text">Xizmatlar (shaharlar):</div>Uzbekistan, Turkiya, Yaponiya</div>
                         <div className="gid-info-personal-text"><div className="text">Tillar:</div>O'zbek, Turk, Ingliz, Rus</div>
                         <div className="gid-info-personal-text"> 
                             <div className="text">O'zim haqimda:</div>  
