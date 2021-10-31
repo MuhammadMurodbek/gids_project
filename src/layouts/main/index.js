@@ -19,9 +19,8 @@ const Index = ({children}) => {
     const token = JSON.parse(localStorage.getItem("user_token")) 
     const {isExpired } = useJwt(token ? token.access : undefined)
     React.useEffect(() => {
-        if(!(location.pathname.includes("auth"))){
+        if(!(location.pathname.includes("auth") || location.pathname === '/main')){
             if(isExpired){
-                // postResponse('/api/auth/token/refresh/',{refresh:token.refresh}, setState)
                 localStorage.clear()
                 window.location.href="/auth"
             }
