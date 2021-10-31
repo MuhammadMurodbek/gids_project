@@ -1,5 +1,5 @@
 import styled from "styled-components"
-
+ 
 export const WrapperRoundImage = styled.div`
     width:${value=>value.width};
     height:${value=>value.height};

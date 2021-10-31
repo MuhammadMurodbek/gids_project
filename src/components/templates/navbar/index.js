@@ -17,7 +17,7 @@ import {useSelector} from "react-redux"
 const Index = () => {
     const [ isOpen, setOpen ] = useState( false )
     const [selected, setSelected] = useState('UZ');
-    const selector = useSelector(prev=>prev.reducer_user_type)
+    // const selector = useSelector(prev=>prev.reducer_user_type)
     const getRole = JSON.parse(localStorage.getItem("user_token"))
     const {role} = getRole
     const authResponse = useSelector(prev=>prev.post_auth_ent_reducer)

@@ -1,39 +1,48 @@
 import React from 'react';
-import { Wrapper, Wrapper01} from './style';
+import { Wrapper, Wrapper01 } from './style';
 import { TextTitle } from '../../../styles/textTitle/index.style'
 import { Grid } from '@material-ui/core';
 import ImgContainer from '../../../components/molecules/img.container';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
-import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
+ import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
 import Button from "../../../components/atom/button";
-// import RadioButtonUncheckedIcon from '@material-ui/icons/RadioButtonUnchecked';
-// import Radio from '@mui/material/Radio';
-// import RadioGroup from '@mui/material/RadioGroup';
-// import FormControlLabel from '@mui/material/FormControlLabel';
-// import FormControl from '@mui/material/FormControl';
-// import FormLabel from '@mui/material/FormLabel';
-
-
-
 import true400 from '../../../assets/img/advertasing/truebg.svg';
 import fols from '../../../assets/img/advertasing/fols.svg';
 import ckashalok from '../../../assets/img/advertasing/kashlok.svg';
-// import click from '../../../assets/img/advertasing/click400.svg';
-// import payme from '../../../assets/img/advertasing/payme400.svg';
-// import paynet from '../../../assets/img/advertasing/paynet400.svg';
 import { Link } from 'react-router-dom';
 
-
 export default function Index() {
-
-
 
     return (
         <Wrapper01>
             <Wrapper>
                 <TextTitle className="text-title" bottom="70px" top="70px">
+                    Xozirgi tarif
+                </TextTitle>
+
+                <Grid container spacing={1} justifyContent="center" className="services history">
+
+                    <Grid item md="11" className="item_md_11">
+                        <div className="services_item" >
+                            <p className="services_1">Ro'yxatning yuqori qismiga ko'tarish</p>
+                            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent aliquam sit ornare mattis id non aliquam convallis ut.</span>
+                        </div>
+                        <div className="right-prise">
+                            <b>1 500 so‘m</b>
+                            <b className="right-b">22.05.2.21 gacha</b>
+                        </div>
+                    </Grid>
+                </Grid>
+                <div className="historybtn">
+                    <Link to="/history">
+                        <Button className="btn-pey " margin="30px 0" type="outlined">Tarixni ko’rish</Button>
+                    </Link>
+                </div>
+
+                <TextTitle className="text-title text-title11" bottom="70px" top="70px">
                     Xizmatlarni tanlang
                 </TextTitle>
+
                 <Grid container spacing={1} justifyContent="center" className="services">
                     <Grid item md="1" className="grid__img">
                         <ImgContainer src={true400} />
@@ -48,6 +57,7 @@ export default function Index() {
                         </div>
                     </Grid>
                 </Grid>
+
                 <Grid container spacing={1} justifyContent="center" className="services cervises2">
                     <Grid item md="1" className="grid__img">
                         <ImgContainer src={fols} />
@@ -64,6 +74,7 @@ export default function Index() {
                         </div>
                     </Grid>
                 </Grid>
+
                 <Grid container spacing={1} justifyContent="center" className="services cervises2">
                     <Grid item md="1" className="grid__img">
                         <ImgContainer src={fols} />
@@ -79,9 +90,10 @@ export default function Index() {
                     </Grid>
                 </Grid>
 
-                <TextTitle className="text-title" bottom="70px" top="70px">
+                <TextTitle className="text-title" bottom="50px" top="50px">
                     To‘lov turini tanlang
                 </TextTitle>
+                
                 <Grid container spacing={1}>
                     <Grid item md="6" className="cashlok">
                         <div>
@@ -111,12 +123,10 @@ export default function Index() {
             <div className="payment">
                 <div className="btn-group">
                     <Button className="btn-pey" margin="30px 0" type="outlined">Bekor qilish</Button>
-                  <Link to="/pay"><Button className="btn-pey" margin="30px 0"    >To‘lov qilish</Button></Link>
+                    <Link to="/pay"><Button className="btn-pey" margin="30px 0">To‘lov qilish</Button></Link>
                 </div>
             </div>
 
-
-            
         </Wrapper01>
     )
 }
