@@ -5,14 +5,14 @@ import {Authorization} from "./index.style"
 import {Link} from "react-router-dom"
 import AuthInput from "../../../components/atom/auth.input"
 import {mediaBtnAuth, mediaContainerSecAuth} from "./_media"
-import {useSelector, useDispatch} from "react-redux"
 import {post_auth_ent_action} from "../../../redux/actions"
 import toast from "react-hot-toast"
+import useApiData from "../../../hooks/response"
 
 const Index = () => {
-    const dispatch = useDispatch()
-    const selector = useSelector(prev=>prev.post_auth_ent_reducer)
+    // const history = useHistory()
     const [stateEmail, setStateEmail] = useState('')
+    const {responseHook, setResponseHook} = useApiData('post_auth_ent_reducer')
     const [emailError, setEmailError] = useState({error:false, errorText:''})
     const [statePassword, setStatePassword] = useState('')
     const [passwordError, setPasswordError] = useState({error:false, errorText:''})
@@ -31,23 +31,23 @@ const Index = () => {
             if(statePassword.length<8){
                setPasswordError({error: true, errorText:'Parol uchun kamida 8 ta belgidan foydalaning'})
             }
-        }else dispatch(post_auth_ent_action(obj))
+        }else setResponseHook(post_auth_ent_action(obj))
     }
     const Success = (data) => {
         localStorage.setItem('user_token',JSON.stringify(data))
         window.location.href="/main"
     }
     useEffect(()=>{
-        if(selector.status){
+        if(responseHook?.status){
             setLoader(false)
-            switch(selector.status){
-                case 200: return Success(selector?.data?.data)
+            switch(responseHook.status){
+                case 200: return Success(responseHook?.data?.data)
                 case 400 : return toast.error("Ma'lumotlar to'liq kiritilmagan")
                 case 401 : return toast.error("Foydalanuvchi mavjud emas")
                 default : return null
             }
         }
-    },[selector])
+    },[responseHook])
     useEffect(()=>{
         if(stateEmail.includes('@') && stateEmail.length > 3){
             setEmailError({error:false, errorText:null})
