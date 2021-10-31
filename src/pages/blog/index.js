@@ -50,13 +50,13 @@ export default function Index() {
 
 
 
-                </Grid>
+                </Grid> 
 
                 <Grid xs={12} sm={12}  item md={4} className="msa2">
-                    <div className="imgad"><ImgContainer src={ad} width="350px" margin="0 auto" /></div>
-                    <div className="imgad"><ImgContainer src={ad} width="350px" margin="0 auto" /></div>
-                    <div className="imgad"><ImgContainer src={ad} width="350px" margin="0 auto" /></div>
-                    <div className="imgad"><ImgContainer src={ad} width="350px" margin="0 auto" /></div>
+                    <div className="imgcla"><ImgContainer src={ad} width="350px" margin="0 auto"/></div>
+                    <div className="imgcla "><ImgContainer src={ad} width="350px" margin="0 auto"/></div>
+                    <div className="imgcla "><ImgContainer src={ad} width="350px" margin="0 auto"/></div>
+                    <div className="imgcla "><ImgContainer src={ad} width="350px" margin="0 auto"/></div>
                 </Grid>
             </Grid>
 
