@@ -10,6 +10,7 @@ import toast from "react-hot-toast"
 import useApiData from "../../../hooks/response"
 
 const Index = () => {
+    // const history = useHistory()
     const [stateEmail, setStateEmail] = useState('')
     const {responseHook, setResponseHook} = useApiData('post_auth_ent_reducer')
     const [emailError, setEmailError] = useState({error:false, errorText:''})

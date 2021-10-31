@@ -23,7 +23,10 @@ const Index = ({children}) => {
     },[])
     return (
         <Wrapper>
-            <Navbar/>
+            {
+                location.pathname.includes("auth") ? null : <Navbar/>
+            }
+            
                 <div className="main-part">{children}</div>
             {checkFooter ? null:<Footer/>}
         </Wrapper>

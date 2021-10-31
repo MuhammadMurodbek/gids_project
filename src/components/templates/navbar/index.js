@@ -17,12 +17,14 @@ import ReactFlagsSelect from 'react-flags-select';
 const Index = () => {
     const [ isOpen, setOpen ] = useState( false )
     const [selected, setSelected] = useState('UZ');
- 
- 
-    const role = localStorage.getItem("role")
-
- 
-     return (
+    // const selector = useSelector(prev=>prev.reducer_user_type)
+    const getRole = JSON.parse(localStorage.getItem("user_token"))
+    const {role} = getRole
+    // const authResponse = useSelector(prev=>prev.post_auth_ent_reducer)
+    // const regResponse = useSelector(prev=>prev.post_auth_reg_reducer)
+    // console.log(authResponse)
+    // console.log(role)
+    return (
         <>
             <Navbar>
                 <FlexContainer width="100%" padding="0 25px" alignItems="center" justifyContent="space-between">
@@ -30,13 +32,20 @@ const Index = () => {
                         <Link to="/main"> <img src={ Logo } alt="safsf" /></Link>
                     </div>
                     <FlexContainer {...navbarMediaCenter} padding="0 15px" width="80%" alignItems="center" justifyContent="center">
-                        <ButtonNavbar title="Gid yoki tarjimonni tanlash" url="/gids" />
                         {
-                            role === "simple_user" ? 
-                            <ButtonNavbar title="Gid va tarjimonlar uchun" url="/forgits" />:null
+                            role === 'gid' ? 
+                            null
+                           : <ButtonNavbar title="Gid yoki tarjimonni tanlash" url="/gids" /> 
                         }
+                        <ButtonNavbar title="Gid va tarjimonlar uchun" url="/forgits" />
                         <ButtonNavbar title="Blog" url="/blog" />
-                        <ButtonNavbar title="Ariza qoldirish" url="/application-form" />
+                        {
+                            role === 'gid' ? 
+                            <ButtonNavbar title="Arizalar ro'yxati" url="/application-list"  /> 
+                            : 
+                            <ButtonNavbar title="Ariza qoldirish" url="/application-form" />
+                        }
+                        
                     </FlexContainer>
                     <FlexContainer { ...navbarMedia } width="200px">
                         <ReactFlagsSelect
@@ -47,14 +56,16 @@ const Index = () => {
                             customLabels={{"US": "en", "UZ":"uz", "RU": "ru"}}
                         />
                         {/* <Select width="120px" paddingX="4" backgroundColor="#fff" placeholder="uz" /> */}
+                       
                         <FlexContainer width="100%" alignItems="center" justifyContent="center">
-                            <NavLink to="/auth" style={ { color: '#333' } }>
-                                <UserOutlined />{ " " }<span>
+                            <NavLink 
+                            to={role === 'simple_user' || role === 'gid' ? '/gid-personal' : '/auth'}
+                             style={ { color: '#333' } }>
+                                <UserOutlined />
                                 {
-                                    role === "simple_user" ? 
-                                    "":"Kirish"
+                                    role === 'simple_user' || 'gid' ? '' : <span>Kirish</span>
                                 }
-                                </span>
+                                {role}
                             </NavLink>
                         </FlexContainer>
                     </FlexContainer>
