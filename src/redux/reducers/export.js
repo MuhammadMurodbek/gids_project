@@ -3,6 +3,7 @@ import reducer_user_type from "./type.user"
 import post_auth_reg_reducer from "./auth/reducer.reg"
 import post_auth_ent_reducer from "./auth/reducer.auth"
 import post_auth_reg_check_reducer from "./auth/reducer.reg.check"
+import get_about_bio_reducer from "./gids/about"
 
 export {
     reducers, 
@@ -10,4 +11,5 @@ export {
     post_auth_reg_reducer,
     post_auth_ent_reducer,
     post_auth_reg_check_reducer,
+    get_about_bio_reducer
 }

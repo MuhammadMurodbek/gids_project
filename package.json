@@ -47,6 +47,7 @@
     "react-verification-pin": "^0.2.0",
     "react-vertical-timeline-component": "^3.3.3",
     "redux": "^4.1.1",
+    "redux-debounced": "^0.5.0",
     "redux-thunk": "^2.3.0",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.1",

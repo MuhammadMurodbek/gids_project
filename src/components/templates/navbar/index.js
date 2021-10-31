@@ -59,12 +59,13 @@ const Index = () => {
                        
                         <FlexContainer width="100%" alignItems="center" justifyContent="center">
                             <NavLink 
-                            to={role === 'simple_user' ? '/gid-personal' : '/auth'}
+                            to={role === 'simple_user' || role === 'gid' ? '/gid-personal' : '/auth'}
                              style={ { color: '#333' } }>
                                 <UserOutlined />
                                 {
                                     role === 'simple_user' || 'gid' ? '' : <span>Kirish</span>
                                 }
+                                {role}
                                 
                             </NavLink>
                         </FlexContainer>

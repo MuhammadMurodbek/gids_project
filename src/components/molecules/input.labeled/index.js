@@ -5,6 +5,7 @@ import RemoveRedEyeOutlinedIcon from '@material-ui/icons/RemoveRedEyeOutlined';
 import VisibilityOffOutlinedIcon from '@material-ui/icons/VisibilityOffOutlined';
 import {mainGreen} from "../../../styles/global/colors"
 const Index = (props) => {
+    
     const {width, label, password, sizeLabel, typeNumber} = props
     const [check, setCheck] = useState(true)
     const handleChangeOpen = () => {

@@ -2,15 +2,8 @@ import React, { useState } from 'react';
 import { Upload } from 'antd';
 import ImgCrop from 'antd-img-crop';
 import {Wrapper} from "./style"
-const Demo = () => {
-  const [fileList, setFileList] = useState([
-    {
-      uid: '-1',
-      name: 'image.png',
-      status: 'done',
-      url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
-    },
-  ]);
+const Demo = (props) => {
+ const {fileList, setFileList} = props
 
   const onChange = ({ fileList: newFileList }) => {
     setFileList(newFileList);
@@ -35,7 +28,7 @@ const Demo = () => {
     <Wrapper>
         <ImgCrop rotate>
         <Upload
-            action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+            action="http://165.232.76.226/api/gids/edit/certificate/"
             listType="picture-card"
             fileList={fileList}
             onChange={onChange}
