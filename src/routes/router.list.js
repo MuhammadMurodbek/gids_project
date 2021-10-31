@@ -46,6 +46,10 @@ export const routes_gid = [
         component:ListRouter.Reklama
     },
     {
+        url:'/pay',
+        component:ListRouter.Pay
+    },
+    {
         url:'/history',
         component:ListRouter.History
     },
@@ -72,7 +76,11 @@ export const routes_traslater =  [
         url:'/advertising',
         component:ListRouter.Advertising
     },
-      {
+    {
+        url:'/pay',
+        component:ListRouter.Pay
+    },
+    {
         url:'/reklama',
         component:ListRouter.Reklama
     },
@@ -103,7 +111,11 @@ export const routes_write =  [
         url:'/advertising',
         component:ListRouter.Advertising
     },
-      {
+    {
+        url:'/pay',
+        component:ListRouter.Pay
+    },
+    {
         url:'/reklama',
         component:ListRouter.Reklama
     },

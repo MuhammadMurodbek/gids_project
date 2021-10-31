@@ -5,5 +5,10 @@ export const Wrapper = styled.div`
     height: auto;
     /* box-shadow:${shadow}; */
     /* background-color:red; */
-
+    .btnGrop{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        margin: 20px 0;
+    }
 `

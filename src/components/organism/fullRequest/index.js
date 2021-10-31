@@ -16,7 +16,7 @@ import imgpen from '../../../assets/img/request/pen#fff.svg';
 import ImgContainer from "../../../components/molecules/img.container";
 import CloseIcon from '@material-ui/icons/Close';
 import Modal from 'react-awesome-modal';
-
+import Textarea from '../../atom/textAreaCom';
 
 export default function Index(props) {
 
@@ -112,8 +112,18 @@ export default function Index(props) {
                             <CloseIcon className="pointx" onClick={closeModal} />
                         </div>
                         <h1 className="modaltitle">Xabaringizni yozing</h1>
-                        
+                        <div className="modaldiv">
+                            <Textarea width="100%" placeholder="Text..." height="200px" />
+                        </div>
 
+                        <div className="btgroup-modal">
+                            <Button  type="outlined" className="btnRequest" onClick={closeModal}>
+                                Yopish
+                            </Button>
+                            <Button type="button" className="btnRequest">
+                                Yuborish
+                            </Button>
+                        </div>
                     </div>
                 </Modal>
             </section>

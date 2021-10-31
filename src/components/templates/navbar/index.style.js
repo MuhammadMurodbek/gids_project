@@ -33,6 +33,20 @@ export const Navbar = styled.div`
             }
         }
     }
+    .navright1{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .calo7{
+        margin:0 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .prof{
+        color: #444;
+    }
 `
 export const MediaNavbar = styled.div`
     position: absolute;

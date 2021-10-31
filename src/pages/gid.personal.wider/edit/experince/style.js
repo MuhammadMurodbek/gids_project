@@ -10,6 +10,7 @@ export const Wrapper = styled.div`
     .icon{
         position: relative;
         top:2px;
+        
     }
     .sc-hkwmXC.bNRZXE{
         padding: 11px 4px !important;

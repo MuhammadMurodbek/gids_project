@@ -3,7 +3,7 @@ import {mainGreen} from "../../../styles/global/colors"
 
 export const Button = styled.button`
     width:${(value)=>value.width};
-    padding:14px 32px;
+    padding: ${a => a.paddingIcon  ? a.paddingIcon : " 14px 32px"};
     font-family: Montserrat;
     font-style: normal;
     font-weight: normal;
