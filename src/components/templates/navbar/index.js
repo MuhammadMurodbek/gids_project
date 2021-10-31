@@ -66,7 +66,6 @@ const Index = () => {
                                     role === 'simple_user' || 'gid' ? '' : <span>Kirish</span>
                                 }
                                 {role}
-                                
                             </NavLink>
                         </FlexContainer>
                     </FlexContainer>
@@ -80,4 +79,4 @@ const Index = () => {
     )
 }
 
-export default Index
+export default Index;
