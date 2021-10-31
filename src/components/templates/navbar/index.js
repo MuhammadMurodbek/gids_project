@@ -11,20 +11,18 @@ import { Turn as Hamburger } from 'hamburger-react'
 import {mainGreen} from "../../../styles/global/colors"
 import MediaNavbar from "./media.navbar"
 import ReactFlagsSelect from 'react-flags-select';
-import {useSelector} from "react-redux"
+// import {useSelector} from "react-redux"
 // import {useSelector} from "react"
 
 const Index = () => {
     const [ isOpen, setOpen ] = useState( false )
     const [selected, setSelected] = useState('UZ');
-    const selector = useSelector(prev=>prev.reducer_user_type)
-
+ 
+ 
     const role = localStorage.getItem("role")
 
-    const authResponse = useSelector(prev=>prev.post_auth_ent_reducer)
-    // const regResponse = useSelector(prev=>prev.post_auth_reg_reducer)
-    console.log(authResponse)
-    return (
+ 
+     return (
         <>
             <Navbar>
                 <FlexContainer width="100%" padding="0 25px" alignItems="center" justifyContent="space-between">
@@ -34,7 +32,7 @@ const Index = () => {
                     <FlexContainer {...navbarMediaCenter} padding="0 15px" width="80%" alignItems="center" justifyContent="center">
                         <ButtonNavbar title="Gid yoki tarjimonni tanlash" url="/gids" />
                         {
-                            role === "gid_translator" ? 
+                            role === "simple_user" ? 
                             <ButtonNavbar title="Gid va tarjimonlar uchun" url="/forgits" />:null
                         }
                         <ButtonNavbar title="Blog" url="/blog" />
@@ -51,7 +49,12 @@ const Index = () => {
                         {/* <Select width="120px" paddingX="4" backgroundColor="#fff" placeholder="uz" /> */}
                         <FlexContainer width="100%" alignItems="center" justifyContent="center">
                             <NavLink to="/auth" style={ { color: '#333' } }>
-                                <UserOutlined />{ " " }<span>Kirish</span>
+                                <UserOutlined />{ " " }<span>
+                                {
+                                    role === "simple_user" ? 
+                                    "":"Kirish"
+                                }
+                                </span>
                             </NavLink>
                         </FlexContainer>
                     </FlexContainer>
@@ -65,4 +68,4 @@ const Index = () => {
     )
 }
 
-export default Index
+export default Index;
