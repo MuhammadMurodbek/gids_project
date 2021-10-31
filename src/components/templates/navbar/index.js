@@ -23,6 +23,7 @@ const Index = () => {
     const authResponse = useSelector(prev=>prev.post_auth_ent_reducer)
     // const regResponse = useSelector(prev=>prev.post_auth_reg_reducer)
     console.log(authResponse)
+    console.log(role)
     return (
         <>
             <Navbar>
@@ -31,13 +32,20 @@ const Index = () => {
                         <Link to="/main"> <img src={ Logo } alt="safsf" /></Link>
                     </div>
                     <FlexContainer {...navbarMediaCenter} padding="0 15px" width="80%" alignItems="center" justifyContent="center">
-                        <ButtonNavbar title="Gid yoki tarjimonni tanlash" url="/gids" />
                         {
-                            selector === "gid_translator" ? 
-                            <ButtonNavbar title="Gid va tarjimonlar uchun" url="/forgits" />:null
+                            role === 'gid' ? 
+                            null
+                           : <ButtonNavbar title="Gid yoki tarjimonni tanlash" url="/gids" /> 
                         }
+                        <ButtonNavbar title="Gid va tarjimonlar uchun" url="/forgits" />
                         <ButtonNavbar title="Blog" url="/blog" />
-                        <ButtonNavbar title="Ariza qoldirish" url="/application-form" />
+                        {
+                            role === 'gid' ? 
+                            <ButtonNavbar title="Arizalar ro'yxati" url="/application-list"  /> 
+                            : 
+                            <ButtonNavbar title="Ariza qoldirish" url="/application-form" />
+                        }
+                        
                     </FlexContainer>
                     <FlexContainer { ...navbarMedia } width="200px">
                         <ReactFlagsSelect
@@ -55,7 +63,7 @@ const Index = () => {
                              style={ { color: '#333' } }>
                                 <UserOutlined />
                                 {
-                                    role === 'simple_user' ? '' : <span>Kirish</span>
+                                    role === 'simple_user' || 'gid' ? '' : <span>Kirish</span>
                                 }
                                 
                             </NavLink>

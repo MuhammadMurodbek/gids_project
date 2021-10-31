@@ -21,7 +21,10 @@ const Index = ({children}) => {
     },[location, isExpired, token])
     return (
         <Wrapper>
-            <Navbar/>
+            {
+                location.pathname.includes("auth") ? null : <Navbar/>
+            }
+            
                 <div className="main-part">{children}</div>
                 {checkFooter ? null:<Footer/>}
         </Wrapper>

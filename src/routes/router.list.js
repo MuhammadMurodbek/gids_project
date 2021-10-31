@@ -1,5 +1,13 @@
 import * as ListRouter from "./import"
 
+export const routes_user = [
+
+]
+
+export const routes_gid = [
+    
+]
+
 export const routes = [
     {
         url:'/auth',
