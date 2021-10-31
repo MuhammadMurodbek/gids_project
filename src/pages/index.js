@@ -10,7 +10,7 @@ const Index = () => {
             <Layout>
                 <Switch>
                     <Route exact path="/"><Redirect to="/main" /></Route>
-                    {check_route('translator').map((item,index)=>(
+                    {check_route('simple_user').map((item,index)=>(
                         <Route key={index} exact path={item.url} component={item.component}/>
                     ))}
                 </Switch>
