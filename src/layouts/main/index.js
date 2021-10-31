@@ -4,8 +4,15 @@ import Navbar from '../../components/templates/navbar';
 import Footer from "../../components/templates/footer"
 import {useLocation} from "react-router-dom"
 import { useJwt } from "react-jwt";
-
+import {postResponse} from "../../hooks/response_get"
 const Index = ({children}) => {
+    // const [state, setState] = useState()
+    // let token = JSON.parse(localStorage.getItem('user_token'))
+    // React.useEffect(() =>{
+        // if(token){
+            
+        // }
+    // },[])
     
     const location = useLocation()
     const checkFooter = location.pathname === "/auth" || location.pathname === "/auth/verify"
@@ -14,11 +21,15 @@ const Index = ({children}) => {
     React.useEffect(() => {
         if(!(location.pathname.includes("auth"))){
             if(isExpired){
+                // postResponse('/api/auth/token/refresh/',{refresh:token.refresh}, setState)
                 localStorage.clear()
                 window.location.href="/auth"
             }
         }
     },[location, isExpired, token])
+    // let data = postResponse('/api/auth/token/refresh/',{refresh:token.refresh})
+    // data.then(response => console.log(response))
+    // data.catch(error => console.log(error))
     return (
         <Wrapper>
             <Navbar/>
