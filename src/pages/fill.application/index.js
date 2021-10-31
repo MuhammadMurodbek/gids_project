@@ -15,7 +15,6 @@ import CloseIcon from '@material-ui/icons/Close';
 import {mediaTextField, mediaTextFieldSec, mediaBtn} from "../../custom/global.media.variables"
 import Modal from 'react-awesome-modal';
 
-
 const mediaContainer = {
     m_width: '600px',
     m_padding: '10px',
@@ -41,7 +40,7 @@ const Index = () => {
             <Container width="90%" padding="0" margin="40px auto" boxShadow={shadow}>
                 <Title>Vazifa tavsifi</Title>
                 <Container {...mediaContainer} padding="30px">
-                    <Container {...mediaContainerWidth} width="80%" >
+                    <Container {...mediaContainerWidth} width="85%" >
                         <Grid container spacing={1} alignItems="center" className="wrap-grid">
                             <Grid item xs={12} sm={12} md={5}>
                                 <div className="title_inner">Kim kerak</div>
