@@ -19,7 +19,7 @@ const Index = () => {
     const [selected, setSelected] = useState('UZ');
     // const selector = useSelector(prev=>prev.reducer_user_type)
     const getRole = JSON.parse(localStorage.getItem("user_token"))
-    const {role} = getRole
+    // const {role} = getRole
     // const authResponse = useSelector(prev=>prev.post_auth_ent_reducer)
     // const regResponse = useSelector(prev=>prev.post_auth_reg_reducer)
     // console.log(authResponse)
@@ -33,14 +33,14 @@ const Index = () => {
                     </div>
                     <FlexContainer {...navbarMediaCenter} padding="0 15px" width="80%" alignItems="center" justifyContent="center">
                         {
-                            role === 'gid' ? 
+                            getRole?.role === 'gid' ? 
                             null
                            : <ButtonNavbar title="Gid yoki tarjimonni tanlash" url="/gids" /> 
                         }
                         <ButtonNavbar title="Gid va tarjimonlar uchun" url="/forgits" />
                         <ButtonNavbar title="Blog" url="/blog" />
                         {
-                            role === 'gid' ? 
+                            getRole?.role === 'gid' ? 
                             <ButtonNavbar title="Arizalar ro'yxati" url="/application-list"  /> 
                             : 
                             <ButtonNavbar title="Ariza qoldirish" url="/application-form" />
@@ -59,13 +59,13 @@ const Index = () => {
                        
                         <FlexContainer width="100%" alignItems="center" justifyContent="center">
                             <NavLink 
-                            to={role === 'simple_user' || role === 'gid' ? '/gid-personal' : '/auth'}
+                            to={getRole?.role === 'simple_user' || getRole?.role === 'gid' ? '/gid-personal' : '/auth'}
                              style={ { color: '#333' } }>
                                 <UserOutlined />
                                 {
-                                    role === 'simple_user' || 'gid' ? '' : <span>Kirish</span>
+                                    getRole?.role === 'simple_user' || 'gid' ? '' : <span>Kirish</span>
                                 }
-                                {role}
+                                {getRole?.role}
                             </NavLink>
                         </FlexContainer>
                     </FlexContainer>
