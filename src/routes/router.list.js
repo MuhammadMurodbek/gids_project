@@ -155,7 +155,7 @@ export const routes = [
         component:ListRouter.Connect
     },
     {
-        url:'/main',
+        url:'/',
         component:ListRouter.MainPage
     },
     {

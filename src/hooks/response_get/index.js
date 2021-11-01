@@ -8,7 +8,7 @@ export const getResponse = async(url, setState) => {
 }
 export const getResponseRegion = async(url) => {
     await axios.get(`${url}`, headers)
-        .then(response => sessionStorage.setItem('countries', JSON.stringify(response?.data?.data)))
+        .then(response => localStorage.setItem('countries', JSON.stringify(response?.data?.data)))
         .catch(err => console.log(err))
 }
 export const postResponse = async(url, data, setState) => {
