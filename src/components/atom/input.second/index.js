@@ -4,7 +4,7 @@ import { Input } from './style'
 const Index = (props) => {
     return (
         // <InputWrapper>
-            <Input {...props}/>
+            <Input {...props} />
         // </InputWrapper>
     )
 }
