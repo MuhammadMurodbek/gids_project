@@ -61,6 +61,10 @@ export const routes_gid = [
         url:'/history',
         component:ListRouter.History
     },
+    {
+        url:'/forgits',
+        component:ListRouter.Forgits
+    },
 ]
 
 export const routes_traslater =  [
@@ -95,6 +99,10 @@ export const routes_traslater =  [
     {
         url:'/history',
         component:ListRouter.History
+    },
+    {
+        url:'/forgits',
+        component:ListRouter.Forgits
     },
 ]
 
@@ -131,6 +139,10 @@ export const routes_write =  [
         url:'/history',
         component:ListRouter.History
     },
+    {
+        url:'/forgits',
+        component:ListRouter.Forgits
+    },
 ]
 
 
@@ -157,10 +169,6 @@ export const routes = [
     {
         url:'/about',
         component:ListRouter.About
-    },
-    {
-        url:'/forgits',
-        component:ListRouter.Forgits
     },
     {
         url:'/connect',

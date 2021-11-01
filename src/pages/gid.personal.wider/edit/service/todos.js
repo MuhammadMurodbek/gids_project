@@ -9,10 +9,12 @@ import Button from "../../../../components/atom/button"
 import styled from "styled-components"
 import AddIcon from '@material-ui/icons/Add'
 import Box from '@mui/material/Box';
+
+
 const Todos = () => {
     return (
         <TodosWrapper>
-            <TextTitle font="15px" align="left" left="5px" color="#000000d9" bottom="-12px" top="15px" >Tarjima mavzulari</TextTitle>
+            <TextTitle font="15px" align="left" left="5px" color="#000000d9" bottom="-12px" top="35px" >Tarjima mavzulari</TextTitle>
             <Box sx={{ flexGrow: 1 }}>
                 <Grid container columnSpacing={3} justifyContent="space-between" alignItems="center">
                     <Grid item xs={12} md={6}>

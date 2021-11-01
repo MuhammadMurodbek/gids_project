@@ -26,13 +26,8 @@ const Index = () => {
     // const selector = useSelector(prev=>prev.reducer_user_type)
 
     const getRole = JSON.parse(localStorage.getItem("user_token"))
-<<<<<<< HEAD
-    const { role } = getRole
-    const authResponse = useSelector(prev => prev.post_auth_ent_reducer)
-=======
     // const {role} = getRole
     // const authResponse = useSelector(prev=>prev.post_auth_ent_reducer)
->>>>>>> new_master
     // const regResponse = useSelector(prev=>prev.post_auth_reg_reducer)
 
     return (
@@ -42,35 +37,30 @@ const Index = () => {
                     <div className="imgass"  >
                         <Link to="/main"> <img src={Logo} alt="safsf" /></Link>
                     </div>
-                    <FlexContainer {...navbarMediaCenter} padding="0 15px" width="80%" alignItems="center" justifyContent="center">
+                    <FlexContainer {...navbarMediaCenter} 
+                    padding="0 15px" width="80%" alignItems="center" justifyContent="center">
                         {
-<<<<<<< HEAD
-                            role === 'gid' || 'traslator' || 'writer' ?
+                            getRole?.role === 'simple_user' ?
+                                <ButtonNavbar title="Gid yoki tarjimonni tanlash" url="/gids" />
+                                :
                                 null
-                                : <ButtonNavbar title="Gid yoki tarjimonni tanlash" url="/gids" />
-=======
-                            getRole?.role === 'gid' ? 
-                            null
-                           : <ButtonNavbar title="Gid yoki tarjimonni tanlash" url="/gids" /> 
->>>>>>> new_master
                         }
-                        <ButtonNavbar title="Gid va tarjimonlar uchun" url="/forgits" />
+                        {
+                            getRole?.role === 'simple_user' ?
+                                null
+                                 :
+                                <ButtonNavbar title="Gid va tarjimonlar uchun" url="/forgits" />
+                        }
                         <ButtonNavbar title="Blog" url="/blog" />
                         {
-<<<<<<< HEAD
-                            role === 'gid' || 'traslator' || 'writer' ?
-                                <ButtonNavbar title="Arizalar ro'yxati" url="/request" />
-                                :
+                            getRole?.role === 'simple_user' ?
                                 <ButtonNavbar title="Ariza qoldirish" url="/application-form" />
-=======
-                            getRole?.role === 'gid' ? 
-                            <ButtonNavbar title="Arizalar ro'yxati" url="/application-list"  /> 
-                            : 
-                            <ButtonNavbar title="Ariza qoldirish" url="/application-form" />
->>>>>>> new_master
+                                :
+                                <ButtonNavbar title="Arizalar ro'yxati" url="/request" />
                         }
 
                     </FlexContainer>
+                    
                     <FlexContainer {...navbarMedia} width="200px">
                         <ReactFlagsSelect
                             // style={{marginTop:5}}
@@ -82,33 +72,19 @@ const Index = () => {
                         {/* <Select width="120px" paddingX="4" backgroundColor="#fff" placeholder="uz" /> */}
 
                         <FlexContainer width="100%" alignItems="center" justifyContent="center">
-<<<<<<< HEAD
                             <NavLink
-                                to={role === 'simple_user' ? '/gid-personal' : '/auth'}
+                                to={getRole?.role === 'simple_user' ? '/gid-personal' : '/gid-personal-wider'}
                                 style={{ color: '#333' }}>
-
-                                <div className="navright1">
-                                   
-                                   <Link to="/gid-personal-wider"> <UserOutlined className="prof" /> </Link>
-                                    {
-                                        role === 'simple_user' || 'gid' || 'traslator' || 'writer' ? '' : <span>Kirish</span>
-                                    }
-                                    {role}
-                                </div>
-
-=======
-                            <NavLink 
-                            to={getRole?.role === 'simple_user' || getRole?.role === 'gid' ? '/gid-personal' : '/auth'}
-                             style={ { color: '#333' } }>
                                 <UserOutlined />
                                 {
-                                    getRole?.role === 'simple_user' || 'gid' ? '' : <span>Kirish</span>
+                                    getRole?.role === 'simple_user' || 'gid' ? null : <span>Kirish</span>
                                 }
-                                {getRole?.role}
->>>>>>> new_master
+                                 {getRole?.role}
                             </NavLink>
                         </FlexContainer>
+
                     </FlexContainer>
+
                     <div className="toggle_hamburger">
                         <Hamburger toggled={isOpen} toggle={setOpen} color={mainGreen} />
                     </div>
@@ -122,4 +98,3 @@ const Index = () => {
 export default Index;
 
 
- 
