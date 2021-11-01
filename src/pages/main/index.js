@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {
     WrapperAll,
     ComponentOne,
@@ -21,62 +21,70 @@ import { Container } from "../../styles/container/index.style"
 import buttonImage from "../../assets/img/container_main_page/Button.svg"
 import { Paper } from '@material-ui/core';
 import SliderComponent from "./external/slider"
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Box from "@material-ui/core/Box";
+import img21 from '../../assets/img/about/right.png'
+
+
+import {media, mediaFlexButtons, mediaBtn, mediaTextField, mediaTextFieldSec, mediaContainer} from "./_media"
 
 const Index = () => {
     // let obj=JSON.stringify(JSON.parse(localStorage.getItem("user_token")))
     // console.log(obj)
     const media = {
-        m_width:"533px",
-        m_m_width:"300px",
-        m_m_text_align:"center",
+        m_width: "533px",
+        m_m_width: "300px",
+        m_m_text_align: "center",
     }
     const mediaFlexButtons = {
-        m_width:"455px",
-        m_m_width:'300px',
-        m_direction:"column",
+        m_width: "455px",
+        m_m_width: '300px',
+        m_direction: "column",
     }
     const mediaBtn = {
-        m_width_btn:"456px",
-        m_m_width_btn:"300px",
-        m_m_font_btn:"14px",
-        m_m_padding:"12px 28px"
+        m_width_btn: "456px",
+        m_m_width_btn: "300px",
+        m_m_font_btn: "14px",
+        m_m_padding: "12px 28px"
     }
 
     const mediaTextField = {
-        m_width:"1045px",
-        m_font_size:"24px",
+        m_width: "1045px",
+        m_font_size: "24px",
     }
     const mediaTextFieldSec = {
-        m_width_sec:"500px",
-        m_font_size_sec:"20px",
+        m_width_sec: "500px",
+        m_font_size_sec: "20px",
     }
     const mediaContainer = {
-        m_width:"500px",
-        m_padding:"10px 0",
+        m_width: "500px",
+        m_padding: "10px 0",
     }
+
+    const getRole = JSON.parse(localStorage.getItem("user_token"))
+    const { role } = getRole
+
+ 
     return (
         <>
             <WrapperAll>
                 <ComponentOne>
                     <Grid className="grid_container" container spacing={1}>
-                        <Grid item xs={12} md={4} sm={12} 
-                            component={Box} 
+                        <Grid item xs={12} md={4} sm={12}
+                            component={Box}
                             className="grid_container_inner"
-                            // display={{xs:"none", sm: "none", md: "inline"}}
+                        // display={{xs:"none", sm: "none", md: "inline"}}
                         >
                             <ExtSearch />
                         </Grid>
                         <Grid item xs={12} md={8} sm={12}>
                             <div className="right-part">
                                 <div>Dunyo bo'ylab ishonchli gidlar va tarjimonlarni taklif qilamiz</div>
-                                <img src={mainPicture} alt="guvd"/>
+                                <img src={mainPicture} alt="guvd" />
                             </div>
                         </Grid>
                     </Grid>
                 </ComponentOne>
-
                 <ComponentTwo>
                     <div className="title-second-main-container">Biz nima taklif qilamz</div>
                     <Grid container spacing={1} className="grid_container">
@@ -88,9 +96,9 @@ const Index = () => {
                                     <Link to="/application-form" >
                                         <Button {...mediaBtn}>Ariza qoldirish</Button>
                                     </Link>
-                                   <Link to="/gids">
+                                    <Link to="/gids">
                                         <Button {...mediaBtn} type="outlined">Gidni tanlash</Button>
-                                   </Link>
+                                    </Link>
                                 </FlexContainer>
                             </div>
                         </Grid>
@@ -127,9 +135,9 @@ const Index = () => {
                                     <ImgContainer width="100%" height="270px" src="https://thumbs.dreamstime.com/b/registan-old-public-square-samarkand-uzbekistan-heart-ancient-city-150740312.jpg" />
                                     <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
                                         <div className="title-container">Andijon</div>
-                                        <a href="/cities">
-                                            <ImgContainer src={buttonImage} />
-                                        </a>
+                                        <Link to="/cities" className="link11">
+                                            Ko'rish <img src={img21} alt="asdfasdf" />
+                                        </Link>
                                     </FlexContainer>
                                 </div>
                             </Paper>
@@ -140,9 +148,9 @@ const Index = () => {
                                     <ImgContainer width="100%" height="270px" src="https://thumbs.dreamstime.com/b/registan-old-public-square-samarkand-uzbekistan-heart-ancient-city-150740312.jpg" />
                                     <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
                                         <div className="title-container">Andijon</div>
-                                        <a href="/cities">
-                                            <ImgContainer src={buttonImage} />
-                                        </a>
+                                        <Link to="/cities" className="link11">
+                                            Ko'rish <img src={img21} alt="asdfasdf" />
+                                        </Link>
                                     </FlexContainer>
                                 </div>
                             </Paper>
@@ -153,32 +161,38 @@ const Index = () => {
                                     <ImgContainer width="100%" height="270px" src="https://thumbs.dreamstime.com/b/registan-old-public-square-samarkand-uzbekistan-heart-ancient-city-150740312.jpg" />
                                     <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
                                         <div className="title-container">Andijon</div>
-                                        <a href="/cities">
-                                            <ImgContainer src={buttonImage} />
-                                        </a>
+                                        <Link to="/cities" className="link11">
+                                            Ko'rish <img src={img21} alt="asdfasdf" />
+                                        </Link>
                                     </FlexContainer>
                                 </div>
                             </Paper>
                         </Grid>
 
-                        
+
                     </Grid>
                 </ComponentFour>
                 <Container {...mediaContainer} padding="20px">
                     <SliderComponent />
                 </Container>
             </WrapperAll>
-            <ContainerLast>
-                <div className="application-last">
-                    <TextTitle  {...mediaTextField} {...mediaTextFieldSec} width="50%" left="auto" right="auto" bottom="40px">Xoziroq o’zingiz uchun Git tanlang yoki shunchaki ariza qoldiring.</TextTitle>
-                    <FlexContainer {...mediaFlexButtons} width="380px" margin="0 auto" alignItems="center" justifyContent="space-between">
-                      <Link to="/application-form"><Button  {...mediaBtn}>Ariza qoldirish</Button></Link>
-                      <Link to="/gids"> <Button type="outlined"  {...mediaBtn}>Gitni tanlash</Button></Link> 
-                    </FlexContainer>
-                </div>
-            </ContainerLast>
+
+
+            {
+                role === 'simple_user' ?
+                    <ContainerLast>
+                        <div className="application-last">
+                            <TextTitle  {...mediaTextField} {...mediaTextFieldSec} width="50%" left="auto" right="auto" bottom="40px">Xoziroq o’zingiz uchun Git tanlang yoki shunchaki ariza qoldiring.</TextTitle>
+                            <FlexContainer {...mediaFlexButtons} width="380px" margin="0 auto" alignItems="center" justifyContent="space-between">
+                                <Link to="/application-form"><Button  {...mediaBtn}>Ariza qoldirish</Button></Link>
+                                <Link to="/gids"> <Button type="outlined"  {...mediaBtn}>Gitni tanlash</Button></Link>
+                            </FlexContainer>
+                        </div>
+                    </ContainerLast>
+
+                    : ''
+            }
         </>
     )
 }
-
 export default Index

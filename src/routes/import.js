@@ -22,6 +22,7 @@ import Reklama from '../pages/gid.personal.wider/reklama';
 import History from '../pages/gid.personal.wider/history'
 import UpdatePassword from "../pages/auth/update"
 import notFound from "../pages/notFound"
+import SeeProfile from '../pages/seeProfile';
 // import GidPersonal from '../pages/gid.personal';
 // import Article from '../pages/article';
  
@@ -50,4 +51,5 @@ export {
     ResetPassword,
     History, 
     UpdatePassword,
+    SeeProfile
 }

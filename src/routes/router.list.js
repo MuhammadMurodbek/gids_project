@@ -18,6 +18,14 @@ export const routes_user = [
         url:'/answer-me',
         component:ListRouter.AnsverMyapp
     },
+    {
+        url:'/seeprofile',
+        component:ListRouter.SeeProfile
+    },
+    {
+        url:'/gid-personal-wider',
+        component:ListRouter.GidPersonalWider
+    },
 
 ] 
 export const routes_gid = [
@@ -46,8 +54,16 @@ export const routes_gid = [
         component:ListRouter.Reklama
     },
     {
+        url:'/pay',
+        component:ListRouter.Pay
+    },
+    {
         url:'/history',
         component:ListRouter.History
+    },
+    {
+        url:'/forgits',
+        component:ListRouter.Forgits
     },
 ]
 
@@ -72,13 +88,21 @@ export const routes_traslater =  [
         url:'/advertising',
         component:ListRouter.Advertising
     },
-      {
+    {
+        url:'/pay',
+        component:ListRouter.Pay
+    },
+    {
         url:'/reklama',
         component:ListRouter.Reklama
     },
     {
         url:'/history',
         component:ListRouter.History
+    },
+    {
+        url:'/forgits',
+        component:ListRouter.Forgits
     },
 ]
 
@@ -103,13 +127,21 @@ export const routes_write =  [
         url:'/advertising',
         component:ListRouter.Advertising
     },
-      {
+    {
+        url:'/pay',
+        component:ListRouter.Pay
+    },
+    {
         url:'/reklama',
         component:ListRouter.Reklama
     },
     {
         url:'/history',
         component:ListRouter.History
+    },
+    {
+        url:'/forgits',
+        component:ListRouter.Forgits
     },
 ]
 
@@ -139,10 +171,6 @@ export const routes = [
         component:ListRouter.About
     },
     {
-        url:'/forgits',
-        component:ListRouter.Forgits
-    },
-    {
         url:'/connect',
         component:ListRouter.Connect
     },
@@ -166,6 +194,7 @@ export const routes = [
         url:'*',
         component:ListRouter.notFound
     }
+
 ]
 
 const full_user = [...routes_user, ...routes]

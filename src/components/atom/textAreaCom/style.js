@@ -12,7 +12,7 @@ export const Input = styled.textarea`
     position: relative;
     top:3px;
     width: ${value=>value.width};
-    height: auto;
+    height: ${"height" ? value=>value.height: "auto"};
     padding: 18px 20px;
     border:none;
     background-color:#FAFCFA;

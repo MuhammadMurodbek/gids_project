@@ -36,10 +36,10 @@ const Index = () => {
       ];
     const validatorFunction = () => {
         let v_name = validator('min', stateName, 3, 'Ism kiriting (kamida 3 ta belgi)', '', setNameV, nameV)
-        let v_last = validator('min', stateLast, 3, 'error text', '', setLastV, lastV)
-        let v_email = validator('email', stateEmail, 3, 'error text', '', setEmailV, emailV)
-        let v_select = validator('select', select, 3, 'error text', '', setSelectV,selectV)
-        let v_pass = validator('min', statePassword, 8, 'error text', '', setPasswordV,passwordV)
+        let v_last = validator('min', stateLast, 3, 'Familiya kiriting (kamida 3 ta belgi)', '', setLastV, lastV)
+        let v_email = validator('email', stateEmail, 3, 'Emailda kiritishda xatolik mavjud', '', setEmailV, emailV)
+        let v_select = validator('select', select, 3, 'Foydalanuvchi turi tanlanmagan', '', setSelectV,selectV)
+        let v_pass = validator('min', statePassword, 8, 'Kamida 8 ta belgidan foydalaning (A,z,0,*,/,9)', '', setPasswordV,passwordV)
         let v_pass_r = validator('min', statePasswordRecover, 8, 'Parolni tasdiqlashda xatolik mavjud', '', setPasswordRecoverV, passwordRecoverV)
         
         if(v_name === '' && v_last === '' && v_email=== '' && v_select==='' && v_pass==='' && v_pass_r ==='') return true
