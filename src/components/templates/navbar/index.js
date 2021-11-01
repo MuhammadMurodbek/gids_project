@@ -26,8 +26,13 @@ const Index = () => {
     // const selector = useSelector(prev=>prev.reducer_user_type)
 
     const getRole = JSON.parse(localStorage.getItem("user_token"))
+<<<<<<< HEAD
     const { role } = getRole
     const authResponse = useSelector(prev => prev.post_auth_ent_reducer)
+=======
+    // const {role} = getRole
+    // const authResponse = useSelector(prev=>prev.post_auth_ent_reducer)
+>>>>>>> new_master
     // const regResponse = useSelector(prev=>prev.post_auth_reg_reducer)
 
     return (
@@ -39,17 +44,30 @@ const Index = () => {
                     </div>
                     <FlexContainer {...navbarMediaCenter} padding="0 15px" width="80%" alignItems="center" justifyContent="center">
                         {
+<<<<<<< HEAD
                             role === 'gid' || 'traslator' || 'writer' ?
                                 null
                                 : <ButtonNavbar title="Gid yoki tarjimonni tanlash" url="/gids" />
+=======
+                            getRole?.role === 'gid' ? 
+                            null
+                           : <ButtonNavbar title="Gid yoki tarjimonni tanlash" url="/gids" /> 
+>>>>>>> new_master
                         }
                         <ButtonNavbar title="Gid va tarjimonlar uchun" url="/forgits" />
                         <ButtonNavbar title="Blog" url="/blog" />
                         {
+<<<<<<< HEAD
                             role === 'gid' || 'traslator' || 'writer' ?
                                 <ButtonNavbar title="Arizalar ro'yxati" url="/request" />
                                 :
                                 <ButtonNavbar title="Ariza qoldirish" url="/application-form" />
+=======
+                            getRole?.role === 'gid' ? 
+                            <ButtonNavbar title="Arizalar ro'yxati" url="/application-list"  /> 
+                            : 
+                            <ButtonNavbar title="Ariza qoldirish" url="/application-form" />
+>>>>>>> new_master
                         }
 
                     </FlexContainer>
@@ -64,6 +82,7 @@ const Index = () => {
                         {/* <Select width="120px" paddingX="4" backgroundColor="#fff" placeholder="uz" /> */}
 
                         <FlexContainer width="100%" alignItems="center" justifyContent="center">
+<<<<<<< HEAD
                             <NavLink
                                 to={role === 'simple_user' ? '/gid-personal' : '/auth'}
                                 style={{ color: '#333' }}>
@@ -77,6 +96,16 @@ const Index = () => {
                                     {role}
                                 </div>
 
+=======
+                            <NavLink 
+                            to={getRole?.role === 'simple_user' || getRole?.role === 'gid' ? '/gid-personal' : '/auth'}
+                             style={ { color: '#333' } }>
+                                <UserOutlined />
+                                {
+                                    getRole?.role === 'simple_user' || 'gid' ? '' : <span>Kirish</span>
+                                }
+                                {getRole?.role}
+>>>>>>> new_master
                             </NavLink>
                         </FlexContainer>
                     </FlexContainer>
