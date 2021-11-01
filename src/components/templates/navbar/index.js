@@ -19,7 +19,7 @@ const Index = () => {
     const [selected, setSelected] = useState('UZ');
     // const selector = useSelector(prev=>prev.reducer_user_type)
     const getRole = JSON.parse(localStorage.getItem("user_token"))
-    const {role} = getRole
+    const role = getRole ? getRole.role : undefined
     const authResponse = useSelector(prev=>prev.post_auth_ent_reducer)
     // const regResponse = useSelector(prev=>prev.post_auth_reg_reducer)
     console.log(authResponse)
