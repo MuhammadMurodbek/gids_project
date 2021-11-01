@@ -1,5 +1,5 @@
 // import { Grid } from '@material-ui/core'
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import {Wrapper, FlexItem} from "./style"
 import ImageContainer from "../../../components/molecules/img.container"
 import imageRound from "../../../assets/img/choosegid/round.svg"
@@ -10,30 +10,20 @@ import { FlexContainer } from '../../../styles/flex.container'
 import icon1 from "../../../assets/img/gid-personal/icon_1.svg"
 import icon2 from "../../../assets/img/gid-personal/icon_2.svg"
 import {mediaTextField, mediaTextFieldSec} from "../../../custom/global.media.variables"
-const mediaFlex = {
-    m_width:'742px',
-    m_direction:"column",
-}
-const mediaImage = {
-    m_width:"745px",
-    m_m_width:'220px',
-} 
-const mediaTextFieldExternal = {
-    m_width_ext:'500px',
-    m_text_align_ext:'center',
-}
-const mediaFlexFooter = {
-    m_width:'500px',
-    m_margin:'0',
-    m_direction:'column',
-}
+import {mediaFlex, mediaImage, mediaTextFieldExternal, mediaFlexFooter} from "./_media"
+import {getResponse} from "../../../hooks/response_get"
 const Index = () => {
+    const [state, setState] = useState()
+    useEffect(() => {
+        getResponse('/api/users/edit/', setState)
+    },[])
+    // console.log(state?.success)
     return (
         <Wrapper>
-            <Container padding="10px" className="container-shadow" boxShadow={shadow}>
+            <Container padding="20px" className="container-shadow" boxShadow={shadow}>
                 <FlexContainer maxWidth="800px" {...mediaFlex}>
                     <FlexItem className="flex-item-one">
-                        <ImageContainer {...mediaImage} src={imageRound} width="120px"/>
+                        <ImageContainer {...mediaImage} src={state?.success?.data?.image} width="120px"/>
                     </FlexItem>
                     <FlexItem className="flex-item-two">
                         <FlexContainer flexDirection="column" height="100%" justifyContent="space-around">
