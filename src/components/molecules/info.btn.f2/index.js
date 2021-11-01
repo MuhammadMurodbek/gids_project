@@ -1,6 +1,7 @@
 import React from 'react'
 import { FlexContainer } from '../../../styles/flex.container'
 import {WrapperInfoBtn} from "./style"
+import { Link } from 'react-router-dom';
 import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import Button from "../../atom/button"
@@ -24,7 +25,10 @@ const Index = () => {
                     <CheckCircleOutlineIcon className="icon"/>
                     <FlexContainer width="auto" alignItems="center" className="count"><VisibilityIcon/>{" "}2016</FlexContainer>
                 </FlexContainer>
-                <Button {...mediaButton} width="100%">Ko'rish</Button>
+                
+                <Link to="/seeprofile">
+                    <Button {...mediaButton}  width="100%">Ko'rish</Button>
+                </Link>
             </FlexContainer>
         </WrapperInfoBtn>
     )

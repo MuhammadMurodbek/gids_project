@@ -30,7 +30,7 @@ const GidIndex = () => {
                             <Button type="outlined"> <DeleteIcon className="icon"/> </Button>
                         </Grid>
                     </Grid>
-                    <Button><AddIcon className="icon"/></Button>
+                    <Button><AddIcon className="icon" paddingIcon="10px"/></Button>
                 </Container>
                 <Container padding="10px 0" margin="20px 0" textAlign="right">
                     <Button>Saqlash</Button>

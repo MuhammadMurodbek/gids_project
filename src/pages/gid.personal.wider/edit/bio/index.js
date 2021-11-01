@@ -156,6 +156,26 @@ const Index = () => {
         </TextTitle>
         <GroupImageUpload fileList={fileList} setFileList={setFileList} />
 
+        <Grid container spacing={1}>
+          <Grid item md={10} xs={12}>
+            <InputLabeled
+              sizeLabel="15px"
+              width="100%"
+              placeholder="Nomini yozing"
+            />
+          </Grid>
+
+          <Grid item md={2} xs={4}>
+            <InputLabeled
+              sizeLabel="15px"
+              width="100%"
+              placeholder="Yilni yozing"
+            />
+          </Grid>
+           
+        </Grid>
+
+
         <div className="btnGrop">
           <Button paddingIcon="10px"><AddIcon className="icon" /></Button>
           <Button type="submit"> Saqlash</Button>

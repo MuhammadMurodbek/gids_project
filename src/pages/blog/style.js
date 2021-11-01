@@ -8,6 +8,9 @@ export const  Wrapper = styled.div`
      margin-bottom: 30px;
      text-align: center;
     }
+    .imgcla{
+        margin-bottom:30px ;
+    }
     .gguBjA{
         margin:0 auto;
     }

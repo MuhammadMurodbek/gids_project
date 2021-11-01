@@ -2,7 +2,8 @@ import React, {useState} from 'react'
 import Select from "react-select"
 import {Wrapper} from "./index.style"
 import "./style.css"
-const Index = (props) => {
+const 
+Index = (props) => {
     const {width, paddingX, margin, backgroundColor, setState, errorText} = props
     const [value, setValue] = useState(null)
     const handleChange = (valueChange) => {

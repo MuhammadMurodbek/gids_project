@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {
     WrapperAll,
     ComponentOne,
@@ -26,6 +26,7 @@ import Box from "@material-ui/core/Box";
 import img21 from '../../assets/img/about/right.png'
 
 
+import {media, mediaFlexButtons, mediaBtn, mediaTextField, mediaTextFieldSec, mediaContainer} from "./_media"
 
 const Index = () => {
     // let obj=JSON.stringify(JSON.parse(localStorage.getItem("user_token")))
@@ -63,6 +64,7 @@ const Index = () => {
     const getRole = JSON.parse(localStorage.getItem("user_token"))
     const { role } = getRole
 
+ 
     return (
         <>
             <WrapperAll>
@@ -83,7 +85,6 @@ const Index = () => {
                         </Grid>
                     </Grid>
                 </ComponentOne>
-
                 <ComponentTwo>
                     <div className="title-second-main-container">Biz nima taklif qilamz</div>
                     <Grid container spacing={1} className="grid_container">
@@ -194,5 +195,4 @@ const Index = () => {
         </>
     )
 }
-
 export default Index

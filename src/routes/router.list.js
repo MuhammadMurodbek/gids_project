@@ -18,6 +18,14 @@ export const routes_user = [
         url:'/answer-me',
         component:ListRouter.AnsverMyapp
     },
+    {
+        url:'/seeprofile',
+        component:ListRouter.SeeProfile
+    },
+    {
+        url:'/gid-personal-wider',
+        component:ListRouter.GidPersonalWider
+    },
 
 ] 
 export const routes_gid = [
@@ -178,6 +186,7 @@ export const routes = [
         url:'*',
         component:ListRouter.notFound
     }
+
 ]
 
 const full_user = [...routes_user, ...routes]
