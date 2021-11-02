@@ -118,4 +118,12 @@ export const Wrapper = styled.div`
             margin-bottom:15px;
         }
     }
+    .modaldiv{
+        padding: 20px;
+    }
+    .btgroup-modal{
+        display: flex;
+        justify-content: flex-end;
+    }
+
  `

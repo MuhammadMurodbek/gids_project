@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import {mainGreen} from "../../styles/global/colors"
 
 export const WrapperAll = styled.div`
     position: relative;
@@ -203,6 +204,7 @@ export const ComponentThree = styled.div`
     .sc-idOiZg.peBBw{
         text-align:center;
     }
+    
 `
 export const ComponentFour = styled.div`
     width: 100%;
@@ -218,6 +220,15 @@ export const ComponentFour = styled.div`
             font-weight:600;
         }
     }
+    .arrole{
+        font-size: 18px;
+        margin-right: 15px;
+    }
+    .link11{
+        color: ${mainGreen};
+        margin: 10px 20px;
+    }
+   
 `
 export const ContainerLast = styled.div`
     width: 100%;
@@ -229,4 +240,5 @@ export const ContainerLast = styled.div`
     @media (max-width:400px){
         padding:10px 4px;
     }
+
 `

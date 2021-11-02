@@ -145,11 +145,11 @@ export default function Index() {
                 <ContainerLast>
                     <div className="application-last">
                         <TextTitle {...mediaTextField} {...mediaTextFieldSec} width="50%" left="auto" right="auto" bottom="40px">Xoziroq ro’yhattan o’ting, ma’lumotlaringizni to’ldiring va o’z karyerangizni boshlang!</TextTitle>
-                        {/* <FlexContainer width="380px" margin="0 auto" alignItems="center" justifyContent="center"> */}
-                           <Link to="/application-form"> 
-                                <Button {...mediaBtn} className="button-s">Ariza qoldirish</Button>
+                        
+                           <Link to="/auth"> 
+                                <Button {...mediaBtn} className="button-s">Ro'yhatdan o'tish</Button>
                            </Link>
-                        {/* </FlexContainer> */}
+                        
                     </div>
                 </ContainerLast>
 

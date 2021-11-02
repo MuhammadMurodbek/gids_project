@@ -18,9 +18,9 @@ const Index = () => {
                     <Grid item xs={12} sm={6} md={5}><TextLabeled sizeLabel="15px" width="100%" label="Siz qaysi tildan tarjima qilasiz?" placeholder="Text kiriting..."/></Grid>
                     <Grid item xs={12} sm={6} md={5}><TextLabeled sizeLabel="15px" width="100%" label="Siz qaysi tilga tarjima qilasiz?" placeholder="Text kiriting..."/></Grid>
                     <Grid item xs={12} sm={6} md={1}>
-                        <FlexContainer width="100%" flexDirection="column" gap="8px" margin="60px 0 0 10px ">
-                            <Button type="outlined"> <DeleteIcon className="icon"/> </Button>
-                            <Button><AddIcon className="icon"/></Button>
+                        <FlexContainer width="100%" flexDirection="column" gap="4px" margin="45px 0 0 0 ">
+                            <Button paddingIcon="10px" type="outlined"> <DeleteIcon className="icon"/> </Button>
+                            <Button paddingIcon="10px"><AddIcon className="icon"/></Button>
                         </FlexContainer>
                     </Grid>
                 </Grid>

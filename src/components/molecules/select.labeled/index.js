@@ -7,7 +7,7 @@ const Index = (props) => {
     return (
         <Wrapper width={width}>
             <Label margin={marginLabel} size={sizeLabel}>{label}</Label>
-            <Select {...props} width="100%"/>
+            <Select {...props} width="100%" />
         </Wrapper>
     )
 }

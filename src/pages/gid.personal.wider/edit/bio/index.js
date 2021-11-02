@@ -13,6 +13,8 @@ import GroupImageUpload from "../../../../components/templates/group.image.uploa
 import { Button } from "../../../../components/atom/button/index.style";
 import { about_edit_bio_action } from "../../../../redux/actions";
 import useApiData from "../../../../hooks/response";
+import AddIcon from '@material-ui/icons/Add'
+
 const Index = () => {
   const { responseHook, setResponseHook } = useApiData("get_about_bio_reducer");
   const [state, setState] = useState({});
@@ -107,8 +109,8 @@ const Index = () => {
                 width="100%"
                 label="Sana"
                 value={state?.birthday}
-                // name="birthday"
-                // onChange={handleChange}
+              // name="birthday"
+              // onChange={handleChange}
               />
             </Grid>
             <Grid item xs={12} md={4}>
@@ -153,26 +155,34 @@ const Index = () => {
           Sertifikat va diplomlaringiz bo‘lsa shu yerga yuklang
         </TextTitle>
         <GroupImageUpload fileList={fileList} setFileList={setFileList} />
-        {/* <Grid container spacing={1}>
-                    <Grid item xs={12} sm={6} md={3}>
-                        <ImageUpload width="100%" height="230px" radius="1px"/>
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={3}>
-                        <ImageUpload width="100%" height="230px" radius="1px"/>
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={3}>
-                        <ImageUpload width="100%" height="230px" radius="1px"/>
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={3}>
-                        <ImageUpload width="100%" height="230px" radius="1px"/>
-                    </Grid>
-                </Grid> */}
-      </Container>
-      <Container width="100%" padding="10px 0" textAlign="right">
-        <Button type="submit">Saqlash</Button>
+
+        <Grid container spacing={1}>
+          <Grid item md={10} xs={12}>
+            <InputLabeled
+              sizeLabel="15px"
+              width="100%"
+              placeholder="Nomini yozing"
+            />
+          </Grid>
+
+          <Grid item md={2} xs={4}>
+            <InputLabeled
+              sizeLabel="15px"
+              width="100%"
+              placeholder="Yilni yozing"
+            />
+          </Grid>
+           
+        </Grid>
+
+
+        <div className="btnGrop">
+          <Button paddingIcon="10px"><AddIcon className="icon" /></Button>
+          <Button type="submit"> Saqlash</Button>
+        </div>
       </Container>
     </Wrapper>
-  );
-};
+  )
+}
 
 export default Index;
