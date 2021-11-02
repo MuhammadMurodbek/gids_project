@@ -5,20 +5,24 @@ import {DeleteOutlined, PlusCircleOutlined} from "@ant-design/icons"
 import "./style.css"
 import noUser from "../../../assets/img/gid-personal/no_user.png"
 const Demo = ({setState, state}) => {
+  const [imageObj, setImageObj] = useState()
   const [url, setUrl] = useState()
-  const handleSubmit = (e) => {
-    setUrl(URL.createObjectURL(e))
-    const formData = new FormData();
-	formData.append('image', e);
-    if(setState && state)
-    setState({...state, image: formData})
-  }
+  
+  const onChange = ( newFileList) => {
+    setImageObj(newFileList?.file)
+    };
+    const handleSubmitOk = (e) => {
+      setUrl(URL.createObjectURL(e))
+      console.log(e);
+      if(setState)
+      setState({...state, image: e})
+    }
   return(
       <div className="cropper_container">
         <img src={url || noUser} alt="asdfdf" className={url ? "image_cropped":"image_no_user"}/>
         <div className="icon_wrapper">
-            <ImgCrop modalOk="ok" onModalOk={handleSubmit} rotate shape="round" >
-                <Upload onPreview={(e)=>{e.preventDefault()}}>
+            <ImgCrop modalOk="ok" name="image" onModalOk={handleSubmitOk} rotate shape="round" >
+                <Upload onChange={onChange} name="image">
                     <div className="icb add_icon">
                         <PlusCircleOutlined className="add_icon" style={{ fontSize: '22px' }}/>
                     </div>

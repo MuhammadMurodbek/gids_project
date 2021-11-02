@@ -4,12 +4,16 @@ import {Wrapper} from "./index.style"
 import "./style.css"
 const 
 Index = (props) => {
-    const {width, paddingX, margin, backgroundColor, setState, errorText} = props
+    const {width, paddingX, margin, backgroundColor, setState, errorText, setCollect, collect} = props
     const [value, setValue] = useState(null)
     const handleChange = (valueChange) => {
         setValue(valueChange)
         if(setState){
             setState(valueChange)
+            // setCollect({
+            //     ...collect,
+                
+            // })
         }
         // console.log(valueChange)
     }

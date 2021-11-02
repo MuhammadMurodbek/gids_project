@@ -38,7 +38,7 @@ const Index = () => {
           justifyContent="space-between"
         >
           <div className="imgass">
-            <Link to="/main">
+            <Link to="/">
               {" "}
               <img src={Logo} alt="safsf" />
             </Link>
