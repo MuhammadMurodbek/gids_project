@@ -38,4 +38,10 @@ export const Wrapper = styled.div`
         width:70%;
         margin:0 auto;
     }
+    .css-19kzrtu{
+        @media (max-width:500px){
+            padding:20px 0;
+            /* background-color:red; */
+        }
+    }
 `
