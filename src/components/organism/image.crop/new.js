@@ -1,25 +1,30 @@
 import ImgCrop from 'antd-img-crop';
 import { Upload } from 'antd';
-import React,{useState} from "react";
+import React,{useEffect, useState} from "react";
 import {DeleteOutlined, PlusCircleOutlined} from "@ant-design/icons"
 import "./style.css"
 import noUser from "../../../assets/img/gid-personal/no_user.png"
 const Demo = ({setState, state}) => {
   const [imageObj, setImageObj] = useState()
   const [url, setUrl] = useState()
-  
   const onChange = ( newFileList) => {
     setImageObj(newFileList?.file)
-    };
-    const handleSubmitOk = (e) => {
-      setUrl(URL.createObjectURL(e))
-      console.log(e);
-      if(setState)
-      setState({...state, image: e})
+    if(state?.image !== ''){
+      setState({...state,image:null})
     }
+  };
+  const handleSubmitOk = (e) => {
+    setUrl(URL.createObjectURL(e))
+    console.log(e);
+    if(setState)
+    setState({...state, imageFile: e})
+  }
   return(
       <div className="cropper_container">
-        <img src={url || noUser} alt="asdfdf" className={url ? "image_cropped":"image_no_user"}/>
+        {
+          state?.image !== null ? <img src={state?.image || null} alt="asdfdf" className="image_cropped"/>:
+          <img src={url || noUser} alt="asdfdf" className={url ? "image_cropped":"image_no_user"}/>
+        }
         <div className="icon_wrapper">
             <ImgCrop modalOk="ok" name="image" onModalOk={handleSubmitOk} rotate shape="round" >
                 <Upload onChange={onChange} name="image">

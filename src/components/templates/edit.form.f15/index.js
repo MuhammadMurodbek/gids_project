@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 import {Wrapper} from "./style"
 import Avatar from "../../organism/image.crop/new"
 import EditFormContainer from "../../organism/form.f15"
@@ -9,18 +9,31 @@ const mediaContainer = {
     m_width:'600px',
     m_padding:"10px 10px 0"
 }
-const Index = () => {
+const Index = ({statePostProps}) => {
     
-    const [state, setState] = useState({first_name:'', last_name:'',company:'',country:'',city:''})
+    const [state, setState] = useState({first_name:'', last_name:'',company:'',image:'',imageFile:null})
     const [postData, setPostData] = useState({success:'',error:''})
-    console.log(state)
+    useEffect(()=>{
+        if(statePostProps){
+            let propsData = statePostProps?.data
+            propsData.country = JSON.parse(propsData.country)
+            propsData.city = JSON.parse(propsData.city)
+            console.log(propsData)
+            setState(propsData)
+        }
+    },[statePostProps])
     const onSubmit = (e) => {   
         e.preventDefault()
-        let dataPost = state.image
+        let dataPost = state.imageFile
         const formData = new FormData()
-        formData.append('image',dataPost)
-        formData.append('first_name','Abdullajon')
-        formData.append('last_name','Zakirov')
+        let countryJSON = JSON.stringify(state?.country)
+        let cityJSON = JSON.stringify(state?.city)
+        if(dataPost) {formData.append('image',dataPost)}
+        formData.append('first_name',state?.first_name)
+        formData.append('last_name',state?.last_name)
+        formData.append('company',state?.company)
+        formData.append('country',countryJSON)
+        formData.append('city',cityJSON)
         putResponse('/api/users/edit/',formData,setPostData)
     }
     return (

@@ -4,6 +4,7 @@ import InputLabeled from "../../molecules/input.labeled"
 import SelectLabeled from "../../molecules/select.labeled"
 import { Grid } from '@material-ui/core'
 
+
 const Index = ({state, setState}) => {
 
     const [country, setCountry] = useState()
@@ -11,15 +12,24 @@ const Index = ({state, setState}) => {
     const [regionItem, setRegionItem] = useState()
    
     const countries = JSON.parse(localStorage.getItem('countries')).map((item,index)=>{return {value:index, label:item.country, ...item}}) || []
-   
+    
     useEffect(() => {
         if(country){
             let array = country?.cities.map((item, index)=>{return {value:index, label:item}})
             setRegion(array)
         }
-        setState({...state, country: country?.label, city:regionItem?.label})
-    },[country, regionItem, country])
-
+        setState({...state, country:{value:country?.value, label:country?.label}, city:regionItem})
+    },[regionItem, country])
+    // useEffect(() => {
+    //     if(state.country){
+    //         // console.log("dsf")
+    //         // // console.log(state?.country)
+    //         setCountry(state?.country)
+    //         setRegionItem(state?.city)
+    //     }
+    // },[state])
+    console.log(country)
+    console.log(state?.country)
     const handleChange = (e)=>{setState({...state,[e.target.name]:e.target.value})}
     
     return (
@@ -60,10 +70,10 @@ const Index = ({state, setState}) => {
             </Grid>
             <Grid container spacing={2}>
                 <Grid item xs={12} sm={12} md={6}>
-                    <SelectLabeled options={countries} setState={setCountry} width="100%" label="Davlat" placeholder="Davlat kiriting"/>
+                    <SelectLabeled options={countries} setState={setCountry} width="100%" label="Davlat" placeholder={state?.country?.label} pcolor={state?.country}/>
                 </Grid>
                 <Grid item xs={12} sm={12} md={6}>
-                    <SelectLabeled options={region} setState={setRegionItem} width="100%" label="Shahar" placeholder="Shahar kiriting"/>
+                    <SelectLabeled options={region} setState={setRegionItem} width="100%" label="Shahar" placeholder={state?.city?.label} pcolor={state?.city}/>
                 </Grid>
             </Grid>
         </WrapperForm>
