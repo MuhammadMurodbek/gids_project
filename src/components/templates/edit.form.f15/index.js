@@ -18,7 +18,7 @@ const Index = ({statePostProps}) => {
             let propsData = statePostProps?.data
             propsData.country = JSON.parse(propsData.country)
             propsData.city = JSON.parse(propsData.city)
-            console.log(propsData)
+            // console.log(propsData)
             setState(propsData)
         }
     },[statePostProps])
