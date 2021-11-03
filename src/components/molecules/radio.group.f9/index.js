@@ -5,11 +5,14 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import {Wrapper} from "./index.style"
 import DoubleCheck from "../../../components/molecules/double.check"
-const Index = () => {
+const Index = ({setState, state}) => {
     const [value, setValue] = React.useState('female');
 
     const handleChange = (event) => {
         setValue(event.target.value);
+        if(setState){
+            setState({...state, who_need:event.target.value})
+        }
     }
     return (
         <Wrapper>
