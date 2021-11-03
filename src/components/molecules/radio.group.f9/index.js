@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useCallback} from 'react'
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
@@ -8,12 +8,12 @@ import DoubleCheck from "../../../components/molecules/double.check"
 const Index = ({setState, state}) => {
     const [value, setValue] = React.useState('female');
 
-    const handleChange = (event) => {
+    const handleChange = useCallback((event) => {
         setValue(event.target.value);
         if(setState){
             setState({...state, who_need:event.target.value})
         }
-    }
+    },[value, setState])
     return (
         <Wrapper>
             {/* <div className="title-header-radio">Kim kerakligini tanlang</div> */}

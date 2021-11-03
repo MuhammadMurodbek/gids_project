@@ -5,6 +5,7 @@ import EditFormContainer from "../../organism/form.f15"
 import { Container } from '../../../styles/container/index.style'
 import Button from "../../atom/button"
 import {putResponse} from "../../../hooks/response_get"
+import toast from 'react-hot-toast'
 const mediaContainer = {
     m_width:'600px',
     m_padding:"10px 10px 0"
@@ -36,6 +37,16 @@ const Index = ({statePostProps}) => {
         formData.append('city',cityJSON)
         putResponse('/api/users/edit/',formData,setPostData)
     }
+    useEffect(()=>{
+        if(postData){
+            if(postData?.success?.status === 200){
+                toast.success("Successfully updated")
+            }
+            if(postData?.success?.status > 201){
+                toast.error("Failed")
+            }
+        }
+    },[postData])
     return (
         <Wrapper onSubmit={onSubmit}>
             <Container width="100%" textAlign="center" className="cursor-pointer">
