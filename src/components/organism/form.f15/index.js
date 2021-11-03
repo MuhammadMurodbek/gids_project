@@ -10,8 +10,11 @@ const Index = ({state, setState}) => {
     const [country, setCountry] = useState()
     const [region, setRegion] = useState()
     const [regionItem, setRegionItem] = useState()
-   
-    const countries = JSON.parse(localStorage.getItem('countries')).map((item,index)=>{return {value:index, label:item.country, ...item}}) || []
+    const [countries, setCountries] = useState([])
+    React.useMemo(() => {
+        let countriess = JSON.parse(localStorage.getItem('countries')).map((item,index)=>{return {value:index, label:item.country, ...item}}) || []
+        setCountries(countriess)
+    },[])
     
     useEffect(() => {
         if(country){
@@ -20,16 +23,7 @@ const Index = ({state, setState}) => {
         }
         setState({...state, country:{value:country?.value, label:country?.label}, city:regionItem})
     },[regionItem, country])
-    // useEffect(() => {
-    //     if(state.country){
-    //         // console.log("dsf")
-    //         // // console.log(state?.country)
-    //         setCountry(state?.country)
-    //         setRegionItem(state?.city)
-    //     }
-    // },[state])
-    console.log(country)
-    console.log(state?.country)
+ 
     const handleChange = (e)=>{setState({...state,[e.target.name]:e.target.value})}
     
     return (

@@ -15,7 +15,7 @@ const Demo = ({setState, state}) => {
   };
   const handleSubmitOk = (e) => {
     setUrl(URL.createObjectURL(e))
-    console.log(e);
+    // console.log(e);
     if(setState)
     setState({...state, imageFile: e})
   }
