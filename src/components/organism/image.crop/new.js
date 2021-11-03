@@ -1,6 +1,6 @@
 import ImgCrop from 'antd-img-crop';
 import { Upload } from 'antd';
-import React,{useEffect, useState} from "react";
+import React,{useState} from "react";
 import {DeleteOutlined, PlusCircleOutlined} from "@ant-design/icons"
 import "./style.css"
 import noUser from "../../../assets/img/gid-personal/no_user.png"
@@ -42,27 +42,3 @@ const Demo = ({setState, state}) => {
 } 
 
 export default Demo;
-// const React = require('react')
-// class Upload extends React.Component {
-//   constructor(props){
-//     super(props)
-//     this.state = {
-//       file: null
-//     }
-//     this.handleChange = this.handleChange.bind(this)
-//   }
-//   handleChange(event) {
-//     this.setState({
-//       file: URL.createObjectURL(event.target.files[0])
-//     })
-//   }
-//   render() {
-//     return (
-//       <div>
-//         <input type="file" onChange={this.handleChange}/>
-//         <img src={this.state.file}/>
-//       </div>
-//     );
-//   }
-// }
-// module.exports = Upload
