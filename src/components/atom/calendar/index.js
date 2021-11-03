@@ -4,11 +4,10 @@ import { DatePicker, Space } from "antd";
 import "antd/dist/antd.css";
 import moment from "moment";
 
-const dateFormatList = ["DD/MM/YYYY", "DD/MM/YY"];
+const dateFormatList = ["DD-MM-YYYY", "DD/MM/YY"];
 const Index = (props) => {
     const [time, setTime] = useState(null)
     const onChange = (date, dateString) => {
-        console.log(date, dateString)
         setTime(date)
         console.log(time)
     }
@@ -17,7 +16,7 @@ const Index = (props) => {
       <Space direction="vertical" size={12}>
         <DatePicker
           onChange={onChange}
-          defaultValue={moment("01/01/2015 ", dateFormatList[0])}
+          defaultValue={moment("01-01-2015 ", dateFormatList[0])}
           value={time}
         //   name={props.name}
           format={dateFormatList}

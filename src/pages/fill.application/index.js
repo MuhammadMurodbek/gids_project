@@ -1,5 +1,5 @@
 import { Grid } from '@material-ui/core'
-import React,{useState} from 'react'
+import React,{useState, useCallback} from 'react'
 import { Container } from '../../styles/container/index.style'
 import { Wrapper, shadow, Title } from "./style"
 import RadioGroup from "../../components/molecules/radio.group.f9"
@@ -15,22 +15,15 @@ import CloseIcon from '@material-ui/icons/Close';
 import {mediaTextField, mediaTextFieldSec, mediaBtn} from "../../custom/global.media.variables"
 import Modal from 'react-awesome-modal';
 import {mediaContainer, mediaContainerWidth} from "./_media"
-
+import {gid_lang_obj, currency} from "../../custom/constants"
 const Index = () => {
     const [state, setState] = useState(false);
     const [collect, setCollect] = useState({})
     const [country, setCountry] = useState({})
     const [region, setRegion] = useState({})
-    function openModal() {
-        setState(true);
-    }
-    function closeModal() {
-        setState(false)
-    }
-    const onSubmit = (e) => {
-        e.preventDefault();
-    }
-    console.log(collect)
+    const openModal = useCallback(() => {setState(true)},[state])
+    const closeModal = useCallback(() => {setState(false)},[state])
+    const onSubmit = (e) => {e.preventDefault();}
     return (
         <Wrapper onSubmit={onSubmit}>
             <TextTitle {...mediaTextField} {...mediaTextFieldSec} top="60px" bottom="20px">Git va tarjimonlar uchun ariza qoldirish</TextTitle>
@@ -73,7 +66,7 @@ const Index = () => {
                                 <div className="title_inner">Gid/Tarjimon bilishi kerak bo'lgan tillar</div>
                             </Grid>
                             <Grid item xs={12} sm={12} md={7}>
-                                <Select placeholder="Tilni tanlang" />
+                                <Select placeholder="Tilni tanlang" isMulti options={gid_lang_obj}/>
                             </Grid>
                         </Grid>
                         <Grid container spacing={1} alignItems="flex-start" className="wrap-grid">
@@ -81,7 +74,7 @@ const Index = () => {
                                 <div className="title_inner">Nima uchun kerak</div>
                             </Grid>
                             <Grid item xs={12} sm={12} md={7}>
-                                <TextArea cols="20" rows="5" wrap="hard" maxlength="10" placeholder="Misol uchun, shaharni ko’rsatish uchun git kerak...." width="100%" />
+                                <TextArea onChange={(e)=>setCollect({...collect, why_need:e.target.value})} cols="20" rows="5" wrap="hard" maxlength="10" placeholder="Misol uchun, shaharni ko’rsatish uchun git kerak...." width="100%" />
                             </Grid>
                         </Grid>
                         <Grid container spacing={1} alignItems="center" className="wrap-grid">
@@ -89,7 +82,10 @@ const Index = () => {
                                 <div className="title_inner">Taklif etilgan narx</div>
                             </Grid>
                             <Grid item xs={12} sm={12} md={7}>
-                                <Select placeholder="Narxni tanlang" />
+                                <Grid container spacing={1}> 
+                                    <Grid item xs={12} sm={8}><Select placeholder="Narxni tanlang" /></Grid>
+                                    <Grid item xs={12} sm={4}><Select options={currency} defaultValue={currency[0]} placeholder="Valyuta" /></Grid>
+                                </Grid>
                             </Grid>
                         </Grid>
                         <Grid container spacing={1} alignItems="center" className="wrap-grid">
@@ -97,7 +93,16 @@ const Index = () => {
                                 <div className="title_inner">Jinsi</div>
                             </Grid>
                             <Grid item xs={12} sm={12} md={7}>
-                                <DoubleCheck name1="Erkak" name2="Ayol" width="180px" alignItems="center" justifyContent="space-between" flexDirection="row" />
+                                <DoubleCheck 
+                                    name1="Erkak" 
+                                    name2="Ayol" 
+                                    width="180px" 
+                                    alignItems="center" 
+                                    justifyContent="space-between" 
+                                    flexDirection="row" 
+                                    state={collect}
+                                    setState={setCollect} 
+                                />
                             </Grid>
                         </Grid>
                         <Grid container spacing={1} alignItems="center" className="wrap-grid">
@@ -105,7 +110,7 @@ const Index = () => {
                                 <div className="title_inner">Nechchi kishi bo'lasizlar</div>
                             </Grid>
                             <Grid item xs={12} sm={12} md={7}>
-                                <Input width="100%" type="number" placeholder="Son kiriting..." />
+                                <Input onChange={(e)=>setCollect({...collect, people_count:e.target.value})} width="100%" type="number" placeholder="Son kiriting..." />
                             </Grid>
                         </Grid>
                         <Grid container spacing={1} alignItems="center" className="wrap-grid">

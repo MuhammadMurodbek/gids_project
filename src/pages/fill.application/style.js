@@ -8,7 +8,10 @@ export const Wrapper = styled.form`
     .wrap-grid{
         margin:20px 0;
     }
-    
+    .currency{
+        display:flex;
+        background-color:red;
+    }
     .modaldiv{
         padding: 40px;
         padding-top: 10px;
