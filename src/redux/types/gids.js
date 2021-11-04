@@ -4,3 +4,9 @@ export const GIDS = {
     ABOUT_UPDATE_BIO: "ABOUT_UPDATE_BIO",
     ABOUT_UPDATE_BIO_ERROR: "ABOUT_UPDATE_BIO_ERROR"
 }
+// export const gidApp = {
+//     GID_APP_0:'GID_APP_0',
+//     GID_APP_:'GID_APP_FAIL',
+//     GID_APP_SUCCESS:'GID_APP_SUCCESS',
+
+// }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { Calendar } from "./index.style";
 import { DatePicker, Space } from "antd";
 import "antd/dist/antd.css";
@@ -6,11 +6,14 @@ import moment from "moment";
 
 const dateFormatList = ["DD-MM-YYYY", "DD/MM/YY"];
 const Index = (props) => {
+    const {state, setState, field} = props
     const [time, setTime] = useState(null)
-    const onChange = (date, dateString) => {
+    const onChange = useCallback ((date, dateString) => {
         setTime(date)
-        console.log(time)
-    }
+        if(setState){
+          setState({...state, [field]:dateString})
+        }
+    },[state, time])
   return (
     <Calendar width={props.width}>
       <Space direction="vertical" size={12}>

@@ -4,21 +4,14 @@ import {Wrapper} from "./index.style"
 import "./style.css"
 
 const Index = (props) => {
-    const {width, paddingX, margin, backgroundColor, setState, errorText, setCollect, collect} = props
+    const {width, paddingX, margin, backgroundColor, setState, state, errorText, setCollect, collect, field} = props
     const [value, setValue] = useState(null)
     const handleChange = useCallback((valueChange) => {
         setValue(valueChange)
-        if(setState){
-            setState(valueChange)
-        }
-        // console.log(valueChange)
-    },[setState, value])
-    // const options = [
-    //     { value: 'chocolate', label: 'Chocolate' },
-    //     { value: 'strawberry', label: 'Strawberry' },
-    //     { value: 'vanilla', label: 'Vanilla' },
-    //   ];
-
+        if(setState){setState(valueChange)}
+        if(setCollect){setCollect({...collect, [field]:valueChange})} ///important
+    },[state, value, collect])
+   
     return (
         <Wrapper width={width} paddingX={paddingX} margin={margin} backgroundColor={backgroundColor}>
             <Select 

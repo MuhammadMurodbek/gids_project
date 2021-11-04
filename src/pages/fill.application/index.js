@@ -15,17 +15,26 @@ import CloseIcon from '@material-ui/icons/Close';
 import {mediaTextField, mediaTextFieldSec, mediaBtn} from "../../custom/global.media.variables"
 import Modal from 'react-awesome-modal';
 import {mediaContainer, mediaContainerWidth} from "./_media"
-import {gid_lang_obj, currency, countries} from "../../custom/constants"
+import {gid_lang_obj, currency} from "../../custom/constants"
 import {get_cities} from "../../custom/function"
 import {defaultState} from "./constant"
+import {post_gid_app_action} from "../../redux/actions"
+import useApi from "../../hooks/response"
+
 const Index = () => {
     const [state, setState] = useState(false);
     const [collect, setCollect] = useState(defaultState)
     const [country, setCountry] = useState({})
     const [region, setRegion] = useState({})
+    const {responseHook, setResponseHook} = useApi('post_gid_app_reducer')
     const openModal = useCallback(() => {setState(true)},[state])
     const closeModal = useCallback(() => {setState(false)},[state])
-    const onSubmit = (e) => {e.preventDefault();}
+    const onSubmit = (e) => {
+        e.preventDefault();
+        console.log(collect)
+        setResponseHook(post_gid_app_action(collect))
+    }
+    const countries = JSON.parse(localStorage.getItem('countries')).map((item,index)=>{return {value:index, label:item.country, ...item}}) || []
     React.useEffect(() => {
         if(country){
             let array = get_cities(country?.cities);
@@ -56,8 +65,8 @@ const Index = () => {
                             </Grid>
                             <Grid item xs={12} sm={12} md={7}>
                                 <Grid container spacing={2}>
-                                    <Grid item xs={12} sm={6}><Select options={countries} setState={setCountry} placeholder="Davlat" /></Grid>
-                                    <Grid item xs={12} sm={6}><Select options={region} setState={setRegion} placeholder="Shahar" /></Grid>
+                                    <Grid item xs={12} sm={6}><Select options={countries} setState={setCountry} state={country} placeholder="Davlat" /></Grid>
+                                    <Grid item xs={12} sm={6}><Select options={region} setState={setRegion} state={region} placeholder="Shahar" /></Grid>
                                 </Grid>
                             </Grid>
                         </Grid>
@@ -67,8 +76,8 @@ const Index = () => {
                             </Grid>
                             <Grid item xs={12} sm={12} md={7}>
                                 <Grid container spacing={2}>
-                                    <Grid item xs={12} sm={6}><Calendar /></Grid>
-                                    <Grid item xs={12} sm={6}><Calendar /></Grid>
+                                    <Grid item xs={12} sm={6}><Calendar setState={setCollect} state={collect} field="start_date" /></Grid>
+                                    <Grid item xs={12} sm={6}><Calendar setState={setCollect} state={collect} field="end_date"/></Grid>
                                 </Grid>
                             </Grid>
                         </Grid>
@@ -77,7 +86,7 @@ const Index = () => {
                                 <div className="title_inner">Gid/Tarjimon bilishi kerak bo'lgan tillar</div>
                             </Grid>
                             <Grid item xs={12} sm={12} md={7}>
-                                <Select placeholder="Tilni tanlang" isMulti options={gid_lang_obj}/>
+                                <Select setCollect={setCollect} collect={collect} field="languages" placeholder="Tilni tanlang" isMulti options={gid_lang_obj}/>
                             </Grid>
                         </Grid>
                         <Grid container spacing={1} alignItems="flex-start" className="wrap-grid">
@@ -93,9 +102,9 @@ const Index = () => {
                                 <div className="title_inner">Taklif etilgan narx</div>
                             </Grid>
                             <Grid item xs={12} sm={12} md={7}>
-                                <Grid container spacing={1}> 
-                                    <Grid item xs={12} sm={8}> <Input onChange={(e)=>setCollect({...collect, cost:e.target.value})} width="100%" type="number" placeholder="Son kiriting..." /></Grid>
-                                    <Grid item xs={12} sm={4}><Select options={currency} defaultValue={currency[0]} placeholder="Valyuta" /></Grid>
+                                <Grid container spacing={1} alignItems="center"> 
+                                    <Grid item xs={12} sm={8}><Input onChange={(e)=>setCollect({...collect, cost:parseInt(e.target.value)})} width="100%" type="number" placeholder="Son kiriting..." /></Grid>
+                                    <Grid item xs={12} sm={4}><Select setCollect={setCollect} collect={collect} field="currency" options={currency}  placeholder="Valyuta" /></Grid>
                                 </Grid>
                             </Grid>
                         </Grid>
@@ -110,7 +119,9 @@ const Index = () => {
                                     width="180px" 
                                     alignItems="center" 
                                     justifyContent="space-between" 
-                                    flexDirection="row" 
+                                    flexDirection="row"
+                                    field1="is_male"
+                                    field2="is_female"  
                                     state={collect}
                                     setState={setCollect} 
                                 />
@@ -121,7 +132,7 @@ const Index = () => {
                                 <div className="title_inner">Nechchi kishi bo'lasizlar</div>
                             </Grid>
                             <Grid item xs={12} sm={12} md={7}>
-                                <Input onChange={(e)=>setCollect({...collect, people_count:e.target.value})} width="100%" type="number" placeholder="Son kiriting..." />
+                                <Input value={collect?.people_count || ''} onChange={(e)=>setCollect({...collect, people_count:parseInt(e.target.value)})} width="100%" type="number" placeholder="Son kiriting..." />
                             </Grid>
                         </Grid>
                         <Grid container spacing={1} alignItems="center" className="wrap-grid">
@@ -133,7 +144,7 @@ const Index = () => {
                         </Grid>
                     </Container>
                     <Container width="100%" textAlign="center" >
-                        <Button {...mediaBtn} onClick={openModal}>Arizani yuborish</Button>
+                        <Button {...mediaBtn} >Arizani yuborish</Button>
                     </Container>
                 </Container>
             </Container>
