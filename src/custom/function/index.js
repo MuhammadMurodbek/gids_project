@@ -4,3 +4,10 @@ const gid_lang_obj=[
     {value:"uz", label:"o'zbek tili"},
 ];
 
+export const get_cities = (data) => {
+    if(data){
+        let country = data.map((item, index)=>{return {value:index, label:item}})
+        return country
+    }
+    return null
+}

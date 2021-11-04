@@ -15,15 +15,26 @@ import CloseIcon from '@material-ui/icons/Close';
 import {mediaTextField, mediaTextFieldSec, mediaBtn} from "../../custom/global.media.variables"
 import Modal from 'react-awesome-modal';
 import {mediaContainer, mediaContainerWidth} from "./_media"
-import {gid_lang_obj, currency} from "../../custom/constants"
+import {gid_lang_obj, currency, countries} from "../../custom/constants"
+import {get_cities} from "../../custom/function"
+import {defaultState} from "./constant"
 const Index = () => {
     const [state, setState] = useState(false);
-    const [collect, setCollect] = useState({})
+    const [collect, setCollect] = useState(defaultState)
     const [country, setCountry] = useState({})
     const [region, setRegion] = useState({})
     const openModal = useCallback(() => {setState(true)},[state])
     const closeModal = useCallback(() => {setState(false)},[state])
     const onSubmit = (e) => {e.preventDefault();}
+    React.useEffect(() => {
+        if(country){
+            let array = get_cities(country?.cities);
+            setRegion(array)
+            setCollect({...collect, country: {value:country?.value, label:country?.label}})
+        }
+    },[country])
+    React.useEffect(() => {if(region){setCollect({...collect, city:region})}},[region])
+    console.log(collect)
     return (
         <Wrapper onSubmit={onSubmit}>
             <TextTitle {...mediaTextField} {...mediaTextFieldSec} top="60px" bottom="20px">Git va tarjimonlar uchun ariza qoldirish</TextTitle>
@@ -45,8 +56,8 @@ const Index = () => {
                             </Grid>
                             <Grid item xs={12} sm={12} md={7}>
                                 <Grid container spacing={2}>
-                                    <Grid item xs={12} sm={6}><Select setState={setCountry} state={country} placeholder="Davlat" /></Grid>
-                                    <Grid item xs={12} sm={6}><Select setState={setRegion} state={region} placeholder="Shahar" /></Grid>
+                                    <Grid item xs={12} sm={6}><Select options={countries} setState={setCountry} placeholder="Davlat" /></Grid>
+                                    <Grid item xs={12} sm={6}><Select options={region} setState={setRegion} placeholder="Shahar" /></Grid>
                                 </Grid>
                             </Grid>
                         </Grid>
@@ -83,7 +94,7 @@ const Index = () => {
                             </Grid>
                             <Grid item xs={12} sm={12} md={7}>
                                 <Grid container spacing={1}> 
-                                    <Grid item xs={12} sm={8}><Select placeholder="Narxni tanlang" /></Grid>
+                                    <Grid item xs={12} sm={8}> <Input onChange={(e)=>setCollect({...collect, cost:e.target.value})} width="100%" type="number" placeholder="Son kiriting..." /></Grid>
                                     <Grid item xs={12} sm={4}><Select options={currency} defaultValue={currency[0]} placeholder="Valyuta" /></Grid>
                                 </Grid>
                             </Grid>
@@ -117,7 +128,7 @@ const Index = () => {
                             <Grid item xs={12} sm={12} md={5}>
                             </Grid>
                             <Grid item xs={12} sm={12} md={7}>
-                                <Checkbox name="Arizani yoborib, siz foydalanuvchi shartnomasiga rozilik bildirasiz*" />
+                                <Checkbox setState={setCollect} state={collect} name="Arizani yoborib, siz foydalanuvchi shartnomasiga rozilik bildirasiz*" />
                             </Grid>
                         </Grid>
                     </Container>

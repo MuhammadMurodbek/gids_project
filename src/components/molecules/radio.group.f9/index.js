@@ -22,7 +22,15 @@ const Index = ({setState, state}) => {
                 <FormControlLabel value="gid" control={<Radio />} label={<span>Gid</span>} className="first"/>
                 <FormControlLabel value="translator" control={<Radio />} label={<span>Tarjimon</span>} />
                 <div className="double_check" style={value === "translator" ? {display:"inline-block"}:{display:'none'}}>
-                    <DoubleCheck margin="10px 0 0 30px" name1="Sinxron" name2="Izchil" />
+                    <DoubleCheck 
+                        setState={setState} 
+                        state={state} 
+                        margin="10px 0 0 30px" 
+                        name1="Sinxron" 
+                        name2="Izchil" 
+                        field1="is_synchronous"
+                        field2="is_consecutive"
+                    />
                 </div>
             </RadioGroup>
             </FormControl>

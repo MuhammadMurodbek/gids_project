@@ -12,3 +12,6 @@ export const currency = [
     {value:"sum", label:'UZS'},
     {value:"ruble", label:'RUBL'},
 ]
+
+
+export const countries = JSON.parse(localStorage.getItem('countries')).map((item,index)=>{return {value:index, label:item.country, ...item}}) || []
