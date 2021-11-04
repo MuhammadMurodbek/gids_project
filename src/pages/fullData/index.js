@@ -63,17 +63,16 @@ export default function Index() {
               )}
             </div>
           </Grid>
+
+
           <Grid item xs={12} md={4} className="image_adds">
-            <div className="imgad">
+            <div className="imgpard">
               <ImgContainer src={ad} width="100%" />
             </div>
-            <div className="imgad">
+            <div className="imgpard">
               <ImgContainer src={ad} width="100%" />
             </div>
-            <div className="imgad">
-              <ImgContainer src={ad} width="100%" />
-            </div>
-            <div className="imgad">
+            <div className="imgpard">
               <ImgContainer src={ad} width="100%" />
             </div>
           </Grid>

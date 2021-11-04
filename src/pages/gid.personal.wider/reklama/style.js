@@ -8,7 +8,7 @@ export const Wrapper01 = styled.div`
         background-color: #EEF7EE;
         display: flex;
         justify-content: flex-end;
-        margin: -22px !important;
+        /* margin: -22px !important; */
     }
     .btn-pey{
         margin-left: 30px;
@@ -22,6 +22,9 @@ export const Wrapper01 = styled.div`
 export const Wrapper = styled.div`
     width: 100%;
     padding: 0 80px;
+
+    
+
  .text-title{
      margin-left: 0 !important;
      text-align: left;
@@ -100,6 +103,7 @@ export const Wrapper = styled.div`
     display: flex;
     justify-content: space-around;
     flex-direction: column;
+
 }
 .right-b{
     font-size:13px;
@@ -110,7 +114,15 @@ export const Wrapper = styled.div`
      margin: 0;
      margin-bottom: 10px;
      font-weight: 600;
-    }
+}
+.somdiv{
+     margin-right: 20px;
+ }
+
+ .img12{
+     margin-right: 5px;
+ }
+ 
 
 `
 
@@ -169,6 +181,6 @@ export const  Wrapper02 = styled.div`
     padding: 8px;
     background-color:  #EEF7EE;
  }
- 
+
 
 ` 

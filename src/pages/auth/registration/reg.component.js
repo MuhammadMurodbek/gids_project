@@ -9,6 +9,7 @@ import {mediaContainer, mediaContainerSec, mediaBtn} from "./_media"
 import {useSelector, useDispatch} from "react-redux"
 import {post_auth_reg_action} from "../../../redux/actions"
 import {validator} from "../../../custom/validator"
+import {WrapperReg} from "./reg.style"
 import toast from "react-hot-toast"
 const Index = () => {
     const history = useHistory();
@@ -83,43 +84,46 @@ const Index = () => {
         if(statePasswordRecover.length>8) setPasswordRecoverV({...passwordRecoverV,errorText:''})
     },[stateName, stateEmail, statePassword, statePasswordRecover, stateLast, select])
     return (
-        <form onSubmit={onSubmit}>
-            <Container width="100%" {...mediaContainer}>
-                <Grid container spacing={1} justifyContent="space-between" alignItems="center">
-                    <Grid className="grid_item" item xs={12} md={6}> 
-                        <AuthInput 
-                            errorText={nameV.errorText} 
-                            setState={setStateName}
-                            title="Ismingizni yozing" 
-                            width="100%"
-                        />
+        <WrapperReg>
+
+            <form onSubmit={onSubmit}>
+                <Container width="100%" {...mediaContainer}>
+                    <Grid container spacing={1} justifyContent="space-between" alignItems="center">
+                        <Grid className="grid_item" item xs={12} md={6}> 
+                            <AuthInput 
+                                errorText={nameV.errorText} 
+                                setState={setStateName}
+                                title="Ismingizni yozing" 
+                                width="100%"
+                            />
+                        </Grid>
+                        <Grid className="grid_item" item xs={12} md={6}> 
+                            <AuthInput 
+                                errorText={lastV.errorText} 
+                                setState={setStateLast} 
+                                title="Familiyangizni yozing" 
+                                width="100%"
+                            />
+                        </Grid>
                     </Grid>
-                    <Grid className="grid_item" item xs={12} md={6}> 
-                        <AuthInput 
-                            errorText={lastV.errorText} 
-                            setState={setStateLast} 
-                            title="Familiyangizni yozing" 
-                            width="100%"
-                        />
-                    </Grid>
-                </Grid>
-            </Container>
-            <Container {...mediaContainer}>
-                <Select errorText={selectV.errorText} options={options} setState={setSelect} placeholder="Tarjimon"/>
-            </Container>
-            <Container  {...mediaContainer} >
-                <AuthInput errorText={emailV.errorText} title="E-mail kiriting" width="100%" setState={setStateEmail}/>
-            </Container>
-            <Container  {...mediaContainer}>
-                <AuthInput errorText={passwordV.errorText} title="Parolingizni kiriting" setState={setStatePassword} password={true} width="100%"/>
-            </Container>
-            <Container  {...mediaContainer}>
-                <AuthInput errorText={passwordRecoverV.errorText} title="Parolingizni tasdiqlang" setState={setStatePasswordRecover} password={true} width="100%"/>
-            </Container>
-            <Container  {...mediaContainerSec}  className="text-right" margin="20px 0 0">
-                <Button {...mediaBtn} loader={loader}  >Kirish</Button>
-            </Container>
-        </form>
+                </Container>
+                <Container {...mediaContainer}>
+                    <Select errorText={selectV.errorText} options={options} setState={setSelect} placeholder="Tarjimon"/>
+                </Container>
+                <Container  {...mediaContainer} >
+                    <AuthInput errorText={emailV.errorText} title="E-mail kiriting" width="100%" setState={setStateEmail}/>
+                </Container>
+                <Container  {...mediaContainer}>
+                    <AuthInput errorText={passwordV.errorText} title="Parolingizni kiriting" setState={setStatePassword} password={true} width="100%"/>
+                </Container>
+                <Container  {...mediaContainer}>
+                    <AuthInput errorText={passwordRecoverV.errorText} title="Parolingizni tasdiqlang" setState={setStatePasswordRecover} password={true} width="100%"/>
+                </Container>
+                <Container  {...mediaContainerSec}  className="text-right" margin="20px 0 0">
+                    <Button {...mediaBtn} loader={loader}  >Kirish</Button>
+                </Container>
+            </form>
+        </WrapperReg>
     )
 }
 

@@ -76,7 +76,7 @@ const Index = () => {
                                     src="https://static.scientificamerican.com/sciam/cache/file/4E0744CD-793A-4EF8-B550B54F7F2C4406_source.jpg?w=590&h=800&ACB6A419-81EB-4B9C-B846FD8EBFB16FBE"
                                 />
                             </Grid>
-                            <Grid item xs={12}sm={12} md={8}>
+                            <Grid item xs={12} sm={12} md={8}>
                                 <Container>
                                     <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
                                         <div>O'zbegim</div>

@@ -35,7 +35,7 @@ const Index = () => {
             <Navbar>
                 <FlexContainer width="100%" padding="0 25px" alignItems="center" justifyContent="space-between">
                     <div className="imgass"  >
-                        <Link to="/main"> <img src={Logo} alt="safsf" /></Link>
+                        <Link to="/"> <img src={ Logo } alt="safsf" /></Link>
                     </div>
                     <FlexContainer {...navbarMediaCenter} 
                     padding="0 15px" width="80%" alignItems="center" justifyContent="center">

@@ -34,7 +34,7 @@ const mediaContainerPadding = {
     m_width:"600px",
     m_padding:'0 5px'
 }
-const Index = () => {
+const  Index = () => {
     return (
         <Wrapper>
             <WrapperContainer>

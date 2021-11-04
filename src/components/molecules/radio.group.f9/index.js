@@ -4,7 +4,7 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import {Wrapper} from "./index.style"
-import DoubleCheck from "../../../components/molecules/double.check"
+import DoubleCheck from "../../../components/molecules/doble2"
 const Index = () => {
     const [value, setValue] = React.useState('female');
 
@@ -19,7 +19,7 @@ const Index = () => {
                 <FormControlLabel value="gid" control={<Radio />} label={<span>Gid</span>} className="first"/>
                 <FormControlLabel value="translator" control={<Radio />} label={<span>Tarjimon</span>} />
                 <div className="double_check" style={value === "translator" ? {display:"inline-block"}:{display:'none'}}>
-                    <DoubleCheck margin="10px 0 0 30px" name1="Sinxron" name2="Izchil" />
+                    <DoubleCheck   margin="10px 0 0 120px" name1="Sinxron" name2="Izchil" name3="Yozma tarjimon" justifyContent="flex-end"  />
                 </div>
             </RadioGroup>
             </FormControl>

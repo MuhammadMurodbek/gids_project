@@ -12,7 +12,8 @@ import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
- 
+// import DoubleRadio from "../../../../components/molecules/double.radio.labeled";
+
 import click from '../../../assets/img/advertasing/click400.svg';
 import payme from '../../../assets/img/advertasing/payme400.svg';
 import paynet from '../../../assets/img/advertasing/paynet400.svg';
@@ -114,6 +115,21 @@ export default function index() {
                     </Grid>
                 </Grid>
 
+                <form>
+                    <label for="html">
+                        <input className="radios" type="radio" value="3435435" name="as" /> 323434
+                    </label>
+                    <label for="html">
+                    <input className="radios" type="radio" value="3435435" /> 323434
+                </label>
+                </form>
+
+
+
+
+
+
+
                 <TextTitle className="text-title" bottom="70px" top="70px">
                     To‘lov turini tanlang
                 </TextTitle>
@@ -147,7 +163,7 @@ export default function index() {
 
             <div className="payment">
                 <div className="btn-group">
-                   <Link to="/reklama"> <Button className="btn-pey" margin="30px 0" type="outlined">   Ortga qaytish</Button></Link>
+                    <Link to="/reklama"> <Button className="btn-pey" margin="30px 0" type="outlined">   Ortga qaytish</Button></Link>
                     <Button className="btn-pey" margin="30px 0"  >Hisobni to’ldirish</Button>
                 </div>
             </div>

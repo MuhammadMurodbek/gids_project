@@ -23,6 +23,7 @@ import History from '../pages/gid.personal.wider/history'
 import UpdatePassword from "../pages/auth/update"
 import notFound from "../pages/notFound"
 import SeeProfile from '../pages/seeProfile';
+import MaqolaYozish from '../pages/gid.personal.wider/blog/MaqolaYozish'
 // import GidPersonal from '../pages/gid.personal';
 // import Article from '../pages/article';
  
@@ -51,5 +52,6 @@ export {
     ResetPassword,
     History, 
     UpdatePassword,
-    SeeProfile
+    SeeProfile,
+    MaqolaYozish
 }

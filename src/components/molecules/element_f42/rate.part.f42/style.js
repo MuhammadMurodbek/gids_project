@@ -25,4 +25,6 @@ export const PercentCount = styled.div`
 `
 export const RateWrapper = styled.div`
     text-align: center;
+    position: relative;
+    top: 30px;
 `

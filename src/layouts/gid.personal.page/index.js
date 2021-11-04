@@ -10,6 +10,6 @@ const Index = ({children}) => {
             </Container>
         </Wrapper>
     )
-}
+} 
 
 export default Index

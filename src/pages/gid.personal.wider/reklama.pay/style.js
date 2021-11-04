@@ -7,7 +7,7 @@ export const Wrapper01 = styled.div`
         background-color: #EEF7EE;
         display: flex;
         justify-content: flex-end;
-        margin: -22px;
+         
     }
     .btn-pey{
         margin-right: 30px;
@@ -64,6 +64,12 @@ export const  Wrapper02 = styled.div`
         left:30px;
         font-size: 30px;
         color: ${mainGreen};
+    }
+
+
+    /* radio */
+    .radios{
+        color:red
     }
      
 `

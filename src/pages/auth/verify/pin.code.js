@@ -23,7 +23,7 @@ const YourComponent = () => {
             const {data} = selector.data
             console.log(selector)
             localStorage.setItem('user_token',JSON.stringify(data))
-            window.location.href="/main"
+            window.location.href="/"
         }
         if(selector.status === 400){
             toast.error("Qaytadan urinib ko'ring")

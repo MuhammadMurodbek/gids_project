@@ -1,9 +1,11 @@
-import React from 'react';
+import React,{useMemo} from 'react';
 import MainPage from "./pages"
 import GlobalStyle from "./styles/global"
-// import AnimatedCursor from "./components/atom/animated.cursor"
-// import {ToastContainer} from "react-toastify"
+import {getResponseRegion} from "./hooks/response_get"
 function App() {
+  useMemo(() => {
+    getResponseRegion('https://countriesnow.space/api/v0.1/countries')
+  },[])
   return (
     <React.Fragment>
       <GlobalStyle/>
