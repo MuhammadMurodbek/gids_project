@@ -32,8 +32,22 @@ const Index = () => {
     const onSubmit = (e) => {
         e.preventDefault();
         console.log(collect)
-        setResponseHook(post_gid_app_action(collect))
+        let newCollect = {
+            ...collect,
+            country:collect?.country?.label,
+            city:collect?.city?.label,
+            languages:collect?.languages.map(item=>item.label),
+            currency:collect?.currency?.value,
+        }
+        // console.log()
+        setResponseHook(post_gid_app_action(newCollect))
+        if(responseHook?.status===200){
+            setState(true)
+            setCollect(defaultState)
+        }
     }
+    console.log(collect)
+    // console.log(responseHook)
     const countries = JSON.parse(localStorage.getItem('countries')).map((item,index)=>{return {value:index, label:item.country, ...item}}) || []
     React.useEffect(() => {
         if(country){
@@ -43,7 +57,7 @@ const Index = () => {
         }
     },[country])
     React.useEffect(() => {if(region){setCollect({...collect, city:region})}},[region])
-    console.log(collect)
+    // console.log(collect)
     return (
         <Wrapper onSubmit={onSubmit}>
             <TextTitle {...mediaTextField} {...mediaTextFieldSec} top="60px" bottom="20px">Git va tarjimonlar uchun ariza qoldirish</TextTitle>
@@ -104,7 +118,7 @@ const Index = () => {
                             <Grid item xs={12} sm={12} md={7}>
                                 <Grid container spacing={1} alignItems="center"> 
                                     <Grid item xs={12} sm={8}><Input onChange={(e)=>setCollect({...collect, cost:parseInt(e.target.value)})} width="100%" type="number" placeholder="Son kiriting..." /></Grid>
-                                    <Grid item xs={12} sm={4}><Select setCollect={setCollect} collect={collect} field="currency" options={currency}  placeholder="Valyuta" /></Grid>
+                                    <Grid item xs={12} sm={4} style={{position:'relative', top:3}}><Select setCollect={setCollect} collect={collect} field="currency" options={currency}  placeholder="Valyuta" /></Grid>
                                 </Grid>
                             </Grid>
                         </Grid>

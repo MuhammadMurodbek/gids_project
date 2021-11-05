@@ -5,7 +5,8 @@ import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import user from '../../../assets/img/request/user1.svg';
 import cal from '../../../assets/img/request/cal.svg';
 import gps from '../../../assets/img/request/gps.svg';
-import ptich from '../../../assets/img/request/rozi.svg';
+// import ptich from '../../../assets/img/request/rozi.svg';
+import moment from "moment"
 import { Link } from 'react-router-dom';
 
 export default function Index(props) {
@@ -17,7 +18,7 @@ export default function Index(props) {
                     <div className="responsText">
                         <div className="title-respons11">
                             <div>
-                                <b className="id">Id:</b>
+                                <b className="id">Ariza raqami:</b>
                                 <b>{id}</b>
                             </div>
 
@@ -27,7 +28,7 @@ export default function Index(props) {
 
                     <div className="responsFooter">
                         <Grid container spacing={1} diraction="row">
-                            <Grid item md={2}>
+                            <Grid item md={4}>
                                 <img src={user} />
                                 <span className="textS" >{name}</span>
                             </Grid>
@@ -35,15 +36,15 @@ export default function Index(props) {
                                 <img src={gps} />
                                 <span className="textS" >{gpss}</span>
                             </Grid>
-                            <Grid item md={3} className="item33">
+                            <Grid item md={4} className="item33">
                                 <img src={cal} />
                                 <span className="textS " >
                                     <span >
-                                        {dan} <ArrowForwardIosIcon className="a11" /> {gacha}
+                                    {moment(dan).format('DD-MM-YYYY')} <ArrowForwardIosIcon className="a11" /> {moment(gacha).format('DD-MM-YYYY')}
                                     </span>
                                 </span>
                             </Grid>
-                            <Grid item md={4} justifyContent="flex-end">
+                            <Grid item md={1} justifyContent="flex-end">
                                 <div className="sana">{sana}</div>
                             </Grid>
                         </Grid>
