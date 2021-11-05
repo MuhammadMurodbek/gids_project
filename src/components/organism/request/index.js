@@ -11,10 +11,11 @@ import { Link } from 'react-router-dom';
 
 export default function Index(props) {
     const { id, manzil, name, gpss, dan, gacha, sana } = props;
+    const token = JSON.parse(localStorage.getItem("user_token"))
     return (
         <Wrapper>
             <div>
-                <Link to="/fullrequest" className="Link">
+                <Link to={ token?.role === 'simple_user' ? 'gid-personal' : `/application/${id}`} className="Link">
                     <div className="responsText">
                         <div className="title-respons11">
                             <div>
@@ -40,7 +41,7 @@ export default function Index(props) {
                                 <img src={cal} />
                                 <span className="textS " >
                                     <span >
-                                    {moment(dan).format('DD-MM-YYYY')} <ArrowForwardIosIcon className="a11" /> {moment(gacha).format('DD-MM-YYYY')}
+                                        {moment(dan).format('DD-MM-YYYY')} <ArrowForwardIosIcon className="a11" /> {moment(gacha).format('DD-MM-YYYY')}
                                     </span>
                                 </span>
                             </Grid>

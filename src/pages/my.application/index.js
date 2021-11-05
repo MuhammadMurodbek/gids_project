@@ -17,12 +17,12 @@ export default function Index({success}) {
                         array_data.length > 0 ?
                             array_data.map((item, index)=>(
                                 <MyRequests
-                                    id={item?.id}
-                                    manzil={item?.why_need}
-                                    name={item?.full_name?.first_name + " " + item?.full_name?.last_name}
-                                    gpss={item?.country + " " + item?.city}
-                                    dan={item?.start_date}
-                                    gacha={item?.end_date}
+                                    id={item?.id || 0}
+                                    manzil={item?.why_need || ''}
+                                    name={item?.full_name?.first_name || 'name' + " " + item?.full_name?.last_name || 'last name'}
+                                    gpss={item?.country || 'country' + " " + item?.city || "city"}
+                                    dan={item?.start_date ||'00-00-0000'}
+                                    gacha={item?.end_date || '00-00-0000'}
                                     sana=""
                                 />
                             ))
