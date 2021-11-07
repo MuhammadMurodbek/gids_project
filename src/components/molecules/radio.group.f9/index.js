@@ -19,7 +19,7 @@ const Index = ({setState, state}) => {
             {/* <div className="title-header-radio">Kim kerakligini tanlang</div> */}
             <FormControl component="fieldset">
             <RadioGroup row={true} aria-label="gender" name="gender1" value={value} onChange={handleChange}>
-                <FormControlLabel value="gid" control={<Radio />} label={<span>Gid</span>} className="first"/>
+                <FormControlLabel value="gid" control={<Radio error/>} label={<span>Gid</span>} className="first"/>
                 <FormControlLabel value="translator" control={<Radio />} label={<span>Tarjimon</span>} />
                 <div className="double_check" style={value === "translator" ? {display:"inline-block"}:{display:'none'}}>
                     <DoubleCheck 

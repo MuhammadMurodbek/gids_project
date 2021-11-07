@@ -11,16 +11,16 @@ import DoubleCheck from "../../components/molecules/double.check"
 import Checkbox from "../../components/atom/checkbox"
 import Button from "../../components/atom/button"
 import { TextTitle } from '../../styles/textTitle/index.style'
-import CloseIcon from '@material-ui/icons/Close';
+import {validatorState} from "../../custom/validator"
 import {mediaTextField, mediaTextFieldSec, mediaBtn} from "../../custom/global.media.variables"
-import Modal from 'react-awesome-modal';
+// import ModalContainer from '../../custom/error';
 import {mediaContainer, mediaContainerWidth} from "./_media"
 import {gid_lang_obj, currency} from "../../custom/constants"
 import {get_cities} from "../../custom/function"
 import {defaultState} from "./constant"
 import {post_gid_app_action} from "../../redux/actions"
 import useApi from "../../hooks/response"
-
+import {checkValidation} from "./_functions"
 const Index = () => {
     const [state, setState] = useState(false);
     const [collect, setCollect] = useState(defaultState)
@@ -31,7 +31,7 @@ const Index = () => {
     const closeModal = useCallback(() => {setState(false)},[state])
     const onSubmit = (e) => {
         e.preventDefault();
-        console.log(collect)
+        // console.log(Object.keys(collect)[0])
         let newCollect = {
             ...collect,
             country:collect?.country?.label,
@@ -39,14 +39,15 @@ const Index = () => {
             languages:collect?.languages.map(item=>item.label),
             currency:collect?.currency?.value,
         }
-        // console.log()
-        setResponseHook(post_gid_app_action(newCollect))
-        if(responseHook?.status===200){
-            setState(true)
-            setCollect(defaultState)
-        }
+        // setResponseHook(post_gid_app_action(newCollect))
+        let checkValidationConsole = checkValidation(collect)
+        console.log(checkValidationConsole)
+        // setState(true)
+        // if(responseHook?.status===200){
+        //     setState(true)
+        //     setCollect(defaultState)
+        // }
     }
-    console.log(collect)
     // console.log(responseHook)
     const countries = JSON.parse(localStorage.getItem('countries')).map((item,index)=>{return {value:index, label:item.country, ...item}}) || []
     React.useEffect(() => {
@@ -117,7 +118,7 @@ const Index = () => {
                             </Grid>
                             <Grid item xs={12} sm={12} md={7}>
                                 <Grid container spacing={1} alignItems="center"> 
-                                    <Grid item xs={12} sm={8}><Input onChange={(e)=>setCollect({...collect, cost:parseInt(e.target.value)})} width="100%" type="number" placeholder="Son kiriting..." /></Grid>
+                                    <Grid item xs={12} sm={8}><Input value={collect?.cost || ''} onChange={(e)=>setCollect({...collect, cost:parseInt(e.target.value)})} width="100%" type="number" placeholder="Son kiriting..." /></Grid>
                                     <Grid item xs={12} sm={4} style={{position:'relative', top:3}}><Select setCollect={setCollect} collect={collect} field="currency" options={currency}  placeholder="Valyuta" /></Grid>
                                 </Grid>
                             </Grid>
@@ -162,25 +163,7 @@ const Index = () => {
                     </Container>
                 </Container>
             </Container>
-
-            <section className="section">
-                <Modal
-                    visible={state}
-                    width="700"
-                    height="200"
-                    effect="fadeInUp"
-                    className="modal_container"
-                    onClickAway={closeModal}>
-                    <div className="modaldiv">
-                        <div className="closebtn">  <CloseIcon className="pointx" onClick={closeModal} /></div>
-                        <h1 className="modaltitle">Savolingiz Muvaffaqiyatli qabul qilindi</h1>
-                        <p>Qisqa vaqt ichida o‘rganib chiqib, tez orada javob berishga harakat qilamiz.</p>
-
-                    </div>
-                </Modal>
-            </section>
-
-
+            {/* <ModalContainer setState={setState} state={state}/> */}
         </Wrapper>
     )
 }
