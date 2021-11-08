@@ -30,7 +30,7 @@ import {media, mediaFlexButtons, mediaBtn, mediaTextField, mediaTextFieldSec, me
 const Index = () => {
     
     const getRole = JSON.parse(localStorage.getItem("user_token"))
-    const { role } = getRole
+    // const { role } = getRole
  
     return (
         <>
@@ -146,7 +146,7 @@ const Index = () => {
 
 
             {
-                role === 'simple_user' ?
+                getRole?.role === 'simple_user' ?
                     <ContainerLast>
                         <div className="application-last">
                             <TextTitle  {...mediaTextField} {...mediaTextFieldSec} width="50%" left="auto" right="auto" bottom="40px">Xoziroq o’zingiz uchun Git tanlang yoki shunchaki ariza qoldiring.</TextTitle>
