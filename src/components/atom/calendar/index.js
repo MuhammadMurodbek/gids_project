@@ -6,7 +6,7 @@ import moment from "moment";
 
 const dateFormatList = ["YYYY-MM-DD", "DD/MM/YY"];
 const Index = (props) => {
-    const {state, setState, field} = props
+    const {state, setState, field, errorText} = props
     const [time, setTime] = useState(null)
     const onChange = useCallback ((date, dateString) => {
         setTime(date)
@@ -32,6 +32,9 @@ const Index = (props) => {
           }}
         />
       </Space>
+      <span style={{position: 'absolute', fontSize:'11px', left:0, bottom:-18,  fontStyle:'italic', color:'red'}}>
+          {errorText}
+      </span>    
     </Calendar>
   );
 };

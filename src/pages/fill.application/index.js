@@ -31,6 +31,7 @@ const Index = () => {
     const {responseHook, setResponseHook} = useApi('post_gid_app_reducer')
     const openModal = useCallback(() => {setState(true)},[state])
     const closeModal = useCallback(() => {setState(false)},[state])
+    const [error, setError] = useState(false)
     const onSubmit = async (e) => {
         e.preventDefault();
         // console.log(Object.keys(collect)[0])
@@ -41,21 +42,20 @@ const Index = () => {
             languages:collect?.languages.map(item=>item.label),
             currency:collect?.currency?.value,
         }
-        let formData = {
-            name:'murodbek',
-            email:'sdfsaf@'
-        }
-        const isValid = await userSchema.isValid(formData)
-
-        console.log(isValid)
+        console.log(newCollect)
+        const isValid = await userSchema.isValid(newCollect)
+        if(!isValid) {setError(true)}
+        else setResponseHook(post_gid_app_action(newCollect))
+        // const text = await userSchema(newCollect)
+        // console.log(isValid)
         // setResponseHook(post_gid_app_action(newCollect))
         // let checkValidationConsole = checkValidation(collect)
         // console.log(checkValidationConsole)
         // setState(true)
-        // if(responseHook?.status===200){
-        //     setState(true)
-        //     setCollect(defaultState)
-        // }
+        if(responseHook?.status===200){
+            setState(true)
+            setCollect(defaultState)
+        }
     }
     // console.log(responseHook)
     const countries = JSON.parse(localStorage.getItem('countries')).map((item,index)=>{return {value:index, label:item.country, ...item}}) || []
@@ -83,7 +83,7 @@ const Index = () => {
                                 <RadioGroup 
                                     setState={setCollect} 
                                     state={collect}
-                                    errorText="sdfdf"
+                                    errorText={error ? validatorState(collect?.who_need, 'string', 0, 'Kim kerakligi kiritilmagan'):null}
                                 />
                             </Grid>
                         </Grid>
@@ -93,7 +93,7 @@ const Index = () => {
                             </Grid>
                             <Grid item xs={12} sm={12} md={7}>
                                 <Grid container spacing={2}>
-                                    <Grid item xs={12} sm={6}><Select options={countries} setState={setCountry} state={country} placeholder="Davlat" /></Grid>
+                                    <Grid item xs={12} sm={6}><Select options={countries} setState={setCountry} state={country} placeholder="Davlat" errorText={error ? validatorState(country, 'object', 0, 'Davlat (Shahar) kiritilmagan'):null}/></Grid>
                                     <Grid item xs={12} sm={6}><Select options={region} setState={setRegion} state={region} placeholder="Shahar" /></Grid>
                                 </Grid>
                             </Grid>
@@ -104,8 +104,8 @@ const Index = () => {
                             </Grid>
                             <Grid item xs={12} sm={12} md={7}>
                                 <Grid container spacing={2}>
-                                    <Grid item xs={12} sm={6}><Calendar setState={setCollect} state={collect} field="start_date" /></Grid>
-                                    <Grid item xs={12} sm={6}><Calendar setState={setCollect} state={collect} field="end_date"/></Grid>
+                                    <Grid item xs={12} sm={6}><Calendar setState={setCollect} state={collect} field="start_date" errorText={error ? validatorState(collect?.start_date, 'string', 0, 'Boshlanish sanasi kiritilmagan'):null}/></Grid>
+                                    <Grid item xs={12} sm={6}><Calendar setState={setCollect} state={collect} field="end_date" errorText={error ? validatorState(collect?.start_date, 'string', 0, 'Tugash sanasi kiritilmagan'):null}/></Grid>
                                 </Grid>
                             </Grid>
                         </Grid>
@@ -114,7 +114,7 @@ const Index = () => {
                                 <div className="title_inner">Gid/Tarjimon bilishi kerak bo'lgan tillar</div>
                             </Grid>
                             <Grid item xs={12} sm={12} md={7}>
-                                <Select setCollect={setCollect} collect={collect} field="languages" placeholder="Tilni tanlang" isMulti options={gid_lang_obj}/>
+                                <Select setCollect={setCollect} collect={collect} field="languages" placeholder="Tilni tanlang" isMulti options={gid_lang_obj} errorText={error ? validatorState(collect?.languages, 'array', 0, 'Tillar kiritilmagan'):null}/>
                             </Grid>
                         </Grid>
                         <Grid container spacing={1} alignItems="flex-start" className="wrap-grid">
@@ -122,7 +122,7 @@ const Index = () => {
                                 <div className="title_inner">Nima uchun kerak</div>
                             </Grid>
                             <Grid item xs={12} sm={12} md={7}>
-                                <TextArea onChange={(e)=>setCollect({...collect, why_need:e.target.value})} cols="20" rows="5" wrap="hard" maxlength="10" placeholder="Misol uchun, shaharni ko’rsatish uchun git kerak...." width="100%" />
+                                <TextArea onChange={(e)=>setCollect({...collect, why_need:e.target.value})} cols="20" rows="5" wrap="hard" maxlength="10" placeholder="Misol uchun, shaharni ko’rsatish uchun git kerak...." width="100%" errorText={error ? validatorState(collect?.why_need,  'string', 0, 'Sabab kiritilmagan'):null}/>
                             </Grid>
                         </Grid>
                         <Grid container spacing={1} alignItems="center" className="wrap-grid">
@@ -131,8 +131,8 @@ const Index = () => {
                             </Grid>
                             <Grid item xs={12} sm={12} md={7}>
                                 <Grid container spacing={1} alignItems="center"> 
-                                    <Grid item xs={12} sm={8}><Input value={collect?.cost || ''} onChange={(e)=>setCollect({...collect, cost:parseInt(e.target.value)})} width="100%" type="number" placeholder="Son kiriting..." /></Grid>
-                                    <Grid item xs={12} sm={4} style={{position:'relative', top:3}}><Select setCollect={setCollect} collect={collect} field="currency" options={currency}  placeholder="Valyuta" /></Grid>
+                                    <Grid item xs={12} sm={8}><Input value={collect?.cost || ''} onChange={(e)=>setCollect({...collect, cost:parseInt(e.target.value)})} width="100%" type="number" placeholder="Son kiriting..." errorText={error ? validatorState(collect?.cost, 'max', 0, 'Narx kiritilmagan'):null}/></Grid>
+                                    <Grid item xs={12} sm={4} style={{position:'relative', top:3}}><Select setCollect={setCollect} collect={collect} field="currency" options={currency}  placeholder="Valyuta" errorText={error ? validatorState(collect?.currency, 'object', 0, 'Valyuta kiritilmagan'):null}/></Grid>
                                 </Grid>
                             </Grid>
                         </Grid>
@@ -152,6 +152,7 @@ const Index = () => {
                                     field2="is_female"  
                                     state={collect}
                                     setState={setCollect} 
+                                    errorText={(error && (collect?.is_female || collect?.is_female)) ? "Tarjimon tanlanmagan":null}
                                 />
                             </Grid>
                         </Grid>
@@ -160,14 +161,14 @@ const Index = () => {
                                 <div className="title_inner">Nechchi kishi bo'lasizlar</div>
                             </Grid>
                             <Grid item xs={12} sm={12} md={7}>
-                                <Input value={collect?.people_count || ''} onChange={(e)=>setCollect({...collect, people_count:parseInt(e.target.value)})} width="100%" type="number" placeholder="Son kiriting..." />
+                                <Input value={collect?.people_count || ''} onChange={(e)=>setCollect({...collect, people_count:parseInt(e.target.value)})} width="100%" type="number" placeholder="Son kiriting..." errorText={error ? validatorState(collect?.people_count, 'max', 0, 'People count kiritilmagan'):null}/>
                             </Grid>
                         </Grid>
                         <Grid container spacing={1} alignItems="center" className="wrap-grid">
                             <Grid item xs={12} sm={12} md={5}>
                             </Grid>
                             <Grid item xs={12} sm={12} md={7}>
-                                <Checkbox setState={setCollect} state={collect} name="Arizani yoborib, siz foydalanuvchi shartnomasiga rozilik bildirasiz*" />
+                                <Checkbox setState={setCollect} state={collect} name="Arizani yoborib, siz foydalanuvchi shartnomasiga rozilik bildirasiz*"/>
                             </Grid>
                         </Grid>
                     </Container>

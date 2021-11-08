@@ -1,8 +1,8 @@
 import styled from "styled-components"
 
 export const Calendar = styled.div`
-    width:${value=>value.width}
-    
+    width:${value=>value.width};
+    position:relative;
     .ant-picker-focused{
         box-shadow:none !important;
     }

@@ -9,7 +9,7 @@ const Index = (props) => {
     const handleChange = useCallback((valueChange) => {
         setValue(valueChange)
         if(setState){setState(valueChange)}
-        if(setCollect){setCollect({...collect, [field]:valueChange})} ///important
+        if(setCollect){setCollect(prev=>{return{...prev, [field]:valueChange}})} ///important
     },[state, value, collect])
    
     return (
@@ -21,8 +21,8 @@ const Index = (props) => {
                 menuPortalTarget={document.body} 
                 styles={{ menuPortal: base => ({ ...base, zIndex: 9999 }) }} 
             />   
-            <span style={{position: 'absolute', fontSize:'11px', bottom:-14,  fontStyle:'italic', color:'red'}}>
-                {errorText ? '* ' + errorText:null}
+            <span style={{position: 'absolute', fontSize:'11px', left:0, bottom:-18,  fontStyle:'italic', color:'red'}}>
+                {errorText}
             </span>         
         </Wrapper>
     )

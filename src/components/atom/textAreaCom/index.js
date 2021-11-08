@@ -1,12 +1,15 @@
 import React from 'react'
-import {Input } from './style'
+import {Input, InputWrapper } from './style'
 
 const Index = (props) => {
-    const {rows} = props;
+    const {rows, errorText} = props;
     return (
-        // <InputWrapper>
+        <InputWrapper>
             <Input {...props} rows={rows} maxLength="220"/>
-        // </InputWrapper>
+            <span style={{position: 'absolute', fontSize:'11px', left:0, bottom:-18,  fontStyle:'italic', color:'red'}}>
+                {errorText}
+            </span>   
+        </InputWrapper>
     )
 }
 
