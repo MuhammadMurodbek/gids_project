@@ -5,12 +5,15 @@ import "./style.css"
 import reportWebVitals from './reportWebVitals';
 import { Provider } from "react-redux"
 import store from "./redux/reducers"
+import './i18n'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
+    <React.Suspense fallback="loading">
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </React.Suspense>
   </React.StrictMode>,
   document.getElementById('root')
 );

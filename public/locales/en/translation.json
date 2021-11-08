@@ -2,14 +2,16 @@
   "name": "day.name.nameEn",
   "description": "descriptionEn",
   "navbar" :{
-    "forGidAndTras" : "Gid and for translators",
+    "GTU" : "Gid and for translators",
     "Blog":"Blog",
-    "Alications":"List of applications"
+    "Arizalar_royhati":"List of applications",
+    "Ariza_qoldirish":"Leave an application",
+    "GvaTtanlash":"Choosing a guide or translator"
    },
    "footer":{
        "biznigServislar":"Our service",
        "tanlash":"Go or choose an interpreter",
-       "GTuchun":"Go or choose an interpreter",
+       "GTuchun":"For guides and translators",
        "platformaH":"About the platform",
        "Blog":"Blog",
        "contacts": "Our contacts",
@@ -17,7 +19,8 @@
         "tel":"+998 90 123 45 67",
         "sorov":"Send a question",
         "huquqiy":"Legal information",
-        "foydalanish": "Terms of use"
+        "foydalanish": "Terms of use",
+        "maxfiylik":"Maxfiylik siyosati va cookie siyosati"
    },
    "kengaytirlgan_Q":{
        "kengaytirilgan": "Advanced search",
@@ -27,10 +30,10 @@
         "sinxron":"Synchronous",
         "izchil":"consistent",
         "yozmaTarjimon":"Written translator",
-        "Davlat":"State",
+        "Davlat":"Country",
         "DavlatniTanlang":"Select the country",
         "Shaharlar":"City",
-        "ShaharniTanlang":"Select a city",
+        "ShaharniTanlang":"Select the city",
         "sana":"Date",
         "online":"Online",
         "barchasi":"All",
@@ -47,12 +50,12 @@
        "takliflarimiz":"What we offer",
        "tadbirkorlarga":"For entrepreneurs",
        "textForTadbirkor":"With this platform, you can find interpreters and guides to negotiate with foreigners, grow your business. Choose Git for yourself or just leave an application.",
-       "arizaQoldrirish":"Leave an application",
-       "Gid_tanlash":"Gitni tanlash",
-       "Gidlarga":"For the Hitlers",
+       "arizaQoldrirish":"Application",
+       "Gid_tanlash":" Guid selection  ",
+       "Gidlarga":"For the Guids",
        "textForGid":"With this platform, you can find clients and make a career for yourself. Gits.uz platform supports you. Sign up now, fill out your form and start your career!",
        "royhatdanO":"Sign up",
-       "ishlashi":"This is how it works,",
+       "ishlashi":"This is how it works",
        "royhatdanOtasiz":"You sign up",
        "text02":"You must first register on the platform as Git / Translator or Client.",
        "sorov":"You leave a request",
@@ -65,8 +68,8 @@
        "korish":"See",
        "MijozlarniF":"Feedback from our customers",
        "hoziroq":"Choose Git for yourself now or just leave an application.",
-      "ariza":"Leave an application",
-      "tanlash":"Gitni tanlash"
+      "ariza":" Application",
+      "tanlash":"Guid selection "
 },
   "Gid_Tanlash":{
     "title":"Choose a Guide for yourself",
@@ -229,6 +232,425 @@
     "maqolaniYozing":"Write your article",
     "joylamoq":"Set"
   },
+  
+ 
+
+
+
+
+
+
+  "Gid_Profilni_ko'rish":{
+    "Profilni_Korish":"View profile",
+    "tahrirlash":"Edit my data",
+    "kalendar":"Calendar",
+    "blog":"Blog",
+    "reklama":"Advertising",
+    "sozlamalar":"Profile settings",
+    "OzimHaqimda":"O‘zim haqimda",
+    "reyting":"Reytingi:",
+    "fikirlar":"Comments:",
+    "kuniga":"in a day",
+    "soatiga":"Hourly:",
+    "ozimHaqimdaVideo":"Video about myself",
+    "malumotVaTajriba":"Education and Work Experience",
+    "Malumotim":"My information:",
+    "toifam":"Category:",
+    "institut":"Graduated from:",
+    "qoshimcha":"Additional courses:",
+    "tiltajriba":"Work Experience:",
+    "bandkunlar":"Guide / Interpreter's busy days",
+    "hizmatlar":"Services",
+    "ekskursiyalar":"Excursions",
+    "ogzaki":"Interpretation (serial)",
+    "sinxron":"Simultaneous translation",
+    "izchil":"consistent translation",
+    "ekskursiyalar2":"Ekskursiyalar: ",
+    "sertificatlar":"My certificates and diplomas",
+    "Gallery":"Gallery",
+    "fidbek":"Customer Feedback",
+    "alo":"excellent",
+    "ortacha":"Average  ",
+    "yomon":"bad",
+    "judaYomon":"Very bad",
+    "koproqYuklash":"More downloads"
+  },
+  "MTmenHaqimda":{
+
+    "Profilni_Korish":"View profile",
+    "tahrirlash":"Edit my data",
+    "kalendar":"Calendar",
+    "blog":"Blog",
+    "reklama":"Advertising",
+    "sozlamalar":"Profile settings",
+
+    "menHaqimda":"About Me",
+    "kantaktlar":"Contacts",
+    "malumotiIsh":"Education and Work Experience",
+    "tillarniBilish":"Knowledge of languages",
+    "hizmatlar":"services",
+    "narxlar":"Prices",
+    "videoVagalarey":"Video and gallery",
+
+    "familya":"Surname",
+    "familyaPlace":"Write your last name",
+    "isim":"Name",
+    "isimPlace":"Write your name",
+    "otasiningIsmi":"Your father's name",
+    "otasiIplace":"Write your father's name",
+    "tugilganSana":"Your date of birth",
+    "jins":"Jinsingiz",
+    "erkak":"Male",
+    "ayol":"Woman",
+    "mamlakat":"Country",
+    "mamlakatPlace":"Choose your country",
+    "Shaharlar":"City",
+    "ShaharPlace":"Choose your city",
+    "OzingizH":"About yourself",
+    "OzingizHplace":"Write about yourself",
+    "certificatlar":"Upload your certificates and diplomas here",
+    "saqlash":"Saqlash"
+  },
+  "MT_Kontaktlar":{
+
+    "Profilni_Korish":"View profile",
+    "tahrirlash":"Edit my data",
+    "kalendar":"Calendar",
+    "blog":"Blog",
+    "reklama":"Advertising",
+    "sozlamalar":"Profile settings",
+
+    "menHaqimda":"About Me",
+    "kantaktlar":"Contacts",
+    "malumotiIsh":"Education and Work Experience",
+    "tillarniBilish":"Knowledge of languages",
+    "hizmatlar":"services",
+    "narxlar":"Prices",
+    "videoVagalarey":"Video and gallery",
+
+    "tel":"Phone",
+    "email":"Email",
+    "emailKiritish":"Enter your mail",
+    "Site":"Web Site",
+    "link":"Enter the link",
+    "Telegram":"Telegram",
+    "telegramPlace":"Enter your Telegram profile link",
+    "WhatsApp":"WhatsApp",
+    "watsapPlace":"Enter your WhatsApp profile link",
+    "Facebook":"Facebook",
+    "facebookPlace":"Enter your Facebook profile link",
+    "Wechat":"Wechat",
+    "wechatPlace":"Enter your Wechat profile link",
+    "Viber":"Viber",
+    "viberPlace":"Enter your Viber profile link",
+    "saqlash":"Save"
+  },
+  "IshTajriba":{
+
+    "Profilni_Korish":"View profile",
+    "tahrirlash":"Edit my data",
+    "kalendar":"Calendar",
+    "blog":"Blog",
+    "reklama":"Advertising",
+    "sozlamalar":"Profile settings",
+
+    "menHaqimda":"About Me",
+    "kantaktlar":"Contacts",
+    "malumotiIsh":"Education and Work Experience",
+    "tillarniBilish":"Knowledge of languages",
+    "hizmatlar":"services",
+    "narxlar":"Prices",
+    "videoVagalarey":"Video and gallery",
+
+    "malumotlar":"Information",
+    "oliy":"Higher education",
+    "bitirgan":"Graduated from the institute",
+    "BitirganOliytalimlar":"Enter a graduate institution",
+    "toifasi":"Category of guide",
+    "toifaPlace":"Top Category Guide",
+    "qoshimchaKurslar":"Additional courses",
+    "oqiganKurslaringiz":"Write down the courses you took",
+    "tajriba":"Experience",
+    "year":"year",
+    "saqlash":"Saqlash"
+  },
+  "TillarniBilish":{
+    "Profilni_Korish":"View profile",
+    "tahrirlash":"Edit my data",
+    "kalendar":"Calendar",
+    "blog":"Blog",
+    "reklama":"Advertising",
+    "sozlamalar":"Profile settings",
+
+    "menHaqimda":"About Me",
+    "kantaktlar":"Contacts",
+    "malumotiIsh":"Education and Work Experience",
+    "tillarniBilish":"Knowledge of languages",
+    "hizmatlar":"services",
+    "narxlar":"Prices",
+    "videoVagalarey":"Video and gallery",
+
+    "til":"languages",
+    "tilPlace":"Enter the language",
+    "bilishDarajasi":"Level of knowledge",
+    "BilishDPlace":"Determine your level of knowledge",
+    "save":"Save"
+  },
+  "xizmatlar":{
+    "Profilni_Korish":"View profile",
+    "tahrirlash":"Edit my data",
+    "kalendar":"Calendar",
+    "blog":"Blog",
+    "reklama":"Advertising",
+    "sozlamalar":"Profile settings",
+
+    "menHaqimda":"About Me",
+    "kantaktlar":"Contacts",
+    "malumotiIsh":"Education and Work Experience",
+    "tillarniBilish":"Knowledge of languages",
+    "hizmatlar":"services",
+    "narxlar":"Prices",
+    "videoVagalarey":"Video and gallery",
+    
+    "xizmatlar":"Services",
+    "ekskursiyalar":"Excursions",
+    "ogzaki":"Interpretation (serial)",
+    "sinxron":"Simultaneous translation",
+    "izchil":"consistent translation",
+    "mamalakatlargaEkskurs":"Excursion to countries",
+    "mamlakatPlace":"Select the country",
+    "shaharlar":"City",
+    "shaharlarSelect":"select a city",
+    "save":"Save"
+  },
+  "narxlar":{
+    "Profilni_Korish":"View profile",
+    "tahrirlash":"Edit my data",
+    "kalendar":"Calendar",
+    "blog":"Blog",
+    "reklama":"Advertising",
+    "sozlamalar":"Profile settings",
+
+    "menHaqimda":"About Me",
+    "kantaktlar":"Contacts",
+    "malumotiIsh":"Education and Work Experience",
+    "tillarniBilish":"Knowledge of languages",
+    "hizmatlar":"services",
+    "narxlar":"Prices",
+    "videoVagalarey":"Video and gallery",
+
+    "birkunlikHizmat":"The cost of one day of service",
+    "birSoatlik":"The cost of an hour of service",
+    "saqlash":"Saqlash"
+    
+  },
+  "Galarey":{
+
+    "Profilni_Korish":"View profile",
+    "tahrirlash":"Edit my data",
+    "kalendar":"Calendar",
+    "blog":"Blog",
+    "reklama":"Advertising",
+    "sozlamalar":"Profile settings",
+
+    "menHaqimda":"About Me",
+    "kantaktlar":"Contacts",
+    "malumotiIsh":"Education and Work Experience",
+    "tillarniBilish":"Knowledge of languages",
+    "hizmatlar":"services",
+    "narxlar":"Prices",
+    "videoVagalarey":"Video and gallery",
+
+    "Partfolio":"You can make a video about yourself. This video is on your profile.",
+    "galarey":"Your gallery",
+    "saqlash":"Save"
+  },
+
+
+
+
+
+  "Ustniy_MalumotvaIshtajriba":{
+
+    "Profilni_Korish":"View profile",
+    "tahrirlash":"Edit my data",
+    "kalendar":"Calendar",
+    "blog":"Blog",
+    "reklama":"Advertising",
+    "sozlamalar":"Profile settings",
+
+    "menHaqimda":"About Me",
+    "kantaktlar":"Contacts",
+    "malumotiIsh":"Education and Work Experience",
+    "tillarniBilish":"Knowledge of languages",
+    "hizmatlar":"services",
+    "narxlar":"Prices",
+    "videoVagalarey":"Video and gallery",
+    
+    "bitirganInstitu":"Graduated from the institute",
+    "institutNmaePlace":"Enter a graduate institution",
+    "bitirganYil":"Year of graduation",
+    "YilPlace":"Year",
+    "Mutahasislig":"Specialty",
+    "mutahasisligPlace":"Write down your specialty",
+    "tajriba":"Experience",
+    "frilancermisiz":"you are a freelancer now",
+    "yes":"Yes",
+    "No":"No",
+    "ishJoingizniKorsating":"Specify your workplace",
+    "text":"Text",
+    "lavozimingiz":"Your position",
+    "ishVaqti":"Your working hours",
+    "save":"Save"
+  },
+  "Ustniy_Xizmatlar":{
+    "hizmatlar":"Services",
+    "exkursiyalar":"Excursions",
+    "ogzakiTajriba":"Interpretation (serial)",
+    "sinhron":"Simultaneous translation",
+    "yozmaTarjimon":"Written translation",
+    "MamlakatgaEkskursiya":"Excursion to countries",
+    "MamlakatgaEPlace":"Select the country",
+    "shahar":"City",
+    "ShaharPlace":"Select the country",
+    "save":"Save"
+  },
+
+
+
+
+
+
+
+  "Pismenniy_Xizmatlar":{
+    
+    "Profilni_Korish":"View profile",
+    "tahrirlash":"Edit my data",
+    "kalendar":"Calendar",
+    "blog":"Blog",
+    "reklama":"Advertising",
+    "sozlamalar":"Profile settings",
+
+    "menHaqimda":"About Me",
+    "kantaktlar":"Contacts",
+    "malumotiIsh":"Education and Work Experience",
+    "tillarniBilish":"Knowledge of languages",
+    "hizmatlar":"services",
+    "narxlar":"Prices",
+    "videoVagalarey":"Video and gallery",
+
+    "bir_kunlikish":"Your daily workload",
+    "Text":"Text",
+    "OgzakiTarjimonlik":"Do you also do interpreting?",
+    "ha":"Yes",
+    "yoq":"No",
+    "damdahamIsh":"Do you do recreational activities?",
+    "TahrirlashBilanHam":"Do you also edit texts?",
+    "onlineMisizdoim":"Do you have constant access to the Internet?",
+    "kattaHajimdagiText":"* Can you accept large files including?",
+    "CAT":"What CAT programs do you use for translation?",
+    "tarjimaMavzulari":"Translation topics",
+    "Umumiy-mavzular":"General topics",
+    "meningMavzuimEmas":"Not my subject",
+    "jamiatVaSiyosat":"Society and politics",
+    "Iqtsod":"Economics and Finance",
+    "Huquqshunoslik":"Jurisprudence",
+    "IT":"Information Technology",
+    "reklamaVaMarketing":"Advertising and marketing",
+    "yonalishNomi":"Route name",
+    "sanoatTexnalogiyalari":"Industry and technology",
+    "neftVaGaz":"Oil and gas",
+    "iqtsodVaMoliya":"Economics and Finance",
+    "ilimVaTehnika":"Scientific and technical literature",
+    "badiyAdabiyot":"Fiction",
+    "tibbiyot":"Medicine and pharmaceuticals",
+    "saqlash":"Saqlash"
+  },
+  "Pismini_narxlar":{
+
+    "Profilni_Korish":"View profile",
+    "tahrirlash":"Edit my data",
+    "kalendar":"Calendar",
+    "blog":"Blog",
+    "reklama":"Advertising",
+    "sozlamalar":"Profile settings",
+
+    "menHaqimda":"About Me",
+    "kantaktlar":"Contacts",
+    "malumotiIsh":"Education and Work Experience",
+    "tillarniBilish":"Knowledge of languages",
+    "hizmatlar":"services",
+    "narxlar":"Prices",
+    "videoVagalarey":"Video and gallery",
+
+    "tilniTanlang":"Select a language",
+    "tilPlace":"From Russian - to English",
+    "birBetUchun":"For 1 page - 1800 characters with spaces",
+    "boshSiz":"For 1 page - 1800 characters without spaces",
+    "saqlash":"Save"
+   },
+   "reklama":{
+    "Profilni_Korish":"View profile",
+    "tahrirlash":"Edit my data",
+    "kalendar":"Calendar",
+    "blog":"Blog",
+    "reklama":"Advertising",
+    "sozlamalar":"Profile settings",
+
+    "Hozirgi":"Current tariff",
+    "hizmatlarni":"Select services",
+    "tolovturi":"Please select a payment type",
+    "text":"Top up your Gits.uz account",
+    "xisobingiz":"Your account:",
+    "Hisobni_toldirish":"Replenish the account",
+    "bekor_qilish":"Cancel",
+    "tolov":"Payment"
+   },
+   "hisobni_toldirish":{
+     "hisobni_toldirish":"Replenish the account",
+     "tolov_turini_tanlang":"Please select a payment type",
+     "orqaga":"go back",
+     "hisobniToldirish":"Replenish the account",
+
+
+
+
+     "Tolovlar_tarihi":"Payment history"
+    },
+
+
+   "User_Profil":{
+     "profilni_korish":"View profile",
+     "arizalarim":"My applications",
+     "MalumotlarniTaxrirlash":"Ma’lumotlarimni Tahrirlash",
+     "profilSozlamalari":"Profile Settings"
+   },
+   "User_Arizalarim":{
+    "profilni_korish":"View profile",
+    "arizalarim":"My applications",
+    "MalumotlarniTaxrirlash":"Ma’lumotlarimni Tahrirlash",
+    "profilSozlamalari":"Profile Settings",
+
+    "shaharniK":"Enter the city"
+   },
+   "User_MalumotlarniTax":{
+    "profilni_korish":"View profile",
+    "arizalarim":"My applications",
+    "MalumotlarniTaxrirlash":"Ma’lumotlarimni Tahrirlash",
+    "profilSozlamalari":"Profile Settings",
+
+    "isim":"Name",
+    "isimPlace":"Write your name",
+    "familya":"Surname",
+    "familyaPlace":"Write your last name",
+    "Kompaniya":"Company",
+    "kompaniePlace":"Company name",
+    "davlat":"State",
+    "mamlaktalarPlace":"Choose your country",
+    "shaxarlar":"City",
+    "shaxarlarPlace":"Enter your city",
+    "saqlash":"Saqlash"
+  },
   "profil_sozlamalari":{
     "Profilni_Korish":"View profile",
     "tahrirlash":"Edit my data",
@@ -236,6 +658,18 @@
     "blog":"Blog",
     "reklama":"Advertising",
     "sozlamalar":"Profile settings",
+    "kontaktlar":"Contacts",
+    "parolniYangilash ":"Password update",
+    "telefone":"Phone",
+    "telRaqam":"Enter your number",
+    "hozirgiParol":"Your current password",
+    "hozirgiParilPlac":"Parolni kiriting",
+    "Email":"Email",
+    "EmailPlac":"Enter your mail",
+    "yangiParol":"New password",
+    "yangiParolPlac":"Enter a new password",
+    "parolniTasdiqlash":"Confirm Password",
+    "tasdilashPlac":"Re-enter the new password",
+    "saqlash":"Save"
   }
-
 }

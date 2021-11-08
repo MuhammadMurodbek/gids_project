@@ -57,6 +57,10 @@ export const Wrapper = styled.div`
         }
     }
     @media (max-width: 500px) {
+        &{
+            padding:30px 10px;
+            margin-top:5px;
+        };
         .icon-text{
             margin-top:6px;
             position:relative;

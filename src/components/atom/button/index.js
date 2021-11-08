@@ -5,7 +5,7 @@ import Progress from "../loading.spinner.line"
 // import  Link  from 'react-router-dom'
 
 const Index = (props) => {
-    const {width,margin, url, m_width_btn , m_m_width_btn, type, loader, paddingIcon} = props
+    const {width,margin, url, m_width_btn , m_m_width_btn, type, loader, paddingIcon, submit} = props
     return (
         <ButtonWrapper 
             width={width} 

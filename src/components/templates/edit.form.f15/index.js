@@ -1,21 +1,59 @@
-import React from 'react'
+import React,{useEffect, useState} from 'react'
 import {Wrapper} from "./style"
-import ImageUploadContainer from "../../organism/image.uploader.f15"
+import Avatar from "../../organism/image.crop/new"
 import EditFormContainer from "../../organism/form.f15"
 import { Container } from '../../../styles/container/index.style'
 import Button from "../../atom/button"
+import {putResponse} from "../../../hooks/response_get"
+import toast from 'react-hot-toast'
 const mediaContainer = {
     m_width:'600px',
     m_padding:"10px 10px 0"
 }
-const Index = () => {
+const Index = ({statePostProps}) => {
+    
+    const [state, setState] = useState({first_name:'', last_name:'',company:'',image:'',imageFile:null})
+    const [postData, setPostData] = useState({success:'',error:''})
+    useEffect(()=>{
+        if(statePostProps){
+            let propsData = statePostProps?.data
+            propsData.country = JSON.parse(propsData.country)
+            propsData.city = JSON.parse(propsData.city)
+            // console.log(propsData)
+            setState(propsData)
+        }
+    },[statePostProps])
+    const onSubmit = (e) => {   
+        e.preventDefault()
+        let dataPost = state.imageFile
+        const formData = new FormData()
+        let countryJSON = JSON.stringify(state?.country)
+        let cityJSON = JSON.stringify(state?.city)
+        if(dataPost) {formData.append('image',dataPost)}
+        formData.append('first_name',state?.first_name)
+        formData.append('last_name',state?.last_name)
+        formData.append('company',state?.company)
+        formData.append('country',countryJSON)
+        formData.append('city',cityJSON)
+        putResponse('/api/users/edit/',formData,setPostData)
+    }
+    useEffect(()=>{
+        if(postData){
+            if(postData?.success?.status === 200){
+                toast.success("Successfully updated")
+            }
+            if(postData?.success?.status > 201){
+                toast.error("Failed")
+            }
+        }
+    },[postData])
     return (
-        <Wrapper>
+        <Wrapper onSubmit={onSubmit}>
             <Container width="100%" textAlign="center" className="cursor-pointer">
-                <ImageUploadContainer width="180px" height="180px" radius="50%" align="center"/>
+                <Avatar setState={setState} state={state}/>
             </Container>
             <Container {...mediaContainer} padding="10px 50px 0" margin="20px 0">
-                <EditFormContainer/>
+                <EditFormContainer setState={setState} state={state}/>
                 <Container width="100%" padding="0" margin="50px 0 0" textAlign="right">
                     <Button>Saqlash</Button>
                 </Container>

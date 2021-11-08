@@ -12,31 +12,37 @@ import icon2 from "../../../assets/img/gid-personal/icon_2.svg"
 import {mediaTextField, mediaTextFieldSec} from "../../../custom/global.media.variables"
 import {mediaFlex, mediaImage, mediaTextFieldExternal, mediaFlexFooter} from "./_media"
 import {getResponse} from "../../../hooks/response_get"
-// import Spinner from "../../../components/atom/loading.spinner.line"
+import Spinner from "../../../components/atom/loading.spinner.line"
 const Index = () => {
-    const [state, setState] = useState()
+    const [state, setState] = useState({success:'',error:''})
     useEffect(() => {getResponse('/api/users/edit/', setState)},[])
-
+    // console.log(JSON.stringify(state))
     return (
-        <Wrapper>
-            <Container padding="20px" className="container-shadow" boxShadow={shadow}>
-                <FlexContainer maxWidth="800px" {...mediaFlex}>
-                    <FlexItem className="flex-item-one">
-                        <ImageContainer {...mediaImage} src={state?.success?.data?.image || imageRound} width="130px" height="130px"/>
-                    </FlexItem>
-                    <FlexItem className="flex-item-two">
-                        <FlexContainer flexDirection="column" height="100%" justifyContent="space-around">
-                            <TextTitle {...mediaTextField} {...mediaTextFieldSec} {...mediaTextFieldExternal} left="30px" font="34px" align="left">{state?.success?.data?.first_name || 'username'}{" "}{state?.success?.data?.last_name || 'lastname'}</TextTitle>
-                            <FlexContainer {...mediaFlexFooter} width="100%" margin="0 0 0 30px">
-                                <div className="icon-text"><ImageContainer src={icon1} width="20px"/><div>{state?.success?.data?.country || 'Country'}, {state?.success?.data?.city || 'City'}</div></div>
-                                <div className="icon-text two"><ImageContainer width="20px" src={icon2}/><div>{state?.success?.data?.company || 'Company name'}</div></div>
-                            </FlexContainer>
+        <>
+            {
+                state.success === "" ? <Spinner height={50} width={50}/>:
+                <Wrapper>
+                        <Container padding="20px" className="container-shadow" boxShadow={shadow}>
+                        <FlexContainer maxWidth="800px" {...mediaFlex}>
+                            <FlexItem className="flex-item-one">
+                                <ImageContainer radius="50%" {...mediaImage} src={state?.success?.data?.image || imageRound} width="130px" height="130px"/>
+                            </FlexItem>
+                            <FlexItem className="flex-item-two">
+                                <FlexContainer flexDirection="column" height="100%" justifyContent="space-around">
+                                    <TextTitle {...mediaTextField} {...mediaTextFieldSec} {...mediaTextFieldExternal} left="30px" font="34px" align="left">{state?.success?.data?.first_name || 'username'}{" "}{state?.success?.data?.last_name || 'lastname'}</TextTitle>
+                                    <FlexContainer {...mediaFlexFooter} width="100%" margin="0 0 0 30px">
+                                        <div className="icon-text"><ImageContainer src={icon1} width="20px"/><div>{JSON.parse(state?.success?.data?.country).label || 'Country'}, {JSON.parse(state?.success?.data?.city).label || 'City'}</div></div>
+                                        <div className="icon-text two"><ImageContainer width="20px" src={icon2}/><div>{state?.success?.data?.company || 'Company name'}</div></div>
+                                    </FlexContainer>
+                                </FlexContainer>
+                            </FlexItem>
+                            
                         </FlexContainer>
-                    </FlexItem>
-                    
-                </FlexContainer>
-            </Container>
-        </Wrapper>
+                    </Container>
+                </Wrapper>
+            }
+            
+        </>
     )
 }
 

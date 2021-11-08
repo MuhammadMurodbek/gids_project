@@ -24,45 +24,47 @@ import SliderComponent from "./external/slider"
 import { Link } from 'react-router-dom'
 import Box from "@material-ui/core/Box";
 import img21 from '../../assets/img/about/right.png'
-
+import {useTranslation} from 'react-i18next'
+ 
 
 import {media, mediaFlexButtons, mediaBtn, mediaTextField, mediaTextFieldSec, mediaContainer} from "./_media"
 
 const Index = () => {
     // let obj=JSON.stringify(JSON.parse(localStorage.getItem("user_token")))
     // console.log(obj)
-    const media = {
-        m_width: "533px",
-        m_m_width: "300px",
-        m_m_text_align: "center",
-    }
-    const mediaFlexButtons = {
-        m_width: "455px",
-        m_m_width: '300px',
-        m_direction: "column",
-    }
-    const mediaBtn = {
-        m_width_btn: "456px",
-        m_m_width_btn: "300px",
-        m_m_font_btn: "14px",
-        m_m_padding: "12px 28px"
-    }
+    // const media = {
+    //     m_width: "533px",
+    //     m_m_width: "300px",
+    //     m_m_text_align: "center",
+    // }
+    // const mediaFlexButtons = {
+    //     m_width: "455px",
+    //     m_m_width: '300px',
+    //     m_direction: "column",
+    // }
+    // const mediaBtn = {
+    //     m_width_btn: "456px",
+    //     m_m_width_btn: "300px",
+    //     m_m_font_btn: "14px",
+    //     m_m_padding: "12px 28px"
+    // }
 
-    const mediaTextField = {
-        m_width: "1045px",
-        m_font_size: "24px",
-    }
-    const mediaTextFieldSec = {
-        m_width_sec: "500px",
-        m_font_size_sec: "20px",
-    }
-    const mediaContainer = {
-        m_width: "500px",
-        m_padding: "10px 0",
-    }
+    // const mediaTextField = {
+    //     m_width: "1045px",
+    //     m_font_size: "24px",
+    // }
+    // const mediaTextFieldSec = {
+    //     m_width_sec: "500px",
+    //     m_font_size_sec: "20px",
+    // }
+    // const mediaContainer = {
+    //     m_width: "500px",
+    //     m_padding: "10px 0",
+    // }
 
     const getRole = JSON.parse(localStorage.getItem("user_token"))
     const { role } = getRole
+    const {t} = useTranslation()
 
  
     return (
@@ -73,31 +75,30 @@ const Index = () => {
                         <Grid item xs={12} md={4} sm={12}
                             component={Box}
                             className="grid_container_inner"
-                        // display={{xs:"none", sm: "none", md: "inline"}}
                         >
                             <ExtSearch />
                         </Grid>
                         <Grid item xs={12} md={8} sm={12}>
                             <div className="right-part">
-                                <div>Dunyo bo'ylab ishonchli gidlar va tarjimonlarni taklif qilamiz</div>
+                                <div> {t("main.title")} </div>
                                 <img src={mainPicture} alt="guvd" />
                             </div>
                         </Grid>
                     </Grid>
                 </ComponentOne>
                 <ComponentTwo>
-                    <div className="title-second-main-container">Biz nima taklif qilamz</div>
+                    <div className="title-second-main-container">{t("main.takliflarimiz")}</div>
                     <Grid container spacing={1} className="grid_container">
                         <Grid item xs={12} md={6} sm={12}>
                             <div className="container-2-1 first">
-                                <div className="title-second-main-container-text">Tadbirkorlar uchun</div>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam modi provident dignissimos accusamus optio aliquam assumenda omnis nisi quae fuga consequatur, numquam recusandae accusantium dolore, ipsum iure suscipit sed quia?</p>
+                                <div className="title-second-main-container-text">{t("main.tadbirkorlarga")}</div>
+                                <p>{t("main.textForTadbirkor")}</p>
                                 <FlexContainer width="370px" {...mediaFlexButtons} justifyContent="space-between">
                                     <Link to="/application-form" >
-                                        <Button {...mediaBtn}>Ariza qoldirish</Button>
+                                        <Button {...mediaBtn}>{t("main.arizaQoldrirish")} </Button>
                                     </Link>
                                     <Link to="/gids">
-                                        <Button {...mediaBtn} type="outlined">Gidni tanlash</Button>
+                                        <Button {...mediaBtn} type="outlined"> {t("main.Gid_tanlash")} </Button>
                                     </Link>
                                 </FlexContainer>
                             </div>
@@ -112,11 +113,11 @@ const Index = () => {
                         </Grid>
                         <Grid item md={6} sm={12}>
                             <div className="container-2-1 second">
-                                <div className="title-second-main-container-text">Gidlar uchun</div>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam modi provident dignissimos accusamus optio aliquam assumenda omnis nisi quae fuga consequatur, numquam recusandae accusantium dolore, ipsum iure suscipit sed quia?</p>
+                                <div className="title-second-main-container-text"> {t("main.Gidlarga")} </div>
+                                <p>{t("main.textForGid")}</p>
                                 <div>
                                     <Link to="/auth">
-                                        <Button width="300px" {...mediaBtn}>Ro'yxatdan o'tish</Button>
+                                        <Button width="300px" {...mediaBtn}> {t("main.royhatdanO")} </Button>
                                     </Link>
                                 </div>
                             </div>
@@ -127,7 +128,7 @@ const Index = () => {
                     <TimeLine />
                 </ComponentThree>
                 <ComponentFour>
-                    <TextTitle {...mediaTextField} {...mediaTextFieldSec} top="40px" bottom="60px">Eng ko'p boriladigan shaharlar</TextTitle>
+                    <TextTitle {...mediaTextField} {...mediaTextFieldSec} top="40px" bottom="60px">{t("main.trendSHahar")}</TextTitle>
                     <Grid container spacing={3}>
                         <Grid item xs={12} sm={6} md={4}>
                             <Paper style={{ overflow: 'hidden' }}>
@@ -136,7 +137,7 @@ const Index = () => {
                                     <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
                                         <div className="title-container">Andijon</div>
                                         <Link to="/cities" className="link11">
-                                            Ko'rish <img src={img21} alt="asdfasdf" />
+                                              {t("main.korish")}  <img src={img21} alt="asdfasdf" />
                                         </Link>
                                     </FlexContainer>
                                 </div>
@@ -149,7 +150,7 @@ const Index = () => {
                                     <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
                                         <div className="title-container">Andijon</div>
                                         <Link to="/cities" className="link11">
-                                            Ko'rish <img src={img21} alt="asdfasdf" />
+                                        {t("main.korish")}<img src={img21} alt="asdfasdf" />
                                         </Link>
                                     </FlexContainer>
                                 </div>
@@ -162,7 +163,7 @@ const Index = () => {
                                     <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
                                         <div className="title-container">Andijon</div>
                                         <Link to="/cities" className="link11">
-                                            Ko'rish <img src={img21} alt="asdfasdf" />
+                                        {t("main.korish")} <img src={img21} alt="asdfasdf" />
                                         </Link>
                                     </FlexContainer>
                                 </div>
@@ -182,10 +183,10 @@ const Index = () => {
                 role === 'simple_user' ?
                     <ContainerLast>
                         <div className="application-last">
-                            <TextTitle  {...mediaTextField} {...mediaTextFieldSec} width="50%" left="auto" right="auto" bottom="40px">Xoziroq o’zingiz uchun Git tanlang yoki shunchaki ariza qoldiring.</TextTitle>
+                            <TextTitle  {...mediaTextField} {...mediaTextFieldSec} width="50%" left="auto" right="auto" bottom="40px">{t("main.hoziroq")} </TextTitle>
                             <FlexContainer {...mediaFlexButtons} width="380px" margin="0 auto" alignItems="center" justifyContent="space-between">
-                                <Link to="/application-form"><Button  {...mediaBtn}>Ariza qoldirish</Button></Link>
-                                <Link to="/gids"> <Button type="outlined"  {...mediaBtn}>Gitni tanlash</Button></Link>
+                                <Link to="/application-form"><Button  {...mediaBtn}>{t("main.ariza")} </Button></Link>
+                                <Link to="/gids"> <Button type="outlined"  {...mediaBtn}>{t("main.tanlash")} </Button></Link>
                             </FlexContainer>
                         </div>
                     </ContainerLast>

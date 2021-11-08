@@ -35,7 +35,7 @@ const Index = () => {
     }
     const Success = (data) => {
         localStorage.setItem('user_token',JSON.stringify(data))
-        window.location.href="/main"
+        window.location.href="/"
     }
     useEffect(()=>{
         if(responseHook?.status){

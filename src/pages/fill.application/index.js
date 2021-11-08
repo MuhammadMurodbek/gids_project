@@ -14,17 +14,13 @@ import { TextTitle } from '../../styles/textTitle/index.style'
 import CloseIcon from '@material-ui/icons/Close';
 import {mediaTextField, mediaTextFieldSec, mediaBtn} from "../../custom/global.media.variables"
 import Modal from 'react-awesome-modal';
+import {mediaContainer, mediaContainerWidth} from "./_media"
 
-const mediaContainer = {
-    m_width: '600px',
-    m_padding: '10px',
-}
-const mediaContainerWidth = {
-    m_width: '600px',
-    m_m_width: '100%',
-}
 const Index = () => {
     const [state, setState] = useState(false);
+    const [collect, setCollect] = useState({})
+    const [country, setCountry] = useState({})
+    const [region, setRegion] = useState({})
     function openModal() {
         setState(true);
     }
@@ -34,6 +30,7 @@ const Index = () => {
     const onSubmit = (e) => {
         e.preventDefault();
     }
+    console.log(collect)
     return (
         <Wrapper onSubmit={onSubmit}>
             <TextTitle {...mediaTextField} {...mediaTextFieldSec} top="60px" bottom="20px">Git va tarjimonlar uchun ariza qoldirish</TextTitle>
@@ -46,7 +43,7 @@ const Index = () => {
                                 <div className="title_inner">Kim kerak</div>
                             </Grid>
                             <Grid item xs={12} sm={12} md={7}>
-                                <RadioGroup />
+                                <RadioGroup setState={setCollect} state={collect}/>
                             </Grid>
                         </Grid>
                         <Grid container spacing={1} alignItems="center" className="wrap-grid">
@@ -55,8 +52,8 @@ const Index = () => {
                             </Grid>
                             <Grid item xs={12} sm={12} md={7}>
                                 <Grid container spacing={2}>
-                                    <Grid item xs={12} sm={6}><Select placeholder="Davlat" /></Grid>
-                                    <Grid item xs={12} sm={6}><Select placeholder="Shahar" /></Grid>
+                                    <Grid item xs={12} sm={6}><Select setState={setCountry} state={country} placeholder="Davlat" /></Grid>
+                                    <Grid item xs={12} sm={6}><Select setState={setRegion} state={region} placeholder="Shahar" /></Grid>
                                 </Grid>
                             </Grid>
                         </Grid>

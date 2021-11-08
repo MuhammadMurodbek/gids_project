@@ -6,10 +6,11 @@ export const Wrapper = styled.div`
         color: #326A32;
     }
     .title-header-radio{
-        font-weight:600;
+    font-weight:600;
         margin:10px 0;
+        justify-content: center;
     }
-    span{
+    span{     
         font-size:16px;
         font-family: Montserrat;
     }

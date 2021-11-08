@@ -9,8 +9,11 @@ import {TextTitle} from "../../../styles/textTitle/index.style"
 import {FlexContainer} from "../../../styles/flex.container"
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import { useTranslation } from 'react-i18next';
+
 
 function SampleNextArrow(props) {
+    const {t} =useTranslation()
     const { style, onClick } = props;
     return (
         <ChevronLeftIcon
@@ -39,7 +42,7 @@ const Index = () => {
         dots: false,
         infinite: true,
         speed: 500,
-        slidesToShow: 1,
+        slidesToShow: 1,  
         slidesToScroll: 1,
         nextArrow: <SampleNextArrow />,
         prevArrow: <SamplePrevArrow />
@@ -63,7 +66,7 @@ const Index = () => {
     }
     return (
         <Wrapper>
-            <TextTitle {...mediaTextField} {...mediaTextFieldSec} top="50px" bottom="50px">Mijozlarimizning fikrlari</TextTitle>
+            <TextTitle {...mediaTextField} {...mediaTextFieldSec} top="50px" bottom="50px">   </TextTitle>
             <Container {...mediaContainer} padding="10px 40px" >
                 <Slider {...settings} className="slider-component">
                     <SliderContainer>
