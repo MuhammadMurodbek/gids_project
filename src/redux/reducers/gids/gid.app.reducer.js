@@ -1,20 +1,25 @@
 import { toast } from "react-hot-toast";
+const initialState = {
+    loading: false,
+    payload:null,
+}
 const Success = (data) => {
     toast.success("Arizangiz muvaffaqiyatli junatildi")
-    return {
-        state:data,
-        data:data,
-        status:200
-    }
+    return {payload:data,loading:false}
 }
-const post_gid_app_reducer = (state = {}, action) => {
+const Error = (error) => {
+    toast.error(error)
+    return {...initialState,loading:false,} 
+}
+const post_gid_app_reducer = (state = initialState, action) => {
    
     switch(action.type) {
-        case "POST_GID_APP_0" : return Success(action.payload);
-        case "POST_GID_APP_400": return toast.error('Qaytadan tekshirib, urinib ko\'ring')
-        case "POST_GID_APP_401": return toast.error("Ma'lumot to'\lfirishlikda xatolik mavjud")
+        case "POST_GID_APP_0" : return {loading:true,payload:null};
+        case "POST_GID_APP_1" : return Success(action.payload);
+        case "POST_GID_APP_400": return Error('Qaytadan tekshirib, urinib ko\'ring')
+        case "POST_GID_APP_401": return Error("Ma'lumot to'\lfirishlikda xatolik mavjud")
 
-        case "INT_500" : return toast("Internal server error");
+        case "INT_500" : return Error("Internal server error");
         
         default: return state; 
      }

@@ -59,7 +59,6 @@ const Index = () => {
         }
     }, [ country ] )
     React.useEffect( () => { if ( region ) { setCollect( { ...collect, city: region } ) } }, [ region ] )
-    React.useEffect( () => { if ( responseHook?.status === 200 ) setBtnLoader( false ) }, [ responseHook ] )
     return (
         <Wrapper onSubmit={ onSubmit }>
             <TextTitle { ...mediaTextField } { ...mediaTextFieldSec } top="60px" bottom="20px">Git va tarjimonlar uchun ariza qoldirish</TextTitle>
@@ -165,11 +164,10 @@ const Index = () => {
                         </Grid>
                     </Container>
                     <Container width="100%" textAlign="center" >
-                        <Button loader={ btnLoader } { ...mediaBtn }>&nbsp;Arizani yuborish</Button>
+                        <Button loader={responseHook?.loading} { ...mediaBtn }>&nbsp;Arizani yuborish</Button>
                     </Container>
                 </Container>
             </Container>
-            {/* <ModalContainer setState={setState} state={state}/> */ }
         </Wrapper>
     )
 }
