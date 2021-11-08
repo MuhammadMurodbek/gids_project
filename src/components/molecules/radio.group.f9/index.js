@@ -5,7 +5,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import {Wrapper} from "./index.style"
 import DoubleCheck from "../../../components/molecules/double.check"
-const Index = ({setState, state}) => {
+const Index = ({setState, state, errorText}) => {
     const [value, setValue] = React.useState('female');
 
     const handleChange = useCallback((event) => {
@@ -34,6 +34,9 @@ const Index = ({setState, state}) => {
                 </div>
             </RadioGroup>
             </FormControl>
+            <span style={{position: 'absolute', fontSize:'11px', bottom:-14, left:0, fontStyle:'italic', color:'red'}}>
+                {errorText}
+            </span>
         </Wrapper>
     )
 }

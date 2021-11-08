@@ -14,6 +14,7 @@ import { TextTitle } from '../../styles/textTitle/index.style'
 import {validatorState} from "../../custom/validator"
 import {mediaTextField, mediaTextFieldSec, mediaBtn} from "../../custom/global.media.variables"
 // import ModalContainer from '../../custom/error';
+import {userSchema} from "./val"
 import {mediaContainer, mediaContainerWidth} from "./_media"
 import {gid_lang_obj, currency} from "../../custom/constants"
 import {get_cities} from "../../custom/function"
@@ -21,6 +22,7 @@ import {defaultState} from "./constant"
 import {post_gid_app_action} from "../../redux/actions"
 import useApi from "../../hooks/response"
 import {checkValidation} from "./_functions"
+import * as yup from "yup"
 const Index = () => {
     const [state, setState] = useState(false);
     const [collect, setCollect] = useState(defaultState)
@@ -29,7 +31,7 @@ const Index = () => {
     const {responseHook, setResponseHook} = useApi('post_gid_app_reducer')
     const openModal = useCallback(() => {setState(true)},[state])
     const closeModal = useCallback(() => {setState(false)},[state])
-    const onSubmit = (e) => {
+    const onSubmit = async (e) => {
         e.preventDefault();
         // console.log(Object.keys(collect)[0])
         let newCollect = {
@@ -39,9 +41,16 @@ const Index = () => {
             languages:collect?.languages.map(item=>item.label),
             currency:collect?.currency?.value,
         }
+        let formData = {
+            name:'murodbek',
+            email:'sdfsaf@'
+        }
+        const isValid = await userSchema.isValid(formData)
+
+        console.log(isValid)
         // setResponseHook(post_gid_app_action(newCollect))
-        let checkValidationConsole = checkValidation(collect)
-        console.log(checkValidationConsole)
+        // let checkValidationConsole = checkValidation(collect)
+        // console.log(checkValidationConsole)
         // setState(true)
         // if(responseHook?.status===200){
         //     setState(true)
@@ -71,7 +80,11 @@ const Index = () => {
                                 <div className="title_inner">Kim kerak</div>
                             </Grid>
                             <Grid item xs={12} sm={12} md={7}>
-                                <RadioGroup setState={setCollect} state={collect}/>
+                                <RadioGroup 
+                                    setState={setCollect} 
+                                    state={collect}
+                                    errorText="sdfdf"
+                                />
                             </Grid>
                         </Grid>
                         <Grid container spacing={1} alignItems="center" className="wrap-grid">
