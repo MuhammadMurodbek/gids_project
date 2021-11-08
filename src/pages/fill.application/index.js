@@ -13,7 +13,6 @@ import Button from "../../components/atom/button"
 import { TextTitle } from '../../styles/textTitle/index.style'
 import {validatorState} from "../../custom/validator"
 import {mediaTextField, mediaTextFieldSec, mediaBtn} from "../../custom/global.media.variables"
-// import ModalContainer from '../../custom/error';
 import {userSchema} from "./val"
 import {mediaContainer, mediaContainerWidth} from "./_media"
 import {gid_lang_obj, currency} from "../../custom/constants"
@@ -21,9 +20,8 @@ import {get_cities} from "../../custom/function"
 import {defaultState} from "./constant"
 import {post_gid_app_action} from "../../redux/actions"
 import useApi from "../../hooks/response"
-import {checkValidation} from "./_functions"
-import * as yup from "yup"
 const Index = () => {
+    const [btnLoader, setBtnLoader] = useState(false)
     const [state, setState] = useState(false);
     const [collect, setCollect] = useState(defaultState)
     const [country, setCountry] = useState({})
@@ -34,7 +32,7 @@ const Index = () => {
     const [error, setError] = useState(false)
     const onSubmit = async (e) => {
         e.preventDefault();
-        // console.log(Object.keys(collect)[0])
+        setBtnLoader(true)
         let newCollect = {
             ...collect,
             country:collect?.country?.label,
@@ -44,20 +42,12 @@ const Index = () => {
         }
         console.log(newCollect)
         const isValid = await userSchema.isValid(newCollect)
-        if(!isValid) {setError(true)}
-        else setResponseHook(post_gid_app_action(newCollect))
-        // const text = await userSchema(newCollect)
-        // console.log(isValid)
-        // setResponseHook(post_gid_app_action(newCollect))
-        // let checkValidationConsole = checkValidation(collect)
-        // console.log(checkValidationConsole)
-        // setState(true)
-        if(responseHook?.status===200){
-            setState(true)
-            setCollect(defaultState)
+        if(!isValid) {
+            setError(true)
+            setBtnLoader(false)
         }
+        else setResponseHook(post_gid_app_action(newCollect))
     }
-    // console.log(responseHook)
     const countries = JSON.parse(localStorage.getItem('countries')).map((item,index)=>{return {value:index, label:item.country, ...item}}) || []
     React.useEffect(() => {
         if(country){
@@ -67,7 +57,7 @@ const Index = () => {
         }
     },[country])
     React.useEffect(() => {if(region){setCollect({...collect, city:region})}},[region])
-    // console.log(collect)
+    React.useEffect(()=>{if(responseHook?.status===200) setBtnLoader(false)},[responseHook])
     return (
         <Wrapper onSubmit={onSubmit}>
             <TextTitle {...mediaTextField} {...mediaTextFieldSec} top="60px" bottom="20px">Git va tarjimonlar uchun ariza qoldirish</TextTitle>
@@ -173,7 +163,7 @@ const Index = () => {
                         </Grid>
                     </Container>
                     <Container width="100%" textAlign="center" >
-                        <Button {...mediaBtn} >Arizani yuborish</Button>
+                        <Button loader={btnLoader} {...mediaBtn}>&nbsp;Arizani yuborish</Button>
                     </Container>
                 </Container>
             </Container>
