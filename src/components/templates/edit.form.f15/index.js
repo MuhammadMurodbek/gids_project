@@ -7,7 +7,7 @@ import Button from "../../atom/button"
 import {putResponse} from "../../../hooks/response_get"
 import {userSchema} from "./_validation"
 import toast from 'react-hot-toast'
-import {validatorState} from "../../../custom/validator"
+// import {validatorState} from "../../../custom/validator"
 const mediaContainer = {
     m_width:'600px',
     m_padding:"10px 10px 0"
@@ -42,7 +42,7 @@ const Index = ({statePostProps}) => {
             formData.append('company',state?.company)
             formData.append('country',countryJSON)
             formData.append('city',cityJSON)
-            putResponse('/api/users/edit/',formData,setPostData)
+            await putResponse('/api/users/edit/',formData,setPostData)
         }
         console.log(isValid)
     }
@@ -52,8 +52,8 @@ const Index = ({statePostProps}) => {
             if(postData?.success?.status === 200){
                 toast.success("Successfully updated")
             }
-            if(postData?.success?.status > 201){
-                toast.error("Failed")
+            if(postData?.error?.response){
+                toast.error("Failed to update")
             }
         }
     },[postData])
