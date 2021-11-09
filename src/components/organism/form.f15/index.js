@@ -3,10 +3,10 @@ import {WrapperForm} from "./style"
 import InputLabeled from "../../molecules/input.labeled"
 import SelectLabeled from "../../molecules/select.labeled"
 import { Grid } from '@material-ui/core'
+import {validatorState} from "../../../custom/validator"
 
-
-const Index = ({state, setState}) => {
-
+const Index = ({state, setState, error}) => {
+    // validatorState(end_date, 'string', 0, 'Sana kiritilmagan')
     const [country, setCountry] = useState()
     const [region, setRegion] = useState()
     const [regionItem, setRegionItem] = useState()
@@ -37,6 +37,7 @@ const Index = ({state, setState}) => {
                         placeholder="Ism kiriting"
                         value={state.first_name}
                         onChange={handleChange}
+                        errorText={error ? validatorState(state?.first_name, 'min', 3, 'Ims kiritilmagan (kamida 3 ta belgi)'):null}
                     />
                 </Grid>
                 <Grid item xs={12} sm={12} md={6}>
@@ -47,6 +48,7 @@ const Index = ({state, setState}) => {
                         placeholder="Familiya kiriting"
                         value={state.last_name}
                         onChange={handleChange}
+                        errorText={error ? validatorState(state?.last_name, 'min', 3, 'Familiya kiritilmagan (kamida 3 ta belgi)'):null}
                     />
                 </Grid>
             </Grid>
@@ -59,12 +61,13 @@ const Index = ({state, setState}) => {
                         placeholder="Kompaniya nomini kiriting"
                         value={state.company}
                         onChange={handleChange}
+                        errorText={error ? validatorState(state?.company, 'min', 3, 'Tashkilot nomi kiritilmagan (kamida 3 ta belgi)'):null}
                     />
                 </Grid>
             </Grid>
             <Grid container spacing={2}>
                 <Grid item xs={12} sm={12} md={6}>
-                    <SelectLabeled options={countries} setState={setCountry} width="100%" label="Davlat" placeholder={state?.country?.label} pcolor={state?.country}/>
+                    <SelectLabeled options={countries} setState={setCountry} width="100%" label="Davlat" placeholder={state?.country?.label} pcolor={state?.country} errorText={error ? validatorState(state?.country, 'object', 0, 'Davlat (Shahar) nomi kiritilmagan'):null}/>
                 </Grid>
                 <Grid item xs={12} sm={12} md={6}>
                     <SelectLabeled options={region} setState={setRegionItem} width="100%" label="Shahar" placeholder={state?.city?.label} pcolor={state?.city}/>

@@ -6,7 +6,7 @@ import VisibilityOffOutlinedIcon from '@material-ui/icons/VisibilityOffOutlined'
 import {mainGreen} from "../../../styles/global/colors"
 const Index = (props) => {
     
-    const {width, label, password, sizeLabel, typeNumber} = props
+    const {width, label, password, sizeLabel, typeNumber, errorText} = props
     const [check, setCheck] = useState(true)
     const handleChangeOpen = () => {
         setCheck(false)
@@ -30,6 +30,9 @@ const Index = (props) => {
                 :
                     null
             }
+            {/* <span style={{position: 'absolute', fontSize:'11px', bottom:-14, left:0, fontStyle:'italic', color:'red'}}>
+                {errorText}
+            </span> */}
         </Wrapper>
     )
 }
