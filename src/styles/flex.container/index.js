@@ -12,6 +12,8 @@ export const FlexContainer = styled.div`
     padding: ${value=>value.padding};
     gap: ${value=>value.gap};
     flex-wrap: ${value=>value.flexWrap};
+    
+   
 
     @media (max-width:${value=>value.m_width}){
         width: ${value=>value.m_m_width};

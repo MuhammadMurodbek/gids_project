@@ -5,10 +5,16 @@ import {useLocation, Link} from "react-router-dom"
 import tg from '../../../assets/img/footer/tg.svg'
 import f from '../../../assets/img/footer/f.svg'
 import i from '../../../assets/img/footer/i.svg'
+import {useTranslation} from 'react-i18next'
+
+
 const Index = () => {
     const location = useLocation()
     const {pathname} = location
     const [check , setCheck] = React.useState(false)
+
+    const {t} = useTranslation()
+
     React.useEffect(() => {
         if(pathname.includes('auth')){
             setCheck(true)
@@ -36,27 +42,27 @@ const Index = () => {
                     style={check ? {display:"none"}:null}
                 >
                     <div className="flex-items">
-                        <span>BIZNING SERVIS</span>
+                        <span>{t("footer.biznigServislar")}</span>
                         <ul>
-                            <li><Link to="/gids"> Gid yoki tarjimonlik tanlash</Link></li>
-                            <li><Link to="/forgits"> Gid yoki tarjimonlar uchun</Link></li>
-                            <li><Link to="/about"> Platforma haqida</Link></li>
-                            <li><Link to="/blog"> Blog</Link></li>
+                            <li><Link to="/gids">{t("footer.tanlash")}</Link></li>
+                            <li><Link to="/forgits">{t("footer.GTuchun")}</Link></li>
+                            <li><Link to="/about"> {t("footer.platformaH")} </Link></li>
+                            <li><Link to="/blog"> {t("footer.Blog")} </Link></li>
                         </ul>
                     </div>
                     <div className="flex-items">
-                        <span>KONTAKTLARIMIZ</span>
+                        <span>{t("footer.contacts")}</span>
                         <ul>
                             <li><Link to="/l">salom@git.uz</Link></li>
                             <li><Link to="/l">+998 91 555 44 33</Link> </li>
-                            <li><Link to="/connect">Savol jo'natish</Link> </li>
+                            <li><Link to="/connect">{t("footer.sorov")}</Link> </li>
                         </ul>
                     </div>
                     <div className="flex-items">
-                        <span>HUQUQIY MA'LUMOTLAR</span>
+                        <span>{t("footer.huquqiy")}</span>
                         <ul>
-                            <li><Link to="/p"> Foydalanish shartlari</Link> </li>
-                            <li><Link to="/p"> Maxfiylik siyosati va cookie siyosati</Link> </li>
+                            <li><Link to="/p"> {t("footer.foydalanish")} </Link> </li>
+                            <li><Link to="/p">  {t("footer.maxfiylik")} </Link> </li>
                         </ul>
                     </div>
                 </FlexContainer>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Navbar } from "./index.style";
-import Logo from "../../../assets/img/logo.png";
+import Logo from "../../../assets/img/logo_svg.svg";
 import cal from "../../../assets/img/request/cal2.svg";
 import { FlexContainer } from "../../../styles/flex.container";
 import ButtonNavbar from "../../molecules/button.navbar";
@@ -11,6 +11,9 @@ import { Turn as Hamburger } from "hamburger-react";
 import { mainGreen } from "../../../styles/global/colors";
 import MediaNavbar from "./media.navbar";
 import ReactFlagsSelect from "react-flags-select";
+
+import {useTranslation} from 'react-i18next'
+
 import {
     Dropdown,
     DropdownMenu,
@@ -28,7 +31,9 @@ const Index = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const toggle = () => setDropdownOpen((prevState) => !prevState);
 
-  return (
+  const {t, i18n} = useTranslation()
+  React.useMemo(()=>{i18n.changeLanguage('uz')},[])
+  return (  
     <>
       <Navbar>
         <FlexContainer
@@ -51,24 +56,26 @@ const Index = () => {
             justifyContent="center"
           >
             {role === "simple_user" ? (
-              <ButtonNavbar title="Gid yoki tarjimonni tanlash" url="/gids" />
+              <ButtonNavbar title={t("navbar.GvaTtanlash")} url="/gids" />
             ) : null}
             {role === "simple_user" ? null : (
-              <ButtonNavbar title="Gid va tarjimonlar uchun" url="/forgits" />
+              <ButtonNavbar title={t("navbar.GTU")} url="/forgits" />
             )}
             <ButtonNavbar title="Blog" url="/blog" />
             {role === "simple_user" ? (
-              <ButtonNavbar title="Ariza qoldirish" url="/application-form" />
-            ) : (
-              <ButtonNavbar title="Arizalar ro'yxati" url="/request" />
+              <ButtonNavbar title={t("navbar.Ariza_qoldirish")} url="/application-form" />
+            ) : (   
+              <ButtonNavbar title={t("navbar.Arizalar_royhati")} url="/request" />
             )}
           </FlexContainer>
 
           <FlexContainer {...navbarMedia} width="200px">
             <ReactFlagsSelect
-              // style={{marginTop:5}}
               selected={selected}
-              onSelect={(code) => setSelected(code)}
+              onSelect={(code) => {
+                i18n.changeLanguage(code.toLowerCase())
+                setSelected(code)
+              }}
               countries={["UZ", "RU", "US"]}
               customLabels={{ US: "en", UZ: "uz", RU: "ru" }}
             />

@@ -69,6 +69,10 @@ export const routes_gid = [
         url:'/forgits',
         component:ListRouter.Forgits
     },
+    {
+        url:'/write-article',
+        component:ListRouter.MaqolaYozish
+    }
 ]
 
 export const routes_traslater =  [
@@ -108,6 +112,11 @@ export const routes_traslater =  [
         url:'/forgits',
         component:ListRouter.Forgits
     },
+    {
+        url:'/write-article',
+        component:ListRouter.MaqolaYozish
+    }
+
 ]
 
 export const routes_write =  [

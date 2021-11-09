@@ -14,11 +14,16 @@ import TimeLine_2 from "../../../assets/img/timeline/timeline_2.svg"
 import TimeLine_3 from "../../../assets/img/timeline/timeline_3.svg"
 import TimeLine_4 from "../../../assets/img/timeline/timeline_4.svg"
 import {TimeLineWrapper} from "./slider.style"
+import { useTranslation } from "react-i18next";
+
 export default function App() {
+
+  const {t} = useTranslation()
+
   return (
     <TimeLineWrapper>
       <div className="timeline-part">
-        <div className="timeline-title title">Bu qanday ishlaydi</div>
+        <div className="timeline-title title"> {t("main.ishlashi")} </div>
         <VerticalTimeline className="timeline-container">
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
@@ -28,8 +33,8 @@ export default function App() {
           >
               <div className="wrapper">
                   <ImageContainer width="200px" src={TimeLine_1}/>
-                  <div className="wrapper-text">Ro'yxatdan o'tasiz</div>
-                  <p>Avvalo platformadan Git/Tarjimon yokida Mijoz sifatida ro’yhattan o’tasiz.</p>
+                  <div className="wrapper-text"> {t("main.royhatdanOtasiz")} </div>
+                  <p> {t("main.text02")} </p>
               </div>
           </VerticalTimelineElement>
           <VerticalTimelineElement
@@ -39,8 +44,8 @@ export default function App() {
           >
               <div className="wrapper">
                   <ImageContainer width="200px" src={TimeLine_2}/>
-                  <div className="wrapper-text">So'rov qoldirasiz</div>
-                  <p>Mijoz so‘rov qoldirishi mumkin yokida o‘zi Git/Tarjimoni tanlashi mumkin.</p>
+                  <div className="wrapper-text"> {t("main.sorov")} </div>
+                  <p> {t("main.text03")} </p>
               </div>
           </VerticalTimelineElement>
           <VerticalTimelineElement
@@ -50,8 +55,8 @@ export default function App() {
           >
               <div className="wrapper">
                   <ImageContainer width="250px" src={TimeLine_3}/>
-                  <div className="wrapper-text">Aloqaga chiqiladi</div>
-                  <p>Tarjimon/Git tanlangandan so’ng, aloqaga chiqib kelishib olinadi va ish boshlanadi.</p>
+                  <div className="wrapper-text"> {t("main.aloqaga")}</div>
+                  <p> {t("main.text04")} </p>
                   
               </div>
           </VerticalTimelineElement>
@@ -62,8 +67,8 @@ export default function App() {
           >
               <div className="wrapper">
                   <ImageContainer width="250px" src={TimeLine_4}/>
-                  <div className="wrapper-text">Ish boshlanadi</div>
-                  <p>Aloqa chiqib ish kelishib olgningizdan so’ng ishni boshlaysiz</p>
+                  <div className="wrapper-text"> {t("main.ishBoshlanadi")}   </div>
+                  <p> {t("main.text05")}</p>
               </div>
           </VerticalTimelineElement>
         </VerticalTimeline>

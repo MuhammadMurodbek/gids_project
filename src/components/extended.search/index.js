@@ -7,19 +7,25 @@ import CalendarComponent from "./data.with.title"
 import CheckBoxContainer from "./checkbox.width.title"
 import Button from "./button.component"
 import DoubleRadio from "../molecules/double.radio.labeled"
+import {useTranslation} from 'react-i18next'
+ 
+
 const Index = () => {
+   
+    const {t} = useTranslation() 
+
     return (
         <Wrapper width="350px">
-            <div className="title-header">Kengaytirilgan qidiruv</div>
+            <div className="title-header">{t("kengaytirlgan_Q.kengaytirilgan")}</div>
             <RadioGroup/>   
-            <Selection title="Davlat" placeholder="Davlat kiriting"/>
-            <CalendarComponent title="Sana" />
+            <Selection title={t("kengaytirlgan_Q.Davlat")} placeholder={t("kengaytirlgan_Q.DavlatniTanlang")}/>
+            <CalendarComponent title={t("kengaytirlgan_Q.sana")} />
             <CalendarComponent/>
-            <DoubleRadio name1="Onlayn" name2="Barchasi"/>
-            <SelectionLang title="Til"/>
-            <CheckBoxContainer name1="Erkak" name2="Ayol"/>
+            <DoubleRadio name1={t("kengaytirlgan_Q.online")} name2={t("kengaytirlgan_Q.barchasi")}/>
+            <SelectionLang title={t("kengaytirlgan_Q.til")}/>
+            <CheckBoxContainer name1={t("kengaytirlgan_Q.erkak")} name2={t("kengaytirlgan_Q.ayol")}/>
             <div className="button-wrapper">
-                <Button width="280px" name="Qidiruv"/>
+                <Button width="280px" name={t("kengaytirlgan_Q.qidirish")}/>
             </div>
         </Wrapper>
     )

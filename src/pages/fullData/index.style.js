@@ -25,6 +25,10 @@ export const Wrapper = styled.div`
   }
   .image_adds{
     margin-top: 30px;
+    }
+  .imgpard{
+    margin-bottom: 30px;
+    padding: 0 30px;
   }
   .xitoy-text{
       margin: 0;
@@ -39,6 +43,7 @@ export const Wrapper = styled.div`
   }
   .imgad{
      margin-bottom: 30px;
+     
     }
     .mualif{
       width: 100%;

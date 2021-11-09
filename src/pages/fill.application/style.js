@@ -45,8 +45,7 @@ export const Wrapper = styled.form`
     @media (max-width: 600px){
         .title_inner{
             /* font-size: ; */
-            margin-bottom:5px;
-        }
+            margin-bottom:5px;   }
     }
 `
 export const Title = styled.div`

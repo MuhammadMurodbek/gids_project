@@ -6,6 +6,13 @@ import {shadow} from "../../../styles/global/colors"
 import DayPicker from "../../molecules/daypicker"
 import MediaPlayer from "../../molecules/element_f42/media.player"
 import ImageGallery from "../../molecules/element_f42/reward.gallery"
+import ImageContainer from '../../molecules/img.container'
+import img01 from '../../../assets/img/boglanish/1.png'
+import img02 from '../../../assets/img/boglanish/2.png'
+import img03 from '../../../assets/img/boglanish/3.png'
+import img04 from '../../../assets/img/boglanish/4.png'
+import img05 from '../../../assets/img/boglanish/5.png'
+
 const mediaContainer={
     m_width:'600px',
     m_padding:'10px 0',
@@ -24,6 +31,19 @@ const Index = () => {
             </Container>
             <Container padding="20px" margin="20px 0" boxShadow={shadow}>
                 <ImageGallery />
+            </Container>
+            <Container padding="20px" margin="20px 0" boxShadow={shadow}>
+                <h3 className="titlss">Bog’lanish uchun</h3>
+                <p className="textb">+ 998 99 999 99 99</p>
+                <p className="textb">salom@gids.com</p>
+                <p className="textb">kun.uz</p>
+                <div className="imgdiv11">
+                    <ImageContainer src={img01}  />
+                    <ImageContainer src={img02}  />
+                    <ImageContainer src={img03}  />
+                    <ImageContainer src={img04}  />
+                    <ImageContainer src={img05}  />
+                </div>
             </Container>
         </Wrapper>
     )
