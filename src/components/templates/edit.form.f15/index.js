@@ -30,6 +30,7 @@ const Index = ({statePostProps}) => {
         let countryJSON = JSON.stringify(state?.country)
         let cityJSON = JSON.stringify(state?.city)
         if(dataPost) {formData.append('image',dataPost)}
+        else formData.append('image',state?.image)
         formData.append('first_name',state?.first_name)
         formData.append('last_name',state?.last_name)
         formData.append('company',state?.company)

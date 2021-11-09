@@ -15,9 +15,12 @@ const Demo = ({setState, state}) => {
   };
   const handleSubmitOk = (e) => {
     setUrl(URL.createObjectURL(e))
-    // console.log(e);
     if(setState)
     setState({...state, imageFile: e})
+  }
+  const handleDelete = () => {
+    setState({...state,image:null, imageFile: null})
+    setUrl('')
   }
   return(
       <div className="cropper_container">
@@ -34,7 +37,7 @@ const Demo = ({setState, state}) => {
                 </Upload>
             </ImgCrop>
             <div className="del_icon icb">
-                <DeleteOutlined onClick={()=>setUrl('')} style={{ fontSize: '22px' }}/>
+                <DeleteOutlined onClick={handleDelete} style={{ fontSize: '22px' }}/>
             </div>
         </div>
       </div>

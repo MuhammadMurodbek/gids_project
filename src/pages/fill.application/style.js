@@ -8,7 +8,10 @@ export const Wrapper = styled.form`
     .wrap-grid{
         margin:20px 0;
     }
-    
+    .currency{
+        display:flex;
+        background-color:red;
+    }
     .modaldiv{
         padding: 40px;
         padding-top: 10px;
@@ -42,8 +45,7 @@ export const Wrapper = styled.form`
     @media (max-width: 600px){
         .title_inner{
             /* font-size: ; */
-            margin-bottom:5px;
-        }
+            margin-bottom:5px;   }
     }
 `
 export const Title = styled.div`

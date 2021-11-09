@@ -1,11 +1,8 @@
 import styled from "styled-components";
 export const InputWrapper = styled.div`
     /* width:'100%'; */
-    display: inline-block;
-    position: relative;
-    padding: 10px;
-    background-color:#FAFCFA;
-    border-radius: 4px;
+    position:relative;
+   
 `
 
 export const Input = styled.textarea`

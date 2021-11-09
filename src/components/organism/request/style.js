@@ -7,7 +7,11 @@ export const Wrapper = styled.div`
     width:100%;
     margin:20px auto;
     box-shadow:0px 5px 5px #BBBDBB;
-
+    @media (max-width: 500px){
+        &{
+            box-shadow:0px 3px 8px #a2a3a2;
+        }
+    }
     .Link{
         width: 100%;
         color: black;
