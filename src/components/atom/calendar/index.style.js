@@ -17,4 +17,8 @@ export const Calendar = styled.div`
     .ant-space.ant-space-vertical{
         width:100% !important;
     }
+
+    input::placeholder{
+        color:${a=>a.placeholderValue ? '#2c2c2c':null};
+    }
 `

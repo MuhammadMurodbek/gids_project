@@ -25,7 +25,7 @@ const Demo = ({setState, state}) => {
   return(
       <div className="cropper_container">
         {
-          state?.image !== null ? <img src={state?.image || null} alt="asdfdf" className="image_cropped"/>:
+          state?.image !== null ? <img src={state?.image || noUser} alt="asdfdf" className="image_cropped"/>:
           <img src={url || noUser} alt="asdfdf" className={url ? "image_cropped":"image_no_user"}/>
         }
         <div className="icon_wrapper">

@@ -14,10 +14,10 @@ import { Button } from "../../../../components/atom/button/index.style";
 import { about_edit_bio_action } from "../../../../redux/actions";
 import useApiData from "../../../../hooks/response";
 import AddIcon from '@material-ui/icons/Add'
-
+import ImageCrop from "../../../../components/organism/image.crop/new"
 const Index = () => {
   const { responseHook, setResponseHook } = useApiData("get_about_bio_reducer");
-  const [state, setState] = useState({});
+  const [state, setState] = useState({gender:"male", image:'',imageFile:null});
   const [fileList, setFileList] = useState([
     {
       uid: "-1",
@@ -26,12 +26,10 @@ const Index = () => {
       url: "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png",
     },
   ]);
+  useEffect(() => {setResponseHook(about_edit_bio_action())},[])
   useEffect(() => {
-    setResponseHook(about_edit_bio_action());
-  }, []);
-  useEffect(() => {
-    if (responseHook.gids) {
-      setState(responseHook.gids.data);
+    if (responseHook?.gids) {
+      setState(responseHook?.gids?.data);
     }
   }, [responseHook]);
 
@@ -47,24 +45,25 @@ const Index = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    try {
-      const payload = {
-        ...state,
-        country: "Uzbekistan",
-        city: "Andijan",
-        birthday: new Date().toISOString()
-      };
-      console.log(payload);
-    } catch (e) {
-      console.log(e);
-    }
+    // try {
+    //   const payload = {
+    //     ...state,
+    //     country: "Uzbekistan",
+    //     city: "Andijan",
+    //     birthday: new Date().toISOString()
+    //   };
+    //   console.log(payload);
+    // } catch (e) {
+    //   console.log(e);
+    // }
   };
-  console.log(fileList, "file");
+  console.log(state);
   return (
     <Wrapper onSubmit={handleSubmit}>
       <Grid container spacing={1}>
         <Grid item xs={12} md={3}>
-          <ImageUpload width="200px" height="200px" radius="50%" />
+          <ImageCrop setState={setState} state={state}/>
+          {/* <ImageUpload width="200px" height="200px" radius="50%" /> */}
         </Grid>
         <Grid item xs={12} md={9}>
           <Grid container spacing={1}>
@@ -108,9 +107,11 @@ const Index = () => {
                 sizeLabel="15px"
                 width="100%"
                 label="Sana"
-                value={state?.birthday}
-              // name="birthday"
-              // onChange={handleChange}
+                placeholder={state?.birthday || "Select date"}
+                placeholderValue={state?.birthday || false}
+                setState={setState}
+                state={state}
+                field="birthday"
               />
             </Grid>
             <Grid item xs={12} md={4}>
@@ -172,7 +173,6 @@ const Index = () => {
               placeholder="Yilni yozing"
             />
           </Grid>
-           
         </Grid>
 
 
