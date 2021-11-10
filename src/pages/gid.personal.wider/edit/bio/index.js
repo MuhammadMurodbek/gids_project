@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Grid } from "@material-ui/core";
 import { Wrapper } from "./style";
-import ImageUpload from "../../../../components/organism/image.uploader.f15";
+// import ImageUpload from "../../../../components/organism/image.uploader.f15";
 import InputLabeled from "../../../../components/molecules/input.labeled";
 import CalendarLabel from "../../../../components/molecules/calendar.labeled";
 import DoubleRadio from "../../../../components/molecules/double.radio.labeled";
@@ -18,14 +18,8 @@ import ImageCrop from "../../../../components/organism/image.crop/new"
 const Index = () => {
   const { responseHook, setResponseHook } = useApiData("get_about_bio_reducer");
   const [state, setState] = useState({gender:"male", image:'',imageFile:null});
-  const [fileList, setFileList] = useState([
-    {
-      uid: "-1",
-      name: "image.png",
-      status: "done",
-      url: "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png",
-    },
-  ]);
+  const [fileList, setFileList] = useState([]);
+  const getRole = JSON.parse(localStorage.getItem('user_token'))
   useEffect(() => {setResponseHook(about_edit_bio_action())},[])
   useEffect(() => {
     if (responseHook?.gids) {
@@ -156,28 +150,29 @@ const Index = () => {
           Sertifikat va diplomlaringiz bo‘lsa shu yerga yuklang
         </TextTitle>
         <GroupImageUpload fileList={fileList} setFileList={setFileList} />
+        {
+          getRole?.role!=="gid" ? (
+            <Grid container spacing={1}>
+              <Grid item md={10} xs={8}>
+                <InputLabeled
+                  sizeLabel="15px"
+                  width="100%"
+                  placeholder="Nomini yozing"
+                />
+              </Grid>
 
-        <Grid container spacing={1}>
-          <Grid item md={10} xs={12}>
-            <InputLabeled
-              sizeLabel="15px"
-              width="100%"
-              placeholder="Nomini yozing"
-            />
-          </Grid>
-
-          <Grid item md={2} xs={4}>
-            <InputLabeled
-              sizeLabel="15px"
-              width="100%"
-              placeholder="Yilni yozing"
-            />
-          </Grid>
-        </Grid>
-
-
+              <Grid item md={2} xs={4}>
+                <InputLabeled
+                  sizeLabel="15px"
+                  width="100%"
+                  placeholder="Yilni yozing"
+                />
+              </Grid>
+              <Button paddingIcon="10px"><AddIcon className="icon" /></Button>
+            </Grid>
+          ):null
+        }
         <div className="btnGrop">
-          <Button paddingIcon="10px"><AddIcon className="icon" /></Button>
           <Button type="submit"> Saqlash</Button>
         </div>
       </Container>

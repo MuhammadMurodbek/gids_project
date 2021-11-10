@@ -7,32 +7,35 @@ const Demo = (props) => {
 
   const onChange = ({ fileList: newFileList }) => {
     setFileList(newFileList);
+    console.log(newFileList)
+    // const reader = new FileReader();
+    // reader.readAsDataURL(file.originFileObj);
   };
 
-  const onPreview = async file => {
-    let src = file.url;
-    if (!src) {
-      src = await new Promise(resolve => {
-        const reader = new FileReader();
-        reader.readAsDataURL(file.originFileObj);
-        reader.onload = () => resolve(reader.result);
-      });
-    }
-    const image = new Image();
-    image.src = src;
-    const imgWindow = window.open(src);
-    imgWindow.document.write(image.outerHTML);
-  };
+  // const onPreview = async file => {
+  //   let src = file.url;
+  //   if (!src) {
+  //     src = await new Promise(resolve => {
+  //       const reader = new FileReader();
+  //       reader.readAsDataURL(file.originFileObj);
+  //       // reader.onload = () => resolve(reader.result);
+  //     });
+  //   }
+  //   // const image = new Image();
+  //   // image.src = src;
+  //   // const imgWindow = window.open(src);
+  //   // imgWindow.document.write(image.outerHTML);
+  // };
 
   return (
     <Wrapper>
-        <ImgCrop rotate>
+        <ImgCrop rotate zoom>
         <Upload
-            action="http://165.232.76.226/api/gids/edit/certificate/"
+            // action="http://165.232.76.226/api/gids/edit/gallery/"
             listType="picture-card"
             fileList={fileList}
             onChange={onChange}
-            onPreview={onPreview}
+            // onPreview={onPreview}/
         >
             {fileList.length < 5 && '+ Upload'}
         </Upload>
