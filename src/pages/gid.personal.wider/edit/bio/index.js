@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Grid } from "@material-ui/core";
 import { Wrapper } from "./style";
-// import ImageUpload from "../../../../components/organism/image.uploader.f15";
 import InputLabeled from "../../../../components/molecules/input.labeled";
 import CalendarLabel from "../../../../components/molecules/calendar.labeled";
 import DoubleRadio from "../../../../components/molecules/double.radio.labeled";
@@ -10,54 +9,64 @@ import { Container } from "../../../../styles/container/index.style";
 import TextArea from "../../../../components/molecules/area.labeled";
 import { TextTitle } from "../../../../styles/textTitle/index.style";
 import GroupImageUpload from "../../../../components/templates/group.image.upload";
-import { Button } from "../../../../components/atom/button/index.style";
-import { about_edit_bio_action } from "../../../../redux/actions";
+import Button from "../../../../components/atom/button";
+import { post_bio_data_action } from "../../../../redux/actions";
 import useApiData from "../../../../hooks/response";
 import AddIcon from '@material-ui/icons/Add'
 import ImageCrop from "../../../../components/organism/image.crop/new"
+import {countries} from "../../../../custom/constants"
+import { get_cities } from "../../../../custom/function"
+import {getResponse } from "../../../../hooks/response_get"
+import Spinner from "../../../../components/atom/loading.spinner.line"
 const Index = () => {
-  const { responseHook, setResponseHook } = useApiData("get_about_bio_reducer");
-  const [state, setState] = useState({gender:"male", image:'',imageFile:null});
+  const { responseHook, setResponseHook } = useApiData("post_bio_data_reducer");
+  const [state, setState] = useState({middle_name:'',first_name:'', last_name:"",birthday:'',bio:"",country:{}, city:{}, gender:null, image:'',imageFile:null});
+  const [apiValue, setApiValue] = useState({success:'', error:''})
   const [fileList, setFileList] = useState([]);
   const getRole = JSON.parse(localStorage.getItem('user_token'))
-  useEffect(() => {setResponseHook(about_edit_bio_action())},[])
-  useEffect(() => {
-    if (responseHook?.gids) {
-      setState(responseHook?.gids?.data);
+  const {country} = state
+  useEffect(() => {getResponse('/api/gids/edit/about/', setApiValue)},[])
+  useEffect(()=> {
+    if(apiValue?.success!==''){
+      setState(apiValue?.success?.data)
     }
-  }, [responseHook]);
-
+  },[apiValue])
   const handleChange = (e) => {
-    setState((prevState) => {
-      return {
-        ...prevState,
-        [e.target.name]: e.target.value,
-      };
-    });
+    setState( { ...state, [e.target.name]: e.target.value});
     console.log(state);
   };
-
+  React.useEffect( () => {
+    if ( country )
+    {
+        let array = get_cities( country?.cities );
+        setState(prev=>{return{...prev, city:array}});
+    }
+  }, [ country ] )
   const handleSubmit = (e) => {
     e.preventDefault();
-    // try {
-    //   const payload = {
-    //     ...state,
-    //     country: "Uzbekistan",
-    //     city: "Andijan",
-    //     birthday: new Date().toISOString()
-    //   };
-    //   console.log(payload);
-    // } catch (e) {
-    //   console.log(e);
-    // }
+    let clone = state
+    const formData = new FormData();
+    formData.append('image',clone?.imageFile)
+    formData.append('first_name',clone?.first_name)
+    formData.append('last_name',clone?.last_name)
+    formData.append('middle_name',clone?.middle_name)
+    formData.append('birthday',clone?.birthday)
+    formData.append('gender',clone?.gender)
+    formData.append('country',clone?.country?.label)
+    formData.append('city',clone?.city?.label)
+    formData.append('bio',clone?.bio)
+    setResponseHook(post_bio_data_action(formData))
+    // delete clone 
   };
-  console.log(state);
+  console.log(apiValue?.success?.data);
   return (
     <Wrapper onSubmit={handleSubmit}>
-      <Grid container spacing={1}>
+      {
+        apiValue?.success === "" ? <Spinner marginTop="60px" width={50} height={50}/>:
+        <>
+      <Grid container spacing={1} style={{marginTop:10}}>
         <Grid item xs={12} md={3}>
           <ImageCrop setState={setState} state={state}/>
-          {/* <ImageUpload width="200px" height="200px" radius="50%" /> */}
         </Grid>
         <Grid item xs={12} md={9}>
           <Grid container spacing={1}>
@@ -124,10 +133,10 @@ const Index = () => {
           </Grid>
           <Grid container spacing={1}>
             <Grid item xs={12} md={4}>
-              <SelectLabeled sizeLabel="15px" width="100%" label="Mamlakat" />
+              <SelectLabeled setCollect={setState} field="country" collect={state} options={countries} sizeLabel="15px" width="100%" label="Mamlakat" />
             </Grid>
             <Grid item xs={12} md={4}>
-              <SelectLabeled sizeLabel="15px" width="100%" label="Shahar" />
+              <SelectLabeled setCollect={setState} collect={state} options={state?.city ? state?.city : {value:0, label:'no data'}} sizeLabel="15px" field="city" width="100%" label="Shahar" />
             </Grid>
             <Grid item xs={12} md={4}></Grid>
           </Grid>
@@ -139,10 +148,8 @@ const Index = () => {
           label="O‘zingiz haqingizda"
           placeholder="O‘zingiz haqingizda yozing..."
           value={state?.bio}
-          name="bio"
-          state={state}
+          field="bio"
           setState={setState}
-          onChange={handleChange}
         />
       </Container>
       <Container padding="10px 0">
@@ -173,9 +180,11 @@ const Index = () => {
           ):null
         }
         <div className="btnGrop">
-          <Button type="submit"> Saqlash</Button>
+          <Button loader={responseHook?.loading} type="submit"> Saqlash</Button>
         </div>
       </Container>
+      </>
+    }
     </Wrapper>
   )
 }

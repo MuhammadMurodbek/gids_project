@@ -7,7 +7,7 @@ import {CheckboxWrapper, Label} from "./style"
 import {mainGreen} from "../../../styles/global/colors"
 const Index = (props) => {
     const {label, name1, name2, sizeLabel, marginLabel, setState, state, value1, value2} = props;
-    const [value, setValue] = React.useState('male');
+    const [value, setValue] = React.useState(null);
 
     const handleChange = (event) => {
         setValue(event.target.value);

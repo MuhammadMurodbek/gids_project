@@ -4,11 +4,11 @@ import {Wrapper, Label} from './style'
 import TextArea from "../../atom/textAreaCom"
 const Index = (props) => {
     const [value, setValue] = useState(null)
-    const {width, label, setState, state, name} = props
+    const {width, label, setState, field, name} = props
     const handleChange = (e) => {
       setValue(e.target.value)
       if(setState) {
-        setState({...state, bio:e.target.value})
+        setState(prev=>{return{...prev, [field]:e.target.value}})
     }
     }
     return (

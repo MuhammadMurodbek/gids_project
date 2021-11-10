@@ -16,7 +16,7 @@ const Demo = ({setState, state}) => {
   const handleSubmitOk = (e) => {
     setUrl(URL.createObjectURL(e))
     if(setState)
-    setState({...state, imageFile: e})
+    setState({...state, image:null, imageFile: e})
   }
   const handleDelete = () => {
     setState({...state,image:null, imageFile: null})
