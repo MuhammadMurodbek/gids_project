@@ -14,8 +14,14 @@ import { Button } from "../../../../components/atom/button/index.style";
 import { about_edit_bio_action } from "../../../../redux/actions";
 import useApiData from "../../../../hooks/response";
 import AddIcon from '@material-ui/icons/Add'
+import {useTranslation} from 'react-i18next'
+
+
 
 const Index = () => {
+
+  const {t} = useTranslation()
+
   const { responseHook, setResponseHook } = useApiData("get_about_bio_reducer");
   const [state, setState] = useState({});
   const [fileList, setFileList] = useState([
@@ -75,8 +81,8 @@ const Index = () => {
                 onChange={handleChange}
                 sizeLabel="15px"
                 width="100%"
-                label="Familiya"
-                placeholder="Familiyangizni yozing..."
+                label={t("MTmenHaqimda.familya")}
+                placeholder={t("MTmenHaqimda.familyaPlace")}
               />
             </Grid>
             <Grid item xs={12} md={4}>
@@ -86,8 +92,8 @@ const Index = () => {
                 onChange={handleChange}
                 sizeLabel="15px"
                 width="100%"
-                label="Ism"
-                placeholder="Ismingizni yozing..."
+                label={t("MTmenHaqimda.isim")}
+                placeholder={t("MTmenHaqimda.isimPlace")}
               />
             </Grid>
             <Grid item xs={12} md={4}>
@@ -97,8 +103,8 @@ const Index = () => {
                 onChange={handleChange}
                 sizeLabel="15px"
                 width="100%"
-                label="Otangizni ismi"
-                placeholder="Otangizni ismini yozing..."
+                label={t("MTmenHaqimda.otasiningIsmi")}
+                placeholder={t(".MTmenHaqimda.otasiIplace")}
               />
             </Grid>
           </Grid>
@@ -107,18 +113,18 @@ const Index = () => {
               <CalendarLabel
                 sizeLabel="15px"
                 width="100%"
-                label="Sana"
+                label={t("MTmenHaqimda.tugilganSana")}
                 value={state?.birthday}
-              // name="birthday"
-              // onChange={handleChange}
+               name="birthday"
+               onChange={handleChange}
               />
             </Grid>
             <Grid item xs={12} md={4}>
               <DoubleRadio
                 sizeLabel="15px"
-                label="Jinsi"
-                name1="male"
-                name2="female"
+                label={t("MTmenHaqimda.jins")}
+                name1={t("MTmenHaqimda.erkak")}
+                name2={t("MTmenHaqimda.ayol")}
                 value1="male"
                 value2="female"
                 state={state}
@@ -129,10 +135,11 @@ const Index = () => {
           </Grid>
           <Grid container spacing={1}>
             <Grid item xs={12} md={4}>
-              <SelectLabeled sizeLabel="15px" width="100%" label="Mamlakat" />
+              <SelectLabeled sizeLabel="15px" width="100%" label={t("MTmenHaqimda.mamlakat")} />
             </Grid>
             <Grid item xs={12} md={4}>
-              <SelectLabeled sizeLabel="15px" width="100%" label="Shahar" />
+              <SelectLabeled sizeLabel="15px" width="100%" 
+              label={t("MTmenHaqimda.Shaharlar")} />
             </Grid>
             <Grid item xs={12} md={4}></Grid>
           </Grid>
@@ -141,8 +148,8 @@ const Index = () => {
       <Container padding="10px 0">
         <TextArea
           width="100%"
-          label="O‘zingiz haqingizda"
-          placeholder="O‘zingiz haqingizda yozing..."
+          label= {t("MTmenHaqimda.OzingizH")}
+          placeholder={t("MTmenHaqimda.OzingizHplace")}
           value={state?.bio}
           name="bio"
           state={state}
@@ -152,7 +159,7 @@ const Index = () => {
       </Container>
       <Container padding="10px 0">
         <TextTitle font="16px" align="left" top="15px">
-          Sertifikat va diplomlaringiz bo‘lsa shu yerga yuklang
+          {t("MTmenHaqimda.certificatlar")}
         </TextTitle>
         <GroupImageUpload fileList={fileList} setFileList={setFileList} />
 
@@ -178,7 +185,7 @@ const Index = () => {
 
         <div className="btnGrop">
           <Button paddingIcon="10px"><AddIcon className="icon" /></Button>
-          <Button type="submit"> Saqlash</Button>
+          <Button type="submit">{t("MTmenHaqimda.saqlash")} </Button>
         </div>
       </Container>
     </Wrapper>

@@ -11,9 +11,12 @@ import Button from "../../components/atom/button";
 import CloseIcon from '@material-ui/icons/Close';
 import {mediaTextField, mediaTextFieldSec} from "../../custom/global.media.variables"
 import Modal from 'react-awesome-modal';
-
+import { useTranslation } from 'react-i18next';
 
 export default function Index() {
+
+    const {t}  =useTranslation()
+
     const [state, setState] = useState(false);
     function openModal() {
         setState(true);
@@ -25,14 +28,14 @@ export default function Index() {
         <div>
             <Wrapper>
                 <TextTitle {...mediaTextField} {...mediaTextFieldSec} top="100px" bottom="100px">
-                    Biz bilan bog'lanish
+                  {t("connect.contact")}
                 </TextTitle>
                 <Grid container alignItems="center" spacing={1} diracti>
                     <Grid item xs={12} md={5} >
-                        <h3 className="grid1">Kontaktlarimiz</h3>
+                        <h3 className="grid1">{t("connect.Kontaktlarimiz")}</h3>
                         <p>+998 90 123 45 67</p>
                         <p>salom@gits.uz</p>
-                        <p>Toshkent sh., Yunusobot tumani, <br /> Palonchi ko‘cha, 4 uy - 194 kv.</p>
+                        <p>{t("connect.manzil")} </p>
                         <div>
                             <img className="icons" src={imgtg} alt="name" />
                             <img className="icons" src={imgfac} alt="facebook" />
@@ -45,33 +48,40 @@ export default function Index() {
                 </Grid>
                 
                 <TextTitle {...mediaTextField} {...mediaTextFieldSec} top="100px" bottom="100px">
-                    Savol jo‘natish
+                    {t("connect.savol")}
                 </TextTitle>
 
                 <Grid container spacing={1} diraction justifyContent="center">
                     <Grid item xs={12} md={4} sm={12}>
-                        <InputLabel label="Isim" width="100%" placeholder="Ismingizni kiriting" />
+                        <InputLabel label={t("connect.ism")} width="100%"
+                         placeholder={t("connect.isimPlac")} />
                     </Grid>
                     <Grid item xs={12} md={4} sm={12}>
-                        <InputLabel label="Familya" width="100%" placeholder="Familyangizni kiriting" />
+                        <InputLabel label={t("connect.familya")} width="100%"
+                         placeholder={t("connect.familyaPlac")}/>
                     </Grid>
                 </Grid>
                 <Grid container spacing={1} diraction justifyContent="center">
                     <Grid item xs={12} md={4} sm={12} >
-                        <InputLabel label="Email" width="100%" placeholder="Emailingizni yozing" />
+                        <InputLabel label={t("connect.Email")} width="100%" 
+                        placeholder={t("connect.emailPlac")} />
                     </Grid>
                     <Grid item xs={12} md={4} sm={12} >
-                        <InputLabel label="Telefon" width="100%" placeholder="Telefon raqamingizni yozing" />
+                        <InputLabel label={t("connect.telefon")} width="100%" 
+                        placeholder={t("connect.telefonPlac")} />
                     </Grid>
                 </Grid>
 
                 <Grid container spacing={1} direction justifyContent="center">
                     <Grid item xs={12} md={8} sm={12}>
-                        <TextAreaComp label="Savol" width="100%" height="170px" placeholder="Savol yoki takliflar bo'lsa yozing" />
+                        <TextAreaComp label="Savol" width="100%" height="170px" 
+                        placeholder= {t("connect.text")} />
                     </Grid>
                 </Grid>
                 <Grid container className="grid_btn" justifyContent="flex-end" xs={12} md={10}  >
-                    <Button className="btnC" type="button" onClick={openModal}>Jo'natish</Button>
+                    <Button className="btnC" type="button" onClick={openModal}>
+                    {t("connect.jonatish")}
+                    </Button>
                 </Grid>
 
                 <section>

@@ -20,7 +20,7 @@
         "sorov":"Send a question",
         "huquqiy":"Legal information",
         "foydalanish": "Terms of use",
-        "maxfiylik":"Maxfiylik siyosati va cookie siyosati"
+        "maxfiylik":"Privacy Policy and Cookie Policy"
    },
    "kengaytirlgan_Q":{
        "kengaytirilgan": "Advanced search",
@@ -41,7 +41,7 @@
         "tillarniTanlang":"Select languages",
         "jinsi":"Gender of the translator",
         "erkak":"Male",
-        "ayol":"Woman",
+        "ayol":"Female",
         "qidirish":"Search"
    },
 
@@ -75,6 +75,9 @@
     "title":"Choose a Guide for yourself",
     "fikirlar":"Comments:",
     "kuniga":"Up to:",
+    "xizmatlar":"Services (cities)",
+    "tillar":"Languages",
+    "OzimHaqimda":"About myself",
     "korish":"See",
     "davomi":"Read more"
 },
@@ -101,8 +104,8 @@
     "title":"About the platform",
     "boglanish":"Connect"
   },
-  "Biz_bilan_boglanish":{
-    "contact":"contact us",
+  "connect":{
+    "contact":"Contact us",
     "Kontaktlarimiz":"Our contacts",
     "tel":"+998 90 123 45 67",
     "email":"salom@gits.uz",
@@ -121,28 +124,30 @@
     "jonatish":"Send"
   },
   "auth_registr":{
-    "kirish":"Introduction",
-    "royhatdanOtish2":"Registration",
+    "kirish":"Sign In",
+    "royhatdanOtish2":"Sign Up",
     "ismingiz":"Your name",
-    "familya2":"Your last name",
+    "familya2":"Your surname",
+    "gid":"Gid",
+    "user":"User",
+    "yozmaT":"Written translators",
     "tarjimon":"Translator",
     "email2":"Enter the email",
     "pass":"Enter your password",
-    "repass":"Parolingizni tasdiqlang",
+    "repass":"Confirm your password",
     "submit":"Sign up"
   },
   "auth_kirish":{
-    "kirish":"Introduction",
-    "royhatdanOtish2":"Registration",
     "email2":"Enter the email",
     "pass":"Enter your password",
-    "forget":"Forgot password"
+    "forget":"Forgot password",
+    "kirish":"Sign In"
   },
   "auth_parolniTiklash":{
     "reset":"Reset password",
-    "jonatildi":"* We will send a confirmation code to your email",
+    "jonatildi":" We will send a confirmation code to your email",
     "cod":"Enter your email",
-    "send":"Send the code"
+    "send":"Confirm"
   },
   "emailni_tastiqlash":{
     "textema":"Confirm your email",
@@ -164,7 +169,8 @@
     "Gid":"Gid",
     "Tarjimon":"Translator",
     "sinxron":"Synchronous",
-    "izchil":"Izchil",
+    "izchil":"Consistent",
+    "yozma":"Written translator",
     "KerakShaharlar":"Git / The city where the translator is needed",
     "davlat":"State",
     "shaxarlar":"City",
@@ -177,7 +183,7 @@
     "chegara":"Write down the price limit",
     "jinsi":"Gender",
     "erkak":"Male",
-    "ayol":"Woman",
+    "ayol":"Female",
     "nechaKishi":"How many people",
     "nechkishiBolaslar":"How many people are you?",
     "shartnoma":"By submitting the application, you agree to the user agreement *",
@@ -189,7 +195,7 @@
     "davomi":"Read more"
   },
   "ToliqAriza":{
-    "qaytish":"Return to application list",
+    "qaytish":"return to application list",
     "tafsilotlar":"Details",
     "arizaMatni":"Application text",
     "elonBeruchi":"Announcer:",
@@ -213,15 +219,10 @@
     "text":"Increase your income by writing articles about how the trip went!",
     "Maqolayozish":"Write an article",
     "Maqolalarim":"My articles",
-    "tahrirlash":"Tahrirlash"
+    "tahrirlash":"Edit"
   },
   "maqolaYozish":{
-    "Profilni_Korish":"View profile",
-    "tahrirlash":"Edit my data",
-    "kalendar":"Calendar",
-    "blog":"Blog",
-    "reklama":"Advertising",
-    "sozlamalar":"Profile settings",
+     
     "Maqolayozish":"Write an article",
     "orqaga":"go back",
     "maqolaNomi":"Article Title",
@@ -240,23 +241,35 @@
 
 
 
-  "Gid_Profilni_ko'rish":{
-    "Profilni_Korish":"View profile",
-    "tahrirlash":"Edit my data",
+  "GidPk":{
+    "Profilni_Korish":"My profile",
+    "tahrirlash":"Edit",
     "kalendar":"Calendar",
     "blog":"Blog",
     "reklama":"Advertising",
     "sozlamalar":"Profile settings",
-    "OzimHaqimda":"O‘zim haqimda",
+
+
+    "OzimHaqimda":"About me",
     "reyting":"Reytingi:",
     "fikirlar":"Comments:",
     "kuniga":"in a day",
     "soatiga":"Hourly:",
+    "qatnashgan":"The events I attended",
+    "yil":"Year",
     "ozimHaqimdaVideo":"Video about myself",
     "malumotVaTajriba":"Education and Work Experience",
+    "institut":"Graduated from institutes :",
+
+
+    "mutahasis":"Specialty :",
+    "ishtaj":"Work experience :",
+    "ishJoy":"Work place :",
+    "lavozim":"My position :",
+    "ishvaqt":"My working hours :",
+
     "Malumotim":"My information:",
     "toifam":"Category:",
-    "institut":"Graduated from:",
     "qoshimcha":"Additional courses:",
     "tiltajriba":"Work Experience:",
     "bandkunlar":"Guide / Interpreter's busy days",
@@ -276,7 +289,6 @@
     "koproqYuklash":"More downloads"
   },
   "MTmenHaqimda":{
-
     "Profilni_Korish":"View profile",
     "tahrirlash":"Edit my data",
     "kalendar":"Calendar",
@@ -299,9 +311,9 @@
     "otasiningIsmi":"Your father's name",
     "otasiIplace":"Write your father's name",
     "tugilganSana":"Your date of birth",
-    "jins":"Jinsingiz",
+    "jins":"Gender",
     "erkak":"Male",
-    "ayol":"Woman",
+    "ayol":"Female",
     "mamlakat":"Country",
     "mamlakatPlace":"Choose your country",
     "Shaharlar":"City",
@@ -309,7 +321,7 @@
     "OzingizH":"About yourself",
     "OzingizHplace":"Write about yourself",
     "certificatlar":"Upload your certificates and diplomas here",
-    "saqlash":"Saqlash"
+    "saqlash":"Save"
   },
   "MT_Kontaktlar":{
 

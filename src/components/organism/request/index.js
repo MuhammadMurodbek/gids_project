@@ -8,18 +8,22 @@ import gps from '../../../assets/img/request/gps.svg';
 // import ptich from '../../../assets/img/request/rozi.svg';
 import moment from "moment"
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 export default function Index(props) {
+
+    const {t} = useTranslation()
+
     const { id, manzil, name, gpss, dan, gacha, sana } = props;
     const token = JSON.parse(localStorage.getItem("user_token"))
     return (
         <Wrapper>
             <div>
-                <Link to={ token?.role === 'simple_user' ? 'gid-personal' : `/application/${id}`} className="Link">
+                <Link to={ token?.role === 'simple_user' ? 'gid-personal' : `/fullrequest/${id}`} className="Link">
                     <div className="responsText">
                         <div className="title-respons11">
                             <div>
-                                <b className="id">Ariza raqami:</b>
+                                <b className="id">Id:</b>
                                 <b>{id}</b>
                             </div>
 

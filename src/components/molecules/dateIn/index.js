@@ -4,14 +4,17 @@ import { Grid } from '@material-ui/core'
 import Date from '../../atom/calendar'
 import Select from '../../atom/select'
 import SearchIcon from '@material-ui/icons/Search';
+import { useTranslation } from 'react-i18next'
 
-export default function index() {
+export default function Index() {
+
+    const {t} =useTranslation()
 
     return (
         <Wrapper>
             <Grid container justifyContent="center" spacing={1} direction="row" >
                 <div className="select_div">
-                    <Select width="100%" placeholder="Shaharni kiriting" />
+                    <Select width="100%" placeholder= {t("arizalar_royhati.shaxarPlac")} />
                 </div>
                 <div className="select_date"><Date/></div>
                 <div className="select_date"><Date/></div>

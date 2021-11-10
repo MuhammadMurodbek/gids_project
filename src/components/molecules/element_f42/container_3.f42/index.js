@@ -5,9 +5,10 @@ import Text from "../../../atom/element_f42/text.container.f42"
 import { FlexContainer } from "../../../../styles/flex.container"
 import cheked from '../../../../assets/img/boglanish/cheked.svg'
 import { Grid } from '@material-ui/core'
+import { useTranslation } from 'react-i18next'
 
 const Index = () => {
-
+    const {t} = useTranslation()
     const getRole = JSON.parse(localStorage.getItem("user_token"))
 
     return (

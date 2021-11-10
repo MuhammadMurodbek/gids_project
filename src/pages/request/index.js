@@ -10,13 +10,16 @@ import InDate from '../../components/molecules/dateIn'
 import Button from "../../components/atom/button";
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import Requests from '../../components/organism/request/';
-
+import {useTranslation} from 'react-i18next'
 
 export default function Index() {
+
+    const {t} = useTranslation()
+
     return (
         <Wrapper>
             <TextTitle top="100px" bottom="50px">
-                Arizalar ro’yhati
+               {t("arizalar_royhati.title")}
             </TextTitle>
             <InDate />
 
@@ -77,7 +80,7 @@ export default function Index() {
 
 
             <div className="divbtns">
-                <Button type="outlined" className="davomi">Davomi <ArrowForwardIcon className="arrovicon" /></Button>
+                <Button type="outlined" className="davomi">{t("arizalar_royhati.davomi")} <ArrowForwardIcon className="arrovicon" /></Button>
             </div>
 
         </Wrapper>

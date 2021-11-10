@@ -19,8 +19,15 @@ import { gid_lang_obj, currency } from "../../custom/constants"
 import { get_cities } from "../../custom/function"
 import { defaultState } from "./constant"
 import { post_gid_app_action } from "../../redux/actions"
-import useApi from "../../hooks/response"
+import useApi from "../../hooks/response";
+import { useTranslation } from 'react-i18next';
+
+
+
 const Index = () => {
+
+    const {t} = useTranslation()
+
     const [ btnLoader, setBtnLoader ] = useState( false )
     const [ state, setState ] = useState( false );
     const [ collect, setCollect ] = useState( defaultState )
@@ -61,14 +68,14 @@ const Index = () => {
     React.useEffect( () => { if ( region ) { setCollect( { ...collect, city: region } ) } }, [ region ] )
     return (
         <Wrapper onSubmit={ onSubmit }>
-            <TextTitle { ...mediaTextField } { ...mediaTextFieldSec } top="60px" bottom="20px">Git va tarjimonlar uchun ariza qoldirish</TextTitle>
+            <TextTitle { ...mediaTextField } { ...mediaTextFieldSec } top="60px" bottom="20px"> {t("arizaqoldirish.title")} </TextTitle>
             <Container width="90%" padding="0" margin="40px auto" boxShadow={ shadow }>
-                <Title>Vazifa tavsifi</Title>
+                <Title> {t("arizaqoldirish.vazifa")} </Title>
                 <Container { ...mediaContainer } padding="30px">
                     <Container { ...mediaContainerWidth } width="85%" >
                         <Grid container spacing={ 1 } alignItems="center" className="wrap-grid">
                             <Grid item xs={ 12 } sm={ 12 } md={ 5 }>
-                                <div className="title_inner">Kim kerak</div>
+                                <div className="title_inner"> {t("arizaqoldirish.kimKerak")} </div>
                             </Grid>
                             <Grid item xs={ 12 } sm={ 12 } md={ 7 }>
                                 <RadioGroup
@@ -80,18 +87,18 @@ const Index = () => {
                         </Grid>
                         <Grid container spacing={ 1 } alignItems="center" className="wrap-grid">
                             <Grid item xs={ 12 } sm={ 12 } md={ 5 }>
-                                <div className="title_inner">Gid/Tarjimon kerak bo'lgan shahar</div>
+                                <div className="title_inner"> {t("arizaqoldirish.KerakShaharlar")} </div>
                             </Grid>
                             <Grid item xs={ 12 } sm={ 12 } md={ 7 }>
                                 <Grid container spacing={ 2 }>
-                                    <Grid item xs={ 12 } sm={ 6 }><Select options={ countries } setState={ setCountry } state={ country } placeholder="Davlat" errorText={ error ? validatorState( country, 'object', 0, 'Davlat (Shahar) kiritilmagan' ) : null } /></Grid>
-                                    <Grid item xs={ 12 } sm={ 6 }><Select options={ region } setState={ setRegion } state={ region } placeholder="Shahar" /></Grid>
+                                    <Grid item xs={ 12 } sm={ 6 }><Select options={ countries } setState={ setCountry } state={ country } placeholder={t("arizaqoldirish.davlat")} errorText={ error ? validatorState( country, 'object', 0, 'Davlat (Shahar) kiritilmagan' ) : null } /></Grid>
+                                    <Grid item xs={ 12 } sm={ 6 }><Select options={ region } setState={ setRegion } state={ region } placeholder={t("arizaqoldirish.shaxarlar")} /></Grid>
                                 </Grid>
                             </Grid>
                         </Grid>
                         <Grid container spacing={ 1 } alignItems="center" className="wrap-grid">
                             <Grid item xs={ 12 } sm={ 12 } md={ 5 }>
-                                <div className="title_inner">Gid/Tarjimon kerak bo'lgan sana</div>
+                                <div className="title_inner">{t("arizaqoldirish.KerakSana")}</div>
                             </Grid>
                             <Grid item xs={ 12 } sm={ 12 } md={ 7 }>
                                 <Grid container spacing={ 2 }>
@@ -102,39 +109,41 @@ const Index = () => {
                         </Grid>
                         <Grid container spacing={ 1 } alignItems="center" className="wrap-grid">
                             <Grid item xs={ 12 } sm={ 12 } md={ 5 }>
-                                <div className="title_inner">Gid/Tarjimon bilishi kerak bo'lgan tillar</div>
+                                <div className="title_inner"> {t("arizaqoldirish.Bilishikerak")} </div>
                             </Grid>
                             <Grid item xs={ 12 } sm={ 12 } md={ 7 }>
-                                <Select setCollect={ setCollect } collect={ collect } field="languages" placeholder="Tilni tanlang" isMulti options={ gid_lang_obj } errorText={ error ? validatorState( collect?.languages, 'array', 0, 'Tillar kiritilmagan' ) : null } />
+                                <Select setCollect={ setCollect } collect={ collect } field="languages" 
+                                placeholder={t("arizaqoldirish.BilishikeralPlac")} isMulti options={ gid_lang_obj } errorText={ error ? validatorState( collect?.languages, 'array', 0, 'Tillar kiritilmagan' ) : null } />
                             </Grid>
                         </Grid>
                         <Grid container spacing={ 1 } alignItems="flex-start" className="wrap-grid">
                             <Grid item xs={ 12 } sm={ 12 } md={ 5 }>
-                                <div className="title_inner">Nima uchun kerak</div>
+                                <div className="title_inner"> {t("arizaqoldirish.nimagaKerak")} </div>
                             </Grid>
                             <Grid item xs={ 12 } sm={ 12 } md={ 7 }>
-                                <TextArea onChange={ ( e ) => setCollect( { ...collect, why_need: e.target.value } ) } cols="20" rows="5" wrap="hard" maxlength="10" placeholder="Misol uchun, shaharni ko’rsatish uchun git kerak...." width="100%" errorText={ error ? validatorState( collect?.why_need, 'string', 0, 'Sabab kiritilmagan' ) : null } />
+                                <TextArea onChange={ ( e ) => setCollect( { ...collect, why_need: e.target.value } ) } cols="20" rows="5" wrap="hard" maxlength="10" 
+                                placeholder={t("arizaqoldirish.misol")}  width="100%" errorText={ error ? validatorState( collect?.why_need, 'string', 0, 'Sabab kiritilmagan' ) : null } />
                             </Grid>
                         </Grid>
                         <Grid container spacing={ 1 } alignItems="center" className="wrap-grid">
                             <Grid item xs={ 12 } sm={ 12 } md={ 5 }>
-                                <div className="title_inner">Taklif etilgan narx</div>
+                                <div className="title_inner"> {t("arizaqoldirish.narhi")} </div>
                             </Grid>
                             <Grid item xs={ 12 } sm={ 12 } md={ 7 }>
                                 <Grid container spacing={ 1 } alignItems="center">
-                                    <Grid item xs={ 12 } sm={ 8 }><Input value={ collect?.cost || '' } onChange={ ( e ) => setCollect( { ...collect, cost: parseInt( e.target.value ) } ) } width="100%" type="number" placeholder="Son kiriting..." errorText={ error ? validatorState( collect?.cost, 'max', 0, 'Narx kiritilmagan' ) : null } /></Grid>
+                                    <Grid item xs={ 12 } sm={ 8 }><Input value={ collect?.cost || '' } onChange={ ( e ) => setCollect( { ...collect, cost: parseInt( e.target.value ) } ) } width="100%" type="number" placeholder={t("arizaqoldirish.chegara")} errorText={ error ? validatorState( collect?.cost, 'max', 0, 'Narx kiritilmagan' ) : null } /></Grid>
                                     <Grid item xs={ 12 } sm={ 4 } style={ { position: 'relative', top: 3 } }><Select setCollect={ setCollect } collect={ collect } field="currency" options={ currency } placeholder="Valyuta" errorText={ error ? validatorState( collect?.currency, 'object', 0, 'Valyuta kiritilmagan' ) : null } /></Grid>
                                 </Grid>
                             </Grid>
                         </Grid>
                         <Grid container spacing={ 1 } alignItems="center" className="wrap-grid">
                             <Grid item xs={ 12 } sm={ 12 } md={ 5 }>
-                                <div className="title_inner">Jinsi</div>
+                                <div className="title_inner"> {t("arizaqoldirish.jinsi")} </div>
                             </Grid>
                             <Grid item xs={ 12 } sm={ 12 } md={ 7 }>
                                 <DoubleCheck
-                                    name1="Erkak"
-                                    name2="Ayol"
+                                    name1={t("arizaqoldirish.erkak")}
+                                    name2={t("arizaqoldirish.ayol")}
                                     width="180px"
                                     alignItems="center"
                                     justifyContent="space-between"
@@ -149,22 +158,22 @@ const Index = () => {
                         </Grid>
                         <Grid container spacing={ 1 } alignItems="center" className="wrap-grid">
                             <Grid item xs={ 12 } sm={ 12 } md={ 5 }>
-                                <div className="title_inner">Nechchi kishi bo'lasizlar</div>
+                                <div className="title_inner"> {t("arizaqoldirish.nechaKishi")} </div>
                             </Grid>
                             <Grid item xs={ 12 } sm={ 12 } md={ 7 }>
-                                <Input value={ collect?.people_count || '' } onChange={ ( e ) => setCollect( { ...collect, people_count: parseInt( e.target.value ) } ) } width="100%" type="number" placeholder="Son kiriting..." errorText={ error ? validatorState( collect?.people_count, 'max', 0, 'People count kiritilmagan' ) : null } />
+                                <Input value={ collect?.people_count || '' } onChange={ ( e ) => setCollect( { ...collect, people_count: parseInt( e.target.value ) } ) } width="100%" type="number" placeholder={t("arizaqoldirish.nechkishiBolaslar")} errorText={ error ? validatorState( collect?.people_count, 'max', 0, 'People count kiritilmagan' ) : null } />
                             </Grid>
                         </Grid>
                         <Grid container spacing={ 1 } alignItems="center" className="wrap-grid">
                             <Grid item xs={ 12 } sm={ 12 } md={ 5 }>
                             </Grid>
                             <Grid item xs={ 12 } sm={ 12 } md={ 7 }>
-                                <Checkbox setState={ setCollect } state={ collect } name="Arizani yoborib, siz foydalanuvchi shartnomasiga rozilik bildirasiz*" />
+                                <Checkbox setState={ setCollect } state={ collect } name={t("arizaqoldirish.shartnoma")} />
                             </Grid>
                         </Grid>
                     </Container>
                     <Container width="100%" textAlign="center" >
-                        <Button loader={responseHook?.loading} { ...mediaBtn }>&nbsp;Arizani yuborish</Button>
+                        <Button loader={responseHook?.loading} { ...mediaBtn }>&nbsp; {t("arizaqoldirish.Ayuborish")} </Button>
                     </Container>
                 </Container>
             </Container>

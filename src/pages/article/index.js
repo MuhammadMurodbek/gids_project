@@ -9,20 +9,23 @@ import ad from '../../assets/img/citiyes/ad.png'
 import xitoy from '../../assets/img/citiyes/xitoy.png';
 import { mediaTextField, mediaTextFieldSec, mediaBtn } from "../../custom/global.media.variables"
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
-export default function index() {
+
+export default function Index() {
+    const {t} = useTranslation()    
     return (
         <Wrapper>
             <AboutTravel>
-                <TextTitle {...mediaTextField} {...mediaTextFieldSec}>Safar qalay o‘tdi?</TextTitle>
-                <p className="aboutT__text">Safar qanday o’tgani haqida maqola yozib boshqalarga foyda ulashing ham daromadingizni kengaytiring!</p>
+                <TextTitle {...mediaTextField} {...mediaTextFieldSec}>{t("safarHaqda.title")}</TextTitle>
+                <p className="aboutT__text">{t("safarHaqda.text")}</p>
                 <TextTitle width="50%" left="auto" right="auto" bottom="40px">
                     <Link to="/write-article">
-                        <Button>Maqola yozish</Button>
+                        <Button>{t("safarHaqda.Maqolayozish")}</Button>
                     </Link>
                 </TextTitle>
             </AboutTravel>
-            <TextTitle {...mediaTextField} {...mediaTextFieldSec} >Maqolalarim</TextTitle>
+            <TextTitle {...mediaTextField} {...mediaTextFieldSec} >{t("safarHaqda.Maqolalarim")}</TextTitle>
             <Grid justifyContent="center" className="grid_container" container spacing={1}>
                 <Grid item xs={12} md={8}>
 
@@ -34,7 +37,7 @@ export default function index() {
                         lines="10"
                         text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ac tristique volutpat commodo, sed risus, vitae. Habitant donec pellentesque et facilisis urna. Venenatis, mauris elementum netus morbi. Elit ultricies nisi, maecenas turpis pulvinar ultrices. Eros, placerat lacinia diam lorem ultrices sem ullamcorper blandit lorem. Urna sodales dictumst amet, ornare et, morbi quis ut arcu. Ac tortor senectus consequat vulputate eleifend magna. Aliquam quis faucibus in tincidunt lacus, fusce. Sagittis accumsan, amet risus natoque eu quis dictum. Egestas nisl quis maecenas euismod. Ultrices eget feugiat c. Donec metus, senectus a convallis quis scelerisque. Risus magna tellus ante sollicitudin vehicula quis commodo scelerisque ac. Consequat ullamcorper ullamcorper volutpat orci urna potenti velit. Sit dictum scelerisque commodo, in ut. Feugiat nunc cursus a gravida pulvinar aliquet varius vitae. Quam sed cursus quisque mauris vestibulum sem pulvinar urna. Habitasse ante enim rhoncus, facilisi arcu sagittis, sed. Curabitur nibh imperdiet enim est dui..."
 
-                        btnText="Taxrirlash "
+                        btnText={t("safarHaqda.tahrirlash")}
                     />
                     <CitiLeftPart
 
@@ -45,7 +48,7 @@ export default function index() {
                         lines="10"
                         text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ac tristique volutpat commodo, sed risus, vitae. Habitant donec pellentesque et facilisis urna. Venenatis, mauris elementum netus morbi. Elit ultricies nisi, maecenas turpis pulvinar ultrices. Eros, placerat lacinia diam lorem ultrices sem ullamcorper blandit lorem. Urna sodales dictumst amet, ornare et, morbi quis ut arcu. Ac tortor senectus consequat vulputate eleifend magna. Aliquam quis faucibus in tincidunt lacus, fusce. Sagittis accumsan, amet risus natoque eu quis dictum. Egestas nisl quis maecenas euismod. Ultrices eget feugiat c. Donec metus, senectus a convallis quis scelerisque. Risus magna tellus ante sollicitudin vehicula quis commodo scelerisque ac. Consequat ullamcorper ullamcorper volutpat orci urna potenti velit. Sit dictum scelerisque commodo, in ut. Feugiat nunc cursus a gravida pulvinar aliquet varius vitae. Quam sed cursus quisque mauris vestibulum sem pulvinar urna. Habitasse ante enim rhoncus, facilisi arcu sagittis, sed. Curabitur nibh imperdiet enim est dui..."
 
-                        btnText="Taxrirlash "
+                        btnText={t("safarHaqda.tahrirlash")}
                     />
                     <CitiLeftPart
                         title="Xitoyga sayoxat"
@@ -55,7 +58,7 @@ export default function index() {
                         lines="10"
                         text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ac tristique volutpat commodo, sed risus, vitae. Habitant donec pellentesque et facilisis urna. Venenatis, mauris elementum netus morbi. Elit ultricies nisi, maecenas turpis pulvinar ultrices. Eros, placerat lacinia diam lorem ultrices sem ullamcorper blandit lorem. Urna sodales dictumst amet, ornare et, morbi quis ut arcu. Ac tortor senectus consequat vulputate eleifend magna. Aliquam quis faucibus in tincidunt lacus, fusce. Sagittis accumsan, amet risus natoque eu quis dictum. Egestas nisl quis maecenas euismod. Ultrices eget feugiat c. Donec metus, senectus a convallis quis scelerisque. Risus magna tellus ante sollicitudin vehicula quis commodo scelerisque ac. Consequat ullamcorper ullamcorper volutpat orci urna potenti velit. Sit dictum scelerisque commodo, in ut. Feugiat nunc cursus a gravida pulvinar aliquet varius vitae. Quam sed cursus quisque mauris vestibulum sem pulvinar urna. Habitasse ante enim rhoncus, facilisi arcu sagittis, sed. Curabitur nibh imperdiet enim est dui..."
 
-                        btnText="Taxrirlash "
+                        btnText={t("safarHaqda.tahrirlash")}
                     />
                     <CitiLeftPart
                         title="Xitoyga sayoxat"
@@ -65,7 +68,7 @@ export default function index() {
                         lines="10"
                         text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ac tristique volutpat commodo, sed risus, vitae. Habitant donec pellentesque et facilisis urna. Venenatis, mauris elementum netus morbi. Elit ultricies nisi, maecenas turpis pulvinar ultrices. Eros, placerat lacinia diam lorem ultrices sem ullamcorper blandit lorem. Urna sodales dictumst amet, ornare et, morbi quis ut arcu. Ac tortor senectus consequat vulputate eleifend magna. Aliquam quis faucibus in tincidunt lacus, fusce. Sagittis accumsan, amet risus natoque eu quis dictum. Egestas nisl quis maecenas euismod. Ultrices eget feugiat c. Donec metus, senectus a convallis quis scelerisque. Risus magna tellus ante sollicitudin vehicula quis commodo scelerisque ac. Consequat ullamcorper ullamcorper volutpat orci urna potenti velit. Sit dictum scelerisque commodo, in ut. Feugiat nunc cursus a gravida pulvinar aliquet varius vitae. Quam sed cursus quisque mauris vestibulum sem pulvinar urna. Habitasse ante enim rhoncus, facilisi arcu sagittis, sed. Curabitur nibh imperdiet enim est dui..."
 
-                        btnText="Taxrirlash "
+                        btnText={t("safarHaqda.tahrirlash")}
                     />
 
 

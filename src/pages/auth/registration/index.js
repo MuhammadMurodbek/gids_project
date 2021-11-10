@@ -10,6 +10,11 @@ import Authorization from "./auth.component";
 import Registration from "./reg.component";
 import {Wrapper, Container} from "./index.style"
 import Loading from "../../../components/atom/loading.spinner.line"
+import { useTranslation } from 'react-i18next'
+
+
+
+
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.background.paper,
@@ -26,9 +31,13 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function TabPanel(props) {
+
+ 
+
   const { children, value, index, ...other } = props;
 
   return (
+
     <div
       role="tabpanel"
       hidden={value !== index}
@@ -65,7 +74,7 @@ export default function BasicTabs() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
+  const {t} = useTranslation()
   return (
       <Wrapper>
           <Container>
@@ -87,7 +96,7 @@ export default function BasicTabs() {
                     <span
                         style={value === 0 ? { color: mainGreen } : { color: "#666" }}
                     >
-                        Kirish
+                         {t("auth_registr.kirish")}
                     </span>
                     }
                     style={{ width: "50%" }}
@@ -98,7 +107,7 @@ export default function BasicTabs() {
                     <span
                         style={value === 1 ? { color: mainGreen } : { color: "#666" }}
                     >
-                        Registratsiya
+                        {t("auth_registr.royhatdanOtish2")}
                     </span>
                     }
                     style={{ width: "50%" }}

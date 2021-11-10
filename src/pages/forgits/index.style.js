@@ -3,6 +3,11 @@ import {mainGreen} from "../../styles/global/colors"
 export const Wrapper = styled.div`
         width:100%auto;
         padding: 10px;  
+
+        .title-S{
+            font-weight: 700;
+            font-size: 20px;
+        }
    `
 export const Title = styled.p`
     font-weight: 600;

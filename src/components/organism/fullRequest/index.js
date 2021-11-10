@@ -17,8 +17,12 @@ import til from '../../../assets/img/request/til.svg';
 import CloseIcon from '@material-ui/icons/Close';
 import Modal from 'react-awesome-modal';
 import Textarea from '../../atom/textAreaCom';
+import { useTranslation } from 'react-i18next';
+
 
 export default function Index(props) {
+
+    const {t} = useTranslation();
 
     const [state, setState] = useState(false);
     function openModal() {
@@ -38,46 +42,46 @@ export default function Index(props) {
                     <b className="idb">#071364754</b>
                 </Grid>
                 <Grid className="gridTitle2" item xs={12} md={6}>
-                    <Link to="/request" className="comback"> <ArrowBackIcon className="arrole" />  arizlar ro’yhatiga qaytish</Link>
+                    <Link to="/request" className="comback"> <ArrowBackIcon className="arrole" /> {t("ToliqAriza.qaytish")} </Link>
                 </Grid>
             </Grid>
 
             <Grid container spacing={1} diraction="row" justifyContent="center" className="grid_container">
                 <Grid item xs={12} md={4} className="Fgrid1">
-                    <div className="div1title">Tafsilotlar</div>
+                    <div className="div1title">{t("ToliqAriza.tafsilotlar")}</div>
                     <div className="tafsilot-text">
                         <b><ImageContainer src={user} /></b>
-                        <b>E’lon beruvchi: </b>
+                        <b> {t("ToliqAriza.elonBeruchi")}</b>
                         <p>Abdusattor</p>
                     </div>
                     <div className="tafsilot-text">
                         <b> <ImageContainer src={gps} /></b>
-                        <b>Shahar: </b>
+                        <b>{t("ToliqAriza.shahar")} </b>
                         <p>Angliya, London </p>
                     </div>
                     <div className="tafsilot-text">
                         <b> <ImageContainer src={cal} /></b>
-                        <b>Sana: </b>
+                        <b>{t("ToliqAriza.sana")} </b>
                         <p>23.01.2021 || 30.01.2021</p>
                     </div>
                     <div className="tafsilot-text">
                         <b> <ImageContainer src={kim} /></b>
-                        <b>Narx (gacha): </b>
-                        <p>50$ kuniga</p>
+                        <b>{t("ToliqAriza.gacha")} </b>
+                        <p>50$</p>
                     </div>
                     <div className="tafsilot-text">
                         <b> <ImageContainer src={narx} /></b>
-                        <b>Kim kerak: </b>
+                        <b>{t("ToliqAriza.kimKerak")} </b>
                         <p>Tarjimon</p>
                     </div>
                     <div className="tafsilot-text">
                         <b> <ImageContainer src={odamlar} /></b>
-                        <b>Tillar: </b>
+                        <b>{t("ToliqAriza.tillar")} </b>
                         <p>Rus tili, Ingiliz tili</p>
                     </div>
                     <div className="tafsilot-text">
                         <b> <ImageContainer src={til} /></b>
-                        <b>Odamlar soni: </b>
+                        <b>{t("ToliqAriza.odamlarSone")} </b>
                         <p>4 kishi</p>
                     </div>
                     <Button onClick={openModal} type="button" className="btnRequest">
@@ -87,7 +91,7 @@ export default function Index(props) {
 
                 <Grid className="grid6text  Fgrid2" item xs={12} md={6}>
                     <div>
-                        <div className="div1title">Ariza matni</div>
+                        <div className="div1title">{t("ToliqAriza.arizaMatni")}</div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In bibendum sodales tristique dolor turpis. Non pretium ante gravida suscipit faucibus lectus aliquet nullam. Justo sapien quam tincidunt lectus laoreet lacus eu sit. Aliquam nulla pellentesque arcu est ullamcorper pretium, elit.</p>
 
                         <p>Nunc adipiscing vel praesent urna. Vulputate amet phasellus lobortis at cras pellentesque consectetur purus. Lectus sem aliquet hendrerit cras adipiscing sit nisl diam. Volutpat pretium semper lacus, amet aliquam orci. Quis semper posuere nulla sit eu feugiat eget. Donec dignissim sed et mi diam eu. Tincidunt id convallis euismod enim mauris, facilisis faucibus pharetra.</p>
@@ -111,17 +115,17 @@ export default function Index(props) {
                         <div className="closebtn">
                             <CloseIcon className="pointx" onClick={closeModal} />
                         </div>
-                        <h1 className="modaltitle">Xabaringizni yozing</h1>
+                        <h1 className="modaltitle">{t("ToliqAriza.yozing")}</h1>
                         <div className="modaldiv">
                             <Textarea width="100%" placeholder="Text..." height="200px" />
                         </div>
 
                         <div className="btgroup-modal">
                             <Button  type="outlined" className="btnRequest" onClick={closeModal}>
-                                Yopish
+                                {t("ToliqAriza.yopish")}
                             </Button>
                             <Button type="button" className="btnRequest">
-                                Yuborish
+                                {t("ToliqAriza.yuborish")}
                             </Button>
                         </div>
                     </div>
