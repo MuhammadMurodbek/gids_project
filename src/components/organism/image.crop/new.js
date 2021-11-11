@@ -1,7 +1,7 @@
 import ImgCrop from 'antd-img-crop';
 import { Upload } from 'antd';
 import React,{useState} from "react";
-import {DeleteOutlined, PlusCircleOutlined} from "@ant-design/icons"
+import {PlusCircleOutlined} from "@ant-design/icons"
 import "./style.css"
 import noUser from "../../../assets/img/gid-personal/no_user.png"
 const Demo = ({setState, state}) => {
@@ -36,9 +36,9 @@ const Demo = ({setState, state}) => {
                     </div>
                 </Upload>
             </ImgCrop>
-            <div className="del_icon icb">
-                <DeleteOutlined onClick={handleDelete} style={{ fontSize: '22px' }}/>
-            </div>
+            {/* <div className="del_icon icb"> */}
+                {/* <DeleteOutlined onClick={handleDelete} style={{ fontSize: '22px' }}/> */}
+            {/* </div> */}
         </div>
       </div>
     )

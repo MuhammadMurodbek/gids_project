@@ -10,7 +10,7 @@ const Index = (props) => {
     const [time, setTime] = useState(null)
     const onChange = useCallback ((date, dateString) => {
         setTime(date)
-        const dateTime = moment( new Date (date)).format('YYYY-DD-MM')
+        const dateTime = moment( new Date (date)).format('YYYY-MM-DD')
         if(setState){setState(prev=>{return {...prev, [field]:dateTime}})}
     },[state, time])
   return (
