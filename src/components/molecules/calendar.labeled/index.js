@@ -14,6 +14,7 @@ const Index = (props) => {
     placeholderValue,
     setState, state,
     field,
+    errorText
   } = props;
   return (
     <Wrapper width={width}>
@@ -27,6 +28,7 @@ const Index = (props) => {
         setState={setState}
         state={state}
         field={field}
+        errorText={errorText}
       />
     </Wrapper>
   );

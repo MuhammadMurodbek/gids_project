@@ -58,21 +58,22 @@ const Index = () => {
       city:clone?.city?.label || clone?.city_api,
     };
     const isValid = await userSchema.isValid( validate_obj )
-    // let check_img = clone.hasOwnProperty("imageFile");
-    // const formData = new FormData();
-    // if (check_img) formData.append("image", clone?.imageFile);
-    // formData.append("first_name", clone?.first_name);
-    // formData.append("last_name", clone?.last_name);
-    // formData.append("middle_name", clone?.middle_name);
-    // formData.append("birthday", clone?.birthday);
-    // formData.append("gender", clone?.gender);
-    // formData.append("country", clone?.country?.label || clone?.country_api);
-    // formData.append("city", clone?.city?.label || clone?.city_api);
-    // formData.append("bio", clone?.bio);
-    // setResponseHook(post_bio_data_action(formData));
+    if(!isValid) {setError(true)}
+    else{
+      let check_img = clone.hasOwnProperty("imageFile");
+      const formData = new FormData();
+      if (check_img) formData.append("image", clone?.imageFile);
+      formData.append("first_name", clone?.first_name);
+      formData.append("last_name", clone?.last_name);
+      formData.append("middle_name", clone?.middle_name);
+      formData.append("birthday", clone?.birthday);
+      formData.append("gender", clone?.gender);
+      formData.append("country", clone?.country?.label || clone?.country_api);
+      formData.append("city", clone?.city?.label || clone?.city_api);
+      formData.append("bio", clone?.bio);
+      setResponseHook(post_bio_data_action(formData));
+    }
   };
-  console.log(apiValue?.success?.data);
-  console.log(state);
   return (
     <Wrapper onSubmit={handleSubmit}>
       {apiValue?.success === "" ? (
@@ -94,6 +95,7 @@ const Index = () => {
                     width="100%"
                     label="Familiya"
                     placeholder="Familiyangizni yozing..."
+                    errorText={error ? validatorState(state?.last_name, 'min', 3, 'Familiya kiritilmagan (kamida 3 ta)'):null}
                   />
                 </Grid>
                 <Grid item xs={12} md={4}>
@@ -105,6 +107,7 @@ const Index = () => {
                     width="100%"
                     label="Ism"
                     placeholder="Ismingizni yozing..."
+                    errorText={error ? validatorState(state?.first_name, 'min', 3, 'Ism kiritilmagan (kamida 3 ta)'):null}
                   />
                 </Grid>
                 <Grid item xs={12} md={4}>
@@ -116,6 +119,7 @@ const Index = () => {
                     width="100%"
                     label="Otangizni ismi"
                     placeholder="Otangizni ismini yozing..."
+                    errorText={error ? validatorState(state?.middle_name, 'min', 3, 'Kamida 3 ta belgidan foydalaning'):null}
                   />
                 </Grid>
               </Grid>
@@ -130,6 +134,7 @@ const Index = () => {
                     setState={setState}
                     state={state}
                     field="birthday"
+                    errorText={error ? validatorState(state?.birthday, 'min', 3, 'Sana kiritilmagan'):null}
                   />
                 </Grid>
                 <Grid item xs={12} md={4}>
@@ -173,6 +178,7 @@ const Index = () => {
                     label="Shahar"
                     pcolor={apiValue?.success !== "" ? true : false}
                     placeholder={apiValue?.success?.data?.city}
+                    errorText={error ? validatorState(state?.country, 'object', 0, 'Davlat kiritilmagan'):null}
                   />
                 </Grid>
                 <Grid item xs={12} md={4}></Grid>
