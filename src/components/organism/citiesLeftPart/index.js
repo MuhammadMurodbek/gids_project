@@ -15,7 +15,7 @@ export default function index(props) {
         <Wrapper>
             <Grid className="msa" container spacing={1}>
                 <CitiesTitle title={title} kalendar={kalendar} hteg={hteg} />
-                <Grid item xs={12}md={12}>
+                <Grid item xs={12} md={12}>
                     <ImgContainer width="100%" src={url} />
                 </Grid>
                 <Grid className="text-xitoy__more" item xs={12} md={12}>

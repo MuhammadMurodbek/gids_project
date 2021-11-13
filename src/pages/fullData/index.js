@@ -12,7 +12,7 @@ import CitiLeftPart from "../../components/organism/citiesLeftPart";
 export default function Index() {
   const getRole = JSON.parse(localStorage.getItem("user_token"));
   const { role } = getRole;
-
+ 
   return (
     <div>
       <Wrapper>

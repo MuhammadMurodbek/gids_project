@@ -22,10 +22,10 @@ const Index = () => {
     return (
         <Wrapper>
 
-             <GidIndex/>  
+            {getRole?.role === 'gid' ? <GidIndex/> : null}
 
 
-            {
+             {
                 getRole?.role === 'writer'
                     ?
                     <div>
@@ -54,7 +54,7 @@ const Index = () => {
 
 
             {
-                getRole?.role === 'gid'?
+                getRole?.role === 'Translator'?
                 null
                 :
                 <Translator />

@@ -28,8 +28,6 @@ const GidIndex = () => {
                                     <Grid item xs={12} md={6}>
                                     <SelectLabeled marginLabel=" 0" sizeLabel="15px" label="Shahar" />
                                 </Grid>
-
-
                             </Grid>
                         </Grid>
                         <Grid item xs={2} sm={2} md={1}>

@@ -10,9 +10,11 @@ import true400 from '../../../assets/img/advertasing/truebg.svg';
 import fols from '../../../assets/img/advertasing/fols.svg';
 import ckashalok from '../../../assets/img/advertasing/kashlok.svg';
 import { Link } from 'react-router-dom';
+import {useTranslation} from 'react-i18next';
 
 export default function Index() {
 
+    const {t} = useTranslation()
     const [class1, setClass1] = useState(false)
 
     function tanlash() {
@@ -26,7 +28,7 @@ export default function Index() {
         <Wrapper01>
             <Wrapper>
                 <TextTitle className="text-title" bottom="70px" top="70px">
-                    Xozirgi tarif
+                    {t("reklama.Hozirgi")}
                 </TextTitle>
                 <Grid container spacing={1} justifyContent="center" className="services history">
 
@@ -50,7 +52,7 @@ export default function Index() {
 
 
                 <TextTitle className="text-title text-title11" bottom="70px" top="70px">
-                    Xizmatlarni tanlang
+                    {t("reklama.hizmatlarni")}
                 </TextTitle>
 
                 <Grid container spacing={1} justifyContent="center" onClick={tanlash}
