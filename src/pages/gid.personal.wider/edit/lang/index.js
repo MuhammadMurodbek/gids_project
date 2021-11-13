@@ -9,11 +9,13 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import AddIcon from '@material-ui/icons/Add'
 import { Container } from '../../../../styles/container/index.style'
 import SelectLabeled from "../../../../components/molecules/select.labeled"
-
+import { useTranslation } from 'react-i18next'
 
 // import SelectLabeled from "../../../../components/molecules/select.labeled"
 // import DoubleTime from "../../../../components/molecules/double.time.labeled"
 const Index = () => {
+
+    const {t} = useTranslation();
 
     const getRole = JSON.parse(localStorage.getItem("user_token"));
     const { role } = getRole;
@@ -21,15 +23,17 @@ const Index = () => {
     return (
         <Wrapper>
             <Container padding="10px 0">
-
                 {role === "gid" ?
-
                     <Grid container spacing={1}>
                         <Grid item xs={12} sm={6} md={6}>
-                            <TextLabeled sizeLabel="15px" width="100%" label="Til" placeholder="Tilni kiriting..." />
+                            <TextLabeled sizeLabel="15px" width="100%" 
+                            label={t("TillarniBilish.til")}
+                            placeholder={t("TillarniBilish.tilPlace")} />
                         </Grid>
                         <Grid item xs={12} sm={6} md={5}>
-                            <SelectLabeled sizeLabel="15px" width="100%" label="Tajriba" placeholder="yil" />
+                            <SelectLabeled sizeLabel="15px" width="100%" 
+                            label={t("TillarniBilish.bilishDarajasi")} 
+                            placeholder={t("TillarniBilish.BilishDPlace")} />
                         </Grid>
                         <Grid item xs={12} sm={6} md={1}>
                             <FlexContainer width="100%" flexDirection="column" gap="4px" margin="45px 0 0 0 ">
@@ -64,7 +68,7 @@ const Index = () => {
             </Container>
 
             <Container padding="10px 0" margin="10px 0 0 -30px" textAlign="right">
-                <Button>Saqlash</Button>
+                <Button>{t("TillarniBilish.save")}</Button>
             </Container>
 
         </Wrapper>

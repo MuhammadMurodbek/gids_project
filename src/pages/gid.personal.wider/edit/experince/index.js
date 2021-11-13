@@ -10,8 +10,11 @@ import AddIcon from '@material-ui/icons/Add'
 import { Container } from '../../../../styles/container/index.style'
 import SelectLabeled from "../../../../components/molecules/select.labeled"
 import DoubleTime from "../../../../components/molecules/double.time.labeled"
+import {useTranslation} from 'react-i18next'
 
 const Index = () => {
+    
+    const {t} = useTranslation()
 
     const getRole = JSON.parse(localStorage.getItem("user_token"));
     const { role } = getRole;
@@ -35,21 +38,29 @@ const Index = () => {
                 <Container padding="20px 0">
                     <Grid container spacing={1}>
                         <Grid item xs={12} sm={6} md={4}>
-                            <SelectLabeled sizeLabel="15px" width="100%" label="Ma’lumoti" placeholder="Oliy ma’lumotli" />
+                            <SelectLabeled sizeLabel="15px" width="100%" 
+                            label={t("IshTajriba.malumotlar")}
+                            placeholder={t("IshTajriba.oliy")} />
                         </Grid>
                         <Grid item xs={12} sm={6} md={4}>
-                            <TextLabeled sizeLabel="15px" width="100%" label="Bitigan instituti" placeholder="Bitirgan Oliy ta’lim mussasasini kiriting" />
+                            <TextLabeled sizeLabel="15px" width="100%"
+                             label={t("IshTajriba.bitirgan")}
+                             placeholder={t("IshTajriba.toifasi")} />
                         </Grid>
                         <Grid item xs={12} sm={6} md={4}>
-                            <SelectLabeled sizeLabel="15px" width="100%" label="Gidning toifasi  " placeholder="Yuqori toifadagi Gid" />
+                            <SelectLabeled sizeLabel="15px" width="100%"
+                            label={t("IshTajriba.toifasi")} 
+                            placeholder={t("IshTajriba.toifaPlace")} />
                         </Grid>
                     </Grid>
                     <Grid container spacing={1}  >
                         <Grid xs={12} sm={6} md={10}>
-                            <TextLabeled sizeLabel="15px" width="100%" label="Qo‘shimcha kurslar" placeholder="O‘qigan kurslaringizni yozing" />
+                            <TextLabeled sizeLabel="15px" width="100%" 
+                            label={t("IshTajriba.qoshimchaKurslar")} 
+                            placeholder={t("IshTajriba.oqiganKurslaringiz")} />
                         </Grid>
                         <Grid item xs={12} sm={6} md={2}>
-                            <SelectLabeled sizeLabel="15px" width="100%" label="Tajriba" placeholder="yil"
+                            <SelectLabeled sizeLabel="15px" width="100%" label={t("IshTajriba.tajriba")} placeholder={t("IshTajriba.year")}
                                 options={options_year} />
                         </Grid>
                     </Grid>
@@ -107,7 +118,7 @@ const Index = () => {
             }
 
             <Container padding="10px" textAlign="right">
-                <Button >Saqlash</Button>
+                <Button >{t("IshTajriba.saqlash")}</Button>
             </Container>
         </Wrapper>
     )

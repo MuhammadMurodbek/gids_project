@@ -8,7 +8,7 @@ import { Grid } from '@material-ui/core'
 import { useTranslation } from 'react-i18next'
 
 const Index = () => {
-    const {t} = useTranslation()
+    const { t } = useTranslation()
     const getRole = JSON.parse(localStorage.getItem("user_token"))
 
     return (
@@ -21,7 +21,7 @@ const Index = () => {
                     (
                         <>
                             <Text title="Bir kunlik ish xajmim:" text="1805 ta so'z" /> <br /><br />
-                            <Text title="Tarjima qilish uchun foydaladigan CAT dasturlarim:" text="Translate" />
+                            <Text title="Tdaladigaarjima qilish uchun foyn CAT dasturlarim:" text="Translate" />
                             <FlexContainer width="70%" margin="15px 0">
                                 <Grid container spacing={1} className="gridCon">
                                     <Grid item md={6} className="as">
@@ -70,27 +70,40 @@ const Index = () => {
                     : null
             }
 
-             {
-                 getRole?.role === 'gid' ?
-                 (
-                     <>
-                     
-                     <FlexContainer width="70%" margin="15px 0">
-                         <Grid container spacing={1} className="gridCon">
-                             <Grid item md={6} className="as">
-                                 <img src={cheked} alt="adfdd" className="classed" /> <Text title="Ekskursiyalar" /><br />
-                                 <img src={cheked} alt="adfdd" className="classed" /> <Text title="Og'zaki tarjima (ketma-ket)" />
-                             </Grid>
-                             <Grid item md={6} >
-                                 <img src={cheked} alt="adfdd" className="classed" /> <Text title="Sinxron tarjima" /><br />
-                                 <img src={cheked} alt="adfdd" className="classed" /> <Text title="Shoshilinch buyurtma" />
-                             </Grid>
-                         </Grid>
-                     </FlexContainer>
-                     </>
-                 )
-                 : null
-             }
+            {
+                getRole?.role === 'gid' ?
+                    (
+                        <>
+
+                            <FlexContainer width="70%" margin="15px 0">
+                                <Grid container spacing={1} className="gridCon">
+                                    <Grid item md={6} className="as">
+                                        <img src={cheked} alt="adfdd" className="classed" />
+                                        <Text title="Ekskursiyalar" /><br />
+                                        <img src={cheked} alt="adfdd" className="classed" />
+                                        <Text title="Og'zaki tarjima (ketma-ket)" />
+                                    </Grid>
+                                    <Grid item md={6} >
+                                        <img src={cheked} alt="adfdd" className="classed" />
+                                        <Text title="Sinxron tarjima" /><br />
+                                        <img src={cheked} alt="adfdd" className="classed" />
+                                        <Text title="Shoshilinch buyurtma" />
+                                    </Grid>
+                                </Grid>
+                            </FlexContainer>
+                            <div class="box">
+                                <Text title="Ekskursiyalar : " />
+                                <div class="box_child">
+                                    <span>Rossiya - Maskva</span>
+                                    <span>Amerika - Nyu York</span>
+                                    <span>Qozog'iston - Dushanbe</span>
+                                    <span>O'zbekiston - Toshkent</span>
+                                </div>
+                            </div>
+                        </>
+                    )
+                    : null
+            }
         </Wrapper>
     )
 }

@@ -41,6 +41,8 @@ const  Index = () => {
 
     const {t} = useTranslation()
 
+    const getRole = JSON.parse(localStorage.getItem("user_token"));
+    const { role } = getRole;
     return (
         <Wrapper>
             <WrapperContainer>
@@ -83,14 +85,15 @@ const  Index = () => {
             <WrapperContainer>
                 <Container {...mediaContainerPadding} padding="0 10px">
                     <ThirdInfoCard/>
-                </Container>
+                </Container> 
             </WrapperContainer>
-            <WrapperContainer>
+            { role === 'writer'? null: 
+             <WrapperContainer>
                 <Container {...mediaContainerPadding} padding="0 20px">
                     <Title text={t("GidPk.Gallery")}/>
                     <ImageGallery/>
                 </Container>
-            </WrapperContainer>
+            </WrapperContainer>}
             <WrapperContainer>
                 <Container {...mediaContainerPadding} padding="0 20px"> 
                     <Title text={t("GidPk.fidbek")}/>   

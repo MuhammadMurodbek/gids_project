@@ -16,7 +16,8 @@ export const ContainerBottom = styled.div`
             font-size: 13px;
         }
         span.title{
-            font-weight: 600;
+            font-weight: 700;
+            font-size:15px ;
         }
     }
 `

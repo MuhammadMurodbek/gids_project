@@ -384,7 +384,7 @@
     "oqiganKurslaringiz":"Write down the courses you took",
     "tajriba":"Experience",
     "year":"year",
-    "saqlash":"Saqlash"
+    "saqlash":"Save" 
   },
   "TillarniBilish":{
     "Profilni_Korish":"View profile",
@@ -453,8 +453,7 @@
 
     "birkunlikHizmat":"The cost of one day of service",
     "birSoatlik":"The cost of an hour of service",
-    "saqlash":"Saqlash"
-    
+    "saq":"Save"
   },
   "Galarey":{
 
