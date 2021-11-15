@@ -9,6 +9,6 @@ export const Wrapper = styled.form`
         display: flex;
         flex-direction: column;
         align-items: flex-end;
-        margin: 20px 0;
+        margin: 40px 10px 10px;
     }
 `

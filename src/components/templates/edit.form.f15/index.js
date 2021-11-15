@@ -7,12 +7,13 @@ import Button from "../../atom/button"
 import {putResponse} from "../../../hooks/response_get"
 import {userSchema} from "./_validation"
 import toast from 'react-hot-toast'
-import {validatorState} from "../../../custom/validator"
+// import {validatorState} from "../../../custom/validator"
 const mediaContainer = {
     m_width:'600px',
     m_padding:"10px 10px 0"
 }
 const Index = ({statePostProps}) => {
+    const [loader, setLoader] = useState(false)
     const [error, setError] = useState(false)
     const [state, setState] = useState({first_name:'', last_name:'',company:'',image:'',imageFile:null})
     const [postData, setPostData] = useState({success:'',error:''})
@@ -27,6 +28,7 @@ const Index = ({statePostProps}) => {
     },[statePostProps])
     const onSubmit = async (e) => {   
         e.preventDefault()
+        setLoader(true)
         console.log(state)
         const isValid = await userSchema.isValid(state)
         if(!isValid) {setError(true)}
@@ -42,7 +44,7 @@ const Index = ({statePostProps}) => {
             formData.append('company',state?.company)
             formData.append('country',countryJSON)
             formData.append('city',cityJSON)
-            putResponse('/api/users/edit/',formData,setPostData)
+            await putResponse('/api/users/edit/',formData,setPostData)
         }
         console.log(isValid)
     }
@@ -51,9 +53,11 @@ const Index = ({statePostProps}) => {
         if(postData){
             if(postData?.success?.status === 200){
                 toast.success("Successfully updated")
+                setLoader(false)
             }
-            if(postData?.success?.status > 201){
-                toast.error("Failed")
+            if(postData?.error?.response){
+                toast.error("Failed to update")
+                setLoader(false)
             }
         }
     },[postData])
@@ -65,7 +69,7 @@ const Index = ({statePostProps}) => {
             <Container {...mediaContainer} padding="10px 50px 0" margin="20px 0">
                 <EditFormContainer error={error} setState={setState} state={state}/>
                 <Container width="100%" padding="0" margin="50px 0 0" textAlign="right">
-                    <Button>Saqlash</Button>
+                    <Button loader={loader}>Saqlash</Button>
                 </Container>
             </Container>
         </Wrapper>

@@ -31,7 +31,7 @@ const Index = () => {
                                 <FlexContainer flexDirection="column" height="100%" justifyContent="space-around">
                                     <TextTitle {...mediaTextField} {...mediaTextFieldSec} {...mediaTextFieldExternal} left="30px" font="34px" align="left">{state?.success?.data?.first_name || 'username'}{" "}{state?.success?.data?.last_name || 'lastname'}</TextTitle>
                                     <FlexContainer {...mediaFlexFooter} width="100%" margin="0 0 0 30px">
-                                        <div className="icon-text"><ImageContainer src={icon1} width="20px"/><div>{JSON.parse(state?.success?.data?.country).label || 'Country'}, {JSON.parse(state?.success?.data?.city).label || 'City'}</div></div>
+                                        <div className="icon-text"><ImageContainer src={icon1} width="20px"/><div>{JSON.parse(state?.success?.data?.country)?.label || 'Country'}, {JSON.parse(state?.success?.data?.city)?.label || 'City'}</div></div>
                                         <div className="icon-text two"><ImageContainer width="20px" src={icon2}/><div>{state?.success?.data?.company || 'Company name'}</div></div>
                                     </FlexContainer>
                                 </FlexContainer>

@@ -1,43 +1,49 @@
 import { Grid } from '@material-ui/core'
-import React from 'react'
-import { Wrapper } from './style'
+import React, {useState, useEffect} from 'react'
+import {Wrapper} from './style'
 import InputLabel from "../../../../components/molecules/input.labeled"
 import Button from "../../../../components/atom/button"
 import { Container } from '../../../../styles/container/index.style'
-import {useTranslation} from 'react-i18next';
-
+import {getResponse, putResponse} from "../../../../hooks/response_get"
+import toast from 'react-hot-toast'
 const Index = () => {
-
-    const {t} = useTranslation();
-
+    const [apiRes, setApiRes] = useState({success:'', error:''})
+    const [loader, setLoader] = useState(false)
+    const [state, setState] = useState({website:'http://',telegram:'http://', instagram:'http://',facebook:'http://',wechat:'http://',viber:'http://'})
+    const [apiResponse, setApiResponse] = useState()
+    const handleChange = (e) => { setState({...state, [e.target.name]:e.target.value})}
+    useEffect(() => {getResponse('/api/gids/edit/contact/',setApiResponse)},[])
+    useEffect(()=>{ 
+        if(apiResponse?.success){
+            setState(apiResponse?.success?.data)
+        }
+    },[apiResponse])
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        putResponse('/api/gids/edit/contact/', state, setApiRes)
+        setLoader(true)
+    }
+    useEffect(() => {
+        if(apiRes?.success!==""){
+            setLoader(false)
+            toast.success("Ma'lumotlaringiz muvaffaqiyatli yuklandi")
+            getResponse('/api/gids/edit/contact/',setApiResponse)
+        }else if(apiRes?.error!==""){
+            toast.error("Xatolik mavjud, qaytadan urinib ko'ring")
+        }
+    },[apiRes])
     return (
-        <Wrapper>
+        <Wrapper onSubmit={handleSubmit}>
             <Grid container spacing={2}>
-                <Grid item xs={12} sm={6} md={4}>
-                    <InputLabel sizeLabel="15px" width="100%" label={t("MT_Kontaktlar.tel")} placeholder="+" /> </Grid>
-                <Grid item xs={12} sm={6} md={4}>
-                    <InputLabel sizeLabel="15px" width="100%" label={t("MT_Kontaktlar.email")} placeholder={t("emailKiritish")} />
-                </Grid>
-                <Grid item xs={12} sm={6} md={4}>
-                    <InputLabel sizeLabel="15px" width="100%" label={t("MT_Kontaktlar.Site")} placeholder={t("MT_Kontaktlar.link")} /> </Grid>
-                <Grid item xs={12} sm={6} md={4}>
-                    <InputLabel sizeLabel="15px" width="100%" label={t("MT_Kontaktlar.Telegram")} placeholder={t("MT_Kontaktlar.telegramPlace")} />
-                </Grid>
-                <Grid item xs={12} sm={6} md={4}>
-                    <InputLabel sizeLabel="15px" width="100%" label={t("MT_Kontaktlar.WhatsApp")} placeholder={t("MT_Kontaktlar.watsapPlace")} />
-                </Grid>
-                <Grid item xs={12} sm={6} md={4}>
-                    <InputLabel sizeLabel="15px" width="100%" label={t("MT_Kontaktlar.Facebook")} placeholder={t("MT_Kontaktlar.facebookPlace")} />
-                </Grid>
-                <Grid item xs={12} sm={6} md={4}>
-                    <InputLabel sizeLabel="15px" width="100%" label={t("MT_Kontaktlar.Wechat")} placeholder={t("MT_Kontaktlar.wechatPlace")} />
-                </Grid>
-                <Grid item xs={12} sm={6} md={4}>
-                    <InputLabel sizeLabel="15px" width="100%" label={t("MT_Kontaktlar.Viber")} placeholder={t("MT_Kontaktlar.viberPlace")} />
-                </Grid>
+                <Grid item xs={12} sm={6} md={4}><InputLabel onChange={handleChange} name="website" value={state?.website} sizeLabel="15px" width="100%" label="Sayt" placeholder="Linkni kiriting..."/> </Grid>
+                <Grid item xs={12} sm={6} md={4}><InputLabel onChange={handleChange} name="telegram" value={state?.telegram} sizeLabel="15px" width="100%" label="Telegram" placeholder="Telegram linkni kiriting..."/> </Grid>
+                <Grid item xs={12} sm={6} md={4}><InputLabel onChange={handleChange} name="instagram" value={state?.instagram} sizeLabel="15px" width="100%" label="Instagram" placeholder="Instagram linkni kiriting..."/> </Grid>
+                <Grid item xs={12} sm={6} md={4}><InputLabel onChange={handleChange} name="facebook" value={state?.facebook} sizeLabel="15px" width="100%" label="Facebook" placeholder="Facebook linkni kiriting..."/> </Grid>
+                <Grid item xs={12} sm={6} md={4}><InputLabel onChange={handleChange} name="wechat" value={state?.wechat} sizeLabel="15px" width="100%" label="Wechat" placeholder="Wechat linkni kiriting..."/> </Grid>
+                <Grid item xs={12} sm={6} md={4}><InputLabel onChange={handleChange} name="viber" value={state?.viber} sizeLabel="15px" width="100%" label="Viber" placeholder="Viber linkni kiriting..."/> </Grid>
             </Grid>
             <Container padding="20px 0 5px" textAlign="right">
-                <Button>{t("MT_Kontaktlar.saqlash")}</Button>
+                <Button loader={loader}>Saqlash</Button>
             </Container>
         </Wrapper>
     )

@@ -4,24 +4,24 @@ import { DatePicker, Space } from "antd";
 import "antd/dist/antd.css";
 import moment from "moment";
 
-const dateFormatList = ["YYYY-MM-DD", "DD/MM/YY"];
+const dateFormatList = ["DD-MM-YYYY", "DD/MM/YY"];
 const Index = (props) => {
-    const {state, setState, field, errorText} = props
+    const {state, setState, field, errorText, placeholder, placeholderValue} = props
     const [time, setTime] = useState(null)
     const onChange = useCallback ((date, dateString) => {
         setTime(date)
-        if(setState){
-          setState({...state, [field]:dateString})
-        }
+        const dateTime = moment( new Date (date)).format('YYYY-MM-DD')
+        if(setState){setState(prev=>{return {...prev, [field]:dateTime}})}
     },[state, time])
   return (
-    <Calendar width={props.width}>
+    <Calendar width={props.width} placeholderValue={placeholderValue}>
       <Space direction="vertical" size={12}>
         <DatePicker
           onChange={onChange}
           defaultValue={moment("DD-MM-YYYY", dateFormatList[0])}
           value={time}
         //   name={props.name}
+          placeholder={placeholder}
           format={dateFormatList}
           style={{
             border: "none",
