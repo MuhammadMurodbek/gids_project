@@ -20,10 +20,12 @@ const Index = () => {
                     <Grid item xs={12} sm={6} md={1}>
                         <FlexContainer width="100%" flexDirection="column" gap="4px" margin="45px 0 0 0 ">
                             <Button paddingIcon="10px" type="outlined"> <DeleteIcon className="icon"/> </Button>
-                            <Button paddingIcon="10px"><AddIcon className="icon"/></Button>
                         </FlexContainer>
                     </Grid>
                 </Grid>
+                <Container padding="10px 0" textAlign="right">
+                    <Button paddingIcon="10px"><AddIcon className="icon"/></Button>
+                </Container>
             </Container>
             
             <Container padding="10px 0" margin="10px 0 0 -30px" textAlign="right">

@@ -18,7 +18,6 @@ const Index = () => {
             setState(apiResponse?.success?.data)
         }
     },[apiResponse])
-    console.log(state)
     const handleSubmit = (e) => {
         e.preventDefault()
         putResponse('/api/gids/edit/contact/', state, setApiRes)
