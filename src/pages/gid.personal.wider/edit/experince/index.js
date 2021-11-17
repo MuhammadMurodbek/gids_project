@@ -1,5 +1,5 @@
 import { Grid } from '@material-ui/core'
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { Wrapper } from './style'
 import TextLabeled from "../../../../components/molecules/input.labeled"
 import CalendarLabeled from "../../../../components/molecules/calendar.labeled"
@@ -11,63 +11,74 @@ import { Container } from '../../../../styles/container/index.style'
 import SelectLabeled from "../../../../components/molecules/select.labeled"
 import DoubleTime from "../../../../components/molecules/double.time.labeled"
 import {useTranslation} from 'react-i18next'
-
+import {degrees, options_year, options_yes, degrees_gid} from "./_const"
+import MultiInput from "../../../../components/molecules/multivalue.input"
 const Index = () => {
     
     const {t} = useTranslation()
 
-    const getRole = JSON.parse(localStorage.getItem("user_token"));
-    const { role } = getRole;
-
-    const options_year = [
-        { value: 1, label: "1 yil" },
-        { value: 2, label: "2 yil" },
-        { value: 3, label: "3 yil" },
-        { value: 4, label: "5+ yil" },
-        { value: 5, label: "10+ yil" },
-    ]
-    const options_yes = [
-        { value: 1, label: "Ha" },
-        { value: 2, label: "Yoq" }
-    ]
+    const getRole = JSON.parse(localStorage.getItem("user_token")); ///SHUNDAY YOZILSIN
+    const [stateGid, setStateGid] = useState({education_degree:'', completed_university:'',category:'', additional_courses:[], experience_year:'' })
+    // const { role } = getRole;
+    console.log(stateGid)
     return (
         <Wrapper>
 
-            {role === "gid" ?
+            {getRole?.role === "gid" ?
 
                 <Container padding="20px 0">
                     <Grid container spacing={1}>
                         <Grid item xs={12} sm={6} md={4}>
-                            <SelectLabeled sizeLabel="15px" width="100%" 
-                            label={t("IshTajriba.malumotlar")}
-                            placeholder={t("IshTajriba.oliy")} />
+                            <SelectLabeled  
+                                options={degrees} 
+                                sizeLabel="15px" 
+                                width="100%" 
+                                label={t("IshTajriba.malumotlar")}
+                                placeholder={t("IshTajriba.oliy")} 
+                                setCollect={setStateGid}
+                                collect={stateGid}
+                                field="education_degree"
+                            />
                         </Grid>
                         <Grid item xs={12} sm={6} md={4}>
-                            <TextLabeled sizeLabel="15px" width="100%"
-                             label={t("IshTajriba.bitirgan")}
-                             placeholder={t("IshTajriba.toifasi")} />
+                            <TextLabeled 
+                                sizeLabel="15px" 
+                                width="100%"
+                                label={t("IshTajriba.bitirgan")}
+                                placeholder={t("IshTajriba.toifasi")}
+                                setState={setStateGid}
+                                state={stateGid}
+                                field="completed_university" 
+                            />
                         </Grid>
                         <Grid item xs={12} sm={6} md={4}>
-                            <SelectLabeled sizeLabel="15px" width="100%"
-                            label={t("IshTajriba.toifasi")} 
-                            placeholder={t("IshTajriba.toifaPlace")} />
+                            <SelectLabeled
+                                options={degrees_gid} 
+                                sizeLabel="15px" 
+                                width="100%"
+                                setCollect={setStateGid}
+                                collect={stateGid}
+                                field="category"
+                                label={t("IshTajriba.toifasi")} 
+                                placeholder={t("IshTajriba.toifaPlace")} />
                         </Grid>
                     </Grid>
                     <Grid container spacing={1}  >
                         <Grid xs={12} sm={6} md={10}>
-                            <TextLabeled sizeLabel="15px" width="100%" 
-                            label={t("IshTajriba.qoshimchaKurslar")} 
-                            placeholder={t("IshTajriba.oqiganKurslaringiz")} />
+                            <MultiInput setState={setStateGid} state={stateGid} field="additional_courses" label={t("IshTajriba.qoshimchaKurslar")}/>
                         </Grid>
                         <Grid item xs={12} sm={6} md={2}>
                             <SelectLabeled sizeLabel="15px" width="100%" label={t("IshTajriba.tajriba")} placeholder={t("IshTajriba.year")}
-                                options={options_year} />
+                                options={options_year} 
+                                setCollect={setStateGid}
+                                collect={stateGid}
+                                field="experience_year"
+                                label={t("IshTajriba.toifasi")} 
+                            />
                         </Grid>
                     </Grid>
                 </Container>
                 :
-
-
                 <>
                     <Container padding="10px 0">
                         <Grid container spacing={1}>
