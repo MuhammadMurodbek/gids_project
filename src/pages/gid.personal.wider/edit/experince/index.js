@@ -13,16 +13,31 @@ import DoubleTime from "../../../../components/molecules/double.time.labeled"
 import {useTranslation} from 'react-i18next'
 import {degrees, options_year, options_yes, degrees_gid} from "./_const"
 import MultiInput from "../../../../components/molecules/multivalue.input"
+import {putResponse} from "../../../../hooks/response_get"
+import toast from 'react-hot-toast'
 const Index = () => {
     
     const {t} = useTranslation()
 
     const getRole = JSON.parse(localStorage.getItem("user_token")); ///SHUNDAY YOZILSIN
+    const [postGid, setPostGid] = useState({success:'', error:'', loading:false})
     const [stateGid, setStateGid] = useState({education_degree:'', completed_university:'',category:'', additional_courses:[], experience_year:'' })
-    // const { role } = getRole;
     console.log(stateGid)
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        setPostGid({...postGid,loading:true})
+        let clone = stateGid
+        clone.category = stateGid?.category?.value
+        clone.education_degree = stateGid?.education_degree?.value
+        clone.experience_year = stateGid?.experience_year?.value
+        putResponse('/api/gids/edit/education/', stateGid, setPostGid)
+    }
+    useEffect(()=>{
+        if(postGid?.success !=='') toast.success('Saved successfully')
+        if(postGid?.error !=='') toast.success('Failed to save data')
+    },[postGid])
     return (
-        <Wrapper>
+        <Wrapper onSubmit={handleSubmit}>
 
             {getRole?.role === "gid" ?
 
@@ -129,7 +144,7 @@ const Index = () => {
             }
 
             <Container padding="10px" textAlign="right">
-                <Button >{t("IshTajriba.saqlash")}</Button>
+                <Button loader={postGid?.loading}>{t("IshTajriba.saqlash")}</Button>
             </Container>
         </Wrapper>
     )

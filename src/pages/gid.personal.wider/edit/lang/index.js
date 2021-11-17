@@ -40,11 +40,14 @@ const Index = () => {
                                 <Button paddingIcon="10px" type="outlined">
                                     <DeleteIcon className="icon" />
                                 </Button>
-                                <Button paddingIcon="10px">
-                                    <AddIcon className="icon" />
-                                </Button>
+                                
                             </FlexContainer>
                         </Grid>
+                        <Container padding="10px 0" textAlign="right">
+                            <Button paddingIcon="10px">
+                                <AddIcon className="icon" />
+                            </Button>
+                        </Container>
                     </Grid>
                     :
                     <Grid container spacing={1} justifyContent="space-between">

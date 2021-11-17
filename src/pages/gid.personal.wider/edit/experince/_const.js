@@ -1,21 +1,19 @@
-export const degrees = [
-    {value:0, label: "Associate's degree"}, 
-    {value:1, label: "Bachelor's degree"}, 
-    {value:2, label: "Master's degree"}, 
-    {value:3, label: "Professional's degree"}, 
-    {value:4, label: "Doctoral's degree"}, 
-]
 export const degrees_gid = [
-    {value:0, label: "Higher"}, 
-    {value:1, label: "Secondary"}, 
-    {value:2, label: "Primary"},  
+    {value:"highest_category", label: "Highest category"}, 
+    {value:"first_category", label: "First category"}, 
+    {value:"second_category", label: "Second category"}, 
+    {value:"no_category", label: "No category"}, 
+]
+export const degrees = [
+    {value:"higher", label: "Higher"}, 
+    {value:"secondary_special", label: "Secondary special"}, 
 ]
 export const options_year = [
-    { value: 1, label: "1 yil" },
-    { value: 2, label: "2 yil" },
-    { value: 3, label: "3 yil" },
-    { value: 4, label: "5+ yil" },
-    { value: 5, label: "10+ yil" },
+    { value: "0-1", label: "1 yil" },
+    { value: "1-3", label: "1-3 yil" },
+    { value: "3-5", label: "3-5 yil" },
+    { value: "5-10", label: "5-10 yil" },
+    { value: "10+", label: "10+ yil" },
 ]
 export const options_yes = [
     { value: 1, label: "Ha" },
