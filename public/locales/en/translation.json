@@ -3,7 +3,7 @@
   "description": "descriptionEn",
   "navbar" :{
     "GTU" : "Gid and for translators",
-    "Blog":"Blog",
+    "Blog":"Blog", 
     "Arizalar_royhati":"List of applications",
     "Ariza_qoldirish":"Leave an application",
     "GvaTtanlash":"Choosing a guide or translator"
@@ -20,7 +20,7 @@
         "sorov":"Send a question",
         "huquqiy":"Legal information",
         "foydalanish": "Terms of use",
-        "maxfiylik":"Maxfiylik siyosati va cookie siyosati"
+        "maxfiylik":"Privacy Policy and Cookie Policy"
    },
    "kengaytirlgan_Q":{
        "kengaytirilgan": "Advanced search",
@@ -75,6 +75,9 @@
     "title":"Choose a Guide for yourself",
     "fikirlar":"Comments:",
     "kuniga":"Up to:",
+    "hizmat":"Services (cities)",
+    "tillar":"Languages",
+    "ozim":"About myself ",
     "korish":"See",
     "davomi":"Read more"
 },
@@ -97,12 +100,12 @@
     "hoziroq":"Sign up now, fill out your form and start your career!",
     "royhatdanO":"Sign up"
   },
-  "about":{
+  "about":{ 
     "title":"About the platform",
     "boglanish":"Connect"
   },
   "Biz_bilan_boglanish":{
-    "contact":"contact us",
+    "contact":"Contact us",
     "Kontaktlarimiz":"Our contacts",
     "tel":"+998 90 123 45 67",
     "email":"salom@gits.uz",
@@ -121,25 +124,24 @@
     "jonatish":"Send"
   },
   "auth_registr":{
-    "kirish":"Introduction",
-    "royhatdanOtish2":"Registration",
+    "kirish":"Sigin in",
+    "royhatdanOtish2":"Sigin up",
     "ismingiz":"Your name",
     "familya2":"Your last name",
     "tarjimon":"Translator",
     "email2":"Enter the email",
     "pass":"Enter your password",
-    "repass":"Parolingizni tasdiqlang",
+    "repass":"Confirm your password",
     "submit":"Sign up"
   },
   "auth_kirish":{
-    "kirish":"Introduction",
-    "royhatdanOtish2":"Registration",
     "email2":"Enter the email",
     "pass":"Enter your password",
-    "forget":"Forgot password"
+    "forget":"Forgot password",
+    "kirish":"Sigin in"
   },
   "auth_parolniTiklash":{
-    "reset":"Reset password",
+    "reset  ":"Reset password",
     "jonatildi":"* We will send a confirmation code to your email",
     "cod":"Enter your email",
     "send":"Send the code"
@@ -164,9 +166,10 @@
     "Gid":"Gid",
     "Tarjimon":"Translator",
     "sinxron":"Synchronous",
-    "izchil":"Izchil",
+    "izchil":"consistent",
+    "yozma":"written translator",
     "KerakShaharlar":"Git / The city where the translator is needed",
-    "davlat":"State",
+    "davlat":"Country",
     "shaxarlar":"City",
     "KerakSana":"Go / Date translator needed",
     "Bilishikerak":"Git / Translator languages  need to know",
@@ -177,7 +180,7 @@
     "chegara":"Write down the price limit",
     "jinsi":"Gender",
     "erkak":"Male",
-    "ayol":"Woman",
+    "ayol":"Female",
     "nechaKishi":"How many people",
     "nechkishiBolaslar":"How many people are you?",
     "shartnoma":"By submitting the application, you agree to the user agreement *",
@@ -203,7 +206,7 @@
     "yozing":"Write your message",
     "yopish":"Close",
     "yuborish":"Send"
-  },
+  }, 
   "Blog":{
     "blog":"Blog",
     "davomiOqish":"Read more"

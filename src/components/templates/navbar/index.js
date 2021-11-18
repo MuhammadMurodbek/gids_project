@@ -32,7 +32,7 @@ const Index = () => {
   const toggle = () => setDropdownOpen((prevState) => !prevState);
 
   const {t, i18n} = useTranslation()
-  React.useMemo(()=>{i18n.changeLanguage('uz')},[])
+  React.useMemo(()=>{i18n.changeLanguage('en')},[])
   return (  
     <>
       <Navbar>

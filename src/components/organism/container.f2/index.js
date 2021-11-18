@@ -9,13 +9,15 @@ import RoundImage from "../../../assets/img/choosegid/round.svg"
 import { Grid } from '@material-ui/core'
 import { TextTitle } from '../../../styles/textTitle/index.style'
 import TruncateText from "../../molecules/text.truncate"
+import {useTranslation} from 'react-i18next'
+
 const media_container = {
     m_width:"600px",
     m_padding:"10px 0",
 }
 
 const Index = () => {
-
+    const {t} = useTranslation()
     return (
         <WrapperContainer>
             <Grid container spacing={1}>
@@ -31,10 +33,12 @@ const Index = () => {
                     <Container margin="30px 0 0 0">
                         <TextTitle align="left" font="20px">Abdusattor Ergashev</TextTitle>
                         <div className="gid-info-personal">33 yosh | <span>Gid va tarjimon</span> </div>
-                        <div className="gid-info-personal-text top"> <div className="text">Xizmatlar (shaharlar):</div>Uzbekistan, Turkiya, Yaponiya</div>
-                        <div className="gid-info-personal-text"><div className="text">Tillar:</div>O'zbek, Turk, Ingliz, Rus</div>
+                        <div className="gid-info-personal-text top"> <div className="text">
+                        {t("Gid_Tanlash.hizmat")} : </div>Uzbekistan, Turkiya, Yaponiya</div>
+                        <div className="gid-info-personal-text"><div className="text">
+                        {t("Gid_Tanlash.tillar")} : </div>O'zbek, Turk, Ingliz, Rus</div>
                         <div className="gid-info-personal-text"> 
-                            <div className="text">O'zim haqimda:</div>  
+                            <div className="text">  {t("Gid_Tanlash.ozim")} :</div>  
                             <TruncateText 
                                 width="auto" 
                                 margin="-20px 0 0 0"

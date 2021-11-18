@@ -8,6 +8,7 @@ import ContainerMap from "../../components/templates/container.temp.f2"
 import ImageContainer from "../../components/molecules/img.container"
 import Adds from "../../assets/img/choosegid/adds.jpg"
 import {mediaTextField, mediaTextFieldSec} from "../../custom/global.media.variables"
+import {useTranslation} from 'react-i18next'
 
 const mediaGrid = {
     m_width:"962px",
@@ -18,9 +19,12 @@ const mediaGridUSers={
     m_width:"768px",
 }
 const Index = () => {
+    const {t} = useTranslation()
     return (
         <Wrapper>
-            <TextTitle top="40px" {...mediaTextField} {...mediaTextFieldSec} bottom="30px">O'zingiz uchun gid tanlang</TextTitle>
+            <TextTitle top="40px" {...mediaTextField} {...mediaTextFieldSec} bottom="30px">
+                {t("Gid_Tanlash.title")}
+            </TextTitle>
             <Container>
                 <Grid container spacing={1} className="media_grid_flex">
                     <Grid item xs={12} sm={12} md={4}>

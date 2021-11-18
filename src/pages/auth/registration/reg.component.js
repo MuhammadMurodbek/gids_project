@@ -9,9 +9,12 @@ import {mediaContainer, mediaContainerSec, mediaBtn} from "./_media"
 import {useSelector, useDispatch} from "react-redux"
 import {post_auth_reg_action} from "../../../redux/actions"
 import {validator} from "../../../custom/validator"
-import {WrapperReg} from "./reg.style"
-import toast from "react-hot-toast"
+import {WrapperReg} from "./reg.style";
+import toast from "react-hot-toast";
+import { useTranslation } from 'react-i18next';
+
 const Index = () => {
+    const {t} = useTranslation();
     const history = useHistory();
     const dispatch = useDispatch();
     const selector = useSelector(prev=>prev.post_auth_reg_reducer)
@@ -85,7 +88,6 @@ const Index = () => {
     },[stateName, stateEmail, statePassword, statePasswordRecover, stateLast, select])
     return (
         <WrapperReg>
-
             <form onSubmit={onSubmit}>
                 <Container width="100%" {...mediaContainer}>
                     <Grid container spacing={1} justifyContent="space-between" alignItems="center">
@@ -93,7 +95,7 @@ const Index = () => {
                             <AuthInput 
                                 errorText={nameV.errorText} 
                                 setState={setStateName}
-                                title="Ismingizni yozing" 
+                                title= {t("auth_registr.ismingiz")}
                                 width="100%"
                             />
                         </Grid>
@@ -101,26 +103,27 @@ const Index = () => {
                             <AuthInput 
                                 errorText={lastV.errorText} 
                                 setState={setStateLast} 
-                                title="Familiyangizni yozing" 
+                                title= {t("auth_registr.familya2")}
                                 width="100%"
                             />
                         </Grid>
                     </Grid>
                 </Container>
                 <Container {...mediaContainer}>
-                    <Select paddingX="9px 4.5px" errorText={selectV.errorText} options={options} setState={setSelect} placeholder="Tarjimon"/>
+                    <Select paddingX="9px 4.5px" errorText={selectV.errorText} options={options} setState={setSelect} placeholder={t("auth_registr.tarjimon")}/>
                 </Container>
                 <Container  {...mediaContainer} >
-                    <AuthInput errorText={emailV.errorText} title="E-mail kiriting" width="100%" setState={setStateEmail}/>
+                    <AuthInput errorText={emailV.errorText} title={t("auth_registr.email2")} width="100%" setState={setStateEmail}/>
                 </Container>
                 <Container  {...mediaContainer}>
-                    <AuthInput errorText={passwordV.errorText} title="Parolingizni kiriting" setState={setStatePassword} password={true} width="100%"/>
+                    <AuthInput errorText={passwordV.errorText} title={t("auth_registr.pass")} setState={setStatePassword} password={true} width="100%"/>
                 </Container>
                 <Container  {...mediaContainer}>
-                    <AuthInput errorText={passwordRecoverV.errorText} title="Parolingizni tasdiqlang" setState={setStatePasswordRecover} password={true} width="100%"/>
+                    <AuthInput errorText={passwordRecoverV.errorText} 
+                    title={t("auth_registr.repass")}  setState={setStatePasswordRecover} password={true} width="100%"/>
                 </Container>
                 <Container  {...mediaContainerSec}  className="text-right" margin="20px 0 0">
-                    <Button {...mediaBtn} loader={loader}  >Kirish</Button>
+                    <Button {...mediaBtn} loader={loader}  >{t("auth_registr.submit")}</Button>
                 </Container>
             </form>
         </WrapperReg>
