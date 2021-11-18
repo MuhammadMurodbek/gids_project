@@ -14,4 +14,7 @@ export const Wrapper = styled.div`
     .sc-hkwmXC.bNRZXE{
         padding: 11px 4px !important;
     }
+    .sc-dIUeWJ.eobrpm{
+        margin:0 !important;
+    }
 `
