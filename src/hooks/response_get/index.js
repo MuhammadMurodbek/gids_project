@@ -13,8 +13,8 @@ export const getResponseRegion = async(url) => {
 }
 export const postResponse = async(url, data, setState) => {
     return await axios.post(`${baseUrl}${url}`,data, head_token)
-        .then(response => setState ({success: response, error:''}))
-        .catch(err => setState ({success:'',error: err}))
+        .then(response => setState ({success: response, error:'', loading: false}))
+        .catch(err => setState ({success:'',error: err, loading: false}))
 }
 export const putResponse = async(url, data, setState) => {
     return await axios.put(`${baseUrl}${url}`,data, head_token)
