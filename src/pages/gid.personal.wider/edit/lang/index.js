@@ -20,7 +20,7 @@ const Index = () => {
     const [value, setValue] = useState({id:'', name:'', level:''})
     const [state, setState] = useState([]);
     const handleAdd = () => {
-       setState([...state,{id:uuid(),name:'', level:''}])
+       setState([...state,{id:uuid(),name:value?.name, level:value?.level}])
        setValue({id:'',name:'', level:''})
     }
     const handleDelete = (index) => {
@@ -111,11 +111,6 @@ const Index = () => {
                             </FlexContainer>
                         </Grid>
                     </Grid>
-                    {/* <Container padding="10px 0px 0 0" textAlign="right">
-                        <Button paddingIcon="10px" onClick={handleAdd}>
-                            <AddIcon className="icon" />
-                        </Button>
-                    </Container> */}
                     </>
                     :
                     <Grid container spacing={1} justifyContent="space-between">
