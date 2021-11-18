@@ -33,14 +33,15 @@ const Index = () => {
     const [passwordRecoverV, setPasswordRecoverV] = useState({error:false, errorText:''})
     
     const options = [
-        { value: 'gid', label: 'Gid' },
-        { value: 'simple_user', label: 'Foydalanuvchi' },
-        { value: 'translator', label: 'Tarjimon' },
-        { value: 'writer', label: 'Yozma tarjimon' },
+        { value: 'gid', label: `${t("auth_registr.gid")}` },
+        { value: 'simple_user', label: `${t("auth_registr.user")}` },
+        { value: 'translator', label: `${t("auth_registr.tarjimon")}` },
+        { value: 'writer', label: `${t("auth_registr.yozmaT")}` },
       ];
+    
     const validatorFunction = () => {
-        let v_name = validator('min', stateName, 3, 'Ism kiriting (kamida 3 ta belgi)', '', setNameV, nameV)
-        let v_last = validator('min', stateLast, 3, 'Familiya kiriting (kamida 3 ta belgi)', '', setLastV, lastV)
+        let v_name = validator('min', stateName, 3,  'Ism kiriting (kamida 3 ta belgi)', '', setNameV, nameV)
+        let v_last = validator('min', stateLast, 3,  'Familiya kiriting (kamida 3 ta belgi)', '', setLastV, lastV)
         let v_email = validator('email', stateEmail, 3, 'Emailda kiritishda xatolik mavjud', '', setEmailV, emailV)
         let v_select = validator('select', select, 3, 'Foydalanuvchi turi tanlanmagan', '', setSelectV,selectV)
         let v_pass = validator('min', statePassword, 8, 'Kamida 8 ta belgidan foydalaning (A,z,0,*,/,9)', '', setPasswordV,passwordV)
@@ -48,7 +49,8 @@ const Index = () => {
         
         if(v_name === '' && v_last === '' && v_email=== '' && v_select==='' && v_pass==='' && v_pass_r ==='') return true
         else return false
-    }
+}
+  
     const onSubmit = (e) => {
         e.preventDefault();
         let objectPost = {
@@ -61,16 +63,18 @@ const Index = () => {
         }
         setLoader(true)
         let check = validatorFunction()
-        let check_password = statePasswordRecover===statePassword
+         let check_password = statePasswordRecover===statePassword
         if((statePasswordRecover !== statePassword) || !check) {
             setPasswordRecoverV({...passwordRecoverV, errorText:'Parolni tasdiqlashda xatolik mavjud'})
             setLoader(false)
         }
+      
         if(check && check_password) {
             localStorage.setItem('email',stateEmail)
             dispatch(post_auth_reg_action(objectPost))
         }
     }
+  
     React.useEffect(()=>{
         if(selector?.status){
             setLoader(false)
@@ -78,6 +82,7 @@ const Index = () => {
             if(selector.status === 400) return toast.error('Ushbu emailda foydalanuvchi mavjud')
         }
     },[selector])
+  
     React.useMemo(()=>{
         if(stateName.length>3) setNameV({...nameV,errorText:''})
         if(stateLast.length>3) setLastV({...lastV,errorText:''})
@@ -87,6 +92,7 @@ const Index = () => {
         if(statePasswordRecover.length>8) setPasswordRecoverV({...passwordRecoverV,errorText:''})
     },[stateName, stateEmail, statePassword, statePasswordRecover, stateLast, select])
     return (
+      
         <WrapperReg>
             <form onSubmit={onSubmit}>
                 <Container width="100%" {...mediaContainer}>

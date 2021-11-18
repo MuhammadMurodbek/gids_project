@@ -16,6 +16,9 @@ import ProgressInfo from "../../molecules/element_f42/rate.part.f42"
 import CommentPart from "../../molecules/element_f42/comment.f42"
 import Button from "../../atom/button"
 // import TruncateText from "../../molecules/text.truncate"
+import { useTranslation, UseTranslation} from 'react-i18next'
+
+
 const mediaContainer = {
     m_width:"600px",
     m_direction:"column",
@@ -35,6 +38,11 @@ const mediaContainerPadding = {
     m_padding:'0 5px'
 }
 const  Index = () => {
+
+    const {t} = useTranslation()
+
+    const getRole = JSON.parse(localStorage.getItem("user_token"));
+    const { role } = getRole;
     return (
         <Wrapper>
             <WrapperContainer>
@@ -59,11 +67,13 @@ const  Index = () => {
                     </Grid> */}
                 </Grid>
                 <Container padding="30px">
-                    <TextTitle font="15px" fontWeight="600" align="left" color="#326A32">Ozim haqimda</TextTitle>
+                    <TextTitle font="15px" fontWeight="600" align="left" color="#326A32">{t("GidPk.OzimHaqimda")}</TextTitle>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et, molestias consectetur. Repellat sint animi beatae quisquam et ut minima ratione, facilis voluptate consequatur culpa possimus sit nisi illum voluptates at asperiores tempora voluptatem doloremque! Provident illo et obcaecati neque, quam cumque perspiciatis tempore sit dolores, pariatur modi. Repellendus sit, culpa quasi, sunt ratione voluptate recusandae veniam laborum soluta a nulla accusantium adipisci vitae minima odit? Quos minus fugiat, incidunt harum eveniet fuga, provident repellat, qui quas illum reiciendis quam blanditiis quo cum aliquid vitae repellendus natus iusto! Placeat architecto, consequatur porro sint enim vitae earum eveniet quia, error consequuntur quas!</p>
                     <ContainerBottom>
-                        <div className="inner-div"> <span className="title">Qatnashgan tadbirlarim:</span> <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, architecto.</span> </div>
-                        <div className="inner-div"> <span className="title">Yili:</span> <span>2021</span> </div>
+                        <div className="inner-div"> <span className="title"> 
+                        {t("GidPk.qatnashgan")}:</span> <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, architecto.</span> </div>
+                        <div className="inner-div"> <span className="title"> 
+                        {t("GidPk.yil")} :</span> <span>2021</span> </div>
                     </ContainerBottom>
                 </Container>
             </WrapperContainer>
@@ -75,17 +85,18 @@ const  Index = () => {
             <WrapperContainer>
                 <Container {...mediaContainerPadding} padding="0 10px">
                     <ThirdInfoCard/>
-                </Container>
+                </Container> 
             </WrapperContainer>
-            <WrapperContainer>
+            { role === 'writer'? null: 
+             <WrapperContainer>
                 <Container {...mediaContainerPadding} padding="0 20px">
-                    <Title text="Gallery"/>
+                    <Title text={t("GidPk.Gallery")}/>
                     <ImageGallery/>
                 </Container>
-            </WrapperContainer>
+            </WrapperContainer>}
             <WrapperContainer>
                 <Container {...mediaContainerPadding} padding="0 20px"> 
-                    <Title text="Mijozlarning fikrlari"/>   
+                    <Title text={t("GidPk.fidbek")}/>   
                     <Grid container spacing={1} style={{marginBottom:60}}>
                         <Grid item sm={12} md={4}><ProgressInfo/></Grid>
                         <Grid item sm={12} md={8}><ProgressTitle/></Grid>
@@ -104,7 +115,7 @@ const  Index = () => {
                         zIndex="40"
                         backgroundColor="linear-gradient(to top, #fff, rgba(255,255,255,0.6))"
                     >
-                        <Button type="outlined">Ko'proq yuklash</Button>
+                        <Button type="outlined">{t("GidPk.koproqYuklash")}</Button>
                     </Container>
                 </Container>
             </WrapperContainer>

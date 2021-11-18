@@ -26,8 +26,10 @@ import {
 const Index = () => {
   const [isOpen, setOpen] = useState(false);
   const [selected, setSelected] = useState("UZ");
+
   const getRole = JSON.parse(localStorage.getItem("user_token"));
   const role = getRole ? getRole.role : undefined;
+  
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const toggle = () => setDropdownOpen((prevState) => !prevState);
 

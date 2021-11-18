@@ -4,13 +4,14 @@ import {mainGreen} from "../../styles/global/colors"
 
 export const Wrapper = styled.div`
     width: 100%;
+     
     .imgad{
      margin-bottom: 30px;
     }
     .imgBukhara{
         position: relative;
     }
-
+ 
     .msa{
       padding:20px;
      }  
@@ -26,13 +27,9 @@ export const Wrapper = styled.div`
       padding: 10px 0 !important;
       /* margin-top: 20px; */
   }
-  .msa2{
-      padding:15px;
+  .addsa{
+        
       margin-top:30px;
-      /* margin-right: auto; */
-      /* margin-left: auto; */
-      margin-left: 15px;
-
   }
   .sc-fKFxtB.cNPZrT{
     margin: 0 auto;

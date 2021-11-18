@@ -13,12 +13,11 @@ export default function Index() {
     return (
         <Wrapper>
             <TextTitle width="50%" left="auto" right="auto" bottom="30px" top="80px">
-                Blog
+                {t("Blog.blog")}
             </TextTitle>
 
             <Grid container spacing={1} >
                 <Grid item xs={12} sm={12} md={8}>
-
                     <CitiLeftPart
                         title="Xitoyga sayoxat"
                         kalendar="23.01.2021"

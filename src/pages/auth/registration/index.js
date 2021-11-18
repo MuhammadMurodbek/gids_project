@@ -10,10 +10,13 @@ import Authorization from "./auth.component";
 import Registration from "./reg.component";
 import {Wrapper, Container} from "./index.style"
 import Loading from "../../../components/atom/loading.spinner.line"
-import { useTranslation } from "react-i18next";
+import { useTranslation } from 'react-i18next'
+
+
 
 
 const useStyles = makeStyles((theme) => ({
+
   root: {
     backgroundColor: theme.palette.background.paper,
     width: 500,
@@ -29,9 +32,13 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function TabPanel(props) {
+
+ 
+
   const { children, value, index, ...other } = props;
 
   return (
+
     <div
       role="tabpanel"
       hidden={value !== index}
@@ -70,7 +77,7 @@ export default function BasicTabs() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
+   
   return (
       <Wrapper>
           <Container>

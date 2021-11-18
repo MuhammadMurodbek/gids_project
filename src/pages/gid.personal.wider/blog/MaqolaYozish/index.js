@@ -13,31 +13,35 @@ import AreaLabeled from "../../../../components/molecules/area.labeled"
 import ImageUploader from "../../../../components/organism/image.uploader.f15"
 import Button from "../../../../components/atom/button"
 import {mediaTextField, mediaTextFieldSec} from "../../../../custom/global.media.variables"
+import {useTranslation} from 'react-i18next'
 
 const Index = () => {
+
+    const {t} = useTranslation()
+
     return (
         <Layout>
             <TitleComponent>
-                <TextTitle {...mediaTextField} {...mediaTextFieldSec} font="26px" bottom="20px">Maqola yozish</TextTitle>
+                <TextTitle {...mediaTextField} {...mediaTextFieldSec} font="26px" bottom="20px">{t("maqolaYozish.Maqolayozish")}</TextTitle>
                 <Link to="/gid-personal-wider" className="link">
-                    <div className="title-left"> <ImageContainer width="auto" src={icon}/> <span>ortga qaytish</span></div>
+                    <div className="title-left"> <ImageContainer width="auto" src={icon}/> <span>{t("maqolaYozish.orqaga")}</span></div>
                 </Link>
             </TitleComponent>
             <Container boxShadow={shadow} padding="20px">
                 <Grid container spacing={2}>
                     <Grid item xs={12} md={4} >
-                        <InputLabel width="100%" label="Maqola nomi" placeholder="Maqolangiz nomini kiriting..."/>
-                        <AreaLabeled width="100%" label="Teglar" placeholder="Teg yozing..."/>
+                        <InputLabel width="100%" label={t("maqolaYozish.maqolaNomi")} placeholder={t("maqolaYozish.NomiPlace")}/>
+                        <AreaLabeled width="100%" label={t("maqolaYozish.taglar")} placeholder= {t("maqolaYozish.tagPlace")} />
                     </Grid>
                     <Grid item xs={12} md={8}>
                         <ImageUploader width="100%" height="460px"/>
                     </Grid>
                 </Grid>
                 <Container padding="0" margin="70px 0 0">
-                    <AreaLabeled width="100%" label="Text" placeholder="Maqola yozing..."/>
+                    <AreaLabeled width="100%" label={t("maqolaYozish.Text")} placeholder= {t("maqolaYozish.maqolaniYozing")} />
                 </Container>
                 <Container padding="20px 0 0" textAlign="right">
-                    <Button>Joylamoq</Button>
+                    <Button>{t("maqolaYozish.joylamoq")}</Button>
                 </Container>
             </Container>
         </Layout>

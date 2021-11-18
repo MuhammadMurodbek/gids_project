@@ -27,9 +27,8 @@ const Index = () => {
                     <CheckCircleOutlineIcon className="icon"/>
                     <FlexContainer width="auto" alignItems="center" className="count"><VisibilityIcon/>{" "}2016</FlexContainer>
                 </FlexContainer>
-                
                 <Link to="/seeprofile">
-                    <Button {...mediaButton}  width="100%">{t("Gid_Tanlash.korish")}</Button>
+                    <Button {...mediaButton}  width="100%"> {t("Gid_Tanlash.korish")} </Button>
                 </Link>
             </FlexContainer>
         </WrapperInfoBtn>

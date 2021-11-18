@@ -75,9 +75,9 @@
     "title":"Choose a Guide for yourself",
     "fikirlar":"Comments:",
     "kuniga":"Up to:",
-    "hizmat":"Services (cities)",
+    "xizmatlar":"Services (cities)",
     "tillar":"Languages",
-    "ozim":"About myself ",
+    "OzimHaqimda":"About myself",
     "korish":"See",
     "davomi":"Read more"
 },
@@ -104,7 +104,7 @@
     "title":"About the platform",
     "boglanish":"Connect"
   },
-  "Biz_bilan_boglanish":{
+  "connect":{
     "contact":"Contact us",
     "Kontaktlarimiz":"Our contacts",
     "tel":"+998 90 123 45 67",
@@ -127,7 +127,10 @@
     "kirish":"Sigin in",
     "royhatdanOtish2":"Sigin up",
     "ismingiz":"Your name",
-    "familya2":"Your last name",
+    "familya2":"Your surname",
+    "gid":"Gid",
+    "user":"User",
+    "yozmaT":"Written translators",
     "tarjimon":"Translator",
     "email2":"Enter the email",
     "pass":"Enter your password",
@@ -138,13 +141,13 @@
     "email2":"Enter the email",
     "pass":"Enter your password",
     "forget":"Forgot password",
-    "kirish":"Sigin in"
+    "kirish":"Sign In"
   },
   "auth_parolniTiklash":{
-    "reset  ":"Reset password",
-    "jonatildi":"* We will send a confirmation code to your email",
+    "reset":"Reset password",
+    "jonatildi":" We will send a confirmation code to your email",
     "cod":"Enter your email",
-    "send":"Send the code"
+    "send":"Confirm"
   },
   "emailni_tastiqlash":{
     "textema":"Confirm your email",
@@ -166,8 +169,8 @@
     "Gid":"Gid",
     "Tarjimon":"Translator",
     "sinxron":"Synchronous",
-    "izchil":"consistent",
-    "yozma":"written translator",
+    "izchil":"Consistent",
+    "yozma":"Written translator",
     "KerakShaharlar":"Git / The city where the translator is needed",
     "davlat":"Country",
     "shaxarlar":"City",
@@ -192,7 +195,7 @@
     "davomi":"Read more"
   },
   "ToliqAriza":{
-    "qaytish":"Return to application list",
+    "qaytish":"return to application list",
     "tafsilotlar":"Details",
     "arizaMatni":"Application text",
     "elonBeruchi":"Announcer:",
@@ -216,15 +219,10 @@
     "text":"Increase your income by writing articles about how the trip went!",
     "Maqolayozish":"Write an article",
     "Maqolalarim":"My articles",
-    "tahrirlash":"Tahrirlash"
+    "tahrirlash":"Edit"
   },
   "maqolaYozish":{
-    "Profilni_Korish":"View profile",
-    "tahrirlash":"Edit my data",
-    "kalendar":"Calendar",
-    "blog":"Blog",
-    "reklama":"Advertising",
-    "sozlamalar":"Profile settings",
+     
     "Maqolayozish":"Write an article",
     "orqaga":"go back",
     "maqolaNomi":"Article Title",
@@ -243,23 +241,35 @@
 
 
 
-  "Gid_Profilni_ko'rish":{
-    "Profilni_Korish":"View profile",
-    "tahrirlash":"Edit my data",
+  "GidPk":{
+    "Profilni_Korish":"My profile",
+    "tahrirlash":"Edit",
     "kalendar":"Calendar",
     "blog":"Blog",
     "reklama":"Advertising",
     "sozlamalar":"Profile settings",
-    "OzimHaqimda":"O‘zim haqimda",
+
+
+    "OzimHaqimda":"About me",
     "reyting":"Reytingi:",
     "fikirlar":"Comments:",
     "kuniga":"in a day",
     "soatiga":"Hourly:",
+    "qatnashgan":"The events I attended",
+    "yil":"Year",
     "ozimHaqimdaVideo":"Video about myself",
     "malumotVaTajriba":"Education and Work Experience",
+    "institut":"Graduated from institutes :",
+
+
+    "mutahasis":"Specialty :",
+    "ishtaj":"Work experience :",
+    "ishJoy":"Work place :",
+    "lavozim":"My position :",
+    "ishvaqt":"My working hours :",
+
     "Malumotim":"My information:",
     "toifam":"Category:",
-    "institut":"Graduated from:",
     "qoshimcha":"Additional courses:",
     "tiltajriba":"Work Experience:",
     "bandkunlar":"Guide / Interpreter's busy days",
@@ -279,7 +289,6 @@
     "koproqYuklash":"More downloads"
   },
   "MTmenHaqimda":{
-
     "Profilni_Korish":"View profile",
     "tahrirlash":"Edit my data",
     "kalendar":"Calendar",
@@ -302,9 +311,9 @@
     "otasiningIsmi":"Your father's name",
     "otasiIplace":"Write your father's name",
     "tugilganSana":"Your date of birth",
-    "jins":"Jinsingiz",
+    "jins":"Gender",
     "erkak":"Male",
-    "ayol":"Woman",
+    "ayol":"Female",
     "mamlakat":"Country",
     "mamlakatPlace":"Choose your country",
     "Shaharlar":"City",
@@ -312,7 +321,7 @@
     "OzingizH":"About yourself",
     "OzingizHplace":"Write about yourself",
     "certificatlar":"Upload your certificates and diplomas here",
-    "saqlash":"Saqlash"
+    "saqlash":"Save"
   },
   "MT_Kontaktlar":{
 
@@ -365,7 +374,7 @@
     "narxlar":"Prices",
     "videoVagalarey":"Video and gallery",
 
-    "malumotlar":"Information",
+    "malumotlar":"Education degrees",
     "oliy":"Higher education",
     "bitirgan":"Graduated from the institute",
     "BitirganOliytalimlar":"Enter a graduate institution",
@@ -375,7 +384,7 @@
     "oqiganKurslaringiz":"Write down the courses you took",
     "tajriba":"Experience",
     "year":"year",
-    "saqlash":"Saqlash"
+    "saqlash":"Save" 
   },
   "TillarniBilish":{
     "Profilni_Korish":"View profile",
@@ -396,7 +405,7 @@
     "til":"languages",
     "tilPlace":"Enter the language",
     "bilishDarajasi":"Level of knowledge",
-    "BilishDPlace":"Determine your level of knowledge",
+    "BilishDPlace":"Select your level",
     "save":"Save"
   },
   "xizmatlar":{
@@ -444,8 +453,7 @@
 
     "birkunlikHizmat":"The cost of one day of service",
     "birSoatlik":"The cost of an hour of service",
-    "saqlash":"Saqlash"
-    
+    "saq":"Save"
   },
   "Galarey":{
 
@@ -465,7 +473,7 @@
     "videoVagalarey":"Video and gallery",
 
     "Partfolio":"You can make a video about yourself. This video is on your profile.",
-    "galarey":"Your gallery",
+    "t":"Your gallery",
     "saqlash":"Save"
   },
 

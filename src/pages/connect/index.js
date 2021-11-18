@@ -14,7 +14,9 @@ import Modal from 'react-awesome-modal';
 import { useTranslation } from 'react-i18next';
 
 export default function Index() {
-    const {t} = useTranslation()
+
+    const {t}  =useTranslation()
+
     const [state, setState] = useState(false);
     function openModal() {
         setState(true);
@@ -26,18 +28,15 @@ export default function Index() {
     return (
         <div>
             <Wrapper>
-                <TextTitle {...mediaTextField} {...mediaTextFieldSec}
-                 top="100px" bottom="100px">
-                    {t("Biz_bilan_boglanish.contact")}
+                <TextTitle {...mediaTextField} {...mediaTextFieldSec} top="100px" bottom="100px">
+                  {t("connect.contact")}
                 </TextTitle>
                 <Grid container alignItems="center" spacing={1} diracti>
                     <Grid item xs={12} md={5} >
-                        <h3 className="grid1">{t("Biz_bilan_boglanish.Kontaktlarimiz")}</h3>
+                        <h3 className="grid1">{t("connect.Kontaktlarimiz")}</h3>
                         <p>+998 90 123 45 67</p>
                         <p>salom@gits.uz</p>
-                        <p> 
-                            {t("Biz_bilan_boglanish.manzil")}
-                        </p>
+                        <p>{t("connect.manzil")} </p>
                         <div>
                             <img className="icons" src={imgtg} alt="name" />
                             <img className="icons" src={imgfac} alt="facebook" />
@@ -50,35 +49,39 @@ export default function Index() {
                 </Grid>
                 
                 <TextTitle {...mediaTextField} {...mediaTextFieldSec} top="100px" bottom="100px">
-                    {t("Biz_bilan_boglanish.savol")}
+                    {t("connect.savol")}
                 </TextTitle>
 
                 <Grid container spacing={1} diraction justifyContent="center">
                     <Grid item xs={12} md={4} sm={12}>
-                        <InputLabel label={t("Biz_bilan_boglanish.ism")} width="100%" placeholder= {t("Biz_bilan_boglanish.isimPlac")} />
+                        <InputLabel label={t("connect.ism")} width="10  0%"
+                         placeholder={t("connect.isimPlac")} />
                     </Grid>
                     <Grid item xs={12} md={4} sm={12}>
-                        <InputLabel label={t("Biz_bilan_boglanish.familya")} width="100%" placeholder={t("Biz_bilan_boglanish.familyaPlac")} />
+                        <InputLabel label={t("connect.familya")} width="100%"
+                         placeholder={t("connect.familyaPlac")}/>
                     </Grid>
                 </Grid>
                 <Grid container spacing={1} diraction justifyContent="center">
                     <Grid item xs={12} md={4} sm={12} >
-                        <InputLabel label={t("Biz_bilan_boglanish.Email")} width="100%" placeholder= {t("Biz_bilan_boglanish.emailPlac")} />
+                        <InputLabel label={t("connect.Email")} width="100%" 
+                        placeholder={t("connect.emailPlac")} />
                     </Grid>
                     <Grid item xs={12} md={4} sm={12} >
-                        <InputLabel label={t("Biz_bilan_boglanish.telefon")} width="100%" placeholder={t("Biz_bilan_boglanish.telefonPlac")} />
+                        <InputLabel label={t("connect.telefon")} width="100%" 
+                        placeholder={t("connect.telefonPlac")} />
                     </Grid>
                 </Grid>
 
                 <Grid container spacing={1} direction justifyContent="center">
                     <Grid item xs={12} md={8} sm={12}>
                         <TextAreaComp label="Savol" width="100%" height="170px" 
-                        placeholder={t("Biz_bilan_boglanish.textPlac")}  />
+                        placeholder= {t("connect.text")} />
                     </Grid>
                 </Grid>
                 <Grid container className="grid_btn" justifyContent="flex-end" xs={12} md={10}  >
                     <Button className="btnC" type="button" onClick={openModal}>
-                        {t("Biz_bilan_boglanish.jonatish")}
+                    {t("connect.jonatish")}
                     </Button>
                 </Grid>
 

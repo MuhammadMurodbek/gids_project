@@ -9,7 +9,7 @@ import {post_auth_ent_action} from "../../../redux/actions"
 import toast from "react-hot-toast"
 import useApiData from "../../../hooks/response"
 import { useTranslation } from 'react-i18next'
-
+``
 const Index = () => {
     const {t} = useTranslation()
 

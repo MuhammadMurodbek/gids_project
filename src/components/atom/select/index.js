@@ -19,6 +19,7 @@ const Index = (props) => {
   const [value, setValue] = useState(null);
   const handleChange = useCallback(
     (valueChange) => {
+      // console.log(valueChange)
       setValue(valueChange);
       if (setState) {
         setState(valueChange);

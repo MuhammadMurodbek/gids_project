@@ -7,4 +7,14 @@ export const Wrapper = styled.div`
     .gridCon{
         width: 100%;
     }
+    .classed{
+        margin-right: 5px;
+    }
+    .box{
+        display: flex;
+    }
+    .box_child{
+        display: flex;
+        flex-direction: column;
+    }
 `

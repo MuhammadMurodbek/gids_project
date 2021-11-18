@@ -10,8 +10,9 @@ const PriceCurrency = (props) => {
             <div>
                 <TextTitle font="14px" align="left" position="relative" p_top="20px">{title}</TextTitle>
                 <div className="wrap_class">
-                    <InputLabeled width="150px" placeholder="50" typeNumber />
-                    <div className="wrap_class_inner"><Selection width="140px" placeholder="$" /></div>
+                    <InputLabeled width="100px" placeholder="50" typeNumber />
+                    <div className="wrap_class_inner">
+                    <Selection width="120px" placeholder="$" /></div>
                 </div>
             </div>
         </Wrapper>
