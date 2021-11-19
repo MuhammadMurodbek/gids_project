@@ -10,9 +10,9 @@ import { Container } from '../../../../styles/container/index.style'
 import SelectLabeled from "../../../../components/molecules/select.labeled"
 import TextLabeledLoop from "../../../../components/atom/text.labeled"
 import { useTranslation } from 'react-i18next'
-import {postResponse} from "../../../../hooks/response_get"
+import {postResponse, getResponse} from "../../../../hooks/response_get"
 import uuid from 'react-uuid'
-import {selection} from "./_constants"
+import {selection, SELECTION} from "./_constants"
 import toast from 'react-hot-toast'
 const Index = () => {
 
@@ -21,6 +21,7 @@ const Index = () => {
     const getRole = JSON.parse(localStorage.getItem("user_token"));
     const { role } = getRole;
     const [clearValue, setClearValue] = useState(false)
+    const [getData, setGetData] = useState({success:'', error:''})
     const [value, setValue] = useState({id:'', name:'', level:''})
     const [postData,setPostData] = useState({success:'', error:'', loading: false})
     const [state, setState] = useState([]);
@@ -30,14 +31,14 @@ const Index = () => {
        setClearValue(true)
     }
     const handleDelete = (index) => {
-        console.log(index)
         let clone = state.filter(item => item !== index)
         setState(clone)
     }
     const handleSubmitGid = () => {
         setPostData({...postData, loading: true})
-        let clone = state.map((item) =>{
+        let clone = state.map((item, index) =>{
             return{
+                // gid:state.length,
                 name:item?.name,
                 level:item?.level?.value
             }
@@ -45,13 +46,24 @@ const Index = () => {
         postResponse('/api/gids/edit/language/', clone, setPostData)
     }
     React.useEffect(() => {
-        if(postData?.success !==''){
-            toast.success("Successfully uploaded")
-        }
-        if(postData?.error !==''){
-            toast.error("Failed to load")
-        }
+        if(postData?.success !==''){toast.success("Successfully uploaded")}
+        if(postData?.error !==''){toast.error("Failed to load")}
     },[postData])
+    React.useEffect(() => {getResponse('/api/gids/edit/language/', setGetData)},[])
+    React.useEffect(()=>{
+        if(getData?.success!=='') {
+            let data = getData?.success?.data.map((item)=>{
+                return {
+                    id:uuid(),
+                    // gid:item?.gid,
+                    name:item?.name,
+                    level:{value:item?.level, label:SELECTION[item?.level] }
+                }
+            })
+            setState(data)
+        }
+    },[getData])
+    console.log(getData)
     return (
         <Wrapper>
             <Container padding="10px 0">
