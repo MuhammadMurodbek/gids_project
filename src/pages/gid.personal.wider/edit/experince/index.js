@@ -13,14 +13,13 @@ import DoubleTime from "../../../../components/molecules/double.time.labeled"
 import {useTranslation} from 'react-i18next'
 import {degrees, options_year, options_yes, degrees_gid} from "./_const"
 import MultiInput from "../../../../components/molecules/multivalue.input"
-import {putResponse} from "../../../../hooks/response_get"
+import {putResponse, getResponse} from "../../../../hooks/response_get"
 import toast from 'react-hot-toast'
 const Index = () => {
-    
     const {t} = useTranslation()
-
     const getRole = JSON.parse(localStorage.getItem("user_token")); ///SHUNDAY YOZILSIN
     const [postGid, setPostGid] = useState({success:'', error:'', loading:false})
+    const [getData, setGetData] = useState({success:'', error:''})
     const [stateGid, setStateGid] = useState({education_degree:'', completed_university:'',category:'', additional_courses:[], experience_year:'' })
     console.log(stateGid)
     const handleSubmit = (e) => {
@@ -32,6 +31,14 @@ const Index = () => {
         clone.experience_year = stateGid?.experience_year?.value
         putResponse('/api/gids/edit/education/', stateGid, setPostGid)
     }
+    useEffect(()=>{getResponse('/api/gids/edit/education/', setGetData)},[])
+    console.log(getData)
+    useEffect(()=>{
+        if(getData){
+            let data = getData?.success?.data
+            setStateGid(data)
+        }
+    },[getData])
     useEffect(()=>{
         if(postGid?.success !=='') toast.success('Saved successfully')
         if(postGid?.error !=='') toast.error('Failed to save data')

@@ -33,7 +33,8 @@ export const Wrapper = styled.div`
         font-family: Montserrat;
     }
     .multiple-value-text-input-item-container{
-        /* background-color: red; */
+        background-color: red;
+        display:none;
         position:absolute;
         bottom:-70px;
         width:100%;
@@ -41,7 +42,23 @@ export const Wrapper = styled.div`
     }
     .icon_del{
         position:relative;
-        top:6px;
+        top:3px;
         color:#444;
+        cursor:pointer;
+    }
+`
+export const Comment = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    max-width:500px;
+    height:auto;
+    margin-top: 3px;
+    .item{
+        display: flex;
+        align-items: center;
+        padding:4px;
+        background-color:#d4d6d4;
+        margin:2px 5px;
+        border-radius: 3px;
     }
 `
