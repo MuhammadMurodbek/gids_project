@@ -673,8 +673,9 @@
     "blog":"Blog",
     "reklama":"Advertising",
     "sozlamalar":"Profile settings",
+    
     "kontaktlar":"Contacts",
-    "parolniYangilash ":"Password update",
+    "parolniYangilash":"Password update",
     "telefone":"Phone",
     "telRaqam":"Enter your number",
     "hozirgiParol":"Your current password",

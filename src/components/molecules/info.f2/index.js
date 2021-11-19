@@ -6,11 +6,12 @@ import starImg from "../../../assets/img/choosegid/star1.svg"
 import extraImg from "../../../assets/img/choosegid/extra.svg"
 import comment from "../../../assets/img/choosegid/comment.svg"
 import { Grid } from '@material-ui/core'
-import { useTranslation, UseTranslationResponse } from 'react-i18next';
+import {useTranslation} from 'react-i18next'
 
 const Index = () => {
-
     const {t} = useTranslation()
+
+   
 
     return (
         <WrapperInfoF2> 

@@ -3,7 +3,7 @@
   "description": "descriptionEn",
   "navbar" :{
     "GTU" : "Gid and for translators",
-    "Blog":"Blog",
+    "Blog":"Blog", 
     "Arizalar_royhati":"List of applications",
     "Ariza_qoldirish":"Leave an application",
     "GvaTtanlash":"Choosing a guide or translator"
@@ -100,7 +100,7 @@
     "hoziroq":"Sign up now, fill out your form and start your career!",
     "royhatdanO":"Sign up"
   },
-  "about":{
+  "about":{ 
     "title":"About the platform",
     "boglanish":"Connect"
   },
@@ -124,8 +124,8 @@
     "jonatish":"Send"
   },
   "auth_registr":{
-    "kirish":"Sign In",
-    "royhatdanOtish2":"Sign Up",
+    "kirish":"Sigin in",
+    "royhatdanOtish2":"Sigin up",
     "ismingiz":"Your name",
     "familya2":"Your surname",
     "gid":"Gid",
@@ -172,7 +172,7 @@
     "izchil":"Consistent",
     "yozma":"Written translator",
     "KerakShaharlar":"Git / The city where the translator is needed",
-    "davlat":"State",
+    "davlat":"Country",
     "shaxarlar":"City",
     "KerakSana":"Go / Date translator needed",
     "Bilishikerak":"Git / Translator languages  need to know",
@@ -209,7 +209,7 @@
     "yozing":"Write your message",
     "yopish":"Close",
     "yuborish":"Send"
-  },
+  }, 
   "Blog":{
     "blog":"Blog",
     "davomiOqish":"Read more"
@@ -633,13 +633,13 @@
    "User_Profil":{
      "profilni_korish":"View profile",
      "arizalarim":"My applications",
-     "MalumotlarniTaxrirlash":"Ma’lumotlarimni Tahrirlash",
+     "MalumotlarniTaxrirlash":"Edit my data",
      "profilSozlamalari":"Profile Settings"
    },
    "User_Arizalarim":{
     "profilni_korish":"View profile",
     "arizalarim":"My applications",
-    "MalumotlarniTaxrirlash":"Ma’lumotlarimni Tahrirlash",
+    "MalumotlarniTaxrirlash":"Edit my data",
     "profilSozlamalari":"Profile Settings",
 
     "shaharniK":"Enter the city"
@@ -647,7 +647,7 @@
    "User_MalumotlarniTax":{
     "profilni_korish":"View profile",
     "arizalarim":"My applications",
-    "MalumotlarniTaxrirlash":"Ma’lumotlarimni Tahrirlash",
+    "MalumotlarniTaxrirlash":"Edit my data",
     "profilSozlamalari":"Profile Settings",
 
     "isim":"Name",
@@ -656,11 +656,11 @@
     "familyaPlace":"Write your last name",
     "Kompaniya":"Company",
     "kompaniePlace":"Company name",
-    "davlat":"State",
+    "davlat":"Country",
     "mamlaktalarPlace":"Choose your country",
     "shaxarlar":"City",
     "shaxarlarPlace":"Enter your city",
-    "saqlash":"Saqlash"
+    "saqlash":"Save"
   },
   "profil_sozlamalari":{
     "Profilni_Korish":"View profile",
@@ -669,8 +669,9 @@
     "blog":"Blog",
     "reklama":"Advertising",
     "sozlamalar":"Profile settings",
+
     "kontaktlar":"Contacts",
-    "parolniYangilash ":"Password update",
+    "parolniYangilash":"Password update",
     "telefone":"Phone",
     "telRaqam":"Enter your number",
     "hozirgiParol":"Your current password",

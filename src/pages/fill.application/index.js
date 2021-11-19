@@ -39,33 +39,31 @@ const Index = () => {
     const [ error, setError ] = useState( false )
     const onSubmit = async ( e ) => {
         e.preventDefault();
-        setBtnLoader( true )
+        setBtnLoader(true)
         let newCollect = {
             ...collect,
             country: collect?.country?.label,
             city: collect?.city?.label,
-            languages: collect?.languages.map( item => item.label ),
+            languages: collect?.languages.map(item => item.label),
             currency: collect?.currency?.value,
         }
-        console.log( newCollect )
-        const isValid = await userSchema.isValid( newCollect )
-        if ( !isValid )
-        {
-            setError( true )
-            setBtnLoader( false )
+        console.log(newCollect)
+        const isValid = await userSchema.isValid(newCollect)
+        if (!isValid) {
+            setError(true)
+            setBtnLoader(false)
         }
-        else setResponseHook( post_gid_app_action( newCollect ) )
+        else setResponseHook(post_gid_app_action(newCollect))
     }
-    const countries = JSON.parse( localStorage.getItem( 'countries' ) ).map( ( item, index ) => { return { value: index, label: item.country, ...item } } ) || []
-    React.useEffect( () => {
-        if ( country )
-        {
-            let array = get_cities( country?.cities );
-            setRegion( array )
-            setCollect( { ...collect, country: { value: country?.value, label: country?.label } } )
+    const countries = JSON.parse(localStorage.getItem('countries')).map((item, index) => { return { value: index, label: item.country, ...item } }) || []
+    React.useEffect(() => {
+        if (country) {
+            let array = get_cities(country?.cities);
+            setRegion(array)
+            setCollect({ ...collect, country: { value: country?.value, label: country?.label } })
         }
-    }, [ country ] )
-    React.useEffect( () => { if ( region ) { setCollect( { ...collect, city: region } ) } }, [ region ] )
+    }, [country])
+    React.useEffect(() => { if (region) { setCollect({ ...collect, city: region }) } }, [region])
     return (
         <Wrapper onSubmit={ onSubmit }>
             <TextTitle { ...mediaTextField } { ...mediaTextFieldSec } top="60px" bottom="20px"> {t("arizaqoldirish.title")} </TextTitle>
@@ -79,9 +77,9 @@ const Index = () => {
                             </Grid>
                             <Grid item xs={ 12 } sm={ 12 } md={ 7 }>
                                 <RadioGroup
-                                    setState={ setCollect }
-                                    state={ collect }
-                                    errorText={ error ? validatorState( collect?.who_need, 'string', 0, 'Kim kerakligi kiritilmagan' ) : null }
+                                    setState={setCollect}
+                                    state={collect}
+                                    errorText={error ? validatorState(collect?.who_need, 'string', 0, 'Kim kerakligi kiritilmagan') : null}
                                 />
                             </Grid>
                         </Grid>
@@ -140,7 +138,7 @@ const Index = () => {
                             <Grid item xs={ 12 } sm={ 12 } md={ 5 }>
                                 <div className="title_inner"> {t("arizaqoldirish.jinsi")} </div>
                             </Grid>
-                            <Grid item xs={ 12 } sm={ 12 } md={ 7 }>
+                            <Grid item xs={12} sm={12} md={7}>
                                 <DoubleCheck
                                     name1={t("arizaqoldirish.erkak")}
                                     name2={t("arizaqoldirish.ayol")}
@@ -150,9 +148,9 @@ const Index = () => {
                                     flexDirection="row"
                                     field1="is_male"
                                     field2="is_female"
-                                    state={ collect }
-                                    setState={ setCollect }
-                                    errorText={ ( error && ( collect?.is_female || collect?.is_female ) ) ? "Tarjimon tanlanmagan" : null }
+                                    state={collect}
+                                    setState={setCollect}
+                                    errorText={(error && (collect?.is_female || collect?.is_female)) ? "Tarjimon tanlanmagan" : null}
                                 />
                             </Grid>
                         </Grid>
@@ -164,8 +162,8 @@ const Index = () => {
                                 <Input value={ collect?.people_count || '' } onChange={ ( e ) => setCollect( { ...collect, people_count: parseInt( e.target.value ) } ) } width="100%" type="number" placeholder={t("arizaqoldirish.nechkishiBolaslar")} errorText={ error ? validatorState( collect?.people_count, 'max', 0, 'People count kiritilmagan' ) : null } />
                             </Grid>
                         </Grid>
-                        <Grid container spacing={ 1 } alignItems="center" className="wrap-grid">
-                            <Grid item xs={ 12 } sm={ 12 } md={ 5 }>
+                        <Grid container spacing={1} alignItems="center" className="wrap-grid">
+                            <Grid item xs={12} sm={12} md={5}>
                             </Grid>
                             <Grid item xs={ 12 } sm={ 12 } md={ 7 }>
                                 <Checkbox setState={ setCollect } state={ collect } name={t("arizaqoldirish.shartnoma")} />

@@ -24,6 +24,7 @@ export default function Index() {
     function closeModal() {
         setState(false)
     }
+
     return (
         <div>
             <Wrapper>
@@ -53,7 +54,7 @@ export default function Index() {
 
                 <Grid container spacing={1} diraction justifyContent="center">
                     <Grid item xs={12} md={4} sm={12}>
-                        <InputLabel label={t("connect.ism")} width="100%"
+                        <InputLabel label={t("connect.ism")} width="10  0%"
                          placeholder={t("connect.isimPlac")} />
                     </Grid>
                     <Grid item xs={12} md={4} sm={12}>

@@ -16,6 +16,7 @@ import { useTranslation } from 'react-i18next'
 
 
 const useStyles = makeStyles((theme) => ({
+
   root: {
     backgroundColor: theme.palette.background.paper,
     width: 500,
@@ -68,13 +69,15 @@ function a11yProps(index) {
 }
 
 export default function BasicTabs() {
+
+  const {t} = useTranslation()
   const classes = useStyles();
   const [value, setValue] = React.useState(1);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-  const {t} = useTranslation()
+   
   return (
       <Wrapper>
           <Container>
@@ -116,7 +119,7 @@ export default function BasicTabs() {
                 </Tabs>
             </Box>
             <TabPanel value={value} index={0}>
-                <Authorization />
+                <Authorization/>
             </TabPanel>
             <TabPanel value={value} index={1}>
                 <Registration />

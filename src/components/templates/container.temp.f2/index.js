@@ -3,12 +3,10 @@ import Button from '../../atom/button'
 import ContainerMap from "../../organism/container.f2"
 import {Wrapper, ButtonWrapper} from "./style"
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
-import { useTranslation } from 'react-i18next';
+import {useTranslation} from 'react-i18next'
 
 const Index = () => {
-
-    const {t} = useTranslation();
-
+    const {t} = useTranslation()
     return (
         <Wrapper>
             <ContainerMap/>

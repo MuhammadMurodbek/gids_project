@@ -9,13 +9,10 @@ import {post_auth_ent_action} from "../../../redux/actions"
 import toast from "react-hot-toast"
 import useApiData from "../../../hooks/response"
 import { useTranslation } from 'react-i18next'
-
-
+``
 const Index = () => {
+    const {t} = useTranslation()
 
-    const {t} = useTranslation();
-
-    // const history = useHistory()
     const [stateEmail, setStateEmail] = useState('')
     const {responseHook, setResponseHook} = useApiData('post_auth_ent_reducer')
     const [emailError, setEmailError] = useState({error:false, errorText:''})
@@ -66,7 +63,7 @@ const Index = () => {
             <Container>
                 <AuthInput 
                     setState={setStateEmail} 
-                    title= {t("auth_kirish.email2")}
+                    title={t("auth_kirish.email2")} 
                     error={emailError.error}
                     setError={setEmailError}
                     width="100%"
@@ -76,7 +73,7 @@ const Index = () => {
             <Container>
                 <AuthInput 
                     setState={setStatePassword} 
-                    title={t("auth_kirish.pass")}
+                    title= {t("auth_kirish.pass")}
                     setError={setStatePassword} 
                     placeholder="password..." 
                     password={true} width="100%"
@@ -85,10 +82,12 @@ const Index = () => {
                 />
             </Container>
             <Container width="100%" textAlign="right">
-                <Link to="/auth/reset" className="link">{t("auth_kirish.forget")} </Link>
+                <Link to="/auth/reset" className="link"> {t("auth_kirish.forget")} </Link>
             </Container>
             <Container {...mediaContainerSecAuth} className="text-right"> 
-                <Button {...mediaBtnAuth} loader={loader}> {t("auth_kirish.kirish")} </Button>
+                <Button {...mediaBtnAuth} loader={loader}>
+                    {t("auth_kirish.kirish")}
+                </Button>
             </Container>
         </Authorization>
     )
