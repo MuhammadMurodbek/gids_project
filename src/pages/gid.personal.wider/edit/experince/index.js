@@ -34,7 +34,7 @@ const Index = () => {
     }
     useEffect(()=>{
         if(postGid?.success !=='') toast.success('Saved successfully')
-        if(postGid?.error !=='') toast.success('Failed to save data')
+        if(postGid?.error !=='') toast.error('Failed to save data')
     },[postGid])
     return (
         <Wrapper onSubmit={handleSubmit}>
