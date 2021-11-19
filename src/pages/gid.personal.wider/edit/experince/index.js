@@ -11,7 +11,7 @@ import { Container } from '../../../../styles/container/index.style'
 import SelectLabeled from "../../../../components/molecules/select.labeled"
 import DoubleTime from "../../../../components/molecules/double.time.labeled"
 import {useTranslation} from 'react-i18next'
-import {degrees, options_year, options_yes, degrees_gid} from "./_const"
+import {degrees, options_year, options_yes, degrees_gid, DEGREES, DEGREES_GIT} from "./_const"
 import MultiInput from "../../../../components/molecules/multivalue.input"
 import {putResponse, getResponse} from "../../../../hooks/response_get"
 import toast from 'react-hot-toast'
@@ -32,22 +32,21 @@ const Index = () => {
         putResponse('/api/gids/edit/education/', stateGid, setPostGid)
     }
     useEffect(()=>{getResponse('/api/gids/edit/education/', setGetData)},[])
+    console.log(stateGid)
     console.log(getData)
-    useEffect(()=>{
-        if(getData){
-            let data = getData?.success?.data
-            setStateGid(data)
-        }
-    },[getData])
+    // useEffect(()=>{
+    //     if(getData){
+    //         let data = getData?.success?.data
+    //         setStateGid(data)
+    //     }
+    // },[getData])
     useEffect(()=>{
         if(postGid?.success !=='') toast.success('Saved successfully')
         if(postGid?.error !=='') toast.error('Failed to save data')
     },[postGid])
     return (
         <Wrapper onSubmit={handleSubmit}>
-
             {getRole?.role === "gid" ?
-
                 <Container padding="20px 0">
                     <Grid container spacing={1}>
                         <Grid item xs={12} sm={6} md={4}>
@@ -60,6 +59,8 @@ const Index = () => {
                                 setCollect={setStateGid}
                                 collect={stateGid}
                                 field="education_degree"
+                                pcolor={getData?.success?.data}
+                                placeholder={getData.success?.data !=='' ? DEGREES[getData?.success?.data?.education_degree]: "Select"}
                             />
                         </Grid>
                         <Grid item xs={12} sm={6} md={4}>
@@ -71,6 +72,7 @@ const Index = () => {
                                 setState={setStateGid}
                                 state={stateGid}
                                 field="completed_university" 
+                                defaultApiValue={getData?.success?.data?.completed_university || ''}
                             />
                         </Grid>
                         <Grid item xs={12} sm={6} md={4}>
@@ -82,12 +84,21 @@ const Index = () => {
                                 collect={stateGid}
                                 field="category"
                                 label={t("IshTajriba.toifasi")} 
-                                placeholder={t("IshTajriba.toifaPlace")} />
+                                pcolor={getData?.success?.data || false}
+                                placeholder={getData.success?.data !=='' ? DEGREES_GIT[getData?.success?.data?.category]: t("IshTajriba.toifaPlace")}
+                                // placeholder={t("IshTajriba.toifaPlace")} 
+                            />
                         </Grid>
                     </Grid>
                     <Grid container spacing={1}  >
                         <Grid xs={12} sm={6} md={10}>
-                            <MultiInput setState={setStateGid} state={stateGid} field="additional_courses" label={t("IshTajriba.qoshimchaKurslar")}/>
+                            <MultiInput 
+                                setState={setStateGid} 
+                                state={stateGid} 
+                                field="additional_courses" 
+                                label={t("IshTajriba.qoshimchaKurslar")}
+                                defaultApiValue={getData.success?.data?.additional_courses || []}
+                            />
                         </Grid>
                         <Grid item xs={12} sm={6} md={2}>
                             <SelectLabeled sizeLabel="15px" width="100%" label={t("IshTajriba.tajriba")} placeholder={t("IshTajriba.year")}

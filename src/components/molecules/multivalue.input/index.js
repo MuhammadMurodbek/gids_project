@@ -3,7 +3,7 @@ import {Wrapper, Comment} from './style'
 import MultipleValueTextInput from 'react-multivalue-text-input';
 import HighlightOffIcon from '@material-ui/icons/Close';
 const Index = (props) => {
-    const {field,setState, state} = props
+    const {field,setState, state, defaultApiValue} = props
     const [array, setArray] = useState([])
     const handleChange = useCallback((item) => {
        setArray([...array, item])
@@ -13,7 +13,7 @@ const Index = (props) => {
         setArray(clone)
     },[array])
     useEffect(() =>{ if(setState){setState({...state,[field]:array})}},[array])
-    console.log(array)
+    useEffect(()=>{if(defaultApiValue) setArray(defaultApiValue) },[defaultApiValue])
     return (
         <Wrapper>
             <MultipleValueTextInput
