@@ -7,7 +7,7 @@ const Index = (props) => {
     const handleChange = useCallback((e) => {
         if(setState && field)
         setState({...state, [field]:e.target.checked })
-    },[state])
+    },[state, field, setState])
     return (
         <Wrapper>
             <Checkbox name={name} onChange={handleChange}>{props.name}</Checkbox>

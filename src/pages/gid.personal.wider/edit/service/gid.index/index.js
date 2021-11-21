@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState, useEffect} from 'react'
 import { Wrapper } from './style'
 import { Container } from "../../../../../styles/container/index.style"
 import { TextTitle } from "../../../../../styles/textTitle/index.style"
@@ -9,38 +9,57 @@ import SelectLabeled from "../../../../../components/molecules/select.labeled"
 import DeleteIcon from '@material-ui/icons/Delete';
 import AddIcon from '@material-ui/icons/Add'
 import Button from "../../../../../components/atom/button"
-import TextLabeled from "../../../../../components/molecules/input.labeled"
+import {checkDisabled} from "./_func"
 import TextLabeledLoop from "../../../../../components/atom/text.labeled"
 import { useTranslation } from 'react-i18next'
+import { get_cities } from "../../../../../custom/function";
+import { countries } from "../../../../../custom/constants";
 import uuid from 'react-uuid'
 const GidIndex = () => {
-    const [clearValue, setClearValue] = useState(false)
-    const [getData, setGetData] = useState({success:'', error:''})
-    const [value, setValue] = useState({id:'', name:'', level:''})
-    const [postData,setPostData] = useState({success:'', error:'', loading: false})
+    const { t } = useTranslation()
     const [state, setState] = useState([]);
+    const [clearValue, setClearValue] = useState(false)
+    const [value, setValue] = useState({country:'', city:''})
+    const [getData, setGetData] = useState({success:'', error:''})
+    const [postData,setPostData] = useState({success:'', error:'', loading: false})
+    const [checkItems, setCheckItems] = useState({excursion:false,consecutive_translate:false, synchronous_translate:false, written_translate:false})
+    const {excursion} = checkItems
     const handleAdd = () => {
-       setState([...state,{id:uuid(),name:value?.name, level:value?.level}])
-       setValue({id:"",name:'', level:''})
+       setState([...state,{country:value?.country?.label, city:value?.city?.label}])
+       setValue({country:'', city:''})
        setClearValue(true)
     }
     const handleDelete = (index) => {
         let clone = state.filter(item => item !== index)
         setState(clone)
     }
-    const { t } = useTranslation()
-
+    useEffect(() => {
+        if(!excursion){
+            setValue({country:'', city:''})
+            setClearValue(true)
+        }
+    },[excursion])
+    console.log(checkItems)
     return (
         <Wrapper>
             <Container margin="30px 0 0" padding="10px 0">
                 <TextTitle font="15px" align="left">{ t( "xizmatlar.xizmatlar" ) }</TextTitle>
                 <FlexContainer width="100%" gap="50px">
                     <DoubleCheck flexDirection="column"
-                        name1={ t( "xizmatlar.ekskursiyalar" ) }
-                        name2={ t( "xizmatlar.ogzaki" ) } />
+                        field1="excursion"
+                        field2="consecutive_translate" 
+                        name1="Excursions"
+                        name2="Consecutive Translator"
+                        setState={setCheckItems}
+                        state={checkItems}
+                    />
                     <DoubleCheck flexDirection="column"
-                        name1={ t( "xizmatlar.sinxron" ) }
-                        name2={ t( "xizmatlar.izchil" ) }
+                        field1="synchronous_translate"
+                        field2="written_translate"
+                        name1="Synchronous Translator"
+                        name2="Writer Translator"
+                        setState={setCheckItems}
+                        state={checkItems}
                     />
                 </FlexContainer>
                 <Container padding="10px 0" margin="10px 0" textAlign="right">
@@ -50,17 +69,17 @@ const GidIndex = () => {
                                 <>
                                     <Grid container spacing={ 1 } key={ index }>
                                         <Grid item xs={ 12 } sm={ 6 } md={ 6 }>
-                                            <TextLabeledLoop label={ t( "TillarniBilish.til" ) } value={ item?.name } />
+                                            <TextLabeledLoop label={ t( "TillarniBilish.til" ) } value={ item?.country } />
                                         </Grid>
                                         <Grid item xs={ 12 } sm={ 6 } md={ 5 }>
-                                            <TextLabeledLoop label={ t( "TillarniBilish.bilishDarajasi" ) } value={ item?.level?.label } />
+                                            <TextLabeledLoop label={ t( "TillarniBilish.bilishDarajasi" ) } value={ item?.city } />
                                         </Grid>
                                         <Grid item xs={ 12 } sm={ 12 } md={ 1 }>
                                             <FlexContainer width="100%" alignItems="flex-end" margin="44px 0 0 0">
                                                 <Button
                                                     paddingIcon="10px"
                                                     type="outlined"
-                                                    margin="11px 10px 0 10px"
+                                                    margin="1px 10px 0 0px"
                                                     onClick={ () => handleDelete( item ) }
                                                 >
                                                     <DeleteIcon className="icon" />
@@ -75,24 +94,30 @@ const GidIndex = () => {
 
                         <Grid container spacing={ 1 } >
                             <Grid item xs={ 12 } sm={ 6 } md={ 6 }>
-                                <TextLabeled
-                                    value={ value?.name }
-                                    state={ value }
-                                    setState={ setValue }
-                                    field="name"
-                                    sizeLabel="15px" width="100%"
-                                    label={ t( "TillarniBilish.til" ) }
-                                    placeholder={ t( "TillarniBilish.tilPlace" ) }
+                                <SelectLabeled
+                                    setClearValue={ setClearValue }
+                                    clearValue={ clearValue }
+                                    options={ countries }
+                                    collect={ value }
+                                    isDisabled={!checkItems?.excursion}
+                                    setCollect={ setValue }
+                                    field="country"
+                                    sizeLabel="15px"
+                                    width="100%"
+                                    marginLabel="12px 0"
+                                    label={ t( "TillarniBilish.bilishDarajasi" ) }
+                                    placeholder={ t( "TillarniBilish.BilishDPlace" ) }
                                 />
                             </Grid>
                             <Grid item xs={ 12 } sm={ 6 } md={ 5 }>
                                 <SelectLabeled
                                     setClearValue={ setClearValue }
                                     clearValue={ clearValue }
-                                    // options={ selection }
                                     collect={ value }
                                     setCollect={ setValue }
-                                    field="level"
+                                    isDisabled={ !value?.country.hasOwnProperty('cities')}
+                                    options={value?.country?.cities ? get_cities(value?.country?.cities) : null}
+                                    field="city"
                                     sizeLabel="15px"
                                     width="100%"
                                     marginLabel="12px 0"
