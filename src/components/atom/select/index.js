@@ -16,7 +16,8 @@ const Index = (props) => {
     collect,
     field,
     clearValue,
-    setClearValue
+    setClearValue,
+    pcolor,
   } = props;
   const [value, setValue] = useState(null);
   const handleChange = useCallback(
@@ -48,6 +49,7 @@ const Index = (props) => {
       paddingX={paddingX}
       margin={margin}
       backgroundColor={backgroundColor}
+      pcolor={pcolor}
     >
       <Select
         {...props}

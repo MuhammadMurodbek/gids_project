@@ -8,4 +8,7 @@ export const Wrapper = styled.div`
     background-color: ${value=>value.backgroundColor ? value.backgroundColor : '#fafcfa'} ;
     border-radius: 4px;
     z-index: 5;
+    .css-1wa3eu0-placeholder{
+        color: ${v=>v.pcolor ? "#2a2a2a" :"#7c7a7a" }!important;
+    }
 `

@@ -10,17 +10,19 @@ import { Container } from '../../../../styles/container/index.style'
 import SelectLabeled from "../../../../components/molecules/select.labeled"
 import TextLabeledLoop from "../../../../components/atom/text.labeled"
 import { useTranslation } from 'react-i18next'
-import {postResponse, getResponse} from "../../../../hooks/response_get"
+import {postResponse, getResponse, deleteResponse} from "../../../../hooks/response_get"
 import uuid from 'react-uuid'
 import {selection, SELECTION} from "./_constants"
+import Spinner from "../../../../components/atom/loading.spinner.line";
 import toast from 'react-hot-toast'
 const Index = () => {
 
     const {t} = useTranslation();
     console.log(uuid())
     const getRole = JSON.parse(localStorage.getItem("user_token"));
-    const { role } = getRole;
+    // const { role } = getRole;
     const [clearValue, setClearValue] = useState(false)
+    const [callback, setCallback] = useState(false)
     const [getData, setGetData] = useState({success:'', error:''})
     const [value, setValue] = useState({id:'', name:'', level:''})
     const [postData,setPostData] = useState({success:'', error:'', loading: false})
@@ -30,32 +32,33 @@ const Index = () => {
        setValue({id:"",name:'', level:''})
        setClearValue(true)
     }
-    const handleDelete = (index) => {
-        let clone = state.filter(item => item !== index)
-        setState(clone)
+    const handleDelete = (item) => {
+        console.log(item)
+        if(Object.keys(item).includes('del_id')){
+            deleteResponse(`/api/gids/edit/language/${item?.del_id}`, item?.name,setCallback)
+        }else{ 
+            let data = state.filter(prev=>prev.id!==item.id)
+            setState(data)
+        }
     }
     const handleSubmitGid = () => {
         setPostData({...postData, loading: true})
-        let clone = state.map((item, index) =>{
-            return{
-                // gid:state.length,
-                name:item?.name,
-                level:item?.level?.value
-            }
-        })
+        let clone = state
+            .filter(prev=>!Object.keys(prev).includes('del_id'))
+            .map(item=>{return{name:item?.name, level:item?.level?.value}})
         postResponse('/api/gids/edit/language/', clone, setPostData)
     }
     React.useEffect(() => {
         if(postData?.success !==''){toast.success("Successfully uploaded")}
         if(postData?.error !==''){toast.error("Failed to load")}
     },[postData])
-    React.useEffect(() => {getResponse('/api/gids/edit/language/', setGetData)},[])
+    React.useEffect(() => {getResponse('/api/gids/edit/language/', setGetData)},[callback])
     React.useEffect(()=>{
         if(getData?.success!=='') {
             let data = getData?.success?.data.map((item)=>{
                 return {
                     id:uuid(),
-                    // gid:item?.gid,
+                    del_id:item?.id,
                     name:item?.name,
                     level:{value:item?.level, label:SELECTION[item?.level] }
                 }
@@ -63,13 +66,14 @@ const Index = () => {
             setState(data)
         }
     },[getData])
-    console.log(getData)
+    console.log(state)
     return (
         <Wrapper>
             <Container padding="10px 0">
-                {role === "gid" ?
+                {getRole?.role === "gid" ?
                     <>
                     {
+                        getData?.success === '' ? <Spinner marginTop="60px" width={ 50 } height={ 50 }/> : 
                         state.map((item, index)=>(
                             <>
                                 <Grid container spacing={1} key={index}>
