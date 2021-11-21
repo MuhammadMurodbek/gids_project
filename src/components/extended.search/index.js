@@ -8,7 +8,6 @@ import CheckBoxContainer from "./checkbox.width.title"
 import Button from "./button.component"
 import DoubleRadio from "../molecules/double.radio.labeled"
 import {useTranslation} from 'react-i18next'
- 
 
 const Index = () => {
    
@@ -21,9 +20,14 @@ const Index = () => {
             <Selection title={t("kengaytirlgan_Q.Davlat")} placeholder={t("kengaytirlgan_Q.DavlatniTanlang")}/>
             <CalendarComponent title={t("kengaytirlgan_Q.sana")} />
             <CalendarComponent/>
-            <DoubleRadio name1={t("kengaytirlgan_Q.online")} name2={t("kengaytirlgan_Q.barchasi")}/>
+            
+
             <SelectionLang title={t("kengaytirlgan_Q.til")}/>
+
             <CheckBoxContainer name1={t("kengaytirlgan_Q.erkak")} name2={t("kengaytirlgan_Q.ayol")}/>
+
+            <DoubleRadio name1={t("kengaytirlgan_Q.online")} name2={t("kengaytirlgan_Q.barchasi")}/>
+            
             <div className="button-wrapper">
                 <Button width="280px" name={t("kengaytirlgan_Q.qidirish")}/>
             </div>

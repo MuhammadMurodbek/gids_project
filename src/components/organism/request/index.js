@@ -38,7 +38,7 @@ export default function Index(props) {
                                 <span className="textS" >{name}</span>
                             </Grid>
                             <Grid item md={3}>
-                                <img src={gps} />
+                                <img src={gps} /> 
                                 <span className="textS" >{gpss}</span>
                             </Grid>
                             <Grid item md={4} className="item33">
