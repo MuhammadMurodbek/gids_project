@@ -183,9 +183,6 @@ const Index = () => {
                       sizeLabel="15px"
                       width="100%"
                       label="Mamlakat"
-                      // pcolor={ apiValue?.success !== "" ? true : false }
-                      // placeholder={ apiValue?.success?.data?.country || 'Select country'}
-                      // defaultApiValue={ apiValue?.success?.data?.country}
                     />
                   </Grid>
                   <Grid item xs={ 12 } md={ 4 }>
@@ -200,8 +197,6 @@ const Index = () => {
                       field="city"
                       width="100%"
                       label="Shahar"
-                      // pcolor={ apiValue?.success !== "" ? true : false }
-                      // placeholder={ apiValue?.success?.data?.city || 'Select city' }
                       errorText={ error ? validatorState( state?.country, 'object', 0, 'Davlat kiritilmagan' ) : null }
                     />
                   </Grid>
