@@ -15,6 +15,7 @@ import { get_cities } from "../../../../../custom/function";
 import { countries } from "../../../../../custom/constants";
 import { putResponse, getResponse } from "../../../../../hooks/response_get"
 import toast from 'react-hot-toast'
+import FadeIn from 'react-fade-in';
 import Spinner from "../../../../../components/atom/loading.spinner.line";
 const GidIndex = () => {
     const { t } = useTranslation()
@@ -104,6 +105,7 @@ const GidIndex = () => {
                                         state ?
                                             state.map( ( item, index ) => (
                                                 <>
+                                                <FadeIn>
                                                     <Grid container spacing={ 1 } key={ index }>
                                                         <Grid item xs={ 12 } sm={ 6 } md={ 6 }>
                                                             <TextLabeledLoop label={ t( "TillarniBilish.til" ) } value={ item?.country } />
@@ -124,6 +126,7 @@ const GidIndex = () => {
                                                             </FlexContainer>
                                                         </Grid>
                                                     </Grid>
+                                                    </FadeIn>
                                                 </>
                                             ) ) : null
                                     }
