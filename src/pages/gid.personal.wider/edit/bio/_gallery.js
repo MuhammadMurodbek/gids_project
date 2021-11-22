@@ -7,7 +7,8 @@ import { Fade } from '@material-ui/core';
 const Gallery = () => {
     const [ state, setState ] = useState( { success: '', error: '' } )
     const [ list, setList ] = useState( [] )
-    useEffect( () => { getResponse( '/api/gids/edit/gallery/', setState ) }, [] )
+    const [callback,setCallback] = useState(false)
+    useEffect( () => { getResponse( '/api/gids/edit/gallery/', setState ) }, [callback] )
     useEffect( () => {
         if ( state?.success !== '' )
         {
@@ -20,14 +21,13 @@ const Gallery = () => {
             setList( imagesList )
         }
     }, [ state ] )
-    function onSelectImage ( index, image ) {
-        console.log( index, image )
-    }
+    // function onSelectImage ( index, image ) {
+    //     console.log( index, image )
+    // }
     return (
         <div>
-           
-            <ImageGallery list={list}/>
-            <ImageCrop setState={ setState } state={ state } />
+            <ImageGallery list={list} setCallback={setCallback}/>
+            {/* <ImageCrop setState={ setState } state={ state } /> */}
         </div>
     )
 }

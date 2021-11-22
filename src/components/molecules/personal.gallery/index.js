@@ -1,11 +1,11 @@
 import React, { useState, useCallback } from 'react';
 import ImageViewer from 'react-simple-image-viewer';
-
-function App({list}) {
+import ImageCrop from "../../organism/image.crop.gallery/new";
+function App({list, setCallback}) {
   const [currentImage, setCurrentImage] = useState(0);
   const [isViewerOpen, setIsViewerOpen] = useState(false);
   const images = list.map(item=>item.src) || [];
-
+  const [loading, setLoading] = useState(false);
   const openImageViewer = useCallback((index) => {
     setCurrentImage(index);
     setIsViewerOpen(true);
@@ -17,8 +17,9 @@ function App({list}) {
   };
 
   return (
-    <div>
-      {images.map((src, index) => (
+    <div style={{display: 'inline-block'}}>
+      {
+        images.map((src, index) => (
         <img
           src={ src }
           onClick={ () => openImageViewer(index) }
@@ -29,9 +30,12 @@ function App({list}) {
           style={{ margin: '2px' }}
           alt=""
         />
-      ))}
+      ))
+    }
+    <ImageCrop loading={ loading } setLoading={ setLoading } list={ list } setCallback={setCallback}/>
 
       {isViewerOpen && (
+        <>
         <ImageViewer
           src={ images }
           currentIndex={ currentImage }
@@ -39,7 +43,9 @@ function App({list}) {
           closeOnClickOutside={ true }
           onClose={ closeImageViewer }
         />
-      )}
+      </>
+      ) 
+      }
     </div>
   );
 }
