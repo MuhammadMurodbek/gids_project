@@ -15,6 +15,9 @@ import uuid from 'react-uuid'
 import {selection, SELECTION} from "./_constants"
 import Spinner from "../../../../components/atom/loading.spinner.line";
 import toast from 'react-hot-toast'
+import FadeIn from 'react-fade-in';
+
+// import { TransitionGroup } from 'react-transition-group';
 const Index = () => {
 
     const {t} = useTranslation();
@@ -33,7 +36,6 @@ const Index = () => {
        setClearValue(true)
     }
     const handleDelete = (item) => {
-        console.log(item)
         if(Object.keys(item).includes('del_id')){
             deleteResponse(`/api/gids/edit/language/${item?.del_id}`, item?.name,setCallback)
         }else{ 
@@ -75,7 +77,7 @@ const Index = () => {
                     {
                         getData?.success === '' ? <Spinner marginTop="60px" width={ 50 } height={ 50 }/> : 
                         state.map((item, index)=>(
-                            <>
+                            <FadeIn>
                                 <Grid container spacing={1} key={index}>
                                     <Grid item xs={12} sm={6} md={6}>
                                         <TextLabeledLoop label={t("TillarniBilish.til")} value={item?.name}/>
@@ -97,7 +99,7 @@ const Index = () => {
                                     </Grid>
                                 </Grid>
                             
-                            </>
+                            </FadeIn>
                         ))
                     }
                     
