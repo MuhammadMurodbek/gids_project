@@ -1,6 +1,18 @@
 import styled from "styled-components"
  
 export const WrapperRoundImage = styled.div`
+    .modaldiv{
+        position: relative;
+    }
+    .pointx{
+        position: absolute;
+        top: -30px;
+        right: -40px;
+        color: #fff;
+        font-size: 35px;
+        cursor: pointer;
+    }
+
     width:${value=>value.width};
     height:${value=>value.height};
     button{

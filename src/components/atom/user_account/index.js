@@ -4,12 +4,8 @@ import Avatar from '@mui/material/Avatar';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
-import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
 import Tooltip from '@mui/material/Tooltip';
-import PersonAdd from '@mui/icons-material/PersonAdd';
-import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
 import { UserListItem } from './index.style';
 import { useHistory } from 'react-router-dom';
@@ -18,7 +14,8 @@ import { UserOutlined } from "@ant-design/icons";
 export default function AccountMenu() {
     const history = useHistory()
     const userToken = JSON.parse(localStorage.getItem("user_token"))
-    let role = userToken ? userToken.role : undefined
+  //  let role = userToken ? userToken.role : undefined
+
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
@@ -32,7 +29,7 @@ export default function AccountMenu() {
         window.location.href = "/auth"
     }
     const handleProfile = () => {
-      if(role === "simple_user") {
+      if(userToken?.role === "simple_user") {
           history.push("/gid-personal")
       } else {
           history.push("/gid-personal-wider")
@@ -106,4 +103,4 @@ export default function AccountMenu() {
     );
 }
 
-// 19981223a#11
+ 

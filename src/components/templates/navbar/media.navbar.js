@@ -5,13 +5,11 @@ import { FlexContainer } from "../../../styles/flex.container"
 import ButtonNavbar from "../../molecules/button.navbar"
 import { useSelector } from "react-redux"
 import ReactFlagsSelect from 'react-flags-select';
-import AccountMenu from '../../atom/user_account';
 import { useTranslation } from 'react-i18next';
+import { useHistory } from 'react-router-dom'
 
-//  import { Us } from 'react-flags-select';
-// import {navbarMediaCenter} from "./media"
 const MediaNavbarContainer = (props) => {
-    const {t} = useTranslation()
+    const { t } = useTranslation()
 
     const getRole = JSON.parse(localStorage.getItem("user_token"));
 
@@ -21,6 +19,25 @@ const MediaNavbarContainer = (props) => {
     }
 
     const selector = useSelector(prev => prev.reducer_user_type)
+
+    const history = useHistory()
+    const userToken = JSON.parse(localStorage.getItem("user_token"))
+    // let role = userToken ? userToken.role : undefined
+
+    const handleProfile = () => {
+        props.setOpen(false)
+        if (userToken?.role === "simple_user") {
+            history.push("/gid-personal")
+        } else {
+            history.push("/gid-personal-wider")
+        }
+    }
+
+    const handleLogout = () => {
+        localStorage.clear()
+        window.location.href = "/auth"
+        props.setOpen(false)
+    }
     return (
         <MediaNavbar isOpen={props.isOpen} >
 
@@ -31,26 +48,54 @@ const MediaNavbarContainer = (props) => {
             </div>
 
             <FlexContainer margin="30px 0 0 0" gap="10px" padding="0 15px" width="100%" alignItems="center" flexDirection="column" justifyContent="space-around">
-                
-               <ButtonNavbar title="Gid yoki tarjimonni tanlash" url="/gids" />
-              
-                <ButtonNavbar title="Gid va tarjimonlar uchun" url="/forgits" /> 
 
+                {
+                    userToken?.role === 'simple_user' ?
+                        <span onClick={handleClick}>
+                            <ButtonNavbar title="Gid yoki tarjimonni tanlash" url="/gids" />
+                        </span> :
+                        null
+                }
+                {
+                    userToken?.role !=='simple_user'?
+                    <span onClick={handleClick}>
+                        <ButtonNavbar title="Gid va tarjimonlar uchun" url="/forgits" />
+                    </span> :
+                    null
+                    
+                }
                 <span onClick={handleClick}>
                     <ButtonNavbar title="Blog" url="/blog" />
                 </span>
-
-                <ButtonNavbar title="Ariza qoldirish" url="/application-form" />
-                
-                <ButtonNavbar title="Profile" url="/gid " />
-                <ButtonNavbar title="Logout" url="/auth" />
-                <AccountMenu />
+                {
+                    userToken?.role === "simple_user" ?
+                        <span onClick={handleClick}>
+                            <ButtonNavbar title="Ariza qoldirish" url="/application-form" />
+                        </span> :
+                        null
+                }
+                {
+                    userToken?.role !== "simple_user" ?
+                    <span onClick={handleClick}>
+                        <ButtonNavbar title="Arizalar ro'yhati" url="/request" />
+                    </span> :
+                    null
+                }
                 <ReactFlagsSelect
                     selected={selected}
                     onSelect={code => setSelected(code)}
                     countries={["UZ", "RU", "US"]}
                     customLabels={{ "US": "en", "UZ": "uz", "RU": "ru" }}
                 />
+                <span onClick={handleProfile}>
+                    <ButtonNavbar title="Profile" url="" />
+                </span>
+                <span onClick={handleLogout}>
+                    <ButtonNavbar title="Logout" url="" />
+                </span>
+
+
+
             </FlexContainer>
         </MediaNavbar>
     )

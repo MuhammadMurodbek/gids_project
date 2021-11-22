@@ -17,7 +17,7 @@ export const Input = styled.div`
     top:0px;
     width: 100%;
     height: auto;
-    padding: 18px 10px;
+    padding: 18px 15px;
     padding-right: 40px;
     margin-top: 10px;
     border:none;
@@ -30,6 +30,7 @@ export const Input = styled.div`
     color:#212121;
     background-color: #fafcfa;
     border-radius:4px;
+    text-align:left;
     z-index: 4;
 `
 export const InputLabel = styled.span`

@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState, useEffect} from 'react'
 import {Wrapper, Label, Eye} from "./style"
 import Input from "../../atom/input.second"
 import RemoveRedEyeOutlinedIcon from '@material-ui/icons/RemoveRedEyeOutlined';
@@ -6,7 +6,7 @@ import VisibilityOffOutlinedIcon from '@material-ui/icons/VisibilityOffOutlined'
 import {mainGreen} from "../../../styles/global/colors"
 const Index = (props) => {
     
-    const {width, label, password, sizeLabel, typeNumber, setState, state, field} = props
+    const {width, label, password, sizeLabel, typeNumber, setState, state, field, defaultApiValue} = props
     const [check, setCheck] = useState(true)
     const [value, setValue] = useState('')
     const handleChangeOpen = () => {
@@ -21,10 +21,15 @@ const Index = (props) => {
             setState({...state, [field]: e.target.value})
         }
     }
+    useEffect(()=>{
+        if(defaultApiValue) {
+            setValue(defaultApiValue)
+        }
+    },[defaultApiValue])
     return (
         <Wrapper width={width}>
             <Label size={sizeLabel}>{label}</Label>
-            <Input onChange={handleChange} value={value} {...props} type={typeNumber ? "number" : ((check && password) ? "password":"text")} label="asdfdsf" paddingRight={password ? "45px":null}/>
+            <Input onChange={handleChange} value={value} {...props} type={typeNumber ? "number" : ((check && password) ? "password":"text")}  paddingRight={password ? "45px":null}/>
             {
                 password  ? 
                     <Eye>

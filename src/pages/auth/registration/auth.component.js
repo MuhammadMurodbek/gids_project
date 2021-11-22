@@ -11,6 +11,7 @@ import useApiData from "../../../hooks/response"
 import { useTranslation } from 'react-i18next'
 
 const Index = () => {
+
     const { t } = useTranslation()
     const history = useHistory()
     const [stateEmail, setStateEmail] = useState('')

@@ -16,7 +16,9 @@ const Index = (props) => {
     collect,
     field,
     clearValue,
-    setClearValue
+    setClearValue,
+    pcolor,
+    defaultApiValue
   } = props;
   const [value, setValue] = useState(null);
   const handleChange = useCallback(
@@ -42,12 +44,18 @@ const Index = (props) => {
         setValue(null)
       }
     },[clearValue])
+    useEffect(() => {
+      if(defaultApiValue){
+        setValue({value:0, label:defaultApiValue})
+      }
+    },[defaultApiValue])
   return (
     <Wrapper
       width={width}
       paddingX={paddingX}
       margin={margin}
       backgroundColor={backgroundColor}
+      pcolor={pcolor}
     >
       <Select
         {...props}
