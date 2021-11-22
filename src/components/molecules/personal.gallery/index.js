@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import ImageViewer from 'react-simple-image-viewer';
 import ImageCrop from "../../organism/image.crop.gallery/new";
-import 'animate.css';
+// import 'animate.css';
 function App({list, setCallback}) {
   const [currentImage, setCurrentImage] = useState(0);
   const [isViewerOpen, setIsViewerOpen] = useState(false);
@@ -34,8 +34,8 @@ function App({list, setCallback}) {
         />
       ))
     }
-    <ImageCrop loading={ loading } setLoading={ setLoading } list={ list } setCallback={setCallback}/>
 
+    <ImageCrop loading={ loading } setLoading={ setLoading } list={ list } setCallback={setCallback}/>
       {isViewerOpen && (
         <>
         <ImageViewer
