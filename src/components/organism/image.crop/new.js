@@ -1,7 +1,7 @@
 import ImgCrop from 'antd-img-crop';
 import { Upload } from 'antd';
 import React,{useState} from "react";
-import {PlusCircleOutlined} from "@ant-design/icons"
+import {CameraOutlined} from "@ant-design/icons"
 import "./style.css"
 import noUser from "../../../assets/img/gid-personal/no_user.png"
 const Demo = ({setState, state}) => {
@@ -32,7 +32,8 @@ const Demo = ({setState, state}) => {
             <ImgCrop modalOk="ok" name="image" onModalOk={handleSubmitOk} rotate shape="round" >
                 <Upload onChange={onChange} name="image">
                     <div className="icb add_icon">
-                        <PlusCircleOutlined className="add_icon" style={{ fontSize: '22px' }}/>
+                        <CameraOutlined className="add_icon" style={{ fontSize: '22px' }}/>
+                        {/* <CameraOutlined /> */}
                     </div>
                 </Upload>
             </ImgCrop>
