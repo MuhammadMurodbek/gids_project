@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Navbar } from "./index.style";
-import Logo from "../../../assets/img/logo_svg.svg";
-import cal from "../../../assets/img/request/cal2.svg";
+import Logo from "../../../assets/img/logo99.png";
 import { FlexContainer } from "../../../styles/flex.container";
 import ButtonNavbar from "../../molecules/button.navbar";
 import { Link, NavLink } from "react-router-dom";
@@ -47,7 +46,7 @@ const Index = () => {
           <div className="imgass">
             <Link to="/">
               {" "}
-              <img src={Logo} alt="safsf" />
+              <img className="img_logo1" src={Logo} alt="safsf" />
             </Link>
           </div>
           <FlexContainer

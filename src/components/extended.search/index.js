@@ -16,11 +16,14 @@ const Index = () => {
     return (
         <Wrapper width="350px">
             <div className="title-header">{t("kengaytirlgan_Q.kengaytirilgan")}</div>
+
             <RadioGroup/>   
+
             <Selection title={t("kengaytirlgan_Q.Davlat")} placeholder={t("kengaytirlgan_Q.DavlatniTanlang")}/>
+
             <CalendarComponent title={t("kengaytirlgan_Q.sana")} />
+
             <CalendarComponent/>
-            
 
             <SelectionLang title={t("kengaytirlgan_Q.til")}/>
 
