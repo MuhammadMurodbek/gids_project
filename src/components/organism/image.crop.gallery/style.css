@@ -19,7 +19,7 @@
     margin: 0 auto;
     object-fit: cover;
 }
-.cropper_container{
+.cropper_container.ext{
     display: inline-block !important;
     width:300px !important;
     position: relative !important;
@@ -27,7 +27,7 @@
     /* display:flex !important; */
     /* flex-direction:column !important; */
 }
-.icon_wrapper{
+.icon_wrapper.ext{
     display: inline-block !important;
     /* display:flex !important; */
     /* align-items:center !important; */

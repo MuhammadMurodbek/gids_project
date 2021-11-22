@@ -22,18 +22,18 @@ const Demo = ({loading, setLoading, list, setCallback}) => {
     }
   },[list,url])
   useEffect(()=>{
-    if(url?.success!==''){
+    if(url?.success!=='' || url?.error!==''){
       setCallback(prev=>!prev)
     }
   },[url])
   return(
-      <div className="cropper_container">
-        <div className="icon_wrapper">
+      <div className="cropper_container ext">
+        <div className="icon_wrapper ext">
             <ImgCrop modalOk="ok" name="image" onModalOk={handleSubmitOk} rotate shape="rect" >
                 <Upload onChange={onChange} name="image">
                     <div className="icb add_icon gall">
                         {
-                          loading ? <Loader style={{position: 'relative', top:5}} type="Watch" width={30} height={30}/>: <CameraOutlined className="add_icon" style={{ fontSize: '28px' }}/>
+                          loading ? <Loader style={{position: 'relative', top:0}} type="Watch" width={30} height={30}/>: <CameraOutlined className="add_icon" style={{ fontSize: '28px' }}/>
                         }
                     </div>
                 </Upload>
