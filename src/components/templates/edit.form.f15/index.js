@@ -7,12 +7,15 @@ import Button from "../../atom/button"
 import {putResponse} from "../../../hooks/response_get"
 import {userSchema} from "./_validation"
 import toast from 'react-hot-toast'
+import {useTranslation} from 'react-i18next'
+
 // import {validatorState} from "../../../custom/validator"
 const mediaContainer = {
     m_width:'600px',
     m_padding:"10px 10px 0"
 }
 const Index = ({statePostProps}) => {
+    const {t} = useTranslation()
     const [loader, setLoader] = useState(false)
     const [error, setError] = useState(false)
     const [state, setState] = useState({first_name:'', last_name:'',company:'',image:'',imageFile:null})
@@ -69,7 +72,7 @@ const Index = ({statePostProps}) => {
             <Container {...mediaContainer} padding="10px 50px 0" margin="20px 0">
                 <EditFormContainer error={error} setState={setState} state={state}/>
                 <Container width="100%" padding="0" margin="50px 0 0" textAlign="right">
-                    <Button loader={loader}>Saqlash</Button>
+                    <Button loader={loader}>{t("User_MalumotlarniTax.saqlash")}</Button>
                 </Container>
             </Container>
         </Wrapper>

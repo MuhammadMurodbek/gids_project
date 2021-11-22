@@ -5,7 +5,6 @@ import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import user from '../../../assets/img/request/user1.svg';
 import cal from '../../../assets/img/request/cal.svg';
 import gps from '../../../assets/img/request/gps.svg';
-// import ptich from '../../../assets/img/request/rozi.svg';
 import moment from "moment"
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -32,13 +31,13 @@ export default function Index(props) {
                     </div>
 
                     <div className="responsFooter">
-                        <Grid container spacing={1} diraction="row">
+                        <Grid container spacing={1} >
                             <Grid item md={4}>
                                 <img src={user} />
                                 <span className="textS" >{name}</span>
                             </Grid>
                             <Grid item md={3}>
-                                <img src={gps} />
+                                <img src={gps} /> 
                                 <span className="textS" >{gpss}</span>
                             </Grid>
                             <Grid item md={4} className="item33">
@@ -49,7 +48,7 @@ export default function Index(props) {
                                     </span>
                                 </span>
                             </Grid>
-                            <Grid item md={1} justifyContent="flex-end">
+                            <Grid item md={1}>
                                 <div className="sana">{sana}</div>
                             </Grid>
                         </Grid>

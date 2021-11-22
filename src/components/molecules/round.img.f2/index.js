@@ -2,12 +2,22 @@ import React, { useState } from 'react'
 import { WrapperRoundImage } from "./style"
 import ImageContainer from "../img.container"
 import playBtn from "../../../assets/img/choosegid/playbtn.svg"
-import ReactDOM from 'react-dom';
- 
+
+import Modal from 'react-awesome-modal';
+import ReactPlayer from 'react-player'
+import CloseIcon from '@material-ui/icons/Close';
+import Button from "../../../components/atom/button";
 
 const Index = (props) => {
 
-  
+    const [state, setState] = useState(false);
+    function openModal() {
+        setState(true);
+
+    }
+    function closeModal() {
+        setState(false)
+    }
 
     const media = {
         m_width: "600px",
@@ -31,14 +41,33 @@ const Index = (props) => {
     return (
         <WrapperRoundImage {...mediaBtn} {...mediaWrapper} width={width} height={height} radius={radius}>
             <ImageContainer {...media} src={src} width="100%" height="100%" />
-            <button>
+            <button onClick={openModal}>
                 <ImageContainer {...imageButton} src={playBtn} width="30px" height="30px" />
             </button>
+             
+            <section>
+                <Modal
+                    visible={state}
+                    width="1000"
+                    height="500"
+                    effect="fadeInUp"
+                    onClickAway={closeModal}>
+                    <div className="modaldiv">
+                        <div className="closebtn">
+                            <CloseIcon className="pointx" onClick={closeModal} />
+                        </div>
+                        <ReactPlayer
+                            height="500px"
+                            width="1000px"
+                             
+                            playing={state}
+                            url='https://www.youtube.com/watch?v=xfRbk00hVZg' />
+                    </div>
+                </Modal>
+            </section>
+
 
         </WrapperRoundImage>
-
-
-
     )
 }
 

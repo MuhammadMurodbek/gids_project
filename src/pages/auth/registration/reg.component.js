@@ -33,8 +33,8 @@ const Index = () => {
     const [passwordRecoverV, setPasswordRecoverV] = useState({error:false, errorText:''})
     
     const options = [
-        { value: 'gid', label: `${t("auth_registr.gid")}` },
         { value: 'simple_user', label: `${t("auth_registr.user")}` },
+        { value: 'gid', label: `${t("auth_registr.gid")}` },
         { value: 'translator', label: `${t("auth_registr.tarjimon")}` },
         { value: 'writer', label: `${t("auth_registr.yozmaT")}` },
       ];

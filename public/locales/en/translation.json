@@ -1,4 +1,4 @@
-{
+{ 
   "name": "day.name.nameEn",
   "description": "descriptionEn",
   "navbar" :{
@@ -29,7 +29,7 @@
        "tarjion":"Translator",
         "sinxron":"Synchronous",
         "izchil":"Consistent",
-        "yozmaTarjimon":"Written translator",
+        "yozmaTarjimon":"Written  ",
         "Davlat":"Country",
         "DavlatniTanlang":"Select the country",
         "Shaharlar":"City",
@@ -170,7 +170,7 @@
     "Tarjimon":"Translator",
     "sinxron":"Synchronous",
     "izchil":"Consistent",
-    "yozma":"Written translator",
+    "yozma":"Written ",
     "KerakShaharlar":"Git / The city where the translator is needed",
     "davlat":"Country",
     "shaxarlar":"City",
@@ -428,12 +428,13 @@
     "ekskursiyalar":"Excursions",
     "ogzaki":"Interpretation (serial)",
     "sinxron":"Simultaneous translation",
-    "izchil":"consistent translation",
-    "mamalakatlargaEkskurs":"Excursion to countries",
-    "mamlakatPlace":"Select the country",
-    "shaharlar":"City",
-    "shaharlarSelect":"select a city",
-    "save":"Save"
+    "yozma":"Written translator",
+    "izchil":"Written translator",
+    "mamalakatlargaEkskurs":"Mamlakatlarga ekskursiya",
+    "mamlakatPlace":"Mamlakatni tanlang",
+    "shaharlar":" Shahar",
+    "shaharlarSelect":"Mamlakatni tanlang",
+    "save":"Saqlash"
   },
   "narxlar":{
     "Profilni_Korish":"View profile",
@@ -451,12 +452,11 @@
     "narxlar":"Prices",
     "videoVagalarey":"Video and gallery",
 
-    "birkunlikHizmat":"The cost of one day of service",
-    "birSoatlik":"The cost of an hour of service",
-    "saq":"Save"
+    "birkunlikHizmat":"Bir kunlik xizmat narxi",
+    "birSoatlik":"Bir soatlik xizmat narxi",
+    "saq":"Saqlash"
   },
   "Galarey":{
-
     "Profilni_Korish":"View profile",
     "tahrirlash":"Edit my data",
     "kalendar":"Calendar",
@@ -472,9 +472,9 @@
     "narxlar":"Prices",
     "videoVagalarey":"Video and gallery",
 
-    "Partfolio":"You can make a video about yourself. This video is on your profile.",
-    "t":"Your gallery",
-    "saqlash":"Save"
+    "Partfolio":"Siz o‘zingiz haqingizda video tayyorlab joylashingiz mumkin. Ushbu video profilingizda turadi.",
+    "t":"Galereyangiz",
+    "saqlash":"Saqlash"
   },
 
 
@@ -483,36 +483,36 @@
 
   "Ustniy_MalumotvaIshtajriba":{
 
-    "Profilni_Korish":"View profile",
-    "tahrirlash":"Edit my data",
-    "kalendar":"Calendar",
+    "Profilni_Korish":"Profilni ko'rish",
+    "tahrirlash":"Tahrirlash",
+    "kalendar":"Kalendar",
     "blog":"Blog",
-    "reklama":"Advertising",
-    "sozlamalar":"Profile settings",
+    "reklama":"Reklama",
+    "sozlamalar":"Profil sozlamalar",
 
-    "menHaqimda":"About Me",
-    "kantaktlar":"Contacts",
-    "malumotiIsh":"Education and Work Experience",
-    "tillarniBilish":"Knowledge of languages",
-    "hizmatlar":"services",
-    "narxlar":"Prices",
-    "videoVagalarey":"Video and gallery",
+    "menHaqimda":"Men haqimda ",
+    "kantaktlar":"Ko‘ntaktlar",
+    "malumotiIsh":"Ma’lumoti va Ish tajribasi",
+    "tillarniBilish":"Tillarni bilishi",
+    "hizmatlar":"Xizmatlar",
+    "narxlar":"Narxlar",
+    "videoVagalarey":"Video va gallereya",
     
-    "bitirganInstitu":"Graduated from the institute",
-    "institutNmaePlace":"Enter a graduate institution",
-    "bitirganYil":"Year of graduation",
-    "YilPlace":"Year",
-    "Mutahasislig":"Specialty",
-    "mutahasisligPlace":"Write down your specialty",
-    "tajriba":"Experience",
-    "frilancermisiz":"you are a freelancer now",
-    "yes":"Yes",
-    "No":"No",
-    "ishJoingizniKorsating":"Specify your workplace",
+    "bitirganInstitu":"Bitirgan instituti",
+    "institutNmaePlace":"Bitirgan Oliy ta’lim mussasasini kiriting",
+    "bitirganYil":"Bitirgan yili",
+    "YilPlace":"Yil",
+    "Mutahasislig":"Mutaxassisligi",
+    "mutahasisligPlace":"Mutaxassisligingizni yozing",
+    "tajriba":"Tajriba",
+    "frilancermisiz":"Siz hozirda frilansansiz?",
+    "yes":"Ha",
+    "No":"Yoq",
+    "ishJoingizniKorsating":"Ish joyingizni ko'rsating",
     "text":"Text",
-    "lavozimingiz":"Your position",
-    "ishVaqti":"Your working hours",
-    "save":"Save"
+    "lavozimingiz":"Lavozimingiz",
+    "ishVaqti":"Ish vaqtingiz",
+    "save":"Saqlash"
   },
   "Ustniy_Xizmatlar":{
     "hizmatlar":"Services",
@@ -535,131 +535,140 @@
 
   "Pismenniy_Xizmatlar":{
     
-    "Profilni_Korish":"View profile",
-    "tahrirlash":"Edit my data",
-    "kalendar":"Calendar",
+    "Profilni_Korish":"Profilni ko'rish",
+    "tahrirlash":"Tahrirlash",
+    "kalendar":"Kalendar",
     "blog":"Blog",
-    "reklama":"Advertising",
-    "sozlamalar":"Profile settings",
+    "reklama":"Reklama",
+    "sozlamalar":"Profil sozlamalar",
 
-    "menHaqimda":"About Me",
-    "kantaktlar":"Contacts",
-    "malumotiIsh":"Education and Work Experience",
-    "tillarniBilish":"Knowledge of languages",
-    "hizmatlar":"services",
-    "narxlar":"Prices",
-    "videoVagalarey":"Video and gallery",
+    "menHaqimda":"Men haqimda ",
+    "kantaktlar":"Ko‘ntaktlar",
+    "malumotiIsh":"Ma’lumoti va Ish tajribasi",
+    "tillarniBilish":"Tillarni bilishi",
+    "hizmatlar":"Xizmatlar",
+    "narxlar":"Narxlar",
+    "videoVagalarey":"Video va gallereya",
 
-    "bir_kunlikish":"Your daily workload",
+    "bir_kunlikish":"Bir kunlik ish xajmingiz ",
     "Text":"Text",
-    "OgzakiTarjimonlik":"Do you also do interpreting?",
-    "ha":"Yes",
-    "yoq":"No",
-    "damdahamIsh":"Do you do recreational activities?",
-    "TahrirlashBilanHam":"Do you also edit texts?",
-    "onlineMisizdoim":"Do you have constant access to the Internet?",
-    "kattaHajimdagiText":"* Can you accept large files including?",
-    "CAT":"What CAT programs do you use for translation?",
-    "tarjimaMavzulari":"Translation topics",
-    "Umumiy-mavzular":"General topics",
-    "meningMavzuimEmas":"Not my subject",
-    "jamiatVaSiyosat":"Society and politics",
-    "Iqtsod":"Economics and Finance",
-    "Huquqshunoslik":"Jurisprudence",
-    "IT":"Information Technology",
-    "reklamaVaMarketing":"Advertising and marketing",
-    "yonalishNomi":"Route name",
-    "sanoatTexnalogiyalari":"Industry and technology",
-    "neftVaGaz":"Oil and gas",
-    "iqtsodVaMoliya":"Economics and Finance",
-    "ilimVaTehnika":"Scientific and technical literature",
-    "badiyAdabiyot":"Fiction",
-    "tibbiyot":"Medicine and pharmaceuticals",
+    "OgzakiTarjimonlik":"Siz og'zaki tarjima ham qilasizmi?",
+    "ha":"Ha",
+    "yoq":"Yoq",
+    "shoshilich":"Shoshilinch buyurtmalarni bajarasizmi?",
+    "damdahamIsh":"Dam olish kunlari buyurtmalarni bajarasizmi?",
+    "TahrirlashBilanHam":"Siz matnlarni tahrirlash bilan ham shug'ullanasizmi?",
+    "onlineMisizdoim":"Internetga doimiy kirish imkoningiz bormi?",
+    "kattaHajimdagiText":"*shu jumladan katta hajmdagi fayllarni qabul qila olasizmi?",
+    "CAT":"Tarjima qilish uchun qanday CAT dasturlaridan foydalanasiz?",
+    "tarjimaMavzulari":" Tarjima mavzulari ",
+    "Umumiy-mavzular":" Umumiy mavzular",
+    "meningMavzuimEmas":"Meni mavzuyim emas",
+    "jamiatVaSiyosat":"Jamiyat va siyosat",
+    "Iqtsod":"Iqtisodiyot va moliya",
+    "Huquqshunoslik":"Huquqshunoslik",
+    "IT":" Axborot texnologiyalari",
+    "reklamaVaMarketing":" Reklama va marketing",
+    "yonalishNomi":" Yo’nalishning nomi",
+    "sanoatTexnalogiyalari":"  Sanoat va texnologiya",
+    "neftVaGaz":"Neft va gaz",
+    "iqtsodVaMoliya":"Iqtisodiyot va moliya",
+    "ilimVaTehnika":"Ilmiy va texnik adabiyotlar",
+    "badiyAdabiyot":"Badiiy adabiyot",
+    "tibbiyot":"Tibbiyot va farmatsevtika",
     "saqlash":"Saqlash"
   },
   "Pismini_narxlar":{
-
-    "Profilni_Korish":"View profile",
-    "tahrirlash":"Edit my data",
-    "kalendar":"Calendar",
+    "Profilni_Korish":"Profilni ko'rish",
+    "tahrirlash":"Tahrirlash",
+    "kalendar":"Kalendar",
     "blog":"Blog",
-    "reklama":"Advertising",
-    "sozlamalar":"Profile settings",
+    "reklama":"Reklama",
+    "sozlamalar":"Profil sozlamalar",
 
-    "menHaqimda":"About Me",
-    "kantaktlar":"Contacts",
-    "malumotiIsh":"Education and Work Experience",
-    "tillarniBilish":"Knowledge of languages",
-    "hizmatlar":"services",
-    "narxlar":"Prices",
-    "videoVagalarey":"Video and gallery",
+    "menHaqimda":"Men haqimda ",
+    "kantaktlar":"Ko‘ntaktlar",
+    "malumotiIsh":"Ma’lumoti va Ish tajribasi",
+    "tillarniBilish":"Tillarni bilishi",
+    "hizmatlar":"Xizmatlar",
+    "narxlar":"Narxlar",
+    "videoVagalarey":"Video va gallereya",
 
-    "tilniTanlang":"Select a language",
-    "tilPlace":"From Russian - to English",
-    "birBetUchun":"For 1 page - 1800 characters with spaces",
-    "boshSiz":"For 1 page - 1800 characters without spaces",
-    "saqlash":"Save"
+    "tilniTanlang":"Tilni tanlang",
+    "tilPlace":"Rus tilidan - Ingliz tiliga",
+    "birBetUchun":"1 bet uchun - bo'shliqlar bilan 1800 belgi",
+    "boshSiz":"1 bet uchun - 1800 belgi bo'sh joysiz",
+    "saqlash":"Saqlash"
    },
    "reklama":{
-    "Profilni_Korish":"View profile",
-    "tahrirlash":"Edit my data",
-    "kalendar":"Calendar",
+    "Profilni_Korish":"Profilni ko'rish",
+    "tahrirlash":"Tahrirlash",
+    "kalendar":"Kalendar",
     "blog":"Blog",
-    "reklama":"Advertising",
-    "sozlamalar":"Profile settings",
+    "reklama":"Reklama",
+    "sozlamalar":"Profil sozlamalar",
 
-    "Hozirgi":"Current tariff",
-    "hizmatlarni":"Select services",
-    "tolovturi":"Please select a payment type",
-    "text":"Top up your Gits.uz account",
-    "xisobingiz":"Your account:",
-    "Hisobni_toldirish":"Replenish the account",
-    "bekor_qilish":"Cancel",
-    "tolov":"Payment"
+    "Hozirgi":"Xozirgi tarif",
+    "hizmatlarni":"Xizmatlarni tanlang",
+    "tolovturi":"To‘lov turini tanlang",
+    "text":"Gits.uz xisob raqamidan to‘lash",
+    "xisobingiz":"Xisobingiz:",
+    "Hisobni_toldirish":"Xisobni to‘ldirish",
+    "bekor_qilish":"Bekor qilish",
+    "tolov":"To‘lov qilish"
    },
    "hisobni_toldirish":{
-     "hisobni_toldirish":"Replenish the account",
-     "tolov_turini_tanlang":"Please select a payment type",
-     "orqaga":"go back",
-     "hisobniToldirish":"Replenish the account",
-
-
-
-
-     "Tolovlar_tarihi":"Payment history"
+     "hisobni_toldirish":"Xisobni to‘ldirish",
+     "tolov_turini_tanlang":"To‘lov turini tanlang",
+     "orqaga":"Ortga qaytish",
+     "hisobniToldirish":"Hisobni to’ldirish",
+     "Tolovlar_tarihi":"To’lovlar tarixi"
     },
 
 
-   "User_Profil":{
-     "profilni_korish":"View profile",
-     "arizalarim":"My applications",
-     "MalumotlarniTaxrirlash":"Ma’lumotlarimni Tahrirlash",
-     "profilSozlamalari":"Profile Settings"
-   },
-   "User_Arizalarim":{
-    "profilni_korish":"View profile",
-    "arizalarim":"My applications",
-    "MalumotlarniTaxrirlash":"Ma’lumotlarimni Tahrirlash",
-    "profilSozlamalari":"Profile Settings",
 
-    "shaharniK":"Enter the city"
+
+
+
+
+
+
+
+
+
+
+   "User_Profil":{
+     "profilni_korish":"Profilni ko‘rish",
+     "arizalarim":"Arizalarim",
+     "MalumotlarniTaxrirlash":"Ma’lumotlarimni Tahrirlash",
+     "profilSozlamalari":"Profilni Sozlamalari"
+   },
+
+   "User_Arizalarim":{
+     "profilni_korish":"Profilni ko‘rish",
+     "arizalarim":"Arizalarim",
+     "MalumotlarniTaxrirlash":"Ma’lumotlarimni Tahrirlash",
+     "profilSozlamalari":"Profilni Sozlamalari",
+
+    "davlat":"Country",
+    "shaharniK":" Shaharni kiriting "
    },
    "User_MalumotlarniTax":{
-    "profilni_korish":"View profile",
-    "arizalarim":"My applications",
-    "MalumotlarniTaxrirlash":"Ma’lumotlarimni Tahrirlash",
-    "profilSozlamalari":"Profile Settings",
+     "profilni_korish":"Profilni ko‘rish",
+     "arizalarim":"Arizalarim",
+     "MalumotlarniTaxrirlash":"Ma’lumotlarimni Tahrirlash",
+     "profilSozlamalari":"Profilni Sozlamalari",
 
-    "isim":"Name",
-    "isimPlace":"Write your name",
-    "familya":"Surname",
-    "familyaPlace":"Write your last name",
-    "Kompaniya":"Company",
-    "kompaniePlace":"Company name",
-    "davlat":"State",
-    "mamlaktalarPlace":"Choose your country",
-    "shaxarlar":"City",
-    "shaxarlarPlace":"Enter your city",
+    "isim":"Isim",
+    "isimPlace":"Ismingizni yozing",
+    "familya":"Familiya",
+    "familyaPlace":"Ismingizni yozing",
+    "Kompaniya":"Kompaniya",
+    "kompaniePlace":" Ismingizni yozing",
+    "davlat":"Davlat",
+    "mamlaktalarPlace":"Mamlakatingizni tanlang",
+    "shaxarlar":"Shahar",
+    "shaxarlarPlace":"Shahringizni kiriting",
     "saqlash":"Saqlash"
   },
   "profil_sozlamalari":{
@@ -669,8 +678,9 @@
     "blog":"Blog",
     "reklama":"Advertising",
     "sozlamalar":"Profile settings",
+
     "kontaktlar":"Contacts",
-    "parolniYangilash ":"Password update",
+    "parolniYangilash":"Password update",
     "telefone":"Phone",
     "telRaqam":"Enter your number",
     "hozirgiParol":"Your current password",

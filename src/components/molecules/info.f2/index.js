@@ -10,9 +10,6 @@ import {useTranslation} from 'react-i18next'
 
 const Index = () => {
     const {t} = useTranslation()
-
-   
-
     return (
         <WrapperInfoF2> 
             <FlexContainer width="auto" alignItems="center" justifyContent="flex-start" flexDirection="column">

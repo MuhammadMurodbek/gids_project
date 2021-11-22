@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import Select from "react-select";
 import { Wrapper } from "./index.style";
 import "./style.css";
@@ -15,6 +15,10 @@ const Index = (props) => {
     setCollect,
     collect,
     field,
+    clearValue,
+    setClearValue,
+    pcolor,
+    defaultApiValue
   } = props;
   const [value, setValue] = useState(null);
   const handleChange = useCallback(
@@ -29,16 +33,29 @@ const Index = (props) => {
           return { ...prev, [field]: valueChange };
         });
       } ///important
+      if(setClearValue){
+        setClearValue(false);
+      }
     },
     [state, value, collect]
   );
-
+    useEffect(() => {
+      if(clearValue){
+        setValue(null)
+      }
+    },[clearValue])
+    useEffect(() => {
+      if(defaultApiValue){
+        setValue({value:0, label:defaultApiValue})
+      }
+    },[defaultApiValue])
   return (
     <Wrapper
       width={width}
       paddingX={paddingX}
       margin={margin}
       backgroundColor={backgroundColor}
+      pcolor={pcolor}
     >
       <Select
         {...props}

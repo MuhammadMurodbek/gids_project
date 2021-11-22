@@ -28,6 +28,7 @@ import {useTranslation} from 'react-i18next'
  
 
 import {media, mediaFlexButtons, mediaBtn, mediaTextField, mediaTextFieldSec, mediaContainer} from "./_media"
+import AccountMenu from '../../components/atom/user_account';
 
 const Index = () => {
     

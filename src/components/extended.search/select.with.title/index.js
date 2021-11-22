@@ -3,20 +3,21 @@ import Select from "../../atom/select"
 import {Wrapper} from "./index.style"
 import { useTranslation } from 'react-i18next'
 
-
 const Index = (props) => {
     const {t} = useTranslation()
     const [country, setCountry] = useState()
     const [region, setRegion] = useState()
     const [regionItem, setRegionItem] = useState()
     const countries = JSON.parse(localStorage.getItem('countries')).map((item,index)=>{return {value:index, label:item.country, ...item}}) || []
-   
     useEffect(() => {
+
         if(country){
             let array = country?.cities.map((item, index)=>{return {value:index, label:item}})
             setRegion(array)
         }
+        
     },[country])
+
     return (
         <>
         <Wrapper>
