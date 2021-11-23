@@ -11,7 +11,6 @@ import Button from "../../components/atom/button";
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import Requests from '../../components/organism/request/';
 import {useTranslation} from 'react-i18next'
-
 export default function Index() {
 
     const {t} = useTranslation()
@@ -22,8 +21,6 @@ export default function Index() {
                {t("arizalar_royhati.title")}
             </TextTitle>
             <InDate />
-            <Selection/>
-
             <Requests
                 id="#071364754"
                 manzil="London shahridagi klinikada ikki soat davomida tarjima."

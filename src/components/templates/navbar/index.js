@@ -21,7 +21,14 @@ import {
 } from "reactstrap";
 import AccountMenu from "../../atom/user_account";
 
+
+
 const Index = () => {
+
+  const handleLogout = () => {
+    window.location.href = "/auth"
+  }
+
   const [isOpen, setOpen] = useState(false);
   const [selected, setSelected] = useState("UZ");
 
@@ -99,10 +106,11 @@ const Index = () => {
               >
 
 
-                {getRole?.role === "simple_user" || "gid" ? null : <span>Kirish</span>}
               </NavLink>
+              {getRole?.role === "simple_user" || "gid" ? <AccountMenu/> : 
+              <span onClick={handleLogout}>Kirish</span>}
             </FlexContainer>
-            <AccountMenu />
+
 
           </FlexContainer>
           <div className="toggle_hamburger">
