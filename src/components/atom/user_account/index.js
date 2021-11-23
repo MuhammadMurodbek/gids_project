@@ -6,7 +6,8 @@ import MenuItem from '@mui/material/MenuItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
-import Logout from '@mui/icons-material/Logout';
+ import LogoutIcon from '@mui/material/Logout';
+
 import { UserListItem } from './index.style';
 import { useHistory } from 'react-router-dom';
 import { UserOutlined } from "@ant-design/icons";
@@ -55,7 +56,6 @@ export default function AccountMenu() {
                 PaperProps={{
                     elevation: 0,
                     sx: {
-                        
                         overflow: 'visible',
                         padding: "5px 30px",
                         filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
@@ -93,7 +93,7 @@ export default function AccountMenu() {
                     </MenuItem><br />
                     <MenuItem  onClick={handleLogout}>
                         <ListItemIcon>
-                            <Logout fontSize="small"  />
+                            <LogoutIcon fontSize="small" />
                         </ListItemIcon>
                         Logout
                     </MenuItem>
