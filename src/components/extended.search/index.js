@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Wrapper} from './index.style'
 import RadioGroup from "./radio" 
 import Selection from "./select.with.title"
@@ -8,12 +8,15 @@ import CheckBoxContainer from "./checkbox.width.title"
 import Button from "./button.component"
 import DoubleRadio from "../molecules/double.radio.labeled"
 import {useTranslation} from 'react-i18next'
-
+import {getResponse} from "../../hooks/response_get"
 const Index = () => {
    
     const {t} = useTranslation() 
-
-    return (
+    const [postData, setPostData] = useState()
+    const handleSubmit = () => {
+        getResponse(`/api/gids/profiles/`, setPostData)
+    }
+    return (    
         <Wrapper width="350px">
             <div className="title-header">{t("kengaytirlgan_Q.kengaytirilgan")}</div>
 

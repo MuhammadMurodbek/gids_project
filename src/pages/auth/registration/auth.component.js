@@ -13,7 +13,7 @@ import { useTranslation } from 'react-i18next'
 const Index = () => {
 
     const { t } = useTranslation()
-    const history = useHistory()
+    // const history = useHistory()
     const [stateEmail, setStateEmail] = useState('')
     const { responseHook, setResponseHook } = useApiData('post_auth_ent_reducer')
     const [emailError, setEmailError] = useState({ error: false, errorText: '' })

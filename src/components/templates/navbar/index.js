@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Navbar } from "./index.style";
-import Logo from "../../../assets/img/logo99.png";
+import Logo from "../../../assets/img/logo_svg.svg";
 import { FlexContainer } from "../../../styles/flex.container";
 import ButtonNavbar from "../../molecules/button.navbar";
 import { Link, NavLink } from "react-router-dom";
@@ -9,16 +9,7 @@ import { Turn as Hamburger } from "hamburger-react";
 import { mainGreen } from "../../../styles/global/colors";
 import MediaNavbar from "./media.navbar";
 import ReactFlagsSelect from "react-flags-select";
-
 import { useTranslation } from 'react-i18next'
-
-import {
-  Dropdown,
-  DropdownMenu,
-  DropdownToggle,
-  DropdownItem,
-  Badge,
-} from "reactstrap";
 import AccountMenu from "../../atom/user_account";
 
 const Index = () => {
@@ -26,11 +17,6 @@ const Index = () => {
   const [selected, setSelected] = useState("UZ");
 
   const getRole = JSON.parse(localStorage.getItem("user_token"));
-  // const role = getRole ? getRole.role : undefined;
-
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const toggle = () => setDropdownOpen((prevState) => !prevState);
-
   const { t, i18n } = useTranslation()
   React.useMemo(() => { i18n.changeLanguage('en') }, [])
 
@@ -81,7 +67,7 @@ const Index = () => {
                 setSelected(code)
               }}
               countries={["UZ", "RU", "US"]}
-              customLabels={{ US: "Eng", UZ: "O’z", RU: "Ру" }}
+              customLabels={{ US: "en", UZ: "o’z", RU: "ру" }}
             />
 
             <FlexContainer
