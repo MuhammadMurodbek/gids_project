@@ -6,7 +6,7 @@ import MenuItem from '@mui/material/MenuItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
- import LogoutIcon from '@mui/material/Logout';
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 
 import { UserListItem } from './index.style';
 import { useHistory } from 'react-router-dom';
@@ -93,7 +93,7 @@ export default function AccountMenu() {
                     </MenuItem><br />
                     <MenuItem  onClick={handleLogout}>
                         <ListItemIcon>
-                            <LogoutIcon fontSize="small" />
+                        <ExitToAppIcon className="colord" />
                         </ListItemIcon>
                         Logout
                     </MenuItem>

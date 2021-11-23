@@ -62,12 +62,10 @@ const IMAGES = [
 
 ];
 
-// import React from 'react'
-
-const Index = () => {
+const Index = (props) => {
   return (
     <div>
-      <Gallery images={IMAGES} />,
+      <Gallery {...props} images={props?.list || IMAGES} />,
     </div>
   );
 };

@@ -1,43 +1,26 @@
-import React, { useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Upload } from 'antd';
 import ImgCrop from 'antd-img-crop';
 import {Wrapper} from "./style"
+import toast from 'react-hot-toast';
 const Demo = (props) => {
- const {fileList, setFileList} = props
-
-  const onChange = ({ fileList: newFileList }) => {
+ const {fileList, setFileList, postImage} = props
+  const onChange =  useCallback(({ fileList: newFileList }) => {
     setFileList(newFileList);
-    console.log(newFileList)
-    // const reader = new FileReader();
-    // reader.readAsDataURL(file.originFileObj);
-  };
-
-  // const onPreview = async file => {
-  //   let src = file.url;
-  //   if (!src) {
-  //     src = await new Promise(resolve => {
-  //       const reader = new FileReader();
-  //       reader.readAsDataURL(file.originFileObj);
-  //       // reader.onload = () => resolve(reader.result);
-  //     });
-  //   }
-  //   // const image = new Image();
-  //   // image.src = src;
-  //   // const imgWindow = window.open(src);
-  //   // imgWindow.document.write(image.outerHTML);
-  // };
-
+  },[fileList]);
+  // useEffect(() => {
+  //     if(postImage?.success!=='') toast.success('Successfully loaded')
+  //     if(postImage?.error!=='') toast.error('Something went wrong')
+  // },[postImage]);
   return (
     <Wrapper>
         <ImgCrop rotate zoom>
         <Upload
-            // action="http://165.232.76.226/api/gids/edit/gallery/"
             listType="picture-card"
             fileList={fileList}
             onChange={onChange}
-            // onPreview={onPreview}/
         >
-            {fileList.length < 5 && '+ Upload'}
+            {'Upload'}
         </Upload>
         </ImgCrop>
     </Wrapper>

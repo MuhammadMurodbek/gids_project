@@ -8,7 +8,7 @@ import SelectLabeled from "../../../../components/molecules/select.labeled";
 import { Container } from "../../../../styles/container/index.style";
 import TextArea from "../../../../components/molecules/area.labeled";
 import { TextTitle } from "../../../../styles/textTitle/index.style";
-import GroupImageUpload from "../../../../components/templates/group.image.upload";
+import GroupImageUpload from "./_gallery";
 import Button from "../../../../components/atom/button";
 import { post_bio_data_action } from "../../../../redux/actions";
 import useApiData from "../../../../hooks/response";
@@ -16,7 +16,7 @@ import AddIcon from "@material-ui/icons/Add";
 import ImageCrop from "../../../../components/organism/image.crop/new";
 import { countries } from "../../../../custom/constants";
 import { get_cities } from "../../../../custom/function";
-import { getResponse } from "../../../../hooks/response_get";
+import { getResponse, postResponse } from "../../../../hooks/response_get";
 import Spinner from "../../../../components/atom/loading.spinner.line";
 import toast from "react-hot-toast";
 import { validatorState } from "../../../../custom/validator"
@@ -27,6 +27,7 @@ import { EditOutlined } from '@ant-design/icons'
 import FadeIn from 'react-fade-in';
 const Index = () => {
   const [ fileList, setFileList ] = useState( [] );
+  const [postImage, setPostImage ] = useState({success: '', error: ''});
   const [ state, setState ] = useState( defaultObj );
   const [ error, setError ] = useState( false )
   const [editIcon, setEditIcon] = useState(false)
@@ -55,6 +56,14 @@ const Index = () => {
       } );
     }
   }, [ country ] );
+  React.useEffect(() => {
+    if(fileList.length > 0){
+      let data = fileList[fileList.length - 1];
+      const formData = new FormData();
+      formData.append('image' , data?.originFileObj );
+      postResponse('/api/gids/edit/gallery/', formData, setPostImage);
+    }
+  },[fileList])
   const handleSubmit = async ( e ) => {
     e.preventDefault();
     let clone = state;
@@ -81,6 +90,8 @@ const Index = () => {
       setResponseHook( post_bio_data_action( formData ) );
     }
   };
+  
+  // console.log(fileList[fileList.length - 1])
   return (
     <Wrapper onSubmit={ handleSubmit }>
       {apiValue?.success === "" ? (
@@ -220,7 +231,7 @@ const Index = () => {
             <TextTitle font="16px" align="left" top="15px">
               Sertifikat va diplomlaringiz bo‘lsa shu yerga yuklang
             </TextTitle>
-            <GroupImageUpload fileList={ fileList } setFileList={ setFileList } />
+            <GroupImageUpload/>
             { getRole?.role !== "gid" ? (
               <Grid container spacing={ 1 }>
                 <Grid item md={ 10 } xs={ 8 }>

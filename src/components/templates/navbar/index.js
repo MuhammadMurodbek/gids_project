@@ -39,7 +39,7 @@ const Index = () => {
   const toggle = () => setDropdownOpen((prevState) => !prevState);
 
   const { t, i18n } = useTranslation()
-  React.useMemo(() => { i18n.changeLanguage('en') }, [])
+  React.useMemo(() => { i18n.changeLanguage('uz') }, [])
 
   return (
     <>
@@ -107,7 +107,7 @@ const Index = () => {
 
 
               </NavLink>
-              {getRole?.role === "simple_user" || "gid" ? <AccountMenu/> : 
+              {getRole?.role === "simple_user" || "gid" ||"writer" || "translator" ? <AccountMenu/> : 
               <span onClick={handleLogout}>Kirish</span>}
             </FlexContainer>
 
