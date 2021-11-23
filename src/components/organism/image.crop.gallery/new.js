@@ -4,6 +4,7 @@ import React,{useState, useEffect} from "react";
 import {CameraOutlined} from "@ant-design/icons"
 import "./style.css"
 import Loader from "react-loader-spinner";
+import toast from "react-hot-toast"
 import {postResponse} from "../../../hooks/response_get"
 const Demo = ({loading, setLoading, list, setCallback}) => {
   const [url, setUrl] = useState({success:'', error:'', loading:'false'})
@@ -25,6 +26,8 @@ const Demo = ({loading, setLoading, list, setCallback}) => {
     if(url?.success!=='' || url?.error!==''){
       setCallback(prev=>!prev)
     }
+    if(url?.success!=='') toast.success('Loaded successfully')
+    else if(url?.error!=='') toast.error('Something went wrong')
   },[url])
   return(
       <div className="cropper_container ext">

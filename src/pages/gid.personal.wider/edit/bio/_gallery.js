@@ -12,7 +12,7 @@ const Gallery = () => {
     useEffect( () => {
         if ( state?.success !== '' )
         {
-            let imagesList = state?.success?.data.map( ( item, index ) => {
+            let imagesList = state?.success?.data.map( ( item ) => {
                 return {
                     id: item.id,
                     src: item.image,
