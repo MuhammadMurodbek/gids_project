@@ -13,26 +13,28 @@ const Index = () => {
    
     const {t} = useTranslation() 
     const [postData, setPostData] = useState()
+    const [collect, setCollect] = useState()
     const handleSubmit = () => {
         getResponse(`/api/gids/profiles/`, setPostData)
     }
+    console.log(collect)
     return (    
         <Wrapper width="350px">
             <div className="title-header">{t("kengaytirlgan_Q.kengaytirilgan")}</div>
 
-            <RadioGroup/>   
+            <RadioGroup setState={setCollect} state={collect} field='gender'/>   
 
-            <Selection title={t("kengaytirlgan_Q.Davlat")} placeholder={t("kengaytirlgan_Q.DavlatniTanlang")}/>
+            <Selection setState={setCollect} state={collect} field1='country' field2='city' title={t("kengaytirlgan_Q.Davlat")} placeholder={t("kengaytirlgan_Q.DavlatniTanlang")}/>
 
-            <CalendarComponent title={t("kengaytirlgan_Q.sana")} />
+            <CalendarComponent title={t("kengaytirlgan_Q.sana")}  setState={setCollect} state={collect} field="date_after"/>
 
-            <CalendarComponent/>
+            <CalendarComponent setState={setCollect} state={collect} field="date_before" />
 
-            <SelectionLang title={t("kengaytirlgan_Q.til")}/>
+            <SelectionLang title={t("kengaytirlgan_Q.til")} setCollect={setCollect} collect={collect} field="lang"/>
 
-            <CheckBoxContainer name1={t("kengaytirlgan_Q.erkak")} name2={t("kengaytirlgan_Q.ayol")}/>
+            <CheckBoxContainer setState={setCollect} state={collect} name1={t("kengaytirlgan_Q.erkak")} name2={t("kengaytirlgan_Q.ayol")}/>
 
-            <DoubleRadio name1={t("kengaytirlgan_Q.online")} name2={t("kengaytirlgan_Q.barchasi")}/>
+            <DoubleRadio value1="online" value2="all"  setState={setCollect} state={collect} name1={t("kengaytirlgan_Q.online")} name2={t("kengaytirlgan_Q.barchasi")}/>
             
             <div className="button-wrapper">
                 <Button width="280px" name={t("kengaytirlgan_Q.qidirish")}/>

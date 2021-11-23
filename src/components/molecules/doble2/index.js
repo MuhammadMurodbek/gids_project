@@ -4,6 +4,7 @@ import { FlexContainer } from '../../../styles/flex.container'
 
 const Index = (props) => {
     const {name1, name2,name3, width, margin, alignItems, justifyContent, flexDirection, display} = props
+    
     return (
         <FlexContainer 
             width={width} 

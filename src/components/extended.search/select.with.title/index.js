@@ -4,6 +4,7 @@ import {Wrapper} from "./index.style"
 import { useTranslation } from 'react-i18next'
 
 const Index = (props) => {
+    const {state, setState, field1, field2} = props
     const {t} = useTranslation()
     const [country, setCountry] = useState()
     const [region, setRegion] = useState()
@@ -16,11 +17,17 @@ const Index = (props) => {
             let array = country?.cities.map((item, index)=>{return {value:index, label:item}})
             setRegion(array)
             setCheck(false)
+            if(setState){
+                setState({...state, [field1]:country})
+            }
         }
         
     },[country])
-
-    // console.log(region)
+    useEffect( () => {
+        if(setState){
+            setState({...state, [field2]:regionItem})
+        }
+    },[regionItem])
     return (
         <>
         <Wrapper>
