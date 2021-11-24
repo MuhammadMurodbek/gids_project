@@ -8,9 +8,9 @@ import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import ImgContainer from "../../../components/molecules/img.container"
 // import xitoy from '../../../assets/img/citiyes/xitoy.png';
 
-
 export default function index(props) {
-    const {url, title, kalendar, hteg, lines, text , btnText  } = props
+    const { url, title, kalendar, hteg, lines, text, btnText, id } = props
+   
     return (
         <Wrapper>
             <Grid className="msa" container spacing={1}>
@@ -19,15 +19,17 @@ export default function index(props) {
                     <ImgContainer width="100%" src={url} />
                 </Grid>
                 <Grid className="text-xitoy__more" item xs={12} md={12}>
-                    <Truncate lines={lines || 10} ellipsis={<span>...</span>}>
-                      <div className=" text-div ">
-                        {text}
-                      </div>
-                    </Truncate>
-                    <Link className="text-link" to="/fulldata">
-                        {btnText}
-                        <ArrowForwardIosIcon className="arrow__readmore" />
-                    </Link>
+                    
+                        <div className=" text-div ">
+                            {text}
+                        </div>
+                   
+                        <Link className="text-link" to={`/fullData/${id}` 
+                        
+                        }>
+                            {btnText}
+                           
+                        </Link>
                 </Grid>
             </Grid>
         </Wrapper>
