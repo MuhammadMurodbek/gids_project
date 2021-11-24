@@ -1,13 +1,12 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
-import Avatar from '@mui/material/Avatar';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import IconButton from '@mui/material/IconButton';
-import Tooltip from '@mui/material/Tooltip';
-import ExitToAppIcon from '@mui/icons-material/ExitToApp';
-
+import Box from '@material-ui/core/Box';
+import Avatar from '@material-ui/core/Avatar';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import IconButton from '@material-ui/core/IconButton';
+import Tooltip from '@material-ui/core/Tooltip';
+// import Logout from '@material-ui/icons/Logout';
 import { UserListItem } from './index.style';
 import { useHistory } from 'react-router-dom';
 import { UserOutlined } from "@ant-design/icons";
@@ -93,7 +92,7 @@ export default function AccountMenu() {
                     </MenuItem><br />
                     <MenuItem  onClick={handleLogout}>
                         <ListItemIcon>
-                        <ExitToAppIcon className="colord" />
+                            {/* <Logout fontSize="small"  /> */}
                         </ListItemIcon>
                         Logout
                     </MenuItem>
