@@ -88,7 +88,7 @@ const Index = () => {
                 {getRole?.role === "simple_user" || "gid" ? null : <span>Kirish</span>}
               </NavLink>
             </FlexContainer>
-            <AccountMenu />
+            <AccountMenu role={getRole?.role}/>
 
           </FlexContainer>
           <div className="toggle_hamburger">

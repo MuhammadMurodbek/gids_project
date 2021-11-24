@@ -3,22 +3,26 @@ import { Menu, Dropdown } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 import {Wrapper} from "./index.style"
 import {Link} from "react-router-dom"
-const menu = (
-    <Menu>
-        <Menu.Item key="0">
-            <Link to={'/request'}>My profile</Link>
-        </Menu.Item>
-        <Menu.Item key="1">
-            <Link to={'/request'}>Apllications</Link>
-        </Menu.Item>
-        <Menu.Divider />
-        <Menu.Item key="3">
-           <span>Log out</span>
-        </Menu.Item>
-    </Menu>
-);
-
-const Index = () => {
+import {useHistory} from "react-router-dom"
+const Index = ({role}) => {
+    const history = useHistory()
+    const menu = (
+        <Menu style={{position: "relative", right:15, top:8, width:140}}>
+            <Menu.Item key="0">
+                <Link to={role==='simple_user' ? '/gid-personal':'gid-personal-wider'}>My profile</Link>
+            </Menu.Item>
+            {/* <Menu.Item key="1">
+                <Link to={'/request'}>Apllications</Link>
+            </Menu.Item> */}
+            <Menu.Divider />
+            <Menu.Item key="3">
+               <span onClick={() =>{
+                   history.push('/auth')
+                   localStorage.clear()
+               } }>Log out</span>
+            </Menu.Item>
+        </Menu>
+    );
     return (
         <Wrapper>
             <Dropdown overlay={ menu } trigger={ [ 'hover' ] } placement="bottomLeft">
