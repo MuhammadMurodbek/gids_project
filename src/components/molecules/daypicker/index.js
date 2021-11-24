@@ -10,11 +10,9 @@ export default class Example extends React.Component {
       selectedDays: [],
     };
   }
-
   handleDayClick(day, { selected }) {
     console.log(day);
     const selectedDays = this.state.selectedDays.concat();
-    console.log(selectedDays);
     if (selected) {
       const selectedIndex = selectedDays.findIndex(selectedDay =>
         DateUtils.isSameDay(selectedDay, day)
@@ -24,9 +22,11 @@ export default class Example extends React.Component {
       selectedDays.push(day);
     }
     this.setState({ selectedDays });
+    this.props.setData(selectedDays)
   }
 
   render() {
+    // this.props(this.state.selectedDays);
     return (
       <div style={{textAlign:'center'}}>
         {
