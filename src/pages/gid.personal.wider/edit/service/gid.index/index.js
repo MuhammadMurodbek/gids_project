@@ -108,10 +108,12 @@ const GidIndex = () => {
                                                 <FadeIn>
                                                     <Grid container spacing={ 1 } key={ index }>
                                                         <Grid item xs={ 12 } sm={ 6 } md={ 6 }>
-                                                            <TextLabeledLoop label={ t( "TillarniBilish.til" ) } value={ item?.country } />
+                                                            <TextLabeledLoop 
+                                                            label={ t( "xizmatlar.mamalakatlargaEkskurs" ) } value={ item?.country } />
                                                         </Grid>
                                                         <Grid item xs={ 12 } sm={ 6 } md={ 5 }>
-                                                            <TextLabeledLoop label={ t( "TillarniBilish.bilishDarajasi" ) } value={ item?.city } />
+                                                            <TextLabeledLoop 
+                                                            label={ t( "xizmatlar.shaharlar" ) } value={ item?.city } />
                                                         </Grid>
                                                         <Grid item xs={ 12 } sm={ 12 } md={ 1 }>
                                                             <FlexContainer width="100%" alignItems="flex-end" margin="44px 0 0 0">
@@ -144,8 +146,8 @@ const GidIndex = () => {
                                                 sizeLabel="15px"
                                                 width="100%"
                                                 marginLabel="12px 0"
-                                                label={ t( "TillarniBilish.bilishDarajasi" ) }
-                                                placeholder={ t( "TillarniBilish.BilishDPlace" ) }
+                                                label={ t( "xizmatlar.mamalakatlargaEkskurs" ) }
+                                                placeholder={ t( "xizmatlar.mamlakatPlace" ) }
                                             />
                                         </Grid>
                                         <Grid item xs={ 12 } sm={ 6 } md={ 5 }>
@@ -160,8 +162,8 @@ const GidIndex = () => {
                                                 sizeLabel="15px"
                                                 width="100%"
                                                 marginLabel="12px 0"
-                                                label={ t( "TillarniBilish.bilishDarajasi" ) }
-                                                placeholder={ t( "TillarniBilish.BilishDPlace" ) }
+                                                label={ t( "xizmatlar.shaharlar" ) }
+                                                placeholder={ t( "xizmatlar.shaharlarSelect" ) }
                                             />
                                         </Grid>
                                         <Grid item xs={ 12 } sm={ 12 } md={ 1 }>

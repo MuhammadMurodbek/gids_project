@@ -74,9 +74,8 @@ const Index = () => {
                 setSelected(code)
               }}
               countries={["UZ", "RU", "US"]}
-              customLabels={{ US: "en", UZ: "o’z", RU: "ру" }}
+              customLabels={{ US: "Eng ", UZ: "O’z ", RU: "Ру " }}
             />
-
             <FlexContainer
               width="100%"
               alignItems="center"
@@ -90,8 +89,6 @@ const Index = () => {
                 }
                 style={{ color: "#333" }}
               >
-
-
               </NavLink>
               {getRole?.role === "simple_user" || "gid" ||"writer" || "translator" ? <AccountMenu role={getRole?.role}/> : 
               <span onClick={handleLogout}>Kirish</span>}
