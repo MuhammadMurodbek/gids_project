@@ -18,7 +18,6 @@ function App({list, setCallback}) {
     setLarge(src)
     console.log(src)
   }, []);
-
   const closeImageViewer = () => {
     setCurrentImage(0);
     setIsViewerOpen(false);
@@ -77,8 +76,8 @@ function App({list, setCallback}) {
           </>
       ))
     }
-    <ImageCrop loading={ loading } setLoading={ setLoading } list={ list } setCallback={setCallback}/>
 
+    <ImageCrop loading={ loading } setLoading={ setLoading } list={ list } setCallback={setCallback}/>
       {isViewerOpen && (
         <>
         <ImageViewer

@@ -12,13 +12,20 @@ import ReactFlagsSelect from "react-flags-select";
 import { useTranslation } from 'react-i18next'
 import AccountMenu from "../../atom/user_account";
 
+
+
 const Index = () => {
+
+  const handleLogout = () => {
+    window.location.href = "/auth"
+  }
+
   const [isOpen, setOpen] = useState(false);
   const [selected, setSelected] = useState("UZ");
 
   const getRole = JSON.parse(localStorage.getItem("user_token"));
   const { t, i18n } = useTranslation()
-  React.useMemo(() => { i18n.changeLanguage('en') }, [])
+  React.useMemo(() => { i18n.changeLanguage('uz') }, [])
 
   return (
     <>
@@ -59,7 +66,7 @@ const Index = () => {
 
           </FlexContainer>
 
-          <FlexContainer {...navbarMedia} width="200px">
+          <FlexContainer {...navbarMedia} width="100px" style={{marginRight:120}}>
             <ReactFlagsSelect
               selected={selected}
               onSelect={(code) => {
@@ -85,10 +92,10 @@ const Index = () => {
               >
 
 
-                {getRole?.role === "simple_user" || "gid" ? null : <span>Kirish</span>}
               </NavLink>
+              {getRole?.role === "simple_user" || "gid" ||"writer" || "translator" ? <AccountMenu role={getRole?.role}/> : 
+              <span onClick={handleLogout}>Kirish</span>}
             </FlexContainer>
-            <AccountMenu role={getRole?.role}/>
 
           </FlexContainer>
           <div className="toggle_hamburger">

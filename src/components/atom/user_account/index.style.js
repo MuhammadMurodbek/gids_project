@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
     height:50px;
     display: inline-block;
     position: absolute;
-    right:10px;
+    right:25px;
     /* background-color:green; */
     .ant-dropdown-link{
         position: absolute;

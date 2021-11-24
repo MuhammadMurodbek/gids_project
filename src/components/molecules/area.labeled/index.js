@@ -9,7 +9,6 @@ const Index = ( props ) => {
         setValue( state[ field ] ) 
     }, [ state ] )
     const handleChange = ( e ) => {
-
         setValue( e.target.value )
         if ( setState )
         {
@@ -19,7 +18,7 @@ const Index = ( props ) => {
     return (
         <Wrapper width={ width }>
             <Label>{ label }</Label>
-            <TextArea { ...props } rows="10" value={ value } name={ name } onChange={ handleChange } />
+            <TextArea { ...props } value={ value } name={ name } onChange={ handleChange } />
         </Wrapper>
     )
 }

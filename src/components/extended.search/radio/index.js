@@ -27,8 +27,11 @@ const Index = ({setState, state, field}) => {
                 <FormControlLabel value="gid" control={<Radio />} label={<span>{t("kengaytirlgan_Q.gid")}</span>} />
                 <FormControlLabel value="translator" control={<Radio />} label={<span>{t("kengaytirlgan_Q.tarjion")}</span>} />
                 <div style={value === "translator" ? {display:"inline-block"}:{display:'none'}}>
-                    <DoubleCheck2 margin="0 0 0 30px" name1={t("kengaytirlgan_Q.sinxron")} 
-                    name2={t("kengaytirlgan_Q.izchil")} name3={t("kengaytirlgan_Q.yozmaTarjimon")} flexDirection="column"/>
+                    <DoubleCheck2 margin="0 0 0 30px" 
+                    name1={t("kengaytirlgan_Q.sinxron")} 
+                    name2={t("kengaytirlgan_Q.izchil")} 
+                    name3={t("kengaytirlgan_Q.yozmaTarjimon")}
+                     flexDirection="column"/>
                 </div>
                 
             </RadioGroup>
