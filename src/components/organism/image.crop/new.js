@@ -23,7 +23,7 @@ const Demo = ({setState, state}) => {
     setUrl('')
   }
   return(
-      <div className="cropper_container">
+      <div className="cropper_container" style={{marginTop:20}} >
         {
           state?.image !== null ? <img src={state?.image || noUser} alt="asdfdf" className="image_cropped"/>:
           <img src={url || noUser} alt="asdfdf" className={url ? "image_cropped":"image_no_user"}/>

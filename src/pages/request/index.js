@@ -22,6 +22,7 @@ export default function Index() {
                {t("arizalar_royhati.title")}
             </TextTitle>
             <InDate />
+            {/* <Selection/> */}
 
             <Requests
                 id="#071364754"

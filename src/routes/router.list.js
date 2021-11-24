@@ -6,10 +6,7 @@ export const routes_user = [
         url:'/gids',
         component:ListRouter.ChooseGids,
     },
-    // {
-    //     url:'/application/:id',
-    //     component:ListRouter.Fullrequest
-    // },
+    
     {
         url:'/application-form',
         component:ListRouter.FillOutApplication,
@@ -26,10 +23,7 @@ export const routes_user = [
         url:'/seeprofile',
         component:ListRouter.SeeProfile
     },
-    {
-        url:'/gid-personal-wider',
-        component:ListRouter.GidPersonalWider
-    },
+  
 
 ] 
 export const routes_gid = [

@@ -9,6 +9,7 @@ const Index = ( props ) => {
         setValue( state[ field ] ) 
     }, [ state ] )
     const handleChange = ( e ) => {
+
         setValue( e.target.value )
         if ( setState )
         {

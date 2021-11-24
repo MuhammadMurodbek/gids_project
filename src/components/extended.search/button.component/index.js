@@ -6,7 +6,7 @@ import SearchIcon from '@material-ui/icons/Search';
 const Index = (props) => {
     return (
         <Wrapper>
-            <Button width={props.width}>{props.name}</Button>  
+            <Button {...props} width={props.width}>{props.name}</Button>  
             <SearchIcon className="fas fa-search"/>
             {/* <i className="fas fa-search"></i>   */}
             {/* <img src={SearchIcon} alt="search"/>  */}
