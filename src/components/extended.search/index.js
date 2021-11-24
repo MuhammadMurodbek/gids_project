@@ -16,12 +16,15 @@ const Index = () => {
     const [postData, setPostData] = useState({ success: '', error: '', loading: false})
     const [collect, setCollect] = useState()
     const handleSubmit = () => {
-        console.log('sadf')
+        setPostData({...postData, loading: true})
         let url = `/api/${collect.type}s/profiles/?gender=${collect?.male ? 'male' : 'female'}&country=${collect?.country?.label}&city=${collect?.city?.label}&lang=${collect?.lang?.map(item=>item.label)}&date_after=${collect?.date_after}&date_before=${collect?.date_before}&${collect?.gender}=0`
         getResponse(url, setPostData)
     }
     React.useEffect( () => {
         if(postData?.error !== '') toast.error("Ma'lumotlarni to'liq kiriting")
+        if(postData?.success !== '') {
+            localStorage.setItem('advanced_search', JSON.stringify(postData?.success?.data))
+        }
     },[postData])
     return (    
         <Wrapper width="350px">
@@ -42,7 +45,7 @@ const Index = () => {
             <DoubleRadio value1="online" value2="all"  setState={setCollect} state={collect} name1={t("kengaytirlgan_Q.online")} name2={t("kengaytirlgan_Q.barchasi")}/>
             
             <div className="button-wrapper">
-                <Button onClick={handleSubmit} width="280px" name={t("kengaytirlgan_Q.qidirish")}/>
+                <Button loader={postData?.loading} onClick={handleSubmit} width="280px" name={t("kengaytirlgan_Q.qidirish")}/>
             </div>
         </Wrapper>
     )
