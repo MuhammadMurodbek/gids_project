@@ -6,7 +6,7 @@ const Index = (props) => {
     return (
         <Wrapper>
             <div className="title">{props.title}</div>
-            <Calendar width={props.width}/>
+            <Calendar width={props.width} {...props}/>
         </Wrapper>
     )
 }

@@ -1,105 +1,40 @@
-import * as React from 'react';
-import Box from '@material-ui/core/Box';
-import Avatar from '@material-ui/core/Avatar';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import IconButton from '@material-ui/core/IconButton';
-import Tooltip from '@material-ui/core/Tooltip';
-// import Logout from '@material-ui/icons/Logout';
-import { UserListItem } from './index.style';
-import { useHistory } from 'react-router-dom';
-import { UserOutlined } from "@ant-design/icons";
+import React from 'react'
+import { Menu, Dropdown } from 'antd';
+import { UserOutlined } from '@ant-design/icons';
+import {Wrapper} from "./index.style"
+import {Link} from "react-router-dom"
+const menu = (
+    <Menu>
+        <Menu.Item key="0">
+            <Link to={'/request'}>My profile</Link>
+        </Menu.Item>
+        <Menu.Item key="1">
+            <Link to={'/request'}>Apllications</Link>
+        </Menu.Item>
+        <Menu.Divider />
+        <Menu.Item key="3">
+           <span>Log out</span>
+        </Menu.Item>
+    </Menu>
+);
 
-export default function AccountMenu() {
-    const history = useHistory()
-    const userToken = JSON.parse(localStorage.getItem("user_token"))
-  //  let role = userToken ? userToken.role : undefined
-
-    const [anchorEl, setAnchorEl] = React.useState(null);
-    const open = Boolean(anchorEl);
-    const handleClick = (event) => {
-        setAnchorEl(event.currentTarget);
-    };
-    const handleClose = () => {
-        setAnchorEl(null);
-    };
-    const handleLogout = () => {
-        localStorage.clear()
-        window.location.href = "/auth"
-    }
-    const handleProfile = () => {
-      if(userToken?.role === "simple_user") {
-          history.push("/gid-personal")
-      } else {
-          history.push("/gid-personal-wider")
-      }
-    }
+const Index = () => {
     return (
-        <React.Fragment>
-            <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
-                <Tooltip title="Account settings">
-                    <IconButton onClick={handleClick} size="small" sx={{ ml: 2 }}>
-                        <Avatar className="color1" 
-                        sx={{ width: 32, height: 32,background: "#326A32" }}>
-                            <UserOutlined className="color1" />
-                        </Avatar>
-                    </IconButton>
-                </Tooltip>
-            </Box>
-            <Menu
-                anchorEl={anchorEl}
-                open={open}
-                onClose={handleClose}
-                onClick={handleClose}
-                PaperProps={{
-                    elevation: 0,
-                    sx: {
-                        overflow: 'visible',
-                        padding: "5px 30px",
-                        filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
-                        mt: 1.5,
-                        '& .MuiAvatar-root': {
-                            width: 32,
-                            height: 32,
-                            ml: -0.5,
-                            mr: 1,
-                            background: "transparent",
-                            color: "#326A32"
-                        },
-                        '&:before': {
-                            content: '""',
-                            display: 'block',
-                            position: 'absolute',
-                            top: 0,
-                            right: 14,
-                            width: 10,
-                            height: 10,
-                            bgcolor: 'background.paper',
-                            transform: 'translateY(-50%) rotate(45deg)',
-                            zIndex: 0,
-                        },
-                    },
-                }}
-                transformOrigin={{ horizontal: 'right', vertical: 'top' }}
-                anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
-            >
-                <UserListItem>
-                    <MenuItem 
-                    className="list-item" 
-                    onClick={handleProfile}>
-                        <Avatar /> Profile
-                    </MenuItem><br />
-                    <MenuItem  onClick={handleLogout}>
-                        <ListItemIcon>
-                            {/* <Logout fontSize="small"  /> */}
-                        </ListItemIcon>
-                        Logout
-                    </MenuItem>
-                </UserListItem>
-            </Menu>
-        </React.Fragment>
-    );
+        <Wrapper>
+            <Dropdown overlay={ menu } trigger={ [ 'hover' ] } placement="bottomLeft">
+                <a className="ant-dropdown-link" onClick={ e => e.preventDefault() }>
+                    <span style={{ position:'relative', left:'-10px', display: 'flex', alignItems:'center' }}>
+                        <span style={{marginRight: '5px', fontSize: '19px'}}><UserOutlined /></span>
+                        <span style={{fontSize: '13px', display: 'flex', flexDirection: 'column', lineHeight: '12px'}}>
+                            <span>Murodbek</span>
+                            <span>Rahimjonov</span>
+                        </span>
+                    </span> 
+                    {/* <DownOutlined /> */}
+                </a>
+            </Dropdown>
+        </Wrapper>
+    )
 }
 
- 
+export default Index

@@ -4,6 +4,8 @@ import { FlexContainer } from '../../../styles/flex.container'
 
 const Index = (props) => {
     const {name1, name2,name3, width, margin, alignItems, justifyContent, flexDirection, display} = props
+    const [state, setState] = React.useState({name1:true, name2:false, name3:false})
+    console.log(state)
     return (
         <FlexContainer 
             width={width} 
@@ -13,9 +15,9 @@ const Index = (props) => {
             justifyContent={justifyContent} 
             flexDirection={flexDirection}
         >
-            <Checkbox name={name1}/>
-            <Checkbox name={name2}/>
-            <Checkbox name={name3}/>
+            <Checkbox name={name1} setState={setState} state={state} field="async"/>
+            <Checkbox name={name2} setState={setState} state={state} field="sync"/>
+            <Checkbox name={name3} setState={setState} state={state} field="writer"/>
         </FlexContainer>
     )
 }

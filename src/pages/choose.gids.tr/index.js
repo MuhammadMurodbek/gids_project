@@ -20,6 +20,7 @@ const mediaGridUSers={
 }
 const Index = () => {
     const {t} = useTranslation()
+    const getData = JSON.parse(localStorage.getItem('advanced_search')) || false
     return (
         <Wrapper>
             <TextTitle top="40px" {...mediaTextField} {...mediaTextFieldSec} bottom="30px">
@@ -29,12 +30,18 @@ const Index = () => {
                 <Grid container spacing={1} className="media_grid_flex">
                     <Grid item xs={12} sm={12} md={4}>
                         <ExtendedSearch/>
-                        <Container {...mediaGrid} margin="15px 0" >
-                            <ImageContainer src={Adds} width="350px"/>
-                        </Container>
-                        <Container {...mediaGrid} margin="15px 0" >
-                            <ImageContainer  src={Adds} width="350px"/>
-                        </Container>
+                        {
+                            getData && getData?.results.length > 0 ? 
+                               <>
+                               <Container {...mediaGrid} margin="15px 0" >
+                                    <ImageContainer  src={Adds} width="350px"/>
+                                </Container>
+                                 <Container {...mediaGrid} margin="15px 0" >
+                                 <ImageContainer src={Adds} width="350px"/>
+                                </Container>
+                                </>
+                            :null
+                        }
                     </Grid>
                     <Grid item xs={12} sm={12} md={8}>
                         <Container {...mediaGridUSers}>

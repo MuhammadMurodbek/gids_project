@@ -18,14 +18,13 @@ import { FlexContainer } from "../../styles/flex.container"
 import TimeLine from "./external/timeline"
 import { TextTitle } from "../../styles/textTitle/index.style"
 import { Container } from "../../styles/container/index.style"
-import buttonImage from "../../assets/img/container_main_page/Button.svg"
 import { Paper } from '@material-ui/core';
 import SliderComponent from "./external/slider"
 import { Link } from 'react-router-dom'
 import Box from "@material-ui/core/Box";
 import img21 from '../../assets/img/about/right.png'
 import {useTranslation} from 'react-i18next'
- 
+
 
 import {media, mediaFlexButtons, mediaBtn, mediaTextField, mediaTextFieldSec, mediaContainer} from "./_media"
 import AccountMenu from '../../components/atom/user_account';

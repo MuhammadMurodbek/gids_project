@@ -7,12 +7,16 @@ import {Wrapper} from "./index.style"
 import DoubleCheck2 from "../../molecules/doble2"
 import { useTranslation } from 'react-i18next';
 
-const Index = () => {
+const Index = ({setState, state, field}) => {
     const {t} = useTranslation()
     const [value, setValue] = React.useState(null);
 
     const handleChange = (event) => {
         setValue(event.target.value);
+        if(setState){
+            setState({...state, [field]: event.target.value});
+        }
+        // console.log(event.target.value)
     }
     // console.log(value)
     return (
