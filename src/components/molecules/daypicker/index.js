@@ -22,6 +22,7 @@ export default class Example extends React.Component {
       selectedDays.push(day);
     }
     this.setState({ selectedDays });
+    if(this.props.setData)
     this.props.setData(selectedDays)
   }
 
@@ -33,9 +34,8 @@ export default class Example extends React.Component {
           this.props.title === "no" ? null:<div style={{fontWeight:'bold', fontSize:'15px', margin:"10px 0", transform: 'translateX(-10px)'}}>Gid\Tarjimonning band kunlari</div>
         }
         <DayPicker
-          selectedDays={this.state.selectedDays}
-          onDayClick={this.handleDayClick}
-        //   style={{backgroundColor:'red'}}
+          selectedDays={this.props.default ? this.props.selectedDays : this.state.selectedDays}
+          onDayClick={ this.handleDayClick}
         />
       </div>
     );
