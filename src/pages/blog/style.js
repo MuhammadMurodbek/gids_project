@@ -3,6 +3,16 @@ import  styled  from "styled-components";
 export const  Wrapper = styled.div`
     width: 100%;
     padding:0 40px;
+    .davomi{
+        display: flex;
+        align-items: center;
+        
+    }
+    .divbtns{
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+    }
     /* background-color:red; */
     .imgad{
      margin-bottom: 30px;

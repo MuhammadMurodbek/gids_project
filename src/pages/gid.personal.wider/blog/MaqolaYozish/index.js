@@ -20,19 +20,23 @@ import toast from 'react-hot-toast'
 
 const colourOptions = [
     {
-        label: 'Bizner', value: 'tag1'
+        label: 'Bizner',
+        value: 'tag1'
     },
     {
-        label: "Sayoxat", value: "tag2"
+        label: "Sayoxat", 
+        value: "tag2"
     },
     {
-        label: "Dam olish ", value: "tag3"
+        label: "Dam olish",
+        value: "tag3"
     },
     {
-        label: "Rasmiy", value: "tag4"
+        label: "Rasmiy", 
+        value: "tag4"
     }
 ]
-const tags = ["business", "sdfsdfs", "sfdsf"]
+const tags = ["busines", "tarix", "siyosiy"]
 
 const Index = () => {
     const [postData, setPostData] = useState({success:'',error:'',loading:false})
@@ -54,7 +58,7 @@ const Index = () => {
                 [e.target.name]: e.target.value
             }
         })
-    }
+    }    
     function handleTagChange(tags) {
         setArticle({
             ...article,

@@ -66,12 +66,13 @@ const Index = () => {
 
           </FlexContainer>
 
-          <FlexContainer {...navbarMedia} width="100px" style={{marginRight:120}}>
+          <FlexContainer {...navbarMedia} width="100px" style={{ marginRight: 120 }}>
             <ReactFlagsSelect
               selected={selected}
               onSelect={(code) => {
                 i18n.changeLanguage(code.toLowerCase())
                 setSelected(code)
+                localStorage.setItem("language", code)
               }}
               countries={["UZ", "RU", "US"]}
               customLabels={{ US: "Eng ", UZ: "O’z ", RU: "Ру " }}
@@ -90,8 +91,8 @@ const Index = () => {
                 style={{ color: "#333" }}
               >
               </NavLink>
-              {getRole?.role === "simple_user" || "gid" ||"writer" || "translator" ? <AccountMenu role={getRole?.role}/> : 
-              <span onClick={handleLogout}>Kirish</span>}
+              {getRole?.role === "simple_user" || "gid" || "writer" || "translator" ? <AccountMenu role={getRole?.role} /> :
+                <span onClick={handleLogout}>Kirish</span>}
             </FlexContainer>
 
           </FlexContainer>
