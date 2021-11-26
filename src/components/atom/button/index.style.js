@@ -9,13 +9,13 @@ export const Button = styled.button`
     font-weight: normal;
     font-size: 16px;
     line-height: 20px;
-    color: ${(value)=>value.type === "outlined" ? `${mainGreen}`:"#fff"};
+    color: ${(value)=>value.type === "outlined" || value.format === "outlined" ? `${mainGreen}`:"#fff"};
     cursor: pointer;
     /* pointer-events: none; */
-    border:${(value)=>value.type === "outlined" ? `0.122rem solid ${mainGreen}`: "0.122rem solid transparent"};
+    border:${(value)=>value.type === "outlined" || value.format === "outlined" ? `0.122rem solid ${mainGreen}`: "0.122rem solid transparent"} !important;
     border-radius: 4px;
     background-color:${mainGreen};
-    background-color: ${(value)=>value.type === "outlined" ? "transparent":`${mainGreen}`};
+    background-color: ${(value)=>value.type === "outlined" || value.format === "outlined" ? "transparent":`${mainGreen}`};
 
     @media (max-width: ${a=>a.m_width_btn}){
         width: ${a=>a.m_m_width_btn} !important;

@@ -22,9 +22,9 @@ const Index = () => {
     const [ getData, setGetData ] = useState( { success: '', error: '' } )
     const [ postGid, setPostGid ] = useState( { success: '', error: '', loading: false } )
     const [ stateGid, setStateGid ] = useState( { education_degree: '', completed_university: '', category: '', additional_courses: [], experience_year: '' } )
-    console.log( stateGid )
-    const handleSubmit = ( e ) => {
-        e.preventDefault()
+    // console.log( stateGid )
+    const handleSubmit = ( ) => {
+        // e.preventDefault()
         setPostGid( { ...postGid, loading: true } )
         let clone = stateGid
         clone.category = stateGid?.category?.value
@@ -37,6 +37,7 @@ const Index = () => {
         if ( postGid?.success !== '' ) toast.success( 'Saved successfully' )
         if ( postGid?.error !== '' ) toast.error( 'Failed to save data' )
     }, [ postGid ] )
+    console.log('first')
     return (
         <Wrapper onSubmit={ handleSubmit }>
             {/* <Spinner marginTop="60px" width={ 50 } height={ 50 } /> */ }
@@ -165,7 +166,7 @@ const Index = () => {
             }
 
             <Container padding="10px" textAlign="right">
-                <Button loader={ postGid?.loading }>{ t( "IshTajriba.saqlash" ) }</Button>
+                <Button onClick={ handleSubmit}loader={ postGid?.loading }>{ t( "IshTajriba.saqlash" ) }</Button>
             </Container>
         </Wrapper>
     )

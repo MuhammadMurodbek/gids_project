@@ -5,13 +5,13 @@ import HighlightOffIcon from '@material-ui/icons/Close';
 const Index = (props) => {
     const {field,setState, state, defaultApiValue} = props
     const [array, setArray] = useState([])
-    const handleChange = useCallback((item) => {
+    const handleChange = (item) => {
        setArray([...array, item])
-    },[array])
-    const handleDelete = useCallback((data) => {
+    }
+    const handleDelete = (data) => {
         let clone = array.filter(item=>item!==data)
         setArray(clone)
-    },[array])
+    }
     useEffect(() =>{ if(setState){setState({...state,[field]:array})}},[array])
     useEffect(()=>{if(defaultApiValue) setArray(defaultApiValue) },[defaultApiValue])
     return (

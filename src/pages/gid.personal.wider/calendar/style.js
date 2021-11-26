@@ -1,6 +1,7 @@
 import styled from "styled-components"
 
 export const Wrapper = styled.div`
+    display:flex;
     width: 100%;
     height: auto;
     padding:30px 70px;
@@ -20,6 +21,8 @@ export const Wrapper = styled.div`
     @media (max-width:750px){
         &{
             padding:30px 5px;
+            display:flex;
+            flex-direction: column;
         }
     }
 `

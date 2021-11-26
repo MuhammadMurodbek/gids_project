@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { getResponse } from "../../../../hooks/response_get"
-import ImageCrop from "../../../../components/organism/image.crop.gallery/new";
+// import ImageCrop from "../../../../components/organism/image.crop.gallery/new";
 import ImageGallery from "../../../../components/molecules/personal.gallery"
-import FadeIn from "react-fade-in"
-import { Fade } from '@material-ui/core';
+// import FadeIn from "react-fade-in"
+// import { Fade } from '@material-ui/core';
 const Gallery = () => {
     const [ state, setState ] = useState( { success: '', error: '' } )
     const [ list, setList ] = useState( [] )
