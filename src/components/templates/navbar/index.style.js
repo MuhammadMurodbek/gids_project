@@ -8,6 +8,13 @@ export const Navbar = styled.div`
     background-color:transparent;
     box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.4);
 
+    .btn_enter{
+        background-color: transparent;
+        margin-left: 25px;
+        border:none !important;
+        cursor:pointer;
+        /* letter-spacing: 1px; */
+    }
     .img_logo1{
         width: 150px;
     }
