@@ -56,7 +56,7 @@
        "textForGid":"Ushbu platforma yordamida siz o’zingiz uchunv mijozlarni topishingiz va karyera qilishingiz mumkin. Gits.uz platformasi sizni qo’llab quvvatlab turadi. Xoziroq ro’yhattan o’ting, ma’lumotlaringizni to’ldiring va o’z karyerangizni boshlang!",
        "royhatdanO":"Ro'yhatdan o'tish",
        "ishlashi":"Bu qanday ishlaydi",
-       "royhatdanOtasiz":" Ro’yxattan o’tasiz",
+       "royhatdanOtasiz":" Ro’yxatdan o’tasiz",
        "text02":"Avvalo platformadan Git/Tarjimon yokida Mijoz sifatida ro’yhattan o’tasiz.",
        "sorov":"So‘rov qoldirasiz",
        "text03":"Mijoz so‘rov qoldirishi mumkin yokida o‘zi Git/Tarjimoni tanlashi mumkin.",
@@ -98,7 +98,7 @@
     "tekshirilgan":"“Tekshirilgan” belgisini qanday qilib olsam bo’ladi?",
     "qandayKiraman":"Profilga qayerdan kirsam bo‘ladi?",
     "hoziroq":"Xoziroq ro’yhattan o’ting, ma’lumotlaringizni to’ldiring va o’z karyerangizni boshlang!",
-    "royhatdanO":"Ro’yhattan o’tish"
+    "royhatdanO":"Ro’yhatdan o’tish"
   },
   "about":{
     "title":"Platforma haqida",
@@ -124,7 +124,7 @@
   },
   "auth_registr":{
     "kirish":"Kirish",
-    "royhatdanOtish2":"Ro’yhattan o’tish",
+    "royhatdanOtish2":"Ro’yhatdan o’tish",
     "ismingiz":"Ismingiz",
     "familya2":"Familyangiz",
     "gid":"Gid",
@@ -204,7 +204,7 @@
     "sana":"Sana:",
     "gacha":"Narx (gacha):",
     "kimKerak":"Kim kerak:",
-    "tillar":"Tillar::",
+    "tillar":"Tillar:",
     "odamlarSone":"Odamlar soni:",
     "javobBerish":"Arizaga javob qaytarish",
     "yozing":"Xabaringizni yozing",
@@ -240,14 +240,6 @@
     "maqolaniYozing":"Maqolangizni yozing",
     "joylamoq":"Joylamoq"
   },
-  
- 
-
-
-
-
-
-
   "GidPk":{
     "Profilni_Korish":"Profilni ko'rish",
     "tahrirlash":"Tahrirlash",
@@ -352,15 +344,15 @@
     "Site":"Sayt",
     "link":"Linkni kiriting",
     "Telegram":"Telegram",
-    "telegramPlace":"Telegram profil linkizni kiriting",
+    "telegramPlace":"Telegram profil linkingizni kiriting",
     "WhatsApp":"WhatsApp",
-    "watsapPlace":"WhatsApp profil linkizni kiriting",
+    "watsapPlace":"WhatsApp profil linkingizni kiriting",
     "Facebook":"Facebook",
-    "facebookPlace":"Facebook profil linkizni kiriting",
+    "facebookPlace":"Facebook profil linkingizni kiriting",
     "Wechat":"Wechat",
-    "wechatPlace":"Wechat profil linkizni kiriting",
+    "wechatPlace":"Wechat profil linkingizni kiriting",
     "Viber":"Viber",
-    "viberPlace":"Viber profil linkizni kiriting",
+    "viberPlace":"Viber profil linkingizni kiriting",
     "saqlash":"Saqlash"
   },
   "IshTajriba":{
