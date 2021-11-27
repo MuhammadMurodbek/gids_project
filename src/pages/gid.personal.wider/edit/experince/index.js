@@ -23,13 +23,14 @@ const Index = () => {
     const [ postGid, setPostGid ] = useState( { success: '', error: '', loading: false } )
     const [ stateGid, setStateGid ] = useState( { education_degree: '', completed_university: '', category: '', additional_courses: [], experience_year: '' } )
     // console.log( stateGid )
-    const handleSubmit = ( ) => {
-        // e.preventDefault()
+    const handleSubmit = (e) => {
+        e.preventDefault()
         setPostGid( { ...postGid, loading: true } )
         let clone = stateGid
         clone.category = stateGid?.category?.value
         clone.education_degree = stateGid?.education_degree?.value
         clone.experience_year = stateGid?.experience_year?.value
+        clone.completed_university = stateGid?.completed_university || getData?.success?.data?.completed_university
         putResponse( '/api/gids/edit/education/', stateGid, setPostGid )
     }
     useEffect( () => { getResponse( '/api/gids/edit/education/', setGetData ) }, [] )
