@@ -66,6 +66,7 @@ const Index = () => {
   },[fileList])
   const handleSubmit = async ( e ) => {
     e.preventDefault();
+    console.log(`Uploading`)
     let clone = state;
     let validate_obj = {
       ...clone,
@@ -73,7 +74,10 @@ const Index = () => {
       city: clone?.city?.label || clone?.city_api,
     };
     const isValid = await userSchema.isValid( validate_obj )
-    if ( !isValid ) { setError( true ) }
+    if ( !isValid ) { 
+      setError( true )  
+      toast.error('Something went wrong')
+    }
     else
     {
       let check_img = clone.hasOwnProperty( "imageFile" );
@@ -169,21 +173,25 @@ const Index = () => {
                 </Grid>
                 <Grid item xs={ 12 } md={ 4 }></Grid>
               </Grid>
-              <Grid container spacing={ 1 }>
-                <Grid item xs={ 12 } md={ 4 }>
-                  <TextLabeledLoop label="Mamlakat" value={state?.country_api}/>
+              {
+                state?.country_api && state?.city_api ? (
+                  <Grid container spacing={ 1 }>
+                  <Grid item xs={ 12 } md={ 4 }>
+                    <TextLabeledLoop label="Mamlakat" value={state?.country_api} placeholder="Mamlakat kiriting"/>
+                  </Grid>
+                  <Grid item xs={ 12 } md={ 4 }>
+                    <TextLabeledLoop label="Shahar" value={state?.city_api}/>
+                  </Grid>
+                  <Grid item xs={ 12 } md={ 4 } style={{alignSelf:'flex-end'}}>
+                    <div className="edit_div" onClick={() => setEditIcon(!editIcon)}>
+                      <EditOutlined className="icon_edit"/>
+                      {/* <span>edit</span> */}
+                    </div>
+                  </Grid>
                 </Grid>
-                <Grid item xs={ 12 } md={ 4 }>
-                  <TextLabeledLoop label="Shahar" value={state?.city_api}/>
-                </Grid>
-                <Grid item xs={ 12 } md={ 4 } style={{alignSelf:'flex-end'}}>
-                  <div className="edit_div" onClick={() => setEditIcon(!editIcon)}>
-                    <EditOutlined className="icon_edit"/>
-                    {/* <span>edit</span> */}
-                  </div>
-                </Grid>
-              </Grid>
-              <FadeIn visible={editIcon}>
+                ):null
+              }
+              <FadeIn visible={(state?.country_api && state?.city_api) ?  editIcon: true}>
                 <Grid container spacing={ 1 }>
                   <Grid item xs={ 12 } md={ 4 }>
                     <SelectLabeled
@@ -194,13 +202,14 @@ const Index = () => {
                       sizeLabel="15px"
                       width="100%"
                       label="Mamlakat"
+                      errorText={ error ? validatorState( state?.country, 'object', 0, 'Davlat kiritilmagan' ) : null }
                     />
                   </Grid>
                   <Grid item xs={ 12 } md={ 4 }>
                     <SelectLabeled
                       setCollect={ setState }
                       collect={ state }
-                      isDisabled={!country.hasOwnProperty('cities')}
+                      isDisabled={!country?.hasOwnProperty('cities')}
                       options={
                         state?.city ? state?.city : { value: 0, label: "no data" }
                       }
@@ -208,7 +217,7 @@ const Index = () => {
                       field="city"
                       width="100%"
                       label="Shahar"
-                      errorText={ error ? validatorState( state?.country, 'object', 0, 'Davlat kiritilmagan' ) : null }
+                      
                     />
                   </Grid>
                   <Grid item xs={ 12 } md={ 4 }></Grid>

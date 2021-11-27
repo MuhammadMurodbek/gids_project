@@ -27,16 +27,13 @@ const Index = () => {
         postResponse(`/api/${getRole?.role}s/calendar/`, {busy_days:dataTime, add_or_delete: busy ? 'add' : 'delete'}, setPostData)
     }
     useEffect(() => {
-        if(postData.success !== '') toast.success('Successfully loaded')
         if(postData.error !== '') toast.success('Something went wrong')
+        if(postData?.success !==''){
+            setCallback(prev=>!prev)
+            toast.success('Successfully loaded')
+        }
     },[postData])
     useEffect(() => { getResponse(`/api/${getRole?.role}s/calendar/`, setGetData) },[callback])
-    useEffect(()=> {
-        if(getData?.success !==''){
-            setCallback(prev=>!prev)
-        }
-    },[getData])
-    console.log(getData)
     return (
         <>
         <Wrapper>
