@@ -8,7 +8,7 @@ import { getResponse, putResponse } from "../../../../hooks/response_get"
 import toast from 'react-hot-toast'
 import Spinner from "../../../../components/atom/loading.spinner.line";
 const Index = () => {
-    const [ apiRes, setApiRes ] = useState( { success: '', error: '' } )
+    const [ apiRes, setApiRes ] = useState( { success: '', error: '', loading: false} )
     const [ loader, setLoader ] = useState( false )
     const [ state, setState ] = useState( { website: 'http://', telegram: 'http://', instagram: 'http://', facebook: 'http://', wechat: 'http://', viber: 'http://' } )
     const [ apiResponse, setApiResponse ] = useState( { success: '', error: '' } )
@@ -22,8 +22,9 @@ const Index = () => {
     }, [ apiResponse ] )
     const handleSubmit = ( e ) => {
         e.preventDefault()
+        setApiRes({...apiRes, loading: true})
         putResponse( '/api/gids/edit/contact/', state, setApiRes )
-        setLoader( true )
+        // setLoader( true )
     }
     useEffect( () => {
         if ( apiRes?.success !== "" )
@@ -50,7 +51,7 @@ const Index = () => {
                             <Grid item xs={ 12 } sm={ 6 } md={ 4 }><InputLabel onChange={ handleChange } name="viber" value={ state?.viber } sizeLabel="15px" width="100%" label="Viber" placeholder="Viber linkni kiriting..." /> </Grid>
                         </Grid>
                         <Container padding="20px 0 5px" textAlign="right">
-                            <Button loader={ loader }>Saqlash</Button>
+                            <Button loader={ apiRes?.loading }>Saqlash</Button>
                         </Container>
                     </>
                 )
