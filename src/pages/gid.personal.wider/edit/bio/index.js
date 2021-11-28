@@ -12,7 +12,6 @@ import GroupImageUpload from "./_gallery";
 import Button from "../../../../components/atom/button";
 import { post_bio_data_action } from "../../../../redux/actions";
 import useApiData from "../../../../hooks/response";
-import AddIcon from "@material-ui/icons/Add";
 import ImageCrop from "../../../../components/organism/image.crop/new";
 import { countries } from "../../../../custom/constants";
 import { get_cities } from "../../../../custom/function";
@@ -25,17 +24,19 @@ import { defaultObj } from "./_const"
 import TextLabeledLoop from "../../../../components/atom/text.labeled"
 import { EditOutlined } from '@ant-design/icons'
 import FadeIn from 'react-fade-in';
+import Translator from './_translator';
 const Index = () => {
   const [ fileList, setFileList ] = useState( [] );
-  const [postImage, setPostImage ] = useState({success: '', error: ''});
+  const [ postImage, setPostImage ] = useState( { success: '', error: '' } );
+  const [trains, setTrains ] = useState([])
   const [ state, setState ] = useState( defaultObj );
   const [ error, setError ] = useState( false )
-  const [editIcon, setEditIcon] = useState(false)
+  const [ editIcon, setEditIcon ] = useState( false )
   const getRole = JSON.parse( localStorage.getItem( "user_token" ) );
   const [ apiValue, setApiValue ] = useState( { success: "", error: "" } );
   const { responseHook, setResponseHook } = useApiData( "post_bio_data_reducer" );
   const { country } = state;
-  useEffect( () => { getResponse( `/api/${getRole?.role}s/edit/about/`, setApiValue ) }, [] );
+  useEffect( () => { getResponse( `/api/${ getRole?.role }s/edit/about/`, setApiValue ) }, [] );
   React.useMemo( () => {
     if ( apiValue?.success !== "" )
     {
@@ -56,17 +57,17 @@ const Index = () => {
       } );
     }
   }, [ country ] );
-  React.useEffect(() => {
-    if(fileList.length > 0){
-      let data = fileList[fileList.length - 1];
+  React.useEffect( () => {
+    if ( fileList.length > 0 )
+    {
+      let data = fileList[ fileList.length - 1 ];
       const formData = new FormData();
-      formData.append('image' , data?.originFileObj );
-      postResponse(`/api/${getRole?.role}s/edit/gallery/`, formData, setPostImage);
+      formData.append( 'image', data?.originFileObj );
+      postResponse( `/api/${ getRole?.role }s/edit/gallery/`, formData, setPostImage );
     }
-  },[fileList])
-  const handleSubmit = async ( e ) => {
-    e.preventDefault();
-    console.log(`Uploading`)
+  }, [ fileList ] )
+  const handleSubmit = async () => {
+    console.log( `Uploading` )
     let clone = state;
     let validate_obj = {
       ...clone,
@@ -74,9 +75,10 @@ const Index = () => {
       city: clone?.city?.label || clone?.city_api,
     };
     const isValid = await userSchema.isValid( validate_obj )
-    if ( !isValid ) { 
-      setError( true )  
-      toast.error('Something went wrong')
+    if ( !isValid )
+    {
+      setError( true )
+      toast.error( 'Something went wrong' )
     }
     else
     {
@@ -91,13 +93,15 @@ const Index = () => {
       formData.append( "country", clone?.country?.label || clone?.country_api );
       formData.append( "city", clone?.city?.label || clone?.city_api );
       formData.append( "bio", clone?.bio );
+      if(getRole?.role!=='gid') formData.append( "trainings",JSON.stringify(clone?.trainings));
       setResponseHook( post_bio_data_action( formData ) );
     }
+    console.log(clone)
   };
-  
+
   // console.log(fileList[fileList.length - 1])
   return (
-    <Wrapper onSubmit={ handleSubmit }>
+    <Wrapper onSubmit={ ( e ) => e.preventDefault() }>
       {apiValue?.success === "" ? (
         <Spinner marginTop="60px" width={ 50 } height={ 50 } />
       ) : (
@@ -176,22 +180,22 @@ const Index = () => {
               {
                 state?.country_api && state?.city_api ? (
                   <Grid container spacing={ 1 }>
-                  <Grid item xs={ 12 } md={ 4 }>
-                    <TextLabeledLoop label="Mamlakat" value={state?.country_api} placeholder="Mamlakat kiriting"/>
+                    <Grid item xs={ 12 } md={ 4 }>
+                      <TextLabeledLoop label="Mamlakat" value={ state?.country_api } placeholder="Mamlakat kiriting" />
+                    </Grid>
+                    <Grid item xs={ 12 } md={ 4 }>
+                      <TextLabeledLoop label="Shahar" value={ state?.city_api } />
+                    </Grid>
+                    <Grid item xs={ 12 } md={ 4 } style={ { alignSelf: 'flex-end' } }>
+                      <div className="edit_div" onClick={ () => setEditIcon( !editIcon ) }>
+                        <EditOutlined className="icon_edit" />
+                        {/* <span>edit</span> */ }
+                      </div>
+                    </Grid>
                   </Grid>
-                  <Grid item xs={ 12 } md={ 4 }>
-                    <TextLabeledLoop label="Shahar" value={state?.city_api}/>
-                  </Grid>
-                  <Grid item xs={ 12 } md={ 4 } style={{alignSelf:'flex-end'}}>
-                    <div className="edit_div" onClick={() => setEditIcon(!editIcon)}>
-                      <EditOutlined className="icon_edit"/>
-                      {/* <span>edit</span> */}
-                    </div>
-                  </Grid>
-                </Grid>
-                ):null
+                ) : null
               }
-              <FadeIn visible={(state?.country_api && state?.city_api) ?  editIcon: true}>
+              <FadeIn visible={ ( state?.country_api && state?.city_api ) ? editIcon : true }>
                 <Grid container spacing={ 1 }>
                   <Grid item xs={ 12 } md={ 4 }>
                     <SelectLabeled
@@ -209,7 +213,7 @@ const Index = () => {
                     <SelectLabeled
                       setCollect={ setState }
                       collect={ state }
-                      isDisabled={!country?.hasOwnProperty('cities')}
+                      isDisabled={ !country?.hasOwnProperty( 'cities' ) }
                       options={
                         state?.city ? state?.city : { value: 0, label: "no data" }
                       }
@@ -217,7 +221,7 @@ const Index = () => {
                       field="city"
                       width="100%"
                       label="Shahar"
-                      
+
                     />
                   </Grid>
                   <Grid item xs={ 12 } md={ 4 }></Grid>
@@ -233,7 +237,7 @@ const Index = () => {
               value={ state?.bio }
               field="bio"
               state={ state }
-              style={{minHeight:400}}
+              style={ { minHeight: 400 } }
               setState={ setState }
             />
           </Container>
@@ -241,31 +245,14 @@ const Index = () => {
             <TextTitle font="16px" align="left" top="15px">
               Sertifikat va diplomlaringiz bo‘lsa shu yerga yuklang
             </TextTitle>
-            <GroupImageUpload role={getRole?.role}/>
+            <GroupImageUpload role={ getRole?.role } />
             { getRole?.role !== "gid" ? (
-              <Grid container spacing={ 1 }>
-                <Grid item md={ 10 } xs={ 8 }>
-                  <InputLabeled
-                    sizeLabel="15px"
-                    width="100%"
-                    placeholder="Nomini yozing"
-                  />
-                </Grid>
-
-                <Grid item md={ 2 } xs={ 4 }>
-                  <InputLabeled
-                    sizeLabel="15px"
-                    width="100%"
-                    placeholder="Yilni yozing"
-                  />
-                </Grid>
-                <Button paddingIcon="10px">
-                  <AddIcon className="icon" />
-                </Button>
-              </Grid>
+              <>
+                <Translator setTrains={setState}/>
+              </>
             ) : null }
             <div className="btnGrop">
-              <Button loader={ responseHook?.loading } type="submit">
+              <Button onClick={ handleSubmit } loader={ responseHook?.loading } type="submit">
                 { " " }
                 Saqlash
               </Button>
