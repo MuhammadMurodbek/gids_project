@@ -1,6 +1,7 @@
 import React from 'react';
 import DayPicker, { DateUtils } from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
+ 
 
 export default class Example extends React.Component {
   constructor(props) {
@@ -29,6 +30,7 @@ export default class Example extends React.Component {
   render() {
     // this.props(this.state.selectedDays);
     return (
+
       <div style={{textAlign:'center'}}>
         {
           this.props.title === "no" ? null:<div style={{fontWeight:'bold', fontSize:'15px', margin:"10px 0", transform: 'translateX(-10px)'}}>Gid\Tarjimonning band kunlari</div>

@@ -8,12 +8,12 @@ import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import ImgContainer from "../../../components/molecules/img.container"
  
 export default function index(props) {
-    const { url, title, kalendar, hteg, lines, text, btnText, id } = props
+    const { url, title, kalendar, hteg, lines, text, btnText, id, postData, setPostData, setState } = props
    
     return (
         <Wrapper>
             <Grid className="msa" container spacing={1}>
-                <CitiesTitle title={title} kalendar={kalendar} hteg={hteg} />
+                <CitiesTitle setState={setState} title={title} kalendar={kalendar} hteg={hteg} postData={postData} setPostData={setPostData}  />
                 <Grid item xs={12} md={12}>
                     <ImgContainer width="100%"  src={url} />
                 </Grid>

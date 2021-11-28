@@ -6,12 +6,12 @@ import img3 from '../../../assets/img/request/3.svg'
 import { getResponse } from '../../../hooks/response_get'
 
 export default function Index(props) {
-    const {title, kalendar, hteg} = props 
-    const [postData, setPostData] = useState({ success: '', error: '', loading: false})
+    const {title, kalendar, hteg, postData, setPostData, setState} = props 
+  
     const handleFilter = () => {
         setPostData({...postData, loading: true})
         let url = `/api/posts/article/?tag=${hteg}`
-        getResponse(url, setPostData)
+        getResponse(url, setState)
     }
     console.log(hteg)
     return (

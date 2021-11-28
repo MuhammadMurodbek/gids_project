@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Navbar } from "./index.style";
-import Logo from "../../../assets/img/logo_svg.svg";
+import Logo from "../../../assets/img/logo99.png";
 import { FlexContainer } from "../../../styles/flex.container";
 import ButtonNavbar from "../../molecules/button.navbar";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";  
 import { navbarMedia, navbarMediaCenter } from "./media";
 import { Turn as Hamburger } from "hamburger-react";
 import { mainGreen } from "../../../styles/global/colors";
@@ -11,8 +11,6 @@ import MediaNavbar from "./media.navbar";
 import ReactFlagsSelect from "react-flags-select";
 import { useTranslation } from 'react-i18next'
 import AccountMenu from "../../atom/user_account";
-
-
 
 const Index = () => {
 
@@ -91,10 +89,11 @@ const Index = () => {
                 style={{ color: "#333" }}
               >
               </NavLink>
-              {getRole?.role === "simple_user" || "gid" || "writer" || "translator" ? <AccountMenu role={getRole?.role} /> :
-                <span onClick={handleLogout}>Kirish</span>}
-            </FlexContainer>
 
+              {getRole?.role === "simple_user" || "gid" || "writer" || "translator" ? <AccountMenu  /> :
+                <span onClick={handleLogout}>Kirish</span>
+              }
+            </FlexContainer>
           </FlexContainer>
           <div className="toggle_hamburger">
             <Hamburger toggled={isOpen} toggle={setOpen} color={mainGreen} />

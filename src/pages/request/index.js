@@ -16,10 +16,11 @@ export default function Index() {
     const {t} = useTranslation()
 
     return (
-        <Wrapper>
+        <Wrapper> 
             <TextTitle top="100px" bottom="50px">
                {t("arizalar_royhati.title")}
             </TextTitle>
+            
             <InDate />
             <Requests
                 id="#071364754"

@@ -13,6 +13,13 @@ export const  Wrapper = styled.div`
         justify-content: center;
         padding: 10px;
     }
+    .pagination{
+        text-align: center;
+        padding: 20px 0;
+    }
+        /* background-color: red; */
+    .pag{
+    }
     /* background-color:red; */
     .imgad{
      margin-bottom: 30px;

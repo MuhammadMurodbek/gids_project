@@ -12,35 +12,40 @@ import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import moment from 'moment'
 import { Pagination } from 'antd';
 
-
 export default function Index() {
     const { t } = useTranslation()
     const [state, setState] = useState({ success: '', error: '' })
-    const [articleList, setArticleList] = useState(undefined)
-    const [counter, setCounter] = useState(1)
-
-    function getArticleList() {
-        getResponse("/api/posts/article/", setState)
-    }
+    const [tagName, setTagName] = useState(undefined)
+    const [articleList, setArticleList] = useState([])
+    const [pagination, setPagination] = useState({
+        current: 1
+    })
+    const [postData, setPostData] = useState({ success: '', error: '', loading: false })
+    let filterData = postData?.success?.data?.results
+    let {current} = pagination
+    // function getArticleList() {
+    // }
     useEffect(() => {
-        getArticleList()
-    }, [])
+        let url = `/api/posts/article/?page=${current}`
+        getResponse(url, setState)
+        // TAGNAMgetArticleList()
+    }, [pagination])
+  console.log(pagination)
     useEffect(() => {
         if (state?.success) {
             setArticleList(state.success?.data?.results)
         }
-    }, [state])
-    const handlePagination = () => {
-        setCounter(prev => prev + 1)
-        let url = `/api/posts/article/?page=${counter + 1}`
-        getResponse(url, setState)
-    }
+    }, [state.success?.data?.results])
+
     // let visibleButton = state?.success?.data?.num_pages
 
     function onChange(pageNumber) {
-        let url = `/api/posts/article/?page=${pageNumber}`
-        getResponse(url, setState)
+        setPagination({
+            current: pageNumber
+        })
     }
+    console.log(articleList, 'data')
+    console.log(postData)
     return (
         <Wrapper>
             <TextTitle width="50%" left="auto" right="auto" bottom="30px" top="80px">
@@ -58,7 +63,12 @@ export default function Index() {
                                 url={item.image}
                                 text={item.mini_content}
                                 id={item.id}
+                                // getArticleList={getArticleList}
+                                setState={setState}
+                                postData={postData}
+                                setPostData={setPostData}
                                 btnText={t("Blog.davomiOqish")}
+                                setTagName={setTagName}
                             />
                         ))
                     }
@@ -73,14 +83,19 @@ export default function Index() {
                     <div className="imgcla"><ImgContainer src={ad} width="350px" margin="0 auto" /></div>
                 </Grid>
             </Grid>
-            <Pagination defaultCurrent={state?.success?.data?.num_pages} total={state?.success?.data?.count} onChange={onChange} />
+            <div className="pagination">
+            <Pagination current={state?.success?.data?.num_pages} 
+            onChange={onChange} 
+            
+            total={50} />;
+            </div>
         </Wrapper>
     )
 }
-
+// state?.success?.data?.count
 // {
 //     counter === visibleButton ? null :
 //         <div className="divbtns">
-//             <Button type="outlined" className="davomi" onClick={handlePagination}>{t("arizalar_royhati.davomi")} <ArrowForwardIcon className="arrovicon" /></Button>
+//             <Button type="outlined" className="davomi" onClick={handlePagination}>   t("arizalar_royhati.davomi")} <ArrowForwardIcon className="arrovicon" /></Button>
 //         </div>
 // }

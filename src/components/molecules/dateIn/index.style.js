@@ -7,7 +7,8 @@ import {mainGreen} from "../../../styles/global/colors";
     padding-top: 10px;
      margin-bottom: 50px;
     .select_div{
-        width:250px;
+        
+        
     }
     .searchI{
         background-color:${mainGreen};

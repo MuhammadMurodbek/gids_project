@@ -7,11 +7,17 @@ import img01 from '../../../../assets/img/sertificet/12.png'
 import img02 from '../../../../assets/img/sertificet/13.png'
 import img03 from '../../../../assets/img/sertificet/14.png'
 import img04 from '../../../../assets/img/sertificet/15.png'
+import { useTranslation } from 'react-i18next'
 
 const Index = () => {
+
+    const {t} = useTranslation()
+
     return (
         <Wrapper>
-            <div style={{margin:"10px 0", fontWeight:'bold', fontSize:'15px'}}>Sertifikat va diplomlar</div>
+            <div style={{margin:"10px 0", fontWeight:'bold', fontSize:'15px'}}>
+                {t("GidPk.sertificat")}
+            </div>
             <Grid container spacing={2}>
                 <Grid item xs={12} sm={6}>
                     <ImageContainer width="100%" src={img04} />
