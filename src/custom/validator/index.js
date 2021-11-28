@@ -30,8 +30,10 @@ export const validator = (type,item,count,textTrue,textFalse, setState, state) =
 }
 
 export const validatorState = (data, type, count, errorText) => {
+    console.log(data, errorText)
     let text = ''
-    if(type === 'min' && data ? data.length<count: false) text = errorText
+    if(type === 'min') {
+        if(data === null || data.length < count) text = errorText}
     if(type === 'exist' && data) text = errorText
     if(type === 'object' && Object.keys(data || {}).length === 0) text = errorText
     if(type === 'max' && (data<=0 || data==='')) text = errorText

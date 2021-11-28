@@ -35,7 +35,7 @@ const Index = () => {
   const [ apiValue, setApiValue ] = useState( { success: "", error: "" } );
   const { responseHook, setResponseHook } = useApiData( "post_bio_data_reducer" );
   const { country } = state;
-  useEffect( () => { getResponse( "/api/gids/edit/about/", setApiValue ) }, [] );
+  useEffect( () => { getResponse( `/api/${getRole?.role}s/edit/about/`, setApiValue ) }, [] );
   React.useMemo( () => {
     if ( apiValue?.success !== "" )
     {
@@ -61,7 +61,7 @@ const Index = () => {
       let data = fileList[fileList.length - 1];
       const formData = new FormData();
       formData.append('image' , data?.originFileObj );
-      postResponse('/api/gids/edit/gallery/', formData, setPostImage);
+      postResponse(`/api/${getRole?.role}s/edit/gallery/`, formData, setPostImage);
     }
   },[fileList])
   const handleSubmit = async ( e ) => {
@@ -141,7 +141,7 @@ const Index = () => {
                     width="100%"
                     label="Otangizni ismi"
                     placeholder="Otangizni ismini yozing..."
-                    errorText={ error ? validatorState( state?.middle_name, 'min', 3, 'Kamida 3 ta belgidan foydalaning' ) : null }
+                    errorText={ error ? validatorState( state.middle_name, 'min', 3, 'Kamida 3 ta belgidan foydalaning' ) : null }
                   />
                 </Grid>
               </Grid>
@@ -156,7 +156,7 @@ const Index = () => {
                     setState={ setState }
                     state={ state }
                     field="birthday"
-                    errorText={ error ? validatorState( state?.birthday, 'min', 3, 'Sana kiritilmagan' ) : null }
+                    errorText={ error ? validatorState( state.birthday, 'min', 3, 'Sana kiritilmagan' ) : null }
                   />
                 </Grid>
                 <Grid item xs={ 12 } md={ 4 }>
@@ -233,6 +233,7 @@ const Index = () => {
               value={ state?.bio }
               field="bio"
               state={ state }
+              style={{minHeight:400}}
               setState={ setState }
             />
           </Container>
@@ -240,7 +241,7 @@ const Index = () => {
             <TextTitle font="16px" align="left" top="15px">
               Sertifikat va diplomlaringiz bo‘lsa shu yerga yuklang
             </TextTitle>
-            <GroupImageUpload/>
+            <GroupImageUpload role={getRole?.role}/>
             { getRole?.role !== "gid" ? (
               <Grid container spacing={ 1 }>
                 <Grid item md={ 10 } xs={ 8 }>
