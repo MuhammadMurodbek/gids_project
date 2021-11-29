@@ -6,7 +6,6 @@ export const routes_user = [
         url:'/gids',
         component:ListRouter.ChooseGids,
     },
-    
     {
         url:'/application-form',
         component:ListRouter.FillOutApplication,

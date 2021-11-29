@@ -15,6 +15,7 @@ import { degrees, options_year, options_yes, degrees_gid, DEGREES, DEGREES_GIT }
 import MultiInput from "../../../../components/molecules/multivalue.input"
 import { putResponse, getResponse } from "../../../../hooks/response_get"
 import toast from 'react-hot-toast'
+import ExtraRole from "./_translator"
 import Spinner from "../../../../components/atom/loading.spinner.line";
 const Index = () => {
     const { t } = useTranslation()
@@ -118,6 +119,7 @@ const Index = () => {
                 </Container>
                 :
                 <>
+                    <ExtraRole/>
                     <Container padding="10px 0">
                         <Grid container spacing={ 1 }>
                             <Grid item xs={ 12 } sm={ 6 } md={ 5 }>

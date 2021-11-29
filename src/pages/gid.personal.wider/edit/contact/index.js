@@ -12,8 +12,9 @@ const Index = () => {
     const [ loader, setLoader ] = useState( false )
     const [ state, setState ] = useState( { website: 'http://', telegram: 'http://', instagram: 'http://', facebook: 'http://', wechat: 'http://', viber: 'http://' } )
     const [ apiResponse, setApiResponse ] = useState( { success: '', error: '' } )
+    const getRole = JSON.parse(localStorage.getItem("user_token"))
     const handleChange = ( e ) => { setState( { ...state, [ e.target.name ]: e.target.value } ) }
-    useEffect( () => { getResponse( '/api/gids/edit/contact/', setApiResponse ) }, [] )
+    useEffect( () => { getResponse( `/api/${getRole?.role}s/edit/contact/`, setApiResponse ) }, [] )
     useEffect( () => {
         if ( apiResponse?.success )
         {
@@ -23,7 +24,7 @@ const Index = () => {
     const handleSubmit = ( e ) => {
         e.preventDefault()
         setApiRes({...apiRes, loading: true})
-        putResponse( '/api/gids/edit/contact/', state, setApiRes )
+        putResponse( `/api/${getRole?.role}s/edit/contact/`, state, setApiRes )
         // setLoader( true )
     }
     useEffect( () => {
@@ -31,7 +32,7 @@ const Index = () => {
         {
             setLoader( false )
             toast.success( "Ma'lumotlaringiz muvaffaqiyatli yuklandi" )
-            getResponse( '/api/gids/edit/contact/', setApiResponse )
+            getResponse( `/api/${getRole?.role}s/edit/contact/`, setApiResponse )
         } else if ( apiRes?.error !== "" )
         {
             toast.error( "Xatolik mavjud, qaytadan urinib ko'ring" )
