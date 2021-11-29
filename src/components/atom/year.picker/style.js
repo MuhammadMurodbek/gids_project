@@ -8,6 +8,10 @@ export const Wrapper = styled.div`
     border-radius: 4px;
     background-color:#FAFCFA;
 
+    input::placeholder{
+        color: ${v=>v.pcolor ? "#2a2a2a" :"#a09e9e" }!important;
+    }
+
     .SwitchablePicker_style{
         width:100%;
         outline: none !important;
