@@ -7,13 +7,17 @@ function SwitchablePicker (props) {
     const handleChange = (data) => {
         setState({...state, [field]:data})
     }
+    console.log(defaultValue)
     return (
         <Wrapper pcolor={defaultValue ? true:false}>
             <TimePicker 
                 className="SwitchablePicker_style" 
                 picker='year' 
-                defaultValue={moment(defaultValue || '00:00:00', 'HH:mm:ss')}
+                placeholder={defaultValue}
+                format='HH:mm'
+                // defaultValue={moment(`${defaultValue}`, 'hh:mm:ss')}
                 onChange={(event, data) => handleChange(data)}
+                // {...props}
             />
         </Wrapper>
     );

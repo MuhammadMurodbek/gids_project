@@ -11,15 +11,16 @@ import TextLabeledLoop from "../../../../components/atom/text.labeled"
 import DeleteIcon from '@material-ui/icons/Delete';
 import { Container } from '../../../../styles/container/index.style'
 import { options_year, options_yes } from "./_const"
-import 'animate.css';
 import { useTranslation } from 'react-i18next'
-import {putResponse } from '../../../../hooks/response_get'
-import {translator} from "../../../../custom/url"
+import {putResponse, getResponse } from '../../../../hooks/response_get'
+import {common} from "../../../../custom/url"
 import toast from 'react-hot-toast';
-const Translator = () => {
+import moment from 'moment'
+const Translator = ({getData}) => {
+
   const { t } = useTranslation()
   const [ delBool, setDelBool ] = useState();
-  const [ collect, setCollect ] = useState( [] )
+  const [ collect, setCollect ] = useState([])
   const [submitData, setSubmitData ] = useState({ success: '', error: '', loading: false})
   const [ state, setState ] = useState( { name: '', year: '', speciality: '' } )
   const [postData, setPostData ] = useState({experience_year:'',is_freelancer:false,work_place:'',position:'',work_time:{from:'',to:''}, universities:[]})
@@ -40,29 +41,42 @@ const Translator = () => {
     let data = collect.filter( prev => prev !== item )
     setCollect( data )
   }
-  useEffect(()=>{setPostData({...postData, universities:collect})},[collect])
+  console.log(collect)
+  useEffect(()=>{
+    if(getData?.success!==''){
+      setCollect(getData?.success?.data?.universities)
+      setPostData(()=>{
+        return{
+          ...getData?.success?.data,
+          work_place:getData?.success?.data?.work_place,
+          work_time:{from:getData?.success?.data?.work_time.substr(0,5), to:getData?.success?.data?.work_time.substr(8,12)}
+        }
+      })
+    }
+  },[getData])
   const handleSubmit = () => {
     setSubmitData({...submitData, loading:true})
     let dataSubmit = {
       ...postData,
       experience_year:postData.experience_year?.value,
       is_freelancer:postData.is_freelancer?.value,
-      work_time:`${postData?.from} | ${postData?.to}`,
+      work_time:`${postData?.from || postData?.work_time?.from} | ${postData?.to || postData?.work_time?.to}`,
+      universities:collect,
     }
-    putResponse(translator.edit.education,dataSubmit, setSubmitData)
-    // console.log(translator.edit.education, )
+    putResponse(common.personal.edit.education,dataSubmit, setSubmitData)
   }
   useEffect(() => {
     if(submitData.success!=='') toast.success('Successfully loaded')
     if(submitData.error!=='') toast.success('Something went wrong')
   },[submitData])
-  console.log( postData )
+  console.log(postData)
+  console.log(getData)
   return (
     <div>
       {
         collect?.length > 0 ?
           collect.map( ( item, index ) => (
-            <Grid container spacing={ 1 } key={ index } className="animate__animated animate__fadeInUp">
+            <Grid container spacing={ 1 } key={ index }>
               <Grid item xs={ 12 } sm={ 6 } md={ 5 }>
                 <TextLabeledLoop value={ item?.name } label="Bitigan instituti" />
               </Grid>
@@ -119,6 +133,7 @@ const Translator = () => {
               setState={setPostData}
               state={postData}
               field="work_place"
+              defaultApiValue={getData?.success?.data?.work_place}
             />
           </Grid>
           <Grid item xs={ 12 } sm={ 6 } md={ 4 }>
@@ -130,6 +145,7 @@ const Translator = () => {
               setState={setPostData}
               state={postData}
               field="position"
+              defaultApiValue={getData?.success?.data?.position}
             />
           </Grid>
           <Grid item xs={ 12 } sm={ 6 } md={ 2 } style={{position: 'relative', top:3}}>
@@ -142,6 +158,7 @@ const Translator = () => {
               setCollect={setPostData}
               collect={setPostData}
               field="experience_year"
+              defaultApiValue={getData?.success?.data?.experience_year+" yil"}
             />
           </Grid>
           <Grid item xs={ 12 } sm={ 6 } md={ 2 } style={{position: 'relative', top:3}}>
@@ -149,10 +166,12 @@ const Translator = () => {
               sizeLabel="15px" 
               width="100%" 
               label="Siz hozir frilansirsiz?" 
-              placeholder="none" options={ options_yes } 
+              placeholder="none" 
+              options={ options_yes } 
               setCollect={setPostData}
               collect={setPostData}
               field="is_freelancer"
+              defaultApiValue={getData?.success?.data?.is_freelancer ? "Ha":"Yoq"}
             />
           </Grid>
         </Grid>
@@ -165,6 +184,7 @@ const Translator = () => {
               setState={setPostData}
               state={postData}
               field="from"
+              defaultValue={getData?.success?.data?.work_time.substr(0,5)}
             />
           </Grid>
           <Grid item xs={ 12 } sm={ 6 } md={2}>
@@ -173,6 +193,7 @@ const Translator = () => {
               setState={setPostData}
               state={postData}
               field="to"
+              defaultValue={getData?.success?.data?.work_time.substr(8,12)}
             />
           </Grid>
         </Grid>

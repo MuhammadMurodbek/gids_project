@@ -1,4 +1,5 @@
 import {baseUrl} from "../../redux/api"
+const getRole = JSON.parse(localStorage.getItem("user_token"));
 export const auth = {
     token:`/api/auth/token/`,
     verify:`/api/auth/token/verify/`,
@@ -6,12 +7,20 @@ export const auth = {
     reset:`/api/auth/reset/`,
     reset_check:`/api/auth/reset-check/`,
 }
-export const users = {
-    edit:`/api/users/edit/`,
+export const common = {
+    personal:{
+        edit:{
+            education:`/api/${getRole?.role}s/edit/education/`,
+        }
+    },
+    calendar:{}
+}
+// export const users = {
+//     edit:`/api/users/edit/`,
 
-}
-export const translator = {
-    edit:{
-        education:`/api/translators/edit/education/`,
-    }
-}
+// }
+// export const translator = {
+//     edit:{
+//         education:`/api/${getRole?.role}s/edit/education/`,
+//     }
+// }

@@ -11,6 +11,7 @@ import MultiInput from "../../../../components/molecules/multivalue.input"
 import { putResponse, getResponse } from "../../../../hooks/response_get"
 import toast from 'react-hot-toast'
 import ExtraRole from "./_translator"
+import {common} from "../../../../custom/url"
 import Spinner from "../../../../components/atom/loading.spinner.line";
 const Index = () => {
     const { t } = useTranslation()
@@ -28,7 +29,7 @@ const Index = () => {
         clone.completed_university = stateGid?.completed_university || getData?.success?.data?.completed_university
         putResponse( '/api/gids/edit/education/', stateGid, setPostGid )
     }
-    useEffect( () => { getResponse( '/api/gids/edit/education/', setGetData ) }, [] )
+    useEffect( () => { getResponse( common.personal.edit.education, setGetData ) }, [] )
     useEffect( () => {
         if ( postGid?.success !== '' ) toast.success( 'Saved successfully' )
         if ( postGid?.error !== '' ) toast.error( 'Failed to save data' )
@@ -117,7 +118,7 @@ const Index = () => {
                 </>
                 :
                 <>
-                    <ExtraRole/>
+                    <ExtraRole getData={getData}/>
                     {/* <Container padding="10px" textAlign="right">
                         <Button onClick={ handleSubmit}loader={ postGid?.loading }>{ t( "IshTajriba.saqlash" ) }</Button>
                     </Container> */}

@@ -30,3 +30,6 @@ export const DEGREES_GIT = {
     second_category: "Second category",
     no_category: "No category",
 }
+// export const OPT_YEAR = {
+//     [1-3]:""
+// }
