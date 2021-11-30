@@ -29,4 +29,7 @@ export const Wrapper = styled.form`
         font-size:20px;
         color:${mainGreen};
     }
+    .ant-picker.SwitchablePicker_style.ant-picker-focused{
+        box-shadow:none;
+    }
 `

@@ -16,8 +16,8 @@ export const options_year = [
     { value: "10+", label: "10+ yil" },
 ]
 export const options_yes = [
-    { value: 1, label: "Ha" },
-    { value: 2, label: "Yoq" }
+    { value: true, label: "Ha" },
+    { value: false, label: "Yoq" }
 ]
 
 export const DEGREES = {
