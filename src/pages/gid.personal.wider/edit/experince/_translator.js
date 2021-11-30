@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, useCallback, useEffect } from 'react'
 import AddIcon from "@material-ui/icons/Add";
 import { Grid } from "@material-ui/core";
 import SelectLabeled from "../../../../components/molecules/select.labeled"
@@ -12,23 +12,22 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import { Container } from '../../../../styles/container/index.style'
 import { options_year, options_yes } from "./_const"
 import 'animate.css';
+import { useTranslation } from 'react-i18next'
+import {putResponse } from '../../../../hooks/response_get'
+import {translator} from "../../../../custom/url"
 import toast from 'react-hot-toast';
-const Translator = ( { setTrains } ) => {
+const Translator = () => {
+  const { t } = useTranslation()
   const [ delBool, setDelBool ] = useState();
-  const [ state, setState ] = useState( { name: '', year: '', speciality: '' } )
   const [ collect, setCollect ] = useState( [] )
+  const [submitData, setSubmitData ] = useState({ success: '', error: '', loading: false})
+  const [ state, setState ] = useState( { name: '', year: '', speciality: '' } )
   const [postData, setPostData ] = useState({experience_year:'',is_freelancer:false,work_place:'',position:'',work_time:{from:'',to:''}, universities:[]})
   const { name, year, speciality } = state
   const handleClick = useCallback( () => {
     if ( state.name !== '' && state.year !== '' && state.speciality !== '' )
     {
       setCollect( [ ...collect, state ] )
-      // setTrains( prev => {
-      //   return {
-      //     ...prev,
-      //     trainings: [ ...collect, state ]
-      //   }
-      // } )
       setDelBool( '' )
     } else
     {
@@ -40,13 +39,23 @@ const Translator = ( { setTrains } ) => {
     setDelBool( item )
     let data = collect.filter( prev => prev !== item )
     setCollect( data )
-    // setTrains( prev => {
-    //   return {
-    //     ...prev,
-    //     trainings: data
-    //   }
-    // } )
   }
+  useEffect(()=>{setPostData({...postData, universities:collect})},[collect])
+  const handleSubmit = () => {
+    setSubmitData({...submitData, loading:true})
+    let dataSubmit = {
+      ...postData,
+      experience_year:postData.experience_year?.value,
+      is_freelancer:postData.is_freelancer?.value,
+      work_time:`${postData?.from} | ${postData?.to}`,
+    }
+    putResponse(translator.edit.education,dataSubmit, setSubmitData)
+    // console.log(translator.edit.education, )
+  }
+  useEffect(() => {
+    if(submitData.success!=='') toast.success('Successfully loaded')
+    if(submitData.error!=='') toast.success('Something went wrong')
+  },[submitData])
   console.log( postData )
   return (
     <div>
@@ -167,6 +176,14 @@ const Translator = ( { setTrains } ) => {
             />
           </Grid>
         </Grid>
+      </Container>
+      <Container padding="10px" textAlign="right">
+          <Button 
+            loader={submitData?.loading} 
+            onClick={ handleSubmit}
+          >
+            { t( "IshTajriba.saqlash" ) }
+          </Button>
       </Container>
     </div>
   )

@@ -1,12 +1,17 @@
 import {baseUrl} from "../../redux/api"
 export const auth = {
-    token:`${baseUrl}/api/auth/token/`,
-    verify:`${baseUrl}/api/auth/token/verify/`,
-    refresh:`${baseUrl}/api/auth/token/refresh/`,
-    reset:`${baseUrl}/api/auth/reset/`,
-    reset_check:`${baseUrl}/api/auth/reset-check/`,
+    token:`/api/auth/token/`,
+    verify:`/api/auth/token/verify/`,
+    refresh:`/api/auth/token/refresh/`,
+    reset:`/api/auth/reset/`,
+    reset_check:`/api/auth/reset-check/`,
 }
 export const users = {
-    edit:`${baseUrl}/api/users/edit/`,
-    
+    edit:`/api/users/edit/`,
+
+}
+export const translator = {
+    edit:{
+        education:`/api/translators/edit/education/`,
+    }
 }

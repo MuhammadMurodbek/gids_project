@@ -2,16 +2,11 @@ import { Grid } from '@material-ui/core'
 import React, { useState, useEffect } from 'react'
 import { Wrapper } from './style'
 import TextLabeled from "../../../../components/molecules/input.labeled"
-import CalendarLabeled from "../../../../components/molecules/calendar.labeled"
 import Button from "../../../../components/atom/button"
-import { FlexContainer } from '../../../../styles/flex.container'
-import DeleteIcon from '@material-ui/icons/Delete';
-import AddIcon from '@material-ui/icons/Add'
 import { Container } from '../../../../styles/container/index.style'
 import SelectLabeled from "../../../../components/molecules/select.labeled"
-import DoubleTime from "../../../../components/molecules/double.time.labeled"
 import { useTranslation } from 'react-i18next'
-import { degrees, options_year, options_yes, degrees_gid, DEGREES, DEGREES_GIT } from "./_const"
+import { degrees, options_year, degrees_gid, DEGREES, DEGREES_GIT } from "./_const"
 import MultiInput from "../../../../components/molecules/multivalue.input"
 import { putResponse, getResponse } from "../../../../hooks/response_get"
 import toast from 'react-hot-toast'
@@ -41,8 +36,8 @@ const Index = () => {
     console.log('first')
     return (
         <Wrapper onSubmit={(e) =>e.preventDefault() }>
-            {/* <Spinner marginTop="60px" width={ 50 } height={ 50 } /> */ }
             {getRole?.role === "gid" ?
+            <>
                 <Container padding="20px 0">
                     {
                         getData?.success === '' ? <Spinner marginTop="60px" width={ 50 } height={ 50 } />
@@ -116,15 +111,19 @@ const Index = () => {
                             </>
                     }
                 </Container>
+                <Container padding="10px" textAlign="right">
+                    <Button onClick={ handleSubmit}loader={ postGid?.loading }>{ t( "IshTajriba.saqlash" ) }</Button>
+                </Container>
+                </>
                 :
                 <>
                     <ExtraRole/>
+                    {/* <Container padding="10px" textAlign="right">
+                        <Button onClick={ handleSubmit}loader={ postGid?.loading }>{ t( "IshTajriba.saqlash" ) }</Button>
+                    </Container> */}
                 </>
             }
 
-            <Container padding="10px" textAlign="right">
-                <Button onClick={ handleSubmit}loader={ postGid?.loading }>{ t( "IshTajriba.saqlash" ) }</Button>
-            </Container>
         </Wrapper>
     )
 }
