@@ -5,7 +5,10 @@ import {Wrapper} from "./index.style"
 const Index = (props) => {
     return (
         <Wrapper width={props.width} paddingX={props.paddingX} backgroundColor={props.backgroundColor}>
-            <TimePicker.RangePicker className="time_picker" />
+            <TimePicker.RangePicker 
+                className="time_picker" 
+                onChange={(event, value) => console.log(event, value)}
+            />
         </Wrapper>
     )
 }
