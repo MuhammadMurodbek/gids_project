@@ -16,6 +16,8 @@ import {selection, SELECTION} from "./_constants"
 import Spinner from "../../../../components/atom/loading.spinner.line";
 import toast from 'react-hot-toast'
 import FadeIn from 'react-fade-in';
+import Translator from "./_translator"
+import {common} from "../../../../custom/url"
 
 // import { TransitionGroup } from 'react-transition-group';
 const Index = () => {
@@ -54,7 +56,7 @@ const Index = () => {
         if(postData?.success !==''){toast.success("Successfully uploaded")}
         if(postData?.error !==''){toast.error("Failed to load")}
     },[postData])
-    React.useEffect(() => {getResponse('/api/gids/edit/language/', setGetData)},[callback])
+    React.useEffect(() => {getResponse(common.personal.edit.language, setGetData)},[callback])
     React.useEffect(()=>{
         if(getData?.success!=='') {
             let data = getData?.success?.data.map((item)=>{
@@ -138,31 +140,31 @@ const Index = () => {
                             </FlexContainer>
                         </Grid>
                     </Grid>
+                    <Container padding="10px 0" margin="10px 0 0 -30px" textAlign="right">
+                        <Button loader={postData?.loading} onClick={handleSubmitGid}>{t("TillarniBilish.save")}</Button>
+                    </Container>
                     </>
                     :
-                    <Grid container spacing={1} justifyContent="space-between">
-                        <Grid item xs={12} sm={6} md={6}>
-                            <TextLabeled sizeLabel="15px" width="100%" label="Siz qaysi tildan tarjima qilasiz?" placeholder="Text kiriting..." />
-                        </Grid>
-                        <Grid item xs={12} sm={6} md={5}>
-                            <TextLabeled sizeLabel="15px" width="100%" label="Siz qaysi tilga tarjima qilasiz?" placeholder="Text kiriting..." />
-                        </Grid>
-                        <Grid item xs={12} sm={6} md={1}>
-                            <FlexContainer width="100%" flexDirection="column" gap="4px" margin="45px 0 0 0 ">
-                                <Button paddingIcon="10px" type="outlined">
-                                    <DeleteIcon className="icon" /> </Button>
-                                <Button paddingIcon="10px">
-                                    <AddIcon className="icon" />
-                                </Button>
-                            </FlexContainer>
-                        </Grid>
-                    </Grid>
+                    <Translator/>
+                    // <Grid container spacing={1} justifyContent="space-between">
+                    //     <Grid item xs={12} sm={6} md={6}>
+                    //         <TextLabeled sizeLabel="15px" width="100%" label="Siz qaysi tildan tarjima qilasiz?" placeholder="Text kiriting..." />
+                    //     </Grid>
+                    //     <Grid item xs={12} sm={6} md={5}>
+                    //         <TextLabeled sizeLabel="15px" width="100%" label="Siz qaysi tilga tarjima qilasiz?" placeholder="Text kiriting..." />
+                    //     </Grid>
+                    //     <Grid item xs={12} sm={6} md={1}>
+                    //         <FlexContainer width="100%" flexDirection="column" gap="4px" margin="45px 0 0 0 ">
+                    //             <Button paddingIcon="10px">
+                    //                 <AddIcon className="icon" />
+                    //             </Button>
+                    //         </FlexContainer>
+                    //     </Grid>
+                    // </Grid>
                 }
             </Container>
 
-            <Container padding="10px 0" margin="10px 0 0 -30px" textAlign="right">
-                <Button loader={postData?.loading} onClick={handleSubmitGid}>{t("TillarniBilish.save")}</Button>
-            </Container>
+           
 
         </Wrapper>
     )
