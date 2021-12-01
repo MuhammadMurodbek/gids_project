@@ -7,7 +7,7 @@ const Index = (props) => {
     return (
         <Wrapper width={width}>
             <Label size={sizeLabel}>{label}</Label>
-            <Input>{value}</Input>
+            <Input {...props}>{value}</Input>
         </Wrapper>
     )
 }

@@ -8,9 +8,10 @@ import Box from "@mui/material/Box";
 import { mainGreen } from "../../../styles/global/colors";
 import Authorization from "./auth.component";
 import Registration from "./reg.component";
-import {Wrapper, Container} from "./index.style"
+import { Wrapper, Container } from "./index.style"
 import Loading from "../../../components/atom/loading.spinner.line"
 import { useTranslation } from 'react-i18next'
+import  Navbar from "../../../components/templates/navbar";
 
 
 
@@ -24,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "Montserrat",
   },
   indicator: {
-    backgroundColor:'red',
+    backgroundColor: 'red',
   },
   tab: {
     color: "red",
@@ -33,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
 
 function TabPanel(props) {
 
- 
+
 
   const { children, value, index, ...other } = props;
 
@@ -70,20 +71,24 @@ function a11yProps(index) {
 
 export default function BasicTabs() {
 
-  const {t} = useTranslation()
+  const { t } = useTranslation()
   const classes = useStyles();
   const [value, setValue] = React.useState(1);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-   
+
   return (
+    <div>
+    <Navbar/>
       <Wrapper>
-          <Container>
-            <Box sx={{ width: "100%", margin: "0 auto" }}>
+
+        <Container>
+
+          <Box sx={{ width: "100%", margin: "0 auto" }}>
             <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-                <Tabs
+              <Tabs
                 style={{ width: "100%" }}
                 value={value}
                 onChange={handleChange}
@@ -91,41 +96,42 @@ export default function BasicTabs() {
                 TabIndicatorProps={{
                   style: {
                     backgroundColor: mainGreen
-                   }
-                  }}
-                >
+                  }
+                }}
+              >
                 <Tab
-                    label={
+                  label={
                     <span
-                        style={value === 0 ? { color: mainGreen } : { color: "#666" }}
+                      style={value === 0 ? { color: mainGreen } : { color: "#666" }}
                     >
-                         {t("auth_registr.kirish")}
+                      {t("auth_registr.kirish")}
                     </span>
-                    }
-                    style={{ width: "50%" }}
-                    {...a11yProps(0)}
+                  }
+                  style={{ width: "50%" }}
+                  {...a11yProps(0)}
                 />
                 <Tab
-                    label={
+                  label={
                     <span
-                        style={value === 1 ? { color: mainGreen } : { color: "#666" }}
+                      style={value === 1 ? { color: mainGreen } : { color: "#666" }}
                     >
-                        {t("auth_registr.royhatdanOtish2")}
+                      {t("auth_registr.royhatdanOtish2")}
                     </span>
-                    }
-                    style={{ width: "50%" }}
-                    {...a11yProps(1)}
+                  }
+                  style={{ width: "50%" }}
+                  {...a11yProps(1)}
                 />
-                </Tabs>
+              </Tabs>
             </Box>
             <TabPanel value={value} index={0}>
-                <Authorization/>
+              <Authorization />
             </TabPanel>
             <TabPanel value={value} index={1}>
-                <Registration />
+              <Registration />
             </TabPanel>
-            </Box>
-          </Container>
+          </Box>
+        </Container>
       </Wrapper>
+    </div>
   );
 }

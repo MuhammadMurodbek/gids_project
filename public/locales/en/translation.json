@@ -130,7 +130,7 @@
     "familya2":"Your surname",
     "gid":"Gid",
     "user":"User",
-    "yozmaT":"Written translators",
+    "yozmaT":"Written ",
     "tarjimon":"Translator",
     "email2":"Enter the email",
     "pass":"Enter your password",
@@ -426,18 +426,19 @@
     "hizmatlar":"services",
     "narxlar":"Prices",
     "videoVagalarey":"Video and gallery",
-    
+
     "xizmatlar":"Services",
     "ekskursiyalar":"Excursions",
     "ogzaki":"Interpretation (serial)",
     "sinxron":"Simultaneous translation",
-    "yozma":"Written translator",
     "izchil":"Written translator",
-    "mamalakatlargaEkskurs":"Mamlakatlarga ekskursiya",
-    "mamlakatPlace":"Mamlakatni tanlang",
-    "shaharlar":" Shahar",
-    "shaharlarSelect":"Mamlakatni tanlang",
-    "save":"Saqlash"
+
+    "yozma":"Written translator",
+    "mamalakatlargaEkskurs":"Excursion to countries",
+    "mamlakatPlace":"Select the country",
+    "shaharlar":"City",
+    "shaharlarSelect":"select a city",
+    "save":"Save"
   },
   "narxlar":{
     "Profilni_Korish":"View profile",
@@ -455,8 +456,8 @@
     "narxlar":"Prices",
     "videoVagalarey":"Video and gallery",
 
-    "birkunlikHizmat":"Bir kunlik xizmat narxi",
-    "birSoatlik":"Bir soatlik xizmat narxi",
+    "birkunlikHizmat":"The cost of one day of service",
+    "birSoatlik":"The cost of an hour of service",
     "saq":"Saqlash"
   },
   "Galarey":{

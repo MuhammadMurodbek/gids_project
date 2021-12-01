@@ -45,7 +45,7 @@ const Index = () => {
                             component={Box}
                             className="grid_container_inner"
                         >
-                            <ExtSearch />
+                            <ExtSearch/>
                         </Grid>
                         <Grid item xs={12} md={8} sm={12}>
                             <div className="right-part">

@@ -10,7 +10,7 @@ const Index = (props) => {
     const [region, setRegion] = useState()
     const [check, setCheck] = useState(true)
     const [regionItem, setRegionItem] = useState()
-    const countries = JSON.parse(localStorage.getItem('countries')).map((item,index)=>{return {value:index, label:item.country, ...item}}) || []
+    const countries = JSON.parse(localStorage.getItem('countries'))?.map((item,index)=>{return {value:index, label:item.country, ...item}}) || []
     useEffect(() => {
 
         if(country){

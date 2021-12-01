@@ -5,6 +5,7 @@ import HighlightOffIcon from '@material-ui/icons/Close';
 const Index = (props) => {
     const {field,setState, state, defaultApiValue} = props
     const [array, setArray] = useState([])
+    const [check, setCheck] = useState(true)
     const handleChange = (item) => {
        setArray([...array, item])
     }
@@ -13,7 +14,12 @@ const Index = (props) => {
         setArray(clone)
     }
     useEffect(() =>{ if(setState){setState({...state,[field]:array})}},[array])
-    useEffect(()=>{if(defaultApiValue) setArray(defaultApiValue) },[defaultApiValue])
+    useEffect(()=>{
+        if(defaultApiValue && check) {
+            setArray(defaultApiValue) 
+            setCheck(false)
+        }
+    },[defaultApiValue])
     return (
         <Wrapper>
             <MultipleValueTextInput

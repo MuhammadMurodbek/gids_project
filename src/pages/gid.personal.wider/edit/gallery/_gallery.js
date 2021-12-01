@@ -1,9 +1,10 @@
 import { Upload, message } from 'antd';
 import { InboxOutlined } from '@ant-design/icons';
 import React,{useState} from 'react'
+import Spinner from "../../../../components/atom/loading.spinner.line";
 const { Dragger } = Upload;
 
-const Gallery = ({role}) => {
+const Gallery = ({role, setCallback}) => {
     const [load, setLoad] = useState(false)
     const token = JSON.parse(localStorage.getItem("user_token"))
     const props = {
@@ -24,10 +25,12 @@ const Gallery = ({role}) => {
             }
             if ( status === 'done' )
             {
+                setCallback(prev=>!prev)
                 setLoad(false)
                 message.success( `${ info.file.name } file uploaded successfully.` );
             } else if ( status === 'error' )
             {
+                setCallback(prev=>!prev)
                 setLoad(false)
                 message.error( `${ info.file.name } file upload failed.` );
             }
@@ -50,7 +53,7 @@ const Gallery = ({role}) => {
                 </p>
             </Dragger>
             {
-                load ? <h4>loading...</h4>:null
+                load ? <Spinner marginTop="40px" width={ 50 } height={ 50 }>loading...</Spinner>:null
             }
         </div>
     )

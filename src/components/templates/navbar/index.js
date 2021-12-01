@@ -11,6 +11,7 @@ import MediaNavbar from "./media.navbar";
 import ReactFlagsSelect from "react-flags-select";
 import { useTranslation } from 'react-i18next'
 import AccountMenu from "../../atom/user_account";
+import { useJwt } from "react-jwt";
 
 const Index = () => {
 
@@ -22,6 +23,9 @@ const Index = () => {
   const [selected, setSelected] = useState("UZ");
 
   const getRole = JSON.parse(localStorage.getItem("user_token"));
+  const expired = localStorage.getItem("expired")
+  const {isExpired} = useJwt(getRole?.access)
+  console.log(expired);
   const { t, i18n } = useTranslation()
   React.useMemo(() => { i18n.changeLanguage('uz') }, [])
 
@@ -89,11 +93,14 @@ const Index = () => {
                 style={{ color: "#333" }}
               >
               </NavLink>
-
-              {getRole?.role === "simple_user" || "gid" || "writer" || "translator" ? <AccountMenu  /> :
-                <span onClick={handleLogout}>Kirish</span>
+              {
+                isExpired ? 
+                <button className="btn_enter" onClick={handleLogout}>Kirish</button>:
+                <AccountMenu role={getRole?.role}/> 
               }
             </FlexContainer>
+
+             
           </FlexContainer>
           <div className="toggle_hamburger">
             <Hamburger toggled={isOpen} toggle={setOpen} color={mainGreen} />

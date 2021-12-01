@@ -1,3 +1,4 @@
+// import * as yup from "yup";
 export const validator = (type,item,count,textTrue,textFalse, setState, state) => {
     let text = ''
     if(type === 'min'){
@@ -30,12 +31,12 @@ export const validator = (type,item,count,textTrue,textFalse, setState, state) =
 
 export const validatorState = (data, type, count, errorText) => {
     let text = ''
-    if(type === 'min' && data.length<count) text = errorText
+    if(type === 'min' && data ? data.length<count: false) text = errorText
     if(type === 'exist' && data) text = errorText
-    if(type === 'object' && Object.keys(data).length === 0) text = errorText
+    if(type === 'object' && Object.keys(data || {}).length === 0) text = errorText
     if(type === 'max' && (data<=0 || data==='')) text = errorText
     if(type === "boolean" && data) text = errorText
     if(type === "string" && data==='') text=errorText
-    if(type === "array" && !data.length) text = errorText
+    if(type === "array" && !data?.length) text = errorText
     return text
 }

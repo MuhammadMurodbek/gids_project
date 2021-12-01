@@ -21,10 +21,11 @@ const Index = (props) => {
         if(setState){
             setState({...state, [field]: e.target.value})
         }
-    },[value,state])
+    },[value,state, field])
     useEffect(()=>{
         if(defaultApiValue) {
             setValue(defaultApiValue)
+            setState({...state, [field]: defaultApiValue})
         }
     },[defaultApiValue])
     return (

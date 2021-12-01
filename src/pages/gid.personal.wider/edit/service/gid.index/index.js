@@ -80,26 +80,32 @@ const GidIndex = () => {
                 {
                     getData?.success === '' ? <Spinner marginTop="30px" width={ 50 } height={ 50 } /> :
                         <>
-                            <TextTitle font="15px" align="left">{ t( "xizmatlar.xizmatlar" ) }</TextTitle>
+                            <TextTitle 
+                            font="15px" 
+                            align="left">{ t( "xizmatlar.xizmatlar" ) }
+                            </TextTitle>
                             <FlexContainer width="100%" gap="50px">
-                                <DoubleCheck flexDirection="column"
+                                <DoubleCheck 
+                                    flexDirection="column"
                                     field1="excursion"
                                     field2="consecutive_translate"
-                                    name1="Excursions"
-                                    name2="Consecutive Translator"
+                                    name1={t("xizmatlar.ekskursiyalar")}
+                                    name2={t("xizmatlar.ogzaki")}
                                     setState={ setCheckItems }
                                     state={ checkItems }
                                 />
-                                <DoubleCheck flexDirection="column"
+                                <DoubleCheck 
+                                    flexDirection="column"
                                     field1="synchronous_translate"
                                     field2="written_translate"
-                                    name1="Synchronous Translator"
-                                    name2="Writer Translator"
+                                    name1= {t("xizmatlar.sinxron")}
+                                    name2={t("xizmatlar.izchil")}
                                     setState={ setCheckItems }
                                     state={ checkItems }
                                 />
                             </FlexContainer>
-                            <Container padding="10px 0" margin="10px 0" textAlign="right">
+                            <Container 
+                            padding="10px 0" margin="10px 0" textAlign="right">
                                 <>
                                     {
                                         state ?

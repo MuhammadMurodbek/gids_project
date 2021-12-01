@@ -1,4 +1,4 @@
-import React,{useEffect, useMemo} from 'react'
+import React,{useEffect} from 'react'
 import {Wrapper} from "./index.style"
 import Navbar from '../../components/templates/navbar';
 import Footer from "../../components/templates/footer"
@@ -15,6 +15,11 @@ const Index = ({children}) => {
                 localStorage.clear()
                 window.location.href="/auth"
             }
+        }
+        if(isExpired){
+            localStorage.setItem("expired",false)
+        }else{
+            localStorage.setItem("expired",true)
         }
     },[location, isExpired, token])
     return (
