@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux"
 import { post_auth_reg_check_action } from "../../../redux/actions"
 import { toast } from "react-hot-toast";
+import "./style.css"
 const YourComponent = () => {
   const history = useHistory()
   const [status, setStatus] = useState("process");
