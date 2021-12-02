@@ -10,17 +10,14 @@ const getRole = JSON.parse(localStorage.getItem("user_token"));
 const Index = ({ role }) => {
     const [getData, setGetData] = useState({ success: '', error: '', loading: false })
     const history = useHistory()
-
-    useEffect(() => { getResponse('/api/gids/edit/about/',setGetData) }, [])
-
+    const getRole = JSON.parse(localStorage.getItem("user_token"))
+    let url = getRole?.role === 'simple_user' ? '/api/users/edit/about/':`/api/${getRole?.role}s/edit/about/`
+    useEffect(()=>{getResponse(url, setGetData)},[])
     const menu = (
         <Menu style={{ position: "relative", right: 15, top: 8, width: 140 }}>
             <Menu.Item key="0">
-                <Link to={role === 'simple_user' ? '/gid-personal' : '/gid-personal-wider'}>My profile</Link>
+                <Link to={role==='simple_user' ? '/gid-personal':`/gid-personal-wider?name=${getData?.success?.data?.first_name}&last_name=${getData?.success?.data?.last_name}`}>My profile</Link>
             </Menu.Item>
-            {/* <Menu.Item key="1">
-                <Link to={'/request'}>Apllications</Link>
-            </Menu.Item> */}
             <Menu.Divider />
             <Menu.Item key="3">
                 <span onClick={() => {

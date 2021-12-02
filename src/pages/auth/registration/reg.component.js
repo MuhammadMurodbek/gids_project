@@ -116,7 +116,7 @@ const Index = () => {
                     </Grid>
                 </Container>
                 <Container {...mediaContainer}>
-                    <Select paddingX="9px 4.5px" errorText={selectV.errorText} options={options} setState={setSelect} placeholder={t("auth_registr.user")}/>
+                    <Select paddingX="9px 4.5px" pcolor errorText={selectV.errorText} options={options} setState={setSelect} placeholder={t("auth_registr.user")}/>
                 </Container>
                 <Container  {...mediaContainer} >
                     <AuthInput errorText={emailV.errorText} title={t("auth_registr.email2")} width="100%" setState={setStateEmail}/>

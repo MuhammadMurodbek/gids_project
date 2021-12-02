@@ -4,11 +4,11 @@ import { getResponse } from "../../../../hooks/response_get"
 import ImageGallery from "../../../../components/molecules/personal.gallery"
 // import FadeIn from "react-fade-in"
 // import { Fade } from '@material-ui/core';
-const Gallery = () => {
+const Gallery = ({role}) => {
     const [ state, setState ] = useState( { success: '', error: '' } )
     const [ list, setList ] = useState( [] )
     const [callback,setCallback] = useState(false)
-    useEffect( () => { getResponse( '/api/gids/edit/gallery/', setState ) }, [callback] )
+    useEffect( () => { getResponse( `/api/${role}s/edit/gallery/`, setState ) }, [callback] )
     useEffect( () => {
         if ( state?.success !== '' )
         {
@@ -26,7 +26,7 @@ const Gallery = () => {
     // }
     return (
         <div>
-            <ImageGallery list={list} setCallback={setCallback}/>
+            <ImageGallery list={list} setCallback={setCallback} role={role}/>
             {/* <ImageCrop setState={ setState } state={ state } /> */}
         </div>
     )

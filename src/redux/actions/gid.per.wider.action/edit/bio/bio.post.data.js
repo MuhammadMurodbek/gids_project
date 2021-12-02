@@ -1,11 +1,11 @@
 import axios from "axios"
 import {head_token, baseUrl} from "../../../../api"
-
+const getRole = JSON.parse( localStorage.getItem( "user_token" ) );
 export const post_bio_data_action = (state) => async (dispatch) => {
     
     dispatch({type:'POST_BIO_DATA_0',payload:"loading..."})
     
-    await axios.put(`${baseUrl}/api/gids/edit/about/`, state, head_token)
+    await axios.put(`${baseUrl}/api/${getRole?.role}s/edit/about/`, state, head_token)
         .then(response => {
             return dispatch({
                 type: "POST_BIO_DATA_1",

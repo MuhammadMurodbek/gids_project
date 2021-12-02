@@ -6,7 +6,7 @@ import VisibilityOffOutlinedIcon from '@material-ui/icons/VisibilityOffOutlined'
 import {mainGreen} from "../../../styles/global/colors"
 const Index = (props) => {
     
-    const {width, label, password, sizeLabel, typeNumber, setState, state, field, defaultApiValue} = props
+    const {width, label, password, sizeLabel, typeNumber, setState, state, field, defaultApiValue, clear, setClear} = props
     const [check, setCheck] = useState(true)
     const [value, setValue] = useState('')
     const handleChangeOpen = useCallback(() => {
@@ -28,6 +28,12 @@ const Index = (props) => {
             setState({...state, [field]: defaultApiValue})
         }
     },[defaultApiValue])
+    useEffect(()=>{
+        if(clear){
+            setValue('')
+            setClear(false)
+        }
+    },[clear])
     return (
         <Wrapper width={width}>
             <Label size={sizeLabel}>{label}</Label>
