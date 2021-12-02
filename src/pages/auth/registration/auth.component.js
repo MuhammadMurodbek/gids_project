@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Container } from "../../../styles/container/index.style"
 import Button from "../../../components/atom/button"
 import { Authorization } from "./index.style"
-import { Link, useHistory } from "react-router-dom"
+import { Link } from "react-router-dom"
 import AuthInput from "../../../components/atom/auth.input"
 import { mediaBtnAuth, mediaContainerSecAuth } from "./_media"
 import { post_auth_ent_action } from "../../../redux/actions"
@@ -29,10 +29,12 @@ const Index = () => {
         setLoader(true)
         if (!(stateEmail.includes('@') || stateEmail.length > 0) || statePassword.length < 8) {
             if (!(stateEmail.includes('@'))) {
+                setLoader(false)
                 setEmailError({ error: true, errorText: 'Email kiritilmagan' })
             }
             if (statePassword.length < 8) {
-                setPasswordError({ error: true, errorText: 'Parol uchun kamida 8 ta belgidan foydalaning' })
+                setLoader(false)
+                setPasswordError({ error: true, errorText: 'Kamida 8 ta belgidan foydalaning [A-z, 0-9]' })
             }
         } else setResponseHook(post_auth_ent_action(obj))
     }
@@ -46,7 +48,7 @@ const Index = () => {
             switch (responseHook.status) {
                 case 200: return Success(responseHook?.data?.data)
                 case 400: return toast.error("Ma'lumotlar to'liq kiritilmagan")
-                case 401: return toast.error("Foydalanuvchi mavjud emas")
+                case 401: return toast.error("Login yoki parol xato")
                 default: return null
             }
         }
@@ -54,8 +56,10 @@ const Index = () => {
     useEffect(() => {
         if (stateEmail.includes('@') && stateEmail.length > 3) {
             setEmailError({ error: false, errorText: null })
+            setLoader(false)
         }
         if (statePassword.length > 0) {
+            setLoader(false)
             setPasswordError({ error: false, errorText: null })
         }
     }, [stateEmail, statePassword])
