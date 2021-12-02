@@ -50,7 +50,7 @@ const Translator = ( { getData } ) => {
         return {
           ...getData?.success?.data,
           work_place: getData?.success?.data?.work_place,
-          work_time: { from: getData?.success?.data?.work_time.substr( 0, 5 ), to: getData?.success?.data?.work_time.substr( 8, 12 ) }
+          work_time: { from: getData?.success?.data?.work_time?.substr( 0, 5 ), to: getData?.success?.data?.work_time?.substr( 8, 12 ) }
         }
       } )
     }
@@ -185,7 +185,7 @@ const Translator = ( { getData } ) => {
               setState={ setPostData }
               state={ postData }
               field="from"
-              defaultValue={ getData?.success?.data?.work_time.substr( 0, 5 ) }
+              defaultValue={ getData?.success?.data?.work_time?.substr( 0, 5 ) }
             />
           </Grid>
           <Grid item xs={ 12 } sm={ 6 } md={ 2 }>
@@ -194,7 +194,7 @@ const Translator = ( { getData } ) => {
               setState={ setPostData }
               state={ postData }
               field="to"
-              defaultValue={ getData?.success?.data?.work_time.substr( 8, 12 ) }
+              defaultValue={ getData?.success?.data?.work_time?.substr( 8, 12 ) }
             />
           </Grid>
         </Grid>
