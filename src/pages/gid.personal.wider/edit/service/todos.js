@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useCallback} from 'react'
 import Select from "../../../../components/atom/select"
 import SelectLabeled from "../../../../components/molecules/select.labeled"
 import { TextTitle } from '../../../../styles/textTitle/index.style'
@@ -9,17 +9,24 @@ import Button from "../../../../components/atom/button"
 import styled from "styled-components"
 import AddIcon from '@material-ui/icons/Add'
 import Box from '@mui/material/Box';
-
-
+import {selectValue} from "./_const"
+import toast from 'react-hot-toast';
 const Todos = () => {
-
+    const [items, setItems] = useState([])
+    const [item, setItem] = useState({name:'', level:''})
     const getRole = JSON.parse(localStorage.getItem("user_token"));
-    const role = getRole ? getRole.role : undefined;
-
+    const handleAdd = useCallback(() => {
+        if(item?.name ==='' || item?.level === ''){
+            toast.error("Ma'lumotlarni to'liq kiriting")
+        }else{
+            setItems([...items, item])
+        }
+    },[item])
+    console.log(items)
     return (
         <TodosWrapper>
              {
-                 role === 'gid'?  null:
+                getRole?.role === 'gid'?  null:
              
             <>
                 <TextTitle font="15px" align="left" left="5px" color="#000000d9" bottom="-12px" top="35px" >
@@ -27,126 +34,21 @@ const Todos = () => {
                 </TextTitle>
                 <Box sx={{ flexGrow: 1 }}>
                     <Grid container columnSpacing={3} justifyContent="space-between" alignItems="center">
-                        <Grid item xs={12} md={6}>
-                            <Grid container alignItems="center">
-                                <Grid item xs={12} sm={5}>
-                                    <TextTitle font="16px" fontWeight="300" align="left" top="20px">Umumiy mavzular</TextTitle>
-                                </Grid>
-                                <Grid item xs={12} sm={7}>
-                                    <SelectLabeled width="100%" placeholder="Mening mavzuyim emas.." />
-                                </Grid>
-                            </Grid>
-                        </Grid>
-                        <Grid item xs={12} md={6}>
-                            <Grid container alignItems="center">
-                                <Grid item xs={12} sm={5}>
-                                    <TextTitle font="16px" fontWeight="300" align="left" top="20px">Sanoat va texnologiya</TextTitle>
-                                </Grid>
-                                <Grid item xs={12} sm={7}>
-                                    <SelectLabeled width="100%" placeholder="Mening mavzuyim emas.." />
+                       {
+                           items?.length>0 ?
+                           items.map((prev, index)=>(
+                            <Grid key={index} item xs={12} md={6}>
+                                <Grid container alignItems="center">
+                                    <Grid item xs={12} sm={6}>
+                                        <TextTitle font="16px" fontWeight="300" align="left" top="20px">{prev.name}</TextTitle>
+                                    </Grid>
+                                    <Grid item xs={12} sm={6}>
+                                        <SelectLabeled options={selectValue} defaultApiValue={prev?.level?.label} width="100%" placeholder="Mavzuyim emas.." />
+                                    </Grid>
                                 </Grid>
                             </Grid>
-                        </Grid>
-                        <Grid item xs={12} md={6}>
-                            <Grid container alignItems="center">
-                                <Grid item xs={12} sm={5}>
-                                    <TextTitle font="16px" fontWeight="300" align="left" top="20px">Jamiyat va siyosat</TextTitle>
-                                </Grid>
-                                <Grid item xs={12} sm={7}>
-                                    <SelectLabeled width="100%" placeholder="Mening mavzuyim emas.." />
-                                </Grid>
-                            </Grid>
-                        </Grid>
-                        <Grid item xs={12} md={6}>
-                            <Grid container alignItems="center">
-                                <Grid item xs={12} sm={5}>
-                                    <TextTitle font="16px" fontWeight="300" align="left" top="20px">Neft va gaz</TextTitle>
-                                </Grid>
-                                <Grid item xs={12} sm={7}>
-                                    <SelectLabeled width="100%" placeholder="Mening mavzuyim emas.." />
-                                </Grid>
-                            </Grid>
-                        </Grid>
-                        <Grid item xs={12} md={6}>
-                            <Grid container alignItems="center">
-                                <Grid item xs={12} sm={5}>
-                                    <TextTitle font="16px" fontWeight="300" align="left" top="20px">Iqtisodiyot va moliya</TextTitle>
-                                </Grid>
-                                <Grid item xs={12} sm={7}>
-                                    <SelectLabeled width="100%" placeholder="Mening mavzuyim emas.." />
-                                </Grid>
-                            </Grid>
-                        </Grid>
-                        <Grid item xs={12} md={6}>
-                            <Grid container alignItems="center">
-                                <Grid item xs={12} sm={5}>
-                                    <TextTitle font="16px" fontWeight="300" align="left" top="20px">Iqtisodiyot va moliya</TextTitle>
-                                </Grid>
-                                <Grid item xs={12} sm={7}>
-                                    <SelectLabeled width="100%" placeholder="Mening mavzuyim emas.." />
-                                </Grid>
-                            </Grid>
-                        </Grid>
-                        <Grid item xs={12} md={6}>
-                            <Grid container alignItems="center">
-                                <Grid item xs={12} sm={5}>
-                                    <TextTitle font="16px" fontWeight="300" align="left" top="20px">Huquqshunoslik</TextTitle>
-                                </Grid>
-                                <Grid item xs={12} sm={7}>
-                                    <SelectLabeled width="100%" placeholder="Mening mavzuyim emas.." />
-                                </Grid>
-                            </Grid>
-                        </Grid>
-                        <Grid item xs={12} md={6}>
-                            <Grid container alignItems="center">
-                                <Grid item xs={12} sm={5}>
-                                    <TextTitle font="16px" fontWeight="300" align="left" top="20px">Ilmiy va texnik adabiyotlar</TextTitle>
-                                </Grid>
-                                <Grid item xs={12} sm={7}>
-                                    <SelectLabeled width="100%" placeholder="Mening mavzuyim emas.." />
-                                </Grid>
-                            </Grid>
-                        </Grid>
-                        <Grid item xs={12} md={6}>
-                            <Grid container alignItems="center">
-                                <Grid item xs={12} sm={5}>
-                                    <TextTitle font="16px" fontWeight="300" align="left" top="20px">Axborot texnologiyalari</TextTitle>
-                                </Grid>
-                                <Grid item xs={12} sm={7}>
-                                    <SelectLabeled width="100%" placeholder="Mening mavzuyim emas.." />
-                                </Grid>
-                            </Grid>
-                        </Grid>
-                        <Grid item xs={12} md={6}>
-                            <Grid container alignItems="center">
-                                <Grid item xs={12} sm={5}>
-                                    <TextTitle font="16px" fontWeight="300" align="left" top="20px">Badiiy adabiyot</TextTitle>
-                                </Grid>
-                                <Grid item xs={12} sm={7}>
-                                    <SelectLabeled width="100%" placeholder="Mening mavzuyim emas.." />
-                                </Grid>
-                            </Grid>
-                        </Grid>
-                        <Grid item xs={12} md={6}>
-                            <Grid container alignItems="center">
-                                <Grid item xs={12} sm={5}>
-                                    <TextTitle font="16px" fontWeight="300" align="left" top="20px">Reklama va marketing</TextTitle>
-                                </Grid>
-                                <Grid item xs={12} sm={7}>
-                                    <SelectLabeled width="100%" placeholder="Mening mavzuyim emas.." />
-                                </Grid>
-                            </Grid>
-                        </Grid>
-                        <Grid item xs={12} md={6}>
-                            <Grid container alignItems="center">
-                                <Grid item xs={12} sm={5}>
-                                    <TextTitle font="16px" fontWeight="300" align="left" top="20px">Tibbiyot va farmatsevtika</TextTitle>
-                                </Grid>
-                                <Grid item xs={12} sm={7}>
-                                    <SelectLabeled width="100%" placeholder="Mening mavzuyim emas.." />
-                                </Grid>
-                            </Grid>
-                        </Grid>
+                           )):null
+                       }
                     </Grid>
                 </Box>
                 <Container padding="10px 0">
@@ -154,17 +56,17 @@ const Todos = () => {
                         <Grid container columnSpacing={3} alignItems="center" justifyContent="space-between">
                             <Grid item xs={12} sm={6}>
                                 <Grid container spacing={1}>
-                                    <Grid item xs={12} sm={5}>
-                                        <InputLabeled width="100%" placeholder="Text..." />
+                                    <Grid item xs={12} sm={6}>
+                                        <InputLabeled state={item} setState={setItem} field="name" width="100%" placeholder="Text..." />
                                     </Grid>
-                                    <Grid item xs={12} sm={7}>
-                                        <Select margin="24px 0 0 0" width="100%" placeholder="Mening mavzuyim emas.." />
+                                    <Grid item xs={12} sm={6}>
+                                        <Select options={selectValue} collect={item} setCollect={setItem} field="level" margin="24px 0 0 0" width="100%" placeholder="Mavzuyim emas.." />
                                     </Grid>
                                 </Grid>
                             </Grid>
 
                             <Grid textAlign="right" item xs={12} sm={1}>
-                                <Button style={{ marginTop: 40, padding: 13 }} paddingIcons="15px">
+                                <Button onClick={handleAdd} style={{ marginTop: 40, padding: 13 }} paddingIcons="15px">
                                     <AddIcon className="icon" />
                                 </Button>
                             </Grid>

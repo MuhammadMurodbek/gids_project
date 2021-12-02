@@ -73,7 +73,7 @@ const Index = () => {
             setState( data )
         }
     }, [ getData ] )
-    console.log( state )
+    // console.log( state )
     return (
         <Wrapper>
             <Container padding="10px 0">
