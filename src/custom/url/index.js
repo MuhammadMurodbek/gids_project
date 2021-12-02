@@ -11,7 +11,8 @@ export const common = {
     personal:{
         edit:{
             education:`/api/${getRole?.role}s/edit/education/`,
-            language:`/api/${getRole?.role}s/edit/language/`
+            language:`/api/${getRole?.role}s/edit/language/`,
+            services:`/api/${getRole?.role}s/edit/service/`,
         }
     },
     calendar:{}
