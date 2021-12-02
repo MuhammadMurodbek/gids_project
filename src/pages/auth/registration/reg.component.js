@@ -75,6 +75,9 @@ const Index = () => {
         }
     }
   
+
+
+    
     React.useEffect(()=>{
         if(selector?.status){
             setLoader(false)
