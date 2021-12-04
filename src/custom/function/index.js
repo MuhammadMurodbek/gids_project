@@ -17,6 +17,3 @@ export const toastChecker = (data, success, error) => {
     if(data?.success!== '') toast.success(success || 'Successfully uploaded')
     if(data?.error!== '') toast.error(error || 'Something went wrong')
 }
-// export const getCountry = () => {
-
-// }

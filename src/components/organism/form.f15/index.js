@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react'
 import {WrapperForm} from "./style"
 import InputLabeled from "../../molecules/input.labeled"
 import SelectLabeled from "../../molecules/select.labeled"
+import SelectLabeledCountry from "../../molecules/select.labeled.country"
+import SelectLabeledCity from "../../molecules/select.labeled.country/city"
 import { Grid } from '@material-ui/core'
 import {validatorState} from "../../../custom/validator"
 import {useTranslation} from 'react-i18next';
@@ -10,24 +12,7 @@ import {useTranslation} from 'react-i18next';
 const Index = ({state, setState, error}) => {
     
     const {t} = useTranslation()
-    const [country, setCountry] = useState()
-    const [region, setRegion] = useState()
-    const [regionItem, setRegionItem] = useState()
-    const [countries, setCountries] = useState([])
-    
-    React.useMemo(() => {
-        let countriess = JSON.parse(localStorage.getItem('countries')).map((item,index)=>{return {value:index, label:item.country, ...item}}) || []
-        setCountries(countriess)
-    },[])
-    
-    useEffect(() => {
-        if(country){
-            let array = country?.cities.map((item, index)=>{return {value:index, label:item}})
-            setRegion(array)
-        }
-        setState({...state, country:{value:country?.value, label:country?.label}, city:regionItem})
-    },[regionItem, country])
- 
+    const [countryId, setCountryId] = useState(null)
     const handleChange = (e)=>{setState({...state,[e.target.name]:e.target.value})}
     
     return (
@@ -71,10 +56,22 @@ const Index = ({state, setState, error}) => {
             </Grid>
             <Grid container spacing={2}>
                 <Grid item xs={12} sm={12} md={6}>
-                    <SelectLabeled options={countries} setState={setCountry} width="100%" label={t("User_MalumotlarniTax.davlat")} placeholder={state?.country?.label} pcolor={state?.country} errorText={error ? validatorState(state?.country, 'object', 0, 'Davlat (Shahar) nomi kiritilmagan'):null}/>
+                    <SelectLabeledCountry 
+                        field="country"
+                        width="100%" 
+                        state={state}
+                        setState={setState}
+                        setCountryId={setCountryId}
+                        label={t("User_MalumotlarniTax.davlat")} 
+                    />
                 </Grid>
                 <Grid item xs={12} sm={12} md={6}>
-                    <SelectLabeled options={region} setState={setRegionItem} width="100%" label={t("User_MalumotlarniTax.shaxarlar")} placeholder={state?.city?.label} pcolor={state?.city}/>
+                    <SelectLabeledCity 
+                        countryId={countryId}
+                        width="100%" 
+                        label={t("User_MalumotlarniTax.shaxarlar")} 
+                        isDisabled={countryId === null ? true:false}
+                    />
                 </Grid>
             </Grid>
         </WrapperForm>

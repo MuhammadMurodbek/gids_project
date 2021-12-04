@@ -15,22 +15,22 @@ import { useTranslation } from 'react-i18next'
 import { putResponse, getResponse } from '../../../../hooks/response_get'
 import { common } from "../../../../custom/url"
 import toast from 'react-hot-toast';
-import moment from 'moment'
+import {toastChecker} from "../../../../custom/function"
 const Translator = ( { getData } ) => {
 
   const { t } = useTranslation()
   const [ delBool, setDelBool ] = useState();
   const [ dataList, setDataList ] = useState( [] )
-  const [clear, setClear ] = useState( false )
+  const [ clear, setClear ] = useState( false )
   const [ submitData, setSubmitData ] = useState( { success: '', error: '', loading: false } )
   const [ state, setState ] = useState( { name: '', year: '', speciality: '' } )
   const [ postData, setPostData ] = useState( { experience_year: '', is_freelancer: false, work_place: '', position: '', work_time: { from: '', to: '' }, universities: [] } )
   const { name, year, speciality } = state
   const handleClick = useCallback( () => {
-    if ( name !== '' && year !== '' && speciality !== '' && !dataList.find(p=>p===state))
+    if ( name !== '' && year !== '' && speciality !== '' && !dataList.find( p => p === state ) )
     {
-      setDataList([...dataList, state])
-      setClear(true)
+      setDataList( [ ...dataList, state ] )
+      setClear( true )
       setDelBool( '' )
     } else
     {
@@ -38,14 +38,14 @@ const Translator = ( { getData } ) => {
     }
   }, [ name, year, delBool, speciality ] )
   const handleDelete = ( item ) => {
-    console.log( item )
+    // console.log( item )
     setDelBool( item )
     let data = dataList.filter( prev => prev !== item )
     setDataList( data )
   }
-  console.log( dataList )
+  // console.log( dataList )
   useEffect( () => {
-    if ( getData?.success !== '' && getData?.success?.data?.universities!== null)
+    if ( getData?.success !== '' && getData?.success?.data?.universities !== null )
     {
       setDataList( getData?.success?.data?.universities )
       setPostData( () => {
@@ -68,12 +68,7 @@ const Translator = ( { getData } ) => {
     }
     putResponse( common.personal.edit.education, dataSubmit, setSubmitData )
   }
-  useEffect( () => {
-    if ( submitData.success !== '' ) toast.success( 'Successfully loaded' )
-    if ( submitData.error !== '' ) toast.success( 'Something went wrong' )
-  }, [ submitData ] )
-  // console.log( postData )
-  // console.log( getData )
+  useEffect( () => {toastChecker(submitData)}, [ submitData ] )
   return (
     <div>
       {
@@ -105,13 +100,13 @@ const Translator = ( { getData } ) => {
 
       <Grid container spacing={ 1 }>
         <Grid item xs={ 12 } sm={ 6 } md={ 5 }>
-          <TextLabeled clear={clear} setClear={setClear} setState={ setState } state={ state } field="name" sizeLabel="15px" width="100%" label="Bitirgan instituti" placeholder="Bitirgan Oliy ta’lim mussasasini kiriting" />
+          <TextLabeled clear={ clear } setClear={ setClear } setState={ setState } state={ state } field="name" sizeLabel="15px" width="100%" label="Bitirgan instituti" placeholder="Bitirgan Oliy ta’lim mussasasini kiriting" />
         </Grid>
         <Grid item xs={ 12 } sm={ 6 } md={ 3 }>
-          <YearPickerSelected clear={clear} setClear={setClear} setState={ setState } state={ state } field="year" sizeLabel="15px" width="100%" label="Bitirgan yili" />
+          <YearPickerSelected clear={ clear } setClear={ setClear } setState={ setState } state={ state } field="year" sizeLabel="15px" width="100%" label="Bitirgan yili" />
         </Grid>
         <Grid item xs={ 12 } sm={ 6 } md={ 3 }>
-          <TextLabeled clear={clear} setClear={setClear} setState={ setState } state={ state } field="speciality" sizeLabel="15px" width="100%" label="Mutaxassisligi" placeholder="Mutaxassisligizni yozing..." />
+          <TextLabeled clear={ clear } setClear={ setClear } setState={ setState } state={ state } field="speciality" sizeLabel="15px" width="100%" label="Mutaxassisligi" placeholder="Mutaxassisligizni yozing..." />
         </Grid>
         <Grid item xs={ 12 } sm={ 6 } md={ 1 }>
           <FlexContainer width="auto" flexDirection="column" gap="8px" margin="45px 0 0 auto" >
@@ -161,7 +156,7 @@ const Translator = ( { getData } ) => {
               setCollect={ setPostData }
               collect={ setPostData }
               field="experience_year"
-              defaultApiValue={getData?.success?.data ? getData?.success?.data?.experience_year + " yil":false }
+              defaultApiValue={ getData?.success?.data ? getData?.success?.data?.experience_year + " yil" : false }
             />
           </Grid>
           <Grid item xs={ 12 } sm={ 6 } md={ 2 } style={ { position: 'relative', top: 3 } }>
@@ -174,7 +169,7 @@ const Translator = ( { getData } ) => {
               setCollect={ setPostData }
               collect={ setPostData }
               field="is_freelancer"
-              defaultApiValue={getData?.success?.data ?  getData?.success?.data?.is_freelancer ? "Ha" : "Yoq" :false}
+              defaultApiValue={ getData?.success?.data ? getData?.success?.data?.is_freelancer ? "Ha" : "Yoq" : false }
             />
           </Grid>
         </Grid>
