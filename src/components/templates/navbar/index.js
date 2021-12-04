@@ -25,6 +25,7 @@ const Index = () => {
   const getRole = JSON.parse(localStorage.getItem("user_token"));
   const expired = localStorage.getItem("expired")
   const {isExpired} = useJwt(getRole?.access)
+
   console.log(expired);
   const { t, i18n } = useTranslation()
   React.useMemo(() => { i18n.changeLanguage('uz') }, [])
@@ -77,7 +78,7 @@ const Index = () => {
                 localStorage.setItem("language", code)
               }}
               countries={["UZ", "RU", "US"]}
-              customLabels={{ US: "Eng ", UZ: "O’z ", RU: "Ру " }}
+              customLabels={{ US: "ENG ", UZ: "O'Z ", RU: "РУ " }}
             />
             <FlexContainer
               width="100%"
@@ -95,9 +96,11 @@ const Index = () => {
               </NavLink>
               {
                 isExpired ? 
-                <button className="btn_enter" onClick={handleLogout}>Kirish</button>:
+                <button className="btn_enter" onClick={handleLogout}>Kirish</button>
+                :
                 <AccountMenu role={getRole?.role}/> 
               }
+
             </FlexContainer>
 
              

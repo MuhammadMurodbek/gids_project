@@ -20,7 +20,7 @@ import toast from 'react-hot-toast'
 
 const colourOptions = [
     {
-        label: 'Bizner',
+        label: 'Biznes',
         value: 'tag1'
     },
     {
@@ -28,7 +28,7 @@ const colourOptions = [
         value: "tag2"
     },
     {
-        label: "Dam olish",
+        label: "Siyosiy",
         value: "tag3"
     },
     {

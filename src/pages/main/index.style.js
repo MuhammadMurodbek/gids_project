@@ -4,7 +4,7 @@ import {mainGreen} from "../../styles/global/colors"
 export const WrapperAll = styled.div`
     position: relative;
     width: 100%;
-    padding:10px;
+    padding:10px 60px;
     .slider-component{
         background-color:transparent;
     }

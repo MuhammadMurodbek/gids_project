@@ -9,24 +9,22 @@ import Selection from "../../extended.search/select.with.requests"
 
 
 export default function Index() {
-
     const { t } = useTranslation()
-
     return (
         <Wrapper>
             <Grid container justifyContent="center" spacing={1} direction="row" >
-                <div className="select_div">
-                   <Selection/>
+                <div >
+                   <Selection className="select_div"/>
                 </div>
                 <div className="select_date">
-                    <Date />
+                    <Date  placeholder="dd/mm/yyyy  dan " />
                 </div>
                 <div className="select_date">
-                    <Date />
+                    <Date  placeholder="dd/mm/yyyy gacha " />
                 </div>
                 <div className="searchI">
                     <SearchIcon/>
-                    <span>Qidiruv</span>
+                     
                 </div>
             </Grid>
         </Wrapper>

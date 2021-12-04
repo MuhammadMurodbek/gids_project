@@ -79,7 +79,7 @@ export default function Index() {
 
 
             <div className="divbtns">
-                <Button type="outlined" className="davomi">{t("arizalar_royhati.davomi")} <ArrowForwardIcon className="arrovicon" /></Button>
+                <Button type="outlined" className="davomi">{t("arizalar_royhati.davomi")} <ArrowForwardIcon className="arrovicon"/></Button>
             </div>
 
         </Wrapper>

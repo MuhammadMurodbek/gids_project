@@ -7,8 +7,11 @@ import {mainGreen} from "../../../styles/global/colors";
     padding-top: 10px;
      margin-bottom: 50px;
     .select_div{
+        /* width: 100%; */
         
-        
+    }
+    .select_date{
+        width: 200px;
     }
     .searchI{
         background-color:${mainGreen};
@@ -22,6 +25,7 @@ import {mainGreen} from "../../../styles/global/colors";
             display: none;
         }
     }
+
     @media (max-width: 768px){
         .searchI{
             span{

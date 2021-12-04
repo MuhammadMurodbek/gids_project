@@ -16,14 +16,14 @@ const Index = ({ role }) => {
     const menu = (
         <Menu style={{ position: "relative", right: 15, top: 8, width: 140 }}>
             <Menu.Item key="0">
-                <Link to={role==='simple_user' ? '/gid-personal':`/gid-personal-wider?name=${getData?.success?.data?.first_name}&last_name=${getData?.success?.data?.last_name}`}>My profile</Link>
+                <Link to={role==='simple_user' ? '/gid-personal':`/gid-personal-wider?name=${getData?.success?.data?.first_name}&last_name=${getData?.success?.data?.last_name}`}>Profil</Link>
             </Menu.Item>
             <Menu.Divider />
             <Menu.Item key="3">
                 <span onClick={() => {
                     history.push('/auth')
                     localStorage.clear()
-                }}>Log out</span>
+                }}>Chiqish</span>
             </Menu.Item>
         </Menu>
     );

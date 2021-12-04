@@ -31,26 +31,27 @@ const Index = (props) => {
     return (
         <>
             <Wrapper>
-                <div className="title">
-               
+
+                <div className="coutrys">
+                    <Select
+                        className="selects"
+                        options={countries}
+                        placeholder={props.placeholder}
+                        placeholder={t("kengaytirlgan_Q.DavlatniTanlang")}
+                        setState={setCountry} />
+
+
+                    <Select
+                        className="selects"
+                        isDisabled={check}
+                        options={region}
+                        placeholder={t("kengaytirlgan_Q.ShaharniTanlang")}
+                        setState={setRegionItem} />
                 </div>
-                <Select
-                    className="selects"
-                    options={countries}
-                    placeholder={props.placeholder}
-                    placeholder={t("kengaytirlgan_Q.DavlatniTanlang")}
-                    setState={setCountry} />
+
             </Wrapper>
             <Wrapper >
-                <div className="title">
-                  
-                </div>
-                <Select
-                className="selects"
-                    isDisabled={check}
-                    options={region}
-                    placeholder={t("kengaytirlgan_Q.ShaharniTanlang")}
-                    setState={setRegionItem} />
+
             </Wrapper>
         </>
     )

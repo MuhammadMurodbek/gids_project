@@ -7,6 +7,7 @@ import ad from '../../assets/img/citiyes/ad.png'
 import ImgContainer from "../../components/molecules/img.container"
 import { useTranslation } from 'react-i18next'
 import { getResponse } from "../../hooks/response_get"
+import noDataImg from "../../assets/img/undraw/no_data.svg"
 import Button from "../../components/atom/button";
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import moment from 'moment'
@@ -22,7 +23,7 @@ export default function Index() {
     })
     const [postData, setPostData] = useState({ success: '', error: '', loading: false })
     let filterData = postData?.success?.data?.results
-    let {current} = pagination
+    let { current } = pagination
     // function getArticleList() {
     // }
     useEffect(() => {
@@ -30,7 +31,7 @@ export default function Index() {
         getResponse(url, setState)
         // TAGNAMgetArticleList()
     }, [pagination])
-  console.log(pagination)
+    console.log(pagination)
     useEffect(() => {
         if (state?.success) {
             setArticleList(state.success?.data?.results)
@@ -51,44 +52,58 @@ export default function Index() {
             <TextTitle width="50%" left="auto" right="auto" bottom="30px" top="80px">
                 {t("Blog.blog")}
             </TextTitle>
-            <Grid container spacing={1}>
-                <Grid item xs={12} sm={12} md={8}>
-                    {
-                        articleList?.map(item => (
-                            <CitiLeftPart
-                                key={item.id}
-                                title={item.title}
-                                kalendar={moment(item.created_at) === "" ? "" : moment(item.created_at).format("MM.DD.YYYY")}
-                                hteg={item.tags}
-                                url={item.image}
-                                text={item.mini_content}
-                                id={item.id}
-                                // getArticleList={getArticleList}
-                                setState={setState}
-                                postData={postData}
-                                setPostData={setPostData}
-                                btnText={t("Blog.davomiOqish")}
-                                setTagName={setTagName}
-                            />
-                        ))
-                    }
+            {
+                articleList == [] ?
+                
+                <div className="divbox">
+                    <span>Ma'lumot topilmadi</span>
+                    <img className="no_data_img" src={noDataImg} alt="sd" />
+                </div>
+                :
+                <>
+                        <Grid container spacing={1}>
+                            <Grid item xs={12} sm={12} md={8}>
+                                {
+                                    articleList?.map(item => (
+                                        <CitiLeftPart
+                                            key={item.id}
+                                            title={item.title}
+                                            kalendar={moment(item.created_at) === "" ? "" : moment(item.created_at).format("MM.DD.YYYY")}
+                                            hteg={item.tags}
+                                            url={item.image}
+                                            text={item.mini_content}
+                                            id={item.id}
+                                            // getArticleList={getArticleList}
+                                            setState={setState}
+                                            postData={postData}
+                                            setPostData={setPostData}
+                                            btnText={t("Blog.davomiOqish")}
+                                            setTagName={setTagName}
+                                        />
+                                    ))
+                                }
+
+                            </Grid>
+                            <Grid xs={12} sm={12} item md={4} className="msa2">
+                                <div className="imgcla"><ImgContainer src={ad} width="350px" margin="0 auto" /></div>
+                                <div className="imgcla"><ImgContainer src={ad} width="350px" margin="0 auto" /></div>
+                                <div className="imgcla"><ImgContainer src={ad} width="350px" margin="0 auto" /></div>
+                                <div className="imgcla"><ImgContainer src={ad} width="350px" margin="0 auto" /></div>
+                            </Grid>
+                        </Grid>
+                        <div className="pagination">
+                            <Pagination current={state?.success?.data?.num_pages}
+                                onChange={onChange}
+
+                                total={50} />;
+                        </div>
+
+                    </>
+                  
 
 
+            }
 
-                </Grid>
-                <Grid xs={12} sm={12} item md={4} className="msa2">
-                    <div className="imgcla"><ImgContainer src={ad} width="350px" margin="0 auto" /></div>
-                    <div className="imgcla"><ImgContainer src={ad} width="350px" margin="0 auto" /></div>
-                    <div className="imgcla"><ImgContainer src={ad} width="350px" margin="0 auto" /></div>
-                    <div className="imgcla"><ImgContainer src={ad} width="350px" margin="0 auto" /></div>
-                </Grid>
-            </Grid>
-            <div className="pagination">
-            <Pagination current={state?.success?.data?.num_pages} 
-            onChange={onChange} 
-            
-            total={50} />;
-            </div>
         </Wrapper>
     )
 }
