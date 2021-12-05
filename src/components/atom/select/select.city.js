@@ -19,16 +19,24 @@ const Index = (props) => {
     }
   })||null
   // console.log(country)
-  console.log(citiesValue)
+  // console.log(citiesValue)
   console.log(options)
   const handleChange = (e) => {
-    setValue(e)
-    if(setState && field) setState(prev=>{return{...prev, [field]:e}})
+    // console.log(e)
+    setValue(()=>e)
+    if(setState && field) setState(prev=>{return{...prev, city:e?.value, city_name:options.find(a=>a.value === e?.value)}})
   }
+  // console.log(value)
+  // console.log(state)
   useEffect(() =>{
+    // console.log('merge')
     if(defaultApiValue){
-      let defaultData = {value:defaultApiValue?.city, label:defaultApiValue?.city_name[lang]}
-      setValue(defaultData)
+      let labelData = ''
+      if(lang==='uz') labelData = defaultApiValue?.label?.uz
+      if(lang==='en') labelData = defaultApiValue?.label?.en
+      if(lang==='ru') labelData = defaultApiValue?.label?.ru
+      let defaultData = {value:defaultApiValue?.value, label:labelData}
+      setValue( prev=>prev || defaultData)
     }
   },[defaultApiValue])
   return (

@@ -1,16 +1,14 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import {WrapperForm} from "./style"
 import InputLabeled from "../../molecules/input.labeled"
-import SelectLabeled from "../../molecules/select.labeled"
 import SelectLabeledCountry from "../../molecules/select.labeled.country"
 import SelectLabeledCity from "../../molecules/select.labeled.country/city"
 import { Grid } from '@material-ui/core'
 import {validatorState} from "../../../custom/validator"
 import {useTranslation} from 'react-i18next';
 
-
-const Index = ({state, setState, error}) => {
-    
+const Index = ({state, setState, error, statePostProps}) => {
+    console.log(statePostProps)
     const {t} = useTranslation()
     const [countryId, setCountryId] = useState(null)
     const handleChange = (e)=>{setState({...state,[e.target.name]:e.target.value})}
@@ -63,14 +61,19 @@ const Index = ({state, setState, error}) => {
                         setState={setState}
                         setCountryId={setCountryId}
                         label={t("User_MalumotlarniTax.davlat")} 
+                        defaultApiValue={{value:statePostProps?.data?.country, label:statePostProps?.data?.country_name}}
                     />
                 </Grid>
                 <Grid item xs={12} sm={12} md={6}>
-                    <SelectLabeledCity 
+                    <SelectLabeledCity
+                        field="city" 
+                        state={state}
+                        setState={setState}
                         countryId={countryId}
                         width="100%" 
                         label={t("User_MalumotlarniTax.shaxarlar")} 
                         isDisabled={countryId === null ? true:false}
+                        defaultApiValue={{value:statePostProps?.data?.city, label:statePostProps?.data?.city_name}}
                     />
                 </Grid>
             </Grid>

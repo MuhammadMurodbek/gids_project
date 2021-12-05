@@ -15,13 +15,18 @@ const Index = (props) => {
   let options = country.map((item)=>{return{value: item.id,label:item?.name[lang]}}) || null
   const handleChange = (e) => {
     setValue(e)
-    if(setState && field) setState(prev=>{return{...prev, [field]:e}})
+    if(setState && field) setState(prev=>{return{...prev,  country:e?.value, country_name:options.find(a=>a.value === e?.value)}})
     if(setCountryId) setCountryId(e.value)
   }
   useEffect(() =>{
-    if(defaultApiValue){
-      let defaultData = {value:defaultApiValue?.country, label:defaultApiValue?.country_name[lang]}
-      setValue(defaultData)
+    if(defaultApiValue && defaultApiValue.hasOwnProperty('label')){
+      let labelData = ''
+      if(lang==='uz') labelData = defaultApiValue?.label?.uz
+      if(lang==='en') labelData = defaultApiValue?.label?.en
+      if(lang==='ru') labelData = defaultApiValue?.label?.ru
+      // console.log(defaultApiValue?.label?.uz)
+      let defaultData = {value:defaultApiValue?.value, label:labelData}
+      setValue(prev=> prev || defaultData)
     }
   },[defaultApiValue])
   return (

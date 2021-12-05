@@ -19,9 +19,6 @@ export const getGlobals = async() => {
     await axios.get(`${baseUrl}/api/users/countries/`, headers)
         .then(response => localStorage.setItem('countryGlobal', JSON.stringify(response?.data)))
         .catch(err => console.log(err))
-    // await axios.get(`${baseUrl}/api/users/cities/`, headers)
-    //     .then(response => localStorage.setItem('cityGlobal', JSON.stringify(response?.data)))
-    //     .catch(err => console.log(err))
 }
 export const postResponse = async(url, data, setState) => {
     return await axios.post(`${baseUrl}${url}`,data, head_token)
@@ -31,6 +28,13 @@ export const postResponse = async(url, data, setState) => {
 export const putResponse = async(url, data, setState) => {
     return await axios.put(`${baseUrl}${url}`,data, head_token)
         .then(response => setState ({success: response, error:'', loading: false}))
+        .catch(err => setState ({success:'',error: err, loading: false}))
+}
+export const patchResponse = async(url, data, setState) => {
+    const formData = new FormData()
+    formData.append('image', data)
+    return await axios.patch(`${baseUrl}${url}`,formData, head_token)
+        .then(response => setState ({success: response?.data, error:'', loading: false}))
         .catch(err => setState ({success:'',error: err, loading: false}))
 }
 export const deleteResponse = async(url, data, setCallback) => {
