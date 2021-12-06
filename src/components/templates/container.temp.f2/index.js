@@ -4,6 +4,7 @@ import ContainerMap from "../../organism/container.f2"
 import {Wrapper, ButtonWrapper} from "./style"
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import {useTranslation} from 'react-i18next'
+import NoDataPage from "../../templates/no.data.page.js"
 
 const Index = () => {
     const {t} = useTranslation()
@@ -20,7 +21,7 @@ const Index = () => {
                         <Button type="outlined" className="arrow"> {t("Gid_Tanlash.davomi")} <ArrowForwardIcon/>  </Button>
                     </ButtonWrapper>
                     </>
-                )):(<h4 style={{width: "100%", textAlign: "center"}}>Ma'lumotlar topilmadi</h4>)
+                )):(<h4 style={{width: "100%", textAlign: "center"}}><NoDataPage/></h4>)
             }
             
             
