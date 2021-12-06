@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Navbar } from "./index.style";
 import Logo from "../../../assets/img/logo_svg.svg";
 import { FlexContainer } from "../../../styles/flex.container";
 import ButtonNavbar from "../../molecules/button.navbar";
-import { Link, NavLink } from "react-router-dom";  
+import { Link, NavLink } from "react-router-dom";
 import { navbarMedia, navbarMediaCenter } from "./media";
 import { Turn as Hamburger } from "hamburger-react";
 import { mainGreen } from "../../../styles/global/colors";
@@ -24,94 +24,114 @@ const Index = () => {
 
   const getRole = JSON.parse(localStorage.getItem("user_token"));
   const expired = localStorage.getItem("expired")
-  const {isExpired} = useJwt(getRole?.access)
+  const { isExpired } = useJwt(getRole?.access)
 
   console.log(expired);
   const { t, i18n } = useTranslation()
   React.useMemo(() => { i18n.changeLanguage('uz') }, [])
 
+  const [scrollY, setScrollY] = useState(0);
+  function logit() {
+    setScrollY(window.pageYOffset);
+  }
+
+  useEffect(() => {
+    function watchScroll() {
+      window.addEventListener("scroll", logit);
+    }
+    watchScroll();
+    return () => {
+      window.removeEventListener("scroll", logit);
+    };
+  });
+
+
   return (
-    <>
-      <Navbar>
-        <FlexContainer
-          width="100%"
-          padding="0 25px"
-          alignItems="center"
-          justifyContent="space-between"
-        >
-          <div className="imgass">
-            <Link to="/">
-              {" "}
-              <img className="img_logo1" src={Logo} alt="safsf" />
-            </Link>
-          </div>
+    <div>
+      <Navbar navbarProps={scrollY}>
+        <div className={scrollY > 10 ? "nav_1 " : "nav"}>
+
+
           <FlexContainer
-            {...navbarMediaCenter}
-            padding="0 15px"
-            width="80%"
+            width="100%"
+            padding="0 25px"
             alignItems="center"
-            justifyContent="center"
+            justifyContent="space-between"
           >
-            {getRole?.role === "simple_user" ? (
-              <ButtonNavbar title={t("navbar.GvaTtanlash")} url="/gids" />
-            ) : null}
-
-            {getRole?.role === "simple_user" ? null : (
-              <ButtonNavbar title={t("navbar.GTU")} url="/forgits" />
-            )}
-
-            <ButtonNavbar title="Blog" url="/blog" />
-            {getRole?.role === "simple_user" ? (
-              <ButtonNavbar title={t("navbar.Ariza_qoldirish")} url="/application-form" />
-            ) : (
-              <ButtonNavbar title={t("navbar.Arizalar_royhati")} url="/request" />
-            )}
-
-          </FlexContainer>
-
-          <FlexContainer {...navbarMedia} width="100px" style={{ marginRight: 120 }}>
-            <ReactFlagsSelect
-              selected={selected}
-              onSelect={(code) => {
-                i18n.changeLanguage(code.toLowerCase())
-                setSelected(code)
-                localStorage.setItem("language", code)
-              }}
-              countries={["UZ", "RU", "US"]}
-              customLabels={{ US: "ENG ", UZ: "O'Z ", RU: "РУ " }}
-            />
+            <div className="imgass">
+              <Link to="/">
+                {" "}
+                <img className="img_logo1" src={Logo} alt="safsf" />
+              </Link>
+            </div>
             <FlexContainer
-              width="100%"
+              {...navbarMediaCenter}
+              padding="0 15px"
+              width="80%"
               alignItems="center"
               justifyContent="center"
             >
-              <NavLink
-                to={
-                  getRole?.role === "simple_user"
-                    ? "/gid-personal"
-                    : "/gid-personal-wider"
-                }
-                style={{ color: "#333" }}
-              >
-              </NavLink>
-              {
-                isExpired ? 
-                <button className="btn_enter" onClick={handleLogout}>Kirish</button>
-                :
-                <AccountMenu role={getRole?.role}/> 
-              }
+              {getRole?.role === "simple_user" ? (
+                <ButtonNavbar title={t("navbar.GvaTtanlash")} url="/gids" />
+              ) : null}
+
+              {getRole?.role === "simple_user" ? null : (
+                <ButtonNavbar title={t("navbar.GTU")} url="/forgits" />
+              )}
+
+              <ButtonNavbar title="Blog" url="/blog" />
+              {getRole?.role === "simple_user" ? (
+                <ButtonNavbar title={t("navbar.Ariza_qoldirish")} url="/application-form" />
+              ) : (
+                <ButtonNavbar title={t("navbar.Arizalar_royhati")} url="/request" />
+              )}
 
             </FlexContainer>
 
-             
+            <FlexContainer {...navbarMedia} width="100px" style={{ marginRight: 120 }}>
+              <ReactFlagsSelect
+                selected={selected}
+                onSelect={(code) => {
+                  i18n.changeLanguage(code.toLowerCase())
+                  setSelected(code)
+                  localStorage.setItem("language", code)
+                }}
+                countries={["UZ", "RU", "US"]}
+                customLabels={{ US: "ENG ", UZ: "O'Z ", RU: "РУ " }}
+              />
+              <FlexContainer
+                width="100%"
+                alignItems="center"
+                justifyContent="center"
+              >
+                <NavLink
+                  to={
+                    getRole?.role === "simple_user"
+                      ? "/gid-personal"
+                      : "/gid-personal-wider"
+                  }
+                  style={{ color: "#333" }}
+                >
+                </NavLink>
+                {
+                  isExpired ?
+                    <button className="btn_enter" onClick={handleLogout}>Kirish</button>
+                    :
+                    <AccountMenu role={getRole?.role} />
+                }
+
+              </FlexContainer>
+
+
+            </FlexContainer>
+            <div className="toggle_hamburger">
+              <Hamburger toggled={isOpen} toggle={setOpen} color={mainGreen} />
+            </div>
           </FlexContainer>
-          <div className="toggle_hamburger">
-            <Hamburger toggled={isOpen} toggle={setOpen} color={mainGreen} />
-          </div>
-        </FlexContainer>
+        </div>
       </Navbar>
       <MediaNavbar isOpen={isOpen} setOpen={setOpen} />
-    </>
+    </div>
   );
 };
 

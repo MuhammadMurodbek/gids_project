@@ -10,5 +10,6 @@ export const Wrapper = styled.div`
         width: 100%;
         height: auto;
         margin-bottom: auto;
+        margin-top: 75px;
     }
 `
