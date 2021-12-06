@@ -1,4 +1,4 @@
-import React, {useState, useCallback} from 'react'
+import React, {useState, useCallback, useEffect} from 'react'
 import Select from "../../../../components/atom/select"
 import SelectLabeled from "../../../../components/molecules/select.labeled"
 import { TextTitle } from '../../../../styles/textTitle/index.style'
@@ -9,12 +9,33 @@ import Button from "../../../../components/atom/button"
 import styled from "styled-components"
 import AddIcon from '@material-ui/icons/Add'
 import Box from '@mui/material/Box';
-import {selectValue} from "./_const"
+import {selectValue, defaultListValue} from "./_const";
+import {getResponse, putResponse} from "../../../../hooks/response_get"
+import {common} from "../../../../custom/url"
+import {toastChecker} from "../../../../custom/function"
 import toast from 'react-hot-toast';
-const Todos = () => {
-    const [items, setItems] = useState([])
+const Todos = ({translateType, setTranslateType}) => {
+    let arrayList = defaultListValue()
+    let optionList = selectValue()
+    const [items, setItems] = useState(arrayList)
     const [item, setItem] = useState({name:'', level:''})
+    const [getData, setGetData] = useState({success:'', error:''})
     const getRole = JSON.parse(localStorage.getItem("user_token"));
+    const [postApiData, setPostApiData] = useState({ success: '', error: '', loading: false})
+    useEffect(()=>{ getResponse(common.personal.edit.services, setGetData )},[])
+    useEffect(()=>{if(getRole.success !== ''){
+        setTranslateType({gender:getData?.success?.data?.translate_type})
+        let theme = getData?.success?.data?.themes?.map(prev => {
+            return {
+                name:prev.name,
+                level:{
+                    value:prev.level,
+                    label:optionList?.find(p=>p.value === prev.level)?.label
+                }
+            }
+        })
+        setItems(theme)
+    }},[getData])
     const handleAdd = useCallback(() => {
         if(item?.name ==='' || item?.level === ''){
             toast.error("Ma'lumotlarni to'liq kiriting")
@@ -22,7 +43,22 @@ const Todos = () => {
             setItems([...items, item])
         }
     },[item])
-    console.log(items)
+    const handleSubmit = () => {
+        setPostApiData({...postApiData, loading: true})
+        let postData = {
+            translate_type: translateType?.gender,
+            themes:items.map((prev=>{ 
+                return {
+                    ...prev,
+                    level:prev?.level?.value
+                }
+            }))
+        }
+        console.log(postData)
+        putResponse(common.personal.edit.services, postData, setPostApiData)
+    }
+    useEffect(()=>{toastChecker(postApiData)},[postApiData])
+
     return (
         <TodosWrapper>
              {
@@ -43,7 +79,7 @@ const Todos = () => {
                                         <TextTitle font="16px" fontWeight="300" align="left" top="20px">{prev.name}</TextTitle>
                                     </Grid>
                                     <Grid item xs={12} sm={6}>
-                                        <SelectLabeled options={selectValue} defaultApiValue={prev?.level?.label} width="100%" placeholder="Mavzuyim emas.." />
+                                        <SelectLabeled options={optionList} defaultApiValue={prev?.level?.label} width="100%" placeholder="Mavzuyim emas.." />
                                     </Grid>
                                 </Grid>
                             </Grid>
@@ -60,7 +96,7 @@ const Todos = () => {
                                         <InputLabeled state={item} setState={setItem} field="name" width="100%" placeholder="Text..." />
                                     </Grid>
                                     <Grid item xs={12} sm={6}>
-                                        <Select options={selectValue} collect={item} setCollect={setItem} field="level" margin="24px 0 0 0" width="100%" placeholder="Mavzuyim emas.." />
+                                        <Select options={optionList} collect={item} setCollect={setItem} field="level" margin="24px 0 0 0" width="100%" placeholder="Mavzuyim emas.." />
                                     </Grid>
                                 </Grid>
                             </Grid>
@@ -75,7 +111,7 @@ const Todos = () => {
                 </Container>
 
                 <Container padding="10px 0" textAlign="right">
-                    <Button>Saqlash</Button>
+                    <Button loader={postApiData.loading} onClick={handleSubmit}>Saqlash</Button>
                 </Container>
             </>
             }

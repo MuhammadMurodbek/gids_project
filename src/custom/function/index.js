@@ -1,3 +1,4 @@
+import {toast} from "react-hot-toast"
 const gid_lang_obj=[
     {value:"en", label:'english'},
     {value:"ru", label:'русский'},
@@ -10,4 +11,9 @@ export const get_cities = (data) => {
         return country
     }
     return null
+}
+
+export const toastChecker = (data, success, error) => {
+    if(data?.success!== '') toast.success(success || 'Successfully uploaded')
+    if(data?.error!== '') toast.error(error || 'Something went wrong')
 }

@@ -7,9 +7,7 @@ import {getResponse} from "../../../hooks/response_get"
 import Spinner from "../../../components/atom/loading.spinner.line"
 const Index = () => {
     const [state, setState] = useState({success:'', error:''})
-    useEffect(() => {
-        getResponse('/api/users/edit/', setState)
-    },[])
+    useEffect(() => { getResponse('/api/users/edit/', setState)},[])
     // console.log(state)
     return (
         <Wrapper>

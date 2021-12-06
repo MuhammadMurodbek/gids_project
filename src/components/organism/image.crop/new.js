@@ -1,27 +1,31 @@
 import ImgCrop from 'antd-img-crop';
 import { Upload } from 'antd';
-import React,{useState} from "react";
+import React,{useState, useEffect} from "react";
 import {CameraOutlined} from "@ant-design/icons"
 import "./style.css"
 import noUser from "../../../assets/img/gid-personal/no_user.png"
+import {patchResponse} from "../../../hooks/response_get"
 const Demo = ({setState, state}) => {
+  const getRole = JSON.parse(localStorage.getItem("user_token"))
   const [imageObj, setImageObj] = useState()
+  const [apiUrl, setApiUrl] = useState({ success: '', error: ''})
   const [url, setUrl] = useState()
   const onChange = ( newFileList) => {
-    setImageObj(newFileList?.file)
-    if(state?.image !== ''){
-      setState({...state,image:null})
-    }
+  //   setImageObj(newFileList?.file)
+  //   if(state?.image !== ''){
+  //     setState({...state,image:null})
+  //   }
   };
   const handleSubmitOk = (e) => {
     setUrl(URL.createObjectURL(e))
-    if(setState)
-    setState({...state, image:null, imageFile: e})
+    patchResponse('/api/users/edit/', e, setApiUrl)
   }
-  const handleDelete = () => {
-    setState({...state,image:null, imageFile: null})
-    setUrl('')
-  }
+  useEffect(() => {
+    if(apiUrl?.success!=='') {
+      setState({...state, image:apiUrl?.success?.image})
+    }
+  },[apiUrl])
+  console.log(apiUrl)
   return(
       <div className="cropper_container" style={{marginTop:20}} >
         {
