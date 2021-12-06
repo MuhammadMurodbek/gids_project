@@ -11,7 +11,7 @@ const Index = ({ role }) => {
     const [getData, setGetData] = useState({ success: '', error: '', loading: false })
     const history = useHistory()
     const getRole = JSON.parse(localStorage.getItem("user_token"))
-    let url = getRole?.role === 'simple_user' ? '/api/users/edit/about/':`/api/${getRole?.role}s/edit/about/`
+    let url = getRole?.role === 'simple_user' ? '/api/users/edit/':`/api/${getRole?.role}s/edit/about/`
     useEffect(()=>{getResponse(url, setGetData)},[])
     const menu = (
         <Menu style={{ position: "relative", right: 15, top: 8, width: 140 }}>
