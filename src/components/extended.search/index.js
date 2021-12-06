@@ -14,10 +14,13 @@ const Index = () => {
 
     const { t } = useTranslation()
     const [postData, setPostData] = useState({ success: '', error: '', loading: false })
+    const getRole = JSON.parse(localStorage.getItem("user_token"))
     const [collect, setCollect] = useState()
     const handleSubmit = () => {
         setPostData({ ...postData, loading: true })
-        let url = `/api/${collect.type}s/profiles/?gender=${collect?.male ? 'male' : 'female'}&country=${collect?.country?.label}&city=${collect?.city?.label}&lang=${collect?.lang?.map(item => item.label)}&date_after=${collect?.date_after}&date_before=${collect?.date_before}&${collect?.gender}=0`
+        let urlUser = `/api/users/profiles/?gender=${collect?.male ? 'male' : 'female'}&country=${collect?.country}&city=${collect?.city}&lang=${collect?.lang?.map(item => item.label)}&date_after=${collect?.date_after}&date_before=${collect?.date_before}&${collect?.gender}=0`
+        let urlOther = `/api/${getRole?.role}s/profiles/?gender=${collect?.male ? 'male' : 'female'}&country=${collect?.country}&city=${collect?.city}&lang=${collect?.lang?.map(item => item.label)}&date_after=${collect?.date_after}&date_before=${collect?.date_before}&${collect?.gender}=0`
+        let url = getRole?.role === 'simple_user' ? urlUser:urlOther
         getResponse(url, setPostData)
     }
     React.useEffect(() => {
@@ -60,7 +63,8 @@ const Index = () => {
                 title={t("kengaytirlgan_Q.til")}
                 setCollect={setCollect}
                 collect={collect}
-                field="lang" />
+                field="lang" 
+            />
 
             <CheckBoxContainer
                 setState={setCollect}
