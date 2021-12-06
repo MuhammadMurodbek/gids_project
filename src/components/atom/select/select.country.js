@@ -15,7 +15,7 @@ const Index = (props) => {
   let options = country.map((item)=>{return{value: item.id,label:item?.name[lang]}}) || null
   const handleChange = (e) => {
     setValue(e)
-    if(setState && field) setState(prev=>{return{...prev,  country:e?.value, country_name:options.find(a=>a.value === e?.value)}})
+    if(setState) setState(prev=>{return{...prev,  country:e?.value, country_name:options.find(a=>a.value === e?.value)}})
     if(setCountryId) setCountryId(e.value)
   }
   useEffect(() =>{
