@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React, { useState} from 'react'
+=======
+import React, { useState } from 'react'
+>>>>>>> new_master
 // import Select from "../../atom/select"
 import SelectLabeledCountry from "../../molecules/select.labeled.country"
 import SelectLabeledCity from "../../molecules/select.labeled.country/city"
