@@ -7,7 +7,7 @@ import noUser from "../../../assets/img/gid-personal/no_user.png"
 import {patchResponse} from "../../../hooks/response_get"
 const Demo = ({setState, state}) => {
   const getRole = JSON.parse(localStorage.getItem("user_token"))
-  const [imageObj, setImageObj] = useState()
+  // const [imageObj, setImageObj] = useState()
   const [apiUrl, setApiUrl] = useState({ success: '', error: ''})
   const [url, setUrl] = useState()
   const onChange = ( newFileList) => {
@@ -18,14 +18,15 @@ const Demo = ({setState, state}) => {
   };
   const handleSubmitOk = (e) => {
     setUrl(URL.createObjectURL(e))
-    patchResponse('/api/users/edit/', e, setApiUrl)
+    const typeUrl = (getRole?.role === 'simple_user') ? '/api/users/edit/': `/api/${ getRole?.role }s/edit/about/`
+    patchResponse(typeUrl, e, setApiUrl)
   }
   useEffect(() => {
     if(apiUrl?.success!=='') {
       setState({...state, image:apiUrl?.success?.image})
     }
   },[apiUrl])
-  console.log(apiUrl)
+  // console.log(apiUrl)
   return(
       <div className="cropper_container" style={{marginTop:20}} >
         {

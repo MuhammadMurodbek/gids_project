@@ -1,7 +1,7 @@
 import styled from "styled-components"
 export const CheckboxWrapper = styled.div`
     width: 100%;
-
+    position: relative;
     .wrapper-container{
         width:100%; 
         padding:6px; 

@@ -1,10 +1,10 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState } from "react";
 import Select from "react-select";
 import { Wrapper } from "./index.style";
 import "./style.css";
 
 const Index = (props) => {
-  const {width,paddingX, margin,backgroundColor,setState,state,errorText,defaultApiValue
+  const {width,paddingX, margin,backgroundColor,setState,state,errorText,defaultApiValue, disableMulti
   } = props;
   const languages = JSON.parse(localStorage.getItem('lanGlobal'))
   const lang = localStorage.getItem('i18nextLng')
@@ -46,7 +46,7 @@ const Index = (props) => {
       backgroundColor={backgroundColor}
     >
       <Select
-        isMulti
+        isMulti={disableMulti ? false : true}
         {...props}
         value={value}
         options={options}

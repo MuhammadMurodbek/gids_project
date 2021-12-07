@@ -6,7 +6,7 @@ import FormControl from '@material-ui/core/FormControl';
 import {CheckboxWrapper, Label} from "./style"
 import {mainGreen} from "../../../styles/global/colors"
 const Index = (props) => {
-    const {label, name1, name2, sizeLabel, marginLabel, setState, state, value1, value2} = props;
+    const {label, name1, name2, sizeLabel, marginLabel, setState, state, value1, value2, errorText} = props;
     const [value, setValue] = React.useState(null);
     React.useEffect(() => {if(state) setValue(state?.gender)},[state])
     const handleChange = (event) => {
@@ -24,6 +24,9 @@ const Index = (props) => {
                     <FormControlLabel value={value2 || "translator"} control={<Radio style={{color:mainGreen}}/>} label={<span style={{fontSize:'15px'}}>{name2}</span>} />
                 </RadioGroup>
             </FormControl>
+            <span style={{position: 'absolute', fontSize:'11px', left:0, bottom:-18,  fontStyle:'italic', color:'red'}}>
+                {errorText}
+            </span>    
         </CheckboxWrapper>
     )
 }
