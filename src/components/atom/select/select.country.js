@@ -13,6 +13,7 @@ const Index = (props) => {
   const [value, setValue] = useState(null);
   console.log(country)
   let options = country.map((item)=>{return{value: item.id,label:item?.name[lang]}}) || null
+  localStorage.setItem('countryOptions', JSON.stringify(options))
   const handleChange = (e) => {
     setValue(e)
     if(setState) setState(prev=>{return{...prev,  country:e?.value, country_name:options.find(a=>a.value === e?.value)}})

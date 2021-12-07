@@ -18,6 +18,7 @@ const Index = (props) => {
         label:val[lang]
     }
   })||null
+  localStorage.setItem('cityOptions', JSON.stringify(options))
   // console.log(country)
   // console.log(citiesValue)
   console.log(options)
