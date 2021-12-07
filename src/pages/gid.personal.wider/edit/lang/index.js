@@ -19,14 +19,16 @@ import toast from 'react-hot-toast'
 import FadeIn from 'react-fade-in';
 import Translator from "./_translator"
 import { common } from "../../../../custom/url"
-import {validatorState} from "../../../../custom/validator"
-
+import {toastChecker} from "../../../../custom/function"
+import {getLabelLang} from "../../../../custom/function"
 // import { TransitionGroup } from 'react-transition-group';
 const Index = () => {
 
     const { t } = useTranslation();
-    console.log( uuid() )
+    // console.log( uuid() )
     const getRole = JSON.parse( localStorage.getItem( "user_token" ) );
+    // const lanOptions = JSON.parse( localStorage.getItem( "lanOptions"))
+    // console.log(langGlobal)
     // const { role } = getRole;
     const [ clearValue, setClearValue ] = useState( false )
     const [ callback, setCallback ] = useState( false )
@@ -35,8 +37,8 @@ const Index = () => {
     const [ postData, setPostData ] = useState( { success: '', error: '', loading: false } )
     const [ state, setState ] = useState( [] );
     const handleAdd = () => {
-        setState( [ ...state, { id: uuid(), name: value?.name, level: value?.level } ] )
-        setValue( { id: "", language: '', level: '' } )
+        setState( [ ...state, { id: uuid(), language: value?.languages?.value, level: value?.level } ] )
+        setValue( { id: "", languages: '', level: '' } )
         setClearValue( true )
     }
     const handleDelete = ( item ) => {
@@ -56,10 +58,7 @@ const Index = () => {
             .map( item => { return { language: item?.language, level: item?.level?.value } } )
         postResponse( '/api/gids/edit/language/', clone, setPostData )
     }
-    React.useEffect( () => {
-        if ( postData?.success !== '' ) { toast.success( "Successfully uploaded" ) }
-        if ( postData?.error !== '' ) { toast.error( "Failed to load" ) }
-    }, [ postData ] )
+    React.useEffect( () => {toastChecker(postData)}, [ postData ] )
     React.useEffect( () => { getResponse( common.personal.edit.language, setGetData ) }, [ callback ] )
     React.useEffect( () => {
         if ( getData?.success !== '' )
@@ -75,7 +74,7 @@ const Index = () => {
             setState( data )
         }
     }, [ getData ] )
-    // console.log( state )
+    console.log(state)
     return (
         <Wrapper>
             <Container padding="10px 0">
@@ -87,7 +86,7 @@ const Index = () => {
                                     <FadeIn>
                                         <Grid container spacing={ 1 } key={ index }>
                                             <Grid item xs={ 12 } sm={ 6 } md={ 6 }>
-                                                <TextLabeledLoop label={ t( "TillarniBilish.til" ) } value={ item?.language } />
+                                                <TextLabeledLoop label={ t( "TillarniBilish.til" ) } value={ getLabelLang(item?.language) || null} />
                                             </Grid>
                                             <Grid item xs={ 12 } sm={ 6 } md={ 5 }>
                                                 <TextLabeledLoop label={ t( "TillarniBilish.bilishDarajasi" ) } value={ item?.level?.label } />

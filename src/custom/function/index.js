@@ -1,4 +1,5 @@
 import {toast} from "react-hot-toast"
+const lanOptions = JSON.parse( localStorage.getItem( "lanOptions"))
 const gid_lang_obj=[
     {value:"en", label:'english'},
     {value:"ru", label:'русский'},
@@ -16,4 +17,10 @@ export const get_cities = (data) => {
 export const toastChecker = (data, success, error) => {
     if(data?.success!== '') toast.success(success || 'Successfully uploaded')
     if(data?.error!== '') toast.error(error || 'Something went wrong')
+}
+export const getLabelLang = (id) => {
+    if(lanOptions){
+        let label = lanOptions?.find(a=>a.value===id)?.label
+        return label 
+    }
 }
