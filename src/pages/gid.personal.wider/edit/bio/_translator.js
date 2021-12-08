@@ -1,4 +1,4 @@
-import React, {useState, useCallback} from 'react'
+import React, {useState, useCallback, useEffect} from 'react'
 import AddIcon from "@material-ui/icons/Add";
 import { Grid } from "@material-ui/core";
 import { TextTitle } from "../../../../styles/textTitle/index.style";
@@ -7,12 +7,14 @@ import Button from "../../../../components/atom/button";
 import TextLabeledLoop from "../../../../components/atom/text.labeled"
 import DeleteIcon from '@material-ui/icons/Delete';
 import 'animate.css';
+import YearPicker from "../../../../components/molecules/year.picker.labeled"
 import toast from 'react-hot-toast';
-const Translator = ({setTrains}) => {
+const Translator = ({setTrains, trains}) => {
     const [delBool, setDelBool] = useState();
     const [state, setState] = useState({name:'', year:''})
     const [collect, setCollect] = useState([])
     const {name,year} = state
+    console.log(trains)
     const handleClick = useCallback(()=> { 
         if(state.name !== '' && state.year !==''){
             setCollect([...collect, state])
@@ -26,7 +28,7 @@ const Translator = ({setTrains}) => {
         }
     },[name, year, delBool])
     const handleDelete = (item) => {
-        console.log(item)
+        // console.log(item)
         setDelBool(item)
         let data = collect.filter(prev=>prev!==item)
         setCollect(data)
@@ -35,6 +37,9 @@ const Translator = ({setTrains}) => {
             trainings:data
         }})
     }
+    useEffect( () => {
+      if(trains) setCollect(trains)
+    },[trains])
     // console.log(collect)
     return (
         <div>
@@ -74,15 +79,19 @@ const Translator = ({setTrains}) => {
                     />
                   </Grid>
                   <Grid item md={ 2 } xs={ 4 }>
-                    <InputLabeled
+                    <YearPicker
+                       setState={setState}
+                       state={state}
+                       field="year"
+                       placeholder="Yilni kiriting"
+                    />
+                    {/* <InputLabeled
                       sizeLabel="15px"
                       width="100%"
                       placeholder="Yilni yozing"
-                      setState={setState}
-                      state={state}
-                      field="year"
+                     
                       typeNumber
-                    />
+                    /> */}
                   </Grid>
                   <Grid item md={ 1 } xs={ 1 }>
                     <div style={ { position: 'relative', top: 14 } }>

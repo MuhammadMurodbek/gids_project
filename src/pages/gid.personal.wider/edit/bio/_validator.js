@@ -8,6 +8,6 @@ export const userSchema = yup.object().shape({
     first_name:yup.string().min(3).required(),
     last_name:yup.string().min(3).required(),
     middle_name:yup.string().min(3),
-    bio:yup.string().min(3),
+    // bio:yup.string().min(3),
     gender:yup.string().min(4).required(),
 })

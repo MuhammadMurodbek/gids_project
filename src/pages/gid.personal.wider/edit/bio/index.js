@@ -20,8 +20,8 @@ import toast from "react-hot-toast";
 import { validatorState } from "../../../../custom/validator"
 import { userSchema } from "./_validator"
 import { defaultObj } from "./_const"
-import TextLabeledLoop from "../../../../components/atom/text.labeled"
-import { EditOutlined } from '@ant-design/icons'
+// import TextLabeledLoop from "../../../../components/atom/text.labeled"
+// import { EditOutlined } from '@ant-design/icons'
 import FadeIn from 'react-fade-in';
 import Translator from './_translator';
 import { useTranslation } from 'react-i18next'
@@ -186,7 +186,7 @@ const Index = () => {
             <GroupImageUpload role={ getRole?.role } />
             { getRole?.role !== "gid" ? (
               <>
-                <Translator setTrains={setState}/>
+                <Translator setTrains={setState} trains={state?.trainings}/>
               </>
             ) : null }
             <div className="btnGrop">

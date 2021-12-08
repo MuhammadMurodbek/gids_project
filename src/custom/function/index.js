@@ -11,7 +11,7 @@ const gid_lang_obj=[
 
 export const get_cities = (data) => {
     if(data){
-        let country = data.map((item, index)=>{return {value:index, label:item}})
+        let country = data?.map((item, index)=>{return {value:index, label:item}})
         return country
     }
     return null
@@ -35,10 +35,10 @@ export const getLabelCountry = (id) => {
 }
 export const getLabelCity = (countryID, cityID) => {
     if(countryID && cityID){
-        let cityName = countryGlobal.find(a=>a.id===countryID)
+        let cityName = countryGlobal?.find(a=>a.id===countryID)
         if(cityName){
             let value = cityName?.cities[cityID-1][lan]
-            console.log(value)
+            // console.log(value)
             return value
         }
     }
