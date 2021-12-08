@@ -9,11 +9,13 @@ import {getResponse} from "../../../../../hooks/response_get"
 import Button from "../../../../../components/atom/button"
 import { common } from "../../../../../custom/url"
 import Spinner from "../../../../../components/atom/loading.spinner.line";
-import {getLabelLangLocal} from "../../../../../custom/function"
+import {getLabelLangLocal, toastChecker} from "../../../../../custom/function"
 import {hours} from "./_const"
+import {postResponse} from "../../../../../hooks/response_get"
 const Index = () => {
     const [getData, setGetData] = useState( { success: '', error: ''})
     const [postCollect, setPostCollect] = useState([])
+    const [post, setPost] = useState( { success: '', error:'', loading: false})
     useEffect( () => { getResponse( common.personal.edit.language, setGetData ) }, [ ] )
     useEffect(()=>{
         if(getData.success!==''){
@@ -24,11 +26,31 @@ const Index = () => {
     const [items, setItems] = useState([])
     const [item, setItem] = useState({cost_per_hour: 0,currency_per_hour: {},cost_per_day: 0,currency_per_day: {},work_time_per_day: 0})
     useEffect(()=>{
-        let clone = postCollect
-        clone[item?.idK-1] = item
-        setPostCollect(clone)
+        if(postCollect.length > 0){
+            let clone = postCollect
+            clone[item?.idK-1] = {...item, id:clone[item?.idK-1]?.id}
+            setPostCollect(clone)
+        }
     },[item])
-    console.log(postCollect)
+    const handleSubmit = ()=>{
+        setPost({...post, loading: true})
+        let postData = postCollect?.map(item=>{
+            return{
+                id:item?.id,
+                cost_per_day:parseInt(item?.cost_per_day),
+                cost_per_hour:parseInt(item?.cost_per_hour),
+                currency_per_day:item?.currency_per_day?.value,
+                currency_per_hour:item?.currency_per_hour?.value, 
+                work_time_per_day:item?.work_time_per_day?.value,
+            }
+        })
+        // console.log(postData)
+        postResponse('/api/translators/edit/cost/', postData, setPost)
+    }
+    useEffect(()=>{
+        toastChecker(post)
+    },[post])
+    // console.log(postCollect)
     return (
         <Wrapper>
             {
@@ -55,7 +77,7 @@ const Index = () => {
                 
             }
             <Container width="100%" padding="10px 20px" margin="20px 0 0 0" textAlign="right">
-                <Button>Saqlash</Button>
+                <Button onClick={handleSubmit}>Saqlash</Button>
             </Container>
         </Wrapper>
     )
