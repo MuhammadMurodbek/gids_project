@@ -18,7 +18,8 @@ const Index = (props) => {
     clearValue,
     setClearValue,
     pcolor,
-    defaultApiValue
+    defaultApiValue,
+    idK,
   } = props;
   const [value, setValue] = useState(null);
   const handleChange = useCallback(
@@ -29,15 +30,21 @@ const Index = (props) => {
         setState(valueChange);
       }
       if (setCollect) {
-        setCollect((prev) => {
-          return { ...prev, [field]: valueChange };
-        });
+        if(idK){
+          setCollect((prev) => {
+            return { ...prev, [field]: valueChange, idK: idK};
+          });
+        }else{
+          setCollect((prev) => {
+            return { ...prev, [field]: valueChange };
+          });
+        }
       } ///important
       if(setClearValue){
         setClearValue(false);
       }
     },
-    [state, value, collect]
+    [state, value, collect,idK]
   );
     useEffect(() => {
       if(clearValue){
