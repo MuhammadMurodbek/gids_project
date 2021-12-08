@@ -7,25 +7,29 @@ import CalendarComponent from "./data.with.title"
 import CheckBoxContainer from "./checkbox.width.title"
 import Button from "./button.component"
 import DoubleRadio from "../molecules/double.radio.labeled"
+import {useHistory} from "react-router-dom"
 import { useTranslation } from 'react-i18next'
 import { getResponse } from "../../hooks/response_get"
 import { toast } from "react-hot-toast"
 const Index = () => {
-
+    const history = useHistory()
     const { t } = useTranslation()
     const [postData, setPostData] = useState({ success: '', error: '', loading: false })
+    const getRole = JSON.parse(localStorage.getItem("user_token"))
     const [collect, setCollect] = useState()
     const handleSubmit = () => {
         setPostData({ ...postData, loading: true })
-        let url = `/api/${collect.type}s/profiles/?gender=${collect?.male ? 'male' : 'female'}&country=${collect?.country?.label}&city=${collect?.city?.label}&lang=${collect?.lang?.map(item => item.label)}&date_after=${collect?.date_after}&date_before=${collect?.date_before}&${collect?.gender}=0`
-        getResponse(url, setPostData)
+        let urlOther = `/api/${collect?.type}s/profiles/?gender=${collect?.male ? 'male' : 'female'}&country=${collect?.country}&city=${collect?.city}&lang=${collect?.languages?.map(item => item?.value)}&date_after=${collect?.date_after}&date_before=${collect?.date_before}&${collect?.gender}=0`
+        getResponse(urlOther, setPostData)
     }
     React.useEffect(() => {
         if (postData?.error !== '') toast.error("Ma'lumotlarni to'liq kiriting")
         if (postData?.success !== '') {
             localStorage.setItem('advanced_search', JSON.stringify(postData?.success?.data))
+            history.push(`/gids?type=${collect?.type}s&gender=${collect?.male ? 'male' : 'female'}&country=${collect?.country}&city=${collect?.city}&lang=${collect?.languages?.map(item => item?.value)}&date_after=${collect?.date_after}&date_before=${collect?.date_before}&${collect?.gender}=0`)
         }
     }, [postData])
+    // console.log(collect)
     return (
         <Wrapper width="350px">
             <div className="title-header">

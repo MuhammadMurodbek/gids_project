@@ -5,7 +5,6 @@ import { check_route } from "../routes/router.list"
 import ToastCNT from "../components/atom/toast.container"
 const Index = () => {
     const getRole = JSON.parse(localStorage.getItem("user_token"))
-    const role = getRole ? getRole.role : undefined
     
     return (
         <Router>

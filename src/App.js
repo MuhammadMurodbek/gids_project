@@ -1,9 +1,10 @@
-import React,{useMemo} from 'react';
+import React,{useEffect} from 'react';
 import MainPage from "./pages"
 import GlobalStyle from "./styles/global"
-import {getResponseRegion} from "./hooks/response_get"
+import {getGlobals, getResponseRegion} from "./hooks/response_get"
 function App() {
-  useMemo(() => {
+  useEffect(() => {
+    getGlobals()
     getResponseRegion('https://countriesnow.space/api/v0.1/countries')
     // localStorage.setItem('expired',false)
   },[])

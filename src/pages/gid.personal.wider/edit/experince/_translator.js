@@ -15,20 +15,22 @@ import { useTranslation } from 'react-i18next'
 import { putResponse, getResponse } from '../../../../hooks/response_get'
 import { common } from "../../../../custom/url"
 import toast from 'react-hot-toast';
-import moment from 'moment'
+import {toastChecker} from "../../../../custom/function"
 const Translator = ( { getData } ) => {
 
   const { t } = useTranslation()
   const [ delBool, setDelBool ] = useState();
-  const [ collect, setCollect ] = useState( [] )
+  const [ dataList, setDataList ] = useState( [] )
+  const [ clear, setClear ] = useState( false )
   const [ submitData, setSubmitData ] = useState( { success: '', error: '', loading: false } )
   const [ state, setState ] = useState( { name: '', year: '', speciality: '' } )
   const [ postData, setPostData ] = useState( { experience_year: '', is_freelancer: false, work_place: '', position: '', work_time: { from: '', to: '' }, universities: [] } )
   const { name, year, speciality } = state
   const handleClick = useCallback( () => {
-    if ( state.name !== '' && state.year !== '' && state.speciality !== '' )
+    if ( name !== '' && year !== '' && speciality !== '' && !dataList.find( p => p === state ) )
     {
-      setCollect( [ ...collect, state ] )
+      setDataList( [ ...dataList, state ] )
+      setClear( true )
       setDelBool( '' )
     } else
     {
@@ -36,16 +38,16 @@ const Translator = ( { getData } ) => {
     }
   }, [ name, year, delBool, speciality ] )
   const handleDelete = ( item ) => {
-    console.log( item )
+    // console.log( item )
     setDelBool( item )
-    let data = collect.filter( prev => prev !== item )
-    setCollect( data )
+    let data = dataList.filter( prev => prev !== item )
+    setDataList( data )
   }
-  console.log( collect )
+  // console.log( dataList )
   useEffect( () => {
-    if ( getData?.success !== '' )
+    if ( getData?.success !== '' && getData?.success?.data?.universities !== null )
     {
-      setCollect( getData?.success?.data?.universities )
+      setDataList( getData?.success?.data?.universities )
       setPostData( () => {
         return {
           ...getData?.success?.data,
@@ -62,24 +64,19 @@ const Translator = ( { getData } ) => {
       experience_year: postData.experience_year?.value,
       is_freelancer: postData.is_freelancer?.value,
       work_time: `${ postData?.from || postData?.work_time?.from } | ${ postData?.to || postData?.work_time?.to }`,
-      universities: collect,
+      universities: dataList,
     }
     putResponse( common.personal.edit.education, dataSubmit, setSubmitData )
   }
-  useEffect( () => {
-    if ( submitData.success !== '' ) toast.success( 'Successfully loaded' )
-    if ( submitData.error !== '' ) toast.success( 'Something went wrong' )
-  }, [ submitData ] )
-  console.log( postData )
-  console.log( getData )
+  useEffect( () => {toastChecker(submitData)}, [ submitData ] )
   return (
     <div>
       {
-        collect?.length > 0 ?
-          collect.map( ( item, index ) => (
+        dataList?.length > 0 ?
+          dataList.map( ( item, index ) => (
             <Grid container spacing={ 1 } key={ index }>
               <Grid item xs={ 12 } sm={ 6 } md={ 5 }>
-                <TextLabeledLoop value={ item?.name } label="Bitigan instituti" />
+                <TextLabeledLoop value={ item?.name } label="Bitirgan instituti" />
               </Grid>
               <Grid item xs={ 12 } sm={ 6 } md={ 3 }>
                 <TextLabeledLoop value={ item?.year } label="Bitirgan yili" />
@@ -103,13 +100,13 @@ const Translator = ( { getData } ) => {
 
       <Grid container spacing={ 1 }>
         <Grid item xs={ 12 } sm={ 6 } md={ 5 }>
-          <TextLabeled setState={ setState } state={ state } field="name" sizeLabel="15px" width="100%" label="Bitigan instituti" placeholder="Bitirgan Oliy ta’lim mussasasini kiriting" />
+          <TextLabeled clear={ clear } setClear={ setClear } setState={ setState } state={ state } field="name" sizeLabel="15px" width="100%" label="Bitirgan instituti" placeholder="Bitirgan Oliy ta’lim mussasasini kiriting" />
         </Grid>
         <Grid item xs={ 12 } sm={ 6 } md={ 3 }>
-          <YearPickerSelected defaultValue="" setState={ setState } state={ state } field="year" sizeLabel="15px" width="100%" label="Bitirgan yili" />
+          <YearPickerSelected clear={ clear } setClear={ setClear } setState={ setState } state={ state } field="year" sizeLabel="15px" width="100%" label="Bitirgan yili" />
         </Grid>
         <Grid item xs={ 12 } sm={ 6 } md={ 3 }>
-          <TextLabeled setState={ setState } state={ state } field="speciality" sizeLabel="15px" width="100%" label="Mutaxassisligi" placeholder="Mutaxassisligizni yozing..." />
+          <TextLabeled clear={ clear } setClear={ setClear } setState={ setState } state={ state } field="speciality" sizeLabel="15px" width="100%" label="Mutaxassisligi" placeholder="Mutaxassisligizni yozing..." />
         </Grid>
         <Grid item xs={ 12 } sm={ 6 } md={ 1 }>
           <FlexContainer width="auto" flexDirection="column" gap="8px" margin="45px 0 0 auto" >
@@ -159,7 +156,7 @@ const Translator = ( { getData } ) => {
               setCollect={ setPostData }
               collect={ setPostData }
               field="experience_year"
-              defaultApiValue={getData?.success?.data ? getData?.success?.data?.experience_year + " yil":false }
+              defaultApiValue={ getData?.success?.data ? getData?.success?.data?.experience_year + " yil" : false }
             />
           </Grid>
           <Grid item xs={ 12 } sm={ 6 } md={ 2 } style={ { position: 'relative', top: 3 } }>
@@ -172,7 +169,7 @@ const Translator = ( { getData } ) => {
               setCollect={ setPostData }
               collect={ setPostData }
               field="is_freelancer"
-              defaultApiValue={getData?.success?.data ?  getData?.success?.data?.is_freelancer ? "Ha" : "Yoq" :false}
+              defaultApiValue={ getData?.success?.data ? getData?.success?.data?.is_freelancer ? "Ha" : "Yoq" : false }
             />
           </Grid>
         </Grid>

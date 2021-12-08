@@ -5,17 +5,21 @@ import {mainGreen} from "../../../styles/global/colors";
     width: 90%;
     margin:50px auto;
     padding-top: 10px;
-     margin-bottom: 50px;
-    .select_div{
-        /* width: 100%; */
-        
+    margin-bottom: 50px;
+    .button_sub{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border:none !important;
+        background-color:transparent !important;
     }
-    .select_date{
-        width: 200px;
+    .select_div{
+        position: relative;
+        bottom:10px; 
     }
     .searchI{
         background-color:${mainGreen};
-        padding: 10px 15px;
+        padding: 15px;
         display: flex;
         justify-content: center;
         align-items: center;

@@ -10,6 +10,9 @@ import TextArea from "../../components/atom/textAreaCom"
 import DoubleCheck from "../../components/molecules/double.check"
 import Checkbox from "../../components/atom/checkbox"
 import Button from "../../components/atom/button"
+import SelectLabeledCountry from "../../components/molecules/select.labeled.country"
+import SelectLabeledCity from "../../components/molecules/select.labeled.country/city"
+import SelectLang from "../../components/molecules/select.labeled/lang"
 import { TextTitle } from '../../styles/textTitle/index.style'
 import { validatorState } from "../../custom/validator"
 import { mediaTextField, mediaTextFieldSec, mediaBtn } from "../../custom/global.media.variables"
@@ -22,8 +25,6 @@ import { post_gid_app_action } from "../../redux/actions"
 import useApi from "../../hooks/response";
 import { useTranslation } from 'react-i18next';
 
-
-
 const Index = () => {
 
     const {t} = useTranslation()
@@ -31,8 +32,7 @@ const Index = () => {
     const [ btnLoader, setBtnLoader ] = useState( false )
     const [ state, setState ] = useState( false );
     const [ collect, setCollect ] = useState( defaultState )
-    const [ country, setCountry ] = useState( {} )
-    const [ region, setRegion ] = useState( {} )
+    const [countryId, setCountryId] = useState(null)
     const { responseHook, setResponseHook } = useApi( 'post_gid_app_reducer' )
     const openModal = useCallback( () => { setState( true ) }, [ state ] )
     const closeModal = useCallback( () => { setState( false ) }, [ state ] )
@@ -42,12 +42,10 @@ const Index = () => {
         setBtnLoader(true)
         let newCollect = {
             ...collect,
-            country: collect?.country?.label,
-            city: collect?.city?.label,
-            languages: collect?.languages.map(item => item.label),
+            languages: collect?.languages.map(item => item.value),
             currency: collect?.currency?.value,
         }
-        console.log(newCollect)
+        // console.log(newCollect)
         const isValid = await userSchema.isValid(newCollect)
         if (!isValid) {
             setError(true)
@@ -55,15 +53,8 @@ const Index = () => {
         }
         else setResponseHook(post_gid_app_action(newCollect))
     }
-    const countries = JSON.parse(localStorage.getItem('countries')).map((item, index) => { return { value: index, label: item.country, ...item } }) || []
-    React.useEffect(() => {
-        if (country) {
-            let array = get_cities(country?.cities);
-            setRegion(array)
-            setCollect({ ...collect, country: { value: country?.value, label: country?.label } })
-        }
-    }, [country])
-    React.useEffect(() => { if (region) { setCollect({ ...collect, city: region }) } }, [region])
+    
+    console.log(collect)
     return (
         <Wrapper onSubmit={ onSubmit }>
             <TextTitle { ...mediaTextField } { ...mediaTextFieldSec } top="60px" bottom="20px"> {t("arizaqoldirish.title")} </TextTitle>
@@ -89,8 +80,24 @@ const Index = () => {
                             </Grid>
                             <Grid item xs={ 12 } sm={ 12 } md={ 7 }>
                                 <Grid container spacing={ 2 }>
-                                    <Grid item xs={ 12 } sm={ 6 }><Select options={ countries } setState={ setCountry } state={ country } placeholder={t("arizaqoldirish.davlat")} errorText={ error ? validatorState( country, 'object', 0, 'Davlat (Shahar) kiritilmagan' ) : null } /></Grid>
-                                    <Grid item xs={ 12 } sm={ 6 }><Select options={ region } setState={ setRegion } state={ region } placeholder={t("arizaqoldirish.shaxarlar")} /></Grid>
+                                    <Grid item xs={ 12 } sm={ 6 }>
+                                        <SelectLabeledCountry
+                                            state={ collect } 
+                                            setState={ setCollect } 
+                                            setCountryId={setCountryId}
+                                            placeholder={t("arizaqoldirish.davlat")} 
+                                            errorText={ error ? validatorState( collect?.country, 'min', 3, 'Davlat (Shahar) kiritilmagan' ) : null } 
+                                        />
+                                    </Grid>
+                                    <Grid item xs={ 12 } sm={ 6 }>
+                                        <SelectLabeledCity
+                                            countryId={countryId}
+                                            setState={ setCollect } 
+                                            state={ collect } 
+                                            isDisabled={countryId === null ? true:false}
+                                            placeholder={t("arizaqoldirish.shaxarlar")} 
+                                        />
+                                    </Grid>
                                 </Grid>
                             </Grid>
                         </Grid>
@@ -110,8 +117,14 @@ const Index = () => {
                                 <div className="title_inner"> {t("arizaqoldirish.Bilishikerak")} </div>
                             </Grid>
                             <Grid item xs={ 12 } sm={ 12 } md={ 7 }>
-                                <Select setCollect={ setCollect } collect={ collect } field="languages" 
-                                placeholder={t("arizaqoldirish.BilishikeralPlac")} isMulti options={ gid_lang_obj } errorText={ error ? validatorState( collect?.languages, 'array', 0, 'Tillar kiritilmagan' ) : null } />
+                                <SelectLang 
+                                    setState={ setCollect } 
+                                    state={ collect } 
+                                    // field="languages" 
+                                    placeholder={t("arizaqoldirish.BilishikeralPlac")} 
+                                    // options={ gid_lang_obj } 
+                                    errorText={ error ? validatorState( collect?.languages, 'array', 0, 'Tillar kiritilmagan' ) : null } 
+                                />
                             </Grid>
                         </Grid>
                         <Grid container spacing={ 1 } alignItems="flex-start" className="wrap-grid">

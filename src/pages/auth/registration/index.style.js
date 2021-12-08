@@ -3,7 +3,7 @@ import {mainGreen} from "../../../styles/global/colors"
 export const Wrapper = styled.div`
     width: 100%;
     min-height: 80vh;
-    margin:20x 0;
+    margin:20px 0;
     display:flex;
     align-items: flex-start;
     justify-content:center;

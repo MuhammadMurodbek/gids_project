@@ -4,23 +4,26 @@ import InDate from '../../components/molecules/dateIn'
 import MyRequests from '../../components/organism/request';
 import noDataImg from "../../assets/img/undraw/no_data.svg"
 import Spinner from "../../components/atom/loading.spinner.line"
-export default function Index({success}) {
+
+export default function Index({success, setCollect, collect, setCallback}) {
     const array_data = success?.data?.results
-    console.log(array_data)
+    const lang = localStorage.getItem('i18nextLng')
+    // console.log(array_data)
     return (
         <Wrapper>
             {
                 success === "" ? <Spinner width={50} height={50}/>:
                 <>
-                    <InDate />
+                    <InDate setCollect={setCollect} collect={ collect } setCallback={setCallback}/>
                     {
                         array_data.length > 0 ?
                             array_data.map((item, index)=>(
                                 <MyRequests
+                                    key={index}
                                     id={item?.id || 0}
                                     manzil={item?.why_need || ''}
                                     name={item?.full_name?.first_name || 'name' + " " + item?.full_name?.last_name || 'last name'}
-                                    gpss={item?.country || 'country' + " " + item?.city || "city"}
+                                    gpss={item?.country_name[lang] +" "+item?.city_name[lang] }
                                     dan={item?.start_date ||'00-00-0000'}
                                     gacha={item?.end_date || '00-00-0000'}
                                     sana=""

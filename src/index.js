@@ -6,10 +6,11 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from "react-redux"
 import store from "./redux/reducers"
 import './i18n'
+import Spinner from "./components/atom/loading.spinner.line"
 
 ReactDOM.render(
   <React.StrictMode>
-    <React.Suspense fallback="loading">
+    <React.Suspense fallback={<div className="spin"><Spinner width="50px" height="50px" marginTop="200px"/></div> }>
       <Provider store={store}>
         <App />
       </Provider>
