@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
     display:flex;
     align-items: flex-start;
     justify-content:center;
-
+    
     .sc-cxFLGX.dhdUK{
         margin:35px 0;
     }
