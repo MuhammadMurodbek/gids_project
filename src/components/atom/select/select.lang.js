@@ -4,8 +4,7 @@ import { Wrapper } from "./index.style";
 import "./style.css";
 
 const Index = (props) => {
-  const {width,paddingX, margin,backgroundColor,setState,state,errorText,defaultApiValue, disableMulti
-  } = props;
+  const {width,paddingX, margin,backgroundColor,setState,field,errorText, disableMulti, setClear, clear} = props;
   const languages = JSON.parse(localStorage.getItem('lanGlobal'))
   const lang = localStorage.getItem('i18nextLng')
   const [value, setValue] = useState(null);
@@ -23,9 +22,19 @@ const Index = (props) => {
   const handleChange = (e) => {
     // console.log(e)
     setValue(e)
-    if(setState)
+    if(setState){
+      if(field){
+        setState(prev=>{return{...prev, [field]:e}}) 
+      }else
         setState(prev=>{return{...prev, languages:e}})
+    }
   }
+  React.useEffect(()=>{
+    if(clear){
+      setValue(null)
+      setClear(false)
+    }
+  },[clear])
   // console.log(value)
   // console.log(state)
 //   useEffect(() =>{

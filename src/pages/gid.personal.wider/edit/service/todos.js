@@ -43,6 +43,14 @@ const Todos = ({translateType, setTranslateType}) => {
             setItems([...items, item])
         }
     },[item])
+    useEffect(() => {
+        // if(item?.name ==='' || item?.level === ''){
+        //     toast.error("Ma'lumotlarni to'liq kiriting")
+        // }else{
+        // }
+        console.log(item)
+        setItems([...items, item])
+    },[item])
     const handleSubmit = () => {
         setPostApiData({...postApiData, loading: true})
         let postData = {
@@ -58,7 +66,8 @@ const Todos = ({translateType, setTranslateType}) => {
         putResponse(common.personal.edit.services, postData, setPostApiData)
     }
     useEffect(()=>{toastChecker(postApiData)},[postApiData])
-
+    console.log(items)
+    console.log(item)
     return (
         <TodosWrapper>
              {
@@ -79,7 +88,7 @@ const Todos = ({translateType, setTranslateType}) => {
                                         <TextTitle font="16px" fontWeight="300" align="left" top="20px">{prev.name}</TextTitle>
                                     </Grid>
                                     <Grid item xs={12} sm={6}>
-                                        <SelectLabeled options={optionList} defaultApiValue={prev?.level?.label} width="100%" placeholder="Mavzuyim emas.." />
+                                        <SelectLabeled options={optionList} collect={item} setCollect={setItem} field="level" defaultApiValue={prev?.level?.label} width="100%" placeholder="Mavzuyim emas.." />
                                     </Grid>
                                 </Grid>
                             </Grid>
