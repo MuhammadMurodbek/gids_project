@@ -5,7 +5,6 @@ import { TextTitle } from "../../../../../styles/textTitle/index.style"
 import DoubleCheck from "../../../../../components/molecules/double.check"
 import { FlexContainer } from '../../../../../styles/flex.container'
 import { Grid } from '@mui/material'
-import SelectLabeled from "../../../../../components/molecules/select.labeled"
 import SelectLabeledCountry from "../../../../../components/molecules/select.labeled.country"
 import SelectLabeledCity from "../../../../../components/molecules/select.labeled.country/city"
 import DeleteIcon from '@material-ui/icons/Delete';
@@ -13,12 +12,10 @@ import AddIcon from '@material-ui/icons/Add'
 import Button from "../../../../../components/atom/button"
 import TextLabeledLoop from "../../../../../components/atom/text.labeled"
 import { useTranslation } from 'react-i18next'
-import { get_cities } from "../../../../../custom/function";
-import { countries } from "../../../../../custom/constants";
 import { putResponse, getResponse } from "../../../../../hooks/response_get"
 import toast from 'react-hot-toast'
 import FadeIn from 'react-fade-in';
-import {getLabelCountry, getLabelCity } from '../../../../../custom/function'
+import {getLabelCountry, getLabelCity, toastChecker } from '../../../../../custom/function'
 import Spinner from "../../../../../components/atom/loading.spinner.line";
 const GidIndex = () => {
     const { t } = useTranslation()
@@ -84,12 +81,7 @@ const GidIndex = () => {
             setClearValue( true )
         }
     }, [ excursion ] )
-    useEffect( () => {
-        if ( postData.success !== '' ) { toast.success( 'Successfully loaded' ) }
-        if ( postData.error !== '' ) { toast.error( 'Somesthing went wrong' ) }
-    }, [ success, error ] )
-    console.log(value)
-    console.log(state)
+    useEffect( () => {toastChecker(postData)}, [ success, error ] )
     return (
         <Wrapper>
             <Container margin="30px 0 0" padding="10px 0">
