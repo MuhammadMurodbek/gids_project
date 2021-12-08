@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback} from 'react'
 import { Wrapper } from './style'
 import { Container } from "../../../../../styles/container/index.style"
 import { TextTitle } from "../../../../../styles/textTitle/index.style"
@@ -18,7 +18,7 @@ import { countries } from "../../../../../custom/constants";
 import { putResponse, getResponse } from "../../../../../hooks/response_get"
 import toast from 'react-hot-toast'
 import FadeIn from 'react-fade-in';
-import {getLabelCountry, getLabelCity} from '../../../../../custom/function'
+import {getLabelCountry, getLabelCity } from '../../../../../custom/function'
 import Spinner from "../../../../../components/atom/loading.spinner.line";
 const GidIndex = () => {
     const { t } = useTranslation()
@@ -31,27 +31,31 @@ const GidIndex = () => {
     const [countryId, setCountryId] = useState(null)
     const { excursion } = checkItems
     const { success, error } = postData
-    const handleAdd = () => {
+    const handleAdd = useCallback( () => {
         if ( value?.country !== '' && value?.city !== '' )
         {
             setState( [ ...state, value ] )
-            setValue( { country: '', city: '' } )
+            // setValue( { country: '', city: '' } )
             setClearValue( true )
         } else
         {
             toast.error( 'Davlat yoki shahar tanlanmagan' )
         }
-    }
+    },[value, clearValue])
     const handleDelete = ( index ) => {
         let clone = state.filter( item => item !== index )
         setState( clone )
     }
     const handleSubmit = () => {
+        let cloneState = state.map( item => { return{
+            city:item.city,
+            country:item.country,
+        }})
         setPostData( { ...postData, loading: true } )
         const { consecutive_translate, synchronous_translate, written_translate } = checkItems
         if ( excursion )
         {
-            putResponse( '/api/gids/edit/service/', { ...checkItems, excursion: state }, setPostData )
+            putResponse( '/api/gids/edit/service/', { ...checkItems, excursions: cloneState }, setPostData )
         } else
         {
             putResponse( '/api/gids/edit/service/', {
@@ -66,6 +70,12 @@ const GidIndex = () => {
     useEffect( () => {
         setCheckItems( { ...checkItems, ...getData?.success?.data } )
         // setState( getData?.success?.data?.excursions )
+        console.log( getData?.success?.data)
+        let array = getData?.success?.data?.excursions?.map(item=>{return{
+            city: parseInt(item.city),
+            country: parseInt(item.country),
+        }})
+        setState(array)
     }, [ getData ] )
     useEffect( () => {
         if ( !excursion )
@@ -78,6 +88,7 @@ const GidIndex = () => {
         if ( postData.success !== '' ) { toast.success( 'Successfully loaded' ) }
         if ( postData.error !== '' ) { toast.error( 'Somesthing went wrong' ) }
     }, [ success, error ] )
+    console.log(value)
     console.log(state)
     return (
         <Wrapper>
@@ -120,11 +131,13 @@ const GidIndex = () => {
                                                     <Grid container spacing={ 1 } key={ index }>
                                                         <Grid item xs={ 12 } sm={ 6 } md={ 6 }>
                                                             <TextLabeledLoop 
-                                                            label={ t( "xizmatlar.mamalakatlargaEkskurs" ) } value={ getLabelCountry(item?.country) || null } />
+                                                            label={ t( "xizmatlar.mamalakatlargaEkskurs" ) } value={ getLabelCountry(item?.country) || item?.country_name?.label } />
                                                         </Grid>
                                                         <Grid item xs={ 12 } sm={ 6 } md={ 5 }>
                                                             <TextLabeledLoop 
-                                                            label={ t( "xizmatlar.shaharlar" ) } value={ getLabelCity(item?.city)} />
+                                                            label={ t( "xizmatlar.shaharlar" ) } value={ 
+                                                                getLabelCity(item?.country, item?.city) || item?.city_name?.label
+                                                            } />
                                                         </Grid>
                                                         <Grid item xs={ 12 } sm={ 12 } md={ 1 }>
                                                             <FlexContainer width="100%" alignItems="flex-end" margin="44px 0 0 0">
