@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { DatePicker } from 'antd';
 import {Wrapper } from './style'
 function SwitchablePicker (props) {
-    const {state, setState, field, defaultValue} = props;
+    const {state, setState, field, defaultValue, placeholder} = props;
     const handleChange = (data) => {
         setState({...state, [field]:data})
     }
@@ -13,6 +13,7 @@ function SwitchablePicker (props) {
                 picker='year' 
                 placeholder={defaultValue ? defaultValue:'Select year'}
                 onChange={(event, data) => handleChange(data)}
+                placeholder={placeholder}
             />
         </Wrapper>
     );

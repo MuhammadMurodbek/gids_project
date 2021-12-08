@@ -1,21 +1,21 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback} from 'react'
 import { Wrapper } from './style'
 import { Container } from "../../../../../styles/container/index.style"
 import { TextTitle } from "../../../../../styles/textTitle/index.style"
 import DoubleCheck from "../../../../../components/molecules/double.check"
 import { FlexContainer } from '../../../../../styles/flex.container'
 import { Grid } from '@mui/material'
-import SelectLabeled from "../../../../../components/molecules/select.labeled"
+import SelectLabeledCountry from "../../../../../components/molecules/select.labeled.country"
+import SelectLabeledCity from "../../../../../components/molecules/select.labeled.country/city"
 import DeleteIcon from '@material-ui/icons/Delete';
 import AddIcon from '@material-ui/icons/Add'
 import Button from "../../../../../components/atom/button"
 import TextLabeledLoop from "../../../../../components/atom/text.labeled"
 import { useTranslation } from 'react-i18next'
-import { get_cities } from "../../../../../custom/function";
-import { countries } from "../../../../../custom/constants";
 import { putResponse, getResponse } from "../../../../../hooks/response_get"
 import toast from 'react-hot-toast'
 import FadeIn from 'react-fade-in';
+import {getLabelCountry, getLabelCity, toastChecker } from '../../../../../custom/function'
 import Spinner from "../../../../../components/atom/loading.spinner.line";
 const GidIndex = () => {
     const { t } = useTranslation()
@@ -24,30 +24,35 @@ const GidIndex = () => {
     const [ value, setValue ] = useState( { country: '', city: '' } )
     const [ getData, setGetData ] = useState( { success: '', error: '' } )
     const [ postData, setPostData ] = useState( { success: '', error: '', loading: false } )
-    const [ checkItems, setCheckItems ] = useState( { excursions: false, consecutive_translate: false, synchronous_translate: false, written_translate: false } )
-    const { excursions } = checkItems
+    const [ checkItems, setCheckItems ] = useState( { excursion: false, consecutive_translate: false, synchronous_translate: false, written_translate: false } )
+    const [countryId, setCountryId] = useState(null)
+    const { excursion } = checkItems
     const { success, error } = postData
-    const handleAdd = () => {
+    const handleAdd = useCallback( () => {
         if ( value?.country !== '' && value?.city !== '' )
         {
-            setState( [ ...state, { country: value?.country?.label, city: value?.city?.label } ] )
-            setValue( { country: '', city: '' } )
+            setState( [ ...state, value ] )
+            // setValue( { country: '', city: '' } )
             setClearValue( true )
         } else
         {
             toast.error( 'Davlat yoki shahar tanlanmagan' )
         }
-    }
+    },[value, clearValue])
     const handleDelete = ( index ) => {
         let clone = state.filter( item => item !== index )
         setState( clone )
     }
     const handleSubmit = () => {
+        let cloneState = state.map( item => { return{
+            city:item.city,
+            country:item.country,
+        }})
         setPostData( { ...postData, loading: true } )
         const { consecutive_translate, synchronous_translate, written_translate } = checkItems
-        if ( excursions )
+        if ( excursion )
         {
-            putResponse( '/api/gids/edit/service/', { ...checkItems, excursions: state }, setPostData )
+            putResponse( '/api/gids/edit/service/', { ...checkItems, excursions: cloneState }, setPostData )
         } else
         {
             putResponse( '/api/gids/edit/service/', {
@@ -61,19 +66,22 @@ const GidIndex = () => {
     useEffect( () => { getResponse( '/api/gids/edit/service/', setGetData ) }, [] )
     useEffect( () => {
         setCheckItems( { ...checkItems, ...getData?.success?.data } )
-        setState( getData?.success?.data?.excursions )
+        // setState( getData?.success?.data?.excursions )
+        console.log( getData?.success?.data)
+        let array = getData?.success?.data?.excursions?.map(item=>{return{
+            city: parseInt(item.city),
+            country: parseInt(item.country),
+        }})
+        setState(array)
     }, [ getData ] )
     useEffect( () => {
-        if ( !excursions )
+        if ( !excursion )
         {
             setValue( { country: '', city: '' } )
             setClearValue( true )
         }
-    }, [ excursions ] )
-    useEffect( () => {
-        if ( postData.success !== '' ) { toast.success( 'Successfully loaded' ) }
-        if ( postData.error !== '' ) { toast.error( 'Somesthing went wrong' ) }
-    }, [ success, error ] )
+    }, [ excursion ] )
+    useEffect( () => {toastChecker(postData)}, [ success, error ] )
     return (
         <Wrapper>
             <Container margin="30px 0 0" padding="10px 0">
@@ -109,17 +117,19 @@ const GidIndex = () => {
                                 <>
                                     {
                                         state ?
-                                            state.map( ( item, index ) => (
+                                            state?.map( ( item, index ) => (
                                                 <>
                                                 <FadeIn>
                                                     <Grid container spacing={ 1 } key={ index }>
                                                         <Grid item xs={ 12 } sm={ 6 } md={ 6 }>
                                                             <TextLabeledLoop 
-                                                            label={ t( "xizmatlar.mamalakatlargaEkskurs" ) } value={ item?.country } />
+                                                            label={ t( "xizmatlar.mamalakatlargaEkskurs" ) } value={ getLabelCountry(item?.country) || item?.country_name?.label } />
                                                         </Grid>
                                                         <Grid item xs={ 12 } sm={ 6 } md={ 5 }>
                                                             <TextLabeledLoop 
-                                                            label={ t( "xizmatlar.shaharlar" ) } value={ item?.city } />
+                                                            label={ t( "xizmatlar.shaharlar" ) } value={ 
+                                                                getLabelCity(item?.country, item?.city) || item?.city_name?.label
+                                                            } />
                                                         </Grid>
                                                         <Grid item xs={ 12 } sm={ 12 } md={ 1 }>
                                                             <FlexContainer width="100%" alignItems="flex-end" margin="44px 0 0 0">
@@ -141,7 +151,15 @@ const GidIndex = () => {
 
                                     <Grid container spacing={ 1 } >
                                         <Grid item xs={ 12 } sm={ 6 } md={ 6 }>
-                                            <SelectLabeled
+                                            <SelectLabeledCountry
+                                                isDisabled={!checkItems?.excursion}
+                                                className="selects"
+                                                setCountryId={setCountryId}
+                                                setState={setValue} 
+                                                state={value}
+                                                placeholder={t("kengaytirlgan_Q.DavlatniTanlang")}
+                                            />
+                                            {/* <SelectLabeled
                                                 setClearValue={ setClearValue }
                                                 clearValue={ clearValue }
                                                 options={ countries }
@@ -154,10 +172,18 @@ const GidIndex = () => {
                                                 marginLabel="12px 0"
                                                 label={ t( "xizmatlar.mamalakatlargaEkskurs" ) }
                                                 placeholder={ t( "xizmatlar.mamlakatPlace" ) }
-                                            />
+                                            /> */}
                                         </Grid>
                                         <Grid item xs={ 12 } sm={ 6 } md={ 5 }>
-                                            <SelectLabeled
+                                            <SelectLabeledCity
+                                                className="selects"
+                                                countryId={countryId}
+                                                setState={setValue}
+                                                state={value} 
+                                                isDisabled={countryId === null ? true:false}
+                                                placeholder={t("kengaytirlgan_Q.ShaharniTanlang")}
+                                            />
+                                            {/* <SelectLabeled
                                                 setClearValue={ setClearValue }
                                                 clearValue={ clearValue }
                                                 collect={ value }
@@ -170,10 +196,10 @@ const GidIndex = () => {
                                                 marginLabel="12px 0"
                                                 label={ t( "xizmatlar.shaharlar" ) }
                                                 placeholder={ t( "xizmatlar.shaharlarSelect" ) }
-                                            />
+                                            /> */}
                                         </Grid>
                                         <Grid item xs={ 12 } sm={ 12 } md={ 1 }>
-                                            <FlexContainer width="100%" alignItems="flex-end" margin="46px 0 0 0">
+                                            <FlexContainer width="100%" alignItems="flex-end" margin="11px 0 0 0">
                                                 <Button paddingIcon="10px" onClick={ handleAdd }>
                                                     <AddIcon className="icon" />
                                                 </Button>

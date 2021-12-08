@@ -1,7 +1,6 @@
 import { Grid } from '@material-ui/core'
 import React, { useState } from 'react'
 import { Wrapper } from './style'
-import TextLabeled from "../../../../components/molecules/input.labeled"
 import Button from "../../../../components/atom/button"
 import { FlexContainer } from '../../../../styles/flex.container'
 import DeleteIcon from '@material-ui/icons/Delete';
@@ -15,21 +14,15 @@ import { postResponse, getResponse, deleteResponse } from "../../../../hooks/res
 import uuid from 'react-uuid'
 import { selection, SELECTION } from "./_constants"
 import Spinner from "../../../../components/atom/loading.spinner.line";
-import toast from 'react-hot-toast'
 import FadeIn from 'react-fade-in';
 import Translator from "./_translator"
 import { common } from "../../../../custom/url"
 import {toastChecker} from "../../../../custom/function"
 import {getLabelLang} from "../../../../custom/function"
-// import { TransitionGroup } from 'react-transition-group';
 const Index = () => {
 
     const { t } = useTranslation();
-    // console.log( uuid() )
     const getRole = JSON.parse( localStorage.getItem( "user_token" ) );
-    // const lanOptions = JSON.parse( localStorage.getItem( "lanOptions"))
-    // console.log(langGlobal)
-    // const { role } = getRole;
     const [ clearValue, setClearValue ] = useState( false )
     const [ callback, setCallback ] = useState( false )
     const [ getData, setGetData ] = useState( { success: '', error: '' } )
@@ -74,7 +67,6 @@ const Index = () => {
             setState( data )
         }
     }, [ getData ] )
-    console.log(state)
     return (
         <Wrapper>
             <Container padding="10px 0">
@@ -116,30 +108,11 @@ const Index = () => {
                                     state={ value }
                                     disableMulti
                                     label="Tilni tanlang"
-                                    // field="languages" 
                                     placeholder={ t( "arizaqoldirish.BilishikeralPlac" ) }
-                                    // options={ gid_lang_obj } 
-                                    // errorText={ error ? validatorState( value?.languages, 'array', 0, 'Tillar kiritilmagan' ) : null }
                                 />
-                                {/* <TextLabeled
-                                    value={ value?.languages }
-                                    state={ value }
-                                    setState={ setValue }
-                                    field="name"
-                                    sizeLabel="15px" width="100%"
-                                    label={ t( "TillarniBilish.til" ) }
-                                    placeholder={ t( "TillarniBilish.tilPlace" ) }
-                                /> */}
+                               
                             </Grid>
                             <Grid item xs={ 12 } sm={ 6 } md={ 5 }>
-                                {/* <SelectLang
-                                    setState={ setValue }
-                                    state={ value }
-                                    // field="languages" 
-                                    placeholder={ t( "arizaqoldirish.BilishikeralPlac" ) }
-                                    // options={ gid_lang_obj } 
-                                    // errorText={ error ? validatorState( value?.languages, 'array', 0, 'Tillar kiritilmagan' ) : null }
-                                /> */}
                                 <SelectLabeled
                                     setClearValue={ setClearValue }
                                     clearValue={ clearValue }

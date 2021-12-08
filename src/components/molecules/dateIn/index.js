@@ -7,17 +7,18 @@ import { useTranslation } from 'react-i18next'
 import Selection from "../../extended.search/select.with.requests"
 import { useHistory } from 'react-router-dom'
 
-export default function Index({ setCollect, collect, setCallback }) {
+export default function Index({setCollect, collect, setCallback, url}) {
     const history = useHistory()
     const { t } = useTranslation()
     const handleSubmit = () => {
-        setCallback(prev => !prev)
-        history.push(`/gid-personal/?country=${collect?.country}&city=${collect?.city}&date_after=${collect?.date_after}&date_before=${collect?.date_before}`)
+        if(setCallback) setCallback(prev=>!prev)
+        let checkerUrl = url ? url : 'gid-personal'
+        history.push(`/${checkerUrl}/?country=${collect?.country}&city=${collect?.city}&date_after=${collect?.date_after}&date_before=${collect?.date_before}`)
     }
     return (
         <Wrapper>
             <Grid container justifyContent="center" alignItems="center" spacing={1} direction="row" >
-                <div className="select_div">
+                <div className="select_div">    
                     <Selection setState={setCollect} state={collect} />
                 </div>
                 <div className="select_date">

@@ -11,13 +11,14 @@ const Index = (props) => {
   const country = JSON.parse(localStorage.getItem('countryGlobal'))
   const lang = localStorage.getItem('i18nextLng')
   const [value, setValue] = useState(null);
-  let citiesValue = country.find(prev=>prev.id === countryId) || null
+  let citiesValue = country?.find(prev=>prev.id === countryId) || null
   let options = citiesValue?.cities?.map((val,index)=>{
     return{
         value:index+1,
         label:val[lang]
     }
   })||null
+  localStorage.setItem('cityOptions', JSON.stringify(options))
   // console.log(country)
   // console.log(citiesValue)
   console.log(options)
