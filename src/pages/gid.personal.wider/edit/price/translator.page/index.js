@@ -47,9 +47,7 @@ const Index = () => {
         // console.log(postData)
         postResponse('/api/translators/edit/cost/', postData, setPost)
     }
-    useEffect(()=>{
-        toastChecker(post)
-    },[post])
+    useEffect(()=>{toastChecker(post)},[post])
     // console.log(postCollect)
     return (
         <Wrapper>
@@ -77,7 +75,7 @@ const Index = () => {
                 
             }
             <Container width="100%" padding="10px 20px" margin="20px 0 0 0" textAlign="right">
-                <Button onClick={handleSubmit}>Saqlash</Button>
+                <Button loader={post?.loader} onClick={handleSubmit}>Saqlash</Button>
             </Container>
         </Wrapper>
     )
