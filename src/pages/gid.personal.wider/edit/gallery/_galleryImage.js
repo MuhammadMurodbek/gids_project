@@ -21,9 +21,6 @@ const Gallery = ({role}) => {
             setList( imagesList )
         }
     }, [ state ] )
-    // function onSelectImage ( index, image ) {
-    //     console.log( index, image )
-    // }
     return (
         <div>
             <ImageGallery list={list} setCallback={setCallback} role={role}/>
