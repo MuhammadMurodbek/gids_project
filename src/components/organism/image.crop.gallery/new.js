@@ -15,7 +15,7 @@ const Demo = ({loading, setLoading, list, setCallback, role}) => {
     setLoading(true)
     const form = new FormData()
     form.append('image',e)
-    postResponse(`/api/${role}s/edit/gallery/`, form, setUrl)
+    postResponse(`/api/${role}s/edit/certificate/`, form, setUrl)
   }
   useEffect(()=>{
     if(list.length > 0 && url?.success!==''){

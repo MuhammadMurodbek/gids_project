@@ -4,7 +4,7 @@ import ReactPlayer from 'react-player/lazy'
 import { useTranslation } from 'react-i18next'
 import Gallery from "./_gallery"
 import {getResponse} from "../../../../hooks/response_get"
-
+import GroupImageUpload from "./_galleryImage"
 const Index = () => {
     const [upload, setUpload] = useState({success:'', error:''})
     const { t } = useTranslation()
@@ -19,6 +19,8 @@ const Index = () => {
             <div style={{width: '100%', marginTop: '30px', height: 'auto', display: 'flex', alignItems: 'center', justifyContent:'center' }}>
                 <ReactPlayer  width='70%' height='auto' controls url={upload?.success?.data?.video} />
             </div>
+            <div style={{margin:'150px 0 15px', fontWeight:'bold'}}>Galereyangiz</div>
+            <GroupImageUpload role={ getRole?.role } />
         </Wrapper>
     )
 }

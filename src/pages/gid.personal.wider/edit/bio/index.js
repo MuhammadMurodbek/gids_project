@@ -145,7 +145,8 @@ const Index = () => {
                       setCountryId={setCountryId}
                       setState={setState} 
                       state={state}
-                      placeholder={t("kengaytirlgan_Q.DavlatniTanlang")}
+                      placeholder="Davlatni kiriting"
+                      label="Davlatni kiriting"
                       defaultApiValue={{value:state?.country, label:state?.country_name}}
                       // errorText={ error ? validatorState( state.c, 'min', 3, 'Sana kiritilmagan' ) : null }
                   />
@@ -158,6 +159,7 @@ const Index = () => {
                         setState={setState}
                         state={state} 
                         isDisabled={countryId === null ? true:false}
+                        label="Shaharni kiriting"
                         placeholder={t("kengaytirlgan_Q.ShaharniTanlang")}
                         defaultApiValue={{value:state?.city, label:state?.city_name}}
                     />

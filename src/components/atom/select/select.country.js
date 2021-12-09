@@ -4,7 +4,7 @@ import { Wrapper } from "./index.style";
 import "./style.css";
 
 const Index = (props) => {
-  const {width,paddingX, margin,backgroundColor,setState, setCountryId,errorText,field,
+  const {width,paddingX, margin,backgroundColor,setState, setCountryId,errorText,field, placeholder,
     pcolor,
     defaultApiValue
   } = props;
@@ -40,6 +40,7 @@ const Index = (props) => {
     >
       <Select
         {...props}
+        placeholder={placeholder}
         options={options}
         value={value}
         onChange={handleChange}
