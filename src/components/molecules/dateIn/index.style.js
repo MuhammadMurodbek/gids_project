@@ -12,6 +12,7 @@ import {mainGreen} from "../../../styles/global/colors";
         justify-content: center;
         border:none !important;
         background-color:transparent !important;
+        cursor:pointer !important;
     }
     .select_div{
         position: relative;

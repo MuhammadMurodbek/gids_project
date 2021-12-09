@@ -3,17 +3,18 @@ import styled from "styled-components"
 import {TextTitle} from "../../../../../styles/textTitle/index.style"
 import InputLabeled from "../../../../../components/molecules/input.labeled"
 import Selection from "../../../../../components/atom/select"
+import {currency} from "../../../../../custom/constants"
 const PriceCurrency = (props) => {
-    const {title} = props 
+    const {title, setState, state, idK, fieldS, fieldIn} = props 
     return (
         <Wrapper>
             <div>
                 <TextTitle font="14px" align="left" position="relative" p_top="20px">{title}</TextTitle>
                 <div className="wrap_class">
-                    <InputLabeled width="100px" placeholder="50" typeNumber />
+                    <InputLabeled setState={setState} state={state} field={fieldIn} idK={idK} width="100%" placeholder="50" typeNumber />
                     <div className="wrap_class_inner">
-                    <Selection width="120px" placeholder="$" /></div>
-                </div>
+                        <Selection width="100%" options={currency} placeholder="$" setCollect={setState} collect={state} idK={idK} field={fieldS}/></div>
+                    </div>
             </div>
         </Wrapper>
     )
@@ -22,7 +23,9 @@ const PriceCurrency = (props) => {
 export default PriceCurrency
 
 export const Wrapper = styled.div`
+width: 100%;
     &>div{
+        width: 100%;
         position: relative;
         top:-3px;
     }

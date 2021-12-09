@@ -43,6 +43,17 @@ const Todos = ({translateType, setTranslateType}) => {
             setItems([...items, item])
         }
     },[item])
+    useEffect(() => {
+        if(item.hasOwnProperty("idK")){
+            let update = items.map(prev=>{
+                if(prev.name===item.idK){
+                   prev.level=item.level
+                }
+                return prev
+            })
+            setItems([...update])
+        }
+    },[item])
     const handleSubmit = () => {
         setPostApiData({...postApiData, loading: true})
         let postData = {
@@ -54,11 +65,10 @@ const Todos = ({translateType, setTranslateType}) => {
                 }
             }))
         }
-        console.log(postData)
+        // console.log(postData)
         putResponse(common.personal.edit.services, postData, setPostApiData)
     }
     useEffect(()=>{toastChecker(postApiData)},[postApiData])
-
     return (
         <TodosWrapper>
              {
@@ -79,7 +89,7 @@ const Todos = ({translateType, setTranslateType}) => {
                                         <TextTitle font="16px" fontWeight="300" align="left" top="20px">{prev.name}</TextTitle>
                                     </Grid>
                                     <Grid item xs={12} sm={6}>
-                                        <SelectLabeled options={optionList} defaultApiValue={prev?.level?.label} width="100%" placeholder="Mavzuyim emas.." />
+                                        <SelectLabeled idK={prev.name} options={optionList} collect={item} setCollect={setItem} field="level" defaultApiValue={prev?.level?.label} width="100%" placeholder="Mavzuyim emas.." />
                                     </Grid>
                                 </Grid>
                             </Grid>
@@ -90,18 +100,18 @@ const Todos = ({translateType, setTranslateType}) => {
                 <Container padding="10px 0">
                     <Box sx={{ flexGrow: 1 }}>
                         <Grid container columnSpacing={3} alignItems="center" justifyContent="space-between">
-                            <Grid item xs={12} sm={6}>
+                            <Grid item xs={12} sm={10} md={6}>
                                 <Grid container spacing={1}>
-                                    <Grid item xs={12} sm={6}>
+                                    <Grid item xs={12} sm={6} md={6} >
                                         <InputLabeled state={item} setState={setItem} field="name" width="100%" placeholder="Text..." />
                                     </Grid>
-                                    <Grid item xs={12} sm={6}>
+                                    <Grid item xs={12} sm={6} md={6}>
                                         <Select options={optionList} collect={item} setCollect={setItem} field="level" margin="24px 0 0 0" width="100%" placeholder="Mavzuyim emas.." />
                                     </Grid>
                                 </Grid>
                             </Grid>
 
-                            <Grid textAlign="right" item xs={12} sm={1}>
+                            <Grid textAlign="right" item xs={12} sm={1} md={1}>
                                 <Button onClick={handleAdd} style={{ marginTop: 40, padding: 13 }} paddingIcons="15px">
                                     <AddIcon className="icon" />
                                 </Button>

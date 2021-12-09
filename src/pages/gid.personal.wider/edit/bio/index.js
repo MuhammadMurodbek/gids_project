@@ -4,7 +4,8 @@ import { Wrapper } from "./style";
 import InputLabeled from "../../../../components/molecules/input.labeled";
 import CalendarLabel from "../../../../components/molecules/calendar.labeled";
 import DoubleRadio from "../../../../components/molecules/double.radio.labeled";
-import SelectLabeled from "../../../../components/molecules/select.labeled";
+import SelectLabeledCountry from "../../../../components/molecules/select.labeled.country";
+import SelectLabeledCity from "../../../../components/molecules/select.labeled.country/city";
 import { Container } from "../../../../styles/container/index.style";
 import TextArea from "../../../../components/molecules/area.labeled";
 import { TextTitle } from "../../../../styles/textTitle/index.style";
@@ -13,93 +14,51 @@ import Button from "../../../../components/atom/button";
 import { post_bio_data_action } from "../../../../redux/actions";
 import useApiData from "../../../../hooks/response";
 import ImageCrop from "../../../../components/organism/image.crop/new";
-import { countries } from "../../../../custom/constants";
-import { get_cities } from "../../../../custom/function";
 import { getResponse, postResponse } from "../../../../hooks/response_get";
 import Spinner from "../../../../components/atom/loading.spinner.line";
 import toast from "react-hot-toast";
 import { validatorState } from "../../../../custom/validator"
 import { userSchema } from "./_validator"
 import { defaultObj } from "./_const"
-import TextLabeledLoop from "../../../../components/atom/text.labeled"
-import { EditOutlined } from '@ant-design/icons'
+// import TextLabeledLoop from "../../../../components/atom/text.labeled"
+// import { EditOutlined } from '@ant-design/icons'
 import FadeIn from 'react-fade-in';
 import Translator from './_translator';
+import { useTranslation } from 'react-i18next'
 const Index = () => {
-  const [ fileList, setFileList ] = useState( [] );
-  const [ postImage, setPostImage ] = useState( { success: '', error: '' } );
-  const [trains, setTrains ] = useState([])
+  const {t} = useTranslation()
+  const [countryId, setCountryId] = useState(null)
   const [ state, setState ] = useState( defaultObj );
   const [ error, setError ] = useState( false )
   const [ editIcon, setEditIcon ] = useState( false )
   const getRole = JSON.parse( localStorage.getItem( "user_token" ) );
   const [ apiValue, setApiValue ] = useState( { success: "", error: "" } );
   const { responseHook, setResponseHook } = useApiData( "post_bio_data_reducer" );
-  const { country } = state;
+
   useEffect( () => { getResponse( `/api/${ getRole?.role }s/edit/about/`, setApiValue ) }, [] );
   React.useMemo( () => {
     if ( apiValue?.success !== "" )
     {
-      let data = apiValue?.success?.data;
-      data.city_api = apiValue?.success?.data?.city;
-      data.country_api = apiValue?.success?.data?.country;
-      setState( data );
+      setState( apiValue?.success?.data );
     }
     if ( apiValue?.error !== "" ) { toast.error( "Ma'lumotlarni yuklashda xatolik mavjud" ); }
   }, [ apiValue ] );
   const handleChange = ( e ) => { setState( { ...state, [ e.target.name ]: e.target.value } ) };
-  React.useEffect( () => {
-    if ( country )
-    {
-      let array = get_cities( country?.cities );
-      setState( ( prev ) => {
-        return { ...prev, city: array };
-      } );
-    }
-  }, [ country ] );
-  React.useEffect( () => {
-    if ( fileList.length > 0 )
-    {
-      let data = fileList[ fileList.length - 1 ];
-      const formData = new FormData();
-      formData.append( 'image', data?.originFileObj );
-      postResponse( `/api/${ getRole?.role }s/edit/gallery/`, formData, setPostImage );
-    }
-  }, [ fileList ] )
   const handleSubmit = async () => {
-    console.log( `Uploading` )
-    let clone = state;
-    let validate_obj = {
-      ...clone,
-      country: clone?.country?.label || clone?.country_api,
-      city: clone?.city?.label || clone?.city_api,
-    };
-    const isValid = await userSchema.isValid( validate_obj )
+    const isValid = await userSchema.isValid( state )
+    // console.log(isValid)
     if ( !isValid )
     {
       setError( true )
       toast.error( 'Something went wrong' )
+    }else{
+      let clone = state
+      delete clone.image
+      setResponseHook( post_bio_data_action( clone ) );
     }
-    else
-    {
-      let check_img = clone.hasOwnProperty( "imageFile" );
-      const formData = new FormData();
-      if ( check_img ) formData.append( "image", clone?.imageFile );
-      formData.append( "first_name", clone?.first_name );
-      formData.append( "last_name", clone?.last_name );
-      formData.append( "middle_name", clone?.middle_name );
-      formData.append( "birthday", clone?.birthday );
-      formData.append( "gender", clone?.gender );
-      formData.append( "country", clone?.country?.label || clone?.country_api );
-      formData.append( "city", clone?.city?.label || clone?.city_api );
-      formData.append( "bio", clone?.bio );
-      if(getRole?.role!=='gid') formData.append( "trainings",JSON.stringify(clone?.trainings));
-      setResponseHook( post_bio_data_action( formData ) );
-    }
-    console.log(clone)
   };
-
-  // console.log(fileList[fileList.length - 1])
+  // console.log(state)
+  // console.log(responseHook)
   return (
     <Wrapper onSubmit={ ( e ) => e.preventDefault() }>
       {apiValue?.success === "" ? (
@@ -173,55 +132,34 @@ const Index = () => {
                     value2="female"
                     state={ state }
                     setState={ setState }
+                    errorText={ error ? validatorState( state.gender, 'min', 3, 'Jinsi tanlanmagan' ) : null }
                   />
                 </Grid>
                 <Grid item xs={ 12 } md={ 4 }></Grid>
               </Grid>
-              {
-                state?.country_api && state?.city_api ? (
-                  <Grid container spacing={ 1 }>
-                    <Grid item xs={ 12 } md={ 4 }>
-                      <TextLabeledLoop label="Mamlakat" value={ state?.country_api } placeholder="Mamlakat kiriting" />
-                    </Grid>
-                    <Grid item xs={ 12 } md={ 4 }>
-                      <TextLabeledLoop label="Shahar" value={ state?.city_api } />
-                    </Grid>
-                    <Grid item xs={ 12 } md={ 4 } style={ { alignSelf: 'flex-end' } }>
-                      <div className="edit_div" onClick={ () => setEditIcon( !editIcon ) }>
-                        <EditOutlined className="icon_edit" />
-                        {/* <span>edit</span> */ }
-                      </div>
-                    </Grid>
-                  </Grid>
-                ) : null
-              }
               <FadeIn visible={ ( state?.country_api && state?.city_api ) ? editIcon : true }>
                 <Grid container spacing={ 1 }>
                   <Grid item xs={ 12 } md={ 4 }>
-                    <SelectLabeled
-                      setCollect={ setState }
-                      field="country"
-                      collect={ state }
-                      options={ countries }
-                      sizeLabel="15px"
-                      width="100%"
-                      label="Mamlakat"
-                      errorText={ error ? validatorState( state?.country, 'object', 0, 'Davlat kiritilmagan' ) : null }
-                    />
+                    <SelectLabeledCountry
+                      className="selects"
+                      setCountryId={setCountryId}
+                      setState={setState} 
+                      state={state}
+                      placeholder={t("kengaytirlgan_Q.DavlatniTanlang")}
+                      defaultApiValue={{value:state?.country, label:state?.country_name}}
+                      // errorText={ error ? validatorState( state.c, 'min', 3, 'Sana kiritilmagan' ) : null }
+                  />
+                    
                   </Grid>
                   <Grid item xs={ 12 } md={ 4 }>
-                    <SelectLabeled
-                      setCollect={ setState }
-                      collect={ state }
-                      isDisabled={ !country?.hasOwnProperty( 'cities' ) }
-                      options={
-                        state?.city ? state?.city : { value: 0, label: "no data" }
-                      }
-                      sizeLabel="15px"
-                      field="city"
-                      width="100%"
-                      label="Shahar"
-
+                    <SelectLabeledCity
+                        className="selects"
+                        countryId={countryId}
+                        setState={setState}
+                        state={state} 
+                        isDisabled={countryId === null ? true:false}
+                        placeholder={t("kengaytirlgan_Q.ShaharniTanlang")}
+                        defaultApiValue={{value:state?.city, label:state?.city_name}}
                     />
                   </Grid>
                   <Grid item xs={ 12 } md={ 4 }></Grid>
@@ -248,7 +186,7 @@ const Index = () => {
             <GroupImageUpload role={ getRole?.role } />
             { getRole?.role !== "gid" ? (
               <>
-                <Translator setTrains={setState}/>
+                <Translator setTrains={setState} trains={state?.trainings}/>
               </>
             ) : null }
             <div className="btnGrop">
