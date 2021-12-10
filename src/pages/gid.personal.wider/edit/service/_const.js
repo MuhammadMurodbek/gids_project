@@ -21,3 +21,21 @@ export const defaultListValue = () => [
     {name:'Sanoat11', level:{ value:'no', label:"Mavzuyim emas"}},
     {name:'Sanoat12', level:{ value:'no', label:"Mavzuyim emas"}},
 ]
+
+export const option_yes = [
+    { value: 1, label: "Ha" },
+    { value: 2, label: "Yoq" }
+]
+export const option_yes_sec = [
+    { value: 'synchronous', label: "Ketma ket" },
+    { value: 'consecutive', label: "Izchil" }
+]
+export const objDefault = {
+    daily_workload: null,
+    can_oral_translate: true,
+    oral_translate_type: 'synchronous',
+    express_order: 'yes',
+    weekend_order: 'yes',
+    edit_text: 'no',
+    always_online: true,
+}

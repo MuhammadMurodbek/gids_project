@@ -6,15 +6,26 @@ import FormControl from '@material-ui/core/FormControl';
 import {CheckboxWrapper, Label} from "./style"
 import {mainGreen} from "../../../styles/global/colors"
 const Index = (props) => {
-    const {label, name1, name2, sizeLabel, marginLabel, setState, state, value1, value2, errorText} = props;
+    const {label, name1, name2, sizeLabel, marginLabel, setState, state, value1, value2, errorText, field} = props;
     const [value, setValue] = React.useState(null);
-    React.useEffect(() => {if(state) setValue(state?.gender)},[state])
+    React.useEffect(() => {
+        if(state && field) {
+            // let val = state[ field] ? 'yes':'no'
+            setValue(state[field])
+        }else{
+            if(state) setValue('yes')
+        }
+    },[state])
     const handleChange = (event) => {
         setValue(event.target.value);
         if(setState) {
-            setState({...state, gender:event.target.value})
+            if(field) {
+                setState({...state, [field]:event.target.value})
+            }else
+                setState({...state, gender:event.target.value})
         }
     }
+    // console.log(value)
     return (
         <CheckboxWrapper>
             <Label margin={marginLabel} size={sizeLabel}>{label}</Label>
