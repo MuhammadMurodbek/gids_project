@@ -14,7 +14,7 @@ import {getResponse, putResponse} from "../../../../hooks/response_get"
 import {common} from "../../../../custom/url"
 import {toastChecker} from "../../../../custom/function"
 import toast from 'react-hot-toast';
-const Todos = ({state}) => {
+const Todos = ({state, setApiValue}) => {
     let arrayList = defaultListValue()
     let optionList = selectValue()
     const [items, setItems] = useState(arrayList)
@@ -22,20 +22,21 @@ const Todos = ({state}) => {
     const [getData, setGetData] = useState({success:'', error:''})
     const getRole = JSON.parse(localStorage.getItem("user_token"));
     const [postApiData, setPostApiData] = useState({ success: '', error: '', loading: false})
-    console.log(state)
-    let obj = {
-        ...state,
-        always_online:state?.always_online?.label==='Ha' ? true:false,
-        can_oral_translate:state?.can_oral_translate?.label==='Ha' ? true:false,
-        edit_text:state?.edit_text==='yes' ? true:false,
-        express_order:state?.express_order==='yes' ? true:false,
-        oral_translate_type:state?.oral_translate_type?.value,
-        weekend_order:state?.weekend_order==='yes' ? true:false
-    }
-    console.log(obj)
+    // console.log(state)
+    // let obj = {
+    //     ...state,
+    //     always_online:state?.always_online?.label==='Ha' ? true:false,
+    //     can_oral_translate:state?.can_oral_translate?.label==='Ha' ? true:false,
+    //     edit_text:state?.edit_text==='yes' ? true:false,
+    //     express_order:state?.express_order==='yes' ? true:false,
+    //     oral_translate_type:state?.oral_translate_type?.value,
+    //     weekend_order:state?.weekend_order==='yes' ? true:false
+    // }
+    // console.log(obj)
     useEffect(()=>{ getResponse(common.personal.edit.services, setGetData )},[])
-    useEffect(()=>{if(getRole.success !== ''){
+    useEffect(()=>{if(getData.success !== ''){
         // setTranslateType({gender:getData?.success?.data?.translate_type})
+        setApiValue(getData?.success?.data)
         let theme = getData?.success?.data?.themes?.map(prev => {
             return {
                 name:prev.name,

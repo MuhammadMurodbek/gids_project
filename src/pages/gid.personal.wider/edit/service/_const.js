@@ -34,8 +34,8 @@ export const objDefault = {
     daily_workload: null,
     can_oral_translate: true,
     oral_translate_type: 'synchronous',
-    express_order: 'yes',
-    weekend_order: 'yes',
-    edit_text: 'no',
+    express_order: null,
+    weekend_order: null,
+    edit_text: null,
     always_online: true,
 }

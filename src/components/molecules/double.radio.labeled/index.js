@@ -6,7 +6,7 @@ import FormControl from '@material-ui/core/FormControl';
 import {CheckboxWrapper, Label} from "./style"
 import {mainGreen} from "../../../styles/global/colors"
 const Index = (props) => {
-    const {label, name1, name2, sizeLabel, marginLabel, setState, state, value1, value2, errorText, field} = props;
+    const {label, name1, name2, sizeLabel, marginLabel, setState, state, value1, value2, errorText, field, defaultApiValue} = props;
     const [value, setValue] = React.useState(null);
     React.useEffect(() => {
         if(state && field) {
@@ -15,7 +15,12 @@ const Index = (props) => {
         }else{
             if(state) setValue('yes')
         }
-    },[state])
+    },[state, field]);
+    React.useEffect(() => {
+        // if(defaultApiValue){
+            setValue(()=>defaultApiValue)
+        // }
+    },[defaultApiValue])
     const handleChange = (event) => {
         setValue(event.target.value);
         if(setState) {
