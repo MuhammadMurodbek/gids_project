@@ -5,13 +5,13 @@ import PriceCurrency from "./price.currency"
 import SelectLabel from '../../../../../components/molecules/select.labeled'
 import { Grid } from '@mui/material';
 import TextLabeledLoop from "../../../../../components/atom/text.labeled"
-import {getResponse} from "../../../../../hooks/response_get"
+import {getResponse, postResponse} from "../../../../../hooks/response_get"
 import Button from "../../../../../components/atom/button"
 import { common } from "../../../../../custom/url"
 import Spinner from "../../../../../components/atom/loading.spinner.line";
 import {getLabelLangLocal, toastChecker} from "../../../../../custom/function"
 import {hours} from "./_const"
-import {postResponse} from "../../../../../hooks/response_get"
+// import {postResponse} from "../../../../../hooks/response_get"
 const Index = () => {
     const [getData, setGetData] = useState( { success: '', error: ''})
     const [postCollect, setPostCollect] = useState([])

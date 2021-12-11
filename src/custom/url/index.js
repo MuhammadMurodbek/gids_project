@@ -13,6 +13,7 @@ export const common = {
             education:`/api/${getRole?.role}s/edit/education/`,
             language:`/api/${getRole?.role}s/edit/language/`,
             services:`/api/${getRole?.role}s/edit/service/`,
+            cost:`/api/${getRole?.role}s/edit/cost/`,
         }
     },
     calendar:{}
