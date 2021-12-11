@@ -14,7 +14,7 @@ import {getResponse, putResponse} from "../../../../hooks/response_get"
 import {common} from "../../../../custom/url"
 import {toastChecker} from "../../../../custom/function"
 import toast from 'react-hot-toast';
-const Todos = ({state, setApiValue}) => {
+const Todos = ({state, setApiValue, setLoad}) => {
     let arrayList = defaultListValue()
     let optionList = selectValue()
     const [items, setItems] = useState(arrayList)
@@ -34,8 +34,9 @@ const Todos = ({state, setApiValue}) => {
     // }
     // console.log(obj)
     useEffect(()=>{ getResponse(common.personal.edit.services, setGetData )},[])
-    useEffect(()=>{if(getData.success !== ''){
-        // setTranslateType({gender:getData?.success?.data?.translate_type})
+    useEffect(()=>{
+        if(getData.success !== ''){
+        setLoad({success:'success', error: ''})
         setApiValue(getData?.success?.data)
         let theme = getData?.success?.data?.themes?.map(prev => {
             return {
