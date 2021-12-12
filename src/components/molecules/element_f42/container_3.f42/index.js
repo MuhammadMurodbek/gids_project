@@ -7,10 +7,15 @@ import cheked from '../../../../assets/img/boglanish/cheked.svg'
 import { Grid } from '@material-ui/core'
 import { useTranslation } from 'react-i18next'
 
-const Index = () => {
+const Index = ({data}) => {
     const { t } = useTranslation()
     const getRole = JSON.parse(localStorage.getItem("user_token"))
-
+    const obj = {
+        no:'Mening mavzuyim emas',
+        great:"A'lo darajada",
+        good:"Yaxshi darajada",
+        low:'Quyi darajada',
+    }
     return (
         <Wrapper>
             <Title text="Xizmatlar" />
@@ -35,8 +40,12 @@ const Index = () => {
                                 </Grid>
                             </FlexContainer>
                             <Text title="Mavzular:" />
-                            <Text display="block" text="Umumiy mavzular - Meni mavzuyim emas" />
-                            <Text display="block" text="Jamiyat va siyosat - Meni mavzuyim emas" />
+                            {
+                                data?.themes?.map((prev, index)=>(
+                                    <Text key={index} display="block" text={prev?.name +"-"+ obj[prev?.level]} />
+                                ))
+                            }
+                            {/* <Text display="block" text="Jamiyat va siyosat - Meni mavzuyim emas" />
                             <Text display="block" text="Iqtisodiyot va moliya - Meni mavzuyim emas" />
                             <Text display="block" text="Huquqshunoslik - Meni mavzuyim emas" />
                             <Text display="block" text="Axborot texnologiyalari - Meni mavzuyim emas" />
@@ -45,7 +54,7 @@ const Index = () => {
                             <Text display="block" text="Neft va gaz - Meni mavzuyim emas" />
                             <Text display="block" text="Iqtisodiyot va moliya - Meni mavzuyim emas" />
                             <Text display="block" text="Ilmiy va texnik adabiyotlar - Meni mavzuyim emas" />
-                            <Text display="block" text="Badiiy adabiyot - Meni mavzuyim emas" />
+                            <Text display="block" text="Badiiy adabiyot - Meni mavzuyim emas" /> */}
                         </>
                     )
                     : null
@@ -55,7 +64,12 @@ const Index = () => {
                     (<>
                         <img src={cheked} alt="adfdd" className="classed" /> <Text title=" Sinxron" /><br />
                         <Text title="Mavzular:" />
-                        <Text display="block" text="Umumiy mavzular - Meni mavzuyim emas" />
+                        {
+                            data?.themes?.map((prev, index)=>(
+                                <Text key={index} display="block" text={prev?.name +"-"+ obj[prev?.level]} />
+                            ))
+                        }
+                        {/* <Text display="block" text="Umumiy mavzular - Meni mavzuyim emas" />
                         <Text display="block" text="Jamiyat va siyosat - Meni mavzuyim emas" />
                         <Text display="block" text="Iqtisodiyot va moliya - Meni mavzuyim emas" />
                         <Text display="block" text="Huquqshunoslik - Meni mavzuyim emas" />
@@ -65,7 +79,7 @@ const Index = () => {
                         <Text display="block" text="Neft va gaz - Meni mavzuyim emas" />
                         <Text display="block" text="Iqtisodiyot va moliya - Meni mavzuyim emas" />
                         <Text display="block" text="Ilmiy va texnik adabiyotlar - Meni mavzuyim emas" />
-                        <Text display="block" text="Badiiy adabiyot - Meni mavzuyim emas" />
+                        <Text display="block" text="Badiiy adabiyot - Meni mavzuyim emas" /> */}
                     </>)
                     : null
             }

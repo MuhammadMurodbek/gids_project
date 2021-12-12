@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 // import { render } from 'react-dom';
 import Gallery from "react-grid-gallery";
 
@@ -63,9 +63,22 @@ const IMAGES = [
 ];
 
 const Index = (props) => {
+  const {data} = props;
+  const [state, setState] = useState([])
+  useEffect(() => {
+    let clone = data?.galleries?.map((prev)=>{
+      return{
+        src:prev.image,
+        thumbnail:prev.image,
+        thumbnailWidth: 200,
+        thumbnailHeight: 200,
+      }
+    })
+    setState(clone)
+  },[data])
   return (
     <div>
-      <Gallery {...props} images={props?.list || IMAGES} />,
+      <Gallery {...props} images={state || props?.list || IMAGES} />,
     </div>
   );
 };
