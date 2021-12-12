@@ -1,14 +1,19 @@
 import React from 'react'
 import ReactPlayer from 'react-player/lazy'
 import {Wrapper} from "./style"
-const Index = () => {
+const Index = (url) => {
+    console.log(url)
     return (
         <Wrapper>
-            <ReactPlayer 
-                url='https://www.youtube.com/watch?v=ysz5S6PUM-U' 
-                width="100%"
-                height="240px"
-            />
+            {
+                url ? 
+                <ReactPlayer 
+                    url= {url?.url} 
+                    controls
+                    width="100%"
+                    height="240px"
+                />:<div>Video yuklanmagan</div>
+            }
         </Wrapper>
     )
 }
