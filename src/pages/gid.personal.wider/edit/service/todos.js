@@ -9,13 +9,13 @@ import Button from "../../../../components/atom/button"
 import styled from "styled-components"
 import AddIcon from '@material-ui/icons/Add'
 import Box from '@mui/material/Box';
-import {selectValue, DefaultListValue} from "./_const";
+import {selectValue, defaultListValue} from "./_const";
 import {getResponse, putResponse} from "../../../../hooks/response_get"
 import {common} from "../../../../custom/url"
 import {toastChecker} from "../../../../custom/function"
 import toast from 'react-hot-toast';
 const Todos = ({translateType, setTranslateType}) => {
-    let arrayList = DefaultListValue()
+    let arrayList = defaultListValue()
     let optionList = selectValue()
     const [items, setItems] = useState(arrayList)
     const [item, setItem] = useState({name:'', level:''})
