@@ -37,17 +37,16 @@ const Index = () => {
         let clone = items.map(prev=>{
             return{
                 id:prev.id,
-                cost_per_page_with:parseInt(prev?.cost_per_page_with),
+                cost_per_page_with:parseFloat(prev?.cost_per_page_with),
                 currency_per_page_with:prev.currency_per_page_with?.value || prev.currency_per_page_with,
-                cost_per_page_without:parseInt(prev?.cost_per_page_without),
+                cost_per_page_without:parseFloat(prev?.cost_per_page_without),
                 currency_per_page_without: prev.currency_per_page_without?.value || prev.currency_per_page_without
             }
         })
+        // console.log(clone)x
         postResponse(common.personal.edit.cost, clone, setPost)
     }
-    useEffect(()=>{
-        toastChecker(post)
-    },[post])
+    useEffect(()=>{ toastChecker(post)},[post])
     // console.log(items)
     return (
         <Wrapper>

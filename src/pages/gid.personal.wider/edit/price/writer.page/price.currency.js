@@ -15,10 +15,11 @@ const PriceCurrency = (props) => {
                     <InputLabeled 
                         type="number"
                         width="100%" 
-                        value={state[fieldIn] || defValueCost}
+                        defaultValue={state[fieldIn] || defValueCost}
                         onChange={(e)=>handleChangeInput(e.target.value, fieldIn, idK)}
                         name={fieldIn}
-                        placeholder="50" 
+                        placeholder="Son kiriting.." 
+                        step="0.001"
                         style={{position: "relative", top:13}} 
                     />
                     <div className="wrap_class_inner">

@@ -41,12 +41,17 @@ function a11yProps(index) {
 
 export default function BasicTabs(props) {
   const { tabs } = props;
+  // const getRole = JSON.parse(localStorage.getItem("user_token"))
   const [value, setValue] = React.useState(0);
-
+  // console.log(tabs)
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
+  // React.useEffect(()=>{
+  //   if(getRole?.role === 'writer'){
+  //     tabs.pop()
+  //   }
+  // },[])
   return (
     <Wrapper>
       <Box sx={{ width: "100%" }}>

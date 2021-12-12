@@ -37,3 +37,30 @@ export const tabs = [
         component:<Gallery/>,
     },
 ];
+export const tabsWriter = [
+    {
+        label:<div className="border-div first">Men <br className="br"/> haqimda</div>,
+        component:<Bio/>,
+    },
+    {
+        label:<div className="border-div">Kontaktlar</div>,
+        component:<Contact/>,
+    },
+    {
+        label:<div className="border-div">Ish tajribasi</div>,
+        component:<Experience/>,
+    },
+    {
+        label:<div className="border-div">Tillar bilishi</div>,
+        component:<Lang/>,
+    },
+    {
+        label:<div className="border-div">Xizmatlar</div>,
+        component:<Service/>,
+    },
+    
+    {
+        label:<div className="border-div">Narxlar</div>,
+        component:<Price/>,
+    },
+];
