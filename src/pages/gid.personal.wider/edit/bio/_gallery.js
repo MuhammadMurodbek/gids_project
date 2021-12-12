@@ -15,7 +15,7 @@ const Gallery = ({role}) => {
             let imagesList = state?.success?.data?.certificates?.map( ( item ) => {
                 return {
                     id: item.id,
-                    src:'http://165.232.76.226'+item.image,
+                    src:item.image,
                 }
             } )
             setList( imagesList )
@@ -27,7 +27,7 @@ const Gallery = ({role}) => {
     // }
     return (
         <div>
-            <ImageGallery list={list} setCallback={setCallback} role={role}/>
+            <ImageGallery list={list} setCallback={setCallback} role={role} url="certificate"/>
             {/* <ImageCrop setState={ setState } state={ state } /> */}
         </div>
     )

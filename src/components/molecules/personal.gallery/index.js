@@ -4,7 +4,7 @@ import ImageCrop from "../../organism/image.crop.gallery/new";
 import {CloseCircleFilled} from "@ant-design/icons"
 import {deleteResponse} from "../../../hooks/response_get"
 import 'animate.css';
-function App({list, setCallback, role}) {
+function App({list, setCallback, role, url}) {
   const [currentImage, setCurrentImage] = useState(0);
   const [isViewerOpen, setIsViewerOpen] = useState(false);
   const [large, setLarge] = useState();
@@ -28,7 +28,7 @@ function App({list, setCallback, role}) {
     let imageDelete = list.find(prev=>prev.src===src)
     if(imageDelete){
       setDeleteItem(imageDelete?.id)
-      deleteResponse(`/api/${role}s/edit/gallery/${imageDelete?.id}/`, '', setCallback)
+      deleteResponse(`/api/${role}s/edit/${url}/${imageDelete?.id}/`, '', setCallback)
     }
   }
   return (
@@ -77,7 +77,7 @@ function App({list, setCallback, role}) {
       ))
     }
 
-    <ImageCrop role={role} loading={ loading } setLoading={ setLoading } list={ list } setCallback={setCallback}/>
+    <ImageCrop role={role} loading={ loading } setLoading={ setLoading } list={ list } setCallback={setCallback} urlType={ url }/>
       {isViewerOpen && (
         <>
         <ImageViewer

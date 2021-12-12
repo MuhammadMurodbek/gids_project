@@ -20,7 +20,7 @@ const Gallery = ({role}) => {
     }, [ state ] )
     return (
         <div>
-            <ImageGallery list={list} setCallback={setCallback} role={role}/>
+            <ImageGallery list={list} setCallback={setCallback} role={role} url="gallery"/>
             {/* <ImageCrop setState={ setState } state={ state } /> */}
         </div>
     )
