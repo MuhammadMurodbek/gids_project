@@ -6,7 +6,7 @@ import VisibilityOffOutlinedIcon from '@material-ui/icons/VisibilityOffOutlined'
 import {mainGreen} from "../../../styles/global/colors"
 const Index = (props) => {
     
-    const {width, label, password, sizeLabel, typeNumber, setState, state, field, defaultApiValue, clear, setClear} = props
+    const {width, label, password, sizeLabel, typeNumber, setState, state, field, defaultApiValue, clear, setClear, idK} = props
     const [check, setCheck] = useState(true)
     const [value, setValue] = useState('')
     const handleChangeOpen = useCallback(() => {
@@ -19,9 +19,13 @@ const Index = (props) => {
         console.log(e.target.value)
         setValue(e.target.value)
         if(setState){
-            setState({...state, [field]: e.target.value})
+            if(idK){
+                setState({...state, [field]: e.target.value,  idK: idK})
+            }else{
+                setState({...state, [field]: e.target.value})
+            }
         }
-    },[value,state, field])
+    },[value,state, field, idK])
     useEffect(()=>{
         if(defaultApiValue) {
             setValue(defaultApiValue)

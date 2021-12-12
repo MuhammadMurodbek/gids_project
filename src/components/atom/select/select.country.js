@@ -4,14 +4,14 @@ import { Wrapper } from "./index.style";
 import "./style.css";
 
 const Index = (props) => {
-  const {width,paddingX, margin,backgroundColor,setState, setCountryId,errorText,field,
+  const {width,paddingX, margin,backgroundColor,setState, setCountryId,errorText,field, placeholder,
     pcolor,
     defaultApiValue
   } = props;
   const country = JSON.parse(localStorage.getItem('countryGlobal'))
   const lang = localStorage.getItem('i18nextLng')
   const [value, setValue] = useState(null);
-  console.log(country)
+  console.log(placeholder)
   let options = country?.map((item)=>{return{value: item.id,label:item?.name[lang]}}) || null
   localStorage.setItem('countryOptions', JSON.stringify(options))
   const handleChange = (e) => {
@@ -40,6 +40,7 @@ const Index = (props) => {
     >
       <Select
         {...props}
+        placeholder={'Davlatni kiriting'}
         options={options}
         value={value}
         onChange={handleChange}

@@ -9,22 +9,35 @@ import Button from "../../../../components/atom/button"
 import styled from "styled-components"
 import AddIcon from '@material-ui/icons/Add'
 import Box from '@mui/material/Box';
-import {selectValue, DefaultListValue} from "./_const";
+import {selectValue, defaultListValue} from "./_const";
 import {getResponse, putResponse} from "../../../../hooks/response_get"
 import {common} from "../../../../custom/url"
 import {toastChecker} from "../../../../custom/function"
 import toast from 'react-hot-toast';
-const Todos = ({translateType, setTranslateType}) => {
-    let arrayList = DefaultListValue()
+const Todos = ({state, setApiValue, setLoad}) => {
+    let arrayList = defaultListValue()
     let optionList = selectValue()
     const [items, setItems] = useState(arrayList)
     const [item, setItem] = useState({name:'', level:''})
     const [getData, setGetData] = useState({success:'', error:''})
     const getRole = JSON.parse(localStorage.getItem("user_token"));
     const [postApiData, setPostApiData] = useState({ success: '', error: '', loading: false})
+    // console.log(state)
+    // let obj = {
+    //     ...state,
+    //     always_online:state?.always_online?.label==='Ha' ? true:false,
+    //     can_oral_translate:state?.can_oral_translate?.label==='Ha' ? true:false,
+    //     edit_text:state?.edit_text==='yes' ? true:false,
+    //     express_order:state?.express_order==='yes' ? true:false,
+    //     oral_translate_type:state?.oral_translate_type?.value,
+    //     weekend_order:state?.weekend_order==='yes' ? true:false
+    // }
+    // console.log(obj)
     useEffect(()=>{ getResponse(common.personal.edit.services, setGetData )},[])
-    useEffect(()=>{if(getRole.success !== ''){
-        setTranslateType({gender:getData?.success?.data?.translate_type})
+    useEffect(()=>{
+        if(getData.success !== ''){
+        setLoad({success:'success', error: ''})
+        setApiValue(getData?.success?.data)
         let theme = getData?.success?.data?.themes?.map(prev => {
             return {
                 name:prev.name,
@@ -34,7 +47,8 @@ const Todos = ({translateType, setTranslateType}) => {
                 }
             }
         })
-        setItems(theme)
+        if(theme) 
+            setItems(theme)
     }},[getData])
     const handleAdd = useCallback(() => {
         if(item?.name ==='' || item?.level === ''){
@@ -55,9 +69,17 @@ const Todos = ({translateType, setTranslateType}) => {
         }
     },[item])
     const handleSubmit = () => {
+        let obj = {
+            ...state,
+            always_online:state?.always_online?.label==='Ha' ? true:false,
+            can_oral_translate:state?.can_oral_translate?.label==='Ha' ? true:false,
+            edit_text:state?.edit_text==='yes' ? true:false,
+            express_order:state?.express_order==='yes' ? true:false,
+            oral_translate_type:state?.oral_translate_type?.value,
+            weekend_order:state?.weekend_order==='yes' ? true:false
+        }
         setPostApiData({...postApiData, loading: true})
         let postData = {
-            translate_type: translateType?.gender,
             themes:items.map((prev=>{ 
                 return {
                     ...prev,
@@ -65,8 +87,9 @@ const Todos = ({translateType, setTranslateType}) => {
                 }
             }))
         }
+        
         // console.log(postData)
-        putResponse(common.personal.edit.services, postData, setPostApiData)
+        putResponse(common.personal.edit.services, {...obj, ...postData}, setPostApiData)
     }
     useEffect(()=>{toastChecker(postApiData)},[postApiData])
     return (

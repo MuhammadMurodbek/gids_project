@@ -1,18 +1,29 @@
 import React from 'react'
 import styled from "styled-components"
 import { TextTitle } from "../../../../../styles/textTitle/index.style"
-import InputLabeled from "../../../../../components/molecules/input.labeled"
+import InputLabeled from "../../../../../components/atom/input.second"
 import Selection from "../../../../../components/atom/select"
+import {currency, CURRENCY_CHECK} from "../../../../../custom/constants"
 const PriceCurrency = (props) => {
-    const { title } = props
+    const { title, defValueCost, defValueCurrency, setState, state, fieldIn, fieldS, idK, handleChangeInput } = props
+   
     return (
         <Wrapper>
             <div>
-                <TextTitle font="12px" align="left" position="relative" p_top="20px">{title}</TextTitle>
+                <TextTitle font="12px" align="left" position="relative" p_top="10px">{title}</TextTitle>
                 <div className="wrap_class">
-                    <InputLabeled width="150px" placeholder="50" typeNumber sizeLabel="12px" />
+                    <InputLabeled 
+                        type="number"
+                        width="100%" 
+                        defaultValue={state[fieldIn] || defValueCost}
+                        onChange={(e)=>handleChangeInput(e.target.value, fieldIn, idK)}
+                        name={fieldIn}
+                        placeholder="Son kiriting.." 
+                        step="0.001"
+                        style={{position: "relative", top:13}} 
+                    />
                     <div className="wrap_class_inner">
-                        <Selection width="100px" placeholder="$" />
+                        <Selection options={currency} setCollect={setState} collect={ state } field={fieldS} defaultApiValue={CURRENCY_CHECK[defValueCurrency]} idK={idK} width="150px" placeholder="$" />
                     </div>
                 </div>
             </div>

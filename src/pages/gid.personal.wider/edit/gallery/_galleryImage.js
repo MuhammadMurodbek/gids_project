@@ -8,23 +8,19 @@ const Gallery = ({role}) => {
     const [ state, setState ] = useState( { success: '', error: '' } )
     const [ list, setList ] = useState( [] )
     const [callback,setCallback] = useState(false)
-    useEffect( () => { getResponse( `/api/${role}s/edit/about/`, setState ) }, [callback] )
+    useEffect( () => { getResponse( `/api/${role}s/edit/gallery/`, setState ) }, [callback] )
     useEffect( () => {
         if ( state?.success !== '' )
         {
-            let imagesList = state?.success?.data?.certificates?.map( ( item ) => {
+            let imagesList = state?.success?.data.map( ( item ) => {
                 return {
                     id: item.id,
-                    src:'http://165.232.76.226'+item.image,
+                    src: item.image,
                 }
             } )
             setList( imagesList )
         }
     }, [ state ] )
-    console.log(state)
-    // function onSelectImage ( index, image ) {
-    //     console.log( index, image )
-    // }
     return (
         <div>
             <ImageGallery list={list} setCallback={setCallback} role={role}/>

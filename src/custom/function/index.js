@@ -1,5 +1,6 @@
 import {toast} from "react-hot-toast"
 const lanOptions = JSON.parse( localStorage.getItem( "lanOptions"))
+const lanGlobal = JSON.parse( localStorage.getItem( "lanGlobal"))
 const countryOptions = JSON.parse( localStorage.getItem( "countryOptions"))
 const countryGlobal = JSON.parse( localStorage.getItem( "countryGlobal"))
 const lan = localStorage.getItem("i18nextLng")
@@ -24,6 +25,12 @@ export const toastChecker = (data, success, error) => {
 export const getLabelLang = (id) => {
     if(lanOptions){
         let label = lanOptions?.find(a=>a.value===id)?.label
+        return label 
+    }
+}
+export const getLabelLangLocal = (id) => {
+    if(lanGlobal && lan){
+        let label = lanGlobal?.find(a=>a.id===id)?.name[lan]
         return label 
     }
 }
