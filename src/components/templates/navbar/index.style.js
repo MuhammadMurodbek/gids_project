@@ -4,17 +4,30 @@ export const Navbar = styled.div`
     position: relative;
     width: 100%;
     height: auto;
-    padding:15px 20px;
+    padding:15px 60px;
+    padding: ${props => props.navbarProps > 30 ? "8px 60px " : "15px 60px"};
     background-color:transparent;
     box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.4);
+    /* margin-top: -100%; */
+     position: fixed ;
+     z-index: 111 !important;
+    transition: 0.5s all;
+     background-color: #fff;
+
+
+     /* .nav_1{
+         background-color: red;
+     }
+     .nav{
+         background-color: blue ;
+     } */
 
     .btn_enter{
         background-color: transparent;
         margin-left: 25px;
         border:none !important;
         cursor:pointer;
-        /* letter-spacing: 1px; */
-    }
+     }
     .img_logo1{
         width: 150px;
     }

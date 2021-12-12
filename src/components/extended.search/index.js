@@ -53,19 +53,24 @@ const Index = () => {
                 title={t("kengaytirlgan_Q.sana")}
                 setState={setCollect}
                 state={collect}
-                field="date_after" />
+                field="date_after"
+                placeholder="dd/mm/yyyy dan"
+                />
 
             <CalendarComponent
                 setState={setCollect}
                 state={collect}
-                field="date_before" />
+                field="date_before"
+                placeholder="dd/mm/yyyy gacha"
+                />
 
             <SelectionLang
                 title={t("kengaytirlgan_Q.til")}
                 setCollect={setCollect}
                 collect={collect}
-                field="lang" 
-            />
+                field="lang"
+                placeholder="Tillarni tanlang"
+                />
 
             <CheckBoxContainer
                 setState={setCollect}

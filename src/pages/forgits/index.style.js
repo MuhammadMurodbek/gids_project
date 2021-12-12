@@ -2,7 +2,7 @@ import styled from "styled-components";
 import {mainGreen} from "../../styles/global/colors"
 export const Wrapper = styled.div`
         width:100%auto;
-        padding: 10px;  
+         
 
         .title-S{
             font-weight: 700;
@@ -18,6 +18,7 @@ export const TextColor = styled.span`
     color: ${mainGreen};
 `
 export const Takliflar = styled.div`
+    padding: 10px 85px;  
     margin: 50px 0;
     @media (max-width: 768px) {
         .text{
@@ -46,7 +47,7 @@ export const Takliflar = styled.div`
 `
 
 export const Savollar = styled.div`
-    padding: 0 100px;
+    padding: 0 85px;
     margin-bottom:100px ;
     @media (max-width: 768px){
         padding:10px 0;
@@ -71,14 +72,15 @@ export const FlexContainer = styled.div`
 
 
 export const ComponentTwo = styled.div`
+padding: 0px 85px;  
         width: 100%;
-        padding:10px 20px;
+        /* padding:10px 20px; */
         margin: 100px 0;
 p{
     margin-bottom: 14px;
 }
 .container-2-1{
-    padding:20px;
+    /* padding:20px; */
     position:relative;
     top:50%;
     transform:translateY(-50%);

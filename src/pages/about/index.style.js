@@ -2,18 +2,18 @@ import styled  from "styled-components";
 
 export const Wrapper = styled.div`
     width:100%;
-    padding:10px;
+    padding:10px 85px;
     margin-bottom: 50px ;
  `
 
 export const ComponentTwo = styled.div`
     width: 100%;
-    padding:10px 20px;
+    /* padding:10px 20px; */
     p{
         margin-bottom: 14px;
     }
     .container-2-1{
-        padding:20px;
+        /* padding:20px; */
         position:relative;
         top:50%;
         transform:translateY(-50%);

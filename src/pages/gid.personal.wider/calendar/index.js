@@ -40,7 +40,7 @@ const Index = () => {
             <Container {...mediaContainer} width="100%" margin="0 auto" padding="0" className="container4" textAlign="center">
                 <Grid container spacing={0} justifyContent="center" alignItems="center" flexDirection="column">
                     <Grid item xs={12} md={6}>
-                        <div style={{width: '100%', textAlign: 'center'}}>Mening band kunlarim</div>
+                        <div style={{width: '100%', textAlign: 'center'}}>Mening ish jadvalim</div>
                         <DayPickerWrapper>
                             <DayPicker 
                                 title="no" 

@@ -81,7 +81,7 @@ export default function BasicTabs() {
 
   return (
     <div>
-    <Navbar/>
+    
       <Wrapper>
 
         <Container>

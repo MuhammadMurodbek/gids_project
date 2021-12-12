@@ -75,8 +75,6 @@ export default function Index () {
                                 ) )
                             }
 
-
-
                         </Grid>
                         <Grid xs={ 12 } sm={ 12 } item md={ 4 } className="msa2">
                             <div className="imgcla"><ImgContainer src={ ad } width="350px" margin="0 auto" /></div>
@@ -86,17 +84,12 @@ export default function Index () {
                         </Grid>
                     </Grid>
                     <div className="pagination">
-                        <Pagination current={ state?.success?.data?.num_pages } onChange={ onChange } total={ 50 } />;
+                        <Pagination current={ state?.success?.data?.num_pages } onChange={ onChange } total={ 50 } />
                     </div>
                 </>:<NoDataPage/>
             }
         </Wrapper>
     )
 }
-// state?.success?.data?.count
-// {
-//     counter === visibleButton ? null :
-//         <div className="divbtns">
-//             <Button type="outlined" className="davomi" onClick={handlePagination}>   t("arizalar_royhati.davomi")} <ArrowForwardIcon className="arrovicon" /></Button>
-//         </div>
-// }
+ 
+ 

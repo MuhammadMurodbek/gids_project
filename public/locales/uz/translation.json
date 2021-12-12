@@ -25,7 +25,7 @@
    "kengaytirlgan_Q":{
        "kengaytirilgan": "Kengaytirilgan qidiruv",
        "kimKerak":"Kim kerakligini tanlang",
-       "gid":"gid",
+       "gid":"Gid",
        "tarjion":"Tarjimon",
         "sinxron":"Sinxron",
         "izchil":"Izchil",
@@ -461,28 +461,11 @@
     
   },
   "Galarey":{
-
-    "Profilni_Korish":"View profile",
-    "tahrirlash":"Edit my data",
-    "kalendar":"Calendar",
-    "blog":"Blog",
-    "reklama":"Advertising",
-    "sozlamalar":"Profile settings",
-
-    "menHaqimda":"About Me",
-    "kantaktlar":"Contacts",
-    "malumotiIsh":"Education and Work Experience",
-    "tillarniBilish":"Knowledge of languages",
-    "hizmatlar":"services",
-    "narxlar":"Prices",
-    "videoVagalarey":"Video and gallery",
-
-    "Partfolio":"You can make a video about yourself. This video is on your profile.",
-    "galarey":"Your gallery",
-    "saqlash":"Save"
+  
+    "Partfolio":"Siz o‘zingiz haqingizda video tayyorlab joylashingiz mumkin. Ushbu video profilingizda turadi.",
+    "galarey":"Galereyangiz",
+    "saqlash":"Saqlash"
   },
-
-
 
 
 

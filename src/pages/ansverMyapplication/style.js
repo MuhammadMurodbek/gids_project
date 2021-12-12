@@ -4,8 +4,9 @@ export const Wrapper = styled.div`
     width: 100%;
     .grid-container{
         box-shadow:0px 5px 5px #BBBDBB;
-        width: 85%;
-        padding: 20px;
+        width: 100%;
+        margin: 85px;
+        padding: 20px ;
     }
     .sc-jUEmfL.bXPgTV{
         padding:10px 15px;
@@ -48,12 +49,15 @@ export const Wrapper = styled.div`
      .feedback-div{
         display: flex ; 
         align-items: center;
+        justify-content: space-between;
+        height: 50px;
      }
      .tarjimon span{
         margin-right: 10px;
      }
      .tarjimon span:nth-child(2){
         margin-left: 10px;
+        
     }
     .feedbeeck-text{
         margin: 20px 0;

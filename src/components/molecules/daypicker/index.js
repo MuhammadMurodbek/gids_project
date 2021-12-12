@@ -33,7 +33,7 @@ export default class Example extends React.Component {
 
       <div style={{textAlign:'center'}}>
         {
-          this.props.title === "no" ? null:<div style={{fontWeight:'bold', fontSize:'15px', margin:"10px 0", transform: 'translateX(-10px)'}}>Gid\Tarjimonning band kunlari</div>
+          this.props.title === "no" ? null:<div style={{fontWeight:'bold', fontSize:'15px', margin:"10px 0", transform: 'translateX(-10px)'}}>Mening ish jadvalim</div>
         }
         <DayPicker
           selectedDays={this.props.default ? this.props.selectedDays : this.state.selectedDays}

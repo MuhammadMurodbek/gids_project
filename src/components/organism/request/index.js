@@ -15,6 +15,8 @@ export default function Index(props) {
 
     const { id, manzil, name, gpss, dan, gacha, sana } = props;
     const token = JSON.parse(localStorage.getItem("user_token"))
+    console.log(id)
+    
     return (
         <Wrapper>
             <div>

@@ -40,7 +40,6 @@ export default function Index() {
                         btnText={t("safarHaqda.tahrirlash")}
                     />
                     <CitiLeftPart
-
                         title="Xitoyga sayoxat"
                         kalendar="23.01.2021"
                         hteg="Biznes, Xitoy"

@@ -30,6 +30,7 @@ import {mainGreen} from "../../../styles/global/colors";
             display: none;
         }
     }
+
     @media (max-width: 768px){
         .searchI{
             span{

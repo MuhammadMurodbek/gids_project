@@ -36,10 +36,10 @@ export default function index() {
                         <ImgContainer {...mediaImage} src={imggid} />
                     </Grid>
                     <Grid item xs={12} md={11} className="item">
-                        <div className="feedback-div">
+                        <div className="feedback-div">  
                             <h4><b>Abdusattor Ergashev </b></h4>
                             <div className="feedback">
-                                <div> <ImgContainer src={star} /></div>
+                                <div> <ImgContainer src={star} /> </div>
                                 <div> <span>10.0/10</span></div>
                                 <div className="imgss"> <ImgContainer src={sms} /></div>
                                 <div> <span>Fikrlar: 34</span></div>
