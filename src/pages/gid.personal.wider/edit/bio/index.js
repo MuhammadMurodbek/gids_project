@@ -20,21 +20,19 @@ import toast from "react-hot-toast";
 import { validatorState } from "../../../../custom/validator"
 import { userSchema } from "./_validator"
 import { defaultObj } from "./_const"
-// import TextLabeledLoop from "../../../../components/atom/text.labeled"
-// import { EditOutlined } from '@ant-design/icons'
-import FadeIn from 'react-fade-in';
 import Translator from './_translator';
 import { useTranslation } from 'react-i18next'
+// import {getLabelCountry} from "../../../../custom/function"
 const Index = () => {
   const {t} = useTranslation()
-  const [countryId, setCountryId] = useState(null)
+  const [countryId, setCountryId] = useState(1)
   const [ state, setState ] = useState( defaultObj );
   const [ error, setError ] = useState( false )
-  const [ editIcon, setEditIcon ] = useState( false )
   const getRole = JSON.parse( localStorage.getItem( "user_token" ) );
   const [ apiValue, setApiValue ] = useState( { success: "", error: "" } );
   const { responseHook, setResponseHook } = useApiData( "post_bio_data_reducer" );
-
+  const countryGlobal = JSON.parse( localStorage.getItem( "countryGlobal"))
+  // const cityOptions = JSON.parse( localStorage.getItem( "cityOptions"))
   useEffect( () => { getResponse( `/api/${ getRole?.role }s/edit/about/`, setApiValue ) }, [] );
   React.useMemo( () => {
     if ( apiValue?.success !== "" )
@@ -125,6 +123,7 @@ const Index = () => {
                 <Grid item xs={ 12 } md={ 4 }>
                   <DoubleRadio
                     sizeLabel="15px"
+                    field="gender"
                     label="Jinsi"
                     name1="male"
                     name2="female"
@@ -132,12 +131,13 @@ const Index = () => {
                     value2="female"
                     state={ state }
                     setState={ setState }
+                    defaultApiValue={apiValue?.success?.data?.gender}
                     errorText={ error ? validatorState( state.gender, 'min', 3, 'Jinsi tanlanmagan' ) : null }
                   />
                 </Grid>
                 <Grid item xs={ 12 } md={ 4 }></Grid>
               </Grid>
-              <FadeIn visible={ ( state?.country_api && state?.city_api ) ? editIcon : true }>
+              {/* <FadeIn visible={ ( state?.country_api && state?.city_api ) ? editIcon : true }> */}
                 <Grid container spacing={ 1 }>
                   <Grid item xs={ 12 } md={ 4 }>
                     <SelectLabeledCountry
@@ -147,7 +147,10 @@ const Index = () => {
                       state={state}
                       placeholder="Davlatni kiriting"
                       label="Davlatni kiriting"
-                      defaultApiValue={{value:state?.country, label:state?.country_name}}
+                      defaultApiValue={
+                        {value:state?.country, label:countryGlobal?.find(a=>a.id===state?.country)?.name} ||
+                        {value:1, label:countryGlobal?.find(a=>a.id===1)?.name}
+                      }
                       // errorText={ error ? validatorState( state.c, 'min', 3, 'Sana kiritilmagan' ) : null }
                   />
                     
@@ -166,7 +169,7 @@ const Index = () => {
                   </Grid>
                   <Grid item xs={ 12 } md={ 4 }></Grid>
                 </Grid>
-              </FadeIn>
+              {/* </FadeIn> */}
             </Grid>
           </Grid>
           <Container padding="10px 0">

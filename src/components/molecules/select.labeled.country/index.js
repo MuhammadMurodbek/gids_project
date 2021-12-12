@@ -4,6 +4,7 @@ import Select from "../../atom/select/select.country"
 
 const Index = (props) => {
     const {width, label, sizeLabel, marginLabel, pcolor, errorText, placeholder} = props
+    // console.log(placeholder)
     return (
         <Wrapper width={width} pcolor={pcolor} >
             <Label margin={marginLabel} size={sizeLabel}>{label}</Label>

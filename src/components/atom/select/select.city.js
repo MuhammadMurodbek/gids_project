@@ -32,6 +32,7 @@ const Index = (props) => {
   useEffect(() =>{
     // console.log('merge')
     if(defaultApiValue){
+      console.log(defaultApiValue)
       let labelData = ''
       if(lang==='uz') labelData = defaultApiValue?.label?.uz
       if(lang==='en') labelData = defaultApiValue?.label?.en

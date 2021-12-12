@@ -11,7 +11,7 @@ const Index = (props) => {
   const country = JSON.parse(localStorage.getItem('countryGlobal'))
   const lang = localStorage.getItem('i18nextLng')
   const [value, setValue] = useState(null);
-  console.log(country)
+  console.log(placeholder)
   let options = country?.map((item)=>{return{value: item.id,label:item?.name[lang]}}) || null
   localStorage.setItem('countryOptions', JSON.stringify(options))
   const handleChange = (e) => {
@@ -40,7 +40,7 @@ const Index = (props) => {
     >
       <Select
         {...props}
-        placeholder={placeholder}
+        placeholder={'Davlatni kiriting'}
         options={options}
         value={value}
         onChange={handleChange}
