@@ -7,7 +7,7 @@ export const selectValue =()=> [
 export const SELECTVALUE = {
     
 }
-export const defaultListValue = () => [
+export const DefaultListValue = () => [
     {name:'Sanoat', level:{ value:'no', label:"Mavzuyim emas"}},
     {name:'Sanoat', level:{ value:'no', label:"Mavzuyim emas"}},
     {name:'Sanoat', level:{ value:'no', label:"Mavzuyim emas"}},

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
     width: 100%;
-    padding: 50px 30px;
+    padding: 50px 85px;
 
     .msa2{
       background-color: red;
