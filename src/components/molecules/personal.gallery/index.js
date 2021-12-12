@@ -28,7 +28,7 @@ function App({list, setCallback, role}) {
     let imageDelete = list.find(prev=>prev.src===src)
     if(imageDelete){
       setDeleteItem(imageDelete?.id)
-      deleteResponse(`/api/${role}s/edit/certificate/${imageDelete?.id}/`, '', setCallback)
+      deleteResponse(`/api/${role}s/edit/gallery/${imageDelete?.id}/`, '', setCallback)
     }
   }
   return (

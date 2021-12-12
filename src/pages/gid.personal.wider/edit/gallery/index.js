@@ -14,7 +14,6 @@ const Index = () => {
     console.log(upload)
     return (
         <Wrapper>
-
             <Gallery role={getRole?.role} setCallback={setCallback}/>
             <div style={{width: '100%', marginTop: '30px', height: 'auto', display: 'flex', alignItems: 'center', justifyContent:'center' }}>
                 <ReactPlayer  width='70%' height='auto' controls url={upload?.success?.data?.video} />
