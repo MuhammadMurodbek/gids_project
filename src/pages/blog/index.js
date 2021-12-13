@@ -22,7 +22,7 @@ export default function Index () {
         current: 1
     } )
     const [ postData, setPostData ] = useState( { success: '', error: '', loading: false } )
-    let filterData = postData?.success?.data?.results
+    // let filterData = postData?.success?.data?.results
     let { current } = pagination
     useEffect( () => {
         let url = `/api/posts/article/?page=${ current }`
@@ -44,7 +44,7 @@ export default function Index () {
         } )
     }
     console.log( articleList, 'data' )
-    console.log( postData )
+    // console.log( postData)
     return (
         <Wrapper>
             <TextTitle width="50%" left="auto" right="auto" bottom="30px" top="80px">
@@ -79,8 +79,7 @@ export default function Index () {
                         <Grid xs={ 12 } sm={ 12 } item md={ 4 } className="msa2">
                             <div className="imgcla"><ImgContainer src={ ad } width="350px" margin="0 auto" /></div>
                             <div className="imgcla"><ImgContainer src={ ad } width="350px" margin="0 auto" /></div>
-                            <div className="imgcla"><ImgContainer src={ ad } width="350px" margin="0 auto" /></div>
-                            <div className="imgcla"><ImgContainer src={ ad } width="350px" margin="0 auto" /></div>
+                             
                         </Grid>
                     </Grid>
                     <div className="pagination">

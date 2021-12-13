@@ -14,7 +14,7 @@ const Index = ({ role }) => {
     let url = getRole?.role === 'simple_user' ? '/api/users/edit/':`/api/${getRole?.role}s/edit/about/`
     useEffect(()=>{getResponse(url, setGetData)},[])
     const menu = (
-        <Menu style={{ position: "relative", right: 15, top: 8, width: 140 }}>
+        <Menu style={{ position: "relative", right: 0, top: 8, width: 150 }}>
             <Menu.Item key="0">
                 <Link to={role==='simple_user' ? '/gid-personal':`/gid-personal-wider?name=${getData?.success?.data?.first_name}&last_name=${getData?.success?.data?.last_name}`}>Profil</Link>
             </Menu.Item>

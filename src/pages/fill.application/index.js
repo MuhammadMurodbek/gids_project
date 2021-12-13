@@ -179,7 +179,7 @@ const Index = () => {
                             <Grid item xs={12} sm={12} md={5}>
                             </Grid>
                             <Grid item xs={ 12 } sm={ 12 } md={ 7 }>
-                                <Checkbox setState={ setCollect } state={ collect } name={t("arizaqoldirish.shartnoma")} />
+                                <Checkbox field={"turekartishka"} setState={ setCollect } state={ collect } name={t("arizaqoldirish.shartnoma")} />
                             </Grid>
                         </Grid>
                     </Container>

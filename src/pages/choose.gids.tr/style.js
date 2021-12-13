@@ -2,7 +2,11 @@ import styled from "styled-components"
 export const Wrapper = styled.div`
     width: 100%;
     height: auto;
+<<<<<<< HEAD
     padding: 10px 55px;
+=======
+    padding:10px 45px;
+>>>>>>> abdurahmon
     .sc-fKFxtB.cNPZrT{
         margin:0 auto;
     }

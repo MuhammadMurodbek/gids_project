@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useMemo, useEffect } from 'react'
 import { Wrapper } from './style'
 import { Link } from 'react-router-dom'
 import { Grid } from '@material-ui/core';
@@ -16,22 +16,65 @@ import til from '../../../assets/img/request/til.svg';
 // import ImgContainer from "../../../components/molecules/img.container";
 import CloseIcon from '@material-ui/icons/Close';
 import Modal from 'react-awesome-modal';
+import { useParams } from 'react-router-dom';
 import Textarea from '../../atom/textAreaCom';
 import { useTranslation } from 'react-i18next';
+import { postResponse } from '../../../hooks/response_get';
+import toast from 'react-hot-toast';
+import { getResponse } from '../../../hooks/response_get';
+import moment from 'moment';
 
 
 export default function Index(props) {
+    const [comment, setComment] = useState('')
+    const [response, setResponse] = useState({ success: '', error: '' })
+    const [applicationData, setApplicationData] = useState({ success: '', error: '', loading: false })
 
-    const {t} = useTranslation();
+
+    const { id } = useParams()
+    const { t } = useTranslation();
 
     const [state, setState] = useState(false);
+    const curens={
+        dollar:"USD",
+        ruble:"RUBL",
+        sum:"SUM"
+    }
+
     function openModal() {
         setState(true);
     }
     function closeModal() {
         setState(false)
+        setComment('')
     }
 
+    function submit() {
+        let sendData = {
+            application: Number(id),
+            reply: comment
+        }
+        postResponse("/api/users/reply/", sendData, setResponse)
+        closeModal()
+    }
+
+    useEffect(() => {
+        getResponse(`/api/users/applications/${id}`, setApplicationData)
+
+    }, [])
+    console.log(applicationData.success.data, 'datadaadsad')
+
+    useEffect(() => {
+        if (response?.success !== "") {
+            toast.success("habaringiz muofaqiyatli jonatildi")
+        } else if (response?.error !== '')
+            toast.error("siz faqat bir martta habar yoza olasiz")
+    }, [response])
+
+    function setText(e) {
+        console.log(e.target.value)
+        setComment(e.target.value)
+    }
 
     const { btnText, url } = props
     return (
@@ -39,7 +82,7 @@ export default function Index(props) {
             <Grid container spacing={1} direction="row" justifyContent="center" className="freque">
                 <Grid className="gridTitle" item xs={12} md={4}>
                     <b className="idb">Id: </b>
-                    <b className="idb">#071364754</b>
+                    <b className="idb"># {applicationData?.success?.data?.id}</b>
                 </Grid>
                 <Grid className="gridTitle2" item xs={12} md={6}>
                     <Link to="/request" className="comback"> <ArrowBackIcon className="arrole" /> {t("ToliqAriza.qaytish")} </Link>
@@ -52,27 +95,39 @@ export default function Index(props) {
                     <div className="tafsilot-text">
                         <b><ImageContainer src={user} /></b>
                         <b> {t("ToliqAriza.elonBeruchi")}</b>
-                        <p>Abdusattor</p>
+                        <p>
+                        {applicationData?.success?.data?.full_name?.first_name + " " + applicationData?.success?.data?.full_name?.last_name}
+                        </p>
                     </div>
                     <div className="tafsilot-text">
                         <b> <ImageContainer src={gps} /></b>
                         <b>{t("ToliqAriza.shahar")} </b>
-                        <p>Angliya, London </p>
+                        <p>
+                        {applicationData?.success?.data?.country_name?.uz}
+                        
+                        </p>
                     </div>
                     <div className="tafsilot-text">
                         <b> <ImageContainer src={cal} /></b>
                         <b>{t("ToliqAriza.sana")} </b>
-                        <p>23.01.2021 || 30.01.2021</p>
+                        <p>
+                        {applicationData?.success?.data?.start_date}||
+                        {applicationData?.success?.data?.end_date}
+                        </p>
                     </div>
                     <div className="tafsilot-text">
                         <b> <ImageContainer src={kim} /></b>
                         <b>{t("ToliqAriza.gacha")} </b>
-                        <p>50$</p>
+                        <p>
+                        {applicationData?.success?.data?.cost + " "} 
+
+                        {curens[applicationData?.success?.data?.currency] || " Malumot topilmadi"}
+                        </p>
                     </div>
                     <div className="tafsilot-text">
                         <b> <ImageContainer src={narx} /></b>
                         <b>{t("ToliqAriza.kimKerak")} </b>
-                        <p>Tarjimon</p>
+                        <p>{applicationData?.success?.data?.who_need}</p>
                     </div>
                     <div className="tafsilot-text">
                         <b> <ImageContainer src={odamlar} /></b>
@@ -82,7 +137,7 @@ export default function Index(props) {
                     <div className="tafsilot-text">
                         <b> <ImageContainer src={til} /></b>
                         <b>{t("ToliqAriza.odamlarSone")} </b>
-                        <p>4 kishi</p>
+                        <p> {applicationData?.success?.data?.people_count} kishi</p>
                     </div>
                     <Button onClick={openModal} type="button" className="btnRequest">
                         {btnText}
@@ -92,15 +147,13 @@ export default function Index(props) {
                 <Grid className="grid6text  Fgrid2" item xs={12} md={6}>
                     <div>
                         <div className="div1title">{t("ToliqAriza.arizaMatni")}</div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In bibendum sodales tristique dolor turpis. Non pretium ante gravida suscipit faucibus lectus aliquet nullam. Justo sapien quam tincidunt lectus laoreet lacus eu sit. Aliquam nulla pellentesque arcu est ullamcorper pretium, elit.</p>
-
-                        <p>Nunc adipiscing vel praesent urna. Vulputate amet phasellus lobortis at cras pellentesque consectetur purus. Lectus sem aliquet hendrerit cras adipiscing sit nisl diam. Volutpat pretium semper lacus, amet aliquam orci. Quis semper posuere nulla sit eu feugiat eget. Donec dignissim sed et mi diam eu. Tincidunt id convallis euismod enim mauris, facilisis faucibus pharetra.</p>
-
-                        <p>
-                            At massa arcu ut nibh nullam netus. At mi non viverra eu scelerisque mollis id. Diam nec sed hendrerit lectus libero mattis amet. Sit mi pharetra felis, pretium et ac quisque dolor. Massa elit, elit vitae  . Non ultrices senectus tellus etiam pharetra rhoncus erat nulla. Dictum purus ante nibh elementum eu etiam vivamus in.
-                        </p>
+                        <p>  
+                             {applicationData?.success?.data?.why_need}
+                        </p>   
                     </div>
-                    <p className="f-sana"> 23.06.21</p>
+                    <p className="f-sana">
+                    {moment(applicationData?.success?.data?.updated_at).format("DD.MM.YYYY")}
+                    </p>
                 </Grid>
             </Grid>
 
@@ -117,14 +170,20 @@ export default function Index(props) {
                         </div>
                         <h1 className="modaltitle">{t("ToliqAriza.yozing")}</h1>
                         <div className="modaldiv">
-                            <Textarea width="100%" placeholder="Text..." height="200px" />
+                            <Textarea
+                                value={comment}
+                                width="100%"
+                                onChange={setText}
+                                placeholder="Text..."
+                                height="200px" />
                         </div>
 
                         <div className="btgroup-modal">
-                            <Button  type="outlined" className="btnRequest" onClick={closeModal}>
+                            <Button type="outlined"
+                                className="btnRequest" onClick={closeModal}>
                                 {t("ToliqAriza.yopish")}
                             </Button>
-                            <Button type="button" className="btnRequest">
+                            <Button type="button" onClick={submit} className="btnRequest">
                                 {t("ToliqAriza.yuborish")}
                             </Button>
                         </div>
