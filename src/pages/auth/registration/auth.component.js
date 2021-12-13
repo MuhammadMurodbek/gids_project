@@ -9,7 +9,7 @@ import { post_auth_ent_action } from "../../../redux/actions"
 import toast from "react-hot-toast"
 import useApiData from "../../../hooks/response"
 import { useTranslation } from 'react-i18next'
-
+import {getGlobals} from "../../../hooks/response_get"
 const Index = () => {
 
     const { t } = useTranslation()
@@ -39,6 +39,7 @@ const Index = () => {
         } else setResponseHook(post_auth_ent_action(obj))
     }
     const Success = (data) => {
+        getGlobals(data)
         localStorage.setItem('user_token', JSON.stringify(data))
         window.location.href = "/"
     }

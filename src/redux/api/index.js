@@ -4,5 +4,5 @@ const token = JSON.parse(localStorage.getItem("user_token"))
 export const head_token = { headers: {
     'Content-Type': 'application/json',
     'Authorization': `Bearer ${token?.access}`,
-}
+    }
 }

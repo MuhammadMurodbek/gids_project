@@ -12,11 +12,21 @@ export const getResponseRegion = async(url) => {
         .then(response => localStorage.setItem('countries', JSON.stringify(response?.data?.data)))
         .catch(err => console.log(err))
 }
-export const getGlobals = async() => {
-    await axios.get(`${baseUrl}/api/users/languages/`, headers)
+export const getGlobals = async(token) => {
+    await axios.get(`${baseUrl}/api/users/languages/`, {
+        headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token?.access}`,
+        }
+    })
         .then(response => localStorage.setItem('lanGlobal', JSON.stringify(response?.data)))
         .catch(err => console.log(err))
-    await axios.get(`${baseUrl}/api/users/countries/`, headers)
+    await axios.get(`${baseUrl}/api/users/countries/`, {
+        headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token?.access}`,
+        }
+    })
         .then(response => localStorage.setItem('countryGlobal', JSON.stringify(response?.data)))
         .catch(err => console.log(err))
 }
