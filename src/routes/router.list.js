@@ -31,7 +31,7 @@ export const routes_gid = [
         component:ListRouter.Request
     },
     {
-        url:'/fullrequest',
+        url:'/fullrequest/:id',
         component:ListRouter.Fullrequest
     },
     {

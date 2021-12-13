@@ -9,6 +9,7 @@ export const auth = {
 }
 export const common = {
     personal:{
+        me:`/api/${getRole?.role}s/me/`,
         edit:{
             education:`/api/${getRole?.role}s/edit/education/`,
             language:`/api/${getRole?.role}s/edit/language/`,

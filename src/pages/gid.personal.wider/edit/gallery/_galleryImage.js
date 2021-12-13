@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { getResponse } from "../../../../hooks/response_get"
-// import ImageCrop from "../../../../components/organism/image.crop.gallery/new";
 import ImageGallery from "../../../../components/molecules/personal.gallery"
-// import FadeIn from "react-fade-in"
-// import { Fade } from '@material-ui/core';
 const Gallery = ({role}) => {
     const [ state, setState ] = useState( { success: '', error: '' } )
     const [ list, setList ] = useState( [] )
@@ -23,7 +20,7 @@ const Gallery = ({role}) => {
     }, [ state ] )
     return (
         <div>
-            <ImageGallery list={list} setCallback={setCallback} role={role}/>
+            <ImageGallery list={list} setCallback={setCallback} role={role} url="gallery"/>
             {/* <ImageCrop setState={ setState } state={ state } /> */}
         </div>
     )

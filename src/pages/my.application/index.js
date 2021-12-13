@@ -9,7 +9,7 @@ export default function Index({success, setCollect, collect, setCallback}) {
     const array_data = success?.data?.results
     const lang = localStorage.getItem('i18nextLng')
     // console.log(array_data)
-    return (
+    return ( 
         <Wrapper>
             {
                 success === "" ? <Spinner width={50} height={50}/>:

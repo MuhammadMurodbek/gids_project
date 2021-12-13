@@ -8,6 +8,7 @@ export const Wrapper = styled.div`
     display: inline-block;
     position: absolute;
     right:25px;
+    
     /* background-color:green; */
     .ant-dropdown-link{
         position: absolute;

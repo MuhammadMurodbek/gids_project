@@ -26,7 +26,7 @@ const Index = () => {
   const expired = localStorage.getItem("expired")
   const { isExpired } = useJwt(getRole?.access)
 
-  console.log(expired);
+  // console.log(expired);
   const { t, i18n } = useTranslation()
   React.useMemo(() => { i18n.changeLanguage('uz') }, [])
 

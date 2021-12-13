@@ -14,6 +14,7 @@ import {getResponse, putResponse} from "../../../../hooks/response_get"
 import {common} from "../../../../custom/url"
 import {toastChecker} from "../../../../custom/function"
 import toast from 'react-hot-toast';
+
 const Todos = ({translateType, setTranslateType}) => {
     let arrayList = defaultListValue()
     let optionList = selectValue()
@@ -73,7 +74,6 @@ const Todos = ({translateType, setTranslateType}) => {
         <TodosWrapper>
              {
                 getRole?.role === 'gid'?  null:
-             
             <>
                 <TextTitle font="15px" align="left" left="5px" color="#000000d9" bottom="-12px" top="35px" >
                     Tarjima mavzulari
@@ -139,4 +139,4 @@ export const TodosWrapper = styled.div`
         top:10px !important;
     }
 `
-export default Todos
+export default Todos;

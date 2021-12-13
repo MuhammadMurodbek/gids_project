@@ -5,12 +5,14 @@ export const ImgWrapper = styled.div`
     height: auto;
     text-align: ${value=>value.align ? value.align: 'center'};
     /* background-color: red;/ */
+    /* overflow: hidden; */
     margin:0 auto;
     img{
         width: ${value=>value.width};
         height: ${value=>value.height ? value.height : "auto"};
         object-fit: cover;
-        border-radius: ${value=>value.radius ? value.radius : "none"};
+        border-radius: ${value=>value.round ? value.round : "none"};
+        /* border-radius: 50%; */
         margin:${value=>value.margin}
     }
     @media (max-width:${a=>a.media}){

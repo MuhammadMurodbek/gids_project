@@ -1,20 +1,23 @@
 import { Grid } from '@material-ui/core'
-import React from 'react'
+import React,{useEffect, useState} from 'react'
 import Layout from "../../../layouts/gid.personal.page"
 import {ContainerMain} from "./style"
 import CardMain from "../../../components/organism/container.left.f42"
 import CardMainSecond from "../../../components/organism/container.right.f42"
-
+import {getResponse} from "../../../hooks/response_get"
+import {common} from "../../../custom/url"
 const Index = () => {
+    const [apiData, setApiData] = useState({ success: '', error: ''})
+    useEffect(()=>{ getResponse(common.personal.me, setApiData)},[])
     return (
         <Layout>
             <ContainerMain>
                 <Grid container spacing={3}>
                     <Grid item xs={12} md={8}>
-                        <CardMain/>
+                        <CardMain state={apiData?.success?.data}/>
                     </Grid>
                     <Grid item xs={12} md={4}>
-                        <CardMainSecond/>
+                        <CardMainSecond state={apiData?.success?.data}/>
                     </Grid>
                 </Grid>
             </ContainerMain>

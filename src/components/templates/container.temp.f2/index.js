@@ -14,13 +14,13 @@ const Index = () => {
         <Wrapper>
             {  
                 getData?.results?.length>0 ?
-                getData?.results.map(() => (
-                    <>
-                    <ContainerMap/>
-                    <ButtonWrapper>
-                        <Button type="outlined" className="arrow"> {t("Gid_Tanlash.davomi")} <ArrowForwardIcon/>  </Button>
-                    </ButtonWrapper>
-                    </>
+                getData?.results.map((item, index) => (
+                    <div key={index}>
+                        <ContainerMap data={item}/>
+                        <ButtonWrapper>
+                            <Button type="outlined" className="arrow"> {t("Gid_Tanlash.davomi")} <ArrowForwardIcon/>  </Button>
+                        </ButtonWrapper>
+                    </div>
                 )):(<h4 style={{width: "100%", textAlign: "center"}}><NoDataPage/></h4>)
             }
             

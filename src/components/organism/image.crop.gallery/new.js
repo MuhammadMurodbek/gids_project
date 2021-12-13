@@ -6,7 +6,7 @@ import "./style.css"
 import Loader from "react-loader-spinner";
 import toast from "react-hot-toast"
 import {postResponse} from "../../../hooks/response_get"
-const Demo = ({loading, setLoading, list, setCallback, role}) => {
+const Demo = ({loading, setLoading, list, setCallback, role, urlType}) => {
   const [url, setUrl] = useState({success:'', error:'', loading:'false'})
   const onChange = ( newFileList) => {
     return null
@@ -15,7 +15,7 @@ const Demo = ({loading, setLoading, list, setCallback, role}) => {
     setLoading(true)
     const form = new FormData()
     form.append('image',e)
-    postResponse(`/api/${role}s/edit/certificate/`, form, setUrl)
+    postResponse(`/api/${role}s/edit/${urlType}/`, form, setUrl)
   }
   useEffect(()=>{
     if(list.length > 0 && url?.success!==''){

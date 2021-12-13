@@ -17,9 +17,10 @@ const Index = () => {
     const [postData, setPostData] = useState({ success: '', error: '', loading: false })
     const getRole = JSON.parse(localStorage.getItem("user_token"))
     const [collect, setCollect] = useState()
+    console.log(collect)
     const handleSubmit = () => {
         setPostData({ ...postData, loading: true })
-        let urlOther = `/api/${collect?.type}s/profiles/?gender=${collect?.male ? 'male' : 'female'}&country=${collect?.country}&city=${collect?.city}&lang=${collect?.languages?.map(item => item?.value)}&date_after=${collect?.date_after}&date_before=${collect?.date_before}&${collect?.gender}=0`
+        let urlOther = `/api/${collect?.type}s/profiles/?gender=${collect?.male ? 'male' : 'female'}&country=${collect?.country}&city=${collect?.city}&lang=${collect?.languages?.map(item => item?.value)}&date_after=${collect?.date_after}&date_before=${collect?.date_before}&${collect?.search_type}=0`
         getResponse(urlOther, setPostData)
     }
     React.useEffect(() => {
@@ -81,6 +82,7 @@ const Index = () => {
             <DoubleRadio
                 value1="online"
                 value2="all"
+                field="search_type"
                 setState={setCollect}
                 state={collect}
                 name1={t("kengaytirlgan_Q.online")}

@@ -26,7 +26,7 @@ const Index = () => {
                         <Container padding="20px" className="container-shadow" boxShadow={shadow}>
                         <FlexContainer maxWidth="800px" {...mediaFlex}>
                             <FlexItem className="flex-item-one">
-                                <ImageContainer radius="50%" {...mediaImage} src={state?.success?.data?.image || imageRound} width="130px" height="130px"/>
+                                <ImageContainer round="50%" {...mediaImage} src={state?.success?.data?.image || imageRound} width="130px" height="130px"/>
                             </FlexItem>
                             <FlexItem className="flex-item-two">
                                 <FlexContainer flexDirection="column" height="100%" justifyContent="space-around">

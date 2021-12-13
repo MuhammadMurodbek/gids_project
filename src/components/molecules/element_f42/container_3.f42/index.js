@@ -6,11 +6,17 @@ import { FlexContainer } from "../../../../styles/flex.container"
 import cheked from '../../../../assets/img/boglanish/cheked.svg'
 import { Grid } from '@material-ui/core'
 import { useTranslation } from 'react-i18next'
+import {getLabelCountrySecond, getLabelCity} from "../../../../custom/function"
 
-const Index = () => {
+const Index = ({data}) => {
     const { t } = useTranslation()
     const getRole = JSON.parse(localStorage.getItem("user_token"))
-
+    const obj = {
+        no:'Mening mavzuyim emas',
+        great:"A'lo darajada",
+        good:"Yaxshi darajada",
+        low:'Quyi darajada',
+    }
     return (
         <Wrapper>
             <Title text="Xizmatlar" />
@@ -35,17 +41,11 @@ const Index = () => {
                                 </Grid>
                             </FlexContainer>
                             <Text title="Mavzular:" />
-                            <Text display="block" text="Umumiy mavzular - Meni mavzuyim emas" />
-                            <Text display="block" text="Jamiyat va siyosat - Meni mavzuyim emas" />
-                            <Text display="block" text="Iqtisodiyot va moliya - Meni mavzuyim emas" />
-                            <Text display="block" text="Huquqshunoslik - Meni mavzuyim emas" />
-                            <Text display="block" text="Axborot texnologiyalari - Meni mavzuyim emas" />
-                            <Text display="block" text="Reklama va marketing - Meni mavzuyim emas" />
-                            <Text display="block" text="Sanoat va texnologiya - Meni mavzuyim emas" />
-                            <Text display="block" text="Neft va gaz - Meni mavzuyim emas" />
-                            <Text display="block" text="Iqtisodiyot va moliya - Meni mavzuyim emas" />
-                            <Text display="block" text="Ilmiy va texnik adabiyotlar - Meni mavzuyim emas" />
-                            <Text display="block" text="Badiiy adabiyot - Meni mavzuyim emas" />
+                            {
+                                data?.themes?.map((prev, index)=>(
+                                    <Text key={index} display="block" text={prev?.name +"-"+ obj[prev?.level]} />
+                                ))
+                            }
                         </>
                     )
                     : null
@@ -55,17 +55,11 @@ const Index = () => {
                     (<>
                         <img src={cheked} alt="adfdd" className="classed" /> <Text title=" Sinxron" /><br />
                         <Text title="Mavzular:" />
-                        <Text display="block" text="Umumiy mavzular - Meni mavzuyim emas" />
-                        <Text display="block" text="Jamiyat va siyosat - Meni mavzuyim emas" />
-                        <Text display="block" text="Iqtisodiyot va moliya - Meni mavzuyim emas" />
-                        <Text display="block" text="Huquqshunoslik - Meni mavzuyim emas" />
-                        <Text display="block" text="Axborot texnologiyalari - Meni mavzuyim emas" />
-                        <Text display="block" text="Reklama va marketing - Meni mavzuyim emas" />
-                        <Text display="block" text="Sanoat va texnologiya - Meni mavzuyim emas" />
-                        <Text display="block" text="Neft va gaz - Meni mavzuyim emas" />
-                        <Text display="block" text="Iqtisodiyot va moliya - Meni mavzuyim emas" />
-                        <Text display="block" text="Ilmiy va texnik adabiyotlar - Meni mavzuyim emas" />
-                        <Text display="block" text="Badiiy adabiyot - Meni mavzuyim emas" />
+                        {
+                            data?.themes?.map((prev, index)=>(
+                                <Text key={index} display="block" text={prev?.name +"-"+ obj[prev?.level]} />
+                            ))
+                        }
                     </>)
                     : null
             }
@@ -78,26 +72,47 @@ const Index = () => {
                             <FlexContainer width="70%" margin="15px 0">
                                 <Grid container spacing={1} className="gridCon">
                                     <Grid item md={6} className="as">
-                                        <img src={cheked} alt="adfdd" className="classed" />
-                                        <Text title="Ekskursiyalar" /><br />
-                                        <img src={cheked} alt="adfdd" className="classed" />
-                                        <Text title="Og'zaki tarjima (ketma-ket)" />
+                                        {data?.excursions?.length>0 ? 
+                                            <>
+                                                <img src={cheked} alt="adfdd" className="classed" />
+                                                <Text title="Ekskursiyalar" /><br />
+                                            </>
+                                        : null}
+                                        {
+                                            data?.consecutive_translate ? 
+                                            <>
+                                                <img src={cheked} alt="adfdd" className="classed" />
+                                                <Text title="Og'zaki tarjima (ketma-ket)" />
+                                            </>:null
+                                        }
                                     </Grid>
                                     <Grid item md={6} >
-                                        <img src={cheked} alt="adfdd" className="classed" />
-                                        <Text title="Sinxron tarjima" /><br />
-                                        <img src={cheked} alt="adfdd" className="classed" />
-                                        <Text title="Shoshilinch buyurtma" />
+                                        {
+                                            data?.synchronous_translate ? 
+                                            <>
+                                                <img src={cheked} alt="adfdd" className="classed" />
+                                                <Text title="Sinxron tarjima" /><br />
+                                            </>:null
+                                        }
+                                        {
+                                            data?.written_translate ? 
+                                            <>
+                                                <img src={cheked} alt="adfdd" className="classed" />
+                                                <Text title="Izchil tarjima" />
+                                            </>:null
+                                        }
                                     </Grid>
                                 </Grid>
                             </FlexContainer>
                             <div class="box">
                                 <Text title="Ekskursiyalar : " />
                                 <div class="box_child">
-                                    <span>Rossiya - Maskva</span>
-                                    <span>Amerika - Nyu York</span>
-                                    <span>Qozog'iston - Dushanbe</span>
-                                    <span>O'zbekiston - Toshkent</span>
+                                    {   
+                                        data?.excursions?.length>0 ?
+                                        data?.excursions?.map((prev, index)=>(
+                                            <span key={index}>{getLabelCountrySecond(parseInt(prev?.country)) +"-"+ getLabelCity(parseInt(prev?.country), parseInt(prev?.city))}</span>
+                                        )):<div>Malumot kiritilmagan</div>
+                                    }
                                 </div>
                             </div>
                         </>
@@ -109,15 +124,3 @@ const Index = () => {
 }
 
 export default Index
-// < div >
-// <img src={cheked} alt="adfdd" className="classed" /> <Text title="Og'zaki tarjima (sinxron)" />
-// <img src={cheked} alt="adfdd" className="classed" /> <Text title="Shoshilinch buyurtmalar" />
-// </ >
-// <div >
-// <img src={cheked} alt="adfdd" className="classed" /> <Text title="Dam olish kunlari" />
-// <img src={cheked} alt="adfdd" className="classed" /> <Text title="Matnlarni tahrirlash" />
-// </div>
-// <div >
-// <img src={cheked} alt="adfdd" className="classed" /> <Text title="Dam olish kunlari" />
-// <img src={cheked} alt="adfdd" className="classed" /> <Text title="Matnlarni tahrirlash" />
-// </div>

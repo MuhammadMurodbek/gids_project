@@ -40,6 +40,14 @@ export const getLabelCountry = (id) => {
         return label 
     }
 }
+export const getLabelCountrySecond = (id) => {
+    if(countryGlobal){
+        let obj = countryGlobal?.find(a=>a.id===id)?.name
+        if(lan ==='uz') return obj?.uz
+        if(lan ==='en') return obj?.en
+        if(lan ==='ru') return obj?.ru
+    }
+}
 export const getLabelCity = (countryID, cityID) => {
     if(countryID && cityID){
         let cityName = countryGlobal?.find(a=>a.id===countryID)

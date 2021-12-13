@@ -19,35 +19,35 @@ const mediaContainer={
     m_width:'600px',
     m_padding:'10px 0',
 }
-const Index = () => {
+const Index = ({state}) => {
 
     const {t} = useTranslation()
 
     return (
         <Wrapper>
             <Container padding="20px" boxShadow={shadow}>
-                <InfoSecond/>
+                <InfoSecond data={state}/>
             </Container>
             <Container margin="20px 0" {...mediaContainer} padding="20px" boxShadow={shadow}> 
-                <DayPicker />
+                <DayPicker default selectedDays={state?.busy_days?.map(item=> new Date(item)) || []}/>
             </Container>
             <Container padding="20px" boxShadow={shadow}>
-                <MediaPlayer />
+                <MediaPlayer url={state?.video}/>
             </Container>
             <Container padding="20px" margin="20px 0" boxShadow={shadow}>
-                <ImageGallery />
+                <ImageGallery data={state?.certificates}/>
             </Container>
             <Container padding="20px" margin="20px 0" boxShadow={shadow}>
                 <h3 className="titlss">{t("GidPk.boglanish")}</h3>
                 <p className="textb">+ 998 99 999 99 99</p>
-                <p className="textb">salom@gids.com</p>
-                <p className="textb">kun.uz</p>
+                <p className="textb">Facebook: {state?.facebook || 'facebook'}</p>
+                <p className="textb">Web site: {state?.website || 'website'}</p>
                 <div className="imgdiv11">
-                    <ImageContainer src={img01}  />
-                    <ImageContainer src={img02}  />
-                    <ImageContainer src={img03}  />
-                    <ImageContainer src={img04}  />
-                    <ImageContainer src={img05}  />
+                    <a target="_blank" href={state?.facebook}><ImageContainer src={img01}  /></a>    
+                    <a target="_blank" href={state?.telegram}> <ImageContainer src={img02}  /></a>
+                    <a target="_blank" href={state?.instagram}> <ImageContainer src={img03}  /></a>
+                    <a target="_blank" href={state?.wechat}> <ImageContainer src={img04}  /></a>
+                    <a target="_blank" href={state?.viber}> <ImageContainer src={img05}  /></a>
                 </div>
             </Container>
         </Wrapper>
