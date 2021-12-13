@@ -23,8 +23,8 @@ export const toastChecker = (data, success, error) => {
     if(data?.error!== '') toast.error(error || 'Something went wrong')
 }
 export const getLabelLang = (id) => {
-    if(lanOptions){
-        let label = lanOptions?.find(a=>a.value===id)?.label
+    if(lanGlobal && lan){
+        let label = lanGlobal?.find(a=>a.id===id)?.name[lan]
         return label 
     }
 }
@@ -35,9 +35,11 @@ export const getLabelLangLocal = (id) => {
     }
 }
 export const getLabelCountry = (id) => {
-    if(countryOptions){
-        let label = countryOptions?.find(a=>a.value===id)?.label
-        return label 
+    if(countryGlobal){
+        let obj = countryGlobal?.find(a=>a.id===id)?.name
+        if(lan ==='uz') return obj?.uz
+        if(lan ==='en') return obj?.en
+        if(lan ==='ru') return obj?.ru
     }
 }
 export const getLabelCountrySecond = (id) => {

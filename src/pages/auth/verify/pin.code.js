@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux"
 import { post_auth_reg_check_action } from "../../../redux/actions"
 import { toast } from "react-hot-toast";
 import "./style.css"
+import {getGlobals} from "../../../hooks/response_get"
 const YourComponent = () => {
   const history = useHistory()
   const [status, setStatus] = useState("process");
@@ -21,8 +22,9 @@ const YourComponent = () => {
   React.useEffect(() => {
     if (selector) {
       if (selector.status === 200) {
-        const { data } = selector.data
-        console.log(selector)
+        const { data } = selector?.data
+        getGlobals(data)
+        // console.log(selector)
         localStorage.setItem('user_token', JSON.stringify(data))
         data?.role === "simple_user" ?
           window.location.href = "/gid-personal"
@@ -34,14 +36,16 @@ const YourComponent = () => {
     }
   }, [selector])
   return (
-    <VerificationPin
-      type="number"
-      inputsNumber={5}
-      status={status}
-      title="Kodni tasdiqlang"
-      subTitle="Emailingizga kod yuborildi"
-      onFinish={handleOnFinish}
-    />
+    <div style={{position:'relative'}}>
+      <VerificationPin
+        type="number"
+        inputsNumber={5}
+        status={status}
+        title="Kodni tasdiqlang"
+        subTitle="Emailingizga kod yuborildi"
+        onFinish={handleOnFinish}
+      />
+    </div>
   );
 }
 export default YourComponent

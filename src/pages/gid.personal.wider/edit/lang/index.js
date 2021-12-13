@@ -18,7 +18,7 @@ import FadeIn from 'react-fade-in';
 import Translator from "./_translator"
 import { common } from "../../../../custom/url"
 import {toastChecker} from "../../../../custom/function"
-import {getLabelLang} from "../../../../custom/function"
+import {getLabelLangLocal} from "../../../../custom/function"
 const Index = () => {
 
     const { t } = useTranslation();
@@ -78,7 +78,7 @@ const Index = () => {
                                     <FadeIn>
                                         <Grid container spacing={ 1 } key={ index }>
                                             <Grid item xs={ 12 } sm={ 6 } md={ 6 }>
-                                                <TextLabeledLoop label={ t( "TillarniBilish.til" ) } value={ getLabelLang(item?.language) || null} />
+                                                <TextLabeledLoop label={ t( "TillarniBilish.til" ) } value={ getLabelLangLocal(item?.language) || null} />
                                             </Grid>
                                             <Grid item xs={ 12 } sm={ 6 } md={ 5 }>
                                                 <TextLabeledLoop label={ t( "TillarniBilish.bilishDarajasi" ) } value={ item?.level?.label } />
