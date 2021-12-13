@@ -15,15 +15,15 @@ const Index = () => {
             <FlexContainer width="auto" alignItems="center" justifyContent="flex-start" flexDirection="column">
                 <Grid container spacing={1} className="info-item">
                     <Grid item sm={3}><ImgContainer src={starImg} width="30px"/></Grid>
-                    <Grid item sm={9}><span>10.0</span>/10</Grid>
+                    <Grid item sm={9}><span>10.0</span>/0</Grid>
                 </Grid>
                 <Grid container spacing={1} className="info-item">
                     <Grid item sm={3}><ImgContainer src={comment} width="30px"/></Grid>
-                    <Grid item sm={9}><span>{t("Gid_Tanlash.fikirlar")}</span>/10</Grid>
+                    <Grid item sm={9}><span>{t("Gid_Tanlash.fikirlar")}</span>/0</Grid>
                 </Grid>
                 <Grid container spacing={1} className="info-item">
                     <Grid item sm={3}><ImgContainer src={extraImg} width="30px"/></Grid>
-                    <Grid item sm={9}><span>{t("Gid_Tanlash.kuniga")}</span>/10</Grid>
+                    <Grid item sm={9}><span>{t("Gid_Tanlash.kuniga")}</span>/0</Grid>
                 </Grid>
             </FlexContainer>
         </WrapperInfoF2>

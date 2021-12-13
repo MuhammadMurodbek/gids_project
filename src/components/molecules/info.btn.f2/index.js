@@ -25,7 +25,7 @@ const Index = () => {
             <FlexContainer  width="100%" height="100%" alignItems="center" justifyContent="space-between" flexDirection="column">
                 <FlexContainer {...mediaUser} width="auto" alignItems="center" justifyContent="center" className="fl-container">
                     <CheckCircleOutlineIcon className="icon"/>
-                    <FlexContainer width="auto" alignItems="center" className="count"><VisibilityIcon/>{" "}2016</FlexContainer>
+                    <FlexContainer width="auto" alignItems="center" className="count"><VisibilityIcon/>{" "}10</FlexContainer>
                 </FlexContainer>
                 <Link to="/seeprofile">
                     <Button {...mediaButton}  width="100%"> {t("Gid_Tanlash.korish")} </Button>
