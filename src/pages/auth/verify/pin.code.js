@@ -36,14 +36,16 @@ const YourComponent = () => {
     }
   }, [selector])
   return (
-    <VerificationPin
-      type="number"
-      inputsNumber={5}
-      status={status}
-      title="Kodni tasdiqlang"
-      subTitle="Emailingizga kod yuborildi"
-      onFinish={handleOnFinish}
-    />
+    <div style={{position:'relative'}}>
+      <VerificationPin
+        type="number"
+        inputsNumber={5}
+        status={status}
+        title="Kodni tasdiqlang"
+        subTitle="Emailingizga kod yuborildi"
+        onFinish={handleOnFinish}
+      />
+    </div>
   );
 }
 export default YourComponent
