@@ -29,6 +29,8 @@ export const getGlobals = async(token) => {
     })
         .then(response => localStorage.setItem('countryGlobal', JSON.stringify(response?.data)))
         .catch(err => console.log(err))
+
+    window.location.href='/'
 }
 export const postResponse = async(url, data, setState) => {
     return await axios.post(`${baseUrl}${url}`,data, head_token)

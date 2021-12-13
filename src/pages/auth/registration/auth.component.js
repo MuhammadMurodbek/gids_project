@@ -41,7 +41,7 @@ const Index = () => {
     const Success = (data) => {
         getGlobals(data)
         localStorage.setItem('user_token', JSON.stringify(data))
-        window.location.href = "/"
+        // window.location.href = "/"
     }
     useEffect(() => {
         if (responseHook?.status) {
