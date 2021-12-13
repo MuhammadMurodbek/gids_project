@@ -8,7 +8,7 @@ const Index = (props) => {
     return (
         <Wrapper width={width} pcolor={pcolor} >
             <Label margin={marginLabel} size={sizeLabel}>{label}</Label>
-            <Select {...props} placeholder={placeholder} width="100%" />
+            <Select {...props} placeholder={placeholder} width='100%' />
         </Wrapper>
     )
 }
