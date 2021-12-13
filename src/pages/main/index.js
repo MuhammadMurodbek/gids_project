@@ -24,13 +24,16 @@ import { Link } from 'react-router-dom'
 import Box from "@material-ui/core/Box";
 import img21 from '../../assets/img/about/right.png'
 import {useTranslation} from 'react-i18next'
-
+import {getLabelCountrySecond} from "../../custom/function"
 
 import {media, mediaFlexButtons, mediaBtn, mediaTextField, mediaTextFieldSec, mediaContainer} from "./_media"
 import AccountMenu from '../../components/atom/user_account';
 
 const Index = () => {
-    
+    const countryGlobal = JSON.parse( localStorage.getItem( "countryGlobal"))
+    React.useMemo(() =>{
+        getLabelCountrySecond(1)
+    },[countryGlobal])
     const getRole = JSON.parse(localStorage.getItem("user_token"))
      
     const {t} = useTranslation()

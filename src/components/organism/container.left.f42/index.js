@@ -40,8 +40,15 @@ const  Index = ({state}) => {
 
     const getRole = JSON.parse(localStorage.getItem("user_token"));
     const lan = localStorage.getItem("i18nextLng")
-    // const { role } = getRole;
-    console.log(state)
+    const languageCheck = (item, lang) => {
+        if(lang==='en') return item?.language__name_en
+        if(lang==='ru') return item?.language__name_ru
+        if(lang==='uz') return item?.language__name_uz +" tili"
+    }
+    const degreeLang={
+        native:"Ona tili",
+        intermediate:'Yaxshi'
+    }
     return (
         <Wrapper>
             <WrapperContainer>
@@ -56,12 +63,13 @@ const  Index = ({state}) => {
                                     <div className="gid-info-personal">33 yosh | <span style={{textTransform: "capitalize"}}>{getRole?.role}</span> </div>
                                     {
                                         getRole?.role === 'gid' ? 
-                                        <>
-                                            <div className="gid-info-personal-text top"><div className="text">Xitoy tili</div> - Bemalol (Og'zaki va yozma)</div>
-                                            <div className="gid-info-personal-text"><div className="text">Ingliz tili</div> - Bemalol (Ogzaki va yozma)</div>
-                                            <div className="gid-info-personal-text"><div className="text">Xitoy tili</div> - Og'zaki va yozma</div>
-                                            <div className="gid-info-personal-text"><div className="text">Ingliz tili</div> - Ogzaki va yozma</div>
-                                        </>:
+                                        state?.languages?.map((prev, index)=>(
+                                            <div key={index} className={index === 0 ? "gid-info-personal-text top":"gid-info-personal-text"}>
+                                                <div className="text">{languageCheck(prev, lan) || "Ma'lumot kiritilmagan"}</div> 
+                                                    - {degreeLang[prev?.level] || "Ma'lumot kiritilmagan"}
+                                            </div>
+                                        ))
+                                        :
                                         state?.languages?.map((prev,index) => (
                                             <div key={index} className="gid-info-personal-text"><div className="text">{prev?.from_language_name[lan] || 'Mavjud emas'}</div> - <div className="text">{prev?.to_language_name[lan] || 'Mavjud emas'}</div></div>
                                         ))
@@ -75,13 +83,16 @@ const  Index = ({state}) => {
                 <Container padding="30px">
                     <TextTitle font="15px" fontWeight="600" align="left" color="#326A32">{t("GidPk.OzimHaqimda")}</TextTitle>
                     <p>{state?.bio || 'Bio kiritilmagan'}</p>
-                    <ContainerBottom style={{marginBottom:10}}>
-                        <div className="inner-div"> <span className="title"> 
-                            {t("GidPk.qatnashgan")}</span> 
-                        </div>
-                    </ContainerBottom>
                     {
-                        state?.trainings.length>0 ?
+                        getRole?.role ==='gid' ? null:
+                        <ContainerBottom style={{marginBottom:10}}>
+                            <div className="inner-div"> <span className="title"> 
+                                {t("GidPk.qatnashgan")}</span> 
+                            </div>
+                        </ContainerBottom>
+                    }
+                    {
+                        state?.trainings?.length>0 ?
                         state?.trainings?.map((prev, index)=>(
                             <ContainerBottom key={index}>
                                 <div className="inner-div"> 
