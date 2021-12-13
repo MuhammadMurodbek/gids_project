@@ -10,7 +10,7 @@ import { Container } from '../../../../styles/container/index.style'
 import { common } from "../../../../custom/url"
 import { useTranslation } from 'react-i18next'
 import { toast } from "react-hot-toast"
-import { getLabelLang, toastChecker } from "../../../../custom/function"
+import { getLabelLangLocal, toastChecker } from "../../../../custom/function"
 import SelectLabeledLang from "../../../../components/molecules/select.labeled/lang"
 const Translator = ( { getData, spinner, setCallback } ) => {
     const { t } = useTranslation()
@@ -55,10 +55,10 @@ const Translator = ( { getData, spinner, setCallback } ) => {
                         items?.map( ( item, index ) => (
                             <Grid key={ index } container spacing={ 1 } justifyContent="space-between">
                                 <Grid item xs={ 12 } sm={ 6 } md={ 6 }>
-                                    <TextLabeledLoop value={ getLabelLang( item.from_language ) } label="Siz qaysi tildan tarjima qilasiz?" />
+                                    <TextLabeledLoop value={ getLabelLangLocal( item.from_language ) } label="Siz qaysi tildan tarjima qilasiz?" />
                                 </Grid>
                                 <Grid item xs={ 12 } sm={ 6 } md={ 5 }>
-                                    <TextLabeledLoop value={ getLabelLang( item.to_language ) } label="Siz qaysi tilga tarjima qilasiz?" />
+                                    <TextLabeledLoop value={ getLabelLangLocal( item.to_language ) } label="Siz qaysi tilga tarjima qilasiz?" />
                                 </Grid>
                                 <Grid item xs={ 12 } sm={ 6 } md={ 1 }>
                                     <FlexContainer width="100%" flexDirection="column" gap="4px" margin="46px 0 0 0 ">
