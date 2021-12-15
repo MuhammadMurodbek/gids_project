@@ -4,7 +4,7 @@ import {mainGreen} from "../../styles/global/colors"
 export const Wrapper = styled.form`
     width: 100%;
     height: auto;
-
+    padding: 10px 20px;
     .wrap-grid{
         margin:20px 0;
     }

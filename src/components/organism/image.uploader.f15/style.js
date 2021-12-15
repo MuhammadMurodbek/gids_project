@@ -52,4 +52,16 @@ export const Wrapper = styled.div`
             object-fit:cover !important;
         }
     }
+    .div11{
+        position: relative;
+    }
+    .delete{
+        color: #326a32;
+        z-index:1111;
+        position:absolute;
+        top:25px;
+        right:15px;
+        font-size:30px;
+        cursor:pointer
+}
 `

@@ -3,5 +3,5 @@
     color:#fff !important;
 }
 .DayPicker-Day.DayPicker-Day--selected{
-    background-color: #720028 !important;
+    background-color: rgb(160, 0, 0) !important;
 }
