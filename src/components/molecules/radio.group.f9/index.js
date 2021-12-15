@@ -10,13 +10,15 @@ import {useTranslation} from 'react-i18next'
 const Index = ({setState, state, errorText}) => {
 
     const {t} = useTranslation()
-    const [value, setValue] = React.useState('female');
+    const [value, setValue] = React.useState();
     const handleChange = useCallback((event) => {
-        setValue(event.target.value);
-        if(setState){
-            setState({...state, who_need:event.target.value})
+        if(event.target.value){
+            setValue(event.target.value);
+            if(setState){
+                setState({...state, who_need:event.target.value})
+            }
         }
-    },[value, setState])
+    },[value,state])
     return (
         <Wrapper>
              <FormControl component="fieldset">
@@ -26,10 +28,15 @@ const Index = ({setState, state, errorText}) => {
                 <FormControlLabel value="translator" control={<Radio />}
                  label={<span>{t("arizaqoldirish.Tarjimon")}</span>} />
                 <div className="double_check" style={value === "translator" ? {display:"inline-block"}:{display:'none'}}>
-                    <DoubleCheck   margin="10px 0 0 120px" 
-                    name1={t("arizaqoldirish.sinxron")} 
-                    name2={t("arizaqoldirish.izchil")} 
-                    name3={t("arizaqoldirish.yozma")} justifyContent="flex-end"  />
+                    <DoubleCheck   
+                        collect={state}
+                        setCollect={setState}
+                        margin="10px 0 0 120px" 
+                        name1={t("arizaqoldirish.sinxron")} 
+                        name2={t("arizaqoldirish.izchil")} 
+                        name3={t("arizaqoldirish.yozma")} 
+                        justifyContent="flex-end"  
+                    />
                 </div>
             </RadioGroup>
             </FormControl>

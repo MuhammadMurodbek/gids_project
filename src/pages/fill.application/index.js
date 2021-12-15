@@ -163,7 +163,7 @@ const Index = () => {
                                     field2="is_female"
                                     state={collect}
                                     setState={setCollect}
-                                    errorText={(error && (collect?.is_female || collect?.is_female)) ? "Tarjimon tanlanmagan" : null}
+                                    errorText={(error && (collect?.is_male || collect?.is_female)) ? "Tarjimon tanlanmagan" : null}
                                 />
                             </Grid>
                         </Grid>

@@ -7,11 +7,11 @@ const Index = (props) => {
     const handleChange = useCallback((e) => {
         if(setState && field)
         setState({...state, [field]:e.target.checked })
-    },[state, field, setState])
+    },[state, field])
     return (
         <Wrapper>
             <Checkbox checked={state ? state[field] : false} name={name} 
-            onChange={handleChange}>{props.name}</Checkbox>
+                onChange={handleChange}>{props.name}</Checkbox>
             <span style={{position: 'absolute', fontSize:'11px', left:0, bottom:-18,  fontStyle:'italic', color:'red'}}>
                 {errorText}
             </span> 
