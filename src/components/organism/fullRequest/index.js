@@ -23,7 +23,7 @@ import { postResponse } from '../../../hooks/response_get';
 import toast from 'react-hot-toast';
 import { getResponse } from '../../../hooks/response_get';
 import moment from 'moment';
-
+import {getLabelLangLocal} from "../../../custom/function"
 
 export default function Index(props) {
     const {applicationData, setApplicationData} = props;
@@ -63,7 +63,6 @@ export default function Index(props) {
         let url = getRole?.role === 'simple_user' ? `/api/users/self/application/` : `/api/users/applications/`
         getResponse(`${url}${id}/`, setApplicationData)
     }, [id])
-    // console.log(applicationData.success.data, 'datadaadsad')
 
     useEffect(() => {
         if (response?.success !== "") {
@@ -126,7 +125,7 @@ export default function Index(props) {
                     <div className="tafsilot-text">
                         <b> <ImageContainer src={odamlar} /></b>
                         <b>{t("ToliqAriza.tillar")} </b>
-                        <p>Rus tili, Ingiliz tili</p>
+                        <p>{applicationData?.success?.data?.languages?.map(a=>" "+getLabelLangLocal(a.id)+",") || "Ma'lumot kiritilmagan"}</p>
                     </div>
                     <div className="tafsilot-text">
                         <b> <ImageContainer src={til} /></b>

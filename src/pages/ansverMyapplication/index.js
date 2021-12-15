@@ -4,10 +4,8 @@ import Button from "../../components/atom/button";
 import { Wrapper } from './style';
 import { Grid } from '@material-ui/core';
 import ImgContainer from "../../components/molecules/img.container"
-import imggid from '../../assets/img/answerMy-application/imggid.svg'
 import star from '../../assets/img/answerMy-application/star.svg'
 import sms from '../../assets/img/answerMy-application/sms.svg'
-import { mediaBtn } from "../../custom/global.media.variables";
 import Spinner from "../../components/atom/loading.spinner.line"
 import moment from "moment"
 export const mediaImage = {
