@@ -189,7 +189,7 @@ export const routes = [
         component:ListRouter.Cities
     },
     {
-        url:'/fulldata/:id',
+        url:'/blog/:id',
         component:ListRouter.FullData,
     },
     {

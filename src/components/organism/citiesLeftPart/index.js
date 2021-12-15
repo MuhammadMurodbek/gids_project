@@ -21,7 +21,7 @@ export default function index(props) {
                         <div className=" text-div ">
                             {text}
                         </div>
-                        <Link className="text-link" to={`/fullData/${id}` 
+                        <Link className="text-link" to={`/blog/${id}` 
                         
                         }>
                             {btnText}
