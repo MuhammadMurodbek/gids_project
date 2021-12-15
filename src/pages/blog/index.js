@@ -27,6 +27,8 @@ export default function Index () {
         let url = `/api/posts/article/${query}`
         getResponse( url, setState )
         history.push(`/blog${query}`)
+        let pagNumber = query[query.length - 1]
+        setPagination({current:parseInt(pagNumber)})
     }, [ query ] )
     useEffect( () => {if ( state?.success )setArticleList( state.success?.data?.results )}, [ state.success?.data?.results ] )
     function onChange ( pageNumber ) {
