@@ -13,7 +13,7 @@ export default function Index(props) {
         let url = `/api/posts/article/?tag=${hteg}`
         getResponse(url, setState)
     }
-    console.log(hteg)
+    // console.log(hteg)
     return (
         <Wrapper>
             <Grid className="imte12" item xs={12} md={12}>

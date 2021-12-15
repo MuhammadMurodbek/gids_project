@@ -11,35 +11,28 @@ import { Grid } from '@material-ui/core'
 import { Pagination } from 'antd';
 import { Wrapper } from './style'
 import moment from 'moment'
-
+import {useHistory} from "react-router-dom"
 
 export default function Index () {
+    let query = window.location.search
     const { t } = useTranslation()
+    const history = useHistory()
     const [ state, setState ] = useState( { success: '', error: '' } )
     const [ tagName, setTagName ] = useState( undefined )
     const [ articleList, setArticleList ] = useState( [] )
-    const [ pagination, setPagination ] = useState( {
-        current: 1
-    } )
+    const [ pagination, setPagination ] = useState( {current: 1} )
     const [ postData, setPostData ] = useState( { success: '', error: '', loading: false } )
     let { current } = pagination
     useEffect( () => {
-        let url = `/api/posts/article/ `
+        let url = `/api/posts/article/${query}`
         getResponse( url, setState )
-    }, [ pagination ] )
-    useEffect( () => {
-        if ( state?.success )
-        {
-            setArticleList( state.success?.data?.results )
-        }
-    }, [ state.success?.data?.results ] )
-
+        history.push(`/blog${query}`)
+    }, [ query ] )
+    useEffect( () => {if ( state?.success )setArticleList( state.success?.data?.results )}, [ state.success?.data?.results ] )
     function onChange ( pageNumber ) {
-        setPagination( {
-            current: pageNumber
-        } )
+        history.push(`/blog?page=${pageNumber}`)
+        setPagination( { current: pageNumber} )
     }
-    // console.log( articleList, 'data' )
     return (
         <Wrapper>
             <TextTitle width="50%" left="auto" right="auto" bottom="30px" top="80px">
@@ -81,7 +74,7 @@ export default function Index () {
                                         </Grid>
                                     </Grid>
                                     <div className="pagination">
-                                        <Pagination current={ state?.success?.data?.num_pages } onChange={ onChange } total={ 50 } />
+                                        <Pagination current={current} onChange={ onChange } pageSize={4} total={ state?.success?.data?.count } />
                                     </div>
                                 </> : <NoDataPage />
                         }
