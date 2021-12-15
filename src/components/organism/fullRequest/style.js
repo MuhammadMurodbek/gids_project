@@ -105,8 +105,10 @@ export const Wrapper = styled.div`
         } 
     } */
     @media (max-width:960px) {
+        padding: 0 25px 10px;
         .gridTitle2{
             justify-content: flex-start;
+            margin-left: 0;
         }
         .grid_container{
             flex-direction: column-reverse;
