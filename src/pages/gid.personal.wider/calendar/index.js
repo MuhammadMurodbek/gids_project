@@ -61,7 +61,7 @@ const Index = () => {
                         <div style={{width: '100%', display:'flex', justifyContent: 'space-between', alignItems: 'center'}}>
                             <div>Tahrirlash</div>
                             <Switch 
-                                style={busy ? { background:'#f34a84'}:{backgroundColor:"#326a32"}} 
+                                style={busy ? { background:'red'}:{backgroundColor:"#326a32"}} 
                                 checkedChildren="Band" 
                                 unCheckedChildren="Bo'sh" 
                                 onClick={()=>setBusy(!busy)} 

@@ -4,7 +4,9 @@ import { FlexContainer } from '../../../styles/flex.container'
 
 const Index = (props) => {
     const {name1, name2,name3, width, margin, alignItems, justifyContent, flexDirection, display, collect, setCollect} = props
+    
     const [state, setState] = React.useState({is_synchronous:false, is_consecutive:false, is_writer:false})
+    
     useEffect(() => {
         if(setCollect){
             if(collect?.who_need === 'translator'){

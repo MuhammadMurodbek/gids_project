@@ -24,7 +24,7 @@ export default function Index () {
     const [ postData, setPostData ] = useState( { success: '', error: '', loading: false } )
     let { current } = pagination
     useEffect( () => {
-        let url = `/api/posts/article/?page=${ current }`
+        let url = `/api/posts/article/ `
         getResponse( url, setState )
     }, [ pagination ] )
     useEffect( () => {
