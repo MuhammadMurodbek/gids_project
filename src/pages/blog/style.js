@@ -2,11 +2,7 @@ import  styled  from "styled-components";
 
 export const  Wrapper = styled.div`
     width: 100%;
-<<<<<<< HEAD
     padding:0 85px;
-=======
-    padding:0 30px 30px 85px;
->>>>>>> abdurahmon
     .davomi{
         display: flex;
         align-items: center;

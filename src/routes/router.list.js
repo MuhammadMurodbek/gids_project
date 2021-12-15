@@ -15,7 +15,7 @@ export const routes_user = [
         component:ListRouter.GidPersonal
     },
     {
-        url:'/answer-me',
+        url:'/answer-me/:id',
         component:ListRouter.AnsverMyapp
     },
     {

@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
     .grid-container{
         box-shadow:0px 5px 5px #BBBDBB;
         width: 100%;
-        margin: 85px;
+        margin: 15px 85px;
         padding: 20px ;
     }
     .sc-jUEmfL.bXPgTV{
@@ -27,7 +27,7 @@ export const Wrapper = styled.div`
         
      }
      .answers{
-        margin:30px 0;
+        margin:10px 0;
       
         display: flex;
         justify-content: center;
@@ -73,6 +73,7 @@ export const Wrapper = styled.div`
     @media (max-width: 700px){
         .grid-container{
             width:95% !important;
+            margin: 15px 20px;
         }
         .title-answers{
             padding:0 10px;

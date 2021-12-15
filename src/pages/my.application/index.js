@@ -4,7 +4,7 @@ import InDate from '../../components/molecules/dateIn'
 import MyRequests from '../../components/organism/request';
 import noDataImg from "../../assets/img/undraw/no_data.svg"
 import Spinner from "../../components/atom/loading.spinner.line"
-
+import moment from "moment"
 export default function Index({success, setCollect, collect, setCallback}) {
     const array_data = success?.data?.results
     const lang = localStorage.getItem('i18nextLng')
@@ -26,7 +26,7 @@ export default function Index({success, setCollect, collect, setCallback}) {
                                     gpss={item?.country_name[lang] +" "+item?.city_name[lang] }
                                     dan={item?.start_date ||'00-00-0000'}
                                     gacha={item?.end_date || '00-00-0000'}
-                                    sana=""
+                                    sana={moment(item?.created_at).format('DD.MM.YYYY') || '00:00:00'}
                                 />
                             ))
                         :<div className="wrapper_no_data">

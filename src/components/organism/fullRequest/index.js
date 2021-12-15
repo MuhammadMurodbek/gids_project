@@ -26,10 +26,11 @@ import moment from 'moment';
 
 
 export default function Index(props) {
+    const {applicationData, setApplicationData} = props;
     const [comment, setComment] = useState('')
     const [response, setResponse] = useState({ success: '', error: '' })
-    const [applicationData, setApplicationData] = useState({ success: '', error: '', loading: false })
-
+    // const [applicationData, setApplicationData] = useState({ success: '', error: '', loading: false })
+    const getRole = JSON.parse(localStorage.getItem("user_token"))
 
     const { id } = useParams()
     const { t } = useTranslation();
@@ -59,10 +60,10 @@ export default function Index(props) {
     }
 
     useEffect(() => {
-        getResponse(`/api/users/applications/${id}`, setApplicationData)
-
-    }, [])
-    console.log(applicationData.success.data, 'datadaadsad')
+        let url = getRole?.role === 'simple_user' ? `/api/users/self/application/` : `/api/users/applications/`
+        getResponse(`${url}${id}/`, setApplicationData)
+    }, [id])
+    // console.log(applicationData.success.data, 'datadaadsad')
 
     useEffect(() => {
         if (response?.success !== "") {
@@ -85,7 +86,7 @@ export default function Index(props) {
                     <b className="idb"># {applicationData?.success?.data?.id}</b>
                 </Grid>
                 <Grid className="gridTitle2" item xs={12} md={6}>
-                    <Link to="/request" className="comback"> <ArrowBackIcon className="arrole" /> {t("ToliqAriza.qaytish")} </Link>
+                    <Link to={getRole?.role === 'simple_user' ? '/gid-personal':'/request'} className="comback"> <ArrowBackIcon className="arrole" /> {t("ToliqAriza.qaytish")} </Link>
                 </Grid>
             </Grid>
 
@@ -102,27 +103,20 @@ export default function Index(props) {
                     <div className="tafsilot-text">
                         <b> <ImageContainer src={gps} /></b>
                         <b>{t("ToliqAriza.shahar")} </b>
-                        <p>
-                        {applicationData?.success?.data?.country_name?.uz}
-                        
-                        </p>
+                        <p> {applicationData?.success?.data?.country_name?.uz}</p>
                     </div>
                     <div className="tafsilot-text">
                         <b> <ImageContainer src={cal} /></b>
                         <b>{t("ToliqAriza.sana")} </b>
                         <p>
-                        {applicationData?.success?.data?.start_date}||
-                        {applicationData?.success?.data?.end_date}
+                            {moment(applicationData?.success?.data?.start_date).format('DD.MM.YYYY')} - &nbsp;
+                            {moment(applicationData?.success?.data?.end_date).format('DD.MM.YYYY')} 
                         </p>
                     </div>
                     <div className="tafsilot-text">
                         <b> <ImageContainer src={kim} /></b>
                         <b>{t("ToliqAriza.gacha")} </b>
-                        <p>
-                        {applicationData?.success?.data?.cost + " "} 
-
-                        {curens[applicationData?.success?.data?.currency] || " Malumot topilmadi"}
-                        </p>
+                        <p>{applicationData?.success?.data?.cost + " " +curens[applicationData?.success?.data?.currency] || " Malumot topilmadi"} </p>
                     </div>
                     <div className="tafsilot-text">
                         <b> <ImageContainer src={narx} /></b>
@@ -148,7 +142,7 @@ export default function Index(props) {
                     <div>
                         <div className="div1title">{t("ToliqAriza.arizaMatni")}</div>
                         <p>  
-                             {applicationData?.success?.data?.why_need}
+                             {applicationData?.success?.data?.why_need || "Ma'lumot kiritilmagan"}
                         </p>   
                     </div>
                     <p className="f-sana">
