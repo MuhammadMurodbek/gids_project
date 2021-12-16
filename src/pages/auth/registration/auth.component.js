@@ -39,8 +39,8 @@ const Index = () => {
         } else setResponseHook(post_auth_ent_action(obj))
     }
     const Success = (data) => {
-        getGlobals(data)
         localStorage.setItem('user_token', JSON.stringify(data))
+        getGlobals(data)
         // window.location.href = "/"
     }
     useEffect(() => {
