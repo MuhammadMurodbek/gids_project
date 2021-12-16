@@ -13,6 +13,7 @@ import Cities from '../pages/cities';
 import  GidPersonal from '../pages/gid.personal';
 import Article from '../pages/article';
 import AnsverMyapp from '../pages/ansverMyapplication';
+import AnsverMyappEdit from '../pages/fill.application/edit.app';
 import Blog from '../pages/blog';
 import Advertising from '../pages/advertising';
 import ResetPassword from "../pages/auth/recover"
@@ -44,6 +45,7 @@ export {
     FullData,
     Article,
     AnsverMyapp,
+    AnsverMyappEdit,
     Blog,
     Advertising,
     GidPersonalWider,

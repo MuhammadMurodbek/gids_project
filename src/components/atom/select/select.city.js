@@ -21,7 +21,7 @@ const Index = (props) => {
   localStorage.setItem('cityOptions', JSON.stringify(options))
   // console.log(country)
   // console.log(citiesValue)
-  console.log(options)
+  // console.log(options)
   const handleChange = (e) => {
     // console.log(e)
     setValue(()=>e)

@@ -65,7 +65,7 @@ const MediaNavbarContainer = (props) => {
                     
                 }
                 <span onClick={handleClick}>
-                    <ButtonNavbar title="Blog" url="/blog" />
+                    <ButtonNavbar title="Blog" url="/blog?page=1" />
                 </span>
                 {
                     userToken?.role === "simple_user" ?

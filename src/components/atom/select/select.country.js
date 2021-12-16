@@ -11,12 +11,13 @@ const Index = (props) => {
   const country = JSON.parse(localStorage.getItem('countryGlobal'))
   const lang = localStorage.getItem('i18nextLng')
   const [value, setValue] = useState(null);
-  console.log(defaultApiValue)
+  // console.log(defaultApiValue)
   let options = country?.map((item)=>{return{value: item.id,label:item?.name[lang]}}) || null
   localStorage.setItem('countryOptions', JSON.stringify(options))
   const handleChange = (e) => {
     if(e){
-      setValue(e)
+      console.log(e)
+      setValue(() =>e)
       if(setState) setState(prev=>{return{...prev,  country:e?.value, country_name:options.find(a=>a.value === e?.value)}})
       if(setCountryId) setCountryId(e.value)
     }
@@ -29,9 +30,11 @@ const Index = (props) => {
       if(lang==='ru') labelData = defaultApiValue?.label?.ru
       // console.log(defaultApiValue?.label?.uz)
       let defaultData = {value:defaultApiValue?.value, label:labelData}
-      setValue(prev=> prev || defaultData)
+      setValue(prev=>prev ||defaultData)
+      // console.log(defaultApiValue)
     }
   },[defaultApiValue])
+  // console.log(value)
   return (
     <Wrapper
       width={width}

@@ -16,7 +16,7 @@ const Index = ({setState, state, field}) => {
         if(setState){
             setState({...state, [field]: event.target.value});
         }
-        // console.log(event.target.value)
+        console.log(event.target.value)
     }
     // console.log(value)
     return (
@@ -31,7 +31,7 @@ const Index = ({setState, state, field}) => {
                     name1={t("kengaytirlgan_Q.sinxron")} 
                     name2={t("kengaytirlgan_Q.izchil")} 
                     name3={t("kengaytirlgan_Q.yozmaTarjimon")}
-                     flexDirection="column"/>
+                    flexDirection="column"/>
                 </div>
                 
             </RadioGroup>

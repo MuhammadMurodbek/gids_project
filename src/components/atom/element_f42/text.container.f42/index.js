@@ -7,7 +7,7 @@ const Index = (props) => {
             <div className="inner-div">
                 {check ? <i className="fas fa-check"></i>:null}
                 <span className="title">{title}</span> 
-                <span>{text}</span> 
+                <span style={{textTransform:'capitalize'}}>{text}</span> 
             </div>
         </ContainerBottom>
     )

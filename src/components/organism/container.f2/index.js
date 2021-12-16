@@ -18,15 +18,14 @@ const media_container = {
 }
 
 const Index = ({data}) => {
-    const getRole = JSON.parse( localStorage.getItem( "user_token" ) )
     const lang = localStorage.getItem('i18nextLng')
     const { t } = useTranslation()
-    console.log(data)
     const languageCheck = (item, lang) => {
-        if(lang==='en') return item?.language__name_en
-        if(lang==='ru') return item?.language__name_ru
-        if(lang==='uz') return item?.language__name_uz +" tili"
+        if(lang==='en') return item?.from_language__name_en 
+        if(lang==='ru') return item?.from_language__name_ru  
+        if(lang==='uz') return item?.from_language__name_uz 
     }
+    // console.log(data)
     return (
         <WrapperContainer>
             <Grid container spacing={1}>
@@ -42,7 +41,7 @@ const Index = ({data}) => {
                 <Grid item xs={12} sm={6}>
                     <Container margin="30px 0 0 0">
                         <TextTitle align="left" font="20px"> {(data?.first_name +" " + data?.last_name) || "Ma'lumot kiritilmagan"} </TextTitle>
-                        <div className="gid-info-personal">33 yosh | <span style={{textTransform: "capitalize"}}>{getRole?.role === 'simple_user' ? "User":getRole?.role}</span> </div>
+                        <div className="gid-info-personal">33 yosh | <span style={{textTransform: "capitalize"}}>{data?.role}</span> </div>
                         <div className="gid-info-personal-text top"> 
                             <div className="text">
                                 {t("Gid_Tanlash.hizmat")} : { data?.excursions?.map((prev)=>" "+getLabelCity(parseInt(prev?.country), parseInt(prev?.city))+",") || "Ma'lumot kiritilmagan"}
@@ -52,7 +51,8 @@ const Index = ({data}) => {
                             {t("Gid_Tanlash.tillar")} : 
                             </div>
                                 {
-                                    data?.languages?.map(prev=>" "+languageCheck(prev, lang)+",") || "Ma'lumot kiritilmagan"
+                                    data?.languages.length > 0 ?
+                                    data?.languages?.map(prev=>" "+languageCheck(prev, lang)+",") : "Ma'lumot kiritilmagan"
                                 }                            
                             </div>
                         <div className="gid-info-personal-text">

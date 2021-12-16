@@ -8,6 +8,7 @@ const Index = (props) => {
         if(setState && field)
         setState({...state, [field]:e.target.checked })
     },[state, field])
+    // console.log(state)
     return (
         <Wrapper>
             <Checkbox checked={state ? state[field] : false} name={name} 

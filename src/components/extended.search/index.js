@@ -9,28 +9,30 @@ import Button from "./button.component"
 import DoubleRadio from "../molecules/double.radio.labeled"
 import {useHistory} from "react-router-dom"
 import { useTranslation } from 'react-i18next'
-import { getResponse } from "../../hooks/response_get"
+// import { getResponse } from "../../hooks/response_get"
 import { toast } from "react-hot-toast"
-const Index = () => {
+const Index = ({loader}) => {
     const history = useHistory()
     const { t } = useTranslation()
     const [postData, setPostData] = useState({ success: '', error: '', loading: false })
-    const getRole = JSON.parse(localStorage.getItem("user_token"))
+    // const getRole = JSON.parse(localStorage.getItem("user_token"))
     const [collect, setCollect] = useState()
-    console.log(collect)
     const handleSubmit = () => {
-        setPostData({ ...postData, loading: true })
-        let urlOther = `/api/${collect?.type}s/profiles/?gender=${collect?.male ? 'male' : 'female'}&country=${collect?.country}&city=${collect?.city}&lang=${collect?.languages?.map(item => item?.value)}&date_after=${collect?.date_after}&date_before=${collect?.date_before}&${collect?.search_type}=0`
-        getResponse(urlOther, setPostData)
+        if(collect?.type){
+            setPostData({ ...postData, loading: true })
+            let urlOther = `type=${collect?.type}&gender=${(collect?.male && collect?.female)? undefined: collect?.male ? 'male' : collect?.female ? 'female' : undefined}&country=${collect?.country}&city=${collect?.city}&lang=${collect?.languages?.map(item => item?.value)}&date_after=${collect?.date_after}&date_before=${collect?.date_before}&${collect?.search_type}=0`
+            let filterUrl = urlOther.split('&').filter(a=>!a.includes('undefined')).join('&')
+            history.push('/gids?'+filterUrl)
+        }else{
+            toast.error('Kim kerakligi tanlang')
+        }
     }
     React.useEffect(() => {
-        if (postData?.error !== '') toast.error("Ma'lumotlarni to'liq kiriting")
-        if (postData?.success !== '') {
-            localStorage.setItem('advanced_search', JSON.stringify(postData?.success?.data))
-            history.push(`/gids?type=${collect?.type}s&gender=${collect?.male ? 'male' : 'female'}&country=${collect?.country}&city=${collect?.city}&lang=${collect?.languages?.map(item => item?.value)}&date_after=${collect?.date_after}&date_before=${collect?.date_before}&${collect?.gender}=0`)
+        if(loader?.success !=='' || loader?.error !== ''){
+            setPostData({ ...postData, loading: false })
         }
-    }, [postData])
-    // console.log(collect)
+    },[loader])
+    
     return (
         <Wrapper width="350px">
             <div className="title-header">

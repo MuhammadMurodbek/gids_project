@@ -77,7 +77,7 @@ const Index = () => {
                 <ButtonNavbar title={t("navbar.GTU")} url="/forgits" />
               )}
 
-              <ButtonNavbar title="Blog" url="/blog" />
+              <ButtonNavbar title="Blog" url="/blog?page=1" />
               {getRole?.role === "simple_user" ? (
                 <ButtonNavbar title={t("navbar.Ariza_qoldirish")} url="/application-form" />
               ) : (

@@ -13,13 +13,18 @@ export const getResponseRegion = async(url) => {
         .catch(err => console.log(err))
 }
 export const getGlobals = async(token) => {
+    let lang = false 
+    let country = false 
     await axios.get(`${baseUrl}/api/users/languages/`, {
         headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${token?.access}`,
         }
     })
-        .then(response => localStorage.setItem('lanGlobal', JSON.stringify(response?.data)))
+        .then(response => {
+            lang=true
+            localStorage.setItem('lanGlobal', JSON.stringify(response?.data))
+        })
         .catch(err => console.log(err))
     await axios.get(`${baseUrl}/api/users/countries/`, {
         headers: {
@@ -27,10 +32,14 @@ export const getGlobals = async(token) => {
         'Authorization': `Bearer ${token?.access}`,
         }
     })
-        .then(response => localStorage.setItem('countryGlobal', JSON.stringify(response?.data)))
+        .then(response => {
+            country=true
+            localStorage.setItem('countryGlobal', JSON.stringify(response?.data))
+        })
         .catch(err => console.log(err))
 
-    window.location.href='/'
+    if(lang && country)
+        window.location.href='/'
 }
 export const postResponse = async(url, data, setState) => {
     return await axios.post(`${baseUrl}${url}`,data, head_token)

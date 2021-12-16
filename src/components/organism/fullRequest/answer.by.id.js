@@ -1,34 +1,33 @@
 import React, { useState, useMemo, useEffect } from 'react'
 import { Wrapper } from './style'
-import { Link, useHistory } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { Grid } from '@material-ui/core';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
-import ImageContainer from "../../../components/molecules/img.container"
+import ImageContainer from "../../molecules/img.container"
 import user from '../../../assets/img/request/user2.svg';
 import gps from '../../../assets/img/request/gps2.svg';
 import cal from '../../../assets/img/request/cal2.svg';
 import kim from '../../../assets/img/request/kim.svg';
 import narx from '../../../assets/img/request/narx.svg';
 import odamlar from '../../../assets/img/request/odamlar.svg';
-import Button from "../../../components/atom/button";
+import Button from "../../atom/button";
 import til from '../../../assets/img/request/til.svg';
 // import imgpen from '../../../assets/img/request/pen#fff.svg';
 // import ImgContainer from "../../../components/molecules/img.container";
 import CloseIcon from '@material-ui/icons/Close';
 import Modal from 'react-awesome-modal';
 import { useParams } from 'react-router-dom';
-import FormApplication from "../../../pages/fill.application/edit.app"
+import Textarea from '../../atom/textAreaCom';
 import { useTranslation } from 'react-i18next';
 import { postResponse } from '../../../hooks/response_get';
 import toast from 'react-hot-toast';
 import { getResponse } from '../../../hooks/response_get';
 import moment from 'moment';
-import {getLabelLangLocal, getLabelCountrySecond, getLabelCity} from "../../../custom/function"
+import {getLabelLangLocal} from "../../../custom/function"
 
 export default function Index({applicationData, setApplicationData, btnText, url}) {
     const [comment, setComment] = useState('')
-    const history = useHistory()
-    // const [getData, setGetData] = useState({ success: '', error: '' })
+    const [getData, setGetData] = useState({ success: '', error: '' })
     const [response, setResponse] = useState({ success: '', error: '' })
     // const [applicationData, setApplicationData] = useState({ success: '', error: '', loading: false })
     const getRole = JSON.parse(localStorage.getItem("user_token"))
@@ -44,8 +43,7 @@ export default function Index({applicationData, setApplicationData, btnText, url
     }
 
     function openModal() {
-        // setState(true);
-        history.push(`/answer-me/edit/${id}`)
+        setState(true);
     }
     function closeModal() {
         setState(false)
@@ -63,7 +61,7 @@ export default function Index({applicationData, setApplicationData, btnText, url
 
     useEffect(() => {
         let url = getRole?.role === 'simple_user' ? `/api/users/self/application/` : `/api/users/applications/`
-        getResponse(`${url}${id}/`, setApplicationData)
+        getResponse(`${url}${id}/`, setGetData)
     }, [id])
 
     useEffect(() => {
@@ -86,7 +84,7 @@ export default function Index({applicationData, setApplicationData, btnText, url
             <Grid container spacing={1} direction="row" justifyContent="center" className="freque">
                 <Grid className="gridTitle" item xs={12} md={4}>
                     <b className="idb">Id: </b>
-                    <b className="idb"># {applicationData?.success?.data?.id}</b>
+                    <b className="idb"># {getData?.success?.data?.id}</b>
                 </Grid>
                 <Grid className="gridTitle2" item xs={12} md={6}>
                     <Link to={getRole?.role === 'simple_user' ? '/gid-personal':'/request'} className="comback"> <ArrowBackIcon className="arrole" /> {t("ToliqAriza.qaytish")} </Link>
@@ -100,41 +98,41 @@ export default function Index({applicationData, setApplicationData, btnText, url
                         <b><ImageContainer src={user} /></b>
                         <b> {t("ToliqAriza.elonBeruchi")}</b>
                         <p>
-                        {applicationData?.success?.data?.full_name?.first_name + " " + applicationData?.success?.data?.full_name?.last_name}
+                        {getData?.success?.data?.full_name?.first_name + " " + getData?.success?.data?.full_name?.last_name}
                         </p>
                     </div>
                     <div className="tafsilot-text">
                         <b> <ImageContainer src={gps} /></b>
                         <b>{t("ToliqAriza.shahar")} </b>
-                        <p> {getLabelCountrySecond(applicationData?.success?.data?.country)+", "+getLabelCity(applicationData?.success?.data?.country,applicationData?.success?.data?.city)}</p>
+                        <p> {getData?.success?.data?.country_name?.uz}</p>
                     </div>
                     <div className="tafsilot-text">
                         <b> <ImageContainer src={cal} /></b>
                         <b>{t("ToliqAriza.sana")} </b>
                         <p>
-                            {moment(applicationData?.success?.data?.start_date).format('DD.MM.YYYY')} - &nbsp;
-                            {moment(applicationData?.success?.data?.end_date).format('DD.MM.YYYY')} 
+                            {moment(getData?.success?.data?.start_date).format('DD.MM.YYYY')} - &nbsp;
+                            {moment(getData?.success?.data?.end_date).format('DD.MM.YYYY')} 
                         </p>
                     </div>
                     <div className="tafsilot-text">
                         <b> <ImageContainer src={kim} /></b>
                         <b>{t("ToliqAriza.gacha")} </b>
-                        <p>{applicationData?.success?.data?.cost + " " +curens[applicationData?.success?.data?.currency] || " Malumot topilmadi"} </p>
+                        <p>{getData?.success?.data?.cost + " " +curens[getData?.success?.data?.currency] || " Malumot topilmadi"} </p>
                     </div>
                     <div className="tafsilot-text">
                         <b> <ImageContainer src={narx} /></b>
                         <b>{t("ToliqAriza.kimKerak")} </b>
-                        <p>{applicationData?.success?.data?.who_need}</p>
+                        <p>{getData?.success?.data?.who_need}</p>
                     </div>
                     <div className="tafsilot-text">
                         <b> <ImageContainer src={odamlar} /></b>
                         <b>{t("ToliqAriza.tillar")} </b>
-                        <p>{applicationData?.success?.data?.languages?.map(a=>" "+getLabelLangLocal(a.id)+",") || "Ma'lumot kiritilmagan"}</p>
+                        <p>{getData?.success?.data?.languages?.map(a=>" "+getLabelLangLocal(a)+",") || "Ma'lumot kiritilmagan"}</p>
                     </div>
                     <div className="tafsilot-text">
                         <b> <ImageContainer src={til} /></b>
                         <b>{t("ToliqAriza.odamlarSone")} </b>
-                        <p> {applicationData?.success?.data?.people_count} kishi</p>
+                        <p> {getData?.success?.data?.people_count} kishi</p>
                     </div>
                     <Button onClick={openModal} type="button" className="btnRequest">
                         {btnText}
@@ -145,30 +143,34 @@ export default function Index({applicationData, setApplicationData, btnText, url
                     <div>
                         <div className="div1title">{t("ToliqAriza.arizaMatni")}</div>
                         <p>  
-                             {applicationData?.success?.data?.why_need || "Ma'lumot kiritilmagan"}
+                             {getData?.success?.data?.why_need || "Ma'lumot kiritilmagan"}
                         </p>   
                     </div>
                     <p className="f-sana">
-                    {moment(applicationData?.success?.data?.updated_at).format("DD.MM.YYYY")}
+                    {moment(getData?.success?.data?.updated_at).format("DD.MM.YYYY")}
                     </p>
                 </Grid>
             </Grid>
 
-            {/* <section>
+            <section>
                 <Modal
                     visible={state}
-                    width="1000"
-                    height="900px"
+                    width="900"
+                    height="450"
                     effect="fadeInUp"
                     onClickAway={closeModal}>
                     <div className="modaldiv">
                         <div className="closebtn">
                             <CloseIcon className="pointx" onClick={closeModal} />
                         </div>
-                        <FormApplication data={setApplicationData}/>
                         <h1 className="modaltitle">{t("ToliqAriza.yozing")}</h1>
                         <div className="modaldiv">
-                           
+                            <Textarea
+                                value={comment}
+                                width="100%"
+                                onChange={setText}
+                                placeholder="Text..."
+                                height="200px" />
                         </div>
 
                         <div className="btgroup-modal">
@@ -182,7 +184,7 @@ export default function Index({applicationData, setApplicationData, btnText, url
                         </div>
                     </div>
                 </Modal>
-            </section> */}
+            </section>
 
 
 
