@@ -20,7 +20,7 @@ export default function Index(props) {
     return (
         <Wrapper>
             <div>
-                <Link to={ token?.role === 'simple_user' ? `/answer-me/${id}` : `/fullrequest/${id}`} className="Link">
+                <Link to={ token?.role === 'simple_user' ? `/answer-me/${id}` : `/request/${id}`} className="Link">
                     <div className="responsText">
                         <div className="title-respons11">
                             <div>

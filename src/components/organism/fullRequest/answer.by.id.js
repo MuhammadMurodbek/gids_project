@@ -3,31 +3,31 @@ import { Wrapper } from './style'
 import { Link } from 'react-router-dom'
 import { Grid } from '@material-ui/core';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
-import ImageContainer from "../../../components/molecules/img.container"
+import ImageContainer from "../../molecules/img.container"
 import user from '../../../assets/img/request/user2.svg';
 import gps from '../../../assets/img/request/gps2.svg';
 import cal from '../../../assets/img/request/cal2.svg';
 import kim from '../../../assets/img/request/kim.svg';
 import narx from '../../../assets/img/request/narx.svg';
 import odamlar from '../../../assets/img/request/odamlar.svg';
-import Button from "../../../components/atom/button";
+import Button from "../../atom/button";
 import til from '../../../assets/img/request/til.svg';
 // import imgpen from '../../../assets/img/request/pen#fff.svg';
 // import ImgContainer from "../../../components/molecules/img.container";
 import CloseIcon from '@material-ui/icons/Close';
 import Modal from 'react-awesome-modal';
 import { useParams } from 'react-router-dom';
-import FormApplication from "../../../pages/fill.application/edit.app"
+import Textarea from '../../atom/textAreaCom';
 import { useTranslation } from 'react-i18next';
 import { postResponse } from '../../../hooks/response_get';
 import toast from 'react-hot-toast';
 import { getResponse } from '../../../hooks/response_get';
 import moment from 'moment';
-import {getLabelLangLocal, getLabelCountrySecond, getLabelCity} from "../../../custom/function"
+import {getLabelLangLocal} from "../../../custom/function"
 
 export default function Index({applicationData, setApplicationData, btnText, url}) {
     const [comment, setComment] = useState('')
-    // const [getData, setGetData] = useState({ success: '', error: '' })
+    const [getData, setGetData] = useState({ success: '', error: '' })
     const [response, setResponse] = useState({ success: '', error: '' })
     // const [applicationData, setApplicationData] = useState({ success: '', error: '', loading: false })
     const getRole = JSON.parse(localStorage.getItem("user_token"))
@@ -61,7 +61,7 @@ export default function Index({applicationData, setApplicationData, btnText, url
 
     useEffect(() => {
         let url = getRole?.role === 'simple_user' ? `/api/users/self/application/` : `/api/users/applications/`
-        getResponse(`${url}${id}/`, setApplicationData)
+        getResponse(`${url}${id}/`, setGetData)
     }, [id])
 
     useEffect(() => {
@@ -104,7 +104,7 @@ export default function Index({applicationData, setApplicationData, btnText, url
                     <div className="tafsilot-text">
                         <b> <ImageContainer src={gps} /></b>
                         <b>{t("ToliqAriza.shahar")} </b>
-                        <p> {getLabelCountrySecond(applicationData?.success?.data?.country)+", "+getLabelCity(applicationData?.success?.data?.country,applicationData?.success?.data?.city)}</p>
+                        <p> {applicationData?.success?.data?.country_name?.uz}</p>
                     </div>
                     <div className="tafsilot-text">
                         <b> <ImageContainer src={cal} /></b>
@@ -155,16 +155,15 @@ export default function Index({applicationData, setApplicationData, btnText, url
             <section>
                 <Modal
                     visible={state}
-                    width="1000"
-                    height="900px"
+                    width="900"
+                    height="450"
                     effect="fadeInUp"
                     onClickAway={closeModal}>
                     <div className="modaldiv">
                         <div className="closebtn">
                             <CloseIcon className="pointx" onClick={closeModal} />
                         </div>
-                        <FormApplication/>
-                        {/* <h1 className="modaltitle">{t("ToliqAriza.yozing")}</h1>
+                        <h1 className="modaltitle">{t("ToliqAriza.yozing")}</h1>
                         <div className="modaldiv">
                             <Textarea
                                 value={comment}
@@ -182,7 +181,7 @@ export default function Index({applicationData, setApplicationData, btnText, url
                             <Button type="button" onClick={submit} className="btnRequest">
                                 {t("ToliqAriza.yuborish")}
                             </Button>
-                        </div> */}
+                        </div>
                     </div>
                 </Modal>
             </section>

@@ -45,7 +45,7 @@ export default function Index () {
                                         <Grid container spacing={ 1 } direction="row" justifyContent="center"
                                             className="grid-container">
                                             <Grid item xs={ 12 } md={ 1 } className="item">
-                                                <ImgContainer { ...mediaImage } src={ prev?.replier_image } />
+                                                <ImgContainer width="80px" height="80px" round="50%" { ...mediaImage } src={ prev?.replier_image } />
                                             </Grid>
                                             <Grid item xs={ 12 } md={ 11 } className="item">
                                                 <div className="feedback-div">

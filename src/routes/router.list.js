@@ -19,6 +19,10 @@ export const routes_user = [
         component:ListRouter.AnsverMyapp
     },
     {
+        url:'/answer-me/edit/:id',
+        component:ListRouter.AnsverMyappEdit
+    },
+    {
         url:'/seeprofile',
         component:ListRouter.SeeProfile
     },
@@ -31,7 +35,7 @@ export const routes_gid = [
         component:ListRouter.Request
     },
     {
-        url:'/fullrequest/:id',
+        url:'/request/:id',
         component:ListRouter.Fullrequest
     },
     {
