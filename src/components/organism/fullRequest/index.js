@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useEffect } from 'react'
 import { Wrapper } from './style'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { Grid } from '@material-ui/core';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import ImageContainer from "../../../components/molecules/img.container"
@@ -27,6 +27,7 @@ import {getLabelLangLocal, getLabelCountrySecond, getLabelCity} from "../../../c
 
 export default function Index({applicationData, setApplicationData, btnText, url}) {
     const [comment, setComment] = useState('')
+    const history = useHistory()
     // const [getData, setGetData] = useState({ success: '', error: '' })
     const [response, setResponse] = useState({ success: '', error: '' })
     // const [applicationData, setApplicationData] = useState({ success: '', error: '', loading: false })
@@ -43,7 +44,8 @@ export default function Index({applicationData, setApplicationData, btnText, url
     }
 
     function openModal() {
-        setState(true);
+        // setState(true);
+        history.push(`/answer-me/edit/${id}`)
     }
     function closeModal() {
         setState(false)
@@ -152,7 +154,7 @@ export default function Index({applicationData, setApplicationData, btnText, url
                 </Grid>
             </Grid>
 
-            <section>
+            {/* <section>
                 <Modal
                     visible={state}
                     width="1000"
@@ -163,15 +165,10 @@ export default function Index({applicationData, setApplicationData, btnText, url
                         <div className="closebtn">
                             <CloseIcon className="pointx" onClick={closeModal} />
                         </div>
-                        <FormApplication/>
-                        {/* <h1 className="modaltitle">{t("ToliqAriza.yozing")}</h1>
+                        <FormApplication data={setApplicationData}/>
+                        <h1 className="modaltitle">{t("ToliqAriza.yozing")}</h1>
                         <div className="modaldiv">
-                            <Textarea
-                                value={comment}
-                                width="100%"
-                                onChange={setText}
-                                placeholder="Text..."
-                                height="200px" />
+                           
                         </div>
 
                         <div className="btgroup-modal">
@@ -182,10 +179,10 @@ export default function Index({applicationData, setApplicationData, btnText, url
                             <Button type="button" onClick={submit} className="btnRequest">
                                 {t("ToliqAriza.yuborish")}
                             </Button>
-                        </div> */}
+                        </div>
                     </div>
                 </Modal>
-            </section>
+            </section> */}
 
 
 
