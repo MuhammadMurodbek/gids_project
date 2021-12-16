@@ -21,14 +21,14 @@ const mediaGridUSers = {
 const Index = () => {
     const { t } = useTranslation()
     let query = window.location.search
+    const [typeQuery, setTypeQuery] = useState('gid')
     const [state, setState] = useState({ success: '', error: '', loading: false})
     useEffect(()=>{
         let filterQuery = query.substr(1)?.split('&')?.filter(a=>!a.includes('type'))?.join('&')
         let type = query.substr(1)?.split('&')?.filter(a=>a.includes('type'))?.join('&').slice(5)
-        console.log(type)
-        getResponse(`/api/${type}s/profiles/?${filterQuery}`, setState)
+        getResponse(`/api/${type || 'gid'}s/profiles/?${filterQuery}`, setState)
+        setTypeQuery(type)
     },[query])
-    // console.log(state)
     return (
         <Wrapper>
             <TextTitle top="40px" {...mediaTextField} {...mediaTextFieldSec} bottom="30px">
@@ -53,7 +53,7 @@ const Index = () => {
                     </Grid>
                     <Grid item xs={12} sm={12} md={8}>
                         <Container {...mediaGridUSers}>
-                            <ContainerMap data={state?.success?.data} />
+                            <ContainerMap data={state?.success?.data}  type={typeQuery} />
                         </Container>
                     </Grid>
                 </Grid>

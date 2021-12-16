@@ -6,7 +6,7 @@ import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import {useTranslation} from 'react-i18next'
 import NoDataPage from "../../templates/no.data.page.js"
 
-const Index = ({data}) => {
+const Index = ({data, type}) => {
     const {t} = useTranslation()
     const getData = JSON.parse(localStorage.getItem('advanced_search')) || false
     console.log(getData)
@@ -18,7 +18,7 @@ const Index = ({data}) => {
                     {
                         data?.results.map((item, index) => (
                             <div key={index}>
-                                <ContainerMap data={item}/>
+                                <ContainerMap data={item} type={type}/>
                             </div>
                         ))
                     }
