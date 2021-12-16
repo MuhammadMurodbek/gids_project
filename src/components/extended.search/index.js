@@ -17,20 +17,12 @@ const Index = () => {
     const [postData, setPostData] = useState({ success: '', error: '', loading: false })
     const getRole = JSON.parse(localStorage.getItem("user_token"))
     const [collect, setCollect] = useState()
-    console.log(collect)
     const handleSubmit = () => {
         setPostData({ ...postData, loading: true })
-        let urlOther = `/api/${collect?.type}s/profiles/?gender=${collect?.male ? 'male' : 'female'}&country=${collect?.country}&city=${collect?.city}&lang=${collect?.languages?.map(item => item?.value)}&date_after=${collect?.date_after}&date_before=${collect?.date_before}&${collect?.search_type}=0`
-        getResponse(urlOther, setPostData)
+        let urlOther = `type=${collect?.type}&gender=${(collect?.male && collect?.female)? undefined: collect?.male ? 'male' : collect?.female ? 'female' : undefined}&country=${collect?.country}&city=${collect?.city}&lang=${collect?.languages?.map(item => item?.value)}&date_after=${collect?.date_after}&date_before=${collect?.date_before}&${collect?.search_type}=0`
+        let filterUrl = urlOther.split('&').filter(a=>!a.includes('undefined')).join('&')
+        history.push('/gids?'+filterUrl)
     }
-    React.useEffect(() => {
-        if (postData?.error !== '') toast.error("Ma'lumotlarni to'liq kiriting")
-        if (postData?.success !== '') {
-            localStorage.setItem('advanced_search', JSON.stringify(postData?.success?.data))
-            history.push(`/gids?type=${collect?.type}s&gender=${collect?.male ? 'male' : 'female'}&country=${collect?.country}&city=${collect?.city}&lang=${collect?.languages?.map(item => item?.value)}&date_after=${collect?.date_after}&date_before=${collect?.date_before}&${collect?.gender}=0`)
-        }
-    }, [postData])
-    // console.log(collect)
     return (
         <Wrapper width="350px">
             <div className="title-header">

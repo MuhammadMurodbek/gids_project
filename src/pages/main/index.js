@@ -31,9 +31,7 @@ import AccountMenu from '../../components/atom/user_account';
 
 const Index = () => {
     const countryGlobal = JSON.parse( localStorage.getItem( "countryGlobal"))
-    React.useMemo(() =>{
-        getLabelCountrySecond(1)
-    },[countryGlobal])
+    React.useMemo(() =>{ getLabelCountrySecond(1)},[countryGlobal])
     const getRole = JSON.parse(localStorage.getItem("user_token"))
      
     const {t} = useTranslation()
