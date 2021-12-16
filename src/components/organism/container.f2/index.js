@@ -26,7 +26,7 @@ const Index = ({data, type}) => {
         if(lang==='ru') return item?.from_language__name_ru  
         if(lang==='uz') return item?.from_language__name_uz 
     }
-    console.log(data)
+    // console.log(data)
     return (
         <WrapperContainer>
             <Grid container spacing={1}>

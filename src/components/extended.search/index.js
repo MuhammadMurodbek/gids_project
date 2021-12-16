@@ -9,20 +9,25 @@ import Button from "./button.component"
 import DoubleRadio from "../molecules/double.radio.labeled"
 import {useHistory} from "react-router-dom"
 import { useTranslation } from 'react-i18next'
-import { getResponse } from "../../hooks/response_get"
+// import { getResponse } from "../../hooks/response_get"
 import { toast } from "react-hot-toast"
 const Index = () => {
     const history = useHistory()
     const { t } = useTranslation()
     const [postData, setPostData] = useState({ success: '', error: '', loading: false })
-    const getRole = JSON.parse(localStorage.getItem("user_token"))
+    // const getRole = JSON.parse(localStorage.getItem("user_token"))
     const [collect, setCollect] = useState()
     const handleSubmit = () => {
-        setPostData({ ...postData, loading: true })
-        let urlOther = `type=${collect?.type}&gender=${(collect?.male && collect?.female)? undefined: collect?.male ? 'male' : collect?.female ? 'female' : undefined}&country=${collect?.country}&city=${collect?.city}&lang=${collect?.languages?.map(item => item?.value)}&date_after=${collect?.date_after}&date_before=${collect?.date_before}&${collect?.search_type}=0`
-        let filterUrl = urlOther.split('&').filter(a=>!a.includes('undefined')).join('&')
-        history.push('/gids?'+filterUrl)
+        if(collect?.type){
+            setPostData({ ...postData, loading: true })
+            let urlOther = `type=${collect?.type}&gender=${(collect?.male && collect?.female)? undefined: collect?.male ? 'male' : collect?.female ? 'female' : undefined}&country=${collect?.country}&city=${collect?.city}&lang=${collect?.languages?.map(item => item?.value)}&date_after=${collect?.date_after}&date_before=${collect?.date_before}&${collect?.search_type}=0`
+            let filterUrl = urlOther.split('&').filter(a=>!a.includes('undefined')).join('&')
+            history.push('/gids?'+filterUrl)
+        }else{
+            toast.error('Kim kerakligi tanlang')
+        }
     }
+    
     return (
         <Wrapper width="350px">
             <div className="title-header">
