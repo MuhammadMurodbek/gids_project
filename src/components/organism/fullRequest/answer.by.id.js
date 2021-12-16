@@ -84,7 +84,7 @@ export default function Index({applicationData, setApplicationData, btnText, url
             <Grid container spacing={1} direction="row" justifyContent="center" className="freque">
                 <Grid className="gridTitle" item xs={12} md={4}>
                     <b className="idb">Id: </b>
-                    <b className="idb"># {applicationData?.success?.data?.id}</b>
+                    <b className="idb"># {getData?.success?.data?.id}</b>
                 </Grid>
                 <Grid className="gridTitle2" item xs={12} md={6}>
                     <Link to={getRole?.role === 'simple_user' ? '/gid-personal':'/request'} className="comback"> <ArrowBackIcon className="arrole" /> {t("ToliqAriza.qaytish")} </Link>
@@ -98,41 +98,41 @@ export default function Index({applicationData, setApplicationData, btnText, url
                         <b><ImageContainer src={user} /></b>
                         <b> {t("ToliqAriza.elonBeruchi")}</b>
                         <p>
-                        {applicationData?.success?.data?.full_name?.first_name + " " + applicationData?.success?.data?.full_name?.last_name}
+                        {getData?.success?.data?.full_name?.first_name + " " + getData?.success?.data?.full_name?.last_name}
                         </p>
                     </div>
                     <div className="tafsilot-text">
                         <b> <ImageContainer src={gps} /></b>
                         <b>{t("ToliqAriza.shahar")} </b>
-                        <p> {applicationData?.success?.data?.country_name?.uz}</p>
+                        <p> {getData?.success?.data?.country_name?.uz}</p>
                     </div>
                     <div className="tafsilot-text">
                         <b> <ImageContainer src={cal} /></b>
                         <b>{t("ToliqAriza.sana")} </b>
                         <p>
-                            {moment(applicationData?.success?.data?.start_date).format('DD.MM.YYYY')} - &nbsp;
-                            {moment(applicationData?.success?.data?.end_date).format('DD.MM.YYYY')} 
+                            {moment(getData?.success?.data?.start_date).format('DD.MM.YYYY')} - &nbsp;
+                            {moment(getData?.success?.data?.end_date).format('DD.MM.YYYY')} 
                         </p>
                     </div>
                     <div className="tafsilot-text">
                         <b> <ImageContainer src={kim} /></b>
                         <b>{t("ToliqAriza.gacha")} </b>
-                        <p>{applicationData?.success?.data?.cost + " " +curens[applicationData?.success?.data?.currency] || " Malumot topilmadi"} </p>
+                        <p>{getData?.success?.data?.cost + " " +curens[getData?.success?.data?.currency] || " Malumot topilmadi"} </p>
                     </div>
                     <div className="tafsilot-text">
                         <b> <ImageContainer src={narx} /></b>
                         <b>{t("ToliqAriza.kimKerak")} </b>
-                        <p>{applicationData?.success?.data?.who_need}</p>
+                        <p>{getData?.success?.data?.who_need}</p>
                     </div>
                     <div className="tafsilot-text">
                         <b> <ImageContainer src={odamlar} /></b>
                         <b>{t("ToliqAriza.tillar")} </b>
-                        <p>{applicationData?.success?.data?.languages?.map(a=>" "+getLabelLangLocal(a.id)+",") || "Ma'lumot kiritilmagan"}</p>
+                        <p>{getData?.success?.data?.languages?.map(a=>" "+getLabelLangLocal(a)+",") || "Ma'lumot kiritilmagan"}</p>
                     </div>
                     <div className="tafsilot-text">
                         <b> <ImageContainer src={til} /></b>
                         <b>{t("ToliqAriza.odamlarSone")} </b>
-                        <p> {applicationData?.success?.data?.people_count} kishi</p>
+                        <p> {getData?.success?.data?.people_count} kishi</p>
                     </div>
                     <Button onClick={openModal} type="button" className="btnRequest">
                         {btnText}
@@ -143,11 +143,11 @@ export default function Index({applicationData, setApplicationData, btnText, url
                     <div>
                         <div className="div1title">{t("ToliqAriza.arizaMatni")}</div>
                         <p>  
-                             {applicationData?.success?.data?.why_need || "Ma'lumot kiritilmagan"}
+                             {getData?.success?.data?.why_need || "Ma'lumot kiritilmagan"}
                         </p>   
                     </div>
                     <p className="f-sana">
-                    {moment(applicationData?.success?.data?.updated_at).format("DD.MM.YYYY")}
+                    {moment(getData?.success?.data?.updated_at).format("DD.MM.YYYY")}
                     </p>
                 </Grid>
             </Grid>

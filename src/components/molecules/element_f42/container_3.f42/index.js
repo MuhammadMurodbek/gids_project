@@ -17,6 +17,7 @@ const Index = ({data}) => {
         good:"Yaxshi darajada",
         low:'Quyi darajada',
     }
+    console.log(data)
     return (
         <Wrapper>
             <Title text="Xizmatlar" />
@@ -26,17 +27,28 @@ const Index = ({data}) => {
 
                     (
                         <>
-                            <Text title="Bir kunlik ish xajmim:" text="1805 ta so'z" /> <br /><br />
-                            <Text title="Tdaladigaarjima qilish uchun foyn CAT dasturlarim:" text="Translate" />
+                            <Text title="Bir kunlik ish xajmim:" text={" " +data?.daily_workload} /> <br /><br />
+                            <Text title="Tdaladigaarjima qilish uchun foyn CAT dasturlarim:" text={data?.cat_programmes?.map(a=>" "+a+",")} />
                             <FlexContainer width="70%" margin="15px 0">
                                 <Grid container spacing={1} className="gridCon">
                                     <Grid item md={6} className="as">
-                                        <img src={cheked} alt="adfdd" className="classed" /> <Text title="Og'zaki tarjima (sinxron)" /><br />
-                                        <img src={cheked} alt="adfdd" className="classed" /> <Text title="Shoshilinch buyurtma" />
+                                        {
+                                            data?.is_freelancer ? <>
+                                            <img src={cheked} alt="adfdd" className="classed" /> <Text title="Freelanserlik" /><br /></>:null
+                                        }
+                                        {
+                                            data?.edit_text ? <><img src={cheked} alt="adfdd" className="classed" /> <Text title="Matnlarni tahrirlash" /></>:null
+                                        }
                                     </Grid>
                                     <Grid item md={6} >
-                                        <img src={cheked} alt="adfdd" className="classed" /> <Text title="Og'zaki tarjima (sinxron)" /><br />
-                                        <img src={cheked} alt="adfdd" className="classed" /> <Text title="Shoshilinch buyurtma" />
+                                        {
+                                            data?.express_order ? <>
+                                            <img src={cheked} alt="adfdd" className="classed" /> <Text title="Shoshilinch buyurtma" /></>:null
+                                        }
+                                        {
+                                            data?.weekend_order ? <>
+                                            <img src={cheked} alt="adfdd" className="classed" /> <Text title="Dam olish kunida ishlash" /><br /></>:null
+                                        }
                                     </Grid>
                                 </Grid>
                             </FlexContainer>

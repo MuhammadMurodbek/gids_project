@@ -11,7 +11,7 @@ import {useHistory} from "react-router-dom"
 import { useTranslation } from 'react-i18next'
 // import { getResponse } from "../../hooks/response_get"
 import { toast } from "react-hot-toast"
-const Index = () => {
+const Index = ({loader}) => {
     const history = useHistory()
     const { t } = useTranslation()
     const [postData, setPostData] = useState({ success: '', error: '', loading: false })
@@ -27,6 +27,11 @@ const Index = () => {
             toast.error('Kim kerakligi tanlang')
         }
     }
+    React.useEffect(() => {
+        if(loader?.success !=='' || loader?.error !== ''){
+            setPostData({ ...postData, loading: false })
+        }
+    },[loader])
     
     return (
         <Wrapper width="350px">

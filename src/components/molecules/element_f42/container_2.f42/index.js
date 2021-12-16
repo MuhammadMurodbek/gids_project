@@ -31,16 +31,16 @@ const Index = ({data, role}) => {
                 <>
                     {data?.universities?.map((prev, index) =>(
                         <TextWrapper key={index} style={{margin:'10px 0'}}>
-                            <Text title= {t("GidPk.institut")} text={prev?.name || "Ma'lumot kiritilmagan"} /><br/>
-                            <Text title={t("GidPk.yil")} text={prev?.year || "Ma'lumot kiritilmagan"}/><br/>
-                            <Text title={t("GidPk.mutahasis")} text={prev?.speciality || "Ma'lumot kiritilmagan"}/><br/>
+                            <Text title= {t("GidPk.institut")+" "} text={prev?.name || "Ma'lumot kiritilmagan"} /><br/>
+                            <Text title={t("GidPk.yil")+" "} text={prev?.year || "Ma'lumot kiritilmagan"}/><br/>
+                            <Text title={t("GidPk.mutahasis")+" "} text={prev?.speciality || "Ma'lumot kiritilmagan"}/><br/>
                         </TextWrapper>
                     ))}
                     <TextWrapper>
-                        <Text title={t("GidPk.ishtaj")} text={data?.experience_year+" yil" || "Ma'lumot kiritilmagan"}/><br/>
-                        <Text title={t("GidPk.ishJoy")} text={data?.work_place || "Ma'lumot kiritilmagan"}/><br/>
-                        <Text title={t("GidPk.lavozim")} text={data?.position || "Ma'lumot kiritilmagan"}/><br/>
-                        <Text title={t("GidPk.ishvaqt")} text={data?.work_time || "Ma'lumot kiritilmagan"}/><br/>
+                        <Text title={t("GidPk.ishtaj")+" "} text={data?.experience_year+" yil" || "Ma'lumot kiritilmagan"}/><br/>
+                        <Text title={t("GidPk.ishJoy")+" "} text={data?.work_place || "Ma'lumot kiritilmagan"}/><br/>
+                        <Text title={t("GidPk.lavozim")+" "} text={data?.position || "Ma'lumot kiritilmagan"}/><br/>
+                        <Text title={t("GidPk.ishvaqt")+" "} text={data?.work_time || "Ma'lumot kiritilmagan"}/><br/>
                     </TextWrapper>
                 </>
             }

@@ -8,46 +8,15 @@ import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import Requests from '../../components/organism/request/';
 import {useTranslation} from 'react-i18next';
 import moment from 'moment'
-
+import Spinner from "../../components/atom/loading.spinner.line"
 
 export default function Index() {
  
     const {t} = useTranslation()
-    // const [collect, setCollect] = useState()
-    // const [ state, setState ] = useState( { success: '', error: '' } )
     const [ articleList, setArticleList ] = useState( [] )
-    // const [ pagination, setPagination ] = useState( {
-    //     current: 1
-    // } )
-
-    // const [ postData, setPostData ] = useState( { success: '', error: '', loading: false } )
-    // let { current } = pagination
-
-    // useEffect( () => {
-    //     let url = `/api/users/applications/?page=${current}`
-    //     getResponse( url, setState )
-    // }, [ pagination ] )
-
-    // useEffect( () => {
-    //     if ( state?.success )
-    //     {
-    //         setArticleList( state.success?.data?.results )
-    //     }
-    // }, [ state.success?.data?.results ] )
-
-    // function onChange ( pageNumber ) {
-    //     setPagination( {
-    //         current: pageNumber
-    //     } )
-    // }
-
-    // console.log( articleList   )
-    // console.log( state)
-
-    const [state, setState] = useState({success:'', error:''})
+    const [state, setState] = useState({success:'', error:'', loading: false})
     const [callback, setCallback] = useState(false)
     const [collect, setCollect] = useState({date_after:'', date_before:'', country:'', city:''})
-    const {success, error} = state
     useEffect(() =>{
         getResponse(`/api/users/applications/?country=${collect?.country}&city=${collect?.city}&date_after=${collect?.date_after}&date_before=${collect?.date_before}`, setState)
     },[callback])
@@ -65,6 +34,7 @@ export default function Index() {
              
             <InDate url="request" setCallback={setCallback} collect={collect} setCollect={setCollect} url="request"/>
            {
+               state?.success === '' ? <Spinner marginTop="60px" width={ 50 } height={ 50 } />:
                articleList?.map((item,index) =>(
                 <Requests 
                 key={index}

@@ -26,7 +26,11 @@ const Index = () => {
     useEffect(()=>{
         let filterQuery = query.substr(1)?.split('&')?.filter(a=>!a.includes('type'))?.join('&')
         let type = query.substr(1)?.split('&')?.filter(a=>a.includes('type'))?.join('&').slice(5)
-        getResponse(`/api/${type || 'gid'}s/profiles/?${filterQuery}`, setState)
+        if(type){
+            getResponse(`/api/${type}s/profiles/?${filterQuery}`, setState)
+        }else{
+            getResponse(`/api/translators/all/`, setState)
+        }
         setTypeQuery(type)
     },[query])
     return (
@@ -37,7 +41,7 @@ const Index = () => {
             <Container>
                 <Grid container spacing={1} className="media_grid_flex">
                     <Grid item xs={12} sm={12} md={4}>
-                        <ExtendedSearch />
+                        <ExtendedSearch loader={state}/>
                         {
                             state && state?.success?.data?.results.length > 0 ?
                                 <>
