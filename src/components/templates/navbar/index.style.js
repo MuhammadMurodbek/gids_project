@@ -13,7 +13,10 @@ export const Navbar = styled.div`
      z-index: 111 !important;
     transition: 0.5s all;
      background-color: #fff;
-
+    . {
+        /* background-color:red; */
+        width: 100%;
+    }
 
      /* .nav_1{
          background-color: red;

@@ -49,9 +49,7 @@ const Index = () => {
   return (
     <div>
       <Navbar navbarProps={scrollY}>
-        <div className={scrollY > 10 ? "nav_1 " : "nav"}>
-
-
+        <div className="width1">
           <FlexContainer
             width="100%"
             padding="0 25px"
@@ -85,9 +83,7 @@ const Index = () => {
               ) : (
                 <ButtonNavbar title={t("navbar.Arizalar_royhati")} url="/request" />
               )}
-
             </FlexContainer>
-
             <FlexContainer {...navbarMedia} width="100px" style={{ marginRight: 120 }}>
               <ReactFlagsSelect
                 selected={selected}
