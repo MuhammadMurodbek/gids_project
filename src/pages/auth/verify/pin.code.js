@@ -23,9 +23,9 @@ const YourComponent = () => {
     if (selector) {
       if (selector.status === 200) {
         const { data } = selector?.data
+        localStorage.setItem('user_token', JSON.stringify(data))
         getGlobals(data)
         // console.log(selector)
-        localStorage.setItem('user_token', JSON.stringify(data))
         data?.role === "simple_user" ?
           window.location.href = "/gid-personal"
           : window.location.href = "/gid-personal-wider"
