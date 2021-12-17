@@ -22,9 +22,9 @@ const Index = ({data, type}) => {
                             </div>
                         ))
                     }
-                    <ButtonWrapper>
+                    {/* <ButtonWrapper>
                         <Button type="outlined" className="arrow"> {t("Gid_Tanlash.davomi")} <ArrowForwardIcon/>  </Button>
-                    </ButtonWrapper>
+                    </ButtonWrapper> */}
                 </>
                 :(<h4 style={{width: "100%", textAlign: "center"}}><NoDataPage/></h4>)
             }
