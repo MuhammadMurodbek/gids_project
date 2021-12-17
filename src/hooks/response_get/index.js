@@ -15,29 +15,60 @@ export const getResponseRegion = async ( url ) => {
 export const getGlobals = async ( token ) => {
     let lang = false
     let country = false
-    await axios.get( `${ baseUrl }/api/users/languages/`, head_token )
+    await axios.get( `${ baseUrl }/api/users/languages/`, {
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${ token?.access }`,
+        }
+    } )
         .then( response => {
             localStorage.setItem( 'lanGlobal', JSON.stringify( response?.data ) )
             lang = true
         } )
         .catch( err => console.log( err ) )
-    await axios.get( `${ baseUrl }/api/users/countries/`, head_token )
+    await axios.get( `${ baseUrl }/api/users/countries/`, {
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${ token?.access }`,
+        }
+    } )
         .then( response => {
             localStorage.setItem( 'countryGlobal', JSON.stringify( response?.data ) )
             country = true
         } )
         .catch( err => console.log( err ) )
-    if(lang && country)
-        window.location.href='/'
+
+
+    if(lang && country){
+        if(token?.role ==='simple_user')
+            window.location.href='/gid-personal'
+        else    
+            window.location.href='/gid-personal-wider'
+    }
     else
         toast.error("Qaytadan urinib ko'ring")
 }
 export const checkGlobals = async() => {
-    await axios.get( `${ baseUrl }/api/users/languages/`, head_token)
-        .then( response => {localStorage.setItem( 'lanGlobal', JSON.stringify( response?.data ) )} )
+    const token = JSON.parse(localStorage.getItem("user_token"))
+    await axios.get( `${ baseUrl }/api/users/languages/`, {
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${ token?.access }`,
+        }
+    } )
+        .then( response => {
+            localStorage.setItem( 'lanGlobal', JSON.stringify( response?.data ) )
+        } )
         .catch( err => console.log( err ) )
-    await axios.get( `${ baseUrl }/api/users/countries/`, head_token )
-        .then( response => {localStorage.setItem( 'countryGlobal', JSON.stringify( response?.data ) )} )
+    await axios.get( `${ baseUrl }/api/users/countries/`, {
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${ token?.access }`,
+        }
+    } )
+        .then( response => {
+            localStorage.setItem( 'countryGlobal', JSON.stringify( response?.data ) )
+        } )
         .catch( err => console.log( err ) )
 
 }
