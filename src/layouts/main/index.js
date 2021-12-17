@@ -3,6 +3,7 @@ import {Wrapper} from "./index.style"
 import Navbar from '../../components/templates/navbar';
 import Footer from "../../components/templates/footer"
 import {useLocation} from "react-router-dom"
+import {checkGlobals} from "../../hooks/response_get"
 import { useJwt } from "react-jwt";
 const Index = ({children}) => {
     const location = useLocation()
@@ -22,10 +23,15 @@ const Index = ({children}) => {
             localStorage.setItem("expired",true)
         }
     },[location, isExpired, token])
+    useEffect(() => {
+        const countryGlobal = JSON.parse( localStorage.getItem( "countryGlobal"))
+        const language = JSON.parse(localStorage.getItem("lanGlobal"))
+        if(!(countryGlobal && language)){ checkGlobals()}
+    },[])
     return (
         <Wrapper>
             
-                 <Navbar/>
+                <Navbar/>
                 <div className="main-part">{children}</div>
             {checkFooter ? null:<Footer/>}
         </Wrapper>

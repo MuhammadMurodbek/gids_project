@@ -105,7 +105,8 @@ const  Index = ({state}) => {
                                     <span className="title"> {t("GidPk.yil")} </span> <span>{prev?.year}</span> 
                                 </div>
                             </ContainerBottom>
-                        )) : <div style={{fontSize:'0.86rem'}}>Ma'lumot kiritilmagan</div>
+                        )) :
+                            getRole.role === 'gid' ? null: <div style={{fontSize:'0.86rem'}}>Ma'lumot kiritilmagan</div>
                     }
                 </Container>
             </WrapperContainer>

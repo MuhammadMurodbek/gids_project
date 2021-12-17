@@ -1,14 +1,10 @@
 import {toast} from "react-hot-toast"
-const lanOptions = JSON.parse( localStorage.getItem( "lanOptions"))
-const lanGlobal = JSON.parse( localStorage.getItem( "lanGlobal"))
-const countryOptions = JSON.parse( localStorage.getItem( "countryOptions"))
-const countryGlobal = JSON.parse( localStorage.getItem( "countryGlobal"))
 const lan = localStorage.getItem("i18nextLng")
-const gid_lang_obj=[
-    {value:"en", label:'english'},
-    {value:"ru", label:'русский'},
-    {value:"uz", label:"o'zbek tili"},
-];
+// const gid_lang_obj=[
+//     {value:"en", label:'english'},
+//     {value:"ru", label:'русский'},
+//     {value:"uz", label:"o'zbek tili"},
+// ];
 
 export const get_cities = (data) => {
     if(data){
@@ -23,18 +19,25 @@ export const toastChecker = (data, success, error) => {
     if(data?.error!== '') toast.error(error || 'Something went wrong')
 }
 export const getLabelLang = (id) => {
+    const lanGlobal = JSON.parse( localStorage.getItem( "lanGlobal"))
+    const lan = localStorage.getItem("i18nextLng")
+
     if(lanGlobal && lan){
         let label = lanGlobal?.find(a=>a.id===id)?.name[lan]
         return label 
     }
 }
 export const getLabelLangLocal = (id) => {
+    const lanGlobal = JSON.parse( localStorage.getItem( "lanGlobal"))
+    const lan = localStorage.getItem("i18nextLng")
+
     if(lanGlobal && lan){
         let label = lanGlobal?.find(a=>a.id===id)?.name[lan]
         return label 
     }
 }
 export const getLabelCountry = (id) => {
+    const countryGlobal = JSON.parse( localStorage.getItem( "countryGlobal"))
     if(countryGlobal){
         let obj = countryGlobal?.find(a=>a.id===id)?.name
         if(lan ==='uz') return obj?.uz
@@ -43,6 +46,7 @@ export const getLabelCountry = (id) => {
     }
 }
 export const getLabelCountrySecond = (id) => {
+    const countryGlobal = JSON.parse( localStorage.getItem( "countryGlobal"))
     if(countryGlobal){
         let obj = countryGlobal?.find(a=>a.id===id)?.name
         if(lan ==='uz') return obj?.uz
@@ -51,7 +55,8 @@ export const getLabelCountrySecond = (id) => {
     }
 }
 export const getLabelCity = (countryID, cityID) => {
-    if(countryID && cityID){
+    const countryGlobal = JSON.parse( localStorage.getItem( "countryGlobal"))
+    if(countryID && cityID && countryGlobal){
         let cityName = countryGlobal?.find(a=>a.id===countryID)
         if(cityName){
             let value = cityName?.cities[cityID-1][lan]

@@ -15,36 +15,31 @@ export const getResponseRegion = async ( url ) => {
 export const getGlobals = async ( token ) => {
     let lang = false
     let country = false
-    await axios.get( `${ baseUrl }/api/users/languages/`, {
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${ token?.access }`,
-        }
-    } )
+    await axios.get( `${ baseUrl }/api/users/languages/`, head_token )
         .then( response => {
             localStorage.setItem( 'lanGlobal', JSON.stringify( response?.data ) )
             lang = true
         } )
         .catch( err => console.log( err ) )
-    await axios.get( `${ baseUrl }/api/users/countries/`, {
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${ token?.access }`,
-        }
-    } )
+    await axios.get( `${ baseUrl }/api/users/countries/`, head_token )
         .then( response => {
             localStorage.setItem( 'countryGlobal', JSON.stringify( response?.data ) )
             country = true
         } )
         .catch( err => console.log( err ) )
-
-
     if(lang && country)
         window.location.href='/'
     else
         toast.error("Qaytadan urinib ko'ring")
-    // //     se
-    // }
+}
+export const checkGlobals = async() => {
+    await axios.get( `${ baseUrl }/api/users/languages/`, head_token)
+        .then( response => {localStorage.setItem( 'lanGlobal', JSON.stringify( response?.data ) )} )
+        .catch( err => console.log( err ) )
+    await axios.get( `${ baseUrl }/api/users/countries/`, head_token )
+        .then( response => {localStorage.setItem( 'countryGlobal', JSON.stringify( response?.data ) )} )
+        .catch( err => console.log( err ) )
+
 }
 export const postResponse = async ( url, data, setState ) => {
     return await axios.post( `${ baseUrl }${ url }`, data, head_token )
