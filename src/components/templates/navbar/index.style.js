@@ -8,22 +8,19 @@ export const Navbar = styled.div`
     padding: ${props => props.navbarProps > 30 ? "8px 60px " : "15px 60px"};
     background-color:transparent;
     box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.4);
-    /* margin-top: -100%; */
-     position: fixed ;
-     z-index: 111 !important;
-    transition: 0.5s all;
-     background-color: #fff;
-    . {
-        /* background-color:red; */
-        width: 100%;
+    position: fixed ;
+    z-index: 111 !important;
+    transition: 0.3s all;
+    background-color: #fff;
+    @media(min-width:1367px){
+        padding: ${props => props.navbarProps > 30 ? "8px 80px " : "15px 80px"};
+    }
+    @media(min-width:1567px){
+        padding: ${props => props.navbarProps > 30 ? "8px 110px " : "15px 110px"};
     }
 
-     /* .nav_1{
-         background-color: red;
-     }
-     .nav{
-         background-color: blue ;
-     } */
+   
+ 
 
     .btn_enter{
         background-color: transparent;

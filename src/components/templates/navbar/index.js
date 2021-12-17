@@ -52,7 +52,7 @@ const Index = () => {
         <div className="width1">
           <FlexContainer
             width="100%"
-            padding="0 25px"
+            padding="0 22px"
             alignItems="center"
             justifyContent="space-between"
           >
