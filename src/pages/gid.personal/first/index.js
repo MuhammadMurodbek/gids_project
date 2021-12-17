@@ -18,13 +18,13 @@ const Index = () => {
     const [state, setState] = useState({success:'',error:''})
     useEffect(() => {getResponse('/api/users/edit/', setState)},[])
     console.log(state)
-    const lang = localStorage.getItem('i18nextLng')
-    const getLanguageCity = (data) => {
-        const lan = localStorage.getItem('i18nextLng')
-        if(lan === 'uz') return data?.uz
-        if(lan === 'ru') return data?.ru
-        if(lan === 'en') return data?.en
-    }
+    // const lang = localStorage.getItem('i18nextLng')
+    // const getLanguageCity = (data) => {
+    //     const lan = localStorage.getItem('i18nextLng')
+    //     if(lan === 'uz') return data?.uz
+    //     if(lan === 'ru') return data?.ru
+    //     if(lan === 'en') return data?.en
+    // }
     return (
         <>
             {

@@ -4,6 +4,10 @@ export const Wrapper = styled.div`
     width: 100%;
     height: auto;
     margin-top:15px;
+    .pagination{
+        text-align: center;
+        padding: 20px 0;
+    }
     @media (max-width:600px){
         .sc-ehSDrC.iuPqWO{
             /* background-color:red; */

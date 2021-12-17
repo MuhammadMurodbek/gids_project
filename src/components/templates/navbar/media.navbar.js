@@ -35,7 +35,7 @@ const MediaNavbarContainer = (props) => {
 
     const handleLogout = () => {
         localStorage.clear()
-        window.location.href = "/auth"
+        history.push("/auth")
         props.setOpen(false)
     }
     return (
