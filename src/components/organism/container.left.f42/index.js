@@ -5,7 +5,7 @@ import {WrapperContainer, ContainerBottom, Wrapper} from "./style"
 import ImageGallery from "../../molecules/element_f42/Gallery"
 import ImageContainer from "../../molecules/img.container"
 import InfoBtn from "../../molecules/info.f42"
-import RoundImage from "../../../assets/img/choosegid/round.svg"
+import RoundImage from "../../../assets/img/gid-personal/no_user.png"
 import { Grid } from '@material-ui/core'
 import { TextTitle } from '../../../styles/textTitle/index.style'
 import SecondInfoCard from "../../molecules/element_f42/container_2.f42"
@@ -105,7 +105,8 @@ const  Index = ({state}) => {
                                     <span className="title"> {t("GidPk.yil")} </span> <span>{prev?.year}</span> 
                                 </div>
                             </ContainerBottom>
-                        )) : <div style={{fontSize:'0.86rem'}}>Ma'lumot kiritilmagan</div>
+                        )) :
+                            getRole.role === 'gid' ? null: <div style={{fontSize:'0.86rem'}}>Ma'lumot kiritilmagan</div>
                     }
                 </Container>
             </WrapperContainer>
