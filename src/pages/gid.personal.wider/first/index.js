@@ -8,16 +8,17 @@ import {getResponse} from "../../../hooks/response_get"
 import {common} from "../../../custom/url"
 const Index = () => {
     const [apiData, setApiData] = useState({ success: '', error: ''})
+    const getRole = JSON.parse(localStorage.getItem("user_token"));
     useEffect(()=>{ getResponse(common.personal.me, setApiData)},[])
     return (
         <Layout>
             <ContainerMain>
                 <Grid container spacing={3}>
                     <Grid item xs={12} md={8}>
-                        <CardMain state={apiData?.success?.data}/>
+                        <CardMain state={apiData?.success?.data} typeRole={getRole}/>
                     </Grid>
                     <Grid item xs={12} md={4}>
-                        <CardMainSecond state={apiData?.success?.data}/>
+                        <CardMainSecond state={apiData?.success?.data} typeRole={getRole}/>
                     </Grid>
                 </Grid>
             </ContainerMain>
