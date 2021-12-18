@@ -78,7 +78,11 @@ const Index = (props) => {
   },[data])
   return (
     <div>
-      <Gallery {...props} images={state || props?.list || IMAGES} />,
+      {
+        (state || props?.list) ? 
+        <Gallery {...props} images={state || props?.list} />:
+        <span>Ma'lumot kiritilmagan</span>
+      }
     </div>
   );
 };

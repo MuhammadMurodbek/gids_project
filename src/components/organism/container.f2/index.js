@@ -67,7 +67,7 @@ const Index = ({data}) => {
                     </Container>
                 </Grid>
                 <Grid item xs={12} sm={3}>
-                    <InfoBtn />
+                    <InfoBtn data={data}/>
                 </Grid>
             </Grid>
         </WrapperContainer>

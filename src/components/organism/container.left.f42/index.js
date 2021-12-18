@@ -43,7 +43,7 @@ const  Index = ({state}) => {
     const languageCheck = (item, lang) => {
         if(lang==='en') return item?.language__name_en
         if(lang==='ru') return item?.language__name_ru
-        if(lang==='uz') return item?.language__name_uz +" tili"
+        if(lang==='uz' && item) return item?.language__name_uz +" tili"
     }
     const degreeLang={
         native:"Ona tili",
@@ -60,7 +60,7 @@ const  Index = ({state}) => {
                                 <ImageContainer src={state?.image || RoundImage} width="160px" height="auto" round="50%" />
                                 <Container {...mediaContainerSecondText} margin="-10px 0 0 15px">
                                     <TextTitle align="left" bottom="5px" font="20px">{state?.first_name || 'Mavjud emas'}{" "}{state?.last_name || 'Mavjud emas'}</TextTitle>
-                                    <div className="gid-info-personal">33 yosh | <span style={{textTransform: "capitalize"}}>{getRole?.role}</span> </div>
+                                    <div className="gid-info-personal">33 yosh | <span style={{textTransform: "capitalize"}}>{getRole?.role ==='simple_user' ? "User":getRole?.role}</span> </div>
                                     {
                                         getRole?.role === 'gid' ? 
                                         state?.languages?.map((prev, index)=>(
