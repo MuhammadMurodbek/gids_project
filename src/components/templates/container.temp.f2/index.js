@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Button from '../../atom/button'
 import ContainerMap from "../../organism/container.f2"
 import {Wrapper, ButtonWrapper} from "./style"
@@ -22,13 +22,12 @@ const Index = ({data, type}) => {
                             </div>
                         ))
                     }
-                    <ButtonWrapper>
+                    {/* <ButtonWrapper>
                         <Button type="outlined" className="arrow"> {t("Gid_Tanlash.davomi")} <ArrowForwardIcon/>  </Button>
-                    </ButtonWrapper>
+                    </ButtonWrapper> */}
                 </>
                 :(<h4 style={{width: "100%", textAlign: "center"}}><NoDataPage/></h4>)
             }
-            
             
         </Wrapper>
     )

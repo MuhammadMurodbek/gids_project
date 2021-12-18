@@ -37,8 +37,8 @@ const Index = ({statePostProps}) => {
             first_name:state.first_name,
             last_name:state.last_name,
             company:state?.company,
-            country:state?.country?.value,
-            city:state?.city,
+            country:state?.country?.value || 1,
+            city:state?.city || 1,
         }
         const isValid = await userSchema.isValid(postApiData)
         if(!isValid){ setError(true)}

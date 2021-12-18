@@ -19,11 +19,11 @@ const Index = ({ role }) => {
                 <Link to={role==='simple_user' ? '/gid-personal':`/gid-personal-wider?name=${getData?.success?.data?.first_name}&last_name=${getData?.success?.data?.last_name}`}>Profil</Link>
             </Menu.Item>
             <Menu.Divider />
-            <Menu.Item key="3">
-                <span onClick={() => {
+            <Menu.Item key="3" onClick={() => {
                     history.push('/auth')
                     localStorage.clear()
-                }}>Chiqish</span>
+                }}>
+                <span >Chiqish</span>
             </Menu.Item>
         </Menu>
     );

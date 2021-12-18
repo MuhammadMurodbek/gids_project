@@ -38,6 +38,7 @@ export const getLabelLangLocal = (id) => {
 }
 export const getLabelCountry = (id) => {
     const countryGlobal = JSON.parse( localStorage.getItem( "countryGlobal"))
+    const lan = localStorage.getItem("i18nextLng")
     if(countryGlobal){
         let obj = countryGlobal?.find(a=>a.id===id)?.name
         if(lan ==='uz') return obj?.uz
@@ -47,6 +48,7 @@ export const getLabelCountry = (id) => {
 }
 export const getLabelCountrySecond = (id) => {
     const countryGlobal = JSON.parse( localStorage.getItem( "countryGlobal"))
+    const lan = localStorage.getItem("i18nextLng")
     if(countryGlobal){
         let obj = countryGlobal?.find(a=>a.id===id)?.name
         if(lan ==='uz') return obj?.uz
@@ -56,6 +58,7 @@ export const getLabelCountrySecond = (id) => {
 }
 export const getLabelCity = (countryID, cityID) => {
     const countryGlobal = JSON.parse( localStorage.getItem( "countryGlobal"))
+    const lan = localStorage.getItem("i18nextLng")
     if(countryID && cityID && countryGlobal){
         let cityName = countryGlobal?.find(a=>a.id===countryID)
         if(cityName){

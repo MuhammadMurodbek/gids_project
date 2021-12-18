@@ -13,11 +13,18 @@ import {mediaTextField, mediaTextFieldSec} from "../../../custom/global.media.va
 import {mediaFlex, mediaImage, mediaTextFieldExternal, mediaFlexFooter} from "./_media"
 import {getResponse} from "../../../hooks/response_get"
 import Spinner from "../../../components/atom/loading.spinner.line"
+import {getLabelCountrySecond, getLabelCity} from "../../../custom/function"
 const Index = () => {
     const [state, setState] = useState({success:'',error:''})
     useEffect(() => {getResponse('/api/users/edit/', setState)},[])
     console.log(state)
-    const lang = localStorage.getItem('i18nextLng')
+    // const lang = localStorage.getItem('i18nextLng')
+    // const getLanguageCity = (data) => {
+    //     const lan = localStorage.getItem('i18nextLng')
+    //     if(lan === 'uz') return data?.uz
+    //     if(lan === 'ru') return data?.ru
+    //     if(lan === 'en') return data?.en
+    // }
     return (
         <>
             {
@@ -32,8 +39,15 @@ const Index = () => {
                                 <FlexContainer flexDirection="column" height="100%" justifyContent="space-around">
                                     <TextTitle {...mediaTextField} {...mediaTextFieldSec} {...mediaTextFieldExternal} left="30px" font="34px" align="left">{state?.success?.data?.first_name || 'username'}{" "}{state?.success?.data?.last_name || 'lastname'}</TextTitle>
                                     <FlexContainer {...mediaFlexFooter} width="100%" margin="0 0 0 30px">
-                                        <div className="icon-text"><ImageContainer src={icon1} width="20px"/><div>{state?.success?.data?.country_name[lang] || 'no data'}, {state?.success?.data?.city_name[lang] || 'no data'}</div></div>
-                                        <div className="icon-text two"><ImageContainer width="20px" src={icon2}/><div>{state?.success?.data?.company || 'no data'}</div></div>
+                                        <div className="icon-text"><ImageContainer src={icon1} width="20px"/>
+                                            <div>
+                                                {
+                                                    (getLabelCountrySecond(state?.success?.data?.country)+", "+getLabelCity(state?.success?.data?.country,state?.success?.data?.city))|| "Ma'lumot kiritilmagan"
+                                                }
+                                            </div>
+                                        </div>
+                                        <div className="icon-text two">
+                                            <ImageContainer width="20px" src={icon2}/><div>{state?.success?.data?.company || 'no data'}</div></div>
                                     </FlexContainer>
                                 </FlexContainer>
                             </FlexItem>

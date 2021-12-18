@@ -10,6 +10,8 @@ import Adds from "../../assets/img/choosegid/adds.jpg"
 import { mediaTextField, mediaTextFieldSec } from "../../custom/global.media.variables"
 import { useTranslation } from 'react-i18next'
 import {getResponse} from "../../hooks/response_get"
+import { Pagination } from 'antd';
+import Spinner from "../../components/atom/loading.spinner.line"
 const mediaGrid = {
     m_width: "962px",
     m_display: "none"
@@ -22,17 +24,21 @@ const Index = () => {
     const { t } = useTranslation()
     let query = window.location.search
     const [typeQuery, setTypeQuery] = useState('gid')
+    const [ pagination, setPagination ] = useState( {current: 1} )
     const [state, setState] = useState({ success: '', error: '', loading: false})
     useEffect(()=>{
         let filterQuery = query.substr(1)?.split('&')?.filter(a=>!a.includes('type'))?.join('&')
         let type = query.substr(1)?.split('&')?.filter(a=>a.includes('type'))?.join('&').slice(5)
         if(type){
-            getResponse(`/api/${type}s/profiles/?${filterQuery}`, setState)
+            getResponse(`/api/${type}s/profiles/?${filterQuery}&page=${pagination?.current}`, setState)
         }else{
-            getResponse(`/api/translators/all/`, setState)
+            getResponse(`/api/translators/all/?page=${pagination?.current}`, setState)
         }
         setTypeQuery(type)
-    },[query])
+    },[query, pagination])
+    function onChange ( pageNumber ) {
+        setPagination( { current: pageNumber} )
+    }
     return (
         <Wrapper>
             <TextTitle top="40px" {...mediaTextField} {...mediaTextFieldSec} bottom="30px">
@@ -56,9 +62,15 @@ const Index = () => {
                         }
                     </Grid>
                     <Grid item xs={12} sm={12} md={8}>
-                        <Container {...mediaGridUSers}>
-                            <ContainerMap data={state?.success?.data}  type={typeQuery} />
-                        </Container>
+                        {
+                            state?.success === '' ?  <Spinner marginTop="60px" width={ 50 } height={ 50 } />:
+                            <Container {...mediaGridUSers}>
+                                <ContainerMap data={state?.success?.data}  type={typeQuery} />
+                                <div className="pagination">
+                                    <Pagination current={pagination?.current} onChange={ onChange } pageSize={7} total={ state?.success?.data?.count } />
+                                </div>
+                            </Container>
+                        }
                     </Grid>
                 </Grid>
             </Container>

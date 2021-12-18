@@ -1,9 +1,7 @@
 import  * as yup from "yup";
 
 export const userSchema = yup.object({
-    city:yup.number(),
     company:yup.string().min(3),
-    country:yup.number(),
     first_name:yup.string().min(3).required(),
     last_name:yup.string().min(3).required(),
 })
