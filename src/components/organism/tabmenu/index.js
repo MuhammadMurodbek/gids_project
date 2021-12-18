@@ -155,7 +155,7 @@ export default function BasicTabs(props) {
 
   return (
     <Wrapper>
-      <Box sx={{ width: '100%' }}>
+      <Box sx={{ width: '100%',minHeight:'70vh' }}>
         <Box className="tabs-wrapper">
           <Tabs
             value={value}

@@ -28,7 +28,7 @@ export default function Index() {
                             <CardMain state={apiData?.success?.data} typeRole={{role:role}} />
                         </Grid>
                         <Grid item xs={12} md={4}>
-                            <CardMainSecond state={apiData?.success?.data} typeRole={{role:apiData?.success?.data}}/>
+                            <CardMainSecond state={apiData?.success?.data}/>
                         </Grid>
                     </Grid>
                 </Wrapper>
