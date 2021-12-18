@@ -12,7 +12,11 @@ const Index = ({url}) => {
             <div style={{margin:"10px 0", fontWeight:'bold', fontSize:'15px'}}>
                 {t("GidPk.ozimHaqimdaVideo")} 
             </div>
-            <Player url={url}/>
+            {
+                url ? 
+                <Player url={url}/>:
+                <span>Ma'lumot kiritilmagan</span>
+            }
         </Wrapper>
     )
 }

@@ -1,7 +1,8 @@
 import React from 'react'
 import { FlexContainer } from '../../../styles/flex.container'
 import {WrapperInfoBtn} from "./style"
-import { Link } from 'react-router-dom';
+import {useHistory} from "react-router-dom"
+// import { Link } from 'react-router-dom';aaaaaa
 import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import Button from "../../atom/button"
@@ -18,8 +19,13 @@ const mediaUser = {
     m_width:'600px',
     m_display:'none'
 }
-const Index = () => {
+const Index = ({data}) => {
     const {t} = useTranslation()
+    const history = useHistory()
+    const handleClick = (id, role) => {
+        history.push(`/seeprofile?id=${id}&role=${role}`)
+    }
+    // console.log(data)
     return (
         <WrapperInfoBtn>
             <FlexContainer  width="100%" height="100%" alignItems="center" justifyContent="space-between" flexDirection="column">
@@ -27,9 +33,9 @@ const Index = () => {
                     <CheckCircleOutlineIcon className="icon"/>
                     <FlexContainer width="auto" alignItems="center" className="count"><VisibilityIcon/>{" "}10</FlexContainer>
                 </FlexContainer>
-                <Link to="/seeprofile">
-                    <Button {...mediaButton}  width="100%"> {t("Gid_Tanlash.korish")} </Button>
-                </Link>
+                {/* <Link> */}
+                    <Button {...mediaButton} onClick={()=>handleClick(data?.id, data?.role)}  width="100%"> {t("Gid_Tanlash.korish")} </Button>
+                {/* </Link> */}
             </FlexContainer>
         </WrapperInfoBtn>
     )
