@@ -156,9 +156,6 @@ export const routes_write =  [
 ]
 
 
-
-
-
 export const routes = [
     {
         url:'/auth',

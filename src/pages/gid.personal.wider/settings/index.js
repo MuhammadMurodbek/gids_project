@@ -4,6 +4,7 @@ import { Wrapper, TitleContainer } from "./style"
 import { shadow } from "../../../styles/global/colors"
 import { Grid } from '@material-ui/core'
 import InputLabeled from "../../../components/molecules/input.labeled"
+import InputLabeledPhone from "../../../components/molecules/input.labeled/phone"
 import Button from "../../../components/atom/button"
 import Box from "@material-ui/core/Box";
 import { getResponse, putResponse } from '../../../hooks/response_get'
@@ -79,7 +80,7 @@ const Index = () => {
                     <Container {...mediaContainer} padding="20px 40px">
                         <Grid container spacing={5}>
                             <Grid item xs={12} sm={6}>
-                                <InputLabeled width="100%"
+                                <InputLabeledPhone width="100%"
                                     onChange={hendlEdit}
                                     value={edit?.phone_number}
                                     name="phone_number"
