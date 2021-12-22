@@ -7,6 +7,12 @@ export const InputWrapper = styled.div`
         border: none;
         background:transparent;
     }
+    .error_icon{
+        color:red !important;
+    }
+    .success_icon{
+        color:green !important;
+    }
     .input_phone{
         position: relative;
         top:3px;

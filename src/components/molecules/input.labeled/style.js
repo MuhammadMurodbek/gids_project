@@ -3,7 +3,12 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
     position: relative;
     width:${v=>v.width ? v.width:"auto"};
-   
+    .error_icon{
+        color:red !important;
+    }
+    .success_icon{
+        color:green !important;
+    }
 `
 export const Label = styled.div`
     font-weight: 600;

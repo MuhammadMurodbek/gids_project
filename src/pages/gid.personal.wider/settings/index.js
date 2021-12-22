@@ -36,6 +36,7 @@ const Index = () => {
     }, [response?.success])
 
     function hendlEdit(e) {
+        console.log(e)
         setEdit(prev => {
             return {
                 ...prev,
@@ -51,18 +52,20 @@ const Index = () => {
             }
         })
     }
-  function handleSubmit(e) {
-      e.preventDefault()
-      const payload = {
-        email: edit?.email,
-        phone_number: edit?.phone_number,
-        password: password,
-        password1: password1,
-        password2: password2
-      }
-      if(edit?.email !== '' && edit?.phone_number !== null && password !== '' && password1 !== '' && password2 !== '') {
-          putResponse('/api/auth/settings/', payload, setUpdateResponse)
-      }
+    function handleSubmit(e) {
+        e.preventDefault()
+        console.log(edit)
+          const payload = {
+                email: edit?.email,
+                phone_number: edit?.phone_number,
+                password: password,
+                password1: password1,
+                password2: password2
+              }
+            console.log(payload)
+    //   if(edit?.email !== '' && edit?.phone_number !== null && password !== '' && password1 !== '' && password2 !== '') {
+    //       putResponse('/api/auth/settings/', payload, setUpdateResponse)
+    //   }
   }
 
 
@@ -81,8 +84,8 @@ const Index = () => {
                         <Grid container spacing={5}>
                             <Grid item xs={12} sm={6}>
                                 <InputLabeledPhone width="100%"
-                                    onChange={hendlEdit}
-                                    value={edit?.phone_number}
+                                    onChange={(e)=>console.log(e)}
+                                    // value={edit?.phone_number}
                                     name="phone_number"
                                     label="Telefon"
                                     placeholder="Raqamingizni kiriting" />

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Input,InputWrapper } from './style'
 import "react-phone-number-input/style.css";
+import {QuestionCircleOutlined, CheckCircleOutlined} from '@ant-design/icons'
 import PhoneInput, {
   formatPhoneNumber,
   formatPhoneNumberIntl,
@@ -13,11 +14,12 @@ const Index = (props) => {
     return (
         <InputWrapper>
             <PhoneInput
+                {...props}
                 international
                 placeholder="Enter phone number"
-                value={state}
+                // value={state}
                 maxLength={17}
-                onChange={setState}
+                // onChange={setState}
                 style={{border:'none'}}
                 error={
                 state
@@ -28,7 +30,8 @@ const Index = (props) => {
                 }
                 className='input_phone'
             />
-            Is possible: {state && isPossiblePhoneNumber(state) ? "true" : "false"}
+            {/* <span style={{fontSize:'0.85rem'}}>Raqam mavjudligi (12 ta raqam kitiriting): {state && isPossiblePhoneNumber(state) ? <CheckCircleOutlined className="success_icon"/> : <QuestionCircleOutlined className="error_icon"/>}</span> */}
+            
             {/* <Input {...props}/>
             <span style={{position: 'absolute', fontSize:'11px', left:0, bottom:-18,  fontStyle:'italic', color:'red'}}>
                 {errorText}

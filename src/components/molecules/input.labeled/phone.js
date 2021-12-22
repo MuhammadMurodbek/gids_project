@@ -4,6 +4,13 @@ import Input from "../../atom/input.second/phone"
 import RemoveRedEyeOutlinedIcon from '@material-ui/icons/RemoveRedEyeOutlined';
 import VisibilityOffOutlinedIcon from '@material-ui/icons/VisibilityOffOutlined';
 import {mainGreen} from "../../../styles/global/colors"
+import {QuestionCircleOutlined, CheckCircleOutlined} from '@ant-design/icons'
+import PhoneInput, {
+    formatPhoneNumber,
+    formatPhoneNumberIntl,
+    isPossiblePhoneNumber,
+    isValidPhoneNumber
+  } from "react-phone-number-input";
 const Index = (props) => {
     
     const {width, label, password, sizeLabel, typeNumber, setState, state, field, defaultApiValue, clear, setClear, idK} = props
@@ -54,6 +61,7 @@ const Index = (props) => {
                 :
                     null
             }
+            <span style={{fontSize:'0.85rem'}}>Raqam mavjudligi (12 ta raqam kitiriting): {value && isPossiblePhoneNumber(value) ? <CheckCircleOutlined className="success_icon"/> : <QuestionCircleOutlined className="error_icon"/>}</span>
             {/* <span style={{position: 'absolute', fontSize:'11px', bottom:-14, left:0, fontStyle:'italic', color:'red'}}>
                 {errorText}
             </span> */}
