@@ -4,29 +4,36 @@ import Navbar from '../../components/templates/navbar';
 import Footer from "../../components/templates/footer"
 import {useLocation} from "react-router-dom"
 import {checkGlobals} from "../../hooks/response_get"
-// import { useJwt } from "react-jwt";
+import { useJwt } from "react-jwt";
 import {postRefreshToken} from "../../hooks/response_get"
 import jwt_decode from "jwt-decode";
 import moment from "moment"
 
 const Index = ({children}) => {
+    const location = useLocation()
+    let token1 = JSON.parse(localStorage.getItem("user_token"))
+    const {isExpired } = useJwt(token1 ? token1.access : undefined)
     useEffect(()=>{
         let token = JSON.parse(localStorage.getItem("user_token"))
-        if(token){
-            let decoded = jwt_decode(token?.access);
-            let date = new Date(decoded?.exp * 1000);
-            let pastDate = new Date(date.getTime() - 30*60000);
-            if(moment(pastDate).isBefore(moment(new Date()))){
-                postRefreshToken(token) 
-            }else{
-                const intervalId = setInterval(() => {
+        if(location.pathname!=='/auth' && location.pathname!=='/' && location.pathname!=='/forgits'){
+            if(!isExpired){
+                let decoded = jwt_decode(token?.access);
+                let date = new Date(decoded?.exp * 1000);
+                let pastDate = new Date(date.getTime() - 30*60000);
+                if(moment(pastDate).isBefore(moment(new Date()))){
                     postRefreshToken(token) 
-                }, 1000 * 60 * 30) // in milliseconds
-                return () => clearInterval(intervalId)
+                }else{
+                    const intervalId = setInterval(() => {
+                        postRefreshToken(token) 
+                    }, 1000 * 60 * 30) // in milliseconds
+                    return () => clearInterval(intervalId)
+                }
+            }
+            else{
+                window.location.href = '/auth'
             }
         }
-    },[])
-    const location = useLocation()
+    },[location])
     const checkFooter = location.pathname === "/auth" || location.pathname === "/auth/verify"
     // const token = JSON.parse(localStorage.getItem("user_token")) 
     // const {isExpired } = useJwt(token ? token.access : undefined)

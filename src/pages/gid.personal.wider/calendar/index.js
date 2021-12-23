@@ -34,6 +34,12 @@ const Index = () => {
         }
     },[postData])
     useEffect(() => { getResponse(`/api/${getRole?.role}s/calendar/`, setGetData) },[callback])
+    useEffect(() => { 
+        if(getData?.error !=='' || getData?.success !==''){
+            setPostData(prev=>{return{...prev, success:''}})
+        }
+     },[getData])
+
     // const clearPostData = () => {
     //     setPostData(prev => {
     //         return{...prev, success:''}
