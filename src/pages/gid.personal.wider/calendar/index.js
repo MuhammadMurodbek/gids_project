@@ -34,6 +34,11 @@ const Index = () => {
         }
     },[postData])
     useEffect(() => { getResponse(`/api/${getRole?.role}s/calendar/`, setGetData) },[callback])
+    // const clearPostData = () => {
+    //     setPostData(prev => {
+    //         return{...prev, success:''}
+    //     })
+    // }
     return (
         <>
         <Wrapper>
@@ -68,7 +73,7 @@ const Index = () => {
                             />
                         </div>
                         <DayPickerWrapper>
-                            <DayPicker title="no" setData={setDateState}/>
+                            <DayPicker title="no" setData={setDateState} postData={postData} clearPostData={setPostData}/>
                         </DayPickerWrapper>
                     </Grid>
                     <Grid item xs={12} md={6} style={{marginTop: 15}}>

@@ -11,11 +11,19 @@ export default class Example extends React.Component {
       selectedDays: [],
     };
   }
+  static getDerivedStateFromProps(props, state) {
+    console.log(props)
+    if(props.postData?.success!==''){
+      state.selectedDays=[]
+      // return props.setPostData({success:'', error:'', loading: false})
+    }
+    // return {favoritecolor: props.favcol };/
+  }
   handleDayClick(day, { selected }) {
     console.log(day);
     const selectedDays = this.state.selectedDays.concat();
     if (selected) {
-      const selectedIndex = selectedDays.findIndex(selectedDay =>
+      const selectedIndex = selectedDays?.findIndex(selectedDay =>
         DateUtils.isSameDay(selectedDay, day)
       );
       selectedDays.splice(selectedIndex, 1);
@@ -28,7 +36,9 @@ export default class Example extends React.Component {
   }
 
   render() {
-    // this.props(this.state.selectedDays);
+    // if(this.props.postData?.success!==''){
+    //   this.state.selectedDays=[]
+    // }
     return (
 
       <div style={{textAlign:'center'}}>

@@ -4,7 +4,7 @@ import { Wrapper } from "./index.style";
 import "./style.css";
 
 const Index = (props) => {
-  const {width,paddingX, margin,backgroundColor,setState, setCountryId,errorText,field, placeholder,
+  const {width,paddingX, margin,backgroundColor,setState, setCountryId,errorText,field, placeholder, clearValue, setClearValue,
     pcolor,
     defaultApiValue
   } = props;
@@ -34,6 +34,12 @@ const Index = (props) => {
       // console.log(defaultApiValue)
     }
   },[defaultApiValue])
+  useEffect(()=>{
+    if(clearValue){
+      setValue('')
+      setClearValue(false)
+    }
+  },[clearValue])
   // console.log(value)
   return (
     <Wrapper

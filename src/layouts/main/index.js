@@ -12,16 +12,18 @@ import moment from "moment"
 const Index = ({children}) => {
     useEffect(()=>{
         let token = JSON.parse(localStorage.getItem("user_token"))
-        let decoded = jwt_decode(token?.access);
-        let date = new Date(decoded?.exp * 1000);
-        let pastDate = new Date(date.getTime() - 30*60000);
-        if(moment(pastDate).isBefore(moment(new Date()))){
-            postRefreshToken(token) 
-        }else{
-            const intervalId = setInterval(() => {
+        if(token){
+            let decoded = jwt_decode(token?.access);
+            let date = new Date(decoded?.exp * 1000);
+            let pastDate = new Date(date.getTime() - 30*60000);
+            if(moment(pastDate).isBefore(moment(new Date()))){
                 postRefreshToken(token) 
-            }, 1000 * 60 * 30) // in milliseconds
-            return () => clearInterval(intervalId)
+            }else{
+                const intervalId = setInterval(() => {
+                    postRefreshToken(token) 
+                }, 1000 * 60 * 30) // in milliseconds
+                return () => clearInterval(intervalId)
+            }
         }
     },[])
     const location = useLocation()
@@ -48,8 +50,7 @@ const Index = ({children}) => {
     },[])
     return (
         <Wrapper>
-            
-                <Navbar/>
+            <Navbar/>
                 <div className="main-part">{children}</div>
             {checkFooter ? null:<Footer/>}
         </Wrapper>

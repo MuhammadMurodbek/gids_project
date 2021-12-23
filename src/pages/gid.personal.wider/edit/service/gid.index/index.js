@@ -31,6 +31,8 @@ const GidIndex = () => {
     const handleAdd = useCallback( () => {
         if ( value?.country !== '' && value?.city !== '' )
         {
+            console.log(state)
+            console.log(value)
             setState( [ ...state, value ] )
             // setValue( { country: '', city: '' } )
             setClearValue( true )
@@ -71,13 +73,13 @@ const GidIndex = () => {
         let array = getData?.success?.data?.excursions?.map(item=>{return{
             city: parseInt(item.city),
             country: parseInt(item.country),
-        }})
+        }}) || []
         setState(array)
     }, [ getData ] )
     useEffect( () => {
         if ( !excursion )
         {
-            setValue( { country: '', city: '' } )
+            // setValue( { country: '', city: '' } )
             setClearValue( true )
         }
     }, [ excursion ] )
@@ -157,6 +159,8 @@ const GidIndex = () => {
                                                 setCountryId={setCountryId}
                                                 setState={setValue} 
                                                 state={value}
+                                                clearValue={clearValue}
+                                                setClearValue={setClearValue}
                                                 placeholder={t("kengaytirlgan_Q.DavlatniTanlang")}
                                             />
                                             {/* <SelectLabeled
@@ -180,6 +184,8 @@ const GidIndex = () => {
                                                 countryId={countryId}
                                                 setState={setValue}
                                                 state={value} 
+                                                clearValue={clearValue}
+                                                setClearValue={setClearValue}
                                                 isDisabled={countryId === null ? true:false}
                                                 placeholder={t("kengaytirlgan_Q.ShaharniTanlang")}
                                             />
