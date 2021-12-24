@@ -17,7 +17,7 @@ const media_container = {
     m_padding: "10px 0",
 }
 
-const Index = ({data}) => {
+const  Index = ({data}) => {
     const lang = localStorage.getItem('i18nextLng')
     const { t } = useTranslation()
     const languageCheck = (item, lang) => {

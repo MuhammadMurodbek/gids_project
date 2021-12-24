@@ -65,8 +65,10 @@ const Index = () => {
                                         width="100%"
                                         label={ t( "profil_sozlamalari.telefone" ) }
                                         placeholder={ t( "profil_sozlamalari.telRaqam" ) }
-                                        defaultApiValue={ state?.phone_number }
+                                        defaultApiValue={ state?.phone_number} 
+
                                     />
+                                    <span className="tets">faqat raqam kiriting</span>
                                     <InputLabeled
                                         setState={ setState }
                                         state={ state }

@@ -30,6 +30,7 @@ export const routes_user = [
 
 ] 
 export const routes_gid = [
+  
     {
         url:'/request',
         component:ListRouter.Request
@@ -73,6 +74,7 @@ export const routes_gid = [
 ]
 
 export const routes_traslater =  [
+  
     {
         url:'/request',
         component:ListRouter.Request
@@ -117,6 +119,7 @@ export const routes_traslater =  [
 ]
 
 export const routes_write =  [
+   
     {
         url:'/request',
         component:ListRouter.Request
@@ -160,6 +163,14 @@ export const routes_write =  [
 
 
 export const routes = [
+    {
+        url:'/gids',
+        component:ListRouter.ChooseGids,
+    },
+    {
+        url:'/seeprofile',
+        component:ListRouter.SeeProfile
+    },
     {
         url:'/auth',
         component:ListRouter.Auth

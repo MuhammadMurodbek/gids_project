@@ -12,6 +12,10 @@ import { useTranslation } from 'react-i18next'
 import {getResponse} from "../../hooks/response_get"
 import { Pagination } from 'antd';
 import Spinner from "../../components/atom/loading.spinner.line"
+import NumberFormat from 'react-number-format';
+
+
+
 const mediaGrid = {
     m_width: "962px",
     m_display: "none"
@@ -41,8 +45,10 @@ const Index = () => {
     }
     return (
         <Wrapper>
-            <TextTitle top="40px" {...mediaTextField} {...mediaTextFieldSec} bottom="30px">
+            <TextTitle top="40px" {...mediaTextField}
+             {...mediaTextFieldSec} bottom="30px">
                 {t("Gid_Tanlash.title")}
+                <NumberFormat format="+1 (###) ###-####" allowEmptyFormatting mask="_" />
             </TextTitle>
             <Container>
                 <Grid container spacing={1} className="media_grid_flex">
@@ -67,7 +73,7 @@ const Index = () => {
                             <Container {...mediaGridUSers}>
                                 <ContainerMap data={state?.success?.data}  type={typeQuery} />
                                 <div className="pagination">
-                                    <Pagination current={pagination?.current} onChange={ onChange } pageSize={7} total={ state?.success?.data?.count } />
+                                    <Pagination className="sss  " current={pagination?.current} onChange={ onChange } pageSize={7} total={ state?.success?.data?.count } />
                                 </div>
                             </Container>
                         }

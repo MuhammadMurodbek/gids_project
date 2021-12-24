@@ -64,7 +64,7 @@ const Index = () => {
                                             sizeLabel="15px"
                                             width="100%"
                                             label={ t( "IshTajriba.bitirgan" ) }
-                                            placeholder={ t( "IshTajriba.toifasi" ) }
+                                            placeholder={ t( "IshTajriba.BitirganOliytalimlar" ) }
                                             setState={ setStateGid }
                                             state={ stateGid }
                                             field="completed_university"

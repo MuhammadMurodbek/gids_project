@@ -48,6 +48,7 @@
     "react-loader-spinner": "^4.0.0",
     "react-modal-video": "^1.2.8",
     "react-multivalue-text-input": "^1.0.0",
+    "react-number-format": "^4.9.0",
     "react-player": "^2.9.0",
     "react-redux": "^7.2.4",
     "react-ripples": "^2.2.1",

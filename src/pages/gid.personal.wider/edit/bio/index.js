@@ -112,7 +112,7 @@ const Index = () => {
                     sizeLabel="15px"
                     width="100%"
                     label="Sana"
-                    placeholder={ state?.birthday || "Select date" }
+                    placeholder={ state?.birthday || "dd-mm-yyyy0" }
                     placeholderValue={ state?.birthday || false }
                     setState={ setState }
                     state={ state }
@@ -125,8 +125,8 @@ const Index = () => {
                     sizeLabel="15px"
                     field="gender"
                     label="Jinsi"
-                    name1="male"
-                    name2="female"
+                    name1="Erkak"
+                    name2="Ayol"
                     value1="male"
                     value2="female"
                     state={ state }

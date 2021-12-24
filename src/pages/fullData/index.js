@@ -52,12 +52,7 @@ export default function Index() {
                     ""
                   ) : (
                     <div className="editbtn">
-                      <Button className="del-edit">
-                        <img className="img2" src={edit} alt="asdf" />
-                      </Button>
-                      <Button className="del-edit" type="outlined">
-                        <img className="img1" src={delbtn} alt="asdf" />
-                      </Button>
+                     
                     </div>
                   )}
                 </div>
@@ -81,3 +76,11 @@ export default function Index() {
     </div>
   );
 }
+
+
+// <Button className="del-edit">
+// <img className="img2" src={edit} alt="asdf" />
+// </Button>
+// <Button className="del-edit" type="outlined">
+// <img className="img1" src={delbtn} alt="asdf" />
+// </Button>

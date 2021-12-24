@@ -1,5 +1,5 @@
 import { Upload, message } from 'antd';
-import FileUploadIcon from '@mui/icons-material/FileUpload';
+// import FileUploadIcon from '@material-ui/icons/FileUpload';
 import React, { useState } from 'react'
 import Spinner from "../../../../components/atom/loading.spinner.line";
 import { useTranslation } from 'react-i18next';
@@ -45,7 +45,7 @@ const Gallery = ({ role, setCallback }) => {
             </div>
             <Dragger {...props} className="dragger" >
                 <p className="  news11" >
-                    <FileUploadIcon className="icon" />
+ 
                 </p>
 
 

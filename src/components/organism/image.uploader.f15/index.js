@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import ImageUpload from 'image-upload-react'
 import 'image-upload-react/dist/index.css'
 import { Wrapper } from "./style"
-import DeleteIcon from '@mui/icons-material/Delete';
+import DeleteIcon from '@material-ui/icons/Delete';
+ 
 function App(props) {
   const [imageSrc, setImageSrc] = useState()
   const { width, height, radius, minHeight, maxHeight, upload, setUpload } = props

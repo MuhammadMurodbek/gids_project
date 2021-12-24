@@ -20,19 +20,19 @@ import toast from 'react-hot-toast'
 
 const colourOptions = [
     {
-        label: 'Biznes',
+        label: ' #Biznes',
         value: 'tag1'
     },
     {
-        label: "Sayoxat", 
+        label: "#Sayoxat", 
         value: "tag2"
     },
     {
-        label: "Siyosiy",
+        label: "#Siyosiy",
         value: "tag3"
     },
     {
-        label: "Rasmiy", 
+        label: "#Rasmiy", 
         value: "tag4"
     }
 ]

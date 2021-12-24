@@ -103,10 +103,13 @@ const Translator = ( { getData } ) => {
           <TextLabeled clear={ clear } setClear={ setClear } setState={ setState } state={ state } field="name" sizeLabel="15px" width="100%" label="Bitirgan instituti" placeholder="Bitirgan Oliy ta’lim mussasasini kiriting" />
         </Grid>
         <Grid item xs={ 12 } sm={ 6 } md={ 3 }>
-          <YearPickerSelected clear={ clear } setClear={ setClear } setState={ setState } state={ state } field="year" sizeLabel="15px" width="100%" label="Bitirgan yili" />
+          <YearPickerSelected clear={ clear } setClear={ setClear } setState={ setState } state={ state } field="year" sizeLabel="15px" width="100%" label="Bitirgan yili"
+          placeholder="Bitirga yilingizni kiriting "
+          />
         </Grid>
         <Grid item xs={ 12 } sm={ 6 } md={ 3 }>
-          <TextLabeled clear={ clear } setClear={ setClear } setState={ setState } state={ state } field="speciality" sizeLabel="15px" width="100%" label="Mutaxassisligi" placeholder="Mutaxassisligizni yozing..." />
+          <TextLabeled clear={ clear } setClear={ setClear } setState={ setState } 
+          state={ state } field="speciality" sizeLabel="15px" width="100%" label="Mutaxassisligi" placeholder="Mutaxassisligizni yozing..." />
         </Grid>
         <Grid item xs={ 12 } sm={ 6 } md={ 1 }>
           <FlexContainer width="auto" flexDirection="column" gap="8px" margin="45px 0 0 auto" >
