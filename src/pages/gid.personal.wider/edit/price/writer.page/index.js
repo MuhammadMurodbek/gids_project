@@ -9,8 +9,10 @@ import TextLabeledLoop from "../../../../../components/atom/text.labeled"
 import Button from "../../../../../components/atom/button"
 import Spinner from "../../../../../components/atom/loading.spinner.line";
 import {getLabelLangLocal, toastChecker} from "../../../../../custom/function"
-
+import { useDispatch } from "react-redux";
+import {saveTabAction} from "../../../../../redux/actions"
 const Index = () => {
+    const dispatch = useDispatch()
     const [dataItems, setdataItems] = useState( { success: '', error: ''})
     const [items, setItems] = useState([])
     const [post, setPost] = useState({ success: '', error: '', loading: false})
@@ -46,7 +48,11 @@ const Index = () => {
         // console.log(clone)x
         postResponse(common.personal.edit.cost, clone, setPost)
     }
-    useEffect(()=>{ toastChecker(post)},[post])
+    useEffect(()=>{ 
+        toastChecker(post)
+        if(post?.success!=='') dispatch(saveTabAction(6))
+    },[post]
+    )
     // console.log(items)
     return (
         <Wrapper>

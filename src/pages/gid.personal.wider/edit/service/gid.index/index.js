@@ -17,7 +17,10 @@ import toast from 'react-hot-toast'
 import FadeIn from 'react-fade-in';
 import {getLabelCountry, getLabelCity, toastChecker } from '../../../../../custom/function'
 import Spinner from "../../../../../components/atom/loading.spinner.line";
+import { useDispatch } from "react-redux";
+import {saveTabAction} from "../../../../../redux/actions"
 const GidIndex = () => {
+    const dispatch = useDispatch()
     const { t } = useTranslation()
     const [ state, setState ] = useState( [] );
     const [ clearValue, setClearValue ] = useState( false )
@@ -83,7 +86,10 @@ const GidIndex = () => {
             setClearValue( true )
         }
     }, [ excursion ] )
-    useEffect( () => {toastChecker(postData)}, [ success, error ] )
+    useEffect( () => {
+        toastChecker(postData)
+        if(postData.success!=='') dispatch(saveTabAction(5))
+    }, [ success, error ] )
     return (
         <Wrapper>
             <Container margin="30px 0 0" padding="10px 0">

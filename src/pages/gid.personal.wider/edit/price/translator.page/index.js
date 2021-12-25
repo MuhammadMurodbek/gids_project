@@ -11,8 +11,11 @@ import { common } from "../../../../../custom/url"
 import Spinner from "../../../../../components/atom/loading.spinner.line";
 import {getLabelLangLocal, toastChecker} from "../../../../../custom/function"
 import {hours} from "./_const"
+import { useDispatch } from "react-redux";
+import {saveTabAction} from "../../../../../redux/actions"
 // import {postResponse} from "../../../../../hooks/response_get"
 const Index = () => {
+    const dispatch = useDispatch()
     const [getData, setGetData] = useState( { success: '', error: ''})
     const [postCollect, setPostCollect] = useState([])
     const [post, setPost] = useState( { success: '', error:'', loading: false})
@@ -47,7 +50,10 @@ const Index = () => {
         // console.log(postData)
         postResponse('/api/translators/edit/cost/', postData, setPost)
     }
-    useEffect(()=>{toastChecker(post)},[post])
+    useEffect(()=>{
+        toastChecker(post)
+        if(post?.success!=='') dispatch(saveTabAction(6))
+    },[post])
     // console.log(postCollect)
     return (
         <Wrapper>

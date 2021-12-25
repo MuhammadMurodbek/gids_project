@@ -13,8 +13,12 @@ import toast from 'react-hot-toast'
 import ExtraRole from "./_translator"
 import {common} from "../../../../custom/url"
 import Spinner from "../../../../components/atom/loading.spinner.line";
+import { useDispatch } from 'react-redux'
+import {saveTabAction} from "../../../../redux/actions"
+
 const Index = () => {
     const { t } = useTranslation()
+    const dispatch = useDispatch()
     const getRole = JSON.parse( localStorage.getItem( "user_token" ) ); ///SHUNDAY YOZILSIN
     const [ getData, setGetData ] = useState( { success: '', error: '' } )
     const [ postGid, setPostGid ] = useState( { success: '', error: '', loading: false } )
@@ -31,7 +35,10 @@ const Index = () => {
     }
     useEffect( () => { getResponse( common.personal.edit.education, setGetData ) }, [] )
     useEffect( () => {
-        if ( postGid?.success !== '' ) toast.success( 'Saved successfully' )
+        if ( postGid?.success !== '' ) {
+            toast.success( 'Saved successfully' )
+            dispatch(saveTabAction(3))
+        }
         if ( postGid?.error !== '' ) toast.error( 'Failed to save data' )
     }, [ postGid ] )
     console.log('first')

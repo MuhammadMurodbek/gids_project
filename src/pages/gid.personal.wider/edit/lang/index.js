@@ -19,8 +19,10 @@ import Translator from "./_translator"
 import { common } from "../../../../custom/url"
 import {toastChecker} from "../../../../custom/function"
 import {getLabelLangLocal} from "../../../../custom/function"
+import { useDispatch } from "react-redux";
+import {saveTabAction} from "../../../../redux/actions"
 const Index = () => {
-
+    const dispatch = useDispatch()
     const { t } = useTranslation();
     const getRole = JSON.parse( localStorage.getItem( "user_token" ) );
     const [ clearValue, setClearValue ] = useState( false )
@@ -51,7 +53,12 @@ const Index = () => {
             .map( item => { return { language: item?.language, level: item?.level?.value } } )
         postResponse( '/api/gids/edit/language/', clone, setPostData )
     }
-    React.useEffect( () => {toastChecker(postData)}, [ postData ] )
+    React.useEffect( () => {
+        toastChecker(postData)
+        if(postData?.success!=='') dispatch(saveTabAction(4))
+    }, [ postData ] 
+        
+    )
     React.useEffect( () => { getResponse( common.personal.edit.language, setGetData ) }, [ callback ] )
     React.useEffect( () => {
         if ( getData?.success !== '' )

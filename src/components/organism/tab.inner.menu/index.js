@@ -6,6 +6,7 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import { Wrapper } from "./style";
 import {mainGreen} from "../../../styles/global/colors"
+import {useSelector} from "react-redux"
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -41,12 +42,16 @@ function a11yProps(index) {
 
 export default function BasicTabs(props) {
   const { tabs } = props;
+  const selector = useSelector(a=>a.saveTabReducer)
   // const getRole = JSON.parse(localStorage.getItem("user_token"))
   const [value, setValue] = React.useState(0);
   // console.log(tabs)
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+  React.useEffect(() => {
+    setValue(selector)
+  },[selector])
   // React.useEffect(()=>{
   //   if(getRole?.role === 'writer'){
   //     tabs.pop()

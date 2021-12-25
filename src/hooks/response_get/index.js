@@ -34,7 +34,7 @@ export const getGlobals = async ( token ) => {
     await axios.get( `${ baseUrl }/api/users/languages/`, {
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${ token?.access }`,
+            // 'Authorization': `Bearer ${ token?.access }`,
         }
     } )
         .then( response => {
@@ -45,7 +45,7 @@ export const getGlobals = async ( token ) => {
     await axios.get( `${ baseUrl }/api/users/countries/`, {
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${ token?.access }`,
+            // 'Authorization': `Bearer ${ token?.access }`,
         }
     } )
         .then( response => {
@@ -69,7 +69,7 @@ export const checkGlobals = async() => {
     await axios.get( `${ baseUrl }/api/users/languages/`, {
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${ token?.access }`,
+            // 'Authorization': `Bearer ${ token?.access }`,
         }
     } )
         .then( response => {
@@ -79,7 +79,7 @@ export const checkGlobals = async() => {
     await axios.get( `${ baseUrl }/api/users/countries/`, {
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${ token?.access }`,
+            // 'Authorization': `Bearer ${ token?.access }`,
         }
     } )
         .then( response => {

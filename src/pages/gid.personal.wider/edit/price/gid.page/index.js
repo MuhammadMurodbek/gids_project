@@ -10,7 +10,10 @@ import { currency, CURRENCY } from './_const'
 import { putResponse, getResponse } from "../../../../../hooks/response_get"
 import Spinner from "../../../../../components/atom/loading.spinner.line";
 import { toast } from "react-hot-toast"
+import { useDispatch } from "react-redux";
+import {saveTabAction} from "../../../../../redux/actions"
 const Index = () => {
+    const dispatch = useDispatch()
     const { t } = useTranslation()
     const [ postData, setPostData ] = useState( { success: '', error: '', loading: false } )
     const [ getData, setGetData ] = useState( { success: '', error: '' } )
@@ -22,7 +25,10 @@ const Index = () => {
         putResponse( '/api/gids/edit/cost/', data, setPostData )
     }
     useEffect( () => {
-        if ( postData?.success !== '' ) toast.success( "Successfully saved" )
+        if ( postData?.success !== '' ) {
+            toast.success( "Successfully saved" )
+            dispatch(saveTabAction(6))
+        }
         if ( postData?.error !== '' ) toast.error( "Failed to load data" )
     }, [ postData ] )
     useEffect( () => { getResponse( '/api/gids/edit/cost/', setGetData ) }, [] )

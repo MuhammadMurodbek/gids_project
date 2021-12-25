@@ -22,9 +22,14 @@ import { userSchema } from "./_validator"
 import { defaultObj } from "./_const"
 import Translator from './_translator';
 import { useTranslation } from 'react-i18next'
+import { useDispatch, useSelector } from "react-redux";
+import {saveTabAction} from "../../../../redux/actions"
+
 // import {getLabelCountry} from "../../../../custom/function"
 const Index = () => {
   const {t} = useTranslation()
+  const dispatch = useDispatch()
+  // const selector = useSelector(a=>a.saveTabReducer)
   const [countryId, setCountryId] = useState(1)
   const [ state, setState ] = useState( defaultObj );
   const [ error, setError ] = useState( false )
@@ -33,6 +38,7 @@ const Index = () => {
   const { responseHook, setResponseHook } = useApiData( "post_bio_data_reducer" );
   const countryGlobal = JSON.parse( localStorage.getItem( "countryGlobal"))
   // const cityOptions = JSON.parse( localStorage.getItem( "cityOptions"))
+  // console.log(selector)
   useEffect( () => { getResponse( `/api/${ getRole?.role }s/edit/about/`, setApiValue ) }, [] );
   React.useMemo( () => {
     if ( apiValue?.success !== "" )
@@ -53,6 +59,7 @@ const Index = () => {
       let clone = state
       delete clone.image
       setResponseHook( post_bio_data_action( clone ) );
+      dispatch(saveTabAction(1))
     }
   };
   // console.log(state)
