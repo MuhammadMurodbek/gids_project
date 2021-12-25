@@ -12,7 +12,7 @@ import { useTranslation } from 'react-i18next'
 import {getResponse} from "../../hooks/response_get"
 import { Pagination } from 'antd';
 import Spinner from "../../components/atom/loading.spinner.line"
-import NumberFormat from 'react-number-format';
+ 
 
 
 
@@ -48,7 +48,7 @@ const Index = () => {
             <TextTitle top="40px" {...mediaTextField}
              {...mediaTextFieldSec} bottom="30px">
                 {t("Gid_Tanlash.title")}
-                <NumberFormat format="+1 (###) ###-####" allowEmptyFormatting mask="_" />
+                 
             </TextTitle>
             <Container>
                 <Grid container spacing={1} className="media_grid_flex">

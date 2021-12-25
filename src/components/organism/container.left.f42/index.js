@@ -34,11 +34,11 @@ const mediaContainerPadding = {
     m_width:"600px",
     m_padding:'0 5px'
 }
-const  Index = ({state}) => {
+const  Index = ({state, typeRole}) => {
 
     const {t} = useTranslation()
 
-    const getRole = JSON.parse(localStorage.getItem("user_token"));
+    // const role = JSON.parse(localStorage.getItem("user_token"));
     const lan = localStorage.getItem("i18nextLng")
     const languageCheck = (item, lang) => {
         if(lang==='en') return item?.language__name_en
@@ -61,10 +61,9 @@ const  Index = ({state}) => {
                                 <ImageContainer src={state?.image || RoundImage} width="160px" height="auto" round="50%" />
                                 <Container {...mediaContainerSecondText} margin="-10px 0 0 15px">
                                     <TextTitle align="left" bottom="5px" font="20px">{state?.first_name || 'Mavjud emas'}{" "}{state?.last_name || 'Mavjud emas'}</TextTitle>
-                                    <div className="gid-info-personal">
-                                     23| <span style={{textTransform: "capitalize"}}>{getRole?.role ==='simple_user' ? "User":getRole?.role}</span> </div>
+                                    <div className="gid-info-personal">33 yosh | <span style={{textTransform: "capitalize"}}>{typeRole?.role ==='simple_user' ? "User":typeRole?.role}</span> </div>
                                     {
-                                        getRole?.role === 'gid' ? 
+                                        typeRole?.role === 'gid' ? 
                                         state?.languages?.map((prev, index)=>(
                                             <div key={index} className={index === 0 ? "gid-info-personal-text top":"gid-info-personal-text"}>
                                                 <div className="text">{languageCheck(prev, lan) || "Ma'lumot kiritilmagan"}</div> 
@@ -86,7 +85,7 @@ const  Index = ({state}) => {
                     <TextTitle font="15px" fontWeight="600" align="left" color="#326A32">{t("GidPk.OzimHaqimda")}</TextTitle>
                     <p>{state?.bio || 'Bio kiritilmagan'}</p>
                     {
-                        getRole?.role ==='gid' ? null:
+                        typeRole?.role ==='gid' ? null:
                         <ContainerBottom style={{marginBottom:10}}>
                             <div className="inner-div"> <span className="title"> 
                                 {t("GidPk.qatnashgan")}</span> 
@@ -108,21 +107,21 @@ const  Index = ({state}) => {
                                 </div>
                             </ContainerBottom>
                         )) :
-                            getRole.role === 'gid' ? null: <div style={{fontSize:'0.86rem'}}>Ma'lumot kiritilmagan</div>
+                            typeRole?.role === 'gid' ? null: <div style={{fontSize:'0.86rem'}}>Ma'lumot kiritilmagan</div>
                     }
                 </Container>
             </WrapperContainer>
             <WrapperContainer>
                 <Container {...mediaContainerPadding} padding="0 10px">
-                    <SecondInfoCard data={state} role={getRole?.role}/>
+                    <SecondInfoCard data={state} role={typeRole?.role}/>
                 </Container>
             </WrapperContainer>
             <WrapperContainer>
                 <Container {...mediaContainerPadding} padding="0 10px">
-                    <ThirdInfoCard data={state} role={getRole?.role}/>
+                    <ThirdInfoCard data={state} role={typeRole?.role}/>
                 </Container> 
             </WrapperContainer>
-            { getRole?.role === 'writer'? null: 
+            { typeRole?.role === 'writer'? null: 
              <WrapperContainer>
                 <Container {...mediaContainerPadding} padding="0 20px">
                     <Title text={t("GidPk.Gallery")}/>

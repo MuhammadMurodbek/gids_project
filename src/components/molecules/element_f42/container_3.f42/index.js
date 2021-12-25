@@ -8,9 +8,9 @@ import { Grid } from '@material-ui/core'
 import { useTranslation } from 'react-i18next'
 import {getLabelCountrySecond, getLabelCity} from "../../../../custom/function"
 
-const Index = ({data}) => {
+const Index = ({data, role}) => {
     const { t } = useTranslation()
-    const getRole = JSON.parse(localStorage.getItem("user_token"))
+    // const getRole = JSON.parse(localStorage.getItem("user_token"))
     const obj = {
         no:'Mening mavzuyim emas',
         great:"A'lo darajada",
@@ -23,7 +23,7 @@ const Index = ({data}) => {
             <Title text="Xizmatlar" />
 
             {
-                getRole?.role === 'writer' ?
+               role === 'writer' ?
 
                     (
                         <>
@@ -63,7 +63,7 @@ const Index = ({data}) => {
                     : null
             }
             {
-                getRole?.role === 'translator' ?
+               role === 'translator' ?
                     (<>
                         <img src={cheked} alt="adfdd" className="classed" /> <Text title=" Sinxron" /><br />
                         <Text title="Mavzular:" />
@@ -77,7 +77,7 @@ const Index = ({data}) => {
             }
 
             {
-                getRole?.role === 'gid' ?
+               role === 'gid' ?
                     (
                         <>
 

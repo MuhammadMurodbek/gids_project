@@ -29,6 +29,12 @@ const Index = (props) => {
   }
   // console.log(value)
   // console.log(state)
+  useEffect(()=>{
+    if(clearValue){
+      setValue('')
+      setClearValue(false)
+    }
+  },[clearValue])
   useEffect(() =>{
     // console.log('merge')
     if(defaultApiValue){

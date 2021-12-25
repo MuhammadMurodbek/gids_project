@@ -2,6 +2,22 @@ import { baseUrl, headers, head_token } from '../../redux/api'
 import axios from 'axios'
 import toast from 'react-hot-toast'
 
+export const postRefreshToken = async (data) => {
+    await axios.post( `${ baseUrl }/api/auth/token/refresh/`, {refresh:data?.refresh}, {headers: headers} )
+        .then( response => {
+            console.log(response.data)
+            let obj = {
+                ...data,
+                access:response?.data?.access
+            }
+            localStorage.setItem('user_token', JSON.stringify(obj))
+        })
+        .catch( () => {
+            localStorage.clear()
+            window.location.href = '/auth'
+            // console.log( err)/
+        })
+}
 export const getResponse = async ( url, setState ) => {
     await axios.get( `${ baseUrl }${ url }`, head_token )
         .then( response => setState( { success: response, error: '' } ) )

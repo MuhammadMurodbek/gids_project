@@ -61,7 +61,7 @@ const Index = () => {
                 {" "}
                 <img className="img_logo1" src={Logo} alt="safsf" />
               </Link>
-            </div>
+            </div> 
             <FlexContainer
               {...navbarMediaCenter}
               padding="0 15px"

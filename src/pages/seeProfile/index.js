@@ -11,7 +11,7 @@ export default function Index() {
     let query = window.location.search
     let id = query.substr(4,1)
     let role = query.substr(11)
-    console.log(id, role)
+    // console.log(id, role)
     const [apiData, setApiData] = useState({ success: '', error: ''})
     useEffect(()=>{ getResponse(`/api/${role}s/profiles/${id}/`, setApiData)},[])
     return (
@@ -25,7 +25,7 @@ export default function Index() {
 
                     <Grid container spacing={3}>
                         <Grid item xs={12} md={8}>
-                            <CardMain state={apiData?.success?.data} />
+                            <CardMain state={apiData?.success?.data} typeRole={{role:role}} />
                         </Grid>
                         <Grid item xs={12} md={4}>
                             <CardMainSecond state={apiData?.success?.data}/>
