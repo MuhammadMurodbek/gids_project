@@ -34,7 +34,7 @@ const MediaNavbarContainer = (props) => {
     }
 
     const handleLogout = () => {
-        localStorage.clear()
+        localStorage.removeItem('user_token')
         history.push("/auth")
         props.setOpen(false)
     }

@@ -9,17 +9,17 @@ import PhoneInput, {
   isValidPhoneNumber
 } from "react-phone-number-input";
 const Index = (props) => {
-    const {errorText} = props;
-    const [state, setState] = React.useState()
+    // const {errorText} = props;
+    const {state, setState, value, onChange} = props;
     return (
         <InputWrapper>
             <PhoneInput
                 {...props}
                 international
                 placeholder="Enter phone number"
-                // value={state}
+                value={value}
                 maxLength={17}
-                // onChange={setState}
+                onChange={onChange}
                 style={{border:'none'}}
                 error={
                 state
