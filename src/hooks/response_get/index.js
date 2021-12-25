@@ -18,8 +18,9 @@ export const postRefreshToken = async (data) => {
             // console.log( err)/
         })
 }
-export const getResponse = async ( url, setState ) => {
-    await axios.get( `${ baseUrl }${ url }`, head_token )
+export const getResponse = async ( url, setState, noToken ) => {
+    let headPart = noToken ? {headers: headers} : head_token
+    await axios.get( `${ baseUrl }${ url }`, headPart )
         .then( response => setState( { success: response, error: '' } ) )
         .catch( err => setState( { success: '', error: err } ) )
 }
@@ -88,8 +89,9 @@ export const checkGlobals = async() => {
         .catch( err => console.log( err ) )
 
 }
-export const postResponse = async ( url, data, setState ) => {
-    return await axios.post( `${ baseUrl }${ url }`, data, head_token )
+export const postResponse = async ( url, data, setState, noToken ) => {
+    let headPart = noToken ? {headers: headers} : head_token
+    return await axios.post( `${ baseUrl }${ url }`, data, headPart )
         .then( response => setState( { success: response, error: '', loading: false } ) )
         .catch( err => setState( { success: '', error: err, loading: false } ) )
 }
