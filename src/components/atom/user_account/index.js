@@ -21,7 +21,7 @@ const Index = ({ role }) => {
             <Menu.Divider />
             <Menu.Item key="3" onClick={() => {
                     history.push('/auth')
-                    localStorage.clear()
+                    localStorage.removeItem('user_token')
                 }}>
                 <span >Chiqish</span>
             </Menu.Item>

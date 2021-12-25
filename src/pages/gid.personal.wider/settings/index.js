@@ -8,8 +8,8 @@ import InputLabeledPhone from "../../../components/molecules/input.labeled/phone
 import Button from "../../../components/atom/button"
 import Box from "@material-ui/core/Box";
 import { getResponse, putResponse } from '../../../hooks/response_get'
-
-
+import {toast} from "react-hot-toast"
+import {toastChecker} from "../../../custom/function"
 const mediaContainer = {
     m_width: "500px",
     m_padding: "10px 5px",
@@ -17,7 +17,7 @@ const mediaContainer = {
 
 const Index = () => {
     const [response, setResponse] = useState({ success: '', error: '' })
-    const [updateResponse, setUpdateResponse] = useState({ success: '', error: '' })
+    const [updateResponse, setUpdateResponse] = useState({ success: '', error: '', loading: false})
     const [edit, setEdit] = useState({})
     const [state, setState] = useState({
         password: "",
@@ -53,22 +53,26 @@ const Index = () => {
         })
     }
     function handleSubmit(e) {
+        setUpdateResponse({...updateResponse, loading: true})
         e.preventDefault()
         console.log(edit)
           const payload = {
                 email: edit?.email,
-                phone_number: edit?.phone_number,
+                phone_number: edit?.phone_number?.substr(1),
                 password: password,
                 password1: password1,
                 password2: password2
               }
             console.log(payload)
-    //   if(edit?.email !== '' && edit?.phone_number !== null && password !== '' && password1 !== '' && password2 !== '') {
-    //       putResponse('/api/auth/settings/', payload, setUpdateResponse)
-    //   }
+      if(payload?.email !== '' && payload?.phone_number !=='' && password !== '' && password1 !== '' && password2 !== '') {
+          putResponse('/api/auth/settings/', payload, setUpdateResponse)
+      }
+      else toast.error("Ma'lumotlarni to'g'ri kiritilishini ta'minlang")
   }
 
-
+  useEffect(() => {
+    toastChecker(updateResponse)
+  },[updateResponse])
 
     return (
         <form onSubmit={handleSubmit}>
@@ -84,9 +88,9 @@ const Index = () => {
                         <Grid container spacing={5}>
                             <Grid item xs={12} sm={6}>
                                 <InputLabeledPhone width="100%"
-                                    onChange={(e)=>console.log(e)}
-                                    // value={edit?.phone_number}
-                                    name="phone_number"
+                                    field="phone_number"
+                                    setState={setEdit}
+                                    state={edit}
                                     label="Telefon"
                                     placeholder="Raqamingizni kiriting" />
                                 <InputLabeled width="100%"
@@ -120,7 +124,7 @@ const Index = () => {
                         </Grid>
                     </Container>
                     <Container textAlign="right" padding="30px">
-                        <Button>Saqlash</Button>
+                        <Button loader={updateResponse?.loading}>Saqlash</Button>
                     </Container>
                 </Container>
             </Wrapper>
