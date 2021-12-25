@@ -7,7 +7,11 @@ import { Container } from '../../../../styles/container/index.style'
 import { getResponse, putResponse } from "../../../../hooks/response_get"
 import toast from 'react-hot-toast'
 import Spinner from "../../../../components/atom/loading.spinner.line";
+import { useDispatch } from 'react-redux'
+import {saveTabAction} from "../../../../redux/actions"
+
 const Index = () => {
+    const dispatch = useDispatch()
     const [ apiRes, setApiRes ] = useState( { success: '', error: '', loading: false} )
     const [ loader, setLoader ] = useState( false )
     const [ state, setState ] = useState( { website: 'http://', telegram: 'http://', instagram: 'http://', facebook: 'http://', wechat: 'http://', viber: 'http://' } )
@@ -33,6 +37,7 @@ const Index = () => {
             setLoader( false )
             toast.success( "Ma'lumotlaringiz muvaffaqiyatli yuklandi" )
             getResponse( `/api/${getRole?.role}s/edit/contact/`, setApiResponse )
+            dispatch(saveTabAction(2))
         } else if ( apiRes?.error !== "" )
         {
             toast.error( "Xatolik mavjud, qaytadan urinib ko'ring" )

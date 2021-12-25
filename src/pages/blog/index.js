@@ -25,7 +25,7 @@ export default function Index () {
     let { current } = pagination
     useEffect( () => {
         let url = `/api/posts/article/${query}`
-        getResponse( url, setState )
+        getResponse( url, setState, true )
         history.push(`/blog${query}`)
         let pagNumber = query[query.length - 1]
         setPagination({current:parseInt(pagNumber)})

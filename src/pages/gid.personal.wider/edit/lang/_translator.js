@@ -12,7 +12,10 @@ import { useTranslation } from 'react-i18next'
 import { toast } from "react-hot-toast"
 import { getLabelLangLocal, toastChecker } from "../../../../custom/function"
 import SelectLabeledLang from "../../../../components/molecules/select.labeled/lang"
+import { useDispatch } from "react-redux";
+import {saveTabAction} from "../../../../redux/actions"
 const Translator = ( { getData, spinner, setCallback } ) => {
+    const dispatch = useDispatch()
     const { t } = useTranslation()
     const [ items, setItems ] = useState( [] )
     const [ clear, setClear ] = useState( false )
@@ -46,7 +49,10 @@ const Translator = ( { getData, spinner, setCallback } ) => {
         postResponse( common.personal.edit.language, itemPost, setPostData )
     }
     useEffect( () => { setItems( getData?.success?.data ) }, [ getData ] )
-    useEffect( () => { toastChecker( postData ) }, [ postData ] )
+    useEffect( () => { 
+        toastChecker( postData ) 
+        if(postData?.success!=='') dispatch(saveTabAction(4))
+    }, [ postData ] )
     return (
         <div>
             {

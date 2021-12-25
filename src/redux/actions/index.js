@@ -5,6 +5,7 @@ import { about_edit_bio_action } from "./gids/about";
 import { about_update_bio_action } from "./gids/about-update";
 import {post_gid_app_action} from "./user.application"
 import {post_bio_data_action} from "./gid.per.wider.action/edit/bio/bio.post.data"
+import {saveTabAction} from "./save.tabs.next"
 export {
   post_auth_reg_action,
   post_auth_ent_action,
@@ -13,4 +14,5 @@ export {
   about_update_bio_action,
   post_gid_app_action,
   post_bio_data_action,
+  saveTabAction,
 };

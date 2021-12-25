@@ -16,8 +16,10 @@ import { putResponse, getResponse } from '../../../../hooks/response_get'
 import { common } from "../../../../custom/url"
 import toast from 'react-hot-toast';
 import {toastChecker} from "../../../../custom/function"
+import { useDispatch } from 'react-redux'
+import {saveTabAction} from "../../../../redux/actions"
 const Translator = ( { getData } ) => {
-
+  const dispatch = useDispatch()
   const { t } = useTranslation()
   const [ delBool, setDelBool ] = useState();
   const [ dataList, setDataList ] = useState( [] )
@@ -68,7 +70,10 @@ const Translator = ( { getData } ) => {
     }
     putResponse( common.personal.edit.education, dataSubmit, setSubmitData )
   }
-  useEffect( () => {toastChecker(submitData)}, [ submitData ] )
+  useEffect( () => {
+    toastChecker(submitData)
+    if(submitData?.success!=='') dispatch(saveTabAction(3))
+  }, [ submitData ])
   return (
     <div>
       {
