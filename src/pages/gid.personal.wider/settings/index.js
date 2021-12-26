@@ -59,13 +59,13 @@ const Index = () => {
           const payload = {
                 email: edit?.email,
                 phone_number: edit?.phone_number?.substr(1),
-                password: password,
-                password1: password1,
-                password2: password2
+                password: password ==='' ? undefined : password,
+                password1: password1 === '' ? undefined : password1,
+                password2: password2 === '' ? undefined : password2
               }
             console.log(payload)
-      if(payload?.email !== '' && payload?.phone_number !=='' && password !== '' && password1 !== '' && password2 !== '') {
-          putResponse('/api/auth/settings/', payload, setUpdateResponse)
+      if(payload?.email !== '' && payload?.phone_number !=='') {
+          putResponse('/api/auth/settings/', JSON.parse(JSON.stringify(payload)), setUpdateResponse)
       }
       else toast.error("Ma'lumotlarni to'g'ri kiritilishini ta'minlang")
   }
@@ -92,7 +92,9 @@ const Index = () => {
                                     setState={setEdit}
                                     state={edit}
                                     label="Telefon"
-                                    placeholder="Raqamingizni kiriting" />
+                                    placeholder="Raqamingizni kiriting" 
+                                    defaultApiValue={edit?.phone_number}
+                                />
                                 <InputLabeled width="100%"
                                     onChange={hendlEdit}
                                     value={edit?.email}
