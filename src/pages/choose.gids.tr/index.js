@@ -36,7 +36,7 @@ const Index = () => {
         if(type){
             getResponse(`/api/${type}s/profiles/?${filterQuery}&page=${pagination?.current}`, setState)
         }else{
-            getResponse(`/api/translators/all/?page=${pagination?.current}`, setState)
+            getResponse(`/api/translators/all/?page=${pagination?.current}`, setState, true)
         }
         setTypeQuery(type)
     },[query, pagination])
