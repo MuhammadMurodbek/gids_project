@@ -8,12 +8,17 @@ import star from '../../assets/img/answerMy-application/star.svg'
 import sms from '../../assets/img/answerMy-application/sms.svg'
 import Spinner from "../../components/atom/loading.spinner.line"
 import moment from "moment"
+import {deleteResponse} from "../../hooks/response_get"
 export const mediaImage = {
     m_width: "960px",
     m_m_width: "280px",
     m_m_text_align: "center",
 }
 export default function Index () {
+    const [callback, setCallback] = useState(false)
+    const deleteReply = (id, name) => {
+        deleteResponse(`/api/users/self/reply/${id}/`, `${name}'s comment`, setCallback)
+    }
     const [ applicationData, setApplicationData ] = useState( { success: '', error: '', loading: false } )
     return (
         <Wrapper>
@@ -21,6 +26,7 @@ export default function Index () {
                 btnText="Arizani taxrirlash"
                 setApplicationData={ setApplicationData }
                 applicationData={ applicationData }
+                callback={ callback }
             />
             {
                 applicationData?.success === '' ? <Spinner marginTop="60px" width={ 50 } height={ 50 } /> :
@@ -68,7 +74,7 @@ export default function Index () {
                                                     { prev?.reply || "Ma'lumot kiritilmagan" }
                                                 </div>
                                                 <div className="btn-groups">
-                                                    <Button type="outlined">O’chirish</Button>
+                                                    <Button onClick={()=>deleteReply(prev?.id, prev?.replier_data?.full_name?.first_name)} type="outlined">O’chirish</Button>
                                                     <Button className="btn-Pview">Profilni ko’rish</Button>
                                                 </div>
                                             </Grid>

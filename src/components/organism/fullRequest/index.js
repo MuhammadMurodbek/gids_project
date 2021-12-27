@@ -25,7 +25,7 @@ import { getResponse } from '../../../hooks/response_get';
 import moment from 'moment';
 import {getLabelLangLocal, getLabelCountrySecond, getLabelCity} from "../../../custom/function"
 
-export default function Index({applicationData, setApplicationData, btnText, url}) {
+export default function Index({applicationData, setApplicationData, btnText, url, callback}) {
     const [comment, setComment] = useState('')
     const history = useHistory()
     // const [getData, setGetData] = useState({ success: '', error: '' })
@@ -64,7 +64,7 @@ export default function Index({applicationData, setApplicationData, btnText, url
     useEffect(() => {
         let url = getRole?.role === 'simple_user' ? `/api/users/self/application/` : `/api/users/applications/`
         getResponse(`${url}${id}/`, setApplicationData)
-    }, [id])
+    }, [id, callback])
 
     useEffect(() => {
         if (response?.success !== "") {
