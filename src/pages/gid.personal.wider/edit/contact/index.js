@@ -14,7 +14,7 @@ const Index = () => {
     const dispatch = useDispatch()
     const [ apiRes, setApiRes ] = useState( { success: '', error: '', loading: false} )
     const [ loader, setLoader ] = useState( false )
-    const [ state, setState ] = useState( { website: 'http://', telegram: 'http://', instagram: 'http://', facebook: 'http://', wechat: 'http://', viber: 'http://' } )
+    const [ state, setState ] = useState( { website: '', telegram: '', instagram: '', facebook: '', wechat: '', viber: '' } )
     const [ apiResponse, setApiResponse ] = useState( { success: '', error: '' } )
     const getRole = JSON.parse(localStorage.getItem("user_token"))
     const handleChange = ( e ) => { setState( { ...state, [ e.target.name ]: e.target.value } ) }
