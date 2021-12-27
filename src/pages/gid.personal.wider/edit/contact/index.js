@@ -14,7 +14,7 @@ const Index = () => {
     const dispatch = useDispatch()
     const [ apiRes, setApiRes ] = useState( { success: '', error: '', loading: false} )
     const [ loader, setLoader ] = useState( false )
-    const [ state, setState ] = useState( { website: 'http://', telegram: 'http://', instagram: 'http://', facebook: 'http://', wechat: 'http://', viber: 'http://' } )
+    const [ state, setState ] = useState( { website: '', telegram: '', instagram: '', facebook: '', wechat: '', viber: '' } )
     const [ apiResponse, setApiResponse ] = useState( { success: '', error: '' } )
     const getRole = JSON.parse(localStorage.getItem("user_token"))
     const handleChange = ( e ) => { setState( { ...state, [ e.target.name ]: e.target.value } ) }
@@ -50,11 +50,11 @@ const Index = () => {
                     <>
                         <Grid container spacing={ 2 }>
                             <Grid item xs={ 12 } sm={ 6 } md={ 4 }><InputLabel onChange={ handleChange } name="website" value={ state?.website } sizeLabel="15px" width="100%" label="Sayt" placeholder="Linkni kiriting..." /> </Grid>
-                            <Grid item xs={ 12 } sm={ 6 } md={ 4 }><InputLabel onChange={ handleChange } name="telegram" value={ state?.telegram } sizeLabel="15px" width="100%" label="Telegram" placeholder="Telegram linkni kiriting..." /> </Grid>
-                            <Grid item xs={ 12 } sm={ 6 } md={ 4 }><InputLabel onChange={ handleChange } name="instagram" value={ state?.instagram } sizeLabel="15px" width="100%" label="Instagram" placeholder="Instagram linkni kiriting..." /> </Grid>
-                            <Grid item xs={ 12 } sm={ 6 } md={ 4 }><InputLabel onChange={ handleChange } name="facebook" value={ state?.facebook } sizeLabel="15px" width="100%" label="Facebook" placeholder="Facebook linkni kiriting..." /> </Grid>
-                            <Grid item xs={ 12 } sm={ 6 } md={ 4 }><InputLabel onChange={ handleChange } name="wechat" value={ state?.wechat } sizeLabel="15px" width="100%" label="Wechat" placeholder="Wechat linkni kiriting..." /> </Grid>
-                            <Grid item xs={ 12 } sm={ 6 } md={ 4 }><InputLabel onChange={ handleChange } name="viber" value={ state?.viber } sizeLabel="15px" width="100%" label="Viber" placeholder="Viber linkni kiriting..." /> </Grid>
+                            <Grid item xs={ 12 } sm={ 6 } md={ 4 }><InputLabel onChange={ handleChange } name="telegram" value={ state?.telegram } sizeLabel="15px" width="100%" label="Telegram" placeholder="https://t.me/user-name" /> </Grid>
+                            <Grid item xs={ 12 } sm={ 6 } md={ 4 }><InputLabel onChange={ handleChange } name="instagram" value={ state?.instagram } sizeLabel="15px" width="100%" label="Instagram" placeholder="https://www.instagram.com/user-name" /> </Grid>
+                            <Grid item xs={ 12 } sm={ 6 } md={ 4 }><InputLabel onChange={ handleChange } name="facebook" value={ state?.facebook } sizeLabel="15px" width="100%" label="Facebook" placeholder="https://www.facebook.com/user_name" /> </Grid>
+                            <Grid item xs={ 12 } sm={ 6 } md={ 4 }><InputLabel onChange={ handleChange } name="wechat" value={ state?.wechat } sizeLabel="15px" width="100%" label="Wechat" placeholder="https://spacekid.me/user-name" /> </Grid>
+                            <Grid item xs={ 12 } sm={ 6 } md={ 4 }><InputLabel onChange={ handleChange } name="viber" value={ state?.viber } sizeLabel="15px" width="100%" label="Viber" placeholder="https://viber.me/user-name" /> </Grid>
                         </Grid>
                         <Container padding="20px 0 5px" textAlign="right">
                             <Button loader={ apiRes?.loading }>Saqlash</Button>

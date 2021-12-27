@@ -35,6 +35,8 @@ const Index = () => {
     setScrollY(window.pageYOffset);
   }
 
+
+
   useEffect(() => {
     function watchScroll() {
       window.addEventListener("scroll", logit);
@@ -61,7 +63,7 @@ const Index = () => {
                 {" "}
                 <img className="img_logo1" src={Logo} alt="safsf" />
               </Link>
-            </div> 
+            </div>
             <FlexContainer
               {...navbarMediaCenter}
               padding="0 15px"
@@ -83,6 +85,7 @@ const Index = () => {
               ) : (
                 <ButtonNavbar title={t("navbar.Arizalar_royhati")} url="/request" />
               )}
+
             </FlexContainer>
             <FlexContainer {...navbarMedia} width="100px" style={{ marginRight: 120 }}>
               <ReactFlagsSelect
@@ -109,12 +112,16 @@ const Index = () => {
                   style={{ color: "#333" }}
                 >
                 </NavLink>
+
                 {
                   isExpired ?
                     <button className="btn_enter" onClick={handleLogout}>Kirish</button>
                     :
-                    <AccountMenu role={getRole?.role} />
+                    
+                      <AccountMenu role={getRole?.role} />
+                   
                 }
+
 
               </FlexContainer>
 

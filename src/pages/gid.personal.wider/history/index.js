@@ -11,10 +11,9 @@ export default function Index() {
     return (
         <Wrapper>
 
-            <Link to="/reklama" className="link-text"> <ArrowBackIcon className="arroles11" />  arizlar ro’yhatiga qaytish</Link>
-
+            <Link to="/reklama" className="link-text"> <ArrowBackIcon className="arroles11" /> reklama bo'limiga qaytish  </Link>
             <TextTitle className="text-title" bottom="50px" top="50px">
-                To’lovlar tarixi
+                To’lovlar tarixi                           
             </TextTitle>
 
 

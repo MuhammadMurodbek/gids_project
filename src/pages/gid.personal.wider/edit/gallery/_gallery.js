@@ -3,6 +3,7 @@ import { Upload, message } from 'antd';
 import React, { useState } from 'react'
 import Spinner from "../../../../components/atom/loading.spinner.line";
 import { useTranslation } from 'react-i18next';
+import DriveFolderUploadIcon from '@mui/icons-material/DriveFolderUpload';
 
 const { Dragger } = Upload;
 const Gallery = ({ role, setCallback }) => {
@@ -45,7 +46,7 @@ const Gallery = ({ role, setCallback }) => {
             </div>
             <Dragger {...props} className="dragger" >
                 <p className="  news11" >
- 
+               <DriveFolderUploadIcon className="icon"/>
                 </p>
 
 

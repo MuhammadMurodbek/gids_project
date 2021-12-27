@@ -73,7 +73,7 @@ const Index = () => {
   useEffect(() => {
     toastChecker(updateResponse)
   },[updateResponse])
-
+  
     return (
         <form onSubmit={handleSubmit}>
             <Wrapper>
@@ -95,6 +95,7 @@ const Index = () => {
                                     placeholder="Raqamingizni kiriting" 
                                     defaultApiValue={edit?.phone_number}
                                 />
+                                
                                 <InputLabeled width="100%"
                                     onChange={hendlEdit}
                                     value={edit?.email}

@@ -33,6 +33,10 @@ export const WrapperAll = styled.div`
             margin-top:30px;
         }
     }
+    @media (min-width: 1367px){
+       width: 1450px;
+       margin: 0 auto;
+    }
 `;
 
 export const ComponentOne = styled.div`

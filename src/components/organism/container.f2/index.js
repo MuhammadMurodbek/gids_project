@@ -17,7 +17,7 @@ const media_container = {
     m_padding: "10px 0",
 }
 
-const  Index = ({data}) => {
+const      Index = ({data}) => {
     const lang = localStorage.getItem('i18nextLng')
     const { t } = useTranslation()
     const languageCheck = (item, lang) => {
@@ -34,17 +34,16 @@ const  Index = ({data}) => {
                         <FlexContainer width="100%" alignItems="center" justifyContent="space-between" flexDirection="column">
                             <RoundImageContainer src={data?.image || RoundImage} width="100px" height="auto" data={data}/>
                             <Info data={data}/>
-
                         </FlexContainer>
-                    </Container>
+                    </Container> 
                 </Grid>
                 <Grid item xs={12} sm={6}>
                     <Container margin="30px 0 0 0">
                         <TextTitle align="left" font="20px"> {(data?.first_name +" " + data?.last_name) || "Ma'lumot kiritilmagan"} </TextTitle>
-                        <div className="gid-info-personal">33 yosh | <span style={{textTransform: "capitalize"}}>{data?.role}</span> </div>
+                        <div className="gid-info-personal">{(data?.age + " " + "yosh") || " "}   | <span style={{textTransform: "capitalize"}}>{data?.role}</span> </div>
                         <div className="gid-info-personal-text top"> 
                             <div className="text">
-                                {t("Gid_Tanlash.hizmat")} : { data?.excursions?.map((prev)=>" "+getLabelCity(parseInt(prev?.country), parseInt(prev?.city))+",") || "Ma'lumot kiritilmagan"}
+                                {t("Gid_Tanlash.xizmatlar")} : { data?.excursions?.map((prev)=>" "+getLabelCity(parseInt(prev?.country), parseInt(prev?.city))+",") || "Ma'lumot kiritilmagan"}
                             </div>
                         </div>
                         <div className="gid-info-personal-text"><div className="text">
@@ -56,7 +55,7 @@ const  Index = ({data}) => {
                                 }                            
                             </div>
                         <div className="gid-info-personal-text">
-                            <div className="text">  {t("Gid_Tanlash.ozim")} :</div>
+                            <div className="text">  {t("Gid_Tanlash.OzimHaqimda")} :</div>
                             <TruncateText
                                 width="auto"
                                 margin="-20px 0 0 0px"

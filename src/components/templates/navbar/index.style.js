@@ -12,14 +12,17 @@ export const Navbar = styled.div`
     z-index: 111 !important;
     transition: 0.3s all;
     background-color: #fff;
-    @media(min-width:1367px){
-        padding: ${props => props.navbarProps > 30 ? "8px 80px " : "15px 80px"};
-    }
-    @media(min-width:1567px){
-        padding: ${props => props.navbarProps > 30 ? "8px 110px " : "15px 110px"};
-    }
+ 
 
-   
+
+
+    @media(min-width:1367px){
+        
+        .width1{
+            width: 1300px;
+            margin: 0 auto;
+         }
+    }
  
 
     .btn_enter{
@@ -27,6 +30,10 @@ export const Navbar = styled.div`
         margin-left: 25px;
         border:none !important;
         cursor:pointer;
+     }
+     .btn_enter{
+         margin-right:20% !important;
+         
      }
     .img_logo1{
         width: 150px;

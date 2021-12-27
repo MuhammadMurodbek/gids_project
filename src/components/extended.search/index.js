@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import { Wrapper } from './index.style' 
 import RadioGroup from "./radio"
 import Selection from "./select.with.title"
@@ -11,13 +11,14 @@ import {useHistory} from "react-router-dom"
 import { useTranslation } from 'react-i18next'
 // import { getResponse } from "../../hooks/response_get"
 import { toast } from "react-hot-toast"
-const Index = ({loader}) => {
+const   Index = ({loader}) => {
     const history = useHistory()
     const { t } = useTranslation()
     const [postData, setPostData] = useState({ success: '', error: '', loading: false })
     // const getRole = JSON.parse(localStorage.getItem("user_token"))
     const [collect, setCollect] = useState()
-    const handleSubmit = () => {
+    const handleSubmit = () => { 
+       
         if(collect?.type){
             setPostData({ ...postData, loading: true })
             let urlOther = `type=${collect?.type}&gender=${(collect?.male && collect?.female)? undefined: collect?.male ? 'male' : collect?.female ? 'female' : undefined}&country=${collect?.country}&city=${collect?.city}&lang=${collect?.languages?.map(item => item?.value)}&date_after=${collect?.date_after}&date_before=${collect?.date_before}&${collect?.search_type}=0`
@@ -26,12 +27,24 @@ const Index = ({loader}) => {
         }else{
             toast.error('Kim kerakligi tanlang')
         }
+         
+
     }
     React.useEffect(() => {
         if(loader?.success !=='' || loader?.error !== ''){
             setPostData({ ...postData, loading: false })
         }
     },[loader])
+
+
+
+
+     
+  
+  
+  
+
+
     
     return (
         <Wrapper width="350px">
@@ -42,8 +55,7 @@ const Index = ({loader}) => {
             <RadioGroup
                 setState={setCollect}
                 state={collect}
-                field='type' />
-
+                field='type'/>
             <Selection
                 setState={setCollect}
                 state={collect}

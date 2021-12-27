@@ -9,14 +9,14 @@ import {postRefreshToken} from "../../hooks/response_get"
 import jwt_decode from "jwt-decode";
 import moment from "moment"
 
+
 const Index = ({children}) => {
-    const location = useLocation()
+    const location = useLocation() 
     let token1 = JSON.parse(localStorage.getItem("user_token"))
     const {isExpired } = useJwt(token1 ? token1.access : undefined)
     useEffect(()=>{
         let token = JSON.parse(localStorage.getItem("user_token"))
-        if(location.pathname!=='/auth' && location.pathname!=='/' && location.pathname!=='/forgits' && 
-        location.pathname!=='/blog' && location.pathname!=='/forgits' && location.pathname!=='/request' && location.pathname!=='/about' && location.pathname!=='/auth/verify'   ){
+        if(location.pathname!=='/auth' && location.pathname!=='/'  && location.pathname!=='/auth/verify' &&   location.pathname!=='/blog' && location.pathname!=='/forgits' && location.pathname!=='/request' && location.pathname!=='/about'  &&   location.pathname!=='/connect' && location.pathname!=='/gids'  ){
             if(!isExpired){
                 let decoded = jwt_decode(token?.access);
                 let date = new Date(decoded?.exp * 1000);

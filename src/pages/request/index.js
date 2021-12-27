@@ -18,7 +18,7 @@ export default function Index() {
     const [callback, setCallback] = useState(false)
     const [collect, setCollect] = useState({date_after:'', date_before:'', country:'', city:''})
     useEffect(() =>{
-        getResponse(`/api/users/applications/?country=${collect?.country}&city=${collect?.city}&date_after=${collect?.date_after}&date_before=${collect?.date_before}`, setState)
+        getResponse(`/api/users/applications/?country=${collect?.country}&city=${collect?.city}&date_after=${collect?.date_after}&date_before=${collect?.date_before}`, setState, true)
     },[callback])
     useEffect( () => {
         if ( state?.success )
@@ -51,15 +51,9 @@ export default function Index() {
                ))
            }
              
-            
-            
-             
-
-
             <div className="divbtns">
                 <Button type="outlined" className="davomi">{t("arizalar_royhati.davomi")} <ArrowForwardIcon className="arrovicon"/></Button>
             </div>
-
         </Wrapper>
     )
 }

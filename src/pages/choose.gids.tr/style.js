@@ -11,6 +11,11 @@ export const Wrapper = styled.div`
     .sc-fKFxtB.cNPZrT{
         margin:0 auto;
     }
+    @media(min-width:1367px){
+            width: 1450px;
+            margin: 0 auto;
+    }
+   
     @media (max-width:962px){
         .media_grid_flex{
             flex-direction: column;
