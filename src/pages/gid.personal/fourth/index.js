@@ -43,7 +43,7 @@ const Index = () => {
     useEffect(() =>{
         toastChecker(putApi)
     },[putApi])
-    // console.log( state )
+    // console.log( state ) 
     return (
         <Wrapper>
             {
@@ -66,7 +66,6 @@ const Index = () => {
                                         label={ t( "profil_sozlamalari.telefone" ) }
                                         placeholder={ t( "profil_sozlamalari.telRaqam" ) }
                                         defaultApiValue={ state?.phone_number} 
-
                                     />
                                     <span className="tets">faqat raqam kiriting</span>
                                     <InputLabeled

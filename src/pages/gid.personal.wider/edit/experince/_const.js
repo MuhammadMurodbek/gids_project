@@ -1,12 +1,12 @@
 export const degrees_gid = [
-    {value:"highest_category", label: "Highest category"}, 
-    {value:"first_category", label: "First category"}, 
-    {value:"second_category", label: "Second category"}, 
-    {value:"no_category", label: "No category"}, 
+    {value:"highest_category", label: "Eng yuqori toifa"}, 
+    {value:"first_category", label: "Birinchi toifa"}, 
+    {value:"second_category", label: "Ikkinchi toifa"}, 
+    {value:"no_category", label: "Toifasiz"}, 
 ]
 export const degrees = [
-    {value:"higher", label: "Higher"}, 
-    {value:"secondary_special", label: "Secondary special"}, 
+    {value:"higher", label: "Oliy"}, 
+    {value:"secondary_special", label: "O'rta maxsus"}, 
 ]
 export const options_year = [
     { value: "0-1", label: "1 yil" },
@@ -21,14 +21,14 @@ export const options_yes = [
 ]
 
 export const DEGREES = {
-    higher: "Higher",
-    secondary_special: "Secondary special",
+    higher: "Oliy",
+    secondary_special: "O'rta maxsus",
 }
 export const DEGREES_GIT = {
-    highest_category: "Highest category",
-    first_category: "First category",
-    second_category: "Second category",
-    no_category: "No category",
+    highest_category: "Eng yuqori toifa",
+    first_category: "Birinchi toifa",
+    second_category: "Ikkinchi toifa",
+    no_category: "Toifasiz",
 }
 // export const OPT_YEAR = {
 //     [1-3]:""

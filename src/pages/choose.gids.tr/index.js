@@ -45,7 +45,7 @@ const Index = () => {
     }
     return (
         <Wrapper>
-            <TextTitle top="40px" {...mediaTextField}
+            <TextTitle id="ref" top="40px" {...mediaTextField}
              {...mediaTextFieldSec} bottom="30px">
                 {t("Gid_Tanlash.title")}
                  
