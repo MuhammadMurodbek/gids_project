@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Myapplication from '../../components/organism/fullRequest';
+import {useHistory} from "react-router-dom"
 import Button from "../../components/atom/button";
 import { Wrapper } from './style';
 import { Grid } from '@material-ui/core';
@@ -15,6 +16,7 @@ export const mediaImage = {
     m_m_text_align: "center",
 }
 export default function Index () {
+    const history = useHistory()
     const [callback, setCallback] = useState(false)
     const deleteReply = (id, name) => {
         deleteResponse(`/api/users/self/reply/${id}/`, `${name}'s comment`, setCallback)
@@ -75,7 +77,7 @@ export default function Index () {
                                                 </div>
                                                 <div className="btn-groups">
                                                     <Button onClick={()=>deleteReply(prev?.id, prev?.replier_data?.full_name?.first_name)} type="outlined">O’chirish</Button>
-                                                    <Button className="btn-Pview">Profilni ko’rish</Button>
+                                                    <Button onClick={()=>history.push(`/seeprofile?id=${prev?.replier_data?.full_name?.id}&role=${prev?.replier_role}`)} className="btn-Pview">Profilni ko’rish</Button>
                                                 </div>
                                             </Grid>
                                         </Grid>
