@@ -16,7 +16,7 @@ const Index = ({children}) => {
     useEffect(()=>{
         let token = JSON.parse(localStorage.getItem("user_token"))
         if(location.pathname!=='/auth' && location.pathname!=='/' && location.pathname!=='/forgits' && 
-        location.pathname!=='/blog' && location.pathname!=='/forgits' && location.pathname!=='/request' && location.pathname!=='/about'    ){
+        location.pathname!=='/blog' && location.pathname!=='/forgits' && location.pathname!=='/request' && location.pathname!=='/about' && location.pathname!=='/auth/verify'   ){
             if(!isExpired){
                 let decoded = jwt_decode(token?.access);
                 let date = new Date(decoded?.exp * 1000);
