@@ -57,6 +57,15 @@ export const getLabelCountrySecond = (id) => {
     }
     
 }
+/// query parametrlar uchun
+export function searchToObject(search) {
+        return search.substring(1).split("&").reduce(function(result, value) {
+            var parts = value.split('=');
+            if (parts[0]) result[decodeURIComponent(parts[0])] = decodeURIComponent(parts[1]);
+            return result;
+        }, {})
+    }
+
 export const getLabelCity = (countryID, cityID) => {
     const countryGlobal = JSON.parse( localStorage.getItem( "countryGlobal"))
     const lan = localStorage.getItem("i18nextLng")
