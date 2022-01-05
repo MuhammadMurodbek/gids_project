@@ -26,16 +26,19 @@ const Todos = ({translateType, setTranslateType}) => {
     useEffect(()=>{ getResponse(common.personal.edit.services, setGetData )},[])
     useEffect(()=>{if(getRole.success !== ''){
         setTranslateType({gender:getData?.success?.data?.translate_type})
-        let theme = getData?.success?.data?.themes?.map(prev => {
-            return {
-                name:prev.name,
-                level:{
-                    value:prev.level,
-                    label:optionList?.find(p=>p.value === prev.level)?.label
+        if (getData?.success?.data?.themes !== null) {
+            let theme = getData?.success?.data?.themes?.map(prev => {
+                return {
+                    name:prev.name,
+                    level:{
+                        value:prev.level,
+                        label:optionList?.find(p=>p.value === prev.level)?.label
+                    }
                 }
-            }
-        })
-        setItems(theme)
+            }) || []
+            console.log(theme)
+            setItems(theme)
+        }
     }},[getData])
     const handleAdd = useCallback(() => {
         if(item?.name ==='' || item?.level === ''){
@@ -55,6 +58,7 @@ const Todos = ({translateType, setTranslateType}) => {
             setItems([...update])
         }
     },[item])
+    console.log(items)
     const handleSubmit = () => {
         setPostApiData({...postApiData, loading: true})
         let postData = {

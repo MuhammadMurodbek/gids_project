@@ -70,10 +70,7 @@ export default function Index({applicationData, setApplicationData, btnText, url
         } else if (response?.error !== '')
             toast.error("siz faqat bir martta habar yoza olasiz")
     }, [response])
-    // useEffect(() => {
-    //     console.log(getData)
-    //     // setApplicationData(getData)
-    // },[getData])
+  
     function setText(e) {
         console.log(e.target.value)
         setComment(e.target.value)
