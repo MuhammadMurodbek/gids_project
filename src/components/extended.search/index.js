@@ -27,7 +27,7 @@ const   Index = ({loader}) => {
         }else{
             toast.error('Kim kerakligi tanlang')
         }
-         
+        window.scrollTo(0,0);
 
     }
     React.useEffect(() => {

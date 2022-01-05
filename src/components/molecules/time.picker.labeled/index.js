@@ -7,7 +7,7 @@ const Index = (props) => {
     return (
         <Wrapper width={width} pcolor={pcolor} >
             <Label margin={marginLabel} size={sizeLabel}>{label}</Label>
-            <TimePicker {...props} width="100%" />
+            <TimePicker   {...props} width="100%" />
         </Wrapper>
     )
 }

@@ -49,15 +49,15 @@ const Index = () => {
                 apiResponse?.success === '' ? <Spinner marginTop="60px" width={ 50 } height={ 50 } /> : (
                     <>
                         <Grid container spacing={ 2 }>
-                            <Grid item xs={ 12 } sm={ 6 } md={ 4 }><InputLabel onChange={ handleChange } name="website" value={ state?.website } sizeLabel="15px" width="100%" label="Sayt" placeholder="Linkni kiriting..." /> </Grid>
+                            <Grid item xs={ 12 } sm={ 6 } md={ 4 }><InputLabel onChange={ handleChange } name="website" value={ state?.website } sizeLabel="15px" width="100%" label="Sayt" placeholder="https://domain" /> </Grid>
                             <Grid item xs={ 12 } sm={ 6 } md={ 4 }><InputLabel onChange={ handleChange } name="telegram" value={ state?.telegram } sizeLabel="15px" width="100%" label="Telegram" placeholder="https://t.me/user-name" /> </Grid>
                             <Grid item xs={ 12 } sm={ 6 } md={ 4 }><InputLabel onChange={ handleChange } name="instagram" value={ state?.instagram } sizeLabel="15px" width="100%" label="Instagram" placeholder="https://www.instagram.com/user-name" /> </Grid>
                             <Grid item xs={ 12 } sm={ 6 } md={ 4 }><InputLabel onChange={ handleChange } name="facebook" value={ state?.facebook } sizeLabel="15px" width="100%" label="Facebook" placeholder="https://www.facebook.com/user_name" /> </Grid>
                             <Grid item xs={ 12 } sm={ 6 } md={ 4 }><InputLabel onChange={ handleChange } name="wechat" value={ state?.wechat } sizeLabel="15px" width="100%" label="Wechat" placeholder="https://spacekid.me/user-name" /> </Grid>
                             <Grid item xs={ 12 } sm={ 6 } md={ 4 }><InputLabel onChange={ handleChange } name="viber" value={ state?.viber } sizeLabel="15px" width="100%" label="Viber" placeholder="https://viber.me/user-name" /> </Grid>
                         </Grid>
-                        <Container padding="20px 0 5px" textAlign="right">
-                            <Button loader={ apiRes?.loading }>Saqlash</Button>
+                        <Container  padding="20px 0 5px" textAlign="right">
+                            <Button className="btns" loader={ apiRes?.loading }>Saqlash</Button>
                         </Container>
                     </>
                 )

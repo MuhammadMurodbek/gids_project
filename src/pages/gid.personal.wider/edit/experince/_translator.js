@@ -135,7 +135,7 @@ const Translator = ( { getData } ) => {
               sizeLabel="15px"
               width="100%"
               label="Ish joyingizni ko'rsating"
-              placeholder="Text"
+              placeholder="Matn"
               setState={ setPostData }
               state={ postData }
               field="work_place"
@@ -147,7 +147,7 @@ const Translator = ( { getData } ) => {
               sizeLabel="15px"
               width="100%"
               label="Lavozimingiz"
-              placeholder="Text"
+              placeholder="Matn"
               setState={ setPostData }
               state={ postData }
               field="position"
@@ -190,6 +190,7 @@ const Translator = ( { getData } ) => {
               setState={ setPostData }
               state={ postData }
               field="from"
+              placeholder={"fddd"}
               defaultValue={ getData?.success?.data?.work_time?.substr( 0, 5 ) }
             />
           </Grid>
@@ -204,10 +205,11 @@ const Translator = ( { getData } ) => {
           </Grid>
         </Grid>
       </Container>
-      <Container padding="10px" textAlign="right">
+      <Container padding="0px" textAlign="right">
         <Button
           loader={ submitData?.loading }
           onClick={ handleSubmit }
+          className="btns"
         >
           { t( "IshTajriba.saqlash" ) }
         </Button>

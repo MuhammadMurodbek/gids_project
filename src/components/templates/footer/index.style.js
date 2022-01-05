@@ -3,7 +3,7 @@ import styled from "styled-components"
 export const FooterWrapper = styled.div`
     width: 100%;
     height: auto;
-    padding:${value=>value.padding ? value.padding : "10px 0 0"};
+    padding:${value => value.padding ? value.padding : "10px 0 0"};
     color:#fafcfa;
     background-color: #244D24;
     .first-container{
@@ -26,6 +26,13 @@ export const FooterWrapper = styled.div`
                 background-color: #fff;
             }
         }
+    }
+
+    @media (min-width:1367px){
+      .width1{
+        width: 1400px ;
+        margin: 0 auto;
+      }
     }
     .flex-items{
         width: 300px;

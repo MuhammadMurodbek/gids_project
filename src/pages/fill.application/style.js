@@ -4,13 +4,17 @@ import {mainGreen} from "../../styles/global/colors"
 export const Wrapper = styled.form`
     width: 100%;
     height: auto;
-    padding: 10px 20px;
+    padding: 10px 0px;
     .wrap-grid{
-        margin:20px 0;
+        margin:20px 0px;
     }
     .currency{
         display:flex;
         background-color:red;
+    }
+    @media (min-width:1367px){
+        width: 1400px ;
+        margin: 0 auto;
     }
     .modaldiv{
         padding: 40px;

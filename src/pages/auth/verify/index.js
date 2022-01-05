@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react'
 import {ContainerVerify} from "./index.style"
 import {FlexContainer} from "../../../styles/flex.container"
+import PinInput from "./pin.code"
+import { Container } from '../../../styles/container/index.style'
 // import { TextTitle } from '../../../styles/textTitle/index.style'
 // import TextInput from "../../../components/atom/auth.input"
-import PinInput from "./pin.code"
 // import  Button  from '../../../components/atom/button'
-import { Container } from '../../../styles/container/index.style'
 // import {useSelector, useDispatch} from "react-redux"
 // import {post_auth_reg_check_action} from "../../../redux/actions"
 

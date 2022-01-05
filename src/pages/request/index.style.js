@@ -19,6 +19,10 @@ export const Wrapper = styled.div`
     .arrovicon{
         margin-left: 10px;
     }
+    @media (min-width:1367px){
+        width: 1400px ;
+        margin: 0 auto;
+    }
     @media (max-width: 768px){
         &{
             padding: 0;

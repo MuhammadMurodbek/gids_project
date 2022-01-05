@@ -2,7 +2,7 @@ import  styled  from "styled-components";
 
 export const  Wrapper = styled.div`
     width: 100%;
-    padding:0 85px;
+    padding:0 75px;
     .davomi{
         display: flex;
         align-items: center;
@@ -30,6 +30,10 @@ export const  Wrapper = styled.div`
     }
     .gguBjA{
         margin:0 auto;
+    }
+    @media (min-width:1367px){
+        width: 1400px ;
+        margin: 0 auto;
     }
     @media (max-width:962px){
         .msa2{
