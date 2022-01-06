@@ -20,8 +20,8 @@ const Todos = ({state, setApiValue, setLoad}) => {
     const [items, setItems] = useState(arrayList)
     const [item, setItem] = useState({name:'', level:''})
     const [getData, setGetData] = useState({success:'', error:''})
-    const getRole = JSON.parse(localStorage.getItem("user_token"));
     const [postApiData, setPostApiData] = useState({ success: '', error: '', loading: false})
+    const getRole = JSON.parse(localStorage.getItem("user_token"));
     // console.log(state)
     // let obj = {
     //     ...state,

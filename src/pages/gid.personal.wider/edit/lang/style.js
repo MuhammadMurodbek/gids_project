@@ -17,4 +17,11 @@ export const Wrapper = styled.div`
     .sc-dIUeWJ.eobrpm{
         margin:0 !important;
     }
+    .div22{
+        text-align:right !important;
+    }
+    .dds{
+        float:right
+    }
+
 `

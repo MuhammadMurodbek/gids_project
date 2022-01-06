@@ -26,7 +26,7 @@ const Index = (props) => {
                 onItemAdded={(item, allItems) => handleChange(item)}
                 label={<span className="label">{props?.label}</span>} 
                 name="item-input"
-                placeholder="Qo'shimcha kurslarni kiriting; (ENTER tugmasi bilan so'zlarni ajrating )"
+                placeholder="Text"
                 deleteButton={<span className="icon_del"><HighlightOffIcon/></span>}
                 className="input_multi"
             /> 
