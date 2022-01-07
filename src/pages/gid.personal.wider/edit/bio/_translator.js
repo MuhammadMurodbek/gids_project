@@ -1,6 +1,7 @@
 import React, {useState, useCallback, useEffect} from 'react'
 import AddIcon from "@material-ui/icons/Add";
 import { Grid } from "@material-ui/core";
+// import { FlexContainer } from '../../../../styles/flex.container'
 import { TextTitle } from "../../../../styles/textTitle/index.style";
 import InputLabeled from "../../../../components/molecules/input.labeled";
 import Button from "../../../../components/atom/button";
@@ -95,6 +96,9 @@ const Translator = ({setTrains, trains}) => {
                   </Grid>
                   <Grid item md={ 1 } xs={ 1 }>
                     <div style={ { position: 'relative', top: 14 } }>
+                      <Button paddingIcon="10px" type="outlined">
+                        <DeleteIcon className="icon" />
+                      </Button>
                       <Button onClick={handleClick}paddingIcon="10px">
                         <AddIcon className="icon" />
                       </Button>

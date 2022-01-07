@@ -46,6 +46,10 @@ const Translator = ( { getData, spinner, setCallback } ) => {
     const handleSubmit = () => {
         setPostData( { ...postData, loading: true } )
         let itemPost = items.filter( prev => prev.id === 'added' )
+        if ( item.from_language !== '' && item.to_language !== '' )
+        {
+            itemPost.push({ from_language: item.from_language?.value, to_language: item.to_language?.value, id: 'added' })
+        }
         postResponse( common.personal.edit.language, itemPost, setPostData )
     }
     useEffect( () => { setItems( getData?.success?.data ) }, [ getData ] )
@@ -87,6 +91,9 @@ const Translator = ( { getData, spinner, setCallback } ) => {
                         </Grid>
                         <Grid item xs={ 12 } sm={ 6 } md={ 1 }>
                             <FlexContainer width="100%" flexDirection="column" gap="4px" margin="46px 0 0 0 ">
+                                <Button onClick={ ()=>setClear(true) } paddingIcon="10px">
+                                    <DeleteIcon className="icon" />
+                                </Button>
                                 <Button onClick={ handleChange } paddingIcon="10px">
                                     <AddIcon className="icon" />
                                 </Button>

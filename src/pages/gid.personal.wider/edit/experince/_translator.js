@@ -18,6 +18,8 @@ import toast from 'react-hot-toast';
 import {toastChecker} from "../../../../custom/function"
 import { useDispatch } from 'react-redux'
 import {saveTabAction} from "../../../../redux/actions"
+// import DeleteIcon from '@material-ui/icons/Delete';
+
 const Translator = ( { getData } ) => {
   const dispatch = useDispatch()
   const { t } = useTranslation()
@@ -61,12 +63,16 @@ const Translator = ( { getData } ) => {
   }, [ getData ] )
   const handleSubmit = () => {
     setSubmitData( { ...submitData, loading: true } )
+    let list = dataList
+    if ( name !== '' && year !== '' && speciality !== '' && !dataList.find( p => p === state ) ){
+      list.push(state)
+    }
     let dataSubmit = {
       ...postData,
       experience_year: postData.experience_year?.value,
       is_freelancer: postData.is_freelancer?.value,
       work_time: `${ postData?.from || postData?.work_time?.from } | ${ postData?.to || postData?.work_time?.to }`,
-      universities: dataList,
+      universities: list,
     }
     putResponse( common.personal.edit.education, dataSubmit, setSubmitData )
   }
@@ -118,6 +124,11 @@ const Translator = ( { getData } ) => {
         </Grid>
         <Grid item xs={ 12 } sm={ 6 } md={ 1 }>
           <FlexContainer width="auto" flexDirection="column" gap="8px" margin="45px 0 0 auto" >
+            <div style={ { marginLeft: "auto" } }>
+              <Button onClick={ ()=>setClear(true) } paddingIcon="10px" >
+                <DeleteIcon className="icon" />
+              </Button>
+            </div>
             <div style={ { marginLeft: "auto" } }>
               <Button onClick={ handleClick } paddingIcon="10px" >
                 <AddIcon className="icon" />
