@@ -10,7 +10,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import 'animate.css';
 import YearPicker from "../../../../components/molecules/year.picker.labeled"
 import toast from 'react-hot-toast';
-const Translator = ({setTrains, trains}) => {
+const Translator = ({setTrains, trains, setTrState}) => {
     const [delBool, setDelBool] = useState();
     const [state, setState] = useState({name:'', year:''})
     const [collect, setCollect] = useState([])
@@ -41,6 +41,12 @@ const Translator = ({setTrains, trains}) => {
     useEffect( () => {
       if(trains) setCollect(trains)
     },[trains])
+    
+    useEffect(()=>{
+      if(state.name!=='' && state.year!==''){
+        setTrState(state)
+      }
+    },[state])
     // console.log(collect)
     return (
         <div>
@@ -96,7 +102,7 @@ const Translator = ({setTrains, trains}) => {
                   </Grid>
                   <Grid item md={ 1 } xs={ 1 }>
                     <div style={ { position: 'relative', top: 14 } }>
-                      <Button paddingIcon="10px" type="outlined">
+                      <Button paddingIcon="10px">
                         <DeleteIcon className="icon" />
                       </Button>
                       <Button onClick={handleClick}paddingIcon="10px">
