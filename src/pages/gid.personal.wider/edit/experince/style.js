@@ -34,4 +34,8 @@ export const Wrapper = styled.form`
     .ant-picker.SwitchablePicker_style.ant-picker-focused{
         box-shadow:none;
     }
+    .btnss{
+        margin: 0px !important;
+        margin-top:10px !important
+    }
 `

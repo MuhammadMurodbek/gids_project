@@ -95,7 +95,7 @@ const Index = () => {
                                                     <Button
                                                         paddingIcon="10px"
                                                         type="outlined"
-                                                        margin="11px 10px 0 10px"
+                                                        
                                                         onClick={ () => handleDelete( item ) }
                                                     >
                                                         <DeleteIcon className="icon" />

@@ -123,8 +123,8 @@ const Index = () => {
                             </>
                     }
                 </Container>
-                <Container padding="10px" textAlign="right">
-                    <Button onClick={ handleSubmit}loader={ postGid?.loading }>{ t( "IshTajriba.saqlash" ) }</Button>
+                <Container padding="-10px"  textAlign="right">
+                    <Button className="btnss" onClick={ handleSubmit}loader={ postGid?.loading }> { t( "IshTajriba.saqlash" ) }</Button>
                 </Container>
                 </>
                 :
