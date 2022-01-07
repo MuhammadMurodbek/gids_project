@@ -33,6 +33,7 @@ const Index = () => {
   const [countryId, setCountryId] = useState(1)
   const [ state, setState ] = useState( defaultObj );
   const [ error, setError ] = useState( false )
+  const [trState, setTrState] = useState(null)
   const getRole = JSON.parse( localStorage.getItem( "user_token" ) );
   const [ apiValue, setApiValue ] = useState( { success: "", error: "" } );
   const { responseHook, setResponseHook } = useApiData( "post_bio_data_reducer" );
@@ -58,6 +59,7 @@ const Index = () => {
     }else{
       let clone = state
       delete clone.image
+      if(trState)  clone?.trainings.push(trState)
       setResponseHook( post_bio_data_action( clone ) );
       dispatch(saveTabAction(1))
     }
@@ -198,7 +200,7 @@ const Index = () => {
             <GroupImageUpload role={ getRole?.role } />
             { getRole?.role !== "gid" ? (
               <>
-                <Translator setTrains={setState} trains={state?.trainings}/>
+                <Translator setTrains={setState} trains={state?.trainings} setTrState={setTrState}/>
               </>
             ) : null }
             <div className="btnGrop">

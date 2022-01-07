@@ -38,7 +38,8 @@ const     Todos = ({translateType, setTranslateType}) => {
             }) || []
             console.log(theme)
             setItems(theme)
-        }
+        }else
+            setItems(arrayList)
     }},[getData])
     const handleAdd = useCallback(() => {
         if(item?.name ==='' || item?.level === ''){
@@ -58,7 +59,7 @@ const     Todos = ({translateType, setTranslateType}) => {
             setItems([...update])
         }
     },[item])
-    console.log(items)
+    console.log(arrayList)
     const handleSubmit = () => {
         setPostApiData({...postApiData, loading: true})
         let postData = {
