@@ -15,7 +15,7 @@ import {common} from "../../../../custom/url"
 import {toastChecker} from "../../../../custom/function"
 import toast from 'react-hot-toast';
 
-const Todos = ({translateType, setTranslateType}) => {
+const     Todos = ({translateType, setTranslateType}) => {
     let arrayList = defaultListValue()
     let optionList = selectValue()
     const [items, setItems] = useState(arrayList)

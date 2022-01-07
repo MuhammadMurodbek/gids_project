@@ -32,7 +32,7 @@ const Index = () => {
     const [ postData, setPostData ] = useState( { success: '', error: '', loading: false } )
     const [ state, setState ] = useState( [] );
     const handleAdd = () => {
-        setState( [ ...state, { id: uuid(), language: value?.languages?.value, level: value?.level } ] )
+        if(value?.languages!=='' && value?.languages!=='' && value?.name!=='' && value?.level!==''){setState( [ ...state, { id: uuid(), language: value?.languages?.value, level: value?.level } ] )}
         setValue( { id: "", languages: '', level: '' } )
         setClearValue( true )
     }
@@ -51,6 +51,11 @@ const Index = () => {
         let clone = state
             .filter( prev => !Object.keys( prev ).includes( 'del_id' ) )
             .map( item => { return { language: item?.language, level: item?.level?.value } } )
+        if(value?.hasOwnProperty('languages') && value?.hasOwnProperty('level')){
+            clone.push({language: value?.languages?.value, level:value?.level?.value})
+        }
+        console.log(clone)
+        console.log(value)
         postResponse( '/api/gids/edit/language/', clone, setPostData )
     }
     React.useEffect( () => {
@@ -91,11 +96,11 @@ const Index = () => {
                                                 <TextLabeledLoop label={ t( "TillarniBilish.bilishDarajasi" ) } value={ item?.level?.label } />
                                             </Grid>
                                             <Grid item xs={ 12 } sm={ 12 } md={ 1 }>
-                                                <FlexContainer width="100%" alignItems="flex-end" margin="44px 0 0 0">
+                                                <FlexContainer width="100%" alignItems="flex-end" justifyContent="flex-end" margin="44px 0 0 0">
                                                     <Button
                                                         paddingIcon="10px"
                                                         type="outlined"
-                                                        
+                                                        margin="0px 10px 0 10px"
                                                         onClick={ () => handleDelete( item ) }
                                                     >
                                                         <DeleteIcon className="icon" />
@@ -116,6 +121,8 @@ const Index = () => {
                                     disableMulti
                                     label="Tilni tanlang"
                                     placeholder={ t( "arizaqoldirish.BilishikeralPlac" ) }
+                                    setClear={ setClearValue }
+                                    clear={ clearValue }
                                 />
                                
                             </Grid>
@@ -135,14 +142,22 @@ const Index = () => {
                                 />
                             </Grid>
                             <Grid item xs={ 12 } sm={ 12 } md={ 1 }>
-                                <FlexContainer width="100%" alignItems="flex-end" margin="46px 0 0 0">
-                                    <Button paddingIcon="10px" onClick={ handleAdd }>
+                                <FlexContainer width="100%" alignItems="flex-end" flexDirection="column" margin="46px 0 0 0">
+                                    <Button
+                                        paddingIcon="10px"
+                                        type="outlined"
+                                        margin="0px 10px 0 10px"
+                                        onClick={ () => setClearValue( true ) }
+                                    >
+                                        <DeleteIcon className="icon" />
+                                    </Button>
+                                    <Button paddingIcon="10px" onClick={ handleAdd } margin="0px 10px 0 10px">
                                         <AddIcon className="icon" />
                                     </Button>
                                 </FlexContainer>
                             </Grid>
                         </Grid>
-                        <Container padding="10px 0" margin="10px 0 0 -30px" textAlign="right">
+                        <Container padding="10px 0" margin="10px 0 0 -10px" textAlign="right">
                             <Button loader={ postData?.loading } onClick={ handleSubmitGid }>{ t( "TillarniBilish.save" ) }</Button>
                         </Container>
                     </>

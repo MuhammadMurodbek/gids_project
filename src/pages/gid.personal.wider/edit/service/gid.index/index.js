@@ -31,11 +31,12 @@ const GidIndex = () => {
     const [countryId, setCountryId] = useState(null)
     const { excursion } = checkItems
     const { success, error } = postData
-    const handleAdd = useCallback(() => {
-        if (value?.country !== '' && value?.city !== '') {
-            console.log(state)
-            console.log(value)
-            setState([...state, value])
+    const handleAdd = useCallback( () => {
+        if ( value?.country !== '' && value?.city !== '' )
+        {
+            // console.log(state)
+            // console.log(value)
+            setState( [ ...state, value ] )
             // setValue( { country: '', city: '' } )
             setClearValue(true)
         } else {
@@ -55,10 +56,17 @@ const GidIndex = () => {
         })
         setPostData({ ...postData, loading: true })
         const { consecutive_translate, synchronous_translate, written_translate } = checkItems
-        if (excursion) {
-            putResponse('/api/gids/edit/service/', { ...checkItems, excursions: cloneState }, setPostData)
-        } else {
-            putResponse('/api/gids/edit/service/', {
+        if ( excursion )
+        {
+            // console.log(cloneState)
+            // console.log(value)
+            if(value?.city!=='' && value?.country!=='') cloneState.push({city:value.city, country:value.country})
+            putResponse( '/api/gids/edit/service/', { ...checkItems, excursions: cloneState }, setPostData )
+        } else
+        {
+            // console.log(cloneState)
+            // console.log(value)
+            putResponse( '/api/gids/edit/service/', {
                 consecutive_translate: consecutive_translate,
                 synchronous_translate: synchronous_translate,
                 written_translate: written_translate
@@ -168,20 +176,6 @@ const GidIndex = () => {
                                                 setClearValue={setClearValue}
                                                 placeholder={t("kengaytirlgan_Q.DavlatniTanlang")}
                                             />
-                                            {/* <SelectLabeled
-                                                setClearValue={ setClearValue }
-                                                clearValue={ clearValue }
-                                                options={ countries }
-                                                collect={ value }
-                                                isDisabled={ !checkItems?.excursion }
-                                                setCollect={ setValue }
-                                                field="country"
-                                                sizeLabel="15px"
-                                                width="100%"
-                                                marginLabel="12px 0"
-                                                label={ t( "xizmatlar.mamalakatlargaEkskurs" ) }
-                                                placeholder={ t( "xizmatlar.mamlakatPlace" ) }
-                                            /> */}
                                         </Grid>
                                         <Grid item xs={12} sm={6} md={5}>
                                             <SelectLabeledCity
@@ -194,55 +188,24 @@ const GidIndex = () => {
                                                 isDisabled={countryId === null ? true : false}
                                                 placeholder={t("kengaytirlgan_Q.ShaharniTanlang")}
                                             />
-                                            {/* <SelectLabeled
-                                                setClearValue={ setClearValue }
-                                                clearValue={ clearValue }
-                                                collect={ value }
-                                                setCollect={ setValue }
-                                                isDisabled={ !value?.country.hasOwnProperty( 'cities' ) }
-                                                options={ value?.country?.cities ? get_cities( value?.country?.cities ) : null }
-                                                field="city"
-                                                sizeLabel="15px"
-                                                width="100%"
-                                                marginLabel="12px 0"
-                                                label={ t( "xizmatlar.shaharlar" ) }
-                                                placeholder={ t( "xizmatlar.shaharlarSelect" ) }
-                                            /> */}
                                         </Grid>
-                                        <Grid item xs={12} sm={12} md={1} >
-                                            <FlexContainer className="btninfo" width="100%" alignItems="flex-end" margin="11px  0 0">
-                                                <Button className="btninfo2"  paddingIcon="10px" onClick={handleAdd}>
-                                                    <AddIcon className="icon" /> 
-                                                </Button>
-                                            </FlexContainer>
+                                        <Grid item xs={ 12 } sm={ 12 } md={ 1 }>
+                                        <FlexContainer width="100%" alignItems="flex-end" flexDirection="column" margin="11px 0 0 0">
+                                            <Button
+                                                paddingIcon="10px"
+                                                type="outlined"
+                                                margin="0px 10px 0 0px"
+                                                onClick={ () => setClearValue( true ) }
+                                            >
+                                                <DeleteIcon className="icon" />
+                                            </Button>
+                                            <Button paddingIcon="10px" onClick={ handleAdd } margin="0px 10px 0 10px">
+                                                <AddIcon className="icon" />
+                                            </Button>
+                                        </FlexContainer>
                                         </Grid>
                                     </Grid>
                                 </>
-                                {/* <Grid container spacing={1}>
-                        <Grid item xs={10} sm={10} md={11}>
-                            <Grid container spacing={1}>
-                                <Grid item xs={12} md={6}>
-                                    <SelectLabeled marginLabel=" 0" sizeLabel="15px"
-                                     label={t("xizmatlar.mamalakatlargaEkskurs")}
-                                     placeholder={t(" xizmatlar.mamlakatPlace")} />
-                                    </Grid>
-                                    <Grid item xs={12} md={6}>
-                                    <SelectLabeled marginLabel=" 0" sizeLabel="15px" label={t("xizmatlar.shaharlar")}
-                                    placeholder={t("xizmatlar.shaharlarSelect")} />
-                                </Grid>
-                            </Grid>
-                        </Grid>
-                        <Grid  item xs={2} sm={2} md={1} >
-                            <Button  paddingIcon="10px" margin="30px">
-                                <AddIcon className="icon" />
-                            </Button>
-                          
-                        </Grid>
-                    </Grid>
-                    <Button paddingIcon="10px" margin="-2px">
-                        <AddIcon className="icon" />
-                    </Button> */}
-
                             </Container>
                             <Container >
                                 <div className="btninfo">
