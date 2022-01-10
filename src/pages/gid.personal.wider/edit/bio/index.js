@@ -63,9 +63,6 @@ const Index = () => {
       let clone = state
       delete clone.image
       if(trState.hasOwnProperty('name') && trState.hasOwnProperty('year'))  {
-        // console.log(trState)
-        // console.log(clone)
-        // clone?.trainings=[]
         clone?.trainings.push(trState)
       }
       setResponseHook( post_bio_data_action( clone ) );
@@ -73,8 +70,6 @@ const Index = () => {
       dispatch(saveTabAction(1))
     }
   };
-  // console.log(state)
-  // console.log(responseHook)
   return (
     <Wrapper onSubmit={ ( e ) => e.preventDefault() }>
       {apiValue?.success === "" ? (
