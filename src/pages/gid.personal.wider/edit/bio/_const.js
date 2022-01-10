@@ -1,4 +1,5 @@
 export const defaultObj ={
+  trainings:[],
     middle_name: "",
     first_name: "",
     last_name: "",
@@ -9,4 +10,5 @@ export const defaultObj ={
     gender: null,
     image: "",
     imageFile: null,
+    
   }

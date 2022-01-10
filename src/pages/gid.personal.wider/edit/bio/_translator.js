@@ -10,10 +10,11 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import 'animate.css';
 import YearPicker from "../../../../components/molecules/year.picker.labeled"
 import toast from 'react-hot-toast';
-const Translator = ({setTrains, trains, setTrState}) => {
+const Translator = ({setTrains, trains, setTrState, clear, setClear}) => {
     const [delBool, setDelBool] = useState();
     const [state, setState] = useState({name:'', year:''})
     const [collect, setCollect] = useState([])
+    // const [clear, setClear] = useState(false)
     const {name,year} = state
     console.log(trains)
     const handleClick = useCallback(()=> { 
@@ -24,9 +25,11 @@ const Translator = ({setTrains, trains, setTrState}) => {
                 trainings:[...collect, state]
             }})
             setDelBool('')
+            setClear(true)
         }else{
             toast.error("Ma'lumotlarni to'liq kiriting")
         }
+
     },[name, year, delBool])
     const handleDelete = (item) => {
         // console.log(item)
@@ -83,10 +86,14 @@ const Translator = ({setTrains, trains, setTrState}) => {
                       setState={setState}
                       state={state}
                       field="name"
+                      clear={clear}
+                      setClear={setClear}
                     />
                   </Grid>
                   <Grid item md={ 2 } xs={ 4 }>
                     <YearPicker
+                       clear={clear}
+                       setClear={setClear}
                        setState={setState}
                        state={state}
                        field="year"
@@ -102,7 +109,7 @@ const Translator = ({setTrains, trains, setTrState}) => {
                   </Grid>
                   <Grid item md={ 1 } xs={ 1 }>
                     <div style={ { position: 'relative', top: 14 } }>
-                      <Button paddingIcon="10px">
+                      <Button paddingIcon="10px" onClick={()=>setClear(true)}>
                         <DeleteIcon className="icon" />
                       </Button>
                       <Button onClick={handleClick}paddingIcon="10px">
