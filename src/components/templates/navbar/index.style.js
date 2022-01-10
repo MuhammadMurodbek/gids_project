@@ -36,7 +36,7 @@ export const Navbar = styled.div`
          
      }
     .img_logo1{
-        width: 150px;
+        width: 180px;
     }
     .imgass{
        cursor: pointer;

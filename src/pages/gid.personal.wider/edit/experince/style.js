@@ -3,7 +3,9 @@ import {mainGreen} from "../../../../styles/global/colors"
 export const Wrapper = styled.form`
     width: 100%;
     height: auto;
-
+    .btns{
+        margin-right:0px !important
+    }
     .fCSNeF,.bqWjhY{
         padding:9px 13px !important;
     }
@@ -31,5 +33,9 @@ export const Wrapper = styled.form`
     }
     .ant-picker.SwitchablePicker_style.ant-picker-focused{
         box-shadow:none;
+    }
+    .btnss{
+        margin: 0px !important;
+        margin-top:10px !important
     }
 `

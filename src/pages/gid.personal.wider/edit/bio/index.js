@@ -204,7 +204,7 @@ const Index = () => {
           </Container>
           <Container padding="10px 0">
             <TextTitle font="16px" align="left" top="15px">
-              Sertifikat va diplomlaringiz bo‘lsa shu yerga yuklang
+              Sertifikat va diplomlaringiz bo‘lsa shu yerga yuklang (jpg, png )
             </TextTitle>
             <GroupImageUpload role={ getRole?.role } />
             { getRole?.role !== "gid" ? (
@@ -213,7 +213,7 @@ const Index = () => {
               </>
             ) : null }
             <div className="btnGrop">
-              <Button onClick={ handleSubmit } loader={ responseHook?.loading } type="submit">
+              <Button calssName="saqlashbtn" onClick={ handleSubmit } loader={ responseHook?.loading } type="submit">
                 { " " }
                 Saqlash
               </Button>

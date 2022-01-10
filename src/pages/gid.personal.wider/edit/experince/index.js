@@ -58,13 +58,15 @@ const Index = () => {
                                             sizeLabel="15px"
                                             width="100%"
                                             label={ t( "IshTajriba.malumotlar" ) }
-                                            placeholder={ t( "IshTajriba.oliy" ) }
+                                           
+                                            
                                             setCollect={ setStateGid }
                                             collect={ stateGid }
                                             field="education_degree"
                                             pcolor={ getData?.success?.data }
                                             placeholder={ getData.success?.data !== '' ? DEGREES[ getData?.success?.data?.education_degree ] : "Select" }
-                                        />
+                                            placeholder={ t( "IshTajriba.oliy" ) }
+                                            />
                                     </Grid>
                                     <Grid item xs={ 12 } sm={ 6 } md={ 4 }>
                                         <TextLabeled
@@ -76,7 +78,8 @@ const Index = () => {
                                             state={ stateGid }
                                             field="completed_university"
                                             defaultApiValue={ getData?.success?.data?.completed_university || '' }
-                                        />
+
+                                            />
                                     </Grid>
                                     <Grid item xs={ 12 } sm={ 6 } md={ 4 }>
                                         <SelectLabeled
@@ -84,12 +87,13 @@ const Index = () => {
                                             sizeLabel="15px"
                                             width="100%"
                                             setCollect={ setStateGid }
-                                            collect={ stateGid }
+                                            collect={stateGid}
                                             field="category"
                                             label={ t( "IshTajriba.toifasi" ) }
+                                            placeholder={ t( "IshTajriba.toifasi" ) }
                                             pcolor={ getData?.success?.data || false }
                                             placeholder={ getData.success?.data !== '' ? DEGREES_GIT[ getData?.success?.data?.category ] : t( "IshTajriba.toifaPlace" ) }
-                                        // placeholder={t("IshTajriba.toifaPlace")} 
+                                            placeholder={t("IshTajriba.toifaPlace")} 
                                         />
                                     </Grid>
                                 </Grid>
@@ -119,16 +123,14 @@ const Index = () => {
                             </>
                     }
                 </Container>
-                <Container padding="10px" textAlign="right">
-                    <Button onClick={ handleSubmit}loader={ postGid?.loading }>{ t( "IshTajriba.saqlash" ) }</Button>
+                <Container padding="-10px"  textAlign="right">
+                    <Button className="btnss" onClick={ handleSubmit}loader={ postGid?.loading }> { t( "IshTajriba.saqlash" ) }</Button>
                 </Container>
                 </>
                 :
                 <>
                     <ExtraRole getData={getData}/>
-                    {/* <Container padding="10px" textAlign="right">
-                        <Button onClick={ handleSubmit}loader={ postGid?.loading }>{ t( "IshTajriba.saqlash" ) }</Button>
-                    </Container> */}
+                 
                 </>
             }
 

@@ -6,7 +6,7 @@ import { post_auth_reg_check_action } from "../../../redux/actions"
 import { toast } from "react-hot-toast";
 import "./style.css"
 import {getGlobals} from "../../../hooks/response_get"
-const YourComponent = () => {
+const   YourComponent = () => {
   const history = useHistory()
   const [status, setStatus] = useState("process");
   const dispatch = useDispatch()
@@ -36,7 +36,7 @@ const YourComponent = () => {
     }
   }, [selector])
   return (
-    <div style={{position:'relative'}}>
+    <div className="reds" style={{position:'relative'}}>
       <VerificationPin
         type="number"
         inputsNumber={5}

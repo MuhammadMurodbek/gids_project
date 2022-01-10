@@ -34,7 +34,7 @@ const Index = () => {
         let filterQuery = query.substr(1)?.split('&')?.filter(a=>!a.includes('type'))?.join('&')
         let type = query.substr(1)?.split('&')?.filter(a=>a.includes('type'))?.join('&').slice(5)
         if(type){
-            getResponse(`/api/${type}s/profiles/?${filterQuery}&page=${pagination?.current}`, setState)
+            getResponse(`/api/${type}s/profiles/?${filterQuery}&page=${pagination?.current}`, setState, true)
         }else{
             getResponse(`/api/translators/all/?page=${pagination?.current}`, setState, true)
         }
@@ -46,9 +46,8 @@ const Index = () => {
     return (
         <Wrapper>
             <TextTitle id="ref" top="40px" {...mediaTextField}
-             {...mediaTextFieldSec} bottom="30px">
-                {t("Gid_Tanlash.title")}
-                 
+             {...mediaTextFieldSec} bottom="10px">
+                {t("Gid_Tanlash.title")}    
             </TextTitle>
             <Container>
                 <Grid container spacing={1} className="media_grid_flex">

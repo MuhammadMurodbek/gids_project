@@ -96,7 +96,7 @@ const Index = () => {
                                                 <TextLabeledLoop label={ t( "TillarniBilish.bilishDarajasi" ) } value={ item?.level?.label } />
                                             </Grid>
                                             <Grid item xs={ 12 } sm={ 12 } md={ 1 }>
-                                                <FlexContainer width="100%" alignItems="flex-end" margin="44px 0 0 0">
+                                                <FlexContainer width="100%" alignItems="flex-end" justifyContent="flex-end" margin="44px 0 0 0">
                                                     <Button
                                                         paddingIcon="10px"
                                                         type="outlined"
@@ -146,18 +146,18 @@ const Index = () => {
                                     <Button
                                         paddingIcon="10px"
                                         type="outlined"
-                                        margin="0px 15px 0 10px"
+                                        margin="0px 10px 0 10px"
                                         onClick={ () => setClearValue( true ) }
                                     >
                                         <DeleteIcon className="icon" />
                                     </Button>
-                                    <Button paddingIcon="10px" onClick={ handleAdd } margin="0px 15px 0 10px">
+                                    <Button paddingIcon="10px" onClick={ handleAdd } margin="0px 10px 0 10px">
                                         <AddIcon className="icon" />
                                     </Button>
                                 </FlexContainer>
                             </Grid>
                         </Grid>
-                        <Container padding="10px 0" margin="10px 0 0 -30px" textAlign="right">
+                        <Container padding="10px 0" margin="10px 0 0 -10px" textAlign="right">
                             <Button loader={ postData?.loading } onClick={ handleSubmitGid }>{ t( "TillarniBilish.save" ) }</Button>
                         </Container>
                     </>

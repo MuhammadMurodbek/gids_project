@@ -20,6 +20,10 @@ export const TextColor = styled.span`
 export const Takliflar = styled.div`
     padding: 10px 85px;  
     margin: 50px 0;
+    @media (min-width:1367px){
+        width: 1400px ;
+        margin: 0 auto;
+    }
     @media (max-width: 768px) {
         .text{
             padding:0 5px !important;
@@ -49,6 +53,10 @@ export const Takliflar = styled.div`
 export const Savollar = styled.div`
     padding: 0 85px;
     margin-bottom:100px ;
+    @media (min-width:1367px){
+        width: 1400px ;
+        margin: 0 auto;
+    }
     @media (max-width: 768px){
         padding:10px 0;
     }
@@ -99,6 +107,10 @@ p{
     font-weight:600;
     text-align:left;
 }
+@media (min-width:1367px){
+        width: 1400px ;
+        margin: 0 auto;
+    }
 @media (max-width: 600px){
     &{
         padding:0px 10px;

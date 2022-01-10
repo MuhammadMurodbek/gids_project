@@ -95,7 +95,6 @@ const Index = () => {
                                     placeholder="Raqamingizni kiriting" 
                                     defaultApiValue={edit?.phone_number}
                                 />
-                                
                                 <InputLabeled width="100%"
                                     onChange={hendlEdit}
                                     value={edit?.email}
@@ -106,19 +105,20 @@ const Index = () => {
                             <Grid item xs={12} sm={6}>
                                 <InputLabeled width="100%"
                                     onChange={hendlChanch}
-                                    value={password}
+                                    value={state.passwordpassword}
                                     name="password"
                                     label="Hozirgi parolingiz"
                                     placeholder="Hozirgi Parol" />
                                 <InputLabeled
                                     width="100%"
-                                    value={password1}
+                                    value={state.password1}
                                     name="password1"
                                     onChange={hendlChanch}
                                     label="Yangi parol"
                                     placeholder="Yangi parolni kiriting" password />
-                                <InputLabeled width="100%"
-                                    value={password2}
+                                <InputLabeled 
+                                    width="100%"
+                                    value={state.password2}
                                     name="password2"
                                     onChange={hendlChanch}
                                     label="Parolni tasdiqlang"

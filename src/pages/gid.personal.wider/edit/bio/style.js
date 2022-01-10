@@ -9,7 +9,8 @@ export const Wrapper = styled.form`
         display: flex;
         flex-direction: column;
         align-items: flex-end;
-        margin: 40px 10px 10px;
+        margin: 40px 0;
+        margin-right:-10px;
     }
     .edit_div{
         /* background-color:red; */
@@ -24,5 +25,8 @@ export const Wrapper = styled.form`
     .icon_edit{
         font-size:20px;
         color:${mainGreen};
+    }
+    .saqlashbtn{
+        margin-right: 20px !important;
     }
 `

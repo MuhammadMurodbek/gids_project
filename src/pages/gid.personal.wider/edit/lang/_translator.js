@@ -91,7 +91,7 @@ const Translator = ( { getData, spinner, setCallback } ) => {
                         </Grid>
                         <Grid item xs={ 12 } sm={ 6 } md={ 1 }>
                             <FlexContainer width="100%" flexDirection="column" gap="4px" margin="46px 0 0 0 ">
-                                <Button onClick={ ()=>setClear(true) } paddingIcon="10px">
+                                <Button onClick={ ()=>setClear(true) } paddingIcon="10px" className="dds">
                                     <DeleteIcon className="icon" />
                                 </Button>
                                 <Button onClick={ handleChange } paddingIcon="10px">
@@ -100,8 +100,10 @@ const Translator = ( { getData, spinner, setCallback } ) => {
                             </FlexContainer>
                         </Grid>
                     </Grid>
-                    <Container padding="10px 0" margin="10px 0 0 -30px" textAlign="right">
+                    <Container padding="10px 0" margin="0px 0 0 -18px" textAlign="right">
+                        <div className="div22">
                         <Button loader={ postData?.loading } onClick={ handleSubmit }>{ t( "TillarniBilish.save" ) }</Button>
+                        </div>
                     </Container>
                 </>
             }

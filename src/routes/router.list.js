@@ -3,7 +3,7 @@ import * as ListRouter from "./import"
 
 export const routes_user = [
     {
-        url:'/gids',
+        url:'/gids', 
         component:ListRouter.ChooseGids,
     },
     {
