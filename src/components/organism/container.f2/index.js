@@ -38,6 +38,9 @@ const      Index = ({data}) => {
                     </Container> 
                 </Grid>
              
+
+
+                
                  <Grid item xs={12} sm={6}>
                     <Container margin="30px 0 0 0">
                         <TextTitle align="left" font="20px"> {(data?.first_name +" " + data?.last_name) || "Ma'lumot kiritilmagan"} </TextTitle>
