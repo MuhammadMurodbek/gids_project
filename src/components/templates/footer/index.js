@@ -6,7 +6,7 @@ import tg from '../../../assets/img/footer/tg.svg'
 import f from '../../../assets/img/footer/f.svg'
 import i from '../../../assets/img/footer/i.svg'
 import { useTranslation } from 'react-i18next'
-
+ 
 
 const Index = () => {
     const location = useLocation()
@@ -31,6 +31,7 @@ const Index = () => {
 
     return (
         <>
+        
             <FooterWrapper padding={check ? '0px' : "10px 0 0"}>
                 <div className='width1'>
                     <FlexContainer
@@ -82,6 +83,7 @@ const Index = () => {
                 <div className="footer-bottom-comp" style={check ? { display: 'none' } : null}>
                     <span>Copyright 2021 Gits.uz - All rights reserved.</span>
                 </div>
+
             </FooterWrapper>
         </>
     )

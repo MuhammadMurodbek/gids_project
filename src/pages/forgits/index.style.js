@@ -2,7 +2,7 @@ import styled from "styled-components";
 import {mainGreen} from "../../styles/global/colors"
 export const Wrapper = styled.div`
         width:100%auto;
-         
+         margin-top:50px;
 
         .title-S{
             font-weight: 700;

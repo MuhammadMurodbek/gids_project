@@ -37,10 +37,11 @@ const      Index = ({data}) => {
                         </FlexContainer>
                     </Container> 
                 </Grid>
-                <Grid item xs={12} sm={6}>
+             
+                 <Grid item xs={12} sm={6}>
                     <Container margin="30px 0 0 0">
                         <TextTitle align="left" font="20px"> {(data?.first_name +" " + data?.last_name) || "Ma'lumot kiritilmagan"} </TextTitle>
-                        <div className="gid-info-personal">{(data?.age + " " + "yosh") || " "}   | <span style={{textTransform: "capitalize"}}>{data?.role}</span> </div>
+                        <div className="gid-info-personal">{data?.age ? (data?.age + " " + "yosh") : " " }  | <span style={{textTransform: "capitalize"}}>{data?.role === "translator" ? "Og'zaki tarjimon" : data?.role === "gid" ? "Gid" : data?.role === "writer" ? "Yozma tarjima" : " " }</span> </div>
                         <div className="gid-info-personal-text top"> 
                             <div className="text">
                                 {t("Gid_Tanlash.xizmatlar")} : { data?.excursions?.map((prev)=>" "+getLabelCity(parseInt(prev?.country), parseInt(prev?.city))+",") || "Ma'lumot kiritilmagan"}

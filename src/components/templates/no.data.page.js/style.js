@@ -17,7 +17,7 @@ export const Wrapper = styled.div`
             font-size: 1.3rem;
         }
         .no_data_img{
-            width: 200px;
+            width: 250px;
             margin-right: 20px;
         }
     }
