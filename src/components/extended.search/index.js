@@ -36,16 +36,6 @@ const   Index = ({loader}) => {
         }
     },[loader])
 
-
-
-
-     
-  
-  
-  
-
-
-    
     return (
         <Wrapper width="350px">
             <div className="title-header">

@@ -10,12 +10,12 @@ import { option_yes, option_yes_sec, objDefault } from "../_const"
 import MultiValueInput from '../../../../../components/molecules/multivalue.input'
 import Todos from "../todo.writer"
 import './style.css'
-import Spinner from "../../../../../components/atom/loading.spinner.line";
+// import Spinner from "../../../../../components/atom/loading.spinner.line";
 const Index = () => {
     const [state, setState] = useState(objDefault)
     const [apiValue, setApiValue] = useState(objDefault)
     const [load, setLoad] = useState({ success: '', error: '' })
-    console.log(state?.can_oral_translate?.label)
+    // console.log(state?.can_oral_translate?.label)
     useEffect(() => {
         if (apiValue) {
             let obj = state
