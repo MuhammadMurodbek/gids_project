@@ -10,12 +10,12 @@ import { option_yes, option_yes_sec, objDefault } from "../_const"
 import MultiValueInput from '../../../../../components/molecules/multivalue.input'
 import Todos from "../todo.writer"
 import './style.css'
-import Spinner from "../../../../../components/atom/loading.spinner.line";
+// import Spinner from "../../../../../components/atom/loading.spinner.line";
 const Index = () => {
     const [state, setState] = useState(objDefault)
     const [apiValue, setApiValue] = useState(objDefault)
     const [load, setLoad] = useState({ success: '', error: '' })
-    console.log(load)
+    // console.log(state?.can_oral_translate?.label)
     useEffect(() => {
         if (apiValue) {
             let obj = state
@@ -41,7 +41,7 @@ const Index = () => {
                         <TextTitle font="15px" align="left" top="0" bottom="-10px" color="#262626">Siz og'zaki tarjima ham qilasizmi?</TextTitle>
                         <FlexContainer width="100%" gap="10px">
                             <SelectLabeled setCollect={setState} collect={state} defaultApiValue={apiValue?.can_oral_translate ? 'Ha' : "Yo'q"} field="can_oral_translate" options={option_yes} width="100%" sizeLabel="15px" placeholder="Tanglang" />
-                            <SelectLabeled setCollect={setState} collect={state} defaultApiValue={apiValue?.oral_translate_type !== 'consecutive' ? 'Ketma ket' : 'Izchil'} field="oral_translate_type" options={option_yes_sec} width="100%" placeholder="Tanlang" />
+                            <SelectLabeled isDisabled={state?.can_oral_translate?.label==='Ha' ? false:true} setCollect={setState} collect={state} defaultApiValue={apiValue?.oral_translate_type !== 'consecutive' ? 'Ketma ket' : 'Izchil'} field="oral_translate_type" options={option_yes_sec} width="100%" placeholder="Tanlang" />
                         </FlexContainer>
                     </Container>
                 </Grid>

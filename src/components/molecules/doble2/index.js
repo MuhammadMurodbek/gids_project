@@ -3,7 +3,7 @@ import Checkbox from "../../atom/checkbox"
 import { FlexContainer } from '../../../styles/flex.container'
 
 const Index = (props) => {
-    const {name1, name2,name3, width, margin, alignItems, justifyContent, flexDirection, display, collect, setCollect} = props
+    const {setWriter, name1, name2,name3, width, margin, alignItems, justifyContent, flexDirection, display, collect, setCollect} = props
     
     const [state, setState] = React.useState({is_synchronous:false, is_consecutive:false, is_writer:false})
     
@@ -11,12 +11,14 @@ const Index = (props) => {
         if(setCollect){
             if(collect?.who_need === 'translator'){
                 setCollect({...collect, ...state})
-            }else{
-                setCollect({...collect, is_synchronous:false, is_consecutive:false, is_writer:false})
             }
         }
+        if(state){
+            setWriter({is_writer:state.is_writer})
+        }
     },[state])
-    // console.log(state)
+    console.log(state)
+    // console.log(collect?.who_need)
     return (
         <FlexContainer 
             width={width} 

@@ -33,7 +33,8 @@ const Index = () => {
   const [countryId, setCountryId] = useState(1)
   const [ state, setState ] = useState( defaultObj );
   const [ error, setError ] = useState( false )
-  const [trState, setTrState] = useState(null)
+  const [trState, setTrState] = useState({})
+  const [clearYear, setClearYear] = useState(false)
   const getRole = JSON.parse( localStorage.getItem( "user_token" ) );
   const [ apiValue, setApiValue ] = useState( { success: "", error: "" } );
   const { responseHook, setResponseHook } = useApiData( "post_bio_data_reducer" );
@@ -44,7 +45,9 @@ const Index = () => {
   React.useMemo( () => {
     if ( apiValue?.success !== "" )
     {
-      setState( apiValue?.success?.data );
+      let api = apiValue?.success?.data
+      if(!api.trainings) api.trainings = []
+      setState( api );
     }
     if ( apiValue?.error !== "" ) { toast.error( "Ma'lumotlarni yuklashda xatolik mavjud" ); }
   }, [ apiValue ] );
@@ -59,13 +62,14 @@ const Index = () => {
     }else{
       let clone = state
       delete clone.image
-      if(trState)  clone?.trainings.push(trState)
+      if(trState.hasOwnProperty('name') && trState.hasOwnProperty('year'))  {
+        clone?.trainings.push(trState)
+      }
       setResponseHook( post_bio_data_action( clone ) );
+      setClearYear(true)
       dispatch(saveTabAction(1))
     }
   };
-  // console.log(state)
-  // console.log(responseHook)
   return (
     <Wrapper onSubmit={ ( e ) => e.preventDefault() }>
       {apiValue?.success === "" ? (
@@ -116,7 +120,7 @@ const Index = () => {
                 </Grid>
               </Grid>
               <Grid container spacing={ 1 }>
-                <Grid item xs={ 12 } md={ 4 }>
+                <Grid item xs={ 12 } md={ 4 } className="ext_date">
                   <CalendarLabel
                     sizeLabel="15px"
                     width="100%"
@@ -200,7 +204,7 @@ const Index = () => {
             <GroupImageUpload role={ getRole?.role } />
             { getRole?.role !== "gid" ? (
               <>
-                <Translator setTrains={setState} trains={state?.trainings} setTrState={setTrState}/>
+                <Translator setTrains={setState} trains={state?.trainings} setTrState={setTrState} clear={clearYear} setClear={setClearYear}/>
               </>
             ) : null }
             <div className="btnGrop">

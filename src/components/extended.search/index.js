@@ -15,13 +15,13 @@ const   Index = ({loader}) => {
     const history = useHistory()
     const { t } = useTranslation()
     const [postData, setPostData] = useState({ success: '', error: '', loading: false })
-    // const getRole = JSON.parse(localStorage.getItem("user_token"))
+    const [writer, setWriter] = useState({is_writer:false})
     const [collect, setCollect] = useState()
+    // console.log(writer)
     const handleSubmit = () => { 
-       
         if(collect?.type){
             setPostData({ ...postData, loading: true })
-            let urlOther = `type=${collect?.type}&gender=${(collect?.male && collect?.female)? undefined: collect?.male ? 'male' : collect?.female ? 'female' : undefined}&country=${collect?.country}&city=${collect?.city}&lang=${collect?.languages?.map(item => item?.value)}&date_after=${collect?.date_after}&date_before=${collect?.date_before}&${collect?.search_type}=0`
+            let urlOther = `type=${(collect?.type === 'translator' && writer) ? 'writer' :  collect?.type}&gender=${(collect?.male && collect?.female)? undefined: collect?.male ? 'male' : collect?.female ? 'female' : undefined}&country=${collect?.country}&city=${collect?.city}&lang=${collect?.languages?.map(item => item?.value)}&date_after=${collect?.date_after}&date_before=${collect?.date_before}&${collect?.search_type}=0`
             let filterUrl = urlOther.split('&').filter(a=>!a.includes('undefined')).join('&')
             history.push('/gids?'+filterUrl)
         }else{
@@ -36,16 +36,6 @@ const   Index = ({loader}) => {
         }
     },[loader])
 
-
-
-
-     
-  
-  
-  
-
-
-    
     return (
         <Wrapper width="350px">
             <div className="title-header">
@@ -55,6 +45,8 @@ const   Index = ({loader}) => {
             <RadioGroup
                 setState={setCollect}
                 state={collect}
+                setWriter={setWriter}
+                writer={writer}
                 field='type'/>
             <Selection
                 setState={setCollect}
