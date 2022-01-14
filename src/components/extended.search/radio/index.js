@@ -7,7 +7,7 @@ import {Wrapper} from "./index.style"
 import DoubleCheck2 from "../../molecules/doble2"
 import { useTranslation } from 'react-i18next';
 
-const Index = ({setState, state, field}) => {
+const Index = ({setState, state, field, setWriter}) => {
     const {t} = useTranslation()
     const [value, setValue] = React.useState(null);
     const [checkValue, setCheckValue] = useState(null)
@@ -18,7 +18,12 @@ const Index = ({setState, state, field}) => {
         }
         console.log(event.target.value)
     }
-    console.log(checkValue)
+    // React.useEffect(()=>{
+    //     if(checkValue){
+    //         setWriter({is_writer:checkValue.is_writer})
+    //     }
+    // },[checkValue])
+    // console.log(checkValue)
     return (
         <Wrapper>
             <div className="title-header-radio"> {t("kengaytirlgan_Q.kimKerak")}</div>
@@ -34,6 +39,7 @@ const Index = ({setState, state, field}) => {
                         flexDirection="column"
                         collect={checkValue}
                         setCollect={setCheckValue}
+                        setWriter={setWriter}
                     />
                 </div>
             </RadioGroup>

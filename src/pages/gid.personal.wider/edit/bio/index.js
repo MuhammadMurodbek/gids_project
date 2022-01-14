@@ -120,7 +120,7 @@ const Index = () => {
                 </Grid>
               </Grid>
               <Grid container spacing={ 1 }>
-                <Grid item xs={ 12 } md={ 4 }>
+                <Grid item xs={ 12 } md={ 4 } className="ext_date">
                   <CalendarLabel
                     sizeLabel="15px"
                     width="100%"
