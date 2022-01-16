@@ -1,35 +1,31 @@
-import React,{useState } from 'react'
+import React,{useState, useEffect } from 'react'
 import SelectLabeledCountry from "../../molecules/select.labeled.country"
 import SelectLabeledCity from "../../molecules/select.labeled.country/city"
 import {Wrapper} from "./index.style"
 import { useTranslation } from 'react-i18next'
+import {getLabelCitySearch} from "../../../custom/function"
 
 const Index = (props) => {
-    const {state, setState } = props
+    const {state, setState, defaultCountry, defaultCity } = props
     const {t} = useTranslation()
     const [countryId, setCountryId] = useState(null)
-    // const [country, setCountry] = useState()
-    // const [region, setRegion] = useState()
-    // const [check, setCheck] = useState(true)
-    // const [regionItem, setRegionItem] = useState()
-    // const countries = JSON.parse(localStorage.getItem('countries'))?.map((item,index)=>{return {value:index, label:item.country, ...item}}) || []
-    // useEffect(() => {
-
-    //     if(country){
-    //         let array = country?.cities.map((item, index)=>{return {value:index, label:item}})
-    //         setRegion(array)
-    //         setCheck(false)
-    //         if(setState){
-    //             setState({...state, [field1]:country})
-    //         }
-    //     }
-        
-    // },[country])
-    // useEffect( () => {
-    //     if(setState){
-    //         setState({...state, [field2]:regionItem})
-    //     }
-    // },[regionItem])
+    const countryGlobal = JSON.parse( localStorage.getItem( "countryGlobal"))
+    // console.log(state)
+    useEffect(()=>{
+        if(defaultCountry) {
+            setCountryId(parseInt(defaultCountry))
+            setState(a=>{return{
+                ...a,
+                country:parseInt(defaultCountry)
+            }})
+        }
+        if(defaultCity){
+            setState(a=>{return{
+                ...a,
+                city:parseInt(defaultCity)
+            }})
+        }
+    },[defaultCountry, defaultCity])
     return (
         <>
         <Wrapper>
@@ -40,6 +36,11 @@ const Index = (props) => {
                 setState={setState} 
                 state={state}
                 placeholder={t("kengaytirlgan_Q.DavlatniTanlang")}
+                defaultApiValue={
+                    defaultCountry ? 
+                    {value:parseInt(defaultCountry), label:countryGlobal?.find(a=>a.id===parseInt(defaultCountry))?.name}:
+                    null
+                }
             />
         </Wrapper>
         <Wrapper >
@@ -51,6 +52,11 @@ const Index = (props) => {
                 state={state} 
                 isDisabled={countryId === null ? true:false}
                 placeholder={t("kengaytirlgan_Q.ShaharniTanlang")}
+                defaultApiValue={
+                    (defaultCity && defaultCountry) ? 
+                    {value:parseInt(defaultCity), label:getLabelCitySearch(parseInt(defaultCountry), parseInt(defaultCity))}:
+                    null
+                }
             />
         </Wrapper>
         </>

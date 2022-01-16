@@ -19,7 +19,7 @@ const Index = (props) => {
     const inputSelect3 = document.querySelectorAll('.ant-picker-input input')[3]
     useEffect(()=>{
       const inputSelects = document.getElementById('141')
-      console.log(inputSelects)
+      // console.log(inputSelects)
       inputSelects?.setAttribute('maxlength', 10)
       inputSelects?.addEventListener('keyup', function(e){
         var v = e.target.value;

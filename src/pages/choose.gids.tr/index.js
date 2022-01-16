@@ -12,9 +12,7 @@ import { useTranslation } from 'react-i18next'
 import {getResponse} from "../../hooks/response_get"
 import { Pagination } from 'antd';
 import Spinner from "../../components/atom/loading.spinner.line"
- 
-
-
+import {searchToObject} from "../../custom/function"
 
 const mediaGrid = {
     m_width: "962px",
@@ -27,6 +25,7 @@ const mediaGridUSers = {
 const Index = () => {
     const { t } = useTranslation()
     let query = window.location.search
+    const [queryObj, setQueryObj] = useState(null)
     const [typeQuery, setTypeQuery] = useState('gid')
     const [ pagination, setPagination ] = useState( {current: 1} )
     const [state, setState] = useState({ success: '', error: '', loading: false})
@@ -39,10 +38,14 @@ const Index = () => {
             getResponse(`/api/translators/all/?page=${pagination?.current}`, setState, true)
         }
         setTypeQuery(type)
+        let urlQuery = searchToObject(query)
+        setQueryObj(urlQuery)
     },[query, pagination])
+
     function onChange ( pageNumber ) {
         setPagination( { current: pageNumber} )
     }
+    
     return (
         <Wrapper>
             <TextTitle id="ref" top="40px" {...mediaTextField}
@@ -52,7 +55,7 @@ const Index = () => {
             <Container>
                 <Grid container spacing={1} className="media_grid_flex">
                     <Grid item xs={12} sm={12} md={4}>
-                        <ExtendedSearch loader={state}/>
+                        <ExtendedSearch loader={state} queryObj={queryObj}/>
                         {
                             state && state?.success?.data?.results.length > 0 ?
                                 <>

@@ -78,3 +78,15 @@ export const getLabelCity = (countryID, cityID) => {
         }
     }
 }
+export const getLabelCitySearch = (countryID, cityID) => {
+    const countryGlobal = JSON.parse( localStorage.getItem( "countryGlobal"))
+    const lan = localStorage.getItem("i18nextLng")
+    if(countryID && cityID && countryGlobal){
+        let cityName = countryGlobal?.find(a=>a.id===countryID)
+        if(cityName){
+            let value = cityName?.cities[cityID-1]
+            // console.log(value)
+            return value
+        }
+    }
+}
