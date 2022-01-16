@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import { Calendar } from "./index.style";
 import { DatePicker, Space } from "antd";
 import "antd/dist/antd.css";
@@ -16,8 +16,20 @@ const Index = (props) => {
   
     const inputSelect = document.querySelectorAll('.ant-picker-input input')[0]
     const inputSelect2 = document.querySelectorAll('.ant-picker-input input')[1]
-    const inputSelect3 = document.querySelector('.ext_date .ant-picker-input input')
-    
+    const inputSelect3 = document.querySelectorAll('.ant-picker-input input')[3]
+    useEffect(()=>{
+      const inputSelects = document.getElementById('141')
+      console.log(inputSelects)
+      inputSelects?.setAttribute('maxlength', 10)
+      inputSelects?.addEventListener('keyup', function(e){
+        var v = e.target.value;
+          if (v.match(/^\d{2}$/) !== null) {
+              e.target.value = v + '-';
+          } else if (v.match(/^\d{2}\-\d{2}$/) !== null) {
+              e.target.value = v + '-';
+          }
+      }) 
+    },[])
     inputSelect?.setAttribute('maxlength', 10)
     inputSelect?.addEventListener('keyup', function(e){
       var v = e.target.value;
@@ -50,6 +62,7 @@ const Index = (props) => {
     <Calendar width={props.width} placeholderValue={placeholderValue}>
       <Space direction="vertical" size={12}>
         <DatePicker
+          id="141"
           onChange={onChange}
           defaultValue={moment("DD-MM-YYYY", dateFormatList[0])}
           value={time}
