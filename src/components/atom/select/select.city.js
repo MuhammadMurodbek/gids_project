@@ -35,6 +35,11 @@ const Index = (props) => {
       setClearValue(false)
     }
   },[clearValue])
+  // useEffect(()=>{
+  //   if(countryId){
+  //     setValue(null)
+  //   }
+  // },[countryId])
   useEffect(() =>{
     // console.log('merge')
     if(defaultApiValue){
@@ -58,7 +63,7 @@ const Index = (props) => {
       <Select
         {...props}
         options={options}
-        value={value}
+        value={options?.length>0 ? value:''}
         onChange={handleChange}
         menuPortalTarget={document.body}
         styles={{ menuPortal: (base) => ({ ...base, zIndex: 9999 }) }}

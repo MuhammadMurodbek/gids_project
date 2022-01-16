@@ -8,9 +8,10 @@ import {getLabelCitySearch} from "../../../custom/function"
 const Index = (props) => {
     const {state, setState, defaultCountry, defaultCity } = props
     const {t} = useTranslation()
+    const [clear, setClear] = useState(false)
     const [countryId, setCountryId] = useState(null)
     const countryGlobal = JSON.parse( localStorage.getItem( "countryGlobal"))
-    // console.log(state)
+    console.log(state)
     useEffect(()=>{
         if(defaultCountry) {
             setCountryId(parseInt(defaultCountry))
@@ -26,6 +27,17 @@ const Index = (props) => {
             }})
         }
     },[defaultCountry, defaultCity])
+    useEffect(()=>{
+        if(countryId!==null){
+            setClear(true)
+            setState(a=>{return{
+                ...a,
+                city:undefined
+            }})
+        }
+    },[countryId])
+    console.log(countryId)
+    console.log(clear)
     return (
         <>
         <Wrapper>
@@ -50,6 +62,8 @@ const Index = (props) => {
                 countryId={countryId}
                 setState={setState}
                 state={state} 
+                clearValue={clear}
+                setClearValue={setClear}
                 isDisabled={countryId === null ? true:false}
                 placeholder={t("kengaytirlgan_Q.ShaharniTanlang")}
                 defaultApiValue={
