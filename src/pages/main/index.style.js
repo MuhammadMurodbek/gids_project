@@ -37,6 +37,11 @@ export const WrapperAll = styled.div`
        width: 1450px;
        margin: 0 auto;
     }
+    .imgslid{
+        width:150px;
+        margin:30px 0;
+        border:2px solid red
+    }
 `;
 
 export const ComponentOne = styled.div`

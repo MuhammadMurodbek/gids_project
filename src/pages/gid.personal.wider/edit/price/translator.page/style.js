@@ -6,4 +6,9 @@ export const Wrapper = styled.div`
     .wrap_class_inner{
         width: 100%;
     }
+     .text1{
+        margin: 20px 0;
+        text-align:center;
+        font-weight: bold;
+    }
 `

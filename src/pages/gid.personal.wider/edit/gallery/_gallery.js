@@ -28,17 +28,33 @@ const Gallery = ({ role, setCallback }) => {
             if (status === 'done') {
                 setCallback(prev => !prev)
                 setLoad(false)
-                message.success(`${info.file.name} file uploaded successfully.`);
+                message.success(`${info.file.name} file muofaqiyatli yuklandi.`);
             } else if (status === 'error') {
                 setCallback(prev => !prev)
                 setLoad(false)
-                message.error(`${info.file.name} file upload failed.`);
+                message.error(`${info.file.name} file yuklanmadi .`);
             }
         },
+
         onDrop: (e) => {
             console.log('Dropped files', e.dataTransfer.files);
         },
+
+        beforeUpload(file) {
+            const videoFormat = file.type === "video/mp4" || file.type === "video/wmv";
+            if (!videoFormat) {
+                message.error("video formati notog'ri tanlangan");
+            }
+            const videoSize = file.size / 1024 / 1024 < 100;
+            if (!videoSize) {
+                message.error("videoni hajmi juda katta max(100Mb)");
+            }
+            console.log(videoSize)
+            return videoFormat && videoSize;
+        }
+
     };
+    
     return (
         <div>
             <div className="text_title" >
@@ -46,10 +62,8 @@ const Gallery = ({ role, setCallback }) => {
             </div>
             <Dragger {...props} className="dragger" >
                 <p className="  news11" >
-               <DriveFolderUploadIcon className="icon"/>
+                    <DriveFolderUploadIcon className="icon" />
                 </p>
-
-
             </Dragger>
 
             <div className="galarey">

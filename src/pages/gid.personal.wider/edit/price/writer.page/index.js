@@ -118,7 +118,6 @@ const Index = () => {
                 </Container>
             }
 
-
         </Wrapper>
     )
 }

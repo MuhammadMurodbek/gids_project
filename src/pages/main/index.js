@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import {
     WrapperAll,
     ComponentOne,
@@ -23,20 +23,32 @@ import SliderComponent from "./external/slider"
 import { Link } from 'react-router-dom'
 import Box from "@material-ui/core/Box";
 import img21 from '../../assets/img/about/right.png'
-import {useTranslation} from 'react-i18next'
-import {getLabelCountrySecond} from "../../custom/function"
+import { useTranslation } from 'react-i18next'
+import { getLabelCountrySecond } from "../../custom/function"
 
-import {media, mediaFlexButtons, mediaBtn, mediaTextField, mediaTextFieldSec, mediaContainer} from "./_media"
+import { media, mediaFlexButtons, mediaBtn, mediaTextField, mediaTextFieldSec, mediaContainer } from "./_media"
 import AccountMenu from '../../components/atom/user_account';
+import Slider from "react-slick";
+
+
+const settings = {
+    dots: true,
+    infinite: true,
+    speed: 1000,
+    slidesToShow: 3,
+    slidesToScroll: 2,
+    autoplay: true,
+    autoplaySpeed: 2000
+};
 
 const Index = () => {
-    const countryGlobal = JSON.parse( localStorage.getItem( "countryGlobal"))
-    React.useMemo(() =>{ getLabelCountrySecond(1)},[countryGlobal])
+    const countryGlobal = JSON.parse(localStorage.getItem("countryGlobal"))
+    React.useMemo(() => { getLabelCountrySecond(1) }, [countryGlobal])
     const getRole = JSON.parse(localStorage.getItem("user_token"))
-     
-    const {t} = useTranslation()
 
- 
+    const { t } = useTranslation()
+
+
     return (
         <>
             <WrapperAll>
@@ -46,7 +58,7 @@ const Index = () => {
                             component={Box}
                             className="grid_container_inner"
                         >
-                            <ExtSearch/>
+                            <ExtSearch />
                         </Grid>
                         <Grid item xs={12} md={8} sm={12}>
                             <div className="right-part">
@@ -99,6 +111,8 @@ const Index = () => {
                 </ComponentThree>
                 <ComponentFour>
                     <TextTitle {...mediaTextField} {...mediaTextFieldSec} top="40px" bottom="60px">{t("main.trendSHahar")}</TextTitle>
+
+
                     <Grid container spacing={3}>
                         <Grid item xs={12} sm={6} md={4}>
                             <Paper style={{ overflow: 'hidden' }}>
@@ -107,7 +121,7 @@ const Index = () => {
                                     <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
                                         <div className="title-container">Andijon</div>
                                         <Link to="/cities" className="link11">
-                                              {t("main.korish")}  <img src={img21} alt="asdfasdf" />
+                                            {t("main.korish")}  <img src={img21} alt="asdfasdf" />
                                         </Link>
                                     </FlexContainer>
                                 </div>
@@ -120,7 +134,7 @@ const Index = () => {
                                     <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
                                         <div className="title-container">Andijon</div>
                                         <Link to="/cities" className="link11">
-                                        {t("main.korish")}<img src={img21} alt="asdfasdf" />
+                                            {t("main.korish")}<img src={img21} alt="asdfasdf" />
                                         </Link>
                                     </FlexContainer>
                                 </div>
@@ -133,7 +147,7 @@ const Index = () => {
                                     <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
                                         <div className="title-container">Andijon</div>
                                         <Link to="/cities" className="link11">
-                                        {t("main.korish")} <img src={img21} alt="asdfasdf" />
+                                            {t("main.korish")} <img src={img21} alt="asdfasdf" />
                                         </Link>
                                     </FlexContainer>
                                 </div>
@@ -142,6 +156,44 @@ const Index = () => {
 
 
                     </Grid>
+
+
+                    <div>
+
+                        <Slider {...settings}>
+                            <div>
+                                <h3>
+                                    <img className='imgslid' src={imageSecond} />
+                                </h3>
+                            </div>
+                            <div>
+                                <h3>
+                                    <img className='imgslid' src={imageThird} />
+                                </h3>
+                            </div>
+                            <div>
+                                <h3>
+                                    <img className='imgslid' src={imageSecond} />
+                                </h3>
+                            </div>
+                            <div>
+                                <h3>
+                                    <img className='imgslid' src={imageSecond} />
+                                </h3>
+                            </div>
+                            <div>
+                                <h3>
+                                    <img className='imgslid' src={imageSecond} />
+                                </h3>
+                            </div>
+
+                        </Slider>
+                    </div>
+
+
+
+
+
                 </ComponentFour>
                 <Container {...mediaContainer} padding="20px">
                     <SliderComponent />
