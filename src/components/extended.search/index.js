@@ -9,16 +9,14 @@ import Button from "./button.component"
 import DoubleRadio from "../molecules/double.radio.labeled"
 import {useHistory} from "react-router-dom"
 import { useTranslation } from 'react-i18next'
-// import { getResponse } from "../../hooks/response_get"
+import moment from "moment"
 import { toast } from "react-hot-toast"
-const   Index = ({loader}) => {
+const Index = ({loader, queryObj}) => {
     const history = useHistory()
     const { t } = useTranslation()
     const [postData, setPostData] = useState({ success: '', error: '', loading: false })
-    // const getRole = JSON.parse(localStorage.getItem("user_token"))
     const [collect, setCollect] = useState()
     const handleSubmit = () => { 
-       
         if(collect?.type){
             setPostData({ ...postData, loading: true })
             let urlOther = `type=${collect?.type}&gender=${(collect?.male && collect?.female)? undefined: collect?.male ? 'male' : collect?.female ? 'female' : undefined}&country=${collect?.country}&city=${collect?.city}&lang=${collect?.languages?.map(item => item?.value)}&date_after=${collect?.date_after}&date_before=${collect?.date_before}&${collect?.search_type}=0`
@@ -35,7 +33,20 @@ const   Index = ({loader}) => {
             setPostData({ ...postData, loading: false })
         }
     },[loader])
-    
+    React.useEffect(()=>{
+        if(queryObj){
+            setCollect(a=>{return{
+                ...a,
+                date_after:queryObj?.date_after,
+                date_before:queryObj?.date_before,
+                male:queryObj?.gender==='male' ? true:false,
+                female:queryObj?.gender ==='female' ? true:false,
+                search_type:queryObj?.all==='0' ? 'all':queryObj?.online==='0' ? 'online':undefined
+            }})
+        }
+    },[queryObj])
+    // console.log(queryObj)
+    // console.log(collect)
     return (
         <Wrapper width="350px">
             <div className="title-header">
@@ -45,29 +56,45 @@ const   Index = ({loader}) => {
             <RadioGroup
                 setState={setCollect}
                 state={collect}
-                field='type'/>
+                field='type'
+                setDefaultValue={queryObj?.type}
+            />
             <Selection
                 setState={setCollect}
                 state={collect}
                 field1='country'
                 field2='city'
                 title={t("kengaytirlgan_Q.Davlat")}
-                placeholder={t("kengaytirlgan_Q.DavlatniTanlang")} />
+                placeholder={t("kengaytirlgan_Q.DavlatniTanlang")} 
+                defaultCountry={queryObj?.country}
+                defaultCity={queryObj?.city}
+            />
 
             <CalendarComponent
                 title={t("kengaytirlgan_Q.sana")}
                 setState={setCollect}
                 state={collect}
                 field="date_after"
-                placeholder="dd/mm/yyyy dan"
-                />
+                placeholder={
+                    queryObj?.date_after ? 
+                    moment(queryObj?.date_after).format('DD-MM-YYYY')
+                    :'dd/mm/yyyy dan'
+                }
+                placeholderValue={queryObj?.date_after ? true:false}
+                // placeholder="dd/mm/yyyy dan"
+            />
 
             <CalendarComponent
                 setState={setCollect}
                 state={collect}
                 field="date_before"
-                placeholder="dd/mm/yyyy gacha"
-                />
+                placeholder={
+                    queryObj?.date_before ? 
+                    moment(queryObj?.date_before).format('DD-MM-YYYY')
+                    :'dd/mm/yyyy dan'
+                }
+                placeholderValue={queryObj?.date_before ? true:false}
+            />
 
             <SelectionLang
                 title={t("kengaytirlgan_Q.til")}
@@ -75,7 +102,8 @@ const   Index = ({loader}) => {
                 collect={collect}
                 field="lang"
                 placeholder="Tillarni tanlang"
-                />
+                defaultValueApi={queryObj?.lang}
+            />
 
             <CheckBoxContainer
                 setState={setCollect}
@@ -90,7 +118,9 @@ const   Index = ({loader}) => {
                 setState={setCollect}
                 state={collect}
                 name1={t("kengaytirlgan_Q.online")}
-                name2={t("kengaytirlgan_Q.barchasi")} />
+                name2={t("kengaytirlgan_Q.barchasi")} 
+                defaultApiValue={queryObj?.online === '0' ? 'online' : queryObj?.all === '0' ? 'all':undefined}
+            />
 
             <div className="button-wrapper">
                 <Button loader={postData?.loading} onClick={handleSubmit} width="280px" name={t("kengaytirlgan_Q.qidirish")} />

@@ -21,6 +21,7 @@ const Index = (props) => {
             setValue(()=>defaultApiValue)
         // }
     },[defaultApiValue])
+    // console.log(value)
     const handleChange = (event) => {
         setValue(event.target.value);
         if(setState) {
