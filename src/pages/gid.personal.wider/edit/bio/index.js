@@ -24,7 +24,7 @@ import Translator from './_translator';
 import { useTranslation } from 'react-i18next'
 import { useDispatch, useSelector } from "react-redux";
 import {saveTabAction} from "../../../../redux/actions"
-
+import moment from "moment"
 // import {getLabelCountry} from "../../../../custom/function"
 const Index = () => {
   const {t} = useTranslation()
@@ -138,7 +138,7 @@ const Index = () => {
                     sizeLabel="15px"
                     width="100%"
                     label="Sana"
-                    placeholder={ state?.birthday || "dd-mm-yyyy" }
+                    placeholder={moment(state?.birthday).format('DD-MM-YYYY') || "dd-mm-yyyy" }
                     placeholderValue={ state?.birthday || false }
                     setState={ setState }
                     state={ state }

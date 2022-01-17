@@ -1,19 +1,20 @@
 import React from 'react'
 import styled from "styled-components"
 import {TextTitle} from "../../../../../styles/textTitle/index.style"
-import InputLabeled from "../../../../../components/molecules/input.labeled"
-import Selection from "../../../../../components/atom/select"
+import InputLabeled from "../../../../../components/molecules/input.labeled/cost"
+import Selection from "../../../../../components/atom/select/cost"
 import {currency} from "../../../../../custom/constants"
 const PriceCurrency = (props) => {
-    const {title, setState, state, idK, fieldS, fieldIn} = props 
+    const {prev, stateCurr, setStateCurr, title, setState, state, idK, fieldS, fieldIn, defaultCost, defaultCurr} = props 
+   console.log(prev)
     return (
         <Wrapper>
             <div>
                 <TextTitle font="14px" align="left" position="relative" p_top="20px">{title}</TextTitle>
                 <div className="wrap_class">
-                    <InputLabeled setState={setState} state={state} field={fieldIn} idK={idK} width="100%" placeholder="50" typeNumber />
+                    <InputLabeled defaultApiValue={defaultCost} setState={setState} state={state} field={fieldIn} idK={idK} width="100%" placeholder="50" typeNumber />
                     <div className="wrap_class_inner">
-                        <Selection width="100%" options={currency} placeholder="$" setCollect={setState} collect={state} idK={idK} field={fieldS}/></div>
+                        <Selection prev={prev[fieldS]} defaultApiValue={prev[fieldS]} width="100%" options={currency} placeholder="$" setCollect={setStateCurr} collect={stateCurr} idK={idK} field={fieldS}/></div>
                     </div>
             </div>
         </Wrapper>
