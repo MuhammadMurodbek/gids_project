@@ -25,10 +25,22 @@ const Index = () => {
     useEffect( () => { getResponse( common.personal.edit.cost, setGetData ) }, [ ] )
     useEffect(()=>{
         if(getData.success!==''){
-            setItems(getData?.success?.data)
-            setPostCollect(getData?.success?.data)
+            let clone = getData?.success?.data?.map(values=>{
+                return{
+                    ...values,
+                    cost_per_day:values?.cost_per_day || 0,   
+                    cost_per_hour:values?.cost_per_hour || 0,   
+                    work_time_per_day:values?.work_time_per_day || 0,   
+                    currency_per_day:values?.currency_per_day || 'sum',
+                    currency_per_hour: values?.currency_per_hour || 'sum',
+                }
+            })
+            
+            setItems(clone)
+            setPostCollect(clone)
         }
     },[getData])
+    // console.log(items)
     // useEffect(()=>{
     //     if(item.hasOwnProperty('idK'))
     //     setItem(items[item.idK-1])
@@ -75,6 +87,7 @@ const Index = () => {
         <Wrapper>
             {
                  getData?.success === '' ? <Spinner marginTop="60px" width={ 50 } height={ 50 } /> :
+                 items?.length>0 ?
                  items?.map((prev, index)=>(
                     <Container key={ index }>
                         <Grid container spacing={1} justifyContent="space-between"  alignItems="center">
@@ -93,7 +106,7 @@ const Index = () => {
                         </Grid>
                         
                     </Container>
-                 ))                
+                 ))  : <div style={{textAlign:'center', marginTop:30}}>Narxlar bo'limi bilan ishlash uchun tillarni kiriting..</div>              
                 
             }
             <Container width="100%" padding="10px 20px" margin="20px 0 0 0" textAlign="right">

@@ -53,12 +53,12 @@ const Index = (props) => {
     },[clearValue])
     useEffect(() => {
       if(field && field === 'work_time_per_day'){
-        if(prev.hasOwnProperty('value'))
+        if(prev?.hasOwnProperty('value'))
           setValue(prev)
         else
           setValue({value:prev,label:prev})
       }else{
-        if(prev.hasOwnProperty('value')){ 
+        if(prev?.hasOwnProperty('value')){ 
           setValue(prev)
         }else{
           setValue({value:prev,label:CURRENCY_CHECK[prev]})
