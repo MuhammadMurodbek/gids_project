@@ -87,11 +87,11 @@ const Index = () => {
                         Narxlarni kiritish uchun tillarni bilish bo'limini to'ldiring
                     </div>
                     :
-                    <Container width="100%" padding="10px 20px" margin="20px 0 0 0" textAlign="right">
+                    <Container width="100%" padding="10px 20px" margin="20px 0 0 15px" textAlign="right">
                         <Button loader={post?.loading} onClick={handleSubmit}>Saqlash</Button>
                     </Container>
             }
-           
+
         </Wrapper>
     )
 }

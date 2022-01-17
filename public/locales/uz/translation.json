@@ -462,7 +462,7 @@
   },
   "Galarey":{
   
-    "Partfolio":"Siz o‘zingiz haqingizda video tayyorlab joylashingiz mumkin. Ushbu video profilingizda turadi.",
+    "Partfolio":"Siz o‘zingiz haqingizda video tayyorlab joylashingiz mumkin. Ushbu video profilingizda turadi. max(100Mb,  mp4, mov, vob)",
     "galarey":"Galereyangiz",
     "saqlash":"Saqlash"
   },

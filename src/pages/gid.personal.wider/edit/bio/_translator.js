@@ -109,8 +109,8 @@ const Translator = ({setTrains, trains, setTrState, clear, setClear}) => {
                   </Grid>
                   <Grid item md={ 1 } xs={ 1 }>
                     <div style={ { position: 'relative', top: 14 } }>
-                      <Button paddingIcon="10px" onClick={()=>setClear(true)}>
-                        <DeleteIcon className="icon" />
+                      <Button paddingIcon="10px" onClick={()=>setClear(!true)}>
+                        <DeleteIcon className="icon" /> 
                       </Button>
                       <Button onClick={handleClick}paddingIcon="10px">
                         <AddIcon className="icon" />

@@ -25,6 +25,10 @@ export const WrapperAll = styled.div`
     .application-last-container{
         background-color: green;
     }
+    .carouseldiv{
+        margin:10px !important;
+        padding: 10px !important;
+    }
     @media (max-width: 960px){
         .grid_container{
             flex-direction: column-reverse !important;
@@ -235,10 +239,16 @@ export const ComponentFour = styled.div`
         margin-right: 15px;
     }
     .link11{
+        display:flex;
         color: ${mainGreen};
         margin: 10px 20px;
     }
-   
+   .link11 img{
+       
+       margin-left:5px;
+       object-fit:cover
+   }
+
 `
 export const ContainerLast = styled.div`
     width: 100%;

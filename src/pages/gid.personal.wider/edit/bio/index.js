@@ -215,14 +215,17 @@ const Index = () => {
               Sertifikat va diplomlaringiz bo‘lsa shu yerga yuklang (jpg, png )
             </TextTitle>
             <GroupImageUpload role={ getRole?.role } />
+
+
             { getRole?.role !== "gid" ? (
               <>
-                <Translator setTrains={setState} trains={state?.trainings} setTrState={setTrState} clear={clearYear} setClear={setClearYear}/>
+                <Translator setTrains={setState} trains={state?.trainings} 
+                setTrState={setTrState} clear={clearYear} setClear={setClearYear}/>
               </>
             ) : null }
             <div className="btnGrop">
               <Button calssName="saqlashbtn" onClick={ handleSubmit } loader={ responseHook?.loading } type="submit">
-                { " " }
+             
                 Saqlash
               </Button>
             </div>

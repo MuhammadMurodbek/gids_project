@@ -5,12 +5,12 @@ export const Wrapper = styled.form`
     height: auto;
     /* box-shadow:${shadow}; */
     /* background-color:red; */
-    .btnGrop{
+    .btnGrop{ 
         display: flex;
         flex-direction: column;
         align-items: flex-end;
         margin: 40px 0;
-        margin-right:-10px;
+       margin-right:2%;
     }
     .edit_div{
         /* background-color:red; */
@@ -26,7 +26,5 @@ export const Wrapper = styled.form`
         font-size:20px;
         color:${mainGreen};
     }
-    .saqlashbtn{
-        margin-right: 20px !important;
-    }
+    
 `

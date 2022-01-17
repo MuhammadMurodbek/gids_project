@@ -41,7 +41,8 @@ const Gallery = ({ role, setCallback }) => {
         },
 
         beforeUpload(file) {
-            const videoFormat = file.type === "video/mp4" || file.type === "video/wmv";
+            const videoFormat = file.type === "video/wmv" || file.type === "video/mp4" ||
+             file.type === "video/x-ms-wmv" || file.type === "video/vob";
             if (!videoFormat) {
                 message.error("video formati notog'ri tanlangan");
             }
@@ -50,6 +51,7 @@ const Gallery = ({ role, setCallback }) => {
                 message.error("videoni hajmi juda katta max(100Mb)");
             }
             console.log(videoSize)
+            console.log(file.type)
             return videoFormat && videoSize;
         }
 

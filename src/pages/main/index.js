@@ -29,16 +29,25 @@ import { getLabelCountrySecond } from "../../custom/function"
 import { media, mediaFlexButtons, mediaBtn, mediaTextField, mediaTextFieldSec, mediaContainer } from "./_media"
 import AccountMenu from '../../components/atom/user_account';
 import Slider from "react-slick";
+import img1 from '../../assets/img/main/33.jpg'
+import img2 from '../../assets/img/main/ee.jpg'
+import img3 from '../../assets/img/main/we.jpg'
+import img4 from '../../assets/img/main/wee.jpg'
+import img5 from '../../assets/img/main/ds.jpg'
 
 
+ 
+ 
 const settings = {
     dots: true,
     infinite: true,
     speed: 1000,
     slidesToShow: 3,
-    slidesToScroll: 2,
+    slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000
+    autoplaySpeed: 2000,
+    centerMode: true,
+ 
 };
 
 const Index = () => {
@@ -113,79 +122,94 @@ const Index = () => {
                     <TextTitle {...mediaTextField} {...mediaTextFieldSec} top="40px" bottom="60px">{t("main.trendSHahar")}</TextTitle>
 
 
-                    <Grid container spacing={3}>
-                        <Grid item xs={12} sm={6} md={4}>
-                            <Paper style={{ overflow: 'hidden' }}>
-                                <div className="container">
-                                    <ImgContainer width="100%" height="270px" src="https://thumbs.dreamstime.com/b/registan-old-public-square-samarkand-uzbekistan-heart-ancient-city-150740312.jpg" />
-                                    <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
-                                        <div className="title-container">Andijon</div>
-                                        <Link to="/cities" className="link11">
-                                            {t("main.korish")}  <img src={img21} alt="asdfasdf" />
-                                        </Link>
-                                    </FlexContainer>
-                                </div>
-                            </Paper>
-                        </Grid>
-                        <Grid item xs={12} sm={6} md={4}>
-                            <Paper style={{ overflow: 'hidden' }}>
-                                <div className="container">
-                                    <ImgContainer width="100%" height="270px" src="https://thumbs.dreamstime.com/b/registan-old-public-square-samarkand-uzbekistan-heart-ancient-city-150740312.jpg" />
-                                    <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
-                                        <div className="title-container">Andijon</div>
-                                        <Link to="/cities" className="link11">
-                                            {t("main.korish")}<img src={img21} alt="asdfasdf" />
-                                        </Link>
-                                    </FlexContainer>
-                                </div>
-                            </Paper>
-                        </Grid>
-                        <Grid item xs={12} sm={6} md={4}>
-                            <Paper style={{ overflow: 'hidden' }}>
-                                <div className="container">
-                                    <ImgContainer width="100%" height="270px" src="https://thumbs.dreamstime.com/b/registan-old-public-square-samarkand-uzbekistan-heart-ancient-city-150740312.jpg" />
-                                    <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
-                                        <div className="title-container">Andijon</div>
-                                        <Link to="/cities" className="link11">
-                                            {t("main.korish")} <img src={img21} alt="asdfasdf" />
-                                        </Link>
-                                    </FlexContainer>
-                                </div>
-                            </Paper>
-                        </Grid>
 
-
-                    </Grid>
 
 
                     <div>
 
                         <Slider {...settings}>
-                            <div>
-                                <h3>
-                                    <img className='imgslid' src={imageSecond} />
-                                </h3>
+                            <div className="carouseldiv">
+
+                                <Paper style={{ overflow: 'hidden' }}>
+                                    <div className="container">
+                                        <ImgContainer width="100%" height="270px" src={img1} />
+                                        <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
+                                            <div className="title-container">Samarqand</div>
+                                            <Link to="/cities" className="link11">
+                                                {t("main.korish")}  
+                                                <img src={img21} alt="asdfasdf" />
+                                            </Link>
+                                        </FlexContainer>
+                                    </div>  
+                                </Paper>
+
                             </div>
-                            <div>
-                                <h3>
-                                    <img className='imgslid' src={imageThird} />
-                                </h3>
+                            <div className="carouseldiv">
+                                <Paper style={{ overflow: 'hidden' }}>
+                                    <div className="container">
+                                        <ImgContainer width="100%" height="270px" src={img2} />
+                                        <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
+                                            <div className="title-container">Andijon</div>
+                                            <Link to="/cities" className="link11">
+                                                {t("main.korish")}  <img src={img21} alt="asdfasdf" />
+                                            </Link>
+                                        </FlexContainer>
+                                    </div>
+                                </Paper>
                             </div>
-                            <div>
-                                <h3>
-                                    <img className='imgslid' src={imageSecond} />
-                                </h3>
+                            <div className="carouseldiv">
+                                <Paper style={{ overflow: 'hidden' }}>
+                                    <div className="container">
+                                        <ImgContainer width="100%" height="270px" src= {img3} />
+                                        <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
+                                            <div className="title-container">Xiva</div>
+                                            <Link to="/cities" className="link11">
+                                                {t("main.korish")}  <img src={img21} alt="asdfasdf" />
+                                            </Link>
+                                        </FlexContainer>
+                                    </div>
+                                </Paper>
                             </div>
-                            <div>
-                                <h3>
-                                    <img className='imgslid' src={imageSecond} />
-                                </h3>
+                            <div className="carouseldiv">
+                                <Paper style={{ overflow: 'hidden' }}>
+                                    <div className="container">
+                                        <ImgContainer width="100%" height="270px" src= {img4} />
+                                        <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
+                                            <div className="title-container">Buhoro</div>
+                                            <Link to="/cities" className="link11">
+                                                {t("main.korish")}  <img src={img21} alt="asdfasdf" />
+                                            </Link>
+                                        </FlexContainer>
+                                    </div>
+                                </Paper>
                             </div>
-                            <div>
-                                <h3>
-                                    <img className='imgslid' src={imageSecond} />
-                                </h3>
+                            <div className="carouseldiv">
+                                <Paper style={{ overflow: 'hidden' }}>
+                                    <div className="container">
+                                        <ImgContainer width="100%" height="270px" src= {img5} />
+                                        <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
+                                            <div className="title-container">Buhoro</div>
+                                            <Link to="/cities" className="link11">
+                                                {t("main.korish")}  <img src={img21} alt="asdfasdf" />
+                                            </Link>
+                                        </FlexContainer>
+                                    </div>
+                                </Paper>
                             </div>
+                            <div className="carouseldiv">
+                                <Paper style={{ overflow: 'hidden' }}>
+                                    <div className="container">
+                                        <ImgContainer width="100%" height="270px" src="https://thumbs.dreamstime.com/b/registan-old-public-square-samarkand-uzbekistan-heart-ancient-city-150740312.jpg" />
+                                        <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
+                                            <div className="title-container">Andijon</div>
+                                            <Link to="/cities" className="link11">
+                                                {t("main.korish")}  <img src={img21} alt="asdfasdf" />
+                                            </Link>
+                                        </FlexContainer>
+                                    </div>
+                                </Paper>
+                            </div>
+
 
                         </Slider>
                     </div>
