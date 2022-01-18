@@ -41,8 +41,7 @@ const Gallery = ({ role, setCallback }) => {
         },
 
         beforeUpload(file) {
-            const videoFormat = file.type === "video/wmv" || file.type === "video/mp4" ||
-             file.type === "video/x-ms-wmv" || file.type === "video/vob";
+            const videoFormat = file.type === "video/wmv" || file.type === "video/mp4" ;
             if (!videoFormat) {
                 message.error("video formati notog'ri tanlangan");
             }
