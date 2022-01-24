@@ -48,10 +48,7 @@ const Index = () => {
     
     return (
         <Wrapper>
-            <TextTitle id="ref" top="40px" {...mediaTextField}
-             {...mediaTextFieldSec} bottom="10px">
-                {t("Gid_Tanlash.title")}    
-            </TextTitle>
+             
             <Container>
                 <Grid container spacing={1} className="media_grid_flex">
                     <Grid item xs={12} sm={12} md={4}>
@@ -75,7 +72,7 @@ const Index = () => {
                             <Container {...mediaGridUSers}>
                                 <ContainerMap data={state?.success?.data}  type={typeQuery} />
                                 <div className="pagination">
-                                    <Pagination className="sss  " current={pagination?.current} onChange={ onChange } pageSize={7} total={ state?.success?.data?.count } />
+                                    <Pagination className="sss" current={pagination?.current} onChange={ onChange } pageSize={7} total={ state?.success?.data?.count } />
                                 </div>
                             </Container>
                         }

@@ -37,7 +37,7 @@ function SampleNextArrow(props) {
     );
   }
 
-const Index = () => {
+const   Index = () => {
     const settings = {
         dots: false,
         infinite: true,

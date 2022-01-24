@@ -3,18 +3,22 @@ import styled  from "styled-components";
 
 export const Wrapper = styled.div`
     /* position: absolute; */
-    width:100px;
-    height:50px;
+     height:50px;
     display: inline-block;
     position: absolute;
-    right:25px;
+ 
     
     /* background-color:green; */
     .ant-dropdown-link{
         position: absolute;
         width:100px;
-        left:0px; top:10px;
+        left:20px;
+         top:10px;
         color:#333;
-        /* background-color: red; */
+        /* background-color: green; */
+    }
+    .buttons1{
+        margin-right:15px !important;
+
     }
  `

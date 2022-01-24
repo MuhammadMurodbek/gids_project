@@ -15,10 +15,14 @@ const Index = () => {
     return (
         <Wrapper>
             <Gallery role={getRole?.role} setCallback={setCallback}/>
+            
             <div style={{width: '100%', marginTop: '30px', height: 'auto', display: 'flex', alignItems: 'center', justifyContent:'center' }}>
                 <ReactPlayer  width='70%' height='auto' controls url={upload?.success?.data?.video} />
             </div>
-            <div style={{margin:'150px 0 15px', fontWeight:'bold'}}>Galereyangiz</div>
+        
+            <div style={{margin:'60px 0 15px', fontWeight:'bold'}}>Galereyangiz</div>
+
+
             <GroupImageUpload role={ getRole?.role } />
         </Wrapper>
     )

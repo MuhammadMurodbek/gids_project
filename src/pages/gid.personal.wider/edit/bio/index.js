@@ -65,9 +65,11 @@ const Index = () => {
       if(trState.hasOwnProperty('name') && trState.hasOwnProperty('year'))  {
         clone?.trainings.push(trState)
       }
+      // console.log(trState)
       setResponseHook( post_bio_data_action( clone ) );
       setClearYear(true)
       dispatch(saveTabAction(1))
+      setTrState({})
     }
   };
   // useEffect(()=>{
@@ -220,7 +222,7 @@ const Index = () => {
             { getRole?.role !== "gid" ? (
               <>
                 <Translator setTrains={setState} trains={state?.trainings} 
-                setTrState={setTrState} clear={clearYear} setClear={setClearYear}/>
+                setTrState={setTrState} clear={clearYear} setClear={setClearYear} trState={trState}/>
               </>
             ) : null }
             <div className="btnGrop">

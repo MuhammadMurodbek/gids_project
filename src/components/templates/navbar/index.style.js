@@ -4,7 +4,7 @@ export const Navbar = styled.div`
     position: relative;
     width: 100%;
     height: auto;
-    padding:15px 60px;
+     
     padding: ${props => props.navbarProps > 30 ? "8px 60px " : "15px 60px"};
     background-color:transparent;
     box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.4);
@@ -14,16 +14,21 @@ export const Navbar = styled.div`
     background-color: #fff;
  
 
-
-
+    
     @media(min-width:1367px){
         
         .width1{
             width: 1300px;
             margin: 0 auto;
-         }
+          }
     }
- 
+    .userNav11{
+        position: relative;
+        right: 40px;
+        width: 100px;
+        /* background-color: red !important; */
+    }
+
 
     .btn_enter{
         background-color: transparent;
@@ -36,7 +41,7 @@ export const Navbar = styled.div`
          
      }
     .img_logo1{
-        width: 180px;
+        width: 150px;
     }
     .imgass{
        cursor: pointer;
@@ -47,6 +52,7 @@ export const Navbar = styled.div`
         display: inline-block;
         @media (min-width:1256px){
             display:none;
+            
         }
     }
     .ReactFlagsSelect-module_selectBtn__19wW7{

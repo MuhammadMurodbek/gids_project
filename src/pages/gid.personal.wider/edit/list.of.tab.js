@@ -63,8 +63,5 @@ export const tabsWriter = [
         label:<div className="border-div">Narxlar</div>,
         component:<Price/>,
     },
-    {
-        label:<div className="border-div">Galereya</div>,
-        component:<Gallery/>,
-    },
+   
 ];

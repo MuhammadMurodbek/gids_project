@@ -41,7 +41,7 @@ const Gallery = ({ role, setCallback }) => {
         },
 
         beforeUpload(file) {
-            const videoFormat = file.type === "video/wmv" || file.type === "video/mp4" ;
+            const videoFormat = file.type === "video/wmv" || file.type === "video/mp4";
             if (!videoFormat) {
                 message.error("video formati notog'ri tanlangan");
             }
@@ -55,16 +55,21 @@ const Gallery = ({ role, setCallback }) => {
         }
 
     };
-    
+
     return (
         <div>
             <div className="text_title" >
                 <b > {t("Galarey.Partfolio")} </b>
             </div>
             <Dragger {...props} className="dragger" >
-                <p className="  news11" >
-                    <DriveFolderUploadIcon className="icon" />
-                </p>
+
+                {
+                    load ? <Spinner marginTop="100px" width={50} height={50}>loading...</Spinner> :
+                        <p className="  news11" >
+                            <DriveFolderUploadIcon className="icon" />
+                        </p>
+                }
+
             </Dragger>
 
             <div className="galarey">
@@ -72,7 +77,8 @@ const Gallery = ({ role, setCallback }) => {
             </div>
 
             {
-                load ? <Spinner marginTop="100px" width={50} height={50}>loading...</Spinner> : null
+                load ? <Spinner marginTop="100px" width={50} height={50}>
+                loading...</Spinner> : null
             }
         </div>
     )

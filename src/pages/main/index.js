@@ -25,7 +25,7 @@ import Box from "@material-ui/core/Box";
 import img21 from '../../assets/img/about/right.png'
 import { useTranslation } from 'react-i18next'
 import { getLabelCountrySecond } from "../../custom/function"
-
+import { useHistory } from "react-router-dom"
 import { media, mediaFlexButtons, mediaBtn, mediaTextField, mediaTextFieldSec, mediaContainer } from "./_media"
 import AccountMenu from '../../components/atom/user_account';
 import Slider from "react-slick";
@@ -35,10 +35,8 @@ import img3 from '../../assets/img/main/we.jpg'
 import img4 from '../../assets/img/main/wee.jpg'
 import img5 from '../../assets/img/main/ds.jpg'
 
-
- 
- 
 const settings = {
+     
     dots: true,
     infinite: true,
     speed: 1000,
@@ -47,16 +45,22 @@ const settings = {
     autoplay: true,
     autoplaySpeed: 2000,
     centerMode: true,
- 
+    adaptiveHeight: false,
 };
 
 const Index = () => {
     const countryGlobal = JSON.parse(localStorage.getItem("countryGlobal"))
     React.useMemo(() => { getLabelCountrySecond(1) }, [countryGlobal])
     const getRole = JSON.parse(localStorage.getItem("user_token"))
-
     const { t } = useTranslation()
-
+    const history = useHistory()
+    const onClickbutton =()=>{
+        const token = localStorage.getItem('user_token')
+        if(token){
+            history.push("/application-form")
+        }
+        else history.push("/auth")
+    }
 
     return (
         <>
@@ -77,6 +81,7 @@ const Index = () => {
                         </Grid>
                     </Grid>
                 </ComponentOne>
+
                 <ComponentTwo>
                     <div className="title-second-main-container">{t("main.takliflarimiz")}</div>
                     <Grid container spacing={1} className="grid_container">
@@ -115,19 +120,18 @@ const Index = () => {
                         </Grid>
                     </Grid>
                 </ComponentTwo>
+
                 <ComponentThree>
                     <TimeLine />
                 </ComponentThree>
+
                 <ComponentFour>
-                    <TextTitle {...mediaTextField} {...mediaTextFieldSec} top="40px" bottom="60px">{t("main.trendSHahar")}</TextTitle>
 
-
-
-
+                    <TextTitle {...mediaTextField} {...mediaTextFieldSec} top="40px"       bottom="60px">{t("main.trendSHahar")}
+                    </TextTitle>
 
                     <div>
-
-                        <Slider {...settings}>
+                        <Slider {...settings}  >
                             <div className="carouseldiv">
 
                                 <Paper style={{ overflow: 'hidden' }}>
@@ -136,11 +140,11 @@ const Index = () => {
                                         <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
                                             <div className="title-container">Samarqand</div>
                                             <Link to="/cities" className="link11">
-                                                {t("main.korish")}  
+                                                {t("main.korish")}
                                                 <img src={img21} alt="asdfasdf" />
                                             </Link>
                                         </FlexContainer>
-                                    </div>  
+                                    </div>
                                 </Paper>
 
                             </div>
@@ -157,10 +161,11 @@ const Index = () => {
                                     </div>
                                 </Paper>
                             </div>
+                            
                             <div className="carouseldiv">
                                 <Paper style={{ overflow: 'hidden' }}>
                                     <div className="container">
-                                        <ImgContainer width="100%" height="270px" src= {img3} />
+                                        <ImgContainer width="100%" height="270px" src={img3} />
                                         <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
                                             <div className="title-container">Xiva</div>
                                             <Link to="/cities" className="link11">
@@ -173,7 +178,7 @@ const Index = () => {
                             <div className="carouseldiv">
                                 <Paper style={{ overflow: 'hidden' }}>
                                     <div className="container">
-                                        <ImgContainer width="100%" height="270px" src= {img4} />
+                                        <ImgContainer width="100%" height="270px" src={img4} />
                                         <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
                                             <div className="title-container">Buhoro</div>
                                             <Link to="/cities" className="link11">
@@ -186,7 +191,7 @@ const Index = () => {
                             <div className="carouseldiv">
                                 <Paper style={{ overflow: 'hidden' }}>
                                     <div className="container">
-                                        <ImgContainer width="100%" height="270px" src= {img5} />
+                                        <ImgContainer width="100%" height="270px" src={img5} />
                                         <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
                                             <div className="title-container">Buhoro</div>
                                             <Link to="/cities" className="link11">
@@ -214,31 +219,34 @@ const Index = () => {
                         </Slider>
                     </div>
 
-
-
-
-
                 </ComponentFour>
+
+                <TextTitle {...mediaTextField} {...mediaTextFieldSec} top="40px">{t("main.Mf")}
+                </TextTitle>
+
                 <Container {...mediaContainer} padding="20px">
                     <SliderComponent />
                 </Container>
+
             </WrapperAll>
 
-
-            {
-                getRole?.role === 'simple_user' ?
+ 
                     <ContainerLast>
                         <div className="application-last">
-                            <TextTitle  {...mediaTextField} {...mediaTextFieldSec} width="50%" left="auto" right="auto" bottom="40px">{t("main.hoziroq")} </TextTitle>
+                            <TextTitle  {...mediaTextField} {...mediaTextFieldSec} width="50%" left="auto" right="auto" bottom="40px">{t("main.hoziroq")}
+                            </TextTitle>
                             <FlexContainer {...mediaFlexButtons} width="380px" margin="0 auto" alignItems="center" justifyContent="space-between">
-                                <Link to="/application-form"><Button  {...mediaBtn}>{t("main.ariza")} </Button></Link>
-                                <Link to="/gids"> <Button type="outlined"  {...mediaBtn}>{t("main.tanlash")} </Button></Link>
+                                <Link to="/application-form">
+                                <Button onClick={onClickbutton}  {...mediaBtn}>{t("main.ariza")} </Button>
+                                </Link>
+                                <Link to="/gids"> 
+                                <Button type="outlined"  {...mediaBtn}>{t("main.tanlash")} </Button>
+                                F</Link>
                             </FlexContainer>
                         </div>
                     </ContainerLast>
-
-                    : ''
-            }
+ 
+          
         </>
     )
 }

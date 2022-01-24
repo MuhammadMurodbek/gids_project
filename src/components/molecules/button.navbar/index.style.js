@@ -16,8 +16,8 @@ export const ButtonNavbar = styled(NavLink)`
     border-radius: 4px;
     border:none;
     background-color:transparent;
-    color:#333;
-    font-weight: 500;
+    color:#000;
+    font-weight:500;
     &:hover{
         color: ${mainGreen};
     }

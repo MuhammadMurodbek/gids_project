@@ -10,7 +10,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import 'animate.css';
 import YearPicker from "../../../../components/molecules/year.picker.labeled"
 import toast from 'react-hot-toast';
-const Translator = ({setTrains, trains, setTrState, clear, setClear}) => {
+const Translator = ({setTrains, trains, setTrState, trState, clear, setClear}) => {
     const [delBool, setDelBool] = useState();
     const [state, setState] = useState({name:'', year:''})
     const [collect, setCollect] = useState([])
@@ -26,6 +26,7 @@ const Translator = ({setTrains, trains, setTrState, clear, setClear}) => {
             }})
             setDelBool('')
             setClear(true)
+            setState({name:'',year:''})
         }else{
             toast.error("Ma'lumotlarni to'liq kiriting")
         }
@@ -44,7 +45,13 @@ const Translator = ({setTrains, trains, setTrState, clear, setClear}) => {
     useEffect( () => {
       if(trains) setCollect(trains)
     },[trains])
-    
+    useEffect(()=>{
+      if(clear){
+        setState({name:'',year:''})
+        setTrState({})
+        setClear(false)
+      }
+    },[clear])
     useEffect(()=>{
       if(state.name!=='' && state.year!==''){
         setTrState(state)

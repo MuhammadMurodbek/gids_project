@@ -58,12 +58,14 @@ const Index = () => {
             alignItems="center"
             justifyContent="space-between"
           >
+
             <div className="imgass">
               <Link to="/">
                 {" "}
                 <img className="img_logo1" src={Logo} alt="safsf" />
               </Link>
             </div>
+
             <FlexContainer
               {...navbarMediaCenter}
               padding="0 15px"
@@ -71,37 +73,77 @@ const Index = () => {
               alignItems="center"
               justifyContent="center"
             >
-              {getRole?.role === "simple_user" ? (
-                <ButtonNavbar title={t("navbar.GvaTtanlash")} url="/gids" />
-              ) : null}
 
-              {getRole?.role === "simple_user" ? null : (
+
+              {
+
+                getRole?.role === "gid"  ?
+                <>
                 <ButtonNavbar title={t("navbar.GTU")} url="/forgits" />
-              )}
+                <ButtonNavbar title="Blog" url="/blog?page=1" />   
+                <ButtonNavbar title={t("navbar.Arizalar_royhati")} url="/request" />    
+                </>
+                :
+                getRole?.role === "writer"  ?
+                <>
+                <ButtonNavbar title={t("navbar.GTU")} url="/forgits" />
+                <ButtonNavbar title="Blog" url="/blog?page=1" />   
+                <ButtonNavbar title={t("navbar.Arizalar_royhati")} url="/request" />    
+                </>
+                :
+                getRole?.role === "translator"  ?
+                <>
+                <ButtonNavbar title={t("navbar.GTU")} url="/forgits" />
+                <ButtonNavbar title="Blog" url="/blog?page=1" />   
+                <ButtonNavbar title={t("navbar.Arizalar_royhati")} url="/request" />    
+                </>
+                :
+                getRole?.role === "simple_user" ?
+                  <>
+                    <ButtonNavbar title={t("navbar.GvaTtanlash")} url="/gids" />
+                    <ButtonNavbar title="Blog" url="/blog?page=1" />
+                    <ButtonNavbar title={t("navbar.Ariza_qoldirish")} url="/application-form" />
+                  </>
+                  :
+                 
 
-              <ButtonNavbar title="Blog" url="/blog?page=1" />
-              {getRole?.role === "simple_user" ? (
-                <ButtonNavbar title={t("navbar.Ariza_qoldirish")} url="/application-form" />
-              ) : (
-                <ButtonNavbar title={t("navbar.Arizalar_royhati")} url="/request" />
-              )}
+                    <>
+                      <ButtonNavbar title={t("navbar.GvaTtanlash")} url="/gids" />
+
+                      <ButtonNavbar title={t("navbar.GTU")} url="/forgits" />
+
+                      <ButtonNavbar title="Blog" url="/blog?page=1" />
+
+                      <ButtonNavbar title={t("navbar.Ariza_qoldirish")} url="/application-form" />
+                    </>
+
+
+              }
+
+
+
 
             </FlexContainer>
-            <FlexContainer {...navbarMedia} width="100px" style={{ marginRight: 120 }}>
-              <ReactFlagsSelect
-                selected={selected}
-                onSelect={(code) => {
-                  i18n.changeLanguage(code.toLowerCase())
-                  setSelected(code)
-                  localStorage.setItem("language", code)
-                }}
-                countries={["UZ", "RU", "US"]}
-                customLabels={{ US: "ENG ", UZ: "O'Z ", RU: "РУ " }}
-              />
+            <FlexContainer {...navbarMedia} width="100px" style={{ marginRight: 100 }}>
+
+              <div className="userNav11">
+                <ReactFlagsSelect
+                  selected={selected}
+                  onSelect={(code) => {
+                    i18n.changeLanguage(code.toLowerCase())
+                    setSelected(code)
+                    localStorage.setItem("language", code)
+                  }}
+                  countries={["UZ", "RU", "US"]}
+                  customLabels={{ US: "ENG ", UZ: "O'Z ", RU: "РУ " }}
+                />
+              </div>
+
               <FlexContainer
                 width="100%"
                 alignItems="center"
                 justifyContent="center"
+
               >
                 <NavLink
                   to={
@@ -112,15 +154,17 @@ const Index = () => {
                   style={{ color: "#333" }}
                 >
                 </NavLink>
+                <>
+                  {
+                    isExpired ?
+                      <button className="btn_enter" onClick={handleLogout}>Kirish</button>
+                      :
 
-                {
-                  isExpired ?
-                    <button className="btn_enter" onClick={handleLogout}>Kirish</button>
-                    :
-                    
                       <AccountMenu role={getRole?.role} />
-                   
-                }
+
+                  }
+                </>
+
 
 
               </FlexContainer>
@@ -139,3 +183,38 @@ const Index = () => {
 };
 
 export default Index;
+
+
+
+// {
+//   getRole?.role === "simple_user" ?
+//   (
+//     <ButtonNavbar title={t("navbar.GvaTtanlash")} url="/gids" />
+//   )
+//   :
+//   null
+// }
+
+// {
+//   getRole?.role === "simple_user"
+//     ?
+//     null
+//     :
+//     (
+//       <ButtonNavbar title={t("navbar.GTU")} url="/forgits" />
+//     )
+// }
+
+// <ButtonNavbar title="Blog" url="/blog?page=1" />
+
+// {
+//   getRole?.role === "simple_user"
+//   ?
+//   (
+//     <ButtonNavbar title={t("navbar.Ariza_qoldirish")} url="/application-form" />
+//   )
+//   :
+//   (
+//     <ButtonNavbar title={t("navbar.Arizalar_royhati")} url="/request" />
+//   )
+// }

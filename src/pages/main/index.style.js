@@ -224,6 +224,25 @@ export const ComponentFour = styled.div`
     width: 100%;
     padding:10px 30px;
     
+   .slick__dots li{
+       color: red !important;
+       background: red !important;
+   }
+
+   button{
+       background-color: #999 !important;
+       border-radius:50%;
+       
+   }
+
+   li.slick-active button {
+			background-color: #326a32 !important;
+            border-radius:50%;
+	}
+    .slick-arrow{
+        display: none !important;
+    }
+
     @media (max-width:400px){
         padding: 10px 4px;
     }

@@ -32,8 +32,12 @@ const Index = ({setState, state, field, setDefaultValue}) => {
             <div className="title-header-radio"> {t("kengaytirlgan_Q.kimKerak")}</div>
             <FormControl component="fieldset">
             <RadioGroup aria-label="gender" name="gender1" value={value} onChange={handleChange}>
-                <FormControlLabel value="gid" control={<Radio />} label={<span>{t("kengaytirlgan_Q.gid")}</span>} />
-                <FormControlLabel value="translator" control={<Radio />} label={<span>{t("kengaytirlgan_Q.tarjion")}</span>} />
+                <FormControlLabel value="gid" control={<Radio />} label={<span>
+                    {t("kengaytirlgan_Q.gid")}
+                </span>} />
+                <FormControlLabel value="translator" control={<Radio />} label={<span>
+                    {t("kengaytirlgan_Q.tarjion")}
+                    </span>} />
                 <div style={value === "translator" ? {display:"inline-block"}:{display:'none'}}>
                     <DoubleCheck2 margin="0 0 0 30px" 
                     name1={t("kengaytirlgan_Q.sinxron")} 

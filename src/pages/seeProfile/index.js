@@ -22,7 +22,7 @@ export default function Index() {
     let role = searchToObject(query)?.role
     
     const [apiData, setApiData] = useState({ success: '', error: ''})
-    useEffect(()=>{ getResponse(`/api/${role}s/profiles/${id}/`, setApiData)},[])
+    useEffect(()=>{ getResponse(`/api/${role}s/profiles/${id}/`, setApiData ,true )},[])
     return (
         <>
             <Layout>

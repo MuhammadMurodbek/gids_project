@@ -5,25 +5,41 @@ import { Wrapper } from "./index.style"
 import { Link } from "react-router-dom"
 import { useHistory } from "react-router-dom"
 import { getResponse } from "../../../hooks/response_get"
+import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 const getRole = JSON.parse(localStorage.getItem("user_token"));
 const Index = ({ role }) => {
     const [getData, setGetData] = useState({ success: '', error: '', loading: false })
     const history = useHistory()
     const getRole = JSON.parse(localStorage.getItem("user_token"))
-    let url = getRole?.role === 'simple_user' ? '/api/users/edit/':`/api/${getRole?.role}s/edit/about/`
-    useEffect(()=>{getResponse(url, setGetData)},[])
+    let url = getRole?.role === 'simple_user' ? '/api/users/edit/' : `/api/${getRole?.role}s/edit/about/`
+    useEffect(() => { getResponse(url, setGetData) }, [])
     const menu = (
-        <Menu style={{ position: "relative", right: 0, top: 8, width: 150 }}>
+        <Menu style={{ position: "relative", right: 40, top: 8, width: 150 }}>
             <Menu.Item key="0">
-                <Link to={role==='simple_user' ? '/gid-personal':`/gid-personal-wider?name=${getData?.success?.data?.first_name}&last_name=${getData?.success?.data?.last_name}`}>Profil</Link>
+                <Link to={role === 'simple_user' ? '/gid-personal' : `/gid-personal-wider?name=${getData?.success?.data?.first_name}&last_name=${getData?.success?.data?.last_name}`}>
+                    <span  style={{display:"flex"}} >
+                        <AssignmentIndIcon  
+                        style={{color:"#326A32", marginRight:"10px" }}
+                        />
+                        <span >
+                            Profil
+                        </span>
+                    </span>
+                </Link>
             </Menu.Item>
             <Menu.Divider />
             <Menu.Item key="3" onClick={() => {
-                    history.push('/auth')
-                    localStorage.removeItem('user_token')
-                }}>
-                <span >Chiqish</span>
+                history.push('/auth')
+                localStorage.removeItem('user_token')
+            }}>
+                <span  style={{display:"flex"}} >
+                    <LogoutIcon style={{color:"#326A32", marginRight:"10px" }} />
+                    <span>
+                        Chiqish
+                    </span>
+                </span>
             </Menu.Item>
         </Menu>
     );
@@ -31,8 +47,8 @@ const Index = ({ role }) => {
         <Wrapper>
             <Dropdown overlay={menu} trigger={['hover']} placement="bottomLeft">
                 <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
-                    <span style={{ position: 'relative', left: '-10px', display: 'flex', alignItems: 'center' }}>
-                        <span style={{ position: 'relative', top: 2, right: 8, fontSize: '20px' }}>
+                    <span style={{ position: 'relative', left: '-35px', display: 'flex', alignItems: 'center' }}>
+                        <span style={{ position: 'relative', top: 1, right: 8, fontSize: '20px' }}>
                             <UserOutlined />
                         </span>
                         <span style={{ fontSize: '13.5px', display: 'flex', flexDirection: 'column', lineHeight: '14px' }}>
