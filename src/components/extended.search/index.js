@@ -33,7 +33,6 @@ const Index = ({loader, queryObj}) => {
             toast.error("Ma'lumotlarni to'liq kiriting")
         }
         window.scrollTo(0,0);
-
     }
     React.useEffect(() => {
         if(loader?.success !=='' || loader?.error !== ''){
