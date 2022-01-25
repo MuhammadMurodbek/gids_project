@@ -22,7 +22,8 @@ const Index = ({loader, queryObj}) => {
     const handleSubmit = () => { 
         console.log(collect)
         // setStartVal(true)
-        if(collect?.type && !startVal){
+        let array = Object.keys(collect)
+        if(array?.length>=9 && collect?.languages?.length>0){
             setPostData({ ...postData, loading: true })
             let urlOther = `type=${collect?.type}&gender=${(collect?.male && collect?.female)? undefined: collect?.male ? 'male' : collect?.female ? 'female' : undefined}&country=${collect?.country}&city=${collect?.city || queryObj?.city}&lang=${collect?.languages?.map(item => item?.value)}&date_after=${collect?.date_after}&date_before=${collect?.date_before}&${collect?.search_type}=0`
             let filterUrl = urlOther.split('&').filter(a=>!a.includes('undefined')).join('&')
