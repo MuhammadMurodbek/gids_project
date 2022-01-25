@@ -15,15 +15,20 @@ const Index = ({loader, queryObj}) => {
     const history = useHistory()
     const { t } = useTranslation()
     const [postData, setPostData] = useState({ success: '', error: '', loading: false })
-    const [collect, setCollect] = useState()
+    const [collect, setCollect] = useState({})
+    const [startVal, setStartVal] = useState(false)
+    let params = window.location.search
+    console.log(params)
     const handleSubmit = () => { 
-        if(collect?.type ){
+        console.log(collect)
+        // setStartVal(true)
+        if(collect?.type && !startVal){
             setPostData({ ...postData, loading: true })
-            let urlOther = `type=${collect?.type}&gender=${(collect?.male && collect?.female)? undefined: collect?.male ? 'male' : collect?.female ? 'female' : undefined}&country=${collect?.country}&city=${collect?.city}&lang=${collect?.languages?.map(item => item?.value)}&date_after=${collect?.date_after}&date_before=${collect?.date_before}&${collect?.search_type}=0`
+            let urlOther = `type=${collect?.type}&gender=${(collect?.male && collect?.female)? undefined: collect?.male ? 'male' : collect?.female ? 'female' : undefined}&country=${collect?.country}&city=${collect?.city || queryObj?.city}&lang=${collect?.languages?.map(item => item?.value)}&date_after=${collect?.date_after}&date_before=${collect?.date_before}&${collect?.search_type}=0`
             let filterUrl = urlOther.split('&').filter(a=>!a.includes('undefined')).join('&')
             history.push('/gids?'+filterUrl)
         }else{
-            toast.error('Kim kerakligi tanlang')
+            toast.error("Ma'lumotlarni to'liq kiriting")
         }
         window.scrollTo(0,0);
 
@@ -33,6 +38,11 @@ const Index = ({loader, queryObj}) => {
             setPostData({ ...postData, loading: false })
         }
     },[loader])
+    // React.useEffect(()=>{
+    //     if(queryObj && queryObj?.length>=8){
+    //         setStartVal(false)
+    //     }
+    // },[])
     React.useEffect(()=>{
         if(queryObj){
             setCollect(a=>{return{
@@ -45,6 +55,15 @@ const Index = ({loader, queryObj}) => {
             }})
         }
     },[queryObj])
+    console.log(queryObj)
+    React.useEffect(()=>{
+        let array = Object.keys(collect)
+        if(array?.length>=9 && collect?.languages?.length>0){
+            setStartVal(false)
+        }else{
+            setStartVal(true)
+        }
+    },[collect])
     // console.log(queryObj)
     // console.log(collect)
     return (
@@ -59,6 +78,7 @@ const Index = ({loader, queryObj}) => {
                 field='type'
                 setDefaultValue={queryObj?.type}
             />
+            {startVal && !collect.hasOwnProperty('type') && <span className="errors_search">type kiriting</span>}
             <Selection
                 setState={setCollect}
                 state={collect}
@@ -69,7 +89,7 @@ const Index = ({loader, queryObj}) => {
                 defaultCountry={queryObj?.country}
                 defaultCity={queryObj?.city}
             />
-
+            {startVal && (!collect.hasOwnProperty('country') || !collect.hasOwnProperty('city')) && <span className="errors_search">Davlat (shahar) kiriting</span>}
             <CalendarComponent
                 title={t("kengaytirlgan_Q.sana")}
                 setState={setCollect}
@@ -83,7 +103,7 @@ const Index = ({loader, queryObj}) => {
                 placeholderValue={queryObj?.date_after ? true:false}
                 // placeholder="dd/mm/yyyy dan"
             />
-
+            {startVal && !collect.hasOwnProperty('date_after') && <span className="errors_search">Sana kiriting</span>}
             <CalendarComponent
                 setState={setCollect}
                 state={collect}
@@ -95,7 +115,7 @@ const Index = ({loader, queryObj}) => {
                 }
                 placeholderValue={queryObj?.date_before ? true:false}
             />
-
+            {startVal && !collect.hasOwnProperty('date_before') && <span className="errors_search">Sana kiriting</span>}
             <SelectionLang
                 title={t("kengaytirlgan_Q.til")}
                 setCollect={setCollect}
@@ -104,13 +124,13 @@ const Index = ({loader, queryObj}) => {
                 placeholder="Tillarni tanlang"
                 defaultValueApi={queryObj?.lang}
             />
-
+            {startVal && (!collect.hasOwnProperty('languages') || !collect?.languages?.length>0) && <span className="errors_search">Tillarni kiriting</span>}
             <CheckBoxContainer
                 setState={setCollect}
                 state={collect}
                 name1={t("kengaytirlgan_Q.erkak")}
                 name2={t("kengaytirlgan_Q.ayol")} />
-
+            {startVal && (!collect.hasOwnProperty('male') && !collect.hasOwnProperty('female')) && <span className="errors_search">Jinsini kiriting</span>}
             <DoubleRadio
                 value1="online"
                 value2="all"
@@ -121,7 +141,7 @@ const Index = ({loader, queryObj}) => {
                 name2={t("kengaytirlgan_Q.barchasi")} 
                 defaultApiValue={queryObj?.online === '0' ? 'online' : queryObj?.all === '0' ? 'all':undefined}
             />
-
+            {startVal && !collect.hasOwnProperty('search_type') && <span className="errors_search">Turni tanlang</span>}
             <div className="button-wrapper">
                 <Button loader={postData?.loading} onClick={handleSubmit} width="280px" name={t("kengaytirlgan_Q.qidirish")} />
             </div>

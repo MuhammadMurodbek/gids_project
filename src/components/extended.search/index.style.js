@@ -1,6 +1,11 @@
 import styled from "styled-components"
 
 export const Wrapper = styled.div`
+.errors_search{
+    color:red;
+    font-size:12px;
+    font-style:italic;
+}
     position: relative;
     width: ${value=>value.width};
     height: auto;

@@ -89,10 +89,10 @@ const Index = () => {
                             <div className="container-2-1 first">
                                 <div className="title-second-main-container-text">{t("main.tadbirkorlarga")}</div>
                                 <p>{t("main.textForTadbirkor")}</p>
-                                <FlexContainer width="370px" {...mediaFlexButtons} justifyContent="space-between">
-                                    <Link to="/application-form" >
-                                        <Button {...mediaBtn}>{t("main.arizaQoldrirish")} </Button>
-                                    </Link>
+                                <FlexContainer width="400px" {...mediaFlexButtons} justifyContent="space-between">
+                                    {/* <Link to="/application-form" > */}
+                                        <Button onClick={onClickbutton} {...mediaBtn}>{t("main.arizaQoldrirish")} </Button>
+                                    {/* </Link> */}
                                     <Link to="/gids">
                                         <Button {...mediaBtn} type="outlined"> {t("main.Gid_tanlash")} </Button>
                                     </Link>
@@ -236,9 +236,9 @@ const Index = () => {
                             <TextTitle  {...mediaTextField} {...mediaTextFieldSec} width="50%" left="auto" right="auto" bottom="40px">{t("main.hoziroq")}
                             </TextTitle>
                             <FlexContainer {...mediaFlexButtons} width="380px" margin="0 auto" alignItems="center" justifyContent="space-between">
-                                <Link to="/application-form">
-                                <Button onClick={onClickbutton}  {...mediaBtn}>{t("main.ariza")} </Button>
-                                </Link>
+                                {/* <Link to="/application-form"> */}
+                                    <Button onClick={onClickbutton}  {...mediaBtn}>{t("main.ariza")} </Button>
+                                {/* </Link> */}
                                 <Link to="/gids"> 
                                 <Button type="outlined"  {...mediaBtn}>{t("main.tanlash")} </Button>
                                 F</Link>
