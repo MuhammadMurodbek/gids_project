@@ -5,6 +5,7 @@ export const Wrapper = styled.div`
     color:red;
     font-size:12px;
     font-style:italic;
+    margin-left:10px;
 }
     position: relative;
     width: ${value=>value.width};

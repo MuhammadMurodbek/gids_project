@@ -28,6 +28,7 @@ const Index = ({loader, queryObj}) => {
             let filterUrl = urlOther.split('&').filter(a=>!a.includes('undefined')).join('&')
             history.push('/gids?'+filterUrl)
         }else{
+            setStartVal(true)
             toast.error("Ma'lumotlarni to'liq kiriting")
         }
         window.scrollTo(0,0);
@@ -60,8 +61,6 @@ const Index = ({loader, queryObj}) => {
         let array = Object.keys(collect)
         if(array?.length>=9 && collect?.languages?.length>0){
             setStartVal(false)
-        }else{
-            setStartVal(true)
         }
     },[collect])
     // console.log(queryObj)
