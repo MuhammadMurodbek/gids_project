@@ -24,11 +24,12 @@ import { defaultState } from "./constant"
 import { post_gid_app_action } from "../../redux/actions"
 import useApi from "../../hooks/response";
 import { useTranslation } from 'react-i18next';
+import Modal from 'react-awesome-modal';
+import CloseIcon from '@material-ui/icons/Close';
 
 const Index = () => {
-
+    const token = JSON.parse(localStorage.getItem("user_token"))
     const {t} = useTranslation()
-
     const [ btnLoader, setBtnLoader ] = useState( false )
     const [ state, setState ] = useState( false );
     const [ collect, setCollect ] = useState( defaultState )
@@ -51,7 +52,13 @@ const Index = () => {
             setError(true)
             setBtnLoader(false)
         }
-        else setResponseHook(post_gid_app_action(newCollect))
+        else if(!token){
+            alert('modal')
+            openModal()
+            // let document.querySelector('.modaldiv')
+            // document.body.style.overflow = 'hidden';
+        }else
+            setResponseHook(post_gid_app_action(newCollect))
     }
     
     console.log(collect)
@@ -163,7 +170,7 @@ const Index = () => {
                                     field2="is_female"
                                     state={collect}
                                     setState={setCollect}
-                                    errorText={(error && (collect?.is_male || collect?.is_female)) ? "Tarjimon tanlanmagan" : null}
+                                    errorText={(error && !(collect?.is_male || collect?.is_female)) ? "Jinsi tanlanmagan":null}
                                 />
                             </Grid>
                         </Grid>
@@ -188,6 +195,23 @@ const Index = () => {
                     </Container>
                 </Container>
             </Container>
+            <>
+            <Modal
+                visible={state}
+                width="600px"
+                height="500px"
+                effect="fadeInUp"
+                style={{overflowY: 'hidden',}}
+                onClickAway={closeModal}
+            >
+                <div className="modaldiv" style={{overflow:'hidden'}}> 
+                    <div className="closebtn">
+                        <CloseIcon className="pointx" onClick={closeModal} />
+                    </div>
+
+                </div>
+                </Modal>
+            </>
         </Wrapper>
     )
 }

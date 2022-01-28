@@ -209,9 +209,14 @@ export const routes = [
           component:ListRouter.Blog
     },
     {
+        url:'/application-form',
+        component:ListRouter.FillOutApplication,
+    },
+    {
         url:'*',
         component:ListRouter.notFound
-    }
+    },
+    
 
 ]
 
