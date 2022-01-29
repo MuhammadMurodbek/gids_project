@@ -24,8 +24,8 @@ import { defaultState } from "./constant"
 import { post_gid_app_action } from "../../redux/actions"
 import useApi from "../../hooks/response";
 import { useTranslation } from 'react-i18next';
-import Modal from 'react-awesome-modal';
-import CloseIcon from '@material-ui/icons/Close';
+import Modal from './modal';
+// import CloseIcon from '@material-ui/icons/Close';
 
 const Index = () => {
     const token = JSON.parse(localStorage.getItem("user_token"))
@@ -38,6 +38,22 @@ const Index = () => {
     const openModal = useCallback( () => { setState( true ) }, [ state ] )
     const closeModal = useCallback( () => { setState( false ) }, [ state ] )
     const [ error, setError ] = useState( false )
+
+    const [isModalVisible, setIsModalVisible] = useState(false);
+
+    const showModal = () => {
+        setIsModalVisible(true);
+    };
+
+    const handleOk = () => {
+        setIsModalVisible(false);
+    };
+
+    const handleCancel = () => {
+        setIsModalVisible(false);
+    };
+
+
     const onSubmit = async ( e ) => {
         e.preventDefault();
         setBtnLoader(true)
@@ -54,9 +70,7 @@ const Index = () => {
         }
         else if(!token){
             alert('modal')
-            openModal()
-            // let document.querySelector('.modaldiv')
-            // document.body.style.overflow = 'hidden';
+            showModal()
         }else
             setResponseHook(post_gid_app_action(newCollect))
     }
@@ -196,21 +210,7 @@ const Index = () => {
                 </Container>
             </Container>
             <>
-            <Modal
-                visible={state}
-                width="600px"
-                height="500px"
-                effect="fadeInUp"
-                style={{overflowY: 'hidden',}}
-                onClickAway={closeModal}
-            >
-                <div className="modaldiv" style={{overflow:'hidden'}}> 
-                    <div className="closebtn">
-                        <CloseIcon className="pointx" onClick={closeModal} />
-                    </div>
-
-                </div>
-                </Modal>
+                <Modal isModalVisible={isModalVisible} setIsModalVisible={setIsModalVisible} showModal={showModal} handleOk={handleOk} handleCancel={handleCancel}/>
             </>
         </Wrapper>
     )
