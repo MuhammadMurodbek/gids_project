@@ -1,5 +1,4 @@
 import { Modal } from 'antd';
-export const defaultState = {country:{},city:{},end_date:'',start_date:'',languages:[],cost:0,currency:{},people_count:0, is_male:false, is_female:false, who_need:'', why_need:'', is_synchronous:false, is_consecutive:false}
 
 export function info() {
     Modal.info({
@@ -13,7 +12,21 @@ export function info() {
       onOk() {},
     });
   }
+  
+  export function success() {
+    Modal.success({
+      content: 'Arizangiz muvaffaqiyatli junatildi !!!',
+    });
 
+  }
+  
+  export function error() {
+    Modal.error({
+      title: 'Arizangiz junatilmadi',
+      content: 'Arizani junatishda xatolik mavjud...',
+    });
+  }
+  
   export function warning() {
     Modal.warning({
       title: 'This is a warning message',

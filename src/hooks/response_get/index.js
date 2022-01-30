@@ -29,7 +29,7 @@ export const getResponseRegion = async ( url ) => {
         .then( response => localStorage.setItem( 'countries', JSON.stringify( response?.data?.data ) ) )
         .catch( err => console.log( err ) )
 }
-export const getGlobals = async ( token ) => {
+export const getGlobals = async ( token, appNoToken ) => {
     let lang = false
     let country = false
     await axios.get( `${ baseUrl }/api/users/languages/`, {
@@ -55,15 +55,18 @@ export const getGlobals = async ( token ) => {
         } )
         .catch( err => console.log( err ) )
 
-
-    if(lang && country){
+    if(appNoToken){
+        window.location.href='/application-form'
+    }else{
+        if(lang && country){
         if(token?.role ==='simple_user')
             window.location.href='/gid-personal'
         else    
             window.location.href='/gid-personal-wider'
+        }
+        else
+            toast.error("Qaytadan urinib ko'ring")
     }
-    else
-        toast.error("Qaytadan urinib ko'ring")
 }
 export const checkGlobals = async() => {
     const token = JSON.parse(localStorage.getItem("user_token"))

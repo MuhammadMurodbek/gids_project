@@ -14,6 +14,7 @@ import toast from "react-hot-toast";
 import { useTranslation } from 'react-i18next';
 
 const Index = () => {
+    const appNoToken = JSON.parse(localStorage.getItem('appNoToken')) || false
     const {t} = useTranslation();
     const history = useHistory();
     const dispatch = useDispatch();
@@ -61,6 +62,7 @@ const Index = () => {
             role: select?.value || null,
             username: stateEmail
         }
+        // console.log(objectPost)
         setLoader(true)
         let check = validatorFunction()
          let check_password = statePasswordRecover===statePassword
@@ -76,7 +78,11 @@ const Index = () => {
     }
   
 
-
+    React.useEffect(()=>{
+        if(appNoToken){
+            setSelect({ value: 'simple_user', label: `${t("auth_registr.user")}` })
+        }
+    },[])
     
     React.useEffect(()=>{
         if(selector?.status){
@@ -119,7 +125,7 @@ const Index = () => {
                     </Grid>
                 </Container>
                 <Container {...mediaContainer}>
-                    <Select paddingX="9px 4.5px" pcolor errorText={selectV.errorText} options={options} setState={setSelect} placeholder={t("auth_registr.user")}/>
+                    <Select isDisabled={appNoToken} paddingX="9px 4.5px" pcolor errorText={selectV.errorText} options={options} setState={setSelect} placeholder={t("auth_registr.user")}/>
                 </Container>
                 <Container  {...mediaContainer} >
                     <AuthInput errorText={emailV.errorText} title={t("auth_registr.email2")} width="100%" setState={setStateEmail}/>
