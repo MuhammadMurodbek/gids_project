@@ -55,7 +55,7 @@ export const getGlobals = async ( token, appNoToken ) => {
         } )
         .catch( err => console.log( err ) )
 
-    if(appNoToken){
+    if(appNoToken && token?.role === 'simple_user'){
         window.location.href='/application-form'
     }else{
         if(lang && country){

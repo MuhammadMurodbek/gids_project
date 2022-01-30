@@ -81,15 +81,15 @@ const Index = () => {
     }
     React.useEffect(()=>{
         if(appNoToken){
-            // toast.loading('Arizangiz junatilmoqda');
-            setResponseHook(post_gid_app_action(appNoToken)) 
+            if(token?.role !=="simple_user"){
+                warning("Ariza junatish faqat 'Foydalanuvchi' roli uchun ruxsat berilgan !!!")
+            }else setResponseHook(post_gid_app_action(appNoToken)) 
         }
     },[])
     console.log(selector)
     // console.log(collect)
     return (
         <Wrapper onSubmit={ onSubmit }>
-            {/* {selector?.loading && toast.loading('Arizangiz junatilmoqda...')} */}
             <TextTitle { ...mediaTextField } { ...mediaTextFieldSec } top="60px" bottom="20px"> {t("arizaqoldirish.title")} </TextTitle>
             <Container width="90%" padding="0" margin="40px auto" boxShadow={ shadow }>
                 <Title> {t("arizaqoldirish.vazifa")} </Title>

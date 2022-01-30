@@ -14,9 +14,11 @@ export function info() {
     });
   }
 
-  export function warning() {
+  export function warning(data) {
     Modal.warning({
-      title: 'This is a warning message',
-      content: 'some messages...some messages...',
+      title: data,
+      onOk() {
+          window.location.href='/'
+      },
     });
   }

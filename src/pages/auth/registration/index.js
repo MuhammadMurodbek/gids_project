@@ -79,6 +79,7 @@ export default function BasicTabs() {
   };
   const handleCancelApp = () => {
     localStorage.removeItem('appNoToken')
+    window.location.href='/auth'
   }
   return (
     <div>

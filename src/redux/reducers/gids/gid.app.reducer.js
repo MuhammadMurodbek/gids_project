@@ -18,6 +18,7 @@ const Success = (data) => {
 const Error = (data) => {
     error(data)
     toast.remove()
+    localStorage.removeItem('appNoToken')
     return {...initialState,loading:false,} 
 }
 const post_gid_app_reducer = (state = initialState, action) => {
