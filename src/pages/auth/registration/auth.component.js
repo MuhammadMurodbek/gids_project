@@ -20,6 +20,7 @@ const Index = () => {
     const [statePassword, setStatePassword] = useState('')
     const [passwordError, setPasswordError] = useState({ error: false, errorText: '' })
     const [loader, setLoader] = useState(false)
+    const appNoToken = JSON.parse(localStorage.getItem('appNoToken')) || false
     const onSubmit = (e) => {
         e.preventDefault()
         let obj = {
@@ -40,7 +41,7 @@ const Index = () => {
     }
     const Success = (data) => {
         localStorage.setItem('user_token', JSON.stringify(data))
-        getGlobals(data)
+        getGlobals(data, appNoToken)
         // window.location.href = "/"
     }
     useEffect(() => {

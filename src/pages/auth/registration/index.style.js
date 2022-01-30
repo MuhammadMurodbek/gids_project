@@ -7,7 +7,14 @@ export const Wrapper = styled.div`
     display:flex;
     align-items: flex-start;
     justify-content:center;
-    
+    .btn_cancel_app{
+        cursor:pointer;
+        outline:none;
+        border:none;
+        background:transparent;
+        font-size:14px;
+        margin-bottom:5px;
+    }
     .sc-cxFLGX.dhdUK{
         margin:35px 0;
     }

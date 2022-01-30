@@ -7,6 +7,7 @@ import get_about_bio_reducer from "./gids/about"
 import post_gid_app_reducer from "./gids/gid.app.reducer"
 import post_bio_data_reducer from "./gid.per.wider.reducer/edit/bio/bio.data.reducer"
 import saveTabReducer from "./save.tabs.next"
+import appAuthReducer from "./application.auth"
 export {
     reducers, 
     reducer_user_type,
@@ -17,4 +18,5 @@ export {
     post_gid_app_reducer,
     post_bio_data_reducer,
     saveTabReducer,
+    appAuthReducer,
 }

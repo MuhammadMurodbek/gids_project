@@ -11,6 +11,7 @@ const   YourComponent = () => {
   const [status, setStatus] = useState("process");
   const dispatch = useDispatch()
   const selector = useSelector(prev => prev.post_auth_reg_check_reducer)
+  const appNoToken = JSON.parse(localStorage.getItem('appNoToken')) || false
   const handleOnFinish = (code) => {
     setStatus("wait");
     let obj = {
@@ -24,11 +25,11 @@ const   YourComponent = () => {
       if (selector.status === 200) {
         const { data } = selector?.data
         localStorage.setItem('user_token', JSON.stringify(data))
-        getGlobals(data)
+        getGlobals(data, appNoToken)
         // console.log(selector)
-        data?.role === "simple_user" ?
-          window.location.href = "/gid-personal"
-          : window.location.href = "/gid-personal-wider"
+        // data?.role === "simple_user" ?
+        //   window.location.href = "/gid-personal"
+        //   : window.location.href = "/gid-personal-wider"
       }
       if (selector.status === 400) {
         toast.error("Qaytadan urinib ko'ring")

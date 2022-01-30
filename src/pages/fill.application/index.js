@@ -1,5 +1,5 @@
 import { Grid } from '@material-ui/core'
-import React, { useState, useCallback } from 'react'
+import React, { useState } from 'react'
 import { Container } from '../../styles/container/index.style'
 import { Wrapper, shadow, Title } from "./style"
 import RadioGroup from "../../components/molecules/radio.group.f9"
@@ -18,26 +18,46 @@ import { validatorState } from "../../custom/validator"
 import { mediaTextField, mediaTextFieldSec, mediaBtn } from "../../custom/global.media.variables"
 import { userSchema } from "./val"
 import { mediaContainer, mediaContainerWidth } from "./_media"
-import { gid_lang_obj, currency } from "../../custom/constants"
-import { get_cities } from "../../custom/function"
-import { defaultState } from "./constant"
+import {currency } from "../../custom/constants"
+import { defaultState, info, warning } from "./constant"
 import { post_gid_app_action } from "../../redux/actions"
 import useApi from "../../hooks/response";
 import { useTranslation } from 'react-i18next';
-import Modal from 'react-awesome-modal';
-import CloseIcon from '@material-ui/icons/Close';
+import Modal from './modal';
+import {useHistory} from "react-router-dom"
+import {useSelector} from "react-redux"
+import { toast } from "react-hot-toast";
+// import { Modal, Button, Space } from 'antd';
+// import CloseIcon from '@material-ui/icons/Close';
 
 const Index = () => {
+    const history = useHistory()
+    const selector = useSelector((state)=>state.post_gid_app_reducer)
     const token = JSON.parse(localStorage.getItem("user_token"))
+    const appNoToken = JSON.parse(localStorage.getItem('appNoToken'))
     const {t} = useTranslation()
     const [ btnLoader, setBtnLoader ] = useState( false )
-    const [ state, setState ] = useState( false );
+    const [ state, setState ] = useState( null );
     const [ collect, setCollect ] = useState( defaultState )
     const [countryId, setCountryId] = useState(null)
     const { responseHook, setResponseHook } = useApi( 'post_gid_app_reducer' )
-    const openModal = useCallback( () => { setState( true ) }, [ state ] )
-    const closeModal = useCallback( () => { setState( false ) }, [ state ] )
     const [ error, setError ] = useState( false )
+
+    const [isModalVisible, setIsModalVisible] = useState(false);
+
+    const showModal = () => {
+        setIsModalVisible(true);
+    };
+
+    const handleOk = () => {
+        localStorage.setItem('appNoToken', JSON.stringify(state))
+        setIsModalVisible(false);
+        history.push('/auth')
+    };
+
+    const handleCancel = () => {
+        setIsModalVisible(false);
+    };
     const onSubmit = async ( e ) => {
         e.preventDefault();
         setBtnLoader(true)
@@ -54,14 +74,20 @@ const Index = () => {
         }
         else if(!token){
             alert('modal')
-            openModal()
-            // let document.querySelector('.modaldiv')
-            // document.body.style.overflow = 'hidden';
+            setState(newCollect)
+            showModal()
         }else
             setResponseHook(post_gid_app_action(newCollect))
     }
-    
-    console.log(collect)
+    React.useEffect(()=>{
+        if(appNoToken){
+            if(token?.role !=="simple_user"){
+                warning("Ariza junatish faqat 'Foydalanuvchi' roli uchun ruxsat berilgan !!!")
+            }else setResponseHook(post_gid_app_action(appNoToken)) 
+        }
+    },[])
+    console.log(selector)
+    // console.log(collect)
     return (
         <Wrapper onSubmit={ onSubmit }>
             <TextTitle { ...mediaTextField } { ...mediaTextFieldSec } top="60px" bottom="20px"> {t("arizaqoldirish.title")} </TextTitle>
@@ -196,21 +222,7 @@ const Index = () => {
                 </Container>
             </Container>
             <>
-            <Modal
-                visible={state}
-                width="600px"
-                height="500px"
-                effect="fadeInUp"
-                style={{overflowY: 'hidden',}}
-                onClickAway={closeModal}
-            >
-                <div className="modaldiv" style={{overflow:'hidden'}}> 
-                    <div className="closebtn">
-                        <CloseIcon className="pointx" onClick={closeModal} />
-                    </div>
-
-                </div>
-                </Modal>
+                <Modal isModalVisible={isModalVisible} setIsModalVisible={setIsModalVisible} showModal={showModal} handleOk={handleOk} handleCancel={handleCancel}/>
             </>
         </Wrapper>
     )

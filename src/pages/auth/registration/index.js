@@ -11,8 +11,8 @@ import Registration from "./reg.component";
 import { Wrapper, Container } from "./index.style"
 import Loading from "../../../components/atom/loading.spinner.line"
 import { useTranslation } from 'react-i18next'
-import  Navbar from "../../../components/templates/navbar";
-
+import { Tooltip } from 'antd';
+import { CloseCircleOutlined } from '@ant-design/icons';
 
 
 
@@ -72,20 +72,27 @@ function a11yProps(index) {
 export default function BasicTabs() {
 
   const { t } = useTranslation()
-  const classes = useStyles();
   const [value, setValue] = React.useState(1);
-
+  const appNoToken = JSON.parse(localStorage.getItem('appNoToken'))
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
+  const handleCancelApp = () => {
+    localStorage.removeItem('appNoToken')
+    window.location.href='/auth'
+  }
   return (
     <div>
-    
+     
       <Wrapper>
-
-        <Container>
-
+        { appNoToken &&
+            <div style={{position:'absolute', color:'orangered'}}>&nbsp; Arizani topshirish faqat <strong>Foydalanuvchi</strong> roliga ruhsat berilgan 
+              <Tooltip placement="right" title={<span>Arizani bekor qilish</span>}>
+                &nbsp;&nbsp;<button onClick={handleCancelApp} className="btn_cancel_app"><CloseCircleOutlined style={{fontSize:'1.1rem', position:'relative', top:'2px', color:'#326A32'}}/></button>
+              </Tooltip>
+            </div>
+        }
+        <Container style={appNoToken ? {marginTop:40}:{}}>
           <Box sx={{ width: "100%", margin: "0 auto" }}>
             <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
               <Tabs
