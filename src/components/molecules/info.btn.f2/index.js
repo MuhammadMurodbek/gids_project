@@ -34,7 +34,11 @@ const Index = ({data}) => {
                     <FlexContainer width="auto" alignItems="center" className="count"><VisibilityIcon/>{" "}10</FlexContainer>
                 </FlexContainer>
                 {/* <Link> */}
-                    <Button {...mediaButton} onClick={()=>handleClick(data?.id, data?.role)}  width="100%"> {t("Gid_Tanlash.korish")} </Button>
+                
+                    <Button {...mediaButton} onClick={()=>handleClick(data?.id, data?.role)}  width="100%">
+                     {t("Gid_Tanlash.korish")} 
+                     </Button>
+
                 {/* </Link> */}
             </FlexContainer>
         </WrapperInfoBtn>

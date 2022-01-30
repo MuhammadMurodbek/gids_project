@@ -5,7 +5,7 @@ import MyRequests from '../../components/organism/request';
 import noDataImg from "../../assets/img/undraw/no_data.svg"
 import Spinner from "../../components/atom/loading.spinner.line"
 import moment from "moment"
-export default function Index({success, setCollect, collect, setCallback}) {
+export default function   Index({success, setCollect, collect, setCallback}) {
     const array_data = success?.data?.results
     const lang = localStorage.getItem('i18nextLng')
     // console.log(array_data)

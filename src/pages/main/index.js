@@ -61,7 +61,7 @@ const Index = () => {
         }
         else history.push("/auth")
     }
-
+    console.log("ssss" , getRole?.role)
     return (
         <>
             <WrapperAll>
@@ -91,7 +91,16 @@ const Index = () => {
                                 <p>{t("main.textForTadbirkor")}</p>
                                 <FlexContainer width="400px" {...mediaFlexButtons} justifyContent="space-between">
                                     {/* <Link to="/application-form" > */}
-                                        <Button onClick={onClickbutton} {...mediaBtn}>{t("main.arizaQoldrirish")} </Button>
+
+                                        {
+                                            getRole?.role === "translator"  ? null
+                                            :
+                                            getRole?.role === "writer" ? null 
+                                            :getRole?.role === "gid" ? null   
+                                            :
+                                            <Button onClick={onClickbutton} {...mediaBtn}>{t("main.arizaQoldrirish")} </Button>
+                                        }
+                                        
                                     {/* </Link> */}
                                     <Link to="/gids">
                                         <Button {...mediaBtn} type="outlined"> {t("main.Gid_tanlash")} </Button>
@@ -236,12 +245,19 @@ const Index = () => {
                             <TextTitle  {...mediaTextField} {...mediaTextFieldSec} width="50%" left="auto" right="auto" bottom="40px">{t("main.hoziroq")}
                             </TextTitle>
                             <FlexContainer {...mediaFlexButtons} width="380px" margin="0 auto" alignItems="center" justifyContent="space-between">
-                                {/* <Link to="/application-form"> */}
-                                    <Button onClick={onClickbutton}  {...mediaBtn}>{t("main.ariza")} </Button>
-                                {/* </Link> */}
+                              
+                                {
+                                    getRole?.role === "translator"  ? null
+                                    :
+                                    getRole?.role === "writer" ? null 
+                                    :getRole?.role === "gid" ? null   
+                                    :
+                                    <Button onClick={onClickbutton} {...mediaBtn}>{t("main.arizaQoldrirish")} </Button>
+                                }      
+                           
                                 <Link to="/gids"> 
-                                <Button type="outlined"  {...mediaBtn}>{t("main.tanlash")} </Button>
-                                F</Link>
+                                <Button type="outlined"  className="btnlaset" {...mediaBtn}>{t("main.tanlash")} </Button>
+                                </Link>
                             </FlexContainer>
                         </div>
                     </ContainerLast>

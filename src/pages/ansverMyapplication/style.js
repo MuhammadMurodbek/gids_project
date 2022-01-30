@@ -69,7 +69,19 @@ export const Wrapper = styled.div`
     .btn-Pview{
         margin-left:20px;
     }
-
+    .iconPerson{
+        font-size:60px;
+         color: #333;
+     }
+    .newPerson{
+        display: flex;
+        align-items:center;
+        justify-content:center;
+        border-radius:50%;
+        background: #999;
+        width:80px !important;
+        height:80px !important;
+    }
     @media (max-width: 700px){
         .grid-container{
             width:95% !important;

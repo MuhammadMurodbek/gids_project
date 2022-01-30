@@ -28,6 +28,7 @@ export default function Index() {
     }, [ state ] )
     return (
         <Wrapper> 
+        
             <TextTitle top="100px" bottom="50px">
                {t("arizalar_royhati.title")}
             </TextTitle>

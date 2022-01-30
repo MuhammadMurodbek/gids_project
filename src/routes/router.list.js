@@ -161,6 +161,14 @@ export const routes_write =  [
 
 export const routes = [
     {
+        url:'/request',
+        component:ListRouter.Request
+    },
+    {
+        url:'/request/:id',
+        component:ListRouter.Fullrequest
+    },
+    {
         url:'/gids',
         component:ListRouter.ChooseGids,
     },

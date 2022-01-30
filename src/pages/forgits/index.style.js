@@ -18,7 +18,7 @@ export const TextColor = styled.span`
     color: ${mainGreen};
 `
 export const Takliflar = styled.div`
-    padding: 10px 85px;  
+    padding: 10px 90px;  
     margin: 50px 0;
     @media (min-width:1367px){
         width: 1400px ;
@@ -51,7 +51,7 @@ export const Takliflar = styled.div`
 `
 
 export const Savollar = styled.div`
-    padding: 0 85px;
+    padding: 0 90px;
     margin-bottom:100px ;
     @media (min-width:1367px){
         width: 1400px ;
@@ -80,7 +80,7 @@ export const FlexContainer = styled.div`
 
 
 export const ComponentTwo = styled.div`
-padding: 0px 85px;  
+padding: 0px 90px;  
         width: 100%;
         /* padding:10px 20px; */
         margin: 100px 0;
