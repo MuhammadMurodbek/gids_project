@@ -44,6 +44,7 @@ export default function Index() {
                             <Button type="outlined" >
                                 Arizani bekor qilish
                             </Button>
+            
                         </div>
                         <br /><br />
                         <div className="title-answers">
