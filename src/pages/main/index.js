@@ -55,11 +55,11 @@ const Index = () => {
     const { t } = useTranslation()
     const history = useHistory()
     const onClickbutton =()=>{
-        const token = localStorage.getItem('user_token')
-        if(token){
+        // const token = localStorage.getItem('user_token')
+        // if(token){
             history.push("/application-form")
-        }
-        else history.push("/auth")
+        // }
+        // else history.push("/auth")
     }
 
     return (
