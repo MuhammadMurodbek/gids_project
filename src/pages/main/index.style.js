@@ -276,6 +276,15 @@ export const ContainerLast = styled.div`
     text-align:center;
     background-color: #F2F8F2;
 
+    .bbnMbV {
+        display: flex;
+        align-items:center;
+        justify-content:center;
+
+    }
+    .btnlaset{
+        margin: 4px 0 0 10px;
+    }
     @media (max-width:400px){
         padding:10px 4px;
     }

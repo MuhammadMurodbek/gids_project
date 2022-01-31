@@ -24,7 +24,7 @@ export const Navbar = styled.div`
     }
     .userNav11{
         position: relative;
-        right: 40px;
+        right: 30px;
         width: 100px;
         /* background-color: red !important; */
     }

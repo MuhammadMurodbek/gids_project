@@ -73,7 +73,6 @@ const Index = () => {
             setBtnLoader(false)
         }
         else if(!token){
-            alert('modal')
             setState(newCollect)
             showModal()
         }else
