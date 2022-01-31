@@ -9,8 +9,11 @@ import star from '../../assets/img/answerMy-application/star.svg'
 import sms from '../../assets/img/answerMy-application/sms.svg'
 import Spinner from "../../components/atom/loading.spinner.line"
 import moment from "moment"
-import { deleteResponse } from "../../hooks/response_get"
+import { deleteResponse, patchResponseNonFile } from "../../hooks/response_get"
 import PersonIcon from '@mui/icons-material/Person';
+import {success, error} from "./functions"
+import { SyncOutlined } from '@ant-design/icons';
+
 export const mediaImage = {
     m_width: "960px",
     m_m_width: "280px",
@@ -19,15 +22,33 @@ export const mediaImage = {
 export default function Index() {
     const history = useHistory()
     const [callback, setCallback] = useState(false)
+    const [patchResponseData, setPatchResponseData] = useState({success:'', error:'', loading:false})
     const deleteReply = (id, name) => {
         deleteResponse(`/api/users/self/reply/${id}/`, `${name}'s comment`, setCallback)
     }
+    const cancelReply = () => {
+        let patchData = applicationData?.success?.data
+        if(patchData){
+            patchData.status = 'cancelled'
+        }
+        setPatchResponseData(a=>{return{...a, loading:true}})
+        patchResponseNonFile(`/api/users/self/application/${patchData?.id}/`, {status:'cancelled'}, setPatchResponseData)
+        // console.log(patchData)
+    }
     const [applicationData, setApplicationData] = useState({ success: '', error: '', loading: false })
 
-    console.log(applicationData?.success?.data?.replies)
+    console.log(applicationData)
     const handleClick = (id, role) => {
         history.push(`/seeprofile?id=${id}&role=${role}`)
     }
+    React.useEffect(()=>{
+        if(patchResponseData?.success!=='' && patchResponseData?.error===''){
+            success()
+        }else if(patchResponseData?.success==='' && patchResponseData?.error!==''){
+            error()
+        }
+    },[patchResponseData])
+    console.log(patchResponseData)
 
     return (
         <Wrapper>
@@ -41,8 +62,9 @@ export default function Index() {
                 applicationData?.success === '' ? <Spinner marginTop="60px" width={50} height={50} /> :
                     <>
                         <div className="btnBack">
-                            <Button type="outlined" >
-                                Arizani bekor qilish
+                            <Button type="outlined" onClick={cancelReply} >
+                                {patchResponseData?.loading && <SyncOutlined spin={true} /> } 
+                                Arizani bekor qilish 
                             </Button>
             
                         </div>
@@ -112,7 +134,7 @@ export default function Index() {
                                                     <Button onClick={() => deleteReply(prev?.id, prev?.replier_data?.full_name?.first_name)} type="outlined">O’chirish</Button>
 
                                                     <Button onClick={()=>handleClick(prev?.id, prev?.replier_role)}  className="btn-Pview">
-                                                        Profilni ko’
+                                                        Profilni ko’rish
                                                     </Button>
                                                 </div>
 

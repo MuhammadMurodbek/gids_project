@@ -110,6 +110,11 @@ export const patchResponse = async ( url, data, setState ) => {
         .then( response => setState( { success: response?.data, error: '', loading: false } ) )
         .catch( err => setState( { success: '', error: err, loading: false } ) )
 }
+export const patchResponseNonFile = async ( url, data, setState ) => {
+    return await axios.patch( `${ baseUrl }${ url }`, data, head_token )
+        .then( response => setState( { success: response?.data, error: '', loading: false } ) )
+        .catch( err => setState( { success: '', error: err, loading: false } ) )
+}
 export const deleteResponse = async ( url, data, setCallback ) => {
     return await axios.delete( `${ baseUrl }${ url }`, head_token )
         .then( () => {
