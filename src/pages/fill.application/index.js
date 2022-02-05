@@ -221,7 +221,7 @@ const Index = () => {
                 </Container>
             </Container>
             <>
-                <Modal isModalVisible={isModalVisible} setIsModalVisible={setIsModalVisible} showModal={showModal} handleOk={handleOk} handleCancel={handleCancel}/>
+                <Modal isModalVisible={isModalVisible} setIsModalVisible={setIsModalVisible} showModal={showModal} handleOk={handleOk} handleCancel={handleCancel} type={"Ariza"}/>
             </>
         </Wrapper>
     )

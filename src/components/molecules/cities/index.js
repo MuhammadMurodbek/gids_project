@@ -24,8 +24,9 @@ export default function Index(props) {
                         {kalendar}
                     </div>
                     <div className="hteg_wrapper">
-                        <img className="img0" src={img3} alt="asdf" />
-                       <div className="hteg" style={{cursor:'pointer'}} onClick={handleFilter}>{hteg}</div>
+                        {/* <img className="img0" src={img3} alt="asdf" /> */}
+                        <> </>
+                       <div className="hteg img0" style={{cursor:'pointer'}} onClick={handleFilter}><b>{hteg}</b></div>
                     </div>
                 </div>
             </Grid>

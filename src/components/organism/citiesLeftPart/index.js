@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import Truncate from 'react-truncate';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import ImgContainer from "../../../components/molecules/img.container"
+import imgpen  from "./pen.svg"
  
 export default function index(props) {
     const { url, title, kalendar, hteg, lines, text, btnText, id, postData, setPostData, setState } = props
@@ -25,6 +26,7 @@ export default function index(props) {
                         
                         }>
                             {btnText}
+                            <img className='penimg' src={imgpen} alt="asdf"></img>
                            
                         </Link>
                 </Grid>

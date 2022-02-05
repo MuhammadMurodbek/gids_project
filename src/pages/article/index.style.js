@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
     width: 100%;
-  
+    
     
     .sc-fKFxtB.cNPZrT{
         margin:0 auto;
@@ -15,6 +15,10 @@ export const Wrapper = styled.div`
         padding:30px;
     }
 
+    @media (min-width:140px){
+       width:1400px;
+       margin:0 auto;
+    }
     @media (max-width:960px){
         .msa2{
             display:none;

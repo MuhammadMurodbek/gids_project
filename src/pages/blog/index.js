@@ -35,6 +35,7 @@ export default function Index () {
         history.push(`/blog?page=${pageNumber}`)
         setPagination( { current: pageNumber} )
     }
+    
     return (
         <Wrapper>
             <TextTitle width="50%" left="auto" right="auto" bottom="30px" top="80px">
@@ -50,6 +51,7 @@ export default function Index () {
                                         <Grid item xs={ 12 } sm={ 12 } md={ 8 }>
                                             {
                                                 articleList?.map( item => (
+                                                    
                                                     <CitiLeftPart
                                                         key={ item.id }
                                                         title={ item.title }
@@ -65,7 +67,9 @@ export default function Index () {
                                                         btnText={ t( "Blog.davomiOqish" ) }
                                                         setTagName={ setTagName }
                                                     />
+                                                   
                                                 ) )
+                                                
                                             }
 
                                         </Grid>
