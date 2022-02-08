@@ -2,7 +2,9 @@ import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
     width: 100%;
-  
+    position:absolute;
+    left:0; right:0;
+    top:145px;
     
     .sc-fKFxtB.cNPZrT{
         margin:0 auto;

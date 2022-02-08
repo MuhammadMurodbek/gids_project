@@ -9,6 +9,7 @@ const Index = () => {
     useEffect(() =>{
         getResponse(`/api/users/self/application/?country=${collect?.country}&city=${collect?.city}&date_after=${collect?.date_after}&date_before=${collect?.date_before}`, setState)
     },[callback])
+    console.log(success)
     return (
         <div>
             <Myaplcation success={success} setCollect={setCollect} collect={ collect } setCallback={setCallback}/>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { AboutTravel, Wrapper } from './index.style'
 import { TextTitle } from '../../styles/textTitle/index.style'
 import Button from "../../components/atom/button";
@@ -10,10 +10,15 @@ import xitoy from '../../assets/img/citiyes/xitoy.png';
 import { mediaTextField, mediaTextFieldSec, mediaBtn } from "../../custom/global.media.variables"
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-
+import {getResponse} from "../../hooks/response_get"
 
 export default function Index() {
     const {t} = useTranslation()    
+    // const [getState, setState] = useState({success:'', error:'', loading:false})
+    // useEffect(()=>{
+    //     getResponse('/')
+    // },[])
+
     return (
         <Wrapper>
             <AboutTravel>
@@ -26,7 +31,7 @@ export default function Index() {
                 </TextTitle>
             </AboutTravel>
             <TextTitle {...mediaTextField} {...mediaTextFieldSec} >{t("safarHaqda.Maqolalarim")}</TextTitle>
-            <Grid justifyContent="center" className="grid_container" container spacing={1}>
+            {/* <Grid justifyContent="center" className="grid_container" container spacing={1}>
                 <Grid item xs={12} md={8}>
 
                     <CitiLeftPart
@@ -80,7 +85,7 @@ export default function Index() {
                     <ImgContainer src={ad} width="350px" margin="0 0 15px" />
                     <ImgContainer src={ad} width="350px" margin="0 0 15px" />
                 </Grid>
-            </Grid>
+            </Grid> */}
 
         </Wrapper>
     )

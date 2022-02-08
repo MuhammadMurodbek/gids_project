@@ -27,7 +27,7 @@ import { useTranslation } from 'react-i18next'
 import { getLabelCountrySecond } from "../../custom/function"
 import { useHistory } from "react-router-dom"
 import { media, mediaFlexButtons, mediaBtn, mediaTextField, mediaTextFieldSec, mediaContainer } from "./_media"
-import AccountMenu from '../../components/atom/user_account';
+// import AccountMenu from '../../components/atom/user_account';
 import Slider from "react-slick";
 import img1 from '../../assets/img/main/33.jpg'
 import img2 from '../../assets/img/main/ee.jpg'
