@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import {mainGreen} from "../../../../styles/global/colors"
+import { mainGreen } from "../../../../styles/global/colors"
 
 export const Wrapper = styled.div`
     width: 100%;
@@ -11,7 +11,8 @@ export const Wrapper = styled.div`
     .container4{
         position:relative;
         z-index:10;
-    }
+    }  
+   
 `
 export const TitleContainer = styled.div`
     width: 100%;
@@ -24,6 +25,10 @@ export const TitleComponent = styled.div`
     position:relative;
     width:100%;
     height: auto;
+
+
+  
+
     .fa-chevron-right{
         color:${mainGreen};
     }

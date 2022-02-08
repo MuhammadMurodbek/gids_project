@@ -47,6 +47,9 @@ const Index = () => {
     };
   });
 
+  function refreshBtn(){
+    window.scrollTo(0,0)
+  }
  
   return (
     <div>
@@ -60,7 +63,7 @@ const Index = () => {
           >
 
             <div className="imgass">
-              <Link to="/">
+              <Link to="/" onClick={refreshBtn}>
                 {" "}
                 <img className="img_logo1" src={Logo} alt="safsf" />
               </Link>

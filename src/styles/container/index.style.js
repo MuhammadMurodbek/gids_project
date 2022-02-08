@@ -22,6 +22,7 @@ export const Container = styled.div`
         margin:${a=>a.m_margin};
         text-align:${a=>a.m_text_align} !important;
     }
+  
     
 
 `

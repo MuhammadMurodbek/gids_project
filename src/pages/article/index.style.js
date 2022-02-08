@@ -9,22 +9,25 @@ export const Wrapper = styled.div`
     }
     .msa2{
         margin-top:30px;
+        
     }
 
     .grid_container{
         padding:30px;
     }
-
-    @media (min-width:140px){
-       width:1400px;
-       margin:0 auto;
+    
+    @media (min-width:1400px){
+        .divMaqola{
+            width:1400px;
+            margin:0 auto;
+             
+        }
     }
     @media (max-width:960px){
         .msa2{
             display:none;
         }
     }
-
     @media (max-width:500px){
         .grid_container{
             padding:20px 10px;
