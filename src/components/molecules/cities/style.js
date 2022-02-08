@@ -18,6 +18,10 @@ export const Wrapper = styled.div`
       margin-bottom: 8px;
   }
 
+  .hteg{
+    color: #000;
+  }
+
   .xitoy-text{
       margin: 0;
       font-style: normal;

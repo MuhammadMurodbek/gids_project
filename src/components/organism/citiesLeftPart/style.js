@@ -25,4 +25,9 @@ export const Wrapper = styled.div`
             font-size: 14px;
         }
     }
+    .penimg{
+        width:20px;
+        margin-left:5px;
+        margin-bottom:3px;
+    }
 `

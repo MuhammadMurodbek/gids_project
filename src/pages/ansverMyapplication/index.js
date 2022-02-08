@@ -91,7 +91,6 @@ export default function Index() {
                                                         <PersonIcon className="iconPerson" />
                                                     </div>
                                                 }
-
                                             </Grid>
                                             <Grid item xs={12} md={11} className="item">
                                                 <div className="feedback-div">
@@ -133,7 +132,7 @@ export default function Index() {
                                                 <div className="btn-groups">
                                                     <Button onClick={() => deleteReply(prev?.id, prev?.replier_data?.full_name?.first_name)} type="outlined">O’chirish</Button>
 
-                                                    <Button onClick={()=>handleClick(prev?.id, prev?.replier_role)}  className="btn-Pview">
+                                                    <Button onClick={()=>handleClick(prev?.replier_data?.full_name?.id, prev?.replier_role)}  className="btn-Pview">
                                                         Profilni ko’rish
                                                     </Button>
                                                 </div>

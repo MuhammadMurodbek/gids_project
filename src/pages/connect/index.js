@@ -13,7 +13,9 @@ import { mediaTextField, mediaTextFieldSec } from "../../custom/global.media.var
 import Modal from 'react-awesome-modal';
 import { useTranslation } from 'react-i18next';
 import { postResponse } from "../../hooks/response_get"
-import toast, {Toaster} from 'react-hot-toast';
+import toast, { Toaster } from 'react-hot-toast';
+import Modal1 from '../fill.application/modal';
+
 
 export default function Index() {
     const initialState = {
@@ -28,7 +30,27 @@ export default function Index() {
     const { first_name, last_name, phone_number, email, subject } = contact
     const { t } = useTranslation()
 
+
+
     const [state, setState] = useState(false);
+
+    const [isModalVisible, setIsModalVisible] = useState(false);
+
+    const showModal = () => {
+        setIsModalVisible(true);
+    };
+
+    const handleOk = () => {
+        localStorage.setItem('appNoToken', JSON.stringify(state))
+        setIsModalVisible(false);
+        // history.push('/auth')
+        window.location.href = '/auth'
+    };
+
+    const handleCancel = () => {
+        setIsModalVisible(false);
+    };
+
     function openModal() {
         setState(true);
     }
@@ -53,31 +75,33 @@ export default function Index() {
             subject: subject
         }
         postResponse("/api/posts/contact/", payload, setResponse)
-
     }
+
     useEffect(() => {
         if (response?.success !== '') {
-            toast.success("Successfully created")
+            // toast.success("So'rovingiz muofaqiyatli jo'natildi")
+            openModal()
             setTimeout(() => {
                 setContact(initialState)
             }, 300)
-        } else if(response?.error !== '') {
-            toast.error("Failed")
+        } else if (response?.error !== '') {
+            // toast.error("So'rovingiz jo'natilmadi !!!")
+            showModal()
         }
     }, [response])
 
     return (
         <div>
             <Wrapper>
-                <TextTitle {...mediaTextField} {...mediaTextFieldSec} top="100px" bottom="100px">
+                <TextTitle {...mediaTextField} {...mediaTextFieldSec} top="40px" bottom="50px">
                     {t("connect.contact")}
                 </TextTitle>
                 <Grid container alignItems="center" spacing={1} diracti>
                     <Grid item xs={12} md={5} >
                         <h3 className="grid1">{t("connect.Kontaktlarimiz")}</h3>
-                        <p>+998 90 123 45 67</p>
+                        <p>+99893 596-92-20, +99897 726-69-89</p>
                         <p>salom@gits.uz</p>
-                        <p>{t("connect.manzil")} </p>
+                        <p>  Nukus ko'chasi, 86/3, Toshkent, 100015, O'zbekiston</p>
                         <div>
                             <img className="icons" src={imgtg} alt="name" />
                             <img className="icons" src={imgfac} alt="facebook" />
@@ -85,7 +109,8 @@ export default function Index() {
                         </div>
                     </Grid>
                     <Grid item xs={12} md={7} className="grid2" >
-                        <iframe title="myFrame" className="iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d191885.50263675497!2d69.13928277818499!3d41.28251254609851!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b0cc379e9c3%3A0xa5a9323b4aa5cb98!2z0KLQsNGI0LrQtdC90YIsINCj0LfQsdC10LrQuNGB0YLQsNC9!5e0!3m2!1sru!2s!4v1631513329689!5m2!1sru!2s" width="690" height="530"     ></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m19!1m8!1m3!1d5995.835629564712!2d69.272551!3d41.2888931!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x38ae8b1e6c899caf%3A0xbefcfa0fa695105!2zT09PICJUUkFWRUwgQ0FSUyIgODYsINC60L7RgNC_LiAzIE51a3VzIFN0cmVldCBUYXNoa2VudCAxMDAwMTU!3m2!1d41.288893099999996!2d69.27255099999999!5e0!3m2!1sru!2s!4v1643979461824!5m2!1sru!2s" width="690" height="530"     ></iframe>
+
                     </Grid>
                 </Grid>
 
@@ -171,6 +196,9 @@ export default function Index() {
                         </div>
                     </Modal>
                 </section>
+                <>
+                    <Modal1 isModalVisible={isModalVisible} setIsModalVisible={setIsModalVisible} showModal={showModal} handleOk={handleOk} handleCancel={handleCancel} type={"So'rov"} />
+                </>
             </Wrapper>
         </div>
     )

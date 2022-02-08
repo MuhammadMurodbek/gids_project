@@ -3,7 +3,7 @@ import { Navbar } from "./index.style";
 import Logo from "../../../assets/img/logoM04.png";
 import { FlexContainer } from "../../../styles/flex.container";
 import ButtonNavbar from "../../molecules/button.navbar";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useHistory } from "react-router-dom";
 import { navbarMedia, navbarMediaCenter } from "./media";
 import { Turn as Hamburger } from "hamburger-react";
 import { mainGreen } from "../../../styles/global/colors";
@@ -47,7 +47,7 @@ const Index = () => {
     };
   });
 
-
+ 
   return (
     <div>
       <Navbar navbarProps={scrollY}>
@@ -93,28 +93,26 @@ const Index = () => {
                 :
                 getRole?.role === "translator"  ?
                 <>
-                <ButtonNavbar title={t("navbar.GTU")} url="/forgits" />
-                <ButtonNavbar title="Blog" url="/blog?page=1" />   
-                <ButtonNavbar title={t("navbar.Arizalar_royhati")} url="/request" />    
+                <ButtonNavbar  title={t("navbar.GTU")} url="/forgits" />
+                <ButtonNavbar  title="Blog" url="/blog?page=1" />   
+                <ButtonNavbar   title={t("navbar.Arizalar_royhati")} url="/request" />    
                 </>
                 :
                 getRole?.role === "simple_user" ?
                   <>
-                    <ButtonNavbar title={t("navbar.GvaTtanlash")} url="/gids" />
-                    <ButtonNavbar title="Blog" url="/blog?page=1" />
-                    <ButtonNavbar title={t("navbar.Ariza_qoldirish")} url="/application-form" />
+                    <ButtonNavbar  title={t("navbar.GvaTtanlash")} url="/gids" />
+                    <ButtonNavbar  title="Blog" url="/blog?page=1" />
+                    <ButtonNavbar  title={t("navbar.Ariza_qoldirish")} url="/application-form" />
                   </>
                   :
-                 
-
                     <>
-                      <ButtonNavbar title={t("navbar.GvaTtanlash")} url="/gids" />
+                      <ButtonNavbar  title={t("navbar.GvaTtanlash")} url="/gids" />
 
-                      <ButtonNavbar title={t("navbar.GTU")} url="/forgits" />
+                      <ButtonNavbar  title={t("navbar.GTU")} url="/forgits" />
 
-                      <ButtonNavbar title="Blog" url="/blog?page=1" />
+                      <ButtonNavbar  title="Blog" url="/blog?page=1" />
 
-                      <ButtonNavbar title={t("navbar.Ariza_qoldirish")} url="/application-form" />
+                      <ButtonNavbar  title={t("navbar.Ariza_qoldirish")} url="/application-form" />
                     </>
 
 

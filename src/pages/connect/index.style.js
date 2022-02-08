@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
     width: 90%;
     margin:0 auto;
-    padding: 10px;
+    padding:10px    ;
 
     .grid1{
         font-weight: 600;
@@ -41,6 +41,10 @@ export const Wrapper = styled.div`
     .grid_btn{
         margin-bottom: 50px;
     }
+    @media (min-width:1367px){
+        width:1250px;
+        margin:0 auto;
+    }
     @media (max-width: 700px) {
         .sc-lmoMya.fECUXu{
             margin:35px 0;
@@ -54,4 +58,5 @@ export const Wrapper = styled.div`
             height:350px;
         }
     }
+ 
 `

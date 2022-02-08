@@ -3,7 +3,11 @@ import styled  from "styled-components";
 export const Wrapper = styled.div`
     width:100%;
     padding:10px 85px;
-    margin-bottom: 50px ;
+    margin-bottom: 50px;
+    @media (min-width: 1367px){
+        width: 1400px;
+        margin: 0 auto;
+     }
  `
 
 export const ComponentTwo = styled.div`
@@ -58,5 +62,6 @@ export const ComponentTwo = styled.div`
             width:250px;
         }
     } */
+ 
 
 `

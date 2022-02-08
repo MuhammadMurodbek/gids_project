@@ -9,6 +9,6 @@ export const Wrapper = styled.div`
     .main-part{
         width: 100%;
         height: auto;
-        margin-top: 85px;
+        margin-top: 75px;
     }
 `

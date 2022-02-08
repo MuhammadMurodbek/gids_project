@@ -46,9 +46,9 @@ const Index = () => {
                         <div className="flex-items">
                             <span>{t("footer.biznigServislar")}</span>
                             <ul>
+                                <li><Link to="/about"> {t("footer.platformaH")} </Link></li>
                                 <li><Link to="/gids">{t("footer.tanlash")}</Link></li>
                                 <li><Link to="/forgits">{t("footer.GTuchun")}</Link></li>
-                                <li><Link to="/about"> {t("footer.platformaH")} </Link></li>
                                 <li><Link to="/blog"> {t("footer.Blog")} </Link></li>
                             </ul>
                         </div>

@@ -227,7 +227,6 @@ const Index = () => {
             ) : null }
             <div className="btnGrop">
               <Button calssName="saqlashbtn" onClick={ handleSubmit } loader={ responseHook?.loading } type="submit">
-             
                 Saqlash
               </Button>
             </div>

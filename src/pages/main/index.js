@@ -56,6 +56,7 @@ const Index = () => {
     const history = useHistory()
     const onClickbutton =()=>{
         history.push("/application-form")
+        window.scrollTo(0,0);
     }
     console.log("ssss" , getRole?.role)
     return (
@@ -164,7 +165,7 @@ const Index = () => {
                                             </Link>
                                         </FlexContainer>
                                     </div>
-                                </Paper>
+                                </Paper> 
                             </div>
                             
                             <div className="carouseldiv">
