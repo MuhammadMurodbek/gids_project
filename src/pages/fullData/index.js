@@ -51,6 +51,9 @@ export default function Index() {
       },)
     } 
   },[infoDelete])
+  const editFn = () => {
+    history.push(`/write-article/edit/${id}`)
+  }
   return (
     <div>
       <Wrapper>
@@ -74,7 +77,7 @@ export default function Index() {
                     <span> {getArticle?.author?.first_name  +" "+  getArticle?.author?.last_name}  </span>
                   </div>
                   <div className="editbtn">
-                    <Button type="outlined">edit</Button>
+                    <Button onClick={editFn} type="outlined">edit</Button>
                   </div>
                   <div className="deletebtn">
                     <Button onClick={deleteFn} type="outlined">delete</Button>

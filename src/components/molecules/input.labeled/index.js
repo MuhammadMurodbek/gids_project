@@ -29,7 +29,8 @@ const Index = (props) => {
     useEffect(()=>{
         if(defaultApiValue) {
             setValue(defaultApiValue)
-            setState({...state, [field]: defaultApiValue})
+            if(field)
+                setState({...state, [field]: defaultApiValue})
         }
     },[defaultApiValue])
     useEffect(()=>{
