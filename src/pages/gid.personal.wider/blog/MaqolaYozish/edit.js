@@ -19,6 +19,7 @@ import Select from 'react-select';
 import {putResponse, getResponse} from "../../../../hooks/response_get"
 import toast from 'react-hot-toast'
 import {colourOptions, colourOptionsApi} from "./contant"
+import Spinner from "../../../../components/atom/loading.spinner.line"
 
 const tags = ["busines", "tarix", "siyosiy"]
 
@@ -96,67 +97,70 @@ const Index = () => {
     },[getData])
     return (
         <Layout>
-            <form onSubmit={handleSubmit}>
-                <TitleComponent>
-                    <TextTitle {...mediaTextField} {...mediaTextFieldSec} font="26px" bottom="20px">Maqolani o'zgartirish</TextTitle>
-                    <Link to="/gid-personal-wider" className="link">
-                        <div className="title-left"> <ImageContainer width="auto" src={icon} /> <span>{t("maqolaYozish.orqaga")}</span>
-                        </div>
-                    </Link>
-                </TitleComponent>
-                <Container boxShadow={shadow} padding="20px">
-                    <Grid container spacing={2}>
-                        <Grid item xs={12} md={4} >
-                            <InputLabel
-                                name="title"
-                                value={article.title}
-                                onChange={handleChange}
-                                width="100%"
-                                label={t("maqolaYozish.maqolaNomi")}
-                                placeholder={t("maqolaYozish.NomiPlace")} 
-                                // defaultApiValue={getData?.success?.data?.title}
-                            />
-                            
-                            <br /><br />
-                            <h2>Tags</h2>
-                            <Select
-                                // defaultValue = {[{ value: 'tag1', label: "#Biznes" }]}
-                                isMulti
-                                value={article.tags}
-                                name="tags"
-                                options={colourOptions}
-                                onChange={handleTagChange}
-                                className="basic-multi-select"
-                                classNamePrefix="select"
-                            />
+            {
+                getData?.success === '' ? <Spinner marginTop="60px" width={ 50 } height={ 50 } />:
+                <form onSubmit={handleSubmit}>
+                    <TitleComponent>
+                        <TextTitle {...mediaTextField} {...mediaTextFieldSec} font="26px" bottom="20px">Maqolani o'zgartirish</TextTitle>
+                        <Link to="/gid-personal-wider" className="link">
+                            <div className="title-left"> <ImageContainer width="auto" src={icon} /> <span>{t("maqolaYozish.orqaga")}</span>
+                            </div>
+                        </Link>
+                    </TitleComponent>
+                    <Container boxShadow={shadow} padding="20px">
+                        <Grid container spacing={2}>
+                            <Grid item xs={12} md={4} >
+                                <InputLabel
+                                    name="title"
+                                    value={article.title}
+                                    onChange={handleChange}
+                                    width="100%"
+                                    label={t("maqolaYozish.maqolaNomi")}
+                                    placeholder={t("maqolaYozish.NomiPlace")} 
+                                    // defaultApiValue={getData?.success?.data?.title}
+                                />
+                                
+                                <br /><br />
+                                <h2>Tags</h2>
+                                <Select
+                                    // defaultValue = {[{ value: 'tag1', label: "#Biznes" }]}
+                                    isMulti
+                                    value={article.tags}
+                                    name="tags"
+                                    options={colourOptions}
+                                    onChange={handleTagChange}
+                                    className="basic-multi-select"
+                                    classNamePrefix="select"
+                                />
+                            </Grid>
+                            <Grid item xs={12} md={8}>
+                                <ImageUploader
+                                    upload={upload}
+                                    setUpload={setUpload}
+                                    width="100%"
+                                    height="460px" 
+                                    defaultImage={getData?.success?.data?.image}
+                                />
+                            </Grid>
                         </Grid>
-                        <Grid item xs={12} md={8}>
-                            <ImageUploader
-                                upload={upload}
-                                setUpload={setUpload}
+                        <Container padding="0" margin="70px 0 0">
+                            <AreaLabeled
+                                name="content"
+                                state={article}
+                                setState={setArticle}
+                                field="content"
                                 width="100%"
-                                height="460px" 
-                                defaultImage={getData?.success?.data?.image}
-                            />
-                        </Grid>
-                    </Grid>
-                    <Container padding="0" margin="70px 0 0">
-                        <AreaLabeled
-                            name="content"
-                            state={article}
-                            setState={setArticle}
-                            field="content"
-                            width="100%"
-                            label={t("maqolaYozish.Text")}
-                            placeholder={t("maqolaYozish.maqolaniYozing")} 
-                            style={{minHeight:400}}
-                            />
+                                label={t("maqolaYozish.Text")}
+                                placeholder={t("maqolaYozish.maqolaniYozing")} 
+                                style={{minHeight:400}}
+                                />
+                        </Container>
+                        <Container padding="20px 0 0" textAlign="right">
+                            <Button loader={postData?.loading} type="submit">{t("maqolaYozish.joylamoq")}</Button>
+                        </Container>
                     </Container>
-                    <Container padding="20px 0 0" textAlign="right">
-                        <Button loader={postData?.loading} type="submit">{t("maqolaYozish.joylamoq")}</Button>
-                    </Container>
-                </Container>
-            </form>
+                </form>
+            }
         </Layout>
     )
 }
