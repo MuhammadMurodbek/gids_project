@@ -59,13 +59,18 @@ export const Wrapper = styled.div`
        width: 100%;
      }
     .del-edit{
-      margin-left: 30px;
-      padding: 10px;
+      width:70px;
+      // margin-left: 30px;
+      // padding: 10px;
+    }
+    .del-del{
+      width:70px;
+      // margin-left: 30px;
+      // padding: 10px;
     }
     .editbtn{
-      width:100%;
-      display: flex;
-      justify-content: flex-end;
+        margin-right:5px;
+        border-color:red;
      }
     @media (max-width:961px){
       .image_adds{

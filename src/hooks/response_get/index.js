@@ -19,10 +19,11 @@ export const postRefreshToken = async (data) => {
         })
 }
 export const getResponse = async ( url, setState, noToken ) => {
+    setState(prev=>{return{...prev, loader:true}})
     let headPart = noToken ? {headers: headers} : head_token
     await axios.get( `${ baseUrl }${ url }`, headPart )
-        .then( response => setState( { success: response, error: '' } ) )
-        .catch( err => setState( { success: '', error: err } ) )
+        .then( response => setState( { success: response, error: '', loader:false } ) )
+        .catch( err => setState( { success: '', error: err, loader:false } ) )
 }
 export const getResponseRegion = async ( url ) => {
     await axios.get( `${ url }`, headers )
@@ -115,14 +116,16 @@ export const patchResponseNonFile = async ( url, data, setState ) => {
         .then( response => setState( { success: response?.data, error: '', loading: false } ) )
         .catch( err => setState( { success: '', error: err, loading: false } ) )
 }
-export const deleteResponse = async ( url, data, setCallback ) => {
+export const deleteResponse = async ( url, data, setCallback, setInfo) => {
     return await axios.delete( `${ baseUrl }${ url }`, head_token )
-        .then( () => {
+        .then( (response) => {
             setCallback( prev => !prev )
             toast.success( data + " deleted successfully" )
+            if(setInfo) setInfo(response)
         } )
-        .catch( () => {
+        .catch( (error) => {
             setCallback( prev => !prev )
             toast.error( "Something went wrong" )
+            if(setInfo) setInfo(error?.response)
         } )
 }
