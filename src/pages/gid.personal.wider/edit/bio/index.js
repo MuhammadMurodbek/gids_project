@@ -88,7 +88,7 @@ const Index = () => {
   return (
     <Wrapper onSubmit={ ( e ) => e.preventDefault() }>
       {apiValue?.success === "" ? (
-        <Spinner marginTop="60px" width={ 50 } height={ 50 } />
+        <Spinner marginTop="60px" width={ 50 } height={ 50 }/>
       ) : (
         <>
           <Grid container spacing={ 1 } style={ { marginTop: 10 } }>

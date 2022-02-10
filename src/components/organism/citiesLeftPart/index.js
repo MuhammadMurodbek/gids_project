@@ -22,9 +22,7 @@ export default function index(props) {
                         <div className=" text-div ">
                             {text}
                         </div>
-                        <Link className="text-link" to={`/blog/${id}` 
-                        
-                        }>
+                        <Link className="text-link" >
                             {btnText}
                             <img className='penimg' src={imgpen} alt="asdf"></img>
                            
@@ -34,3 +32,5 @@ export default function index(props) {
         </Wrapper>
     )
 }
+
+// to={`/blog/${id}`}

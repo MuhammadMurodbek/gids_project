@@ -16,8 +16,8 @@ export default function   Index({success, setCollect, collect, setCallback}) {
                 <>
                     <InDate setCollect={setCollect} collect={ collect } setCallback={setCallback}/>
                     {
-                        array_data.length > 0 ?
-                            array_data.map((item, index)=>(
+                        array_data?.length > 0 ?
+                            array_data?.filter(prev=>prev?.status === 'new')?.map((item, index)=>(
                                 <MyRequests
                                     key={index}
                                     id={item?.id || 0}
