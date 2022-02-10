@@ -70,6 +70,10 @@ export const routes_gid = [
     {
         url:'/write-article',
         component:ListRouter.MaqolaYozish
+    },
+    {
+        url:'/write-article/edit/:id',
+        component:ListRouter.MaqolaYozishEdit
     }
 ]
 

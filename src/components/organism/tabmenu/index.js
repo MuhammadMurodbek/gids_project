@@ -45,7 +45,6 @@ export default function BasicTabs(props) {
   const handleChange = (event, newValue) => {
     setValue(newValue)
   }
-
   return (
     <Wrapper>
       <Box sx={{ width: '100%',minHeight:'70vh' }}>

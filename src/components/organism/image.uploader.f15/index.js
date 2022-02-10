@@ -6,9 +6,11 @@ import DeleteIcon from '@material-ui/icons/Delete';
  
 function App(props) {
   const [imageSrc, setImageSrc] = useState()
-  const { width, height, radius, minHeight, maxHeight, upload, setUpload } = props
-
-
+  const { width, height, radius, minHeight, maxHeight, upload, setUpload , defaultImage } = props
+  React.useEffect(()=>{
+    if(defaultImage)
+    setImageSrc(defaultImage)
+  },[defaultImage])
   const handleImageSelect = (e) => {
     setImageSrc(URL.createObjectURL(e.target.files[0]))
     setUpload(e.target.files[0])
