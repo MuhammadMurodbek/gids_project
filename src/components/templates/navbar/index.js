@@ -54,12 +54,13 @@ const Index = () => {
   return (
     <div>
       <Navbar navbarProps={scrollY}>
-        <div className="width1">
+        <div className=" width1 ">
           <FlexContainer
             width="100%"
-            padding="0"
+            padding="0 20px"
             alignItems="center"
             justifyContent="space-between"
+            className="navbar_pad"
           >
 
             <div className="imgass">
@@ -172,7 +173,7 @@ const Index = () => {
 
 
             </FlexContainer>
-            <div className="toggle_hamburger">
+            <div className="toggle_hamburger" onClick={refreshBtn}>
               <Hamburger toggled={isOpen} toggle={setOpen} color={mainGreen} />
             </div>
           </FlexContainer>

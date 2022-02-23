@@ -51,8 +51,10 @@ export const WrapperAll = styled.div`
 export const ComponentOne = styled.div`
     flex-grow: 1;
 
-    @media (max-width:400px){
+    @media (max-width:444px){
         padding:10px 4px;
+        
+
     }
 
     .paper{
@@ -96,6 +98,7 @@ export const ComponentOne = styled.div`
             @media (max-width: 444px){
                 width:280px !important;
                 /* background-color:red; */
+                
             }
             @media (max-width: 1256px){
                 width:460px;
@@ -110,8 +113,15 @@ export const ComponentTwo = styled.div`
     width: 100%;
     padding:10px 20px;
 
-    @media (max-width:400px){
+    @media (max-width:440px){
         padding:10px 4px;
+        .btn_medida_last{
+            width:250px !important;
+            margin-top:10px
+        }
+        .newst{
+            margin-right:50px
+        }
     }
     .image_grid_container{
         background-color:red;
@@ -285,8 +295,11 @@ export const ContainerLast = styled.div`
     .btnlaset{
         margin: 4px 0 0 10px;
     }
-    @media (max-width:400px){
+    @media (max-width:440px){
         padding:10px 4px;
+        .btnlaset{
+            margin-top: 10px;
+        }
     }
 
 `

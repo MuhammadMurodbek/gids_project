@@ -14,7 +14,11 @@ export const Navbar = styled.div`
     background-color: #fff;
  
 
-    
+   @media(max-width:450px){
+    .navbar_pad{
+        padding:0 !important;
+    }
+   }
     @media(min-width:1367px){
         
         .width1{
@@ -87,7 +91,7 @@ export const Navbar = styled.div`
 `
 export const MediaNavbar = styled.div`
     position: absolute;
-    left:${v=>v.isOpen ? "0":"-100%"};
+    left:${v => v.isOpen ? "0" : "-100%"};
     transition: all ease 0.7s;
     width:100%;
     height:100vh;

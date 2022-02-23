@@ -61,7 +61,7 @@ export const TimeLineWrapper = styled.div`
             font-size: 20px;
         }
         .timeline-part{
-            margin:0;
+            margin:0 !important;
             .wrapper-text{
                 width:200px;
             }

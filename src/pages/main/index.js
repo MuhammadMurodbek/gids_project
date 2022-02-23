@@ -44,8 +44,35 @@ const settings = {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
-    centerMode: true,
     adaptiveHeight: false,
+
+    responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            initialSlide: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
+
 };
 
 const Index = () => {
@@ -73,7 +100,7 @@ const Index = () => {
                         <Grid item xs={12} md={8} sm={12}>
                             <div className="right-part">
                                 <div> {t("main.title")} </div>
-                                <img src={mainPicture} alt="guvd" />
+                                <img src={mainPicture} className="img_main" alt="guvd" />
                             </div>
                         </Grid>
                     </Grid>
@@ -95,12 +122,12 @@ const Index = () => {
                                             getRole?.role === "writer" ? null 
                                             :getRole?.role === "gid" ? null   
                                             :
-                                            <Button onClick={onClickbutton} {...mediaBtn}>{t("main.arizaQoldrirish")} </Button>
+                                            <Button className="btn_medida_last newst" onClick={onClickbutton} {...mediaBtn}>{t("main.arizaQoldrirish")} </Button>
                                         }
                                         
                                     {/* </Link> */}
                                     <Link to="/gids">
-                                        <Button {...mediaBtn} type="outlined"> {t("main.Gid_tanlash")} </Button>
+                                        <Button className="btn_medida_last" {...mediaBtn} type="outlined"> {t("main.Gid_tanlash")} </Button>
                                     </Link>
                                 </FlexContainer>
                             </div>
@@ -119,7 +146,7 @@ const Index = () => {
                                 <p>{t("main.textForGid")}</p>
                                 <div>
                                     <Link to="/auth">
-                                        <Button width="300px" {...mediaBtn}> {t("main.royhatdanO")} </Button>
+                                        <Button className="btn_medida_last" width="300px" {...mediaBtn}> {t("main.royhatdanO")} </Button>
                                     </Link>
                                 </div>
                             </div>
@@ -235,8 +262,6 @@ const Index = () => {
                 </Container>
 
             </WrapperAll>
-    
- 
                     <ContainerLast>
                         <div className="application-last">
                             <TextTitle  {...mediaTextField} {...mediaTextFieldSec} width="50%" left="auto" right="auto" bottom="40px">{t("main.hoziroq")}
@@ -249,7 +274,7 @@ const Index = () => {
                                     getRole?.role === "writer" ? null 
                                     :getRole?.role === "gid" ? null   
                                     :
-                                    <Button onClick={onClickbutton} {...mediaBtn}>{t("main.arizaQoldrirish")} </Button>
+                                    <Button   onClick={onClickbutton} {...mediaBtn}>{t("main.arizaQoldrirish")} </Button>
                                 }      
                            
                                 <Link to="/gids"> 

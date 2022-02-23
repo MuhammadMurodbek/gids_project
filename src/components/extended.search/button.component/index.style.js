@@ -9,4 +9,9 @@ export const Wrapper = styled.div`
         transform: translate(-50%, -50%) !important;
         color: #fff !important;
     }
+    @media(max-width:450px){
+        .search_new{
+            margin-left:15px
+        }
+    }
 `

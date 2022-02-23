@@ -142,7 +142,7 @@ const Index = ({loader, queryObj}) => {
             />
             {startVal && !collect.hasOwnProperty('search_type') && <span className="errors_search">Turni tanlang</span>}
             <div className="button-wrapper">
-                <Button loader={postData?.loading} onClick={handleSubmit} width="280px" name={t("kengaytirlgan_Q.qidirish")} />
+                <Button loader={postData?.loading} onClick={handleSubmit} width="260px" name={t("kengaytirlgan_Q.qidirish")} />
             </div>
         </Wrapper>
     )

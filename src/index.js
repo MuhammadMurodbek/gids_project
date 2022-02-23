@@ -7,6 +7,7 @@ import { Provider } from "react-redux"
 import store from "./redux/reducers"
 import './i18n'
 import Spinner from "./components/atom/loading.spinner.line"
+ 
 
 ReactDOM.render(
   <React.StrictMode>
