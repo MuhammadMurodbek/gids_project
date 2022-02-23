@@ -19,7 +19,7 @@ export default function Index() {
         <Wrapper>
             <div className="imgBukhara">
                 <ImgContainer width="100%" src={bukhara} />
-                {/* <p className="bukhara">Bukhara</p> */}
+                <p className="bukhara">Bukhara</p>
             </div>
             <PerentAB>
                 <AboutB>
@@ -37,7 +37,7 @@ export default function Index() {
             </PerentAB>
 
             
-                 <Blog/>
+              
              
 
         </Wrapper>

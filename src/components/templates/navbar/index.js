@@ -57,14 +57,14 @@ const Index = () => {
         <div className="width1">
           <FlexContainer
             width="100%"
-            padding="0 22px"
+            padding="0"
             alignItems="center"
             justifyContent="space-between"
           >
 
             <div className="imgass">
               <Link to="/" onClick={refreshBtn}>
-                {" "}
+               
                 <img className="img_logo1" src={Logo} alt="safsf" />
               </Link>
             </div>

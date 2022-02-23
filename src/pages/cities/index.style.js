@@ -56,10 +56,10 @@ export const Wrapper = styled.div`
     transform: translate(-50%,-50%);
     color: #70777B;
     width: 1033px;
-    height: 187px;
+     
     font-family: Montserrat;
     font-weight: bold;
-    font-size: 144px;
+    font-size: 250px;
     line-height: 130%;
     text-align: center;
     text-transform: uppercase;
@@ -74,9 +74,22 @@ export const Wrapper = styled.div`
       margin-left: 10px;
       margin-bottom: -4px;
   }
-  @media (max-width: 968px){
+  @media (max-width: 1400px){
     .msa2{
         display: none;
+    }
+    .bukhara{
+        font-size: 150px;
+    }
+  }
+  @media (max-width: 1000px){
+    .bukhara{
+        font-size:100px
+    }
+  }
+  @media (max-width: 600px){
+    .bukhara{
+        font-size:60px
     }
   }
  
@@ -113,5 +126,14 @@ export const Wrapper = styled.div`
      .Abukhara-text-more{
          padding: 20px;
      }
-   
+     @media (max-width: 600px){
+        .Abuhoro-text{
+            font-size:16px
+        }
+        .Abukhara-title{
+            padding:5px;
+
+        }
+
+      }
  `

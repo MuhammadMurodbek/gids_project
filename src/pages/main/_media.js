@@ -14,7 +14,7 @@ export const mediaBtn = {
     m_m_font_btn:"14px",
     m_m_padding:"12px 28px"
 }
-
+    
 export const mediaTextField = {
     m_width:"1045px",
     m_font_size:"24px",
