@@ -3,7 +3,7 @@ import Checkbox from "../../atom/checkbox"
 import { FlexContainer } from '../../../styles/flex.container'
 
 const Index = (props) => {
-    const {name1, name2,name3, width, margin, alignItems, justifyContent, flexDirection, display, collect, setCollect} = props
+    const {setInnerTr, setDefaultValue,  name1, name2,name3, width, margin, alignItems, justifyContent, flexDirection, display, collect, setCollect} = props
     
     const [state, setState] = React.useState({is_synchronous:false, is_consecutive:false, is_writer:false})
     
@@ -15,8 +15,8 @@ const Index = (props) => {
                 setCollect({...collect, is_synchronous:false, is_consecutive:false, is_writer:false})
             }
         }
+        setInnerTr(state)
     },[state])
-    // console.log(state)
     return (
         <FlexContainer 
             width={width} 
@@ -28,7 +28,7 @@ const Index = (props) => {
         >
             <Checkbox name={name1} setState={setState} state={state} field="is_synchronous"/>
             <Checkbox name={name2} setState={setState} state={state} field="is_consecutive"/>
-            <Checkbox name={name3} setState={setState} state={state} field="is_writer"/>
+            <Checkbox name={name3} setState={setState} state={state} field="is_writer" setDefaultValue={setDefaultValue}/>
         </FlexContainer>
     )
 }

@@ -16,6 +16,7 @@ const Index = ({loader, queryObj}) => {
     const { t } = useTranslation()
     const [postData, setPostData] = useState({ success: '', error: '', loading: false })
     const [collect, setCollect] = useState({})
+    const [innerTr, setInnerTr] = useState({is_synchronous:false, is_consecutive:false, is_writer:false})
     const [startVal, setStartVal] = useState(false)
     let params = window.location.search
     console.log(params)
@@ -25,7 +26,7 @@ const Index = ({loader, queryObj}) => {
         let array = Object.keys(collect)
         if(array?.length>=9 && collect?.languages?.length>0){
             setPostData({ ...postData, loading: true })
-            let urlOther = `type=${collect?.type}&gender=${(collect?.male && collect?.female)? undefined: collect?.male ? 'male' : collect?.female ? 'female' : undefined}&country=${collect?.country}&city=${collect?.city || queryObj?.city}&lang=${collect?.languages?.map(item => item?.value)}&date_after=${collect?.date_after}&date_before=${collect?.date_before}&${collect?.search_type}=0`
+            let urlOther = `type=${innerTr?.is_writer ? 'writer' : collect?.type}&gender=${(collect?.male && collect?.female)? undefined: collect?.male ? 'male' : collect?.female ? 'female' : undefined}&country=${collect?.country}&city=${collect?.city || queryObj?.city}&lang=${collect?.languages?.map(item => item?.value)}&date_after=${collect?.date_after}&date_before=${collect?.date_before}&${collect?.search_type}=0`
             let filterUrl = urlOther.split('&').filter(a=>!a.includes('undefined')).join('&')
             history.push('/gids?'+filterUrl)
         }else{
@@ -39,11 +40,6 @@ const Index = ({loader, queryObj}) => {
             setPostData({ ...postData, loading: false })
         }
     },[loader])
-    // React.useEffect(()=>{
-    //     if(queryObj && queryObj?.length>=8){
-    //         setStartVal(false)
-    //     }
-    // },[])
     React.useEffect(()=>{
         if(queryObj){
             setCollect(a=>{return{
@@ -76,6 +72,7 @@ const Index = ({loader, queryObj}) => {
                 state={collect}
                 field='type'
                 setDefaultValue={queryObj?.type}
+                setInnerTr={setInnerTr}
             />
             {startVal && !collect.hasOwnProperty('type') && <span className="errors_search">type kiriting</span>}
             <Selection
