@@ -213,8 +213,12 @@ export const routes = [
         component:ListRouter.Cities
     },
     {
-        url:'/blog/:id',
+        url:'/blog/user/:id',
         component:ListRouter.FullData,
+    },
+    {
+        url:'/blog/my/:id',
+        component:ListRouter.MyAppEdit,
     },
     {
           url:'/blog',

@@ -60,12 +60,12 @@ export default function Index () {
                                                             url={ item.image }
                                                             text={ item.mini_content }
                                                             id={ item.id }
-                                                            // getArticleList={getArticleList}
                                                             setState={ setState }
                                                             postData={ postData }
                                                             setPostData={ setPostData }
                                                             btnText={ t( "Blog.davomiOqish" ) }
                                                             setTagName={ setTagName }
+                                                            myApp={true}
                                                         />
                                                     ) )
                                                 }

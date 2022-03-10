@@ -26,7 +26,7 @@ import notFound from "../pages/notFound"
 import SeeProfile from '../pages/seeProfile';
 import MaqolaYozish from '../pages/gid.personal.wider/blog/MaqolaYozish'
 import MaqolaYozishEdit from "../pages/gid.personal.wider/blog/MaqolaYozish/edit"
-
+import MyAppEdit from "../pages/fullData/editable"
 // import GidPersonal from '../pages/gid.personal';
 // import Article from '../pages/article';
  
@@ -59,4 +59,5 @@ export {
     SeeProfile,
     MaqolaYozish,
     MaqolaYozishEdit,
+    MyAppEdit
 }

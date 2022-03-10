@@ -9,8 +9,8 @@ import ImgContainer from "../../../components/molecules/img.container"
 import imgpen  from "./pen.svg"
  
 export default function index(props) {
-    const { url, title, kalendar, hteg, lines, text, btnText, id, postData, setPostData, setState } = props
-   
+    const { url, title, kalendar, hteg, myApp, text, btnText, id, postData, setPostData, setState } = props
+    
     return (
         <Wrapper>
             <Grid className="msa" container spacing={1}>
@@ -22,10 +22,9 @@ export default function index(props) {
                         <div className=" text-div ">
                             {text}
                         </div>
-                        <Link className="text-link" >
+                        <Link className="text-link" to={`/blog/${myApp ? 'my':'user'}/${id}`}>
                             {btnText}
                             <img className='penimg' src={imgpen} alt="asdf"></img>
-                           
                         </Link>
                 </Grid>
             </Grid>

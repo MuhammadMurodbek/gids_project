@@ -76,12 +76,12 @@ export default function Index() {
                     <b className="mualif-b">Muallif: </b>
                     <span> {getArticle?.author?.first_name  +" "+  getArticle?.author?.last_name}  </span>
                   </div>
-                  {/* <div className="editbtn">
+                  <div className="editbtn">
                     <Button onClick={editFn} type="outlined">edit</Button>
                   </div>
                   <div className="deletebtn">
                     <Button onClick={deleteFn} type="outlined">delete</Button>
-                  </div> */}
+                  </div>
                 </div>
               </Grid>
               <Grid item xs={12} md={4} className="image_adds">
