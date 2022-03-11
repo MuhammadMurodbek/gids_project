@@ -1,9 +1,15 @@
-import React, {useCallback} from 'react'
+import React, {useCallback, useEffect} from 'react'
 import {Wrapper} from "./index.style"
 import { Checkbox } from 'antd';
 
 const Index = (props) => {
-    const {setState, state, name, field, errorText} = props;
+    const {setState, state, name, field, errorText, setDefaultValue} = props;
+    useEffect(()=>{
+        if(setDefaultValue === 'writer'){
+            if(setState && field)
+        setState({...state, [field]:true })
+        }
+    },[setDefaultValue])
     const handleChange = useCallback((e) => {
         if(setState && field)
         setState({...state, [field]:e.target.checked })

@@ -63,7 +63,7 @@ export default function Index () {
                                                             setState={ setState }
                                                             postData={ postData }
                                                             setPostData={ setPostData }
-                                                            btnText={ t( "Blog.davomiOqish" ) }
+                                                            btnText={ t( "Blog.edit" ) }
                                                             setTagName={ setTagName }
                                                             myApp={true}
                                                         />

@@ -203,7 +203,8 @@
     },
     "Blog":{
       "blog":"Blog",
-      "davomiOqish":"Read more"
+      "davomiOqish":"Read more",
+      "edit":"Edit"
     },
     "safarHaqda":{
       "title":"How was your trip?",
