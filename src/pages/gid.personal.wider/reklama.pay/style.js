@@ -15,9 +15,12 @@ export const Wrapper01 = styled.div`
     .btn-group{
     margin-right: 100px;
 }
+.octo{
+    width:250px
+}
 
 `
-export const  Wrapper02 = styled.div`
+export const Wrapper02 = styled.div`
     width: 100%;
     padding: 0 80px;
 
@@ -32,6 +35,7 @@ export const  Wrapper02 = styled.div`
      
      margin: 0;
  }
+ 
  .div-Radio-02{
     display: flex;
     margin-bottom: 20px;
@@ -42,6 +46,10 @@ export const  Wrapper02 = styled.div`
         margin: 30px 0;
         display: flex;
     }
+.octo{
+    width:20px;
+
+}  
  .pay{
         box-shadow:0px 5px 5px #BBBDBB;
         position: relative;

@@ -108,16 +108,7 @@ export default function Index() {
 
                 <Grid container spacing={1}>
                     <Grid item md="6" className="cashlok">
-                        <div>
-                            <div className="pay">
-                                <CheckCircleIcon className="icon-g" />
-                                <ImgContainer src={ckashalok} />
-                                <p className="cashlok_text">Gits.uz xisob  <br />
-                                    raqamidan to‘lash</p>
-                                <p><b>Xisobingiz:</b> 20 000 so’m</p>
-                            </div>
-                            <Button width="300px" margin="30px 0" type="outlined">Xisobni to‘ldirish</Button>
-                        </div>
+                        
                         <div>
                             <div className="pay pay2">
                                 <CheckCircleOutlineIcon className="icons-w" />
