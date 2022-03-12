@@ -25,6 +25,13 @@ export const getResponse = async ( url, setState, noToken ) => {
         .then( response => setState( { success: response, error: '', loader:false } ) )
         .catch( err => setState( { success: '', error: err, loader:false } ) )
 }
+export const getApiResponse = async ( url, setState, noToken ) => {
+    setState({data:null, error:false, success:false, loading:true})
+    let headPart = noToken ? {headers: headers} : head_token
+    await axios.get( `${ baseUrl }${ url }`, headPart )
+        .then( response => setState( {data:response?.data, success:true, error:false, loading:false } ) )
+        .catch( err => setState( { data:err.response, success:false, error:true, loading:false } ) )
+}
 export const getResponseRegion = async ( url ) => {
     await axios.get( `${ url }`, headers )
         .then( response => localStorage.setItem( 'countries', JSON.stringify( response?.data?.data ) ) )

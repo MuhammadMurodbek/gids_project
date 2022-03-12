@@ -29,10 +29,12 @@ export const Wrapper = styled.div`
      width: 600px;
     }
     .services_1{
-     margin: 0;
+     margin: 0 0 8px;
      font-weight: 600;
     }
-     
+    .price_part{
+        margin: 0 0 8px;
+    }
     .right-prise{
     display: flex;
     justify-content: space-around;
