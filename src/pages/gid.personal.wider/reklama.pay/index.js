@@ -14,7 +14,7 @@ import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 // import DoubleRadio from "../../../../components/molecules/double.radio.labeled";
 
-import click from '../../../assets/img/advertasing/click400.svg';
+import click from '../../../assets/img/advertasing/img1.png';
 import payme from '../../../assets/img/advertasing/payme400.svg';
 import paynet from '../../../assets/img/advertasing/paynet400.svg';
 import { Link } from 'react-router-dom';
@@ -135,15 +135,16 @@ export default function index() {
                 </TextTitle>
 
 
-                <Grid container spacing={1}  >
-                    <Grid item md="10" className="cashlok ">
+                <Grid container spacing={1}>
+                    <Grid item md="10" className="cashlok">
                         <div>
                             <div className="pay">
                                 <CheckCircleIcon className="icon-g" />
-                                <ImgContainer src={click} />
+                                <ImgContainer  width="250px" src={click} />
                             </div>
                         </div>
-                        <div>
+
+                        {/* <div>
                             <div className="pay pay2">
                                 <CheckCircleOutlineIcon className="icons-w" />
                                 <ImgContainer src={payme} />
@@ -156,7 +157,8 @@ export default function index() {
                                 <ImgContainer src={paynet} />
 
                             </div>
-                        </div>
+                        </div> */}
+
                     </Grid>
                 </Grid>
             </Wrapper02>
