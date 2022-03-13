@@ -13,6 +13,10 @@ export const Wrapper01 = styled.div`
     }
     .btn-group{
         margin-right: 100px;
+        .progress{
+            top: 27px !important;
+            left: 20px !important;
+        }
     }
     .octo{
         width:250px

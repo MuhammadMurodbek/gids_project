@@ -27,11 +27,13 @@ import SeeProfile from '../pages/seeProfile';
 import MaqolaYozish from '../pages/gid.personal.wider/blog/MaqolaYozish'
 import MaqolaYozishEdit from "../pages/gid.personal.wider/blog/MaqolaYozish/edit"
 import MyAppEdit from "../pages/fullData/editable"
+import PaymentHistory from "../pages/gid.personal.wider/history/pay.history"
 // import GidPersonal from '../pages/gid.personal';
 // import Article from '../pages/article';
  
 export {
     notFound,
+    PaymentHistory,
     MainPage, 
     Auth, 
     About,

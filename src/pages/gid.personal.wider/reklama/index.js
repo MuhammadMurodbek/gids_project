@@ -5,7 +5,6 @@ import { Grid } from '@material-ui/core';
 import { useHistory } from "react-router-dom"
 import ImgContainer from '../../../components/molecules/img.container';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
-import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
 import { Modal} from 'antd';
 import Button from "../../../components/atom/button";
 import true400 from '../../../assets/img/advertasing/truebg.svg';
@@ -31,6 +30,7 @@ export default function Index() {
     }, [callback])
     const onSelectCard = (item)=>{setClassId(item)}
     const handleHistory = () => {history.push('/history')}
+    const handleHistoryPayment = () => {history.push('/history/payment')}
     const handlePayment = () => {
         if(!classId)  Modal.error({ title:'Tariflardan birini tanlang!!',content: "To'lov qilish uchun mavjud tariflardan birini tanlang."});
         else postApiResponse('/api/posts/ad/', {tariff:classId}, setMyTarifPay)
@@ -72,7 +72,8 @@ export default function Index() {
                     </Grid>
                 }
                 <div className="historybtn">
-                    <Button className="btn-pey " margin="30px 0" type="outlined" onClick={handleHistory}>Tarixni ko’rish</Button>
+                    <Button className="btn-pey " margin="30px 0" type="outlined" onClick={handleHistory}>Tariflar tarixni ko’rish</Button>
+                    <Button className="btn-pey " margin="30px 0" type="outlined" onClick={handleHistoryPayment}>To'lovlar tarixni ko’rish</Button>
                 </div>
 
                 <TextTitle className="text-title text-title11" bottom="70px" top="70px">

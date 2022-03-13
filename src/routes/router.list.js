@@ -64,6 +64,10 @@ export const routes_gid = [
         component:ListRouter.History
     },
     {
+        url:'/history/payment',
+        component:ListRouter.PaymentHistory
+    },
+    {
         url:'/forgits',
         component:ListRouter.Forgits
     },
