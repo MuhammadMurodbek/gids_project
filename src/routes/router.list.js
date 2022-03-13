@@ -122,7 +122,15 @@ export const routes_traslater =  [
     {
         url:'/write-article',
         component:ListRouter.MaqolaYozish
-    }
+    },
+    {
+        url:'/reklama/pay',
+        component:ListRouter.Pay
+    },
+    {
+        url:'/history/payment',
+        component:ListRouter.PaymentHistory
+    },
 
 ]
 
@@ -163,6 +171,14 @@ export const routes_write =  [
     {
         url:'/forgits',
         component:ListRouter.Forgits
+    },
+    {
+        url:'/reklama/pay',
+        component:ListRouter.Pay
+    },
+    {
+        url:'/history/payment',
+        component:ListRouter.PaymentHistory
     },
 ]
 

@@ -5,6 +5,7 @@ import {Wrapper, ButtonWrapper} from "./style"
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import {useTranslation} from 'react-i18next'
 import NoDataPage from "../../templates/no.data.page.js"
+import { Badge} from 'antd';
 
 const Index = ({data, type}) => {
     const {t} = useTranslation()
@@ -18,13 +19,16 @@ const Index = ({data, type}) => {
                     {
                         data?.results.map((item, index) => (
                             <div key={index}>
-                                <ContainerMap data={item} type={type}/>
+                                {
+                                    item.is_top ? 
+                                    <Badge.Ribbon text="TOP" color="red">
+                                        <ContainerMap data={item} type={type}/>
+                                    </Badge.Ribbon>:
+                                     <ContainerMap data={item} type={type}/>
+                                }
                             </div>
                         ))
                     }
-                    {/* <ButtonWrapper>
-                        <Button type="outlined" className="arrow"> {t("Gid_Tanlash.davomi")} <ArrowForwardIcon/>  </Button>
-                    </ButtonWrapper> */}
                 </>
                 :(<h4 style={{width: "100%", textAlign: "center"}}><NoDataPage/></h4>)
             }
