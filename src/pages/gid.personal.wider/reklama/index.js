@@ -6,13 +6,13 @@ import { useHistory } from "react-router-dom"
 import ImgContainer from '../../../components/molecules/img.container';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
+import { Modal} from 'antd';
 import Button from "../../../components/atom/button";
 import true400 from '../../../assets/img/advertasing/truebg.svg';
 import fols from '../../../assets/img/advertasing/fols.svg';
 import ckashalok from '../../../assets/img/advertasing/kashlok.svg';
-import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { getApiResponse } from "../../../hooks/response_get"
+import { getApiResponse, postApiResponse } from "../../../hooks/response_get"
 import Spinner from "../../../components/molecules/loading.spinner"
 
 import { objApi } from "./external"
@@ -20,21 +20,31 @@ import moment from 'moment';
 export default function Index() {
     const history = useHistory()
     const { t } = useTranslation()
-    const [class1, setClass1] = useState(false)
+    const [classId, setClassId] = useState(null)
+    const [callback, setCallback] = useState(false)
     const [tarif, setTarif] = useState({ data: null, error: false, success: false, loading: false })
     const [myTarif, setMyTarif] = useState({ data: null, error: false, success: false, loading: false })
-    function tanlash() {
-        setClass1(true)
-    }
-
+    const [myTarifPay, setMyTarifPay] = useState({ data: null, error: false, success: false, loading: false })
     useEffect(() => {
         getApiResponse('/api/posts/tariff/', setTarif)
         getApiResponse('/api/posts/my-tariff/', setMyTarif)
-    }, [])
-    const handleHistory = () => {
-        history.push('/history')
+    }, [callback])
+    const onSelectCard = (item)=>{setClassId(item)}
+    const handleHistory = () => {history.push('/history')}
+    const handlePayment = () => {
+        if(!classId)  Modal.error({ title:'Tariflardan birini tanlang!!',content: "To'lov qilish uchun mavjud tariflardan birini tanlang."});
+        else postApiResponse('/api/posts/ad/', {tariff:classId}, setMyTarifPay)
     }
-    console.log(myTarif)
+    useEffect(()=>{
+        if(myTarifPay.error && myTarifPay.data?.data?.tariff[0] === 'not enough money') Modal.error({title:'Sizda yetarli mablag\' mavjud emas!!!', content:'Hisobingizni to\'ldiring'})
+        else if(myTarifPay.success) {
+            Modal.success({title:'Tarif sotib olish muvaffaqqiyatli amalga oshirildi !!!'})
+            setCallback(prev=>!prev)
+        }else if(myTarifPay.error && !myTarifPay.data?.data?.tariff[0] === 'not enough money'){
+            Modal.error({title:"Xatolik yuz berdi", content:"Qaytadan urinib ko'ring." })
+        }
+    },[myTarifPay])
+    // console.log(myTarifPay)
     return (
         <Wrapper01>
             <Wrapper>
@@ -65,8 +75,6 @@ export default function Index() {
                     <Button className="btn-pey " margin="30px 0" type="outlined" onClick={handleHistory}>Tarixni ko’rish</Button>
                 </div>
 
-
-
                 <TextTitle className="text-title text-title11" bottom="70px" top="70px">
                     {t("reklama.hizmatlarni")}
                 </TextTitle>
@@ -77,10 +85,10 @@ export default function Index() {
                         {
                             tarif.data?.length > 0 ?
                                 tarif.data?.map((item, index) => (
-                                    <Grid key={index} container spacing={1} justifyContent="center" onClick={tanlash}
-                                        className={class1 ? "services " : "services services2"} >
+                                    <Grid key={index} container spacing={1} justifyContent="center" onClick={()=>onSelectCard(item?.id)}
+                                        className={classId === item.id ? "services " : "services services2"} >
                                         <Grid item md="1" sm="1" xs="1" className="grid__img">
-                                            <ImgContainer className="img12" src={fols} />
+                                            <ImgContainer className="img12" src={classId === item.id ? true400 : fols} />
                                         </Grid>
                                         <Grid item md="11" sm="11" xs="11" className="item_md_11">
                                             <div className="services_item" >
@@ -104,8 +112,6 @@ export default function Index() {
                 <TextTitle className="text-title" bottom="50px" top="50px">
                     To‘lov turini tanlang
                 </TextTitle>
-
-
                 <Grid container spacing={1}>
                     <Grid item md="6" className="cashlok">
                         <div>
@@ -116,26 +122,15 @@ export default function Index() {
                                     raqamidan to‘lash</p>
                                 <p><b>Xisobingiz:</b> {myTarif?.data?.wallet || '0'} so’m</p>
                             </div>
-                            <Button width="300px" margin="30px 0" type="outlined">Xisobni to‘ldirish</Button>
+                            <Button width="300px" margin="30px 0" type="outlined" onClick={()=>history.push('/reklama/pay')}>Xisobni to‘ldirish</Button>
                         </div>
-                        {/* <div>
-                            <div className="pay pay2">
-                                <CheckCircleOutlineIcon className="icons-w" />
-                                <ImgContainer src={ckashalok} />
-                                <p className="cashlok_text">Gits.uz xisob  <br />
-                                    raqamidan to‘lash</p>
-                                <p><b>Xisobingiz:</b> 20 000 so’m</p>
-                            </div>
-                            <Button width="300px" margin="30px 0" type="outlined">Xisobni to‘ldirish</Button>
-                        </div> */}
                     </Grid>
                 </Grid>
-
             </Wrapper>
             <div className="payment">
                 <div className="btn-group">
-                    <Button className="btn-pey" margin="30px 0" type="outlined">Bekor qilish</Button>
-                    <Link to="/pay"><Button className="btn-pey" margin="30px 0">To‘lov qilish</Button></Link>
+                    <Button loader={myTarifPay?.loading} className="btn-pey" margin="30px 0" type="outlined">Bekor qilish</Button>
+                    <Button loader={myTarifPay?.loading} className="btn_payment" onClick={handlePayment}>To‘lov qilish</Button>
                 </div>
             </div>
 

@@ -6768,6 +6768,11 @@ country-flag-icons@^1.0.2:
   resolved "https://registry.yarnpkg.com/country-flag-icons/-/country-flag-icons-1.4.19.tgz#410879a4a1b06ab28d4fc56261b391f221eba957"
   integrity sha512-1hmXFJ4UURQt0Ex0990B7oOL4n9KLpT9NOSEmZoYh+/5DQ7/pikyqaptqCLUFFv/bYHyvYFeo0fqV82XxU6VOA==
 
+countup.js@^2.0.8:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/countup.js/-/countup.js-2.1.0.tgz#86c1c9075a2eed138262b0ea1344ebe71b41e579"
+  integrity sha512-VanMzLEjkt3Hp/ty5BXikM8s4wE3OH4m1AnFro7THR86nYGRvGfGCoV+zrRJcqTbZi7X1egkLSIeUKDz7+4XLA==
+
 cp-file@^7.0.0:
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/cp-file/-/cp-file-7.0.0.tgz#b9454cfd07fe3b974ab9ea0e5f29655791a9b8cd"
@@ -15597,6 +15602,13 @@ react-clientside-effect@^1.2.5:
   integrity sha512-2bL8qFW1TGBHozGGbVeyvnggRpMjibeZM2536AKNENLECutp2yfs44IL8Hmpn8qjFQ2K7A9PnYf3vc7aQq/cPA==
   dependencies:
     "@babel/runtime" "^7.12.13"
+
+react-countup@^6.1.1:
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/react-countup/-/react-countup-6.1.1.tgz#2dd5a82dd1059afd4e269a33de5cd1fa5a7910d7"
+  integrity sha512-9mYlnk/yCFg3g2/65pCTex6mr9h0eYdDMIL4T5nfLj/RzoiqY03wlPxZglzbJ6OzXvU37OmYApwQ4WMZNFr8Aw==
+  dependencies:
+    countup.js "^2.0.8"
 
 react-day-picker@^7.4.10:
   version "7.4.10"

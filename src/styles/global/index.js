@@ -26,6 +26,12 @@ const GlobalStyle = createGlobalStyle`
     }
 
   }
+  .no_data_card{
+    width:100%;
+    padding:18px;
+    text-align:center;
+    background:#EEF7EE;
+  }
   .sc-nFqVA.ia-dRsN{
     position:relative;
   }

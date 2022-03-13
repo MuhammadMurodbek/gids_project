@@ -3,28 +3,36 @@ import { mainGreen } from "../../../styles/global/colors"
 
 export const Wrapper01 = styled.div`
      width: 100%;
-
-     .payment{
+     margin-bottom:90px;
+    .payment{
         background-color: #EEF7EE;
         display: flex;
         justify-content: flex-end;
-        /* margin: -22px !important; */
+        position:absolute;
+        width:100%;
+        height:115px;
+        left:0;
     }
     .btn-pey{
         margin-left: 30px;
     }
     .btn-group{
-    margin-right: 100px;
-     
-}
+        margin-right: 100px;
+        .progress{
+            top: 27px !important;
+            left: 39px !important;
+        }
+    }
+    .btn_payment{
+        position:relative;
+        margin-bottom:30px;
+        margin-left:20px;
+    }
 
 `
 export const Wrapper = styled.div`
     width: 100%;
     padding: 0 80px;
-
-    
-
  .text-title{
      margin-left: 0 !important;
      text-align: left;
@@ -34,6 +42,15 @@ export const Wrapper = styled.div`
     padding: 15px 0;
     margin-bottom: 20px;
     cursor: pointer;
+    transition:all ease 0.5s;
+    &:hover{
+        transition:all ease 0.5s;
+        background:#EEF7EE !important;
+    }
+ .services2{
+    transition:all ease 0.5s;
+    background:#EEF7EE !important;
+ }
 }
 .history{
     background: #EEF7EE;
@@ -127,7 +144,7 @@ export const Wrapper = styled.div`
 `
 
 
-export const  Wrapper02 = styled.div`
+export const Wrapper02 = styled.div`
     width: 100%;
     padding: 0 80px;
     .cashlok02{
@@ -183,4 +200,4 @@ export const  Wrapper02 = styled.div`
  }
 
 
-` 
+`

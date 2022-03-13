@@ -56,7 +56,7 @@ export const routes_gid = [
         component:ListRouter.Reklama
     },
     {
-        url:'/pay',
+        url:'/reklama/pay',
         component:ListRouter.Pay
     },
     {

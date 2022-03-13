@@ -3,21 +3,53 @@ import { mainGreen } from "../../../styles/global/colors"
 
 export const Wrapper01 = styled.div`
      width: 100%;
-     .payment{
+    .payment{
         background-color: #EEF7EE;
         display: flex;
         justify-content: flex-end;
-         
     }
     .btn-pey{
         margin-right: 30px;
     }
     .btn-group{
-    margin-right: 100px;
-}
-.octo{
-    width:250px
-}
+        margin-right: 100px;
+    }
+    .octo{
+        width:250px
+    }
+    .radio_group{
+        width:100%;
+        display:flex;
+        justify-content:flex-start;
+        flex-wrap:wrap;
+        gap:10px;
+        // background:red;
+    }
+    .price_item{
+        padding: 16px;
+        width: 282px;
+        height: 56px;
+        border: 2px solid #EEF7EE;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        
+        .ant-radio-inner{
+            transform: scale(1.5);
+            color:green !important;
+        }
+        .ant-radio-checked .ant-radio-inner{
+            border-color:${mainGreen} !important ;
+          }
+          
+          .ant-radio-checked .ant-radio-inner:after{
+            background-color:${mainGreen};
+          }
+          
+          .ant-radio:hover .ant-radio-inner {
+            border-color:${mainGreen} ;
+          }
+    }
 
 `
 export const Wrapper02 = styled.div`

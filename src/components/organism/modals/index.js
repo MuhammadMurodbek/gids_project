@@ -28,8 +28,8 @@ export function success({content, fn}) {
 
 export function error({title, content}) {
   Modal.error({
-    title: title || 'This is an error message',
-    content: content || 'some messages...some messages...',
+    title:`${title}`,
+    content: `${content}`,
   });
 }
 
