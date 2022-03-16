@@ -15,13 +15,13 @@ export const Wrapper = styled.div`
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 8px;
+      // margin-bottom: 8px;
   }
 
   .hteg{
     color: #000;
   }
-
+   
   .xitoy-text{
       margin: 0;
       font-style: normal;
@@ -33,7 +33,8 @@ export const Wrapper = styled.div`
   .title-div-text{
       display: flex;
       font-weight: 600;
-      /* background-color:red; */
+    
+ 
   }
   .img0{
     margin-bottom: 3px; 

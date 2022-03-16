@@ -71,6 +71,7 @@ export default function Index() {
                   text={getArticle?.content}
                 />
 
+
                 <div className="mualif">
                   <div className="mualif-text">
                     <b className="mualif-b">Muallif: </b>
