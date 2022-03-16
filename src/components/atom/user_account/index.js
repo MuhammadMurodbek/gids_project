@@ -18,7 +18,7 @@ const Index = ({ role }) => {
     const menu = (
         <Menu style={{ position: "relative", right: 40, top: 8, width: 150 }}>
             <Menu.Item key="0">
-                <Link to={role === 'simple_user' ? '/gid-personal' : `/gid-personal-wider?name=${getData?.success?.data?.first_name}&last_name=${getData?.success?.data?.last_name}`}>
+                <Link to={role === 'simple_user' ? '/gid-personal?tab=0' : `/gid-personal-wider?tab=0`}>
                     <span  style={{display:"flex"}} >
                         <AssignmentIndIcon  
                         style={{color:"#326A32", marginRight:"10px" }}

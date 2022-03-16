@@ -6,6 +6,7 @@ import icon from "../../../../assets/img/chev_right.png"
 import ImageContainer from "../../../../components/molecules/img.container"
 import { Link } from "react-router-dom"
 import './style.css'
+import {useHistory} from "react-router-dom"
 import { Container } from "../../../../styles/container/index.style"
 import { shadow } from "../../../../styles/global/colors"
 import { Grid } from '@material-ui/core'
@@ -50,7 +51,7 @@ const Index = () => {
     const { tags } = article
     const [upload, setUpload] = useState(null)
     const { t } = useTranslation()
-
+    const history = useHistory()
 
     function handleChange(e) {
         setArticle(prevState => {
@@ -97,15 +98,17 @@ const Index = () => {
         if (postData?.error !== '') toast.error('Something went wrong')
     }, [postData])
     console.log(article)
+    
+    const handleBack = () => history.goBack()
     return (
         <Layout>
             <form onSubmit={handleSubmit}>
                 <TitleComponent>
                     <TextTitle {...mediaTextField} {...mediaTextFieldSec} font="26px" bottom="20px">{t("maqolaYozish.Maqolayozish")}</TextTitle>
-                    <Link to="/gid-personal-wider" className="link">
+                    <div className="link" style={{cursor:'pointer'}} onClick={handleBack}>
                         <div className="title-left"> <ImageContainer width="auto" src={icon} /> <span>{t("maqolaYozish.orqaga")}</span>
                         </div>
-                    </Link>
+                    </div>
                 </TitleComponent>
                 <div className="divyozish">
                     <Container boxShadow={shadow} padding="20px">

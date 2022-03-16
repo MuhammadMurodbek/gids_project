@@ -38,16 +38,13 @@ export default function Index() {
       Modal.success({
         content:'Deleted successfully',
         onOk() {
-            history.push('/gid-personal-wider')
+            history.push('/gid-personal-wider?tab=3')
         },
       },)
     } 
     if(infoDelete && infoDelete?.status !== 204){
       Modal.error({
         content:'Something went wrong',
-        onOk() {
-            history.push('/gid-personal-wider')
-        },
       },)
     } 
   },[infoDelete])
@@ -94,7 +91,7 @@ export default function Index() {
           </>:
           <div style={{width:'100%', textAlign:'center'}}>
               <NoDataPage/>
-              <Button type="outlined" onClick={()=>history.push('/gid-personal-wider')}>Ortga qaytish</Button>
+              <Button type="outlined" onClick={()=>history.push('/gid-personal-wider?tab=0')}>Ortga qaytish</Button>
           </div> 
         }
       </Wrapper>

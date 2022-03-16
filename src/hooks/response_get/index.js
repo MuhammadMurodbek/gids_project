@@ -75,9 +75,9 @@ export const getGlobals = async ( token, appNoToken ) => {
     }else{
         if(lang && country){
         if(token?.role ==='simple_user')
-            window.location.href='/gid-personal'
+            window.location.href='/gid-personal?tab=0'
         else    
-            window.location.href='/gid-personal-wider'
+            window.location.href='/gid-personal-wider?tab=0'
         }
         else
             toast.error("Qaytadan urinib ko'ring")
