@@ -15,7 +15,7 @@ const Index = (props) => {
                 setCollect({...collect, is_synchronous:false, is_consecutive:false, is_writer:false})
             }
         }
-        setInnerTr(state)
+        if(setInnerTr) setInnerTr(state)
     },[state])
     return (
         <FlexContainer 

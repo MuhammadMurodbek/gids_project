@@ -74,7 +74,7 @@ const Index = () => {
             formData.append('content', article.content)
             formData.append('tags',selectTags)
 
-            putResponse(`/api/posts/article/${id}`, formData, setPostData)
+            putResponse(`/api/posts/article/${id}/`, formData, setPostData)
         } catch (e) {
             console.log(e)
         }
