@@ -148,7 +148,7 @@ export default function Index({applicationData, setApplicationData, btnText, url
                     </p>
                 </Grid>
             </Grid>
-
+   
             <section>
                 <Modal
                     visible={state}

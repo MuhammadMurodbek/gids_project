@@ -150,8 +150,8 @@ const Index = () => {
                 <NavLink
                   to={
                     getRole?.role === "simple_user"
-                      ? "/gid-personal"
-                      : "/gid-personal-wider"
+                      ? "/gid-personal?tab=0"
+                      : "/gid-personal-wider?tab=0"
                   }
                   style={{ color: "#333" }}
                 >

@@ -27,9 +27,9 @@ const MediaNavbarContainer = (props) => {
     const handleProfile = () => {
         props.setOpen(false)
         if (userToken?.role === "simple_user") {
-            history.push("/gid-personal")
+            history.push("/gid-personal?tab=0")
         } else {
-            history.push("/gid-personal-wider")
+            history.push("/gid-personal-wider?tab=0")
         }
     }
 

@@ -50,6 +50,29 @@ export const WrapperContainer = styled.div`
     .gid-info-personal-text.top{
         margin-top:10px;
     }
+    .divbuttons{
+        display:flex;
+        aligin-items:center;
+        justify-content: space-between;
+    }
+    .pointx{
+        cursor: pointer;
+        float:right;
+    }
+    .fikirqoldirish{
+        padding-top: 30px;
+        text-align: center;
+        font-weight: bold;
+    }
+    .btgroup_modal{
+        display:flex;
+        aligin-items:center;
+        justify-content: space-between;
+        margin-top:20px
+    }
+    .modalcontainer{
+        padding:20px
+    }
 `
 export const ContainerBottom = styled.div`
     display:flex;

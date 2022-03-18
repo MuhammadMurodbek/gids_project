@@ -8,7 +8,7 @@ import moment from "moment"
 export default function   Index({success, setCollect, collect, setCallback}) {
     const array_data = success?.data?.results
     const lang = localStorage.getItem('i18nextLng')
-    // console.log(array_data)
+    console.log(array_data)
     return ( 
         <Wrapper>
             {
@@ -16,7 +16,7 @@ export default function   Index({success, setCollect, collect, setCallback}) {
                 <>
                     <InDate setCollect={setCollect} collect={ collect } setCallback={setCallback}/>
                     {
-                        array_data?.length > 0 ?
+                        array_data?.filter(prev=>prev?.status === 'new')?.length > 0 ?
                             array_data?.filter(prev=>prev?.status === 'new')?.map((item, index)=>(
                                 <MyRequests
                                     key={index}
