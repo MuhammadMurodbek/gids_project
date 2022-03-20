@@ -81,7 +81,7 @@ export default function BasicTabs(props) {
                     style={{minWidth:'150px'}}
                     label={item.label}
                     {...a11yProps(index)}
-                    className={parseInt(query.tab) === index ? 'active' : 'text-transform'}
+                    className={(parseInt(query.tab) || 0) === index ? 'active' : 'text-transform'}
                   />
                 ))
               : null}
@@ -89,7 +89,7 @@ export default function BasicTabs(props) {
         </Box>
         {tabs.length > 0
           ? tabs.map((item, index) => (
-              <TabPanel key={index} value={parseInt(query.tab)} index={index} className="tab-panel">
+              <TabPanel key={index} value={parseInt(query.tab) || 0} index={index} className="tab-panel">
                 {item.component}
               </TabPanel>
             ))

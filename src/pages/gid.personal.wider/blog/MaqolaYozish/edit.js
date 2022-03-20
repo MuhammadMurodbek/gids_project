@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { TitleComponent } from "./style"
-import {useParams} from "react-router-dom"
+import {useParams, useHistory} from "react-router-dom"
 import Layout from "../../../../layouts/gid.personal.page"
 import { TextTitle } from "../../../../styles/textTitle/index.style"
 import icon from "../../../../assets/img/chev_right.png"
@@ -24,6 +24,7 @@ import Spinner from "../../../../components/atom/loading.spinner.line"
 const tags = ["busines", "tarix", "siyosiy"]
 
 const Index = () => {
+    const history = useHistory()
     const [postData, setPostData] = useState({success:'',error:'',loading:false})
     const [getData, setData] = useState({success:'',error:'', loading:false})
     const [article, setArticle] = useState({
@@ -102,10 +103,10 @@ const Index = () => {
                 <form onSubmit={handleSubmit}>
                     <TitleComponent>
                         <TextTitle {...mediaTextField} {...mediaTextFieldSec} font="26px" bottom="20px">Maqolani o'zgartirish</TextTitle>
-                        <Link to="/gid-personal-wider" className="link">
-                            <div className="title-left"> <ImageContainer width="auto" src={icon} /> <span>{t("maqolaYozish.orqaga")}</span>
+                        {/* <Link to="/gid-personal-wider?tab" className="link"> */}
+                            <div style={{cursor:'pointer'}} onClick={()=>history.goBack()} className="title-left"> <ImageContainer width="auto" src={icon} /> <span>{t("maqolaYozish.orqaga")}</span>
                             </div>
-                        </Link>
+                        {/* </Link> */}
                     </TitleComponent>
                     <Container boxShadow={shadow} padding="20px">
                         <Grid container spacing={2}>
