@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Grid } from '@material-ui/core'
 import Layout from "../../layouts/gid.personal.page"
 import { Wrapper } from "./style"
-import { Link } from 'react-router-dom'
+import Button from "../../components/atom/button"
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import CardMain from "../../components/organism/container.left.f42"
 import CardMainSecond from "../../components/organism/container.right.f42"
@@ -10,6 +10,7 @@ import { getResponse } from "../../hooks/response_get"
 import NoDataPage from "../../components/templates/no.data.page.js"
 import Spinner from "../../components/atom/loading.spinner.line"
 import {useHistory} from "react-router-dom"
+import ModalContainer from "./modal"
 export default function Index() {
     const history = useHistory()
     let query = window.location.search
@@ -22,7 +23,7 @@ export default function Index() {
     }
     let id = searchToObject(query)?.id
     let role = searchToObject(query)?.role
-
+    const [openModal, setOpenModal] = useState(false)
     const [apiData, setApiData] = useState({ success: '', error: '' })
     useEffect(() => { getResponse(`/api/${role}s/profiles/${id}/`, setApiData, true) }, [])
     const handlePrev = ()=>{
@@ -49,7 +50,8 @@ export default function Index() {
                                     </Grid>
                                 </Grid>
                     }
-
+                    <Button onClick={()=>setOpenModal(true)}>Add comment</Button>
+                    <ModalContainer setOpen={setOpenModal} open={openModal}/>
                 </Wrapper>
             </Layout>
 

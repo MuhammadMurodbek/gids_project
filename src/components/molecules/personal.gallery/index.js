@@ -86,7 +86,7 @@ function App({list, setCallback, role, url}) {
           disableScroll={ false }
           closeOnClickOutside={ true }
           onClose={ closeImageViewer }
-          style={{position:'absolute',zIndex:999999}}
+          style={{position:'absolute',zIndex:999}}
         />
       </>
       ) 

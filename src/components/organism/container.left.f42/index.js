@@ -16,42 +16,13 @@ import ProgressInfo from "../../molecules/element_f42/rate.part.f42"
 import CommentPart from "../../molecules/element_f42/comment.f42"
 import Button from "../../atom/button"
 import { useTranslation } from 'react-i18next'
-import CloseIcon from '@material-ui/icons/Close';
-import Textarea from '../../atom/textAreaCom';
+import {mediaContainer,mediaContainerSecond, mediaContainerSecondText, mediaContainerPadding} from "./const"
+// import CloseIcon from '@material-ui/icons/Close';
+// import Textarea from '../../atom/textAreaCom';
+// import Modal from 'react-awesome-modal';
 
-import Modal from 'react-awesome-modal';
-
-
-
-
-
-
-
-
-
-const mediaContainer = {
-    m_width: "600px",
-    m_direction: "column",
-}
-const mediaContainerSecond = {
-    m_width: "600px",
-    m_margin: '25px 0 0 0'
-}
-const mediaContainerSecondText = {
-    m_width: "600px",
-    m_margin: '15px auto 0',
-    m_display: "inline-block",
-    m_m_width: '280px'
-}
-const mediaContainerPadding = {
-    m_width: "600px",
-    m_padding: '0 5px'
-}
 const Index = ({ state, typeRole }) => {
-
     const { t } = useTranslation()
-
-    // const role = JSON.parse(localStorage.getItem("user_token"));
     const lan = localStorage.getItem("i18nextLng")
     const languageCheck = (item, lang) => {
         if (lang === 'en') return item?.language__name_en
@@ -63,34 +34,31 @@ const Index = ({ state, typeRole }) => {
         intermediate: 'Yaxshi'
     }
 
-
-
-
     // modal uchun =====================================================
 
-    const [comment, setComment] = useState('')
-    const [state1, setState] = useState(false);
+    // const [comment, setComment] = useState('')
+    // const [state1, setState] = useState(false);
 
-    function openModal() {
-        setState(true);
-    }
-    function closeModal() {
-        setState(false)
-        setComment('')
-    }
+    // function openModal() {
+    //     setState(true);
+    // }
+    // function closeModal() {
+    //     setState(false)
+    //     setComment('')
+    // }
 
-    function submit() {
-        let sendData = {
+    // function submit() {
+    //     let sendData = {
 
-            reply: comment
-        }
+    //         reply: comment
+    //     }
 
-        closeModal()
-    }
-    function setText(e) {
-        console.log(e.target.value)
-        setComment(e.target.value)
-    }
+    //     closeModal()
+    // }
+    // function setText(e) {
+    //     console.log(e.target.value)
+    //     setComment(e.target.value)
+    // }
 
     // ======================================================================
     return (
@@ -186,12 +154,12 @@ const Index = ({ state, typeRole }) => {
                     <CommentPart />
                     <CommentPart />
                     <CommentPart />
-                    <Container
-                        position="relative"
-                        padding="60px 0 0"
-                        margin="-60px 0 0"
-                        textAlign="left"
-                        zIndex="40"
+                    {/* <Container
+                        // position="relative"
+                        // padding="60px 0 0"
+                        // margin="-60px 0 0"
+                        // textAlign="left"
+                        // zIndex="4"
                         backgroundColor="linear-gradient(to top, #fff, rgba(255,255,255,0.6))"
                     >
                         <div className='divbuttons'>
@@ -200,13 +168,10 @@ const Index = ({ state, typeRole }) => {
                         </div>
 
 
-
-                        <section>
                             <Modal
                                 visible={state1}
                                 width="900"
                                 height="550"
-                                
                                 effect="fadeInUp"
                                 onClickAway={closeModal}>
                                 <div className="modaldiv modalcontainer">
@@ -243,12 +208,7 @@ const Index = ({ state, typeRole }) => {
                                     </div>
                                 </div>
                             </Modal>
-                        </section>
-
-
-
-
-                    </Container>
+                    </Container> */}
                 </Container>
             </WrapperContainer>
         </Wrapper>
