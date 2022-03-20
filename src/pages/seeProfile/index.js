@@ -43,6 +43,7 @@ export default function Index() {
                                 <Grid container spacing={3}>
                                     <Grid item xs={12} md={8}>
                                         <CardMain state={apiData?.success?.data} typeRole={{ role: role }} />
+                                        <Button onClick={()=>setOpenModal(true)}>Add comment</Button>
                                     </Grid>
                                     
                                     <Grid item xs={12} md={4}>
@@ -50,7 +51,7 @@ export default function Index() {
                                     </Grid>
                                 </Grid>
                     }
-                    <Button onClick={()=>setOpenModal(true)}>Add comment</Button>
+                    
                     <ModalContainer setOpen={setOpenModal} open={openModal}/>
                 </Wrapper>
             </Layout>

@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect } from 'react'
+import React from 'react'
 import { FlexContainer } from '../../../styles/flex.container'
 import { Container } from "../../../styles/container/index.style"
 import { WrapperContainer, ContainerBottom, Wrapper } from "./style"
@@ -14,7 +14,6 @@ import Title from "../../atom/element_f42/title.container.f42"
 import ProgressTitle from "../../molecules/element_f42/progress.title"
 import ProgressInfo from "../../molecules/element_f42/rate.part.f42"
 import CommentPart from "../../molecules/element_f42/comment.f42"
-import Button from "../../atom/button"
 import { useTranslation } from 'react-i18next'
 import {mediaContainer,mediaContainerSecond, mediaContainerSecondText, mediaContainerPadding} from "./const"
 // import CloseIcon from '@material-ui/icons/Close';
@@ -33,34 +32,6 @@ const Index = ({ state, typeRole }) => {
         native: "Ona tili",
         intermediate: 'Yaxshi'
     }
-
-    // modal uchun =====================================================
-
-    // const [comment, setComment] = useState('')
-    // const [state1, setState] = useState(false);
-
-    // function openModal() {
-    //     setState(true);
-    // }
-    // function closeModal() {
-    //     setState(false)
-    //     setComment('')
-    // }
-
-    // function submit() {
-    //     let sendData = {
-
-    //         reply: comment
-    //     }
-
-    //     closeModal()
-    // }
-    // function setText(e) {
-    //     console.log(e.target.value)
-    //     setComment(e.target.value)
-    // }
-
-    // ======================================================================
     return (
         <Wrapper>
             <WrapperContainer>
@@ -154,61 +125,7 @@ const Index = ({ state, typeRole }) => {
                     <CommentPart />
                     <CommentPart />
                     <CommentPart />
-                    {/* <Container
-                        // position="relative"
-                        // padding="60px 0 0"
-                        // margin="-60px 0 0"
-                        // textAlign="left"
-                        // zIndex="4"
-                        backgroundColor="linear-gradient(to top, #fff, rgba(255,255,255,0.6))"
-                    >
-                        <div className='divbuttons'>
-                            <Button type="outlined">{t("GidPk.koproqYuklash")}</Button>
-                            <Button onClick={openModal}  >{t("GidPk.fikirqoldirish")} </Button>
-                        </div>
-
-
-                            <Modal
-                                visible={state1}
-                                width="900"
-                                height="550"
-                                effect="fadeInUp"
-                                onClickAway={closeModal}>
-                                <div className="modaldiv modalcontainer">
-                                    <div className="closebtn">
-                                        <CloseIcon className="pointx" onClick={closeModal} />
-                                    </div>
-                                    <h1 className='fikirqoldirish'>Fikringizni yozing </h1>
-
-                                    <div className="modaldiv">
-                                        <Textarea
-                                            value={comment}
-                                            width="100%"
-                                            onChange={setText}
-                                            placeholder="So‘z boshi"
-                                            height="100px" />
-                                    </div>
-                                    <div className="modaldiv">
-                                        <Textarea
-                                            value={comment}
-                                            width="100%"
-                                            onChange={setText}
-                                            placeholder="So‘z boshi"
-                                            height="250px" />
-                                    </div>
-
-                                    <div className="btgroup_modal">
-                                      
-                                        <div>
-                                        <b>Bahoingiz:</b>
-                                        </div>
-                                        <Button type="button" onClick={submit} className="btnRequest">
-                                        Fikr qoldirish                                            
-                                        </Button>
-                                    </div>
-                                </div>
-                            </Modal>
-                    </Container> */}
+                   
                 </Container>
             </WrapperContainer>
         </Wrapper>

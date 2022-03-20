@@ -3,12 +3,12 @@ import {TestComponentStyle} from "./style"
 import SpinnerModal from "./spinner.modal"
 import ErrorComponent from "./error.component"
 import SuccessModal from "./success.modal"
-const Index = ({data, loading, success, error}) => {
+const Index = ({data, loading, success, error, stitle, etitle}) => {
     return (
         <TestComponentStyle>
             {loading &&  <SpinnerModal/>}
-            {/* {error && <ErrorComponent data={data}/>} */}
-            {error && <SuccessModal data={data}/>}
+            {error && <ErrorComponent data={data} title={etitle}/>}
+            {success && <SuccessModal data={data} title={stitle}/>}
         </TestComponentStyle>
     )
 }
