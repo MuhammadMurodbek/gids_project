@@ -10,21 +10,29 @@ import LogoutIcon from '@mui/icons-material/Logout';
 
 const getRole = JSON.parse(localStorage.getItem("user_token"));
 const Index = ({ role }) => {
+
+
     const [getData, setGetData] = useState({ success: '', error: '', loading: false })
     const history = useHistory()
     const getRole = JSON.parse(localStorage.getItem("user_token"))
     let url = getRole?.role === 'simple_user' ? '/api/users/edit/' : `/api/${getRole?.role}s/edit/about/`
     useEffect(() => { getResponse(url, setGetData) }, [])
+
+    function topTo(){
+        window.scrollTo(0,0)
+        console.log("ishladi");
+    }
+
     const menu = (
         <Menu style={{ position: "relative", right: 40, top: 8, width: 150 }}>
             <Menu.Item key="0">
-                <Link to={role === 'simple_user' ? '/gid-personal?tab=0' : `/gid-personal-wider?tab=0`}>
-                    <span  style={{display:"flex"}} >
-                        <AssignmentIndIcon  
+                <Link to={role === 'simple_user' ? '/gid-personal?tab=0' : `/gid-personal-wider?tab=0`} onClick={topTo}>
+                    <span  style={{display:"flex"}}  >
+                        <AssignmentIndIcon 
                         style={{color:"#326A32", marginRight:"10px" }}
                         />
-                        <span >
-                            Profil
+                        <span  >
+                            Prof
                         </span>
                     </span>
                 </Link>

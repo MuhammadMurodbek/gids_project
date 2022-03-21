@@ -31,6 +31,7 @@ export default function Index() {
     function onChange ( pageNumber ) {
         // history.push(`/gid-personal-wider?tab=3&page=${pageNumber}`)
         setPagination( { current: pageNumber} )
+        window.scrollTo(0,0)
     }
     return (
         <Wrapper> 
@@ -39,7 +40,7 @@ export default function Index() {
                {t("arizalar_royhati.title")}
             </TextTitle>
              
-            <InDate url="request" setCallback={setCallback} collect={collect} setCollect={setCollect} url="request"/>
+            <InDate url="request" setCallback={setCallback} collect={collect} setCollect={setCollect}  />
            {
                state?.success === '' ? <Spinner marginTop="60px" width={ 50 } height={ 50 } />:
                articleList?.map((item,index) =>(

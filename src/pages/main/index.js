@@ -36,7 +36,7 @@ import img4 from '../../assets/img/main/wee.jpg'
 import img5 from '../../assets/img/main/ds.jpg'
 
 const settings = {
-     
+
     dots: true,
     infinite: true,
     speed: 1000,
@@ -48,30 +48,30 @@ const settings = {
 
     responsive: [
         {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            infinite: true,
-            dots: true
-          }
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                infinite: true,
+                dots: true
+            }
         },
         {
-          breakpoint: 600,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2,
-            initialSlide: 2
-          }
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+                initialSlide: 2
+            }
         },
         {
-          breakpoint: 480,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1
-          }
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
         }
-      ]
+    ]
 
 };
 
@@ -81,11 +81,11 @@ const Index = () => {
     const getRole = JSON.parse(localStorage.getItem("user_token"))
     const { t } = useTranslation()
     const history = useHistory()
-    const onClickbutton =()=>{
+    const onClickbutton = () => {
         history.push("/application-form")
-        window.scrollTo(0,0);
+        window.scrollTo(0, 0);
     }
-    console.log("ssss" , getRole?.role)
+    console.log("ssss", getRole?.role)
     return (
         <>
             <WrapperAll>
@@ -116,15 +116,15 @@ const Index = () => {
                                 <FlexContainer width="400px" {...mediaFlexButtons} justifyContent="space-between">
                                     {/* <Link to="/application-form" > */}
 
-                                        {
-                                            getRole?.role === "translator"  ? null
+                                    {
+                                        getRole?.role === "translator" ? null
                                             :
-                                            getRole?.role === "writer" ? null 
-                                            :getRole?.role === "gid" ? null   
-                                            :
-                                            <Button className="btn_medida_last newst" onClick={onClickbutton} {...mediaBtn}>{t("main.arizaQoldrirish")} </Button>
-                                        }
-                                        
+                                            getRole?.role === "writer" ? null
+                                                : getRole?.role === "gid" ? null
+                                                    :
+                                                    <Button className="btn_medida_last newst" onClick={onClickbutton} {...mediaBtn}>{t("main.arizaQoldrirish")} </Button>
+                                    }
+
                                     {/* </Link> */}
                                     <Link to="/gids">
                                         <Button className="btn_medida_last" {...mediaBtn} type="outlined"> {t("main.Gid_tanlash")} </Button>
@@ -160,7 +160,7 @@ const Index = () => {
 
                 <ComponentFour>
 
-                    <TextTitle {...mediaTextField} {...mediaTextFieldSec} top="40px"       bottom="60px">{t("main.trendSHahar")}
+                    <TextTitle {...mediaTextField} {...mediaTextFieldSec} top="40px" bottom="60px">{t("main.trendSHahar")}
                     </TextTitle>
 
                     <div>
@@ -192,9 +192,9 @@ const Index = () => {
                                             </Link>
                                         </FlexContainer>
                                     </div>
-                                </Paper> 
+                                </Paper>
                             </div>
-                            
+
                             <div className="carouseldiv">
                                 <Paper style={{ overflow: 'hidden' }}>
                                     <div className="container">
@@ -262,29 +262,29 @@ const Index = () => {
                 </Container>
 
             </WrapperAll>
-                    <ContainerLast>
-                        <div className="application-last">
-                            <TextTitle  {...mediaTextField} {...mediaTextFieldSec} width="50%" left="auto" right="auto" bottom="40px">{t("main.hoziroq")}
-                            </TextTitle>
-                            <FlexContainer {...mediaFlexButtons} width="380px" margin="0 auto" alignItems="center" justifyContent="space-between">
-                              
-                                {
-                                    getRole?.role === "translator"  ? null
-                                    :
-                                    getRole?.role === "writer" ? null 
-                                    :getRole?.role === "gid" ? null   
-                                    :
-                                    <Button   onClick={onClickbutton} {...mediaBtn}>{t("main.arizaQoldrirish")} </Button>
-                                }      
-                           
-                                <Link to="/gids"> 
-                                <Button type="outlined"  className="btnlaset" {...mediaBtn}>{t("main.tanlash")} </Button>
-                                </Link>
-                            </FlexContainer>
-                        </div>
-                    </ContainerLast>
- 
-          
+            <ContainerLast>
+                <div className="application-last">
+                    <TextTitle  {...mediaTextField} {...mediaTextFieldSec} width="50%" left="auto" right="auto" bottom="40px">{t("main.hoziroq")}
+                    </TextTitle>
+                    <FlexContainer {...mediaFlexButtons} width="380px" margin="0 auto" alignItems="center" justifyContent="space-between">
+
+                        {
+                            getRole?.role === "translator" ? null
+                                :
+                                getRole?.role === "writer" ? null
+                                    : getRole?.role === "gid" ? null
+                                        :
+                                        <Button onClick={onClickbutton} {...mediaBtn}>{t("main.arizaQoldrirish")} </Button>
+                        }
+
+                        <Link to="/gids">
+                            <Button type="outlined" className="btnlaset" {...mediaBtn}>{t("main.tanlash")} </Button>
+                        </Link>
+                    </FlexContainer>
+                </div>
+            </ContainerLast>
+
+
         </>
     )
 }

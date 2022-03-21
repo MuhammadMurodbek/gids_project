@@ -34,6 +34,7 @@ export default function Index () {
     function onChange ( pageNumber ) {
         history.push(`/blog?page=${pageNumber}`)
         setPagination( { current: pageNumber} )
+        window.scrollTo(0,0)
     }
     
     return (
