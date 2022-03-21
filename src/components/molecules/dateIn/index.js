@@ -13,7 +13,7 @@ export default function Index({setCollect, collect, setCallback, url}) {
     const handleSubmit = () => {
         if(setCallback) setCallback(prev=>!prev)
         let checkerUrl = url ? url : 'gid-personal'
-        history.push(`/${checkerUrl}/?country=${collect?.country}&city=${collect?.city}&date_after=${collect?.date_after}&date_before=${collect?.date_before}`)
+        history.push(`/${checkerUrl}?tab=1/?country=${collect?.country}&city=${collect?.city}&date_after=${collect?.date_after}&date_before=${collect?.date_before}`)
     }
     return (
         <Wrapper>
