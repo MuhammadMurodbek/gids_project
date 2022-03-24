@@ -9,6 +9,7 @@ import star from '../../assets/img/answerMy-application/star.svg'
 import sms from '../../assets/img/answerMy-application/sms.svg'
 import Spinner from "../../components/atom/loading.spinner.line"
 import moment from "moment"
+import { Modal} from 'antd';
 import { deleteResponse, patchResponseNonFile } from "../../hooks/response_get"
 import PersonIcon from '@mui/icons-material/Person';
 import {success, error} from "./functions"
@@ -37,18 +38,25 @@ export default function Index() {
     }
     const [applicationData, setApplicationData] = useState({ success: '', error: '', loading: false })
 
-    console.log(applicationData)
+    // console.log(applicationData)
     const handleClick = (id, role) => {
         history.push(`/seeprofile?id=${id}&role=${role}`)
     }
     React.useEffect(()=>{
         if(patchResponseData?.success!=='' && patchResponseData?.error===''){
-            success()
+            Modal.success({
+                title:'Arizangiz bekor qilindi !!',
+                onOk() {
+                    history.push('/gid-personal?tab=1')
+                }})
+            setTimeout(()=>{
+                history.push('/gid-personal?tab=1')
+            },[2000])
         }else if(patchResponseData?.success==='' && patchResponseData?.error!==''){
             error()
         }
     },[patchResponseData])
-    console.log(patchResponseData)
+    // console.log(patchResponseData)
 
     return (
         <Wrapper>

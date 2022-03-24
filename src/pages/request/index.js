@@ -9,23 +9,29 @@ import Requests from '../../components/organism/request/';
 import {useTranslation} from 'react-i18next';
 import moment from 'moment'
 import Spinner from "../../components/atom/loading.spinner.line"
+import { Pagination } from 'antd';
 
 export default function Index() {
- 
     const {t} = useTranslation()
     const [ articleList, setArticleList ] = useState( [] )
     const [state, setState] = useState({success:'', error:'', loading: false})
     const [callback, setCallback] = useState(false)
     const [collect, setCollect] = useState({date_after:'', date_before:'', country:'', city:''})
+    const [ pagination, setPagination ] = useState( {current: 1} )
+    const {current} = pagination
     useEffect(() =>{
-        getResponse(`/api/users/applications/?country=${collect?.country}&city=${collect?.city}&date_after=${collect?.date_after}&date_before=${collect?.date_before}`, setState, true)
-    },[callback])
+        getResponse(`/api/users/applications/?page=${current}&country=${collect?.country}&city=${collect?.city}&date_after=${collect?.date_after}&date_before=${collect?.date_before}`, setState, true)
+    },[callback, current])
     useEffect( () => {
         if ( state?.success )
         {
             setArticleList( state.success?.data?.results )
         }
     }, [ state ] )
+    function onChange ( pageNumber ) {
+        // history.push(`/gid-personal-wider?tab=3&page=${pageNumber}`)
+        setPagination( { current: pageNumber} )
+    }
     return (
         <Wrapper> 
         
@@ -52,8 +58,8 @@ export default function Index() {
                ))
            }
              
-            <div className="divbtns">
-                <Button type="outlined" className="davomi">{t("arizalar_royhati.davomi")} <ArrowForwardIcon className="arrovicon"/></Button>
+             <div className="pagination" style={{width:'100%', margin:'40px 0', textAlign:'center'}}>
+                <Pagination current={current} onChange={ onChange } pageSize={6} total={ state?.success?.data?.count } />
             </div>
         </Wrapper>
     )

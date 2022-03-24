@@ -1,7 +1,7 @@
 import React from 'react'
 import { FlexContainer } from '../../../styles/flex.container'
-import {Container} from "../../../styles/container/index.style"
-import {WrapperContainer, ContainerBottom, Wrapper} from "./style"
+import { Container } from "../../../styles/container/index.style"
+import { WrapperContainer, ContainerBottom, Wrapper } from "./style"
 import ImageGallery from "../../molecules/element_f42/Gallery"
 import ImageContainer from "../../molecules/img.container"
 import InfoBtn from "../../molecules/info.f42"
@@ -14,42 +14,24 @@ import Title from "../../atom/element_f42/title.container.f42"
 import ProgressTitle from "../../molecules/element_f42/progress.title"
 import ProgressInfo from "../../molecules/element_f42/rate.part.f42"
 import CommentPart from "../../molecules/element_f42/comment.f42"
-import Button from "../../atom/button"
 import { useTranslation } from 'react-i18next'
-const mediaContainer = {
-    m_width:"600px",
-    m_direction:"column",
-}
-const mediaContainerSecond = {
-    m_width:"600px",
-    m_margin:'25px 0 0 0'
-}
-const mediaContainerSecondText = {
-    m_width:"600px",
-    m_margin:'15px auto 0',
-    m_display:"inline-block",
-    m_m_width:'280px'
-}
-const mediaContainerPadding = {
-    m_width:"600px",
-    m_padding:'0 5px'
-}
-const  Index = ({state, typeRole}) => {
+import {mediaContainer,mediaContainerSecond, mediaContainerSecondText, mediaContainerPadding} from "./const"
+// import CloseIcon from '@material-ui/icons/Close';
+// import Textarea from '../../atom/textAreaCom';
+// import Modal from 'react-awesome-modal';
 
-    const {t} = useTranslation()
-
-    // const role = JSON.parse(localStorage.getItem("user_token"));
+const Index = ({ state, typeRole }) => {
+    const { t } = useTranslation()
     const lan = localStorage.getItem("i18nextLng")
     const languageCheck = (item, lang) => {
-        if(lang==='en') return item?.language__name_en
-        if(lang==='ru') return item?.language__name_ru
-        if(lang==='uz' && item) return item?.language__name_uz +" tili"
+        if (lang === 'en') return item?.language__name_en
+        if (lang === 'ru') return item?.language__name_ru
+        if (lang === 'uz' && item) return item?.language__name_uz + " tili"
     }
-    const degreeLang={
-        native:"Ona tili",
-        intermediate:'Yaxshi'
+    const degreeLang = {
+        native: "Ona tili",
+        intermediate: 'Yaxshi'
     }
-    
     return (
         <Wrapper>
             <WrapperContainer>
@@ -57,23 +39,23 @@ const  Index = ({state, typeRole}) => {
                     <Grid item xs={12} >
                         <Container position="relative" {...mediaContainerSecond} margin="25px 0 0 20px">
                             <FlexContainer {...mediaContainer} width="100%" alignItems="flex-start" justifyContent="space-between" >
-                                <div className="info_btn"><InfoBtn/></div>
+                                <div className="info_btn"><InfoBtn /></div>
                                 <ImageContainer src={state?.image || RoundImage} width="160px" height="auto" round="50%" />
                                 <Container {...mediaContainerSecondText} margin="-10px 0 0 15px">
                                     <TextTitle align="left" bottom="5px" font="20px">{state?.first_name || 'Mavjud emas'}{" "}{state?.last_name || 'Mavjud emas'}</TextTitle>
-                                    <div className="gid-info-personal">{state?.age + " yosh" || 'Mavjud emas'} | <span style={{textTransform: "capitalize"}}>{typeRole?.role ==='simple_user' ? "Foydalanuvchi " : typeRole?.role==="writer"? "Yozma tarjimon": typeRole?.role==="translator"? "Og'izaki tarjimon": "Gid"} </span> </div>
+                                    <div className="gid-info-personal">{state?.age + " yosh" || 'Mavjud emas'} | <span style={{ textTransform: "capitalize" }}>{typeRole?.role === 'simple_user' ? "Foydalanuvchi " : typeRole?.role === "writer" ? "Yozma tarjimon" : typeRole?.role === "translator" ? "Og'izaki tarjimon" : "Gid"} </span> </div>
                                     {
-                                        typeRole?.role === 'gid' ? 
-                                        state?.languages?.map((prev, index)=>(
-                                            <div key={index} className={index === 0 ? "gid-info-personal-text top":"gid-info-personal-text"}>
-                                                <div className="text">{languageCheck(prev, lan) || "Ma'lumot kiritilmagan"}</div> 
+                                        typeRole?.role === 'gid' ?
+                                            state?.languages?.map((prev, index) => (
+                                                <div key={index} className={index === 0 ? "gid-info-personal-text top" : "gid-info-personal-text"}>
+                                                    <div className="text">{languageCheck(prev, lan) || "Ma'lumot kiritilmagan"}</div>
                                                     - {degreeLang[prev?.level] || "Ma'lumot kiritilmagan"}
-                                            </div>
-                                        ))
-                                        :
-                                        state?.languages?.map((prev,index) => (
-                                            <div key={index} className="gid-info-personal-text"><div className="text">{prev?.from_language_name[lan] || 'Mavjud emas'}</div> - <div className="text">{prev?.to_language_name[lan] || 'Mavjud emas'}</div></div>
-                                        ))
+                                                </div>
+                                            ))
+                                            :
+                                            state?.languages?.map((prev, index) => (
+                                                <div key={index} className="gid-info-personal-text"><div className="text">{prev?.from_language_name[lan] || 'Mavjud emas'}</div> - <div className="text">{prev?.to_language_name[lan] || 'Mavjud emas'}</div></div>
+                                            ))
                                     }
 
                                 </Container>
@@ -81,76 +63,69 @@ const  Index = ({state, typeRole}) => {
                         </Container>
                     </Grid>
                 </Grid>
+
                 <Container padding="30px">
                     <TextTitle font="15px" fontWeight="600" align="left" color="#326A32">{t("GidPk.OzimHaqimda")}</TextTitle>
                     <p>{state?.bio || 'Bio kiritilmagan'}</p>
                     {
-                        typeRole?.role ==='gid' ? null:
-                        <ContainerBottom style={{marginBottom:10}}>
-                            <div className="inner-div"> <span className="title"> 
-                                {t("GidPk.qatnashgan")}</span> 
-                            </div>
-                        </ContainerBottom>
-                    }
-                    {
-                        state?.trainings?.length>0 ?
-                        state?.trainings?.map((prev, index)=>(
-                            <ContainerBottom key={index}>
-                                <div className="inner-div"> 
-                                    <span className="title"> Tadbir: </span> 
-                                    <span>{prev?.name}</span> 
-                                </div>
-                               
-                                <div className="inner-div"> 
-                                &nbsp;&nbsp;&nbsp;&nbsp;
-                                    <span className="title"> {t("GidPk.yil")} </span> <span>{prev?.year}</span> 
+                        typeRole?.role === 'gid' ? null :
+                            <ContainerBottom style={{ marginBottom: 10 }}>
+                                <div className="inner-div"> <span className="title">
+                                    {t("GidPk.qatnashgan")}</span>
                                 </div>
                             </ContainerBottom>
-                        )) :
-                            typeRole?.role === 'gid' ? null: <div style={{fontSize:'0.86rem'}}>Ma'lumot kiritilmagan</div>
+                    }
+                    {
+                        state?.trainings?.length > 0 ?
+                            state?.trainings?.map((prev, index) => (
+                                <ContainerBottom key={index}>
+                                    <div className="inner-div">
+                                        <span className="title"> Tadbir: </span>
+                                        <span>{prev?.name}</span>
+                                    </div>
+
+                                    <div className="inner-div">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                        <span className="title"> {t("GidPk.yil")} </span> <span>{prev?.year}</span>
+                                    </div>
+                                </ContainerBottom>
+                            )) :
+                            typeRole?.role === 'gid' ? null : <div style={{ fontSize: '0.86rem' }}>Ma'lumot kiritilmagan</div>
                     }
                 </Container>
+
             </WrapperContainer>
             <WrapperContainer>
                 <Container {...mediaContainerPadding} padding="0 10px">
-                    <SecondInfoCard data={state} role={typeRole?.role}/>
+                    <SecondInfoCard data={state} role={typeRole?.role} />
                 </Container>
             </WrapperContainer>
             <WrapperContainer>
                 <Container {...mediaContainerPadding} padding="0 10px">
-                    <ThirdInfoCard data={state} role={typeRole?.role}/>
-                </Container> 
-            </WrapperContainer>
-            { typeRole?.role === 'writer'? null: 
-             <WrapperContainer>
-                <Container {...mediaContainerPadding} padding="0 20px">
-                    <Title text={t("GidPk.Gallery")}/>
-                    <ImageGallery data={state}/>
+                    <ThirdInfoCard data={state} role={typeRole?.role} />
                 </Container>
-            </WrapperContainer>}
-            <WrapperContainer>
-                <Container {...mediaContainerPadding} padding="0 20px"> 
-                    <Title text={t("GidPk.fidbek")}/>   
-                    <Grid container spacing={1} style={{marginBottom:60}}>
-                        <Grid item sm={12} md={4}><ProgressInfo/></Grid>
-                        <Grid item sm={12} md={8}><ProgressTitle/></Grid>
-                    </Grid>
-                    <CommentPart/>
-                    <CommentPart/>
-                    <CommentPart/>
-                    <CommentPart/>
-                    <CommentPart/>
-                    <CommentPart/>
-                    <Container 
-                        position="relative"
-                        padding="60px 0 0" 
-                        margin="-60px 0 0" 
-                        textAlign="left" 
-                        zIndex="40"
-                        backgroundColor="linear-gradient(to top, #fff, rgba(255,255,255,0.6))"
-                    >
-                        <Button type="outlined">{t("GidPk.koproqYuklash")}</Button>
+            </WrapperContainer> 
+            {typeRole?.role === 'writer' ? null :
+                <WrapperContainer>
+                    <Container {...mediaContainerPadding} padding="0 20px">
+                        <Title text={t("GidPk.Gallery")} />
+                        <ImageGallery data={state} />
                     </Container>
+                </WrapperContainer>}
+            <WrapperContainer>
+                <Container {...mediaContainerPadding} padding="0 20px">
+                    <Title text={t("GidPk.fidbek")} />
+                    <Grid container spacing={1} style={{ marginBottom: 60 }}>
+                        <Grid item sm={12} md={4}><ProgressInfo /></Grid>
+                        <Grid item sm={12} md={8}><ProgressTitle /></Grid>
+                    </Grid>
+                    <CommentPart />
+                    <CommentPart />
+                    <CommentPart />
+                    <CommentPart />
+                    <CommentPart />
+                    <CommentPart />
+                   
                 </Container>
             </WrapperContainer>
         </Wrapper>

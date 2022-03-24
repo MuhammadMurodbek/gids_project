@@ -64,6 +64,7 @@ export default function Index () {
                                                         setPostData={ setPostData }
                                                         btnText={ t( "Blog.davomiOqish" ) }
                                                         setTagName={ setTagName }
+                                                        pen={true}
                                                     />
                                                 ) )
                                             }

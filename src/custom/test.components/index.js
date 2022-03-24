@@ -1,13 +1,14 @@
 import React from 'react'
 import {TestComponentStyle} from "./style"
-import Spinner from "../../components/molecules/loading.spinner"
-
-const Index = ({data, loading, success, error, children}) => {
+import SpinnerModal from "./spinner.modal"
+import ErrorComponent from "./error.component"
+import SuccessModal from "./success.modal"
+const Index = ({data, loading, success, error, stitle, etitle}) => {
     return (
         <TestComponentStyle>
-            {loading && <Spinner/>}
-            {error && <ErrorComponent/>}
-            {success && children}
+            {loading &&  <SpinnerModal/>}
+            {error && <ErrorComponent data={data} title={etitle}/>}
+            {success && <SuccessModal data={data} title={stitle}/>}
         </TestComponentStyle>
     )
 }

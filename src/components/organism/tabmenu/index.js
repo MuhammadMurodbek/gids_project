@@ -1,11 +1,12 @@
 import { Wrapper } from './style'
-import * as React from 'react'
+import React, {useEffect} from 'react'
 import PropTypes from 'prop-types'
 import Tabs from '@mui/material/Tabs'
 import Tab from '@mui/material/Tab'
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
-
+import { useHistory } from 'react-router'
+import {searchToObject} from "../../../custom/function"
 function TabPanel(props) {
   const { children, value, index, ...other } = props
 
@@ -42,15 +43,24 @@ function a11yProps(index) {
 export default function BasicTabs(props) {
   const [value, setValue] = React.useState(0)
   const { tabs } = props
+  const history = useHistory()
+  const token = JSON.parse(localStorage.getItem('user_token'))
   const handleChange = (event, newValue) => {
     setValue(newValue)
+    if(token?.role === 'simple_user'){
+      history.push(`/gid-personal?tab=${newValue}`)
+    }else{
+      history.push(`/gid-personal-wider?tab=${newValue}`)
+    }
   }
+  var query = searchToObject(window.location.search)
+  // console.log(query)
   return (
     <Wrapper>
       <Box sx={{ width: '100%',minHeight:'70vh' }}>
         <Box className="tabs-wrapper">
           <Tabs
-            value={value}
+            value={parseInt(query.tab)}
             onChange={handleChange}
             aria-label="basic tabs example"
             className="tabs-item"
@@ -71,7 +81,7 @@ export default function BasicTabs(props) {
                     style={{minWidth:'150px'}}
                     label={item.label}
                     {...a11yProps(index)}
-                    className={value === index ? 'active' : 'text-transform'}
+                    className={(parseInt(query.tab) || 0) === index ? 'active' : 'text-transform'}
                   />
                 ))
               : null}
@@ -79,7 +89,7 @@ export default function BasicTabs(props) {
         </Box>
         {tabs.length > 0
           ? tabs.map((item, index) => (
-              <TabPanel key={index} value={value} index={index} className="tab-panel">
+              <TabPanel key={index} value={parseInt(query.tab) || 0} index={index} className="tab-panel">
                 {item.component}
               </TabPanel>
             ))

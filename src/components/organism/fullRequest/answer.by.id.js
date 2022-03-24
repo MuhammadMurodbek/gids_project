@@ -84,7 +84,7 @@ export default function Index({applicationData, setApplicationData, btnText, url
                     <b className="idb"># {getData?.success?.data?.id}</b>
                 </Grid>
                 <Grid className="gridTitle2" item xs={12} md={6}>
-                    <Link to={getRole?.role === 'simple_user' ? '/gid-personal':'/request'} className="comback"> <ArrowBackIcon className="arrole" /> {t("ToliqAriza.qaytish")} </Link>
+                    <Link to={getRole?.role === 'simple_user' ? '/gid-personal?tab=0':'/request'} className="comback"> <ArrowBackIcon className="arrole" /> {t("ToliqAriza.qaytish")} </Link>
                 </Grid>
             </Grid>
 
@@ -148,7 +148,7 @@ export default function Index({applicationData, setApplicationData, btnText, url
                     </p>
                 </Grid>
             </Grid>
-
+   
             <section>
                 <Modal
                     visible={state}

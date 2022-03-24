@@ -38,7 +38,7 @@ export default function Index() {
       Modal.success({
         content:'Deleted successfully',
         onOk() {
-            history.push('/gid-personal-wider')
+            history.push('/gid-personal-wider?tab=0')
         },
       },)
     } 
@@ -46,7 +46,7 @@ export default function Index() {
       Modal.error({
         content:'Something went wrong',
         onOk() {
-            history.push('/gid-personal-wider')
+            history.push('/gid-personal-wider?tab=0')
         },
       },)
     } 
@@ -71,6 +71,7 @@ export default function Index() {
                   text={getArticle?.content}
                 />
 
+
                 <div className="mualif">
                   <div className="mualif-text">
                     <b className="mualif-b">Muallif: </b>
@@ -94,7 +95,7 @@ export default function Index() {
           </>:
           <div style={{width:'100%', textAlign:'center'}}>
               <NoDataPage/>
-              <Button type="outlined" onClick={()=>history.push('/gid-personal-wider')}>Ortga qaytish</Button>
+              <Button type="outlined" onClick={()=>history.push('/gid-personal-wider?tab=0')}>Ortga qaytish</Button>
           </div> 
         }
       </Wrapper>

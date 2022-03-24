@@ -13,8 +13,11 @@ import { Wrapper } from './style'
 import moment from 'moment'
 import {useHistory} from "react-router-dom"
 import Article from "../../../pages/article"
+import {searchToObject} from "../../../custom/function"
+
 export default function Index () {
     let query = window.location.search
+    let queryObj = searchToObject(window.location.search)
     const { t } = useTranslation()
     const history = useHistory()
     const [ state, setState ] = useState( { success: '', error: '' } )
@@ -24,7 +27,7 @@ export default function Index () {
     const [ postData, setPostData ] = useState( { success: '', error: '', loading: false } )
     let { current } = pagination
     useEffect( () => {
-        let url = `/api/posts/article/my/${query}`
+        let url = `/api/posts/article/my/?page=${queryObj?.page || 1}`
         getResponse( url, setState )
         history.push(`/gid-personal-wider${query}`)
         let pagNumber = query[query.length - 1]
@@ -32,7 +35,7 @@ export default function Index () {
     }, [ query ] )
     useEffect( () => {if ( state?.success )setArticleList( state.success?.data?.results )}, [ state.success?.data?.results ] )
     function onChange ( pageNumber ) {
-        history.push(`/gid-personal-wider?page=${pageNumber}`)
+        history.push(`/gid-personal-wider?tab=3&page=${pageNumber}`)
         setPagination( { current: pageNumber} )
     }
     return (
