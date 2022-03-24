@@ -22,7 +22,9 @@ const Index = ({open, setOpen}) => {
             ...data
         }
         postApiResponse('/api/users/rating/', sendData, setStatePost)
-        console.log(sendData)
+        // console.log(sendData.bio)
+        // console.log(sendData.custom_user_id.bio)
+        
     }
     return (
         <div>

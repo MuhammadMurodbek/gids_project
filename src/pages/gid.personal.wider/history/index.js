@@ -14,7 +14,7 @@ export default function Index() {
     useEffect(() => {
         getApiResponse('/api/posts/ad-history/', setHistoryState)
     }, [])
-    console.log(historyState)
+    // console.log(historyState)
     return (
         <Wrapper>
 

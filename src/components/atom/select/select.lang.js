@@ -20,7 +20,7 @@ const Index = (props) => {
   // console.log(citiesValue)
 //   console.log(options)
   const handleChange = (e) => {
-    console.log(e)
+    // console.log(e)
     setValue(e)
     if(setState){
       if(field){

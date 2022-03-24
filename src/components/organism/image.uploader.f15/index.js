@@ -15,7 +15,7 @@ function App(props) {
     setImageSrc(URL.createObjectURL(e.target.files[0]))
     setUpload(e.target.files[0])
   }
-  console.log(upload?.name)
+  // console.log(upload?.name)
 function delete1(){
   setImageSrc('')
 }

@@ -41,7 +41,7 @@ const Index = () => {
         }
         if ( postGid?.error !== '' ) toast.error( 'Failed to save data' )
     }, [ postGid ] )
-    console.log('first')
+    // console.log('first')
     return (
         <Wrapper onSubmit={(e) =>e.preventDefault() }>
             {getRole?.role === "gid" ?

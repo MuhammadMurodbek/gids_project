@@ -16,7 +16,7 @@ const Index = (props) => {
         setCheck(true)
     },[check])
     const handleChange = useCallback( (e) => {
-        console.log(e.target.value)
+        // console.log(e.target.value)
         setState({idK:idK, value:e.target.value, field:[field]})
         setValue(e.target.value)
         // if(setState){

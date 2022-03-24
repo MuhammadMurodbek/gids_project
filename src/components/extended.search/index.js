@@ -21,7 +21,7 @@ const Index = ({loader, queryObj}) => {
     let params = window.location.search
     console.log(params)
     const handleSubmit = () => { 
-        console.log(collect)
+        // console.log(collect)
         // setStartVal(true)
         let array = Object.keys(collect)
         if(array?.length>=9 && collect?.languages?.length>0){
@@ -52,7 +52,7 @@ const Index = ({loader, queryObj}) => {
             }})
         }
     },[queryObj])
-    console.log(queryObj)
+    // console.log(queryObj)
     React.useEffect(()=>{
         let array = Object.keys(collect)
         if(array?.length>=9 && collect?.languages?.length>0){

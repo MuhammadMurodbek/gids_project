@@ -20,7 +20,7 @@ const Index = ({ role }) => {
 
     function topTo(){
         window.scrollTo(0,0)
-        console.log("ishladi");
+        // console.log("ishladi");
     }
 
     const menu = (

@@ -26,7 +26,7 @@ const Index = ({data}) => {
     const handleClick = (id, role) => {
         history.push(`/seeprofile?id=${id}&role=${role}`)
     }
-    console.log(data)
+    // console.log(data)
     return (
         <WrapperInfoBtn>
             <FlexContainer  width="100%" height="100%" alignItems="center" justifyContent="space-between" flexDirection="column">

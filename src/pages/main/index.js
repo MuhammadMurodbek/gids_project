@@ -85,7 +85,7 @@ const Index = () => {
         history.push("/application-form")
         window.scrollTo(0, 0);
     }
-    console.log("ssss", getRole?.role)
+    // console.log("ssss", getRole?.role)
     return (
         <>
             <WrapperAll>
@@ -136,6 +136,7 @@ const Index = () => {
                             <ImgContainer {...media} src={imageSecond} width="500px" />
                         </Grid>
                     </Grid>
+
                     <Grid container spacing={1}>
                         <Grid item xs={12} md={6} sm={12}>
                             <ImgContainer {...media} src={imageThird} width="500px" />
@@ -166,20 +167,18 @@ const Index = () => {
                     <div>
                         <Slider {...settings}  >
                             <div className="carouseldiv">
-
                                 <Paper style={{ overflow: 'hidden' }}>
                                     <div className="container">
                                         <ImgContainer width="100%" height="270px" src={img1} />
                                         <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
                                             <div className="title-container">Samarqand</div>
-                                            <Link to="/cities" className="link11">
+                                            <Link to="/samarqand" className="link11">
                                                 {t("main.korish")}
                                                 <img src={img21} alt="asdfasdf" />
                                             </Link>
                                         </FlexContainer>
                                     </div>
                                 </Paper>
-
                             </div>
                             <div className="carouseldiv">
                                 <Paper style={{ overflow: 'hidden' }}>

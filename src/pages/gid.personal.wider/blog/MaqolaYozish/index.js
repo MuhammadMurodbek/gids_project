@@ -70,15 +70,15 @@ const Index = () => {
             tags
         })
     }
-    console.log(tags)
-    console.log(upload)
+    // console.log(tags)
+    // console.log(upload)
     function handleSubmit(e) {
         e.preventDefault()
         setPostData({ ...postData, loading: true })
         try {
             let newArr = tags ? [...tags] : undefined
             let selectTags = newArr.map(item => item.label)
-            console.log(selectTags)
+            // console.log(selectTags)
             const payload = {
                 title: article.title,
                 image: upload?.name,
@@ -93,7 +93,7 @@ const Index = () => {
 
             postResponse('/api/posts/article/', formData, setPostData)
         } catch (e) {
-            console.log(e)
+            // console.log(e)
         }
     }
 
@@ -101,7 +101,7 @@ const Index = () => {
         if (postData?.success !== '') toast.success('Successfully created')
         if (postData?.error !== '') toast.error('Something went wrong')
     }, [postData])
-    console.log(article)
+    // console.log(article)
     const handleBack = () => history.goBack()
     
     return (
