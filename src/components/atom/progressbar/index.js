@@ -8,22 +8,14 @@ const Index = (props) => {
     return (
         <Wrapper>
             <Progress 
+                // width={80}
                 percent={percent} 
                 strokeLinecap="square"
                 strokeColor={mainGreen}
                 showInfo={true} 
                 type="line"
+                format={e => `${e}%`}
             />
-            {/* <div className="title">{percent}%</div> */}
-            {/* <Line 
-                percent={percent || "10"} 
-                strokeWidth={strokeWidth || "4"} 
-                trailWidth={4} 
-                strokeColor={mainGreen} 
-                prefixCls="popo"
-                strokeLinecap="square"
-                style={{width:"100%", marginRight:15}}
-            /> */}
         </Wrapper>
     )
 }

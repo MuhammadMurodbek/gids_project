@@ -15,12 +15,13 @@ import ProgressTitle from "../../molecules/element_f42/progress.title"
 import ProgressInfo from "../../molecules/element_f42/rate.part.f42"
 import CommentPart from "../../molecules/element_f42/comment.f42"
 import { useTranslation } from 'react-i18next'
-import {mediaContainer,mediaContainerSecond, mediaContainerSecondText, mediaContainerPadding} from "./const"
+import Spinner from "../../atom/loading.spinner.line"
+import { mediaContainer, mediaContainerSecond, mediaContainerSecondText, mediaContainerPadding } from "./const"
 // import CloseIcon from '@material-ui/icons/Close';
 // import Textarea from '../../atom/textAreaCom';
 // import Modal from 'react-awesome-modal';
 
-const Index = ({ state, typeRole }) => {
+const Index = ({ state, typeRole, comments, commentCount, commentReview }) => {
     const { t } = useTranslation()
     const lan = localStorage.getItem("i18nextLng")
     const languageCheck = (item, lang) => {
@@ -32,6 +33,7 @@ const Index = ({ state, typeRole }) => {
         native: "Ona tili",
         intermediate: 'Yaxshi'
     }
+    // console.log(commentData)
     return (
         <Wrapper>
             <WrapperContainer>
@@ -104,7 +106,7 @@ const Index = ({ state, typeRole }) => {
                 <Container {...mediaContainerPadding} padding="0 10px">
                     <ThirdInfoCard data={state} role={typeRole?.role} />
                 </Container>
-            </WrapperContainer> 
+            </WrapperContainer>
             {typeRole?.role === 'writer' ? null :
                 <WrapperContainer>
                     <Container {...mediaContainerPadding} padding="0 20px">
@@ -114,18 +116,25 @@ const Index = ({ state, typeRole }) => {
                 </WrapperContainer>}
             <WrapperContainer>
                 <Container {...mediaContainerPadding} padding="0 20px">
-                    <Title text={t("GidPk.fidbek")} />
-                    <Grid container spacing={1} style={{ marginBottom: 60 }}>
-                        <Grid item sm={12} md={4}><ProgressInfo /></Grid>
-                        <Grid item sm={12} md={8}><ProgressTitle /></Grid>
-                    </Grid>
-                    <CommentPart />
-                    <CommentPart />
-                    <CommentPart />
-                    <CommentPart />
-                    <CommentPart />
-                    <CommentPart />
-                   
+                    <Title text={t("GidPk.fidbek")} /><br />
+                    {comments?.loading && <Spinner />}
+                    {comments?.success &&
+                        <>
+                            {!commentCount ? <div className="empty_title">Izohlar mavjud emas.</div> :
+                                <>
+                                    <Grid container spacing={1} style={{ marginBottom: 60 }}>
+                                        <Grid item sm={12} md={4}><ProgressInfo data={commentCount} /></Grid>
+                                        <Grid item sm={12} md={8}><ProgressTitle data={commentCount} /></Grid>
+                                    </Grid>
+                                    {
+                                        commentReview?.map((item, index) => (
+                                            <CommentPart key={index} data={item} />
+                                        ))
+                                    }
+                                </>
+                            }
+                        </>
+                    }
                 </Container>
             </WrapperContainer>
         </Wrapper>

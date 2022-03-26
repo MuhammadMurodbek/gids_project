@@ -8,16 +8,19 @@ const media = {
     m_width: '600px',
     // m_margin:'10px 0 0',
 }
-const Index = () => {
+const Index = ({data}) => {
+    
     return (
         <Wrapper>
             <RateContainer>
-                <Rate size={17} />
+                <Rate size={17} value={data?.rating} disabled/>
             </RateContainer>
             <FlexContainer {...media} width="100%" flexDirection="column" align="center" justifyContent="space-between" gap="10px">
-                <Container maxWidth="80%" padding="5px 0 0 0"><Text title="lorem  consectetur adipisicing elit. lorem  consectetur adipisicing elit A temporibus quis, " />
+                <Container maxWidth="80%" padding="5px 0 0 0">
+                    <img src={data?.image} alt="image" className="image_comment"/>
+                    <Text title={data?.full_name?.first_name + " " + data?.full_name?.last_name} />
                 </Container>
-                <Text text="Lorem ipsum dolor sit amet consectetur adipisicing elit. A temporibus quis, praesentium eveniet quae optio amet quibusdam odit doloremque debitis. Accusamus ipsa dolor placeat temporibus molestias nemo perspiciatis quod atque." />
+                <Text text={data?.comment} />
             </FlexContainer>
         </Wrapper>
     )
