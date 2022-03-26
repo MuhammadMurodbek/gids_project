@@ -22,7 +22,7 @@ const Index = ({statePostProps}) => {
     const [postData, setPostData] = useState({success:'',error:''})
     useEffect(()=>{
         if(statePostProps){
-            console.log(statePostProps)
+            // console.log(statePostProps)
             // let propsData = statePostProps?.data
             // propsData.country = JSON.parse(propsData.country)
             // propsData.city = JSON.parse(propsData.city)

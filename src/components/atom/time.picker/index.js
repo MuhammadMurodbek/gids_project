@@ -7,7 +7,7 @@ function SwitchablePicker (props) {
     const handleChange = (data) => {
         setState({...state, [field]:data})
     }
-    console.log(defaultValue)
+    // console.log(defaultValue)
     return (
         <Wrapper pcolor={defaultValue ? true:false}>
             <TimePicker 

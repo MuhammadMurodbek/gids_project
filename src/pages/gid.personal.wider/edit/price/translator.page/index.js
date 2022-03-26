@@ -64,7 +64,7 @@ const Index = () => {
     // console.log(stateCurr)
     const handleSubmit = () => {
         setPost({ ...post, loading: true })
-        console.log(items)
+        // console.log(items)
         let postData = items?.map((prev)=>{
             return{
                 id:prev?.id,
@@ -75,7 +75,7 @@ const Index = () => {
                 work_time_per_day:prev?.work_time_per_day?.value  || prev?.work_time_per_day,
             }
         })
-        console.log(postData)
+        // console.log(postData)
         postResponse('/api/translators/edit/cost/', postData, setPost)
     }
     useEffect(() => {

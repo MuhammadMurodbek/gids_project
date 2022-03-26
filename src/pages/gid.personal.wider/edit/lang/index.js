@@ -54,8 +54,8 @@ const Index = () => {
         if(value?.hasOwnProperty('languages') && value?.hasOwnProperty('level')){
             clone.push({language: value?.languages?.value, level:value?.level?.value})
         }
-        console.log(clone)
-        console.log(value)
+        // console.log(clone)
+        // console.log(value)
         postResponse( '/api/gids/edit/language/', clone, setPostData )
     }
     React.useEffect( () => {

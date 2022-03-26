@@ -233,6 +233,10 @@ export const routes = [
         component:ListRouter.Cities
     },
     {
+        url:'/samarqand',
+        component:ListRouter.Samarqand
+    },
+    {
         url:'/blog/user/:id',
         component:ListRouter.FullData,
     },

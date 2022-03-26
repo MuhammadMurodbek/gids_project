@@ -23,7 +23,7 @@ const Gallery = ({ role, setCallback }) => {
             const { status } = info.file;
             setLoad(true)
             if (status !== 'uploading') {
-                console.log(info.file, info.fileList);
+                // console.log(info.file, info.fileList);
             }
             if (status === 'done') {
                 setCallback(prev => !prev)
@@ -37,7 +37,7 @@ const Gallery = ({ role, setCallback }) => {
         },
 
         onDrop: (e) => {
-            console.log('Dropped files', e.dataTransfer.files);
+            // console.log('Dropped files', e.dataTransfer.files);
         },
 
         beforeUpload(file) {
@@ -49,8 +49,8 @@ const Gallery = ({ role, setCallback }) => {
             if (!videoSize) {
                 message.error("videoni hajmi juda katta max(100Mb)");
             }
-            console.log(videoSize)
-            console.log(file.type)
+            // console.log(videoSize)
+            // console.log(file.type)
             return videoFormat && videoSize;
         }
 

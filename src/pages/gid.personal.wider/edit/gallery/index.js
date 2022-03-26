@@ -11,7 +11,7 @@ const Index = () => {
     const [callback, setCallback] = useState(false)
     const getRole = JSON.parse( localStorage.getItem( "user_token" ) );
     useEffect(() => { getResponse(`/api/${getRole?.role}s/edit/video/`, setUpload)},[callback])
-    console.log(upload)
+    // console.log(upload)
     return (
         <Wrapper>
             <Gallery role={getRole?.role} setCallback={setCallback}/>

@@ -6,7 +6,7 @@ import Selection from "../../../../../components/atom/select/cost"
 import {currency} from "../../../../../custom/constants"
 const PriceCurrency = (props) => {
     const {prev, stateCurr, setStateCurr, title, setState, state, idK, fieldS, fieldIn, defaultCost, defaultCurr} = props 
-   console.log(prev)
+//    console.log(prev)
     return (
         <Wrapper>
             <div>

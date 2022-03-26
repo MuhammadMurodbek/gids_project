@@ -10,6 +10,7 @@ import FullData from '../pages/fullData';
 import Request from '../pages/request';
 import Fullrequest from '../pages/follRequest'; 
 import Cities from '../pages/cities';
+import Samarqand from '../pages/cities/Samarqand'
 import  GidPersonal from '../pages/gid.personal';
 import Article from '../pages/article';
 import AnsverMyapp from '../pages/ansverMyapplication';
@@ -46,6 +47,7 @@ export {
     FillOutApplication,
     GidPersonal, 
     Cities,
+    Samarqand,
     FullData,
     Article,
     AnsverMyapp,

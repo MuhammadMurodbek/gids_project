@@ -9,7 +9,7 @@ import {useTranslation} from 'react-i18next';
 
 
 const Index = ({state, setState, error, statePostProps}) => {
-    console.log(statePostProps)
+    // console.log(statePostProps)
     const {t} = useTranslation()
     const [countryId, setCountryId] = useState(1)
     const handleChange = (e)=>{setState({...state,[e.target.name]:e.target.value})}

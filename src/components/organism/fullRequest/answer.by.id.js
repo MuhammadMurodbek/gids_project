@@ -72,7 +72,7 @@ export default function Index({applicationData, setApplicationData, btnText, url
     }, [response])
   
     function setText(e) {
-        console.log(e.target.value)
+        // console.log(e.target.value)
         setComment(e.target.value)
     }
 

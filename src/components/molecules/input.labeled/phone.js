@@ -15,7 +15,7 @@ const Index = (props) => {
     
     const {width, label, password, sizeLabel, setState, state, field, defaultApiValue, clear, setClear, idK} = props
     const [phone, setPhone] = useState()
-    console.log(props?.defaultApiValue)
+    // console.log(props?.defaultApiValue)
     useEffect(() => {
         if(setState){
             setState({...state, [field]:phone})

@@ -36,7 +36,7 @@ const     Todos = ({translateType, setTranslateType}) => {
                     }
                 }
             }) || []
-            console.log(theme)
+            // console.log(theme)
             setItems(theme)
         }else
             setItems(arrayList)
@@ -59,7 +59,7 @@ const     Todos = ({translateType, setTranslateType}) => {
             setItems([...update])
         }
     },[item])
-    console.log(arrayList)
+    // console.log(arrayList)
     const handleSubmit = () => {
         setPostApiData({...postApiData, loading: true})
         let postData = {
