@@ -19,12 +19,13 @@ const mediaContainer={
     m_width:'600px',
     m_padding:'10px 0',
 }
-const Index = ({state}) => {
+const Index = ({state,commentCount, commentReview}) => {
     const {t} = useTranslation()
+    
     return (
         <Wrapper>
             <Container padding="20px" boxShadow={shadow}>
-                <InfoSecond data={state}/>
+                <InfoSecond  commentCount={ commentCount} commentReview={commentReview} />
             </Container>
             <Container margin="20px 0" {...mediaContainer} padding="20px" boxShadow={shadow}> 
                 <DayPicker default selectedDays={state?.busy_days?.map(item=> new Date(item)) || []}/>

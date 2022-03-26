@@ -33,7 +33,7 @@ const Index = ({ state, typeRole, comments, commentCount, commentReview }) => {
         native: "Ona tili",
         intermediate: 'Yaxshi'
     }
-    // console.log(commentData)
+    console.log(commentReview)
     return (
         <Wrapper>
             <WrapperContainer>
@@ -41,7 +41,7 @@ const Index = ({ state, typeRole, comments, commentCount, commentReview }) => {
                     <Grid item xs={12} >
                         <Container position="relative" {...mediaContainerSecond} margin="25px 0 0 20px">
                             <FlexContainer {...mediaContainer} width="100%" alignItems="flex-start" justifyContent="space-between" >
-                                <div className="info_btn"><InfoBtn /></div>
+                                <div className="info_btn"><InfoBtn view={state?.view || 0}/></div>
                                 <ImageContainer src={state?.image || RoundImage} width="160px" height="auto" round="50%" />
                                 <Container {...mediaContainerSecondText} margin="-10px 0 0 15px">
                                     <TextTitle align="left" bottom="5px" font="20px">{state?.first_name || 'Mavjud emas'}{" "}{state?.last_name || 'Mavjud emas'}</TextTitle>
@@ -120,7 +120,7 @@ const Index = ({ state, typeRole, comments, commentCount, commentReview }) => {
                     {comments?.loading && <Spinner />}
                     {comments?.success &&
                         <>
-                            {!commentCount ? <div className="empty_title">Izohlar mavjud emas.</div> :
+                            {commentReview?.length<1 ? <div className="empty_title">Izohlar mavjud emas.</div> :
                                 <>
                                     <Grid container spacing={1} style={{ marginBottom: 60 }}>
                                         <Grid item sm={12} md={4}><ProgressInfo data={commentCount} /></Grid>

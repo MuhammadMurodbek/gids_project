@@ -63,7 +63,11 @@ export default function Index() {
                                     </Grid>
                                     
                                     <Grid item xs={12} md={4}>
-                                        <CardMainSecond state={apiData?.success?.data} />
+                                        <CardMainSecond 
+                                            state={apiData?.success?.data} 
+                                            commentCount={commentApi?.success?.data?.counts}
+                                            commentReview={commentApi?.success?.data?.reviews}
+                                        />
                                     </Grid>
                                 </Grid>
                     }

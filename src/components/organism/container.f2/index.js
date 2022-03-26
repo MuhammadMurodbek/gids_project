@@ -20,9 +20,9 @@ const Index = ({data}) => {
     const lang = localStorage.getItem('i18nextLng')
     const { t } = useTranslation()
     const languageCheck = (item, lang) => {
-        if(lang==='en') return item?.from_language__name_en 
-        if(lang==='ru') return item?.from_language__name_ru  
-        if(lang==='uz') return item?.from_language__name_uz 
+        if(lang==='en') return item?.from_language__name_en || item?.language__name_en 
+        if(lang==='ru') return item?.from_language__name_ru  || item?.language__name_ru 
+        if(lang==='uz') return item?.from_language__name_uz  || item?.language__name_uz
     }
     // console.log(data)
     return (
@@ -33,19 +33,19 @@ const Index = ({data}) => {
                         <Container {...media_container} margin="20px 0 0 0">
                             <FlexContainer width="100%" alignItems="center" justifyContent="space-between" flexDirection="column">
                                 <RoundImageContainer src={data?.image || RoundImage} width="100px" height="auto" data={data}/>
-                                <Info data={data}/>
+                                <Info data={data} commentCount={data?.rating}/>
                             </FlexContainer>
                         </Container> 
                     </Grid>
                     <Grid item xs={12} sm={6}>
                         <Container margin="30px 0 0 0">
                             <TextTitle align="left" font="20px"> {(data?.first_name +" " + data?.last_name) || "Ma'lumot kiritilmagan"} </TextTitle>
-                            <div className="gid-info-personal">{data?.age ? (data?.age + " " + "yosh") : " " }  | <span style={{textTransform: "capitalize"}}>{data?.role === "translator" ? "Og'zaki tarjimon" : data?.role === "gid" ? "Gid" : data?.role === "writer" ? "Yozma tarjima" : " " }
+                            <div className="gid-info-personal">{data?.age ? (data?.age + " " + "yosh") : "0 yosh" }  | <span style={{textTransform: "capitalize"}}>{data?.role === "translator" ? "Og'zaki tarjimon" : data?.role === "gid" ? "Gid" : data?.role === "writer" ? "Yozma tarjima" : " " }
                             </span> </div>
 
                             <div className="gid-info-personal-text top"> 
                                 <div className="text">
-                                    {t("Gid_Tanlash.xizmatlar")} : { data?.excursions?.map((prev)=>" "+getLabelCity(parseInt(prev?.country), parseInt(prev?.city))+",") || "Ma'lumot kiritilmagan"}
+                                    {t("Gid_Tanlash.xizmatlar")} : { data?.excursions?.length>0? data?.excursions?.map((prev)=>" "+prev?.city+",") : "Ma'lumot kiritilmagan"}
                                 </div>
                             </div>
                             
