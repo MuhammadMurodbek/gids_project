@@ -32,7 +32,7 @@ const Index = ({ role }) => {
                         style={{color:"#326A32", marginRight:"10px" }}
                         />
                         <span  >
-                            Prof
+                            Profil
                         </span>
                     </span>
                 </Link>

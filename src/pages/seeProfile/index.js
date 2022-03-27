@@ -59,7 +59,7 @@ export default function Index() {
                                             commentCount={commentApi?.success?.data?.counts}
                                             commentReview={commentApi?.success?.data?.reviews}
                                         />
-                                        {apiData?.success && <Button onClick={()=>setOpenModal(true)}>Add comment</Button>}
+                                        {apiData?.success && <Button onClick={()=>setOpenModal(true)}>Fikr qoldirish</Button>}
                                     </Grid>
                                     
                                     <Grid item xs={12} md={4}>
