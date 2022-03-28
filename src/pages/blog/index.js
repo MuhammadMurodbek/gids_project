@@ -11,12 +11,13 @@ import { Grid } from '@material-ui/core'
 import { Pagination } from 'antd';
 import { Wrapper } from './style'
 import moment from 'moment'
-import {useHistory} from "react-router-dom"
+import {useHistory, useLocation} from "react-router-dom"
 
-export default function Index () {
+export default function Index ({cities}) {
     let query = window.location.search
     const { t } = useTranslation()
     const history = useHistory()
+    const location = useLocation()
     const [ state, setState ] = useState( { success: '', error: '' } )
     const [ tagName, setTagName ] = useState( undefined )
     const [ articleList, setArticleList ] = useState( [] )
@@ -26,13 +27,13 @@ export default function Index () {
     useEffect( () => {
         let url = `/api/posts/article/${query}`
         getResponse( url, setState, true )
-        history.push(`/blog${query}`)
+        history.push(`${location.pathname}${query}`)
         let pagNumber = query[query.length - 1]
         setPagination({current:parseInt(pagNumber)})
     }, [ query ] )
     useEffect( () => {if ( state?.success )setArticleList( state.success?.data?.results )}, [ state.success?.data?.results ] )
     function onChange ( pageNumber ) {
-        history.push(`/blog?page=${pageNumber}`)
+        history.push(`${location.pathname}?page=${pageNumber}`)
         setPagination( { current: pageNumber} )
         window.scrollTo(0,0)
     }
@@ -50,7 +51,7 @@ export default function Index () {
                             state.success?.data?.results.length > 0 ?
                                 <>
                                     <Grid container spacing={ 1 }>
-                                        <Grid item xs={ 12 } sm={ 12 } md={ 8 }>
+                                        <Grid item xs={ 12 } sm={ 12 } md={ cities ? 12 : 8 }>
                                             {
                                                 articleList?.map( item => (
                                                     
@@ -76,11 +77,13 @@ export default function Index () {
                                             }
 
                                         </Grid>
-                                        <Grid xs={ 12 } sm={ 12 } item md={ 4 } className="msa2">
-                                            <div className="imgcla"><ImgContainer src={ ad } width="350px" margin="0 auto" /></div>
-                                            <div className="imgcla"><ImgContainer src={ ad } width="350px" margin="0 auto" /></div>
-
-                                        </Grid>
+                                        {
+                                            !cities && 
+                                            <Grid xs={ 12 } sm={ 12 } item md={ 4 } className="msa2">
+                                                <div className="imgcla"><ImgContainer src={ ad } width="350px" margin="0 auto" /></div>
+                                                <div className="imgcla"><ImgContainer src={ ad } width="350px" margin="0 auto" /></div>
+                                            </Grid>
+                                        }
                                     </Grid>
                                     <div className="pagination">
                                         <Pagination current={current} onChange={ onChange } pageSize={4} total={ state?.success?.data?.count } />

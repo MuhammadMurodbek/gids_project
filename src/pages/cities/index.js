@@ -3,6 +3,7 @@ import { AboutB, PerentAB, Wrapper } from './index.style'
 import ImgContainer from "../../components/molecules/img.container"
 import bukhara from '../../assets/img/citiyes/bukhara2.png'
 import { useTranslation } from 'react-i18next'
+import Blog from "../../pages/blog"
 
 export default function Index() {
     const { t } = useTranslation()
@@ -29,9 +30,9 @@ export default function Index() {
                 
                     
             </PerentAB>
-
            
  
+            <Blog cities={true}/>
         </Wrapper>
     )
 }
