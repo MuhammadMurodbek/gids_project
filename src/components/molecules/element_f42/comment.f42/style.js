@@ -6,11 +6,17 @@ export const Wrapper = styled.div`
     height: auto;
     margin: 30px 0 20px;
     /* background-color: red;; */
+    .image_comment{
+        width:50px;
+        height:50px;
+        border-radius:50%;
+        margin-right:10px;
+    }
 `
 export const RateContainer = styled.div`
     /* background-color: green; */
     position: absolute;
-    top: 0; right:0;
+    top: 12px; right:0;
     @media (max-width:600px){
         top:-20px;
         margin:0 auto;

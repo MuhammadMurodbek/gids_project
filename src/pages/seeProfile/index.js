@@ -11,6 +11,7 @@ import NoDataPage from "../../components/templates/no.data.page.js"
 import Spinner from "../../components/atom/loading.spinner.line"
 import {useHistory} from "react-router-dom"
 import ModalContainer from "./modal"
+
 export default function Index() {
     const history = useHistory()
     let query = window.location.search
@@ -24,11 +25,20 @@ export default function Index() {
     let id = searchToObject(query)?.id
     let role = searchToObject(query)?.role
     const [openModal, setOpenModal] = useState(false)
+    const [callback, setCallback] = useState(false)
     const [apiData, setApiData] = useState({ success: '', error: '' })
-    useEffect(() => { getResponse(`/api/${role}s/profiles/${id}/`, setApiData, true) }, [])
+    const [commentApi, setCommentApi] = useState({success:'', error:''})
+    useEffect(() => { 
+        getResponse(`/api/${role}s/profiles/${id}/`, setApiData, true) 
+    }, [])
+    useEffect(() => { 
+        if(apiData?.success && apiData?.success?.data?.custom_user_id)
+            getResponse(`/api/users/rating/${apiData?.success?.data?.custom_user_id}/`, setCommentApi) 
+    }, [apiData, callback])
     const handlePrev = ()=>{
         history.goBack()
     }
+
     return (
         <>
             <Layout>
@@ -42,17 +52,27 @@ export default function Index() {
                             apiData?.error !== '' ? <NoDataPage /> :
                                 <Grid container spacing={3}>
                                     <Grid item xs={12} md={8}>
-                                        <CardMain state={apiData?.success?.data} typeRole={{ role: role }} />
-                                        <Button onClick={()=>setOpenModal(true)}>Add comment</Button>
+                                        <CardMain 
+                                            state={apiData?.success?.data} 
+                                            typeRole={{ role: role }} 
+                                            comments={commentApi}
+                                            commentCount={commentApi?.success?.data?.counts}
+                                            commentReview={commentApi?.success?.data?.reviews}
+                                        />
+                                        {apiData?.success && <Button onClick={()=>setOpenModal(true)}>Fikr qoldirish</Button>}
                                     </Grid>
                                     
                                     <Grid item xs={12} md={4}>
-                                        <CardMainSecond state={apiData?.success?.data} />
+                                        <CardMainSecond 
+                                            state={apiData?.success?.data} 
+                                            commentCount={commentApi?.success?.data?.counts}
+                                            commentReview={commentApi?.success?.data?.reviews}
+                                        />
                                     </Grid>
                                 </Grid>
                     }
                     
-                    <ModalContainer setOpen={setOpenModal} open={openModal}/>
+                    <ModalContainer setCallback={setCallback} setOpen={setOpenModal} open={openModal} customId={apiData?.success?.data?.custom_user_id}/>
                 </Wrapper>
             </Layout>
 

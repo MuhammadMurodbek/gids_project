@@ -32,7 +32,7 @@ const Index = ({data}) => {
             <FlexContainer  width="100%" height="100%" alignItems="center" justifyContent="space-between" flexDirection="column">
                 <FlexContainer {...mediaUser} width="auto" alignItems="center" justifyContent="center" className="fl-container">
                     <CheckCircleOutlineIcon style={data?.is_confirmed ? {}:{color:'#ccc'}} className="icon"/>
-                    <FlexContainer width="auto" alignItems="center" className="count"><VisibilityIcon/>{" "}10</FlexContainer>
+                    <FlexContainer width="auto" alignItems="center" className="count"><VisibilityIcon/>{" "}{data?.view || '0'}</FlexContainer>
                 </FlexContainer>
                 
                     <Button {...mediaButton} onClick={()=>handleClick(data?.id, data?.role)}  width="100%">

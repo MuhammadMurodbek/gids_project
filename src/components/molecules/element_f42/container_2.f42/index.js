@@ -16,17 +16,21 @@ const Index = ({data, role}) => {
         second_category: "Second category",
         no_category: "No category",
     }
+    const checkValues = (data)=>{
+        if(data) return data
+        else return "Ma'lumot kiritilmagan"
+    }
     return (
         <Wrapper>
             <Title text={t("GidPk.malumotVaTajriba")}/>
             {
                 role === 'gid' ? 
                 <TextWrapper>
-                    <Text title= {t("GidPk.institut")} text={" " + data?.completed_university || "Ma'lumot kiritilmagan"}/><br/>
-                    <Text title={t("GidPk.mutahasis")} text={" "+ DEGREES[data?.education_degree] || "Ma'lumot kiritilmagan"}/><br/>
-                    <Text title="Toifasi: " text={" "+ DEGREES_GIT[data?.category] || "Ma'lumot kiritilmagan"}/><br/>
-                    <Text title="Qo'shimcha kurslar: " text={" "+ data?.additional_courses?.map(a=>" "+a) || "Ma'lumot kiritilmagan"}/><br/>
-                    <Text title="Ish tajribasi: " text={" "+ data?.experience_year + " yil" || "Ma'lumot kiritilmagan"}/><br/>
+                    <Text title= {t("GidPk.institut")} text={" " +checkValues( data?.completed_university)}/><br/>
+                    <Text title={t("GidPk.mutahasis")} text={" "+ checkValues(DEGREES[data?.education_degree])}/><br/>
+                    <Text title="Toifasi: " text={" "+ checkValues(DEGREES_GIT[data?.category])}/><br/>
+                    <Text title="Qo'shimcha kurslar: " text={" "+ data?.additional_courses?.length>0 ? data?.additional_courses?.map(a=>" "+a) : "Ma'lumot kiritilmagan"}/><br/>
+                    <Text title="Ish tajribasi: " text={" "+ data?.experience_year ? data?.experience_year + " yil" : "Ma'lumot kiritilmagan"}/><br/>
                 </TextWrapper>:
                 <>
                     {data?.universities?.map((prev, index) =>(

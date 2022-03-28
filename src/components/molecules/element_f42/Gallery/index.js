@@ -79,9 +79,10 @@ const Index = (props) => {
   return (
     <div>
       {
+        data?.galleries?.length>0 &&
         (state || props?.list) ? 
         <Gallery {...props} images={state || props?.list} />:
-        <span>Ma'lumot kiritilmagan</span>
+        <span>Ma'lumot kiritilmagan</span> 
       }
     </div>
   );

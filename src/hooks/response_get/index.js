@@ -1,8 +1,9 @@
 import { baseUrl, headers, head_token } from '../../redux/api'
 import axios from 'axios'
 import toast from 'react-hot-toast'
+const token = JSON.parse(localStorage.getItem('user_token'))
 
-export const postRefreshToken = async (data) => {
+export const postRefreshToken = async (data, refreshFunc) => {
     await axios.post( `${ baseUrl }/api/auth/token/refresh/`, {refresh:data?.refresh}, {headers: headers} )
         .then( response => {
             console.log(response.data)
@@ -11,6 +12,7 @@ export const postRefreshToken = async (data) => {
                 access:response?.data?.access
             }
             localStorage.setItem('user_token', JSON.stringify(obj))
+            if(refreshFunc) refreshFunc()
         })
         .catch( () => {
             localStorage.clear()
@@ -23,21 +25,36 @@ export const getResponse = async ( url, setState, noToken ) => {
     let headPart = noToken ? {headers: headers} : head_token
     await axios.get( `${ baseUrl }${ url }`, headPart )
         .then( response => setState( { success: response, error: '', loader:false } ) )
-        .catch( err => setState( { success: '', error: err, loader:false } ) )
+        .catch( err => {
+            if(err.response?.status === 403){
+                postRefreshToken(token, getResponse( url, setState) )
+            }
+            setState( { success: '', error: err, loader:false } )
+        } )
 }
 export const getApiResponse = async ( url, setState, noToken ) => {
     setState({data:null, error:false, success:false, loading:true})
     let headPart = noToken ? {headers: headers} : head_token
     await axios.get( `${ baseUrl }${ url }`, headPart )
         .then( response => setState( {data:response?.data, success:true, error:false, loading:false } ) )
-        .catch( err => setState( { data:err.response, success:false, error:true, loading:false } ) )
+        .catch( err => {
+            if(err.response?.status === 403){
+                postRefreshToken(token, getApiResponse(  url, setState) )
+            }
+            setState( { data:err.response, success:false, error:true, loading:false } )
+        } )
 }
 export const postApiResponse = async ( url, data, setState, noToken ) => {
     setState({data:null, error:false, success:false, loading:true})
     let headPart = noToken ? {headers: headers} : head_token
     await axios.post( `${ baseUrl }${ url }`, data, headPart )
         .then( response => setState( {data:response?.data, success:true, error:false, loading:false } ) )
-        .catch( err => setState( { data:err.response, success:false, error:true, loading:false } ) )
+        .catch( err => {
+            if(err.response?.status === 403){
+                postRefreshToken(token, postApiResponse( url, data, setState) )
+            }
+            setState( { data:err.response, success:false, error:true, loading:false } )
+        } )
 }
 export const getResponseRegion = async ( url ) => {
     await axios.get( `${ url }`, headers )
@@ -111,24 +128,44 @@ export const postResponse = async ( url, data, setState, noToken ) => {
     let headPart = noToken ? {headers: headers} : head_token
     return await axios.post( `${ baseUrl }${ url }`, data, headPart )
         .then( response => setState( { success: response, error: '', loading: false } ) )
-        .catch( err => setState( { success: '', error: err, loading: false } ) )
+        .catch( err =>{ 
+            if(err.response?.status === 403){
+                postRefreshToken(token, postResponse( url, data, setState) )
+            }
+            setState( { success: '', error: err, loading: false } )
+        } )
 }
 export const putResponse = async ( url, data, setState ) => {
     return await axios.put( `${ baseUrl }${ url }`, data, head_token )
         .then( response => setState( { success: response, error: '', loading: false } ) )
-        .catch( err => setState( { success: '', error: err, loading: false } ) )
+        .catch( err => {
+            if(err.response?.status === 403){
+                postRefreshToken(token, putResponse(url, data, setState))
+            }
+            setState( { success: '', error: err, loading: false } ) 
+        })
 }
 export const patchResponse = async ( url, data, setState ) => {
     const formData = new FormData()
     formData.append( 'image', data )
     return await axios.patch( `${ baseUrl }${ url }`, formData, head_token )
         .then( response => setState( { success: response?.data, error: '', loading: false } ) )
-        .catch( err => setState( { success: '', error: err, loading: false } ) )
+        .catch( err => {
+            if(err.response?.status === 403){
+                postRefreshToken(token, patchResponse(url, data, setState))
+            }
+            setState( { success: '', error: err, loading: false } ) 
+        })
 }
 export const patchResponseNonFile = async ( url, data, setState ) => {
     return await axios.patch( `${ baseUrl }${ url }`, data, head_token )
         .then( response => setState( { success: response?.data, error: '', loading: false } ) )
-        .catch( err => setState( { success: '', error: err, loading: false } ) )
+        .catch( err => {
+            if(err.response?.status === 403){
+                postRefreshToken(token, patchResponseNonFile(url, data, setState))
+            }
+            setState( { success: '', error: err, loading: false } ) 
+        })
 }
 export const deleteResponse = async ( url, data, setCallback, setInfo) => {
     return await axios.delete( `${ baseUrl }${ url }`, head_token )
@@ -138,8 +175,12 @@ export const deleteResponse = async ( url, data, setCallback, setInfo) => {
             if(setInfo) setInfo(response)
         } )
         .catch( (error) => {
-            setCallback( prev => !prev )
-            toast.error( "Something went wrong" )
-            if(setInfo) setInfo(error?.response)
+            if(error.response?.status === 403){
+                postRefreshToken(token, deleteResponse(url, data, setCallback, setInfo))
+            }else{
+                setCallback( prev => !prev )
+                toast.error( "Something went wrong" )
+                if(setInfo) setInfo(error?.response)
+            }
         } )
 }

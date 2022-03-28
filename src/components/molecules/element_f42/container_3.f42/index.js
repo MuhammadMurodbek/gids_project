@@ -85,26 +85,26 @@ const Index = ({data, role}) => {
                                 <Grid container spacing={1} className="gridCon">
                                     <Grid item md={6} className="as">
                                         {data?.excursions?.length>0 ? 
-                                            <>
+                                            <FlexContainer margin="0 0 10px">
                                                 <img src={cheked} alt="adfdd" className="classed" />
                                                 <Text title="Ekskursiyalar" /><br />
-                                            </>
+                                            </FlexContainer>
                                         : null}
                                         {
                                             data?.consecutive_translate ? 
-                                            <>
+                                            <FlexContainer margin="0 0 10px">
                                                 <img src={cheked} alt="adfdd" className="classed" />
                                                 <Text title="Og'zaki tarjima (ketma-ket)" />
-                                            </>:null
+                                            </FlexContainer>:null
                                         }
                                     </Grid>
                                     <Grid item md={6} >
                                         {
                                             data?.synchronous_translate ? 
-                                            <>
+                                            <FlexContainer margin="0 0 10px">
                                                 <img src={cheked} alt="adfdd" className="classed" />
                                                 <Text title="Sinxron tarjima" /><br />
-                                            </>:null
+                                            </FlexContainer>:null
                                         }
                                         {
                                             data?.written_translate ? 
@@ -122,7 +122,7 @@ const Index = ({data, role}) => {
                                     {   
                                         data?.excursions?.length>0 ?
                                         data?.excursions?.map((prev, index)=>(
-                                            <span key={index}>{getLabelCountrySecond(parseInt(prev?.country)) +"-"+ getLabelCity(parseInt(prev?.country), parseInt(prev?.city))}</span>
+                                            <span key={index}>{prev?.city +"-"+ prev?.country}</span>
                                         )):<div>Malumot kiritilmagan</div>
                                     }
                                 </div>

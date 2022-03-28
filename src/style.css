@@ -25,3 +25,23 @@ input:-webkit-autofill:focus {
     align-items: center !important;
     justify-content: center !important;
 }
+.empty_title{
+    width:100%;
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+    margin:10px;
+    background:#63ff502e;
+}
+.ant-progress-outer{
+    width: 93%;
+}
+.ant-progress.ant-progress-line.ant-progress-status-success.ant-progress-show-info.ant-progress-default{
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+.ant-progress-text[title='100%']{
+    margin: 0;
+    margin-right: 20px;
+}
