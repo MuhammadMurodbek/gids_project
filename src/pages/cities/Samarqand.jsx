@@ -3,7 +3,7 @@ import { AboutB, PerentAB, Wrapper } from './index.style'
 import ImgContainer from "../../components/molecules/img.container"
 import bukhara from '../../assets/img/main/samarqand.webp'
 import { useTranslation } from 'react-i18next'
-
+import Blog from "../../pages/blog"
 export default function Samarqand() {
     const { t } = useTranslation()
 
@@ -31,7 +31,7 @@ export default function Samarqand() {
                 
                     
             </PerentAB>
-
+            <Blog cities={true}/>
            
  
         </Wrapper>

@@ -31,7 +31,7 @@ export default function Samarqand() {
                     
             </PerentAB>
 
-           <Blog/>  
+            <Blog cities={true}/>
  
         </Wrapper>
   )

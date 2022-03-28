@@ -172,7 +172,7 @@ const Index = () => {
                                         <ImgContainer width="100%" height="270px" src={img1} />
                                         <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
                                             <div className="title-container">Samarqand</div>
-                                            <Link to="/samarqand" className="link11">
+                                            <Link to="/samarqand?page=1" className="link11">
                                                 {t("main.korish")}
                                                 <img src={img21} alt="asdfasdf" />
                                             </Link>
@@ -186,7 +186,7 @@ const Index = () => {
                                         <ImgContainer width="100%" height="270px" src={img4} />
                                         <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
                                             <div className="title-container">Xiva</div>
-                                            <Link to="xiva" className="link11">
+                                            <Link to="/xiva?page=1" className="link11">
                                                 {t("main.korish")}  <img src={img21} alt="asdfasdf" />
                                             </Link>
                                         </FlexContainer>
@@ -200,7 +200,7 @@ const Index = () => {
                                         <ImgContainer width="100%" height="270px" src={img3} />
                                         <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
                                             <div className="title-container">Buhoro</div>
-                                            <Link to="/cities" className="link11">
+                                            <Link to="/cities?page=1" className="link11">
                                                 {t("main.korish")}  <img src={img21} alt="asdfasdf" />
                                             </Link>
                                         </FlexContainer>
@@ -213,7 +213,7 @@ const Index = () => {
                                         <ImgContainer width="100%" height="270px" src={img2} />
                                         <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
                                             <div className="title-container">Toshkent</div>
-                                            <Link to="/toshkent" className="link11">
+                                            <Link to="/toshkent?page=1" className="link11">
                                                 {t("main.korish")}  <img src={img21} alt="asdfasdf" />
                                             </Link>
                                         </FlexContainer>
