@@ -13,7 +13,7 @@ import { Wrapper } from './style'
 import moment from 'moment'
 import {useHistory, useLocation} from "react-router-dom"
 
-export default function Index ({cities}) {
+export default function Index () {
     let query = window.location.search
     const { t } = useTranslation()
     const history = useHistory()
@@ -40,7 +40,7 @@ export default function Index ({cities}) {
     
     return (
         <Wrapper>
-            
+            asdfasdfasdfasdf
             <TextTitle width="50%" left="auto" right="auto" bottom="30px" top="80px">
                 { t( "Blog.blog" ) }
             </TextTitle>
@@ -51,7 +51,7 @@ export default function Index ({cities}) {
                             state.success?.data?.results.length > 0 ?
                                 <>
                                     <Grid container spacing={ 1 }>
-                                        <Grid item xs={ 12 } sm={ 12 } md={ cities ? 12 : 8 }>
+                                        <Grid item xs={ 12 } sm={ 12 } md={ 8 }>
                                             {
                                                 articleList?.map( item => (
                                                     
@@ -77,13 +77,11 @@ export default function Index ({cities}) {
                                             }
 
                                         </Grid>
-                                        {
-                                            !cities && 
-                                            <Grid xs={ 12 } sm={ 12 } item md={ 4 } className="msa2">
-                                                <div className="imgcla"><ImgContainer src={ ad } width="350px" margin="0 auto" /></div>
-                                                <div className="imgcla"><ImgContainer src={ ad } width="350px" margin="0 auto" /></div>
-                                            </Grid>
-                                        }
+                                        <Grid xs={ 12 } sm={ 12 } item md={ 4 } className="msa2">
+                                            <div className="imgcla"><ImgContainer src={ ad } width="350px" margin="0 auto" /></div>
+                                            <div className="imgcla"><ImgContainer src={ ad } width="350px" margin="0 auto" /></div>
+
+                                        </Grid>
                                     </Grid>
                                     <div className="pagination">
                                         <Pagination current={current} onChange={ onChange } pageSize={4} total={ state?.success?.data?.count } />

@@ -8,6 +8,7 @@ export default function Samarqand() {
     const { t } = useTranslation()
 
   return (
+      <>
     <Wrapper>
             <div className="imgBukhara">
                 <ImgContainer height="50vh" width="100%" src={bukhara} />
@@ -31,9 +32,10 @@ export default function Samarqand() {
                 
                     
             </PerentAB>
-            <Blog cities={true}/>
            
  
         </Wrapper>
+            <Blog cities={true}/>
+        </>
   )
 }
