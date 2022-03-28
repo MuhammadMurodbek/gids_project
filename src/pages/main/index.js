@@ -161,7 +161,7 @@ const Index = () => {
 
                 <ComponentFour>
 
-                    <TextTitle {...mediaTextField} {...mediaTextFieldSec} top="40px" bottom="60px">{t("main.trendSHahar")}
+                    <TextTitle {...mediaTextField} {...mediaTextFieldSec} top="0px" bottom="60px">{t("main.trendSHahar")}
                     </TextTitle>
 
                     <div>
