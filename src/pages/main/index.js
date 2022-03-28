@@ -29,7 +29,7 @@ import { useHistory } from "react-router-dom"
 import { media, mediaFlexButtons, mediaBtn, mediaTextField, mediaTextFieldSec, mediaContainer } from "./_media"
 // import AccountMenu from '../../components/atom/user_account';
 import Slider from "react-slick";
-import img1 from '../../assets/img/main/33.jpg'
+import img1 from '../../assets/img/main/samarqand.webp'
 import img2 from '../../assets/img/main/ee.jpg'
 import img3 from '../../assets/img/main/we.jpg'
 import img4 from '../../assets/img/main/wee.jpg'
@@ -161,7 +161,7 @@ const Index = () => {
 
                 <ComponentFour>
 
-                    <TextTitle {...mediaTextField} {...mediaTextFieldSec} top="40px" bottom="60px">{t("main.trendSHahar")}
+                    <TextTitle {...mediaTextField} {...mediaTextFieldSec} top="0px" bottom="60px">{t("main.trendSHahar")}
                     </TextTitle>
 
                     <div>
@@ -172,7 +172,7 @@ const Index = () => {
                                         <ImgContainer width="100%" height="270px" src={img1} />
                                         <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
                                             <div className="title-container">Samarqand</div>
-                                            <Link to="/samarqand" className="link11">
+                                            <Link to="/samarqand?page=1" className="link11">
                                                 {t("main.korish")}
                                                 <img src={img21} alt="asdfasdf" />
                                             </Link>
@@ -183,10 +183,10 @@ const Index = () => {
                             <div className="carouseldiv">
                                 <Paper style={{ overflow: 'hidden' }}>
                                     <div className="container">
-                                        <ImgContainer width="100%" height="270px" src={img2} />
+                                        <ImgContainer width="100%" height="270px" src={img4} />
                                         <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
-                                            <div className="title-container">Andijon</div>
-                                            <Link to="/cities" className="link11">
+                                            <div className="title-container">Xiva</div>
+                                            <Link to="/xiva?page=1" className="link11">
                                                 {t("main.korish")}  <img src={img21} alt="asdfasdf" />
                                             </Link>
                                         </FlexContainer>
@@ -199,21 +199,8 @@ const Index = () => {
                                     <div className="container">
                                         <ImgContainer width="100%" height="270px" src={img3} />
                                         <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
-                                            <div className="title-container">Xiva</div>
-                                            <Link to="/cities" className="link11">
-                                                {t("main.korish")}  <img src={img21} alt="asdfasdf" />
-                                            </Link>
-                                        </FlexContainer>
-                                    </div>
-                                </Paper>
-                            </div>
-                            <div className="carouseldiv">
-                                <Paper style={{ overflow: 'hidden' }}>
-                                    <div className="container">
-                                        <ImgContainer width="100%" height="270px" src={img4} />
-                                        <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
                                             <div className="title-container">Buhoro</div>
-                                            <Link to="/cities" className="link11">
+                                            <Link to="/cities?page=1" className="link11">
                                                 {t("main.korish")}  <img src={img21} alt="asdfasdf" />
                                             </Link>
                                         </FlexContainer>
@@ -223,23 +210,10 @@ const Index = () => {
                             <div className="carouseldiv">
                                 <Paper style={{ overflow: 'hidden' }}>
                                     <div className="container">
-                                        <ImgContainer width="100%" height="270px" src={img5} />
+                                        <ImgContainer width="100%" height="270px" src={img2} />
                                         <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
-                                            <div className="title-container">Buhoro</div>
-                                            <Link to="/cities" className="link11">
-                                                {t("main.korish")}  <img src={img21} alt="asdfasdf" />
-                                            </Link>
-                                        </FlexContainer>
-                                    </div>
-                                </Paper>
-                            </div>
-                            <div className="carouseldiv">
-                                <Paper style={{ overflow: 'hidden' }}>
-                                    <div className="container">
-                                        <ImgContainer width="100%" height="270px" src="https://thumbs.dreamstime.com/b/registan-old-public-square-samarkand-uzbekistan-heart-ancient-city-150740312.jpg" />
-                                        <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
-                                            <div className="title-container">Andijon</div>
-                                            <Link to="/cities" className="link11">
+                                            <div className="title-container">Toshkent</div>
+                                            <Link to="/toshkent?page=1" className="link11">
                                                 {t("main.korish")}  <img src={img21} alt="asdfasdf" />
                                             </Link>
                                         </FlexContainer>
@@ -247,6 +221,10 @@ const Index = () => {
                                 </Paper>
                             </div>
 
+
+                          
+
+                                    
 
                         </Slider>
                     </div>

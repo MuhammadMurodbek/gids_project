@@ -228,6 +228,10 @@ export const ComponentThree = styled.div`
     .sc-idOiZg.peBBw{
         text-align:center;
     }
+    .vertical-timeline{
+        padding:0 !important;
+        padding-top:20px !important;
+    }
     
 `
 export const ComponentFour = styled.div`

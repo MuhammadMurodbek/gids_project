@@ -1,7 +1,7 @@
 import React from 'react'
 import { AboutB, PerentAB, Wrapper } from './index.style'
 import ImgContainer from "../../components/molecules/img.container"
-import bukhara from '../../assets/img/citiyes/bukhara2.png'
+import bukhara from '../../assets/img/main/samarqand.webp'
 import { useTranslation } from 'react-i18next'
 
 export default function Samarqand() {

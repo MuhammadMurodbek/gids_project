@@ -55,15 +55,15 @@ export const Wrapper = styled.div`
     top:50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    color: rgba(175, 171, 171, 0.5);
+    color: rgba(70, 70, 70, 0.5);
     width: 1033px;
     font-family: Montserrat;
     font-weight: bold;
     font-size: 120px;
     line-height: 130%;
-    letter-spacing: 20px;
-    text-align: center;
+        text-align: center;
     text-transform: uppercase;
+
   }  
   .text-link{
     color:${mainGreen};
@@ -80,14 +80,14 @@ export const Wrapper = styled.div`
         display: none;
     }
     .bukhara{
-        font-size: 150px;
-        letter-spacing: 30px;
+        font-size: 120px;
+       
     }
   }
   @media (max-width: 1000px){
     .bukhara{
-        font-size:100px;
-        letter-spacing: 20px;
+        font-size:110px;
+         
     }
   }
   @media (max-width: 600px){
@@ -99,13 +99,13 @@ export const Wrapper = styled.div`
     }
     .bukhara{
         font-size:50px;
-        letter-spacing: 7px;
+        
     }
   }
   @media (max-width: 300px){
     .bukhara{
         font-size:40px;
-        letter-spacing: 5px;
+        
     }
   }
  

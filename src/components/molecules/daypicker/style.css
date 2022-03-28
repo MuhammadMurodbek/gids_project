@@ -5,3 +5,23 @@
 .DayPicker-Day.DayPicker-Day--selected{
     background-color: rgb(160, 0, 0) !important;
 }
+.span_sirkle, .span_sirkle2{
+    display: inline-block;
+    border-radius: 50%;
+    width: 30px;
+    height:30px;
+    background: #326a32;
+}
+.span_sirkle2{
+    background-color: rgb(160, 0, 0) !important;
+}
+
+.divdisplay{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;    
+}
+.divbg{
+    width: 170px;
+    margin: 0 auto;
+}
