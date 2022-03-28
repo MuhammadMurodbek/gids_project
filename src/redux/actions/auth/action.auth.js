@@ -13,7 +13,7 @@ export const post_auth_ent_action = (state) => async (dispatch) => {
             })
         })  
         .catch((error) => {
-            console.log(error?.response?.data)
+            // console.log(error?.response?.data)
             if(error?.response?.status === 401){
                 return dispatch({
                     type: "POST_AUTH_ENT_401",

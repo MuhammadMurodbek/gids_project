@@ -28,7 +28,7 @@ const Index = () => {
     useEffect(() => {
         getResponse("/api/auth/settings/", setResponse)
     }, [])
-    console.log(response)
+    // console.log(response)
     useMemo(() => {
         if (response?.success) {
             setEdit(response?.success?.data)
@@ -36,7 +36,7 @@ const Index = () => {
     }, [response?.success])
 
     function hendlEdit(e) {
-        console.log(e)
+        // console.log(e)
         setEdit(prev => {
             return {
                 ...prev,
@@ -55,7 +55,7 @@ const Index = () => {
     function handleSubmit(e) {
         setUpdateResponse({...updateResponse, loading: true})
         e.preventDefault()
-        console.log(edit)
+        // console.log(edit)
           const payload = {
                 email: edit?.email,
                 phone_number: edit?.phone_number?.substr(1),
@@ -63,7 +63,7 @@ const Index = () => {
                 password1: password1 === '' ? undefined : password1,
                 password2: password2 === '' ? undefined : password2
               }
-            console.log(payload)
+            // console.log(payload)
       if(payload?.email !== '' && payload?.phone_number !=='') {
           putResponse('/api/auth/settings/', JSON.parse(JSON.stringify(payload)), setUpdateResponse)
       }

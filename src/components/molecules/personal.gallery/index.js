@@ -16,15 +16,15 @@ function App({list, setCallback, role, url}) {
     setCurrentImage(indexCurrent || 0);
     setIsViewerOpen(true);
     setLarge(src)
-    console.log(src)
+    // console.log(src)
   }, []);
   const closeImageViewer = () => {
     setCurrentImage(0);
     setIsViewerOpen(false);
   };
   const handleDelete = (index, src) => {
-    console.log(index, src)
-    console.log(list)
+    // console.log(index, src)
+    // console.log(list)
     let imageDelete = list.find(prev=>prev.src===src)
     if(imageDelete){
       setDeleteItem(imageDelete?.id)

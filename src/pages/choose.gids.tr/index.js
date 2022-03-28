@@ -44,6 +44,7 @@ const Index = () => {
 
     function onChange ( pageNumber ) {
         setPagination( { current: pageNumber} )
+        window.scrollTo(0,0)
     }
     
     return (

@@ -9,7 +9,7 @@ function SwitchablePicker (props) {
     const handleChange = (data) => {
         setState({...state, [field]:data})
         setDate(data)
-        console.log(data)
+        // console.log(data)
     }
     useEffect(()=>{
         if(clear) {

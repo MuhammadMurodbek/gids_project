@@ -8,7 +8,7 @@ import moment from "moment"
 export default function   Index({success, setCollect, collect, setCallback}) {
     const array_data = success?.data?.results
     const lang = localStorage.getItem('i18nextLng')
-    console.log(array_data)
+    // console.log(array_data)
     return ( 
         <Wrapper>
             {

@@ -11,7 +11,7 @@ const Index = (props) => {
     const [clear, setClear] = useState(false)
     const [countryId, setCountryId] = useState(null)
     const countryGlobal = JSON.parse( localStorage.getItem( "countryGlobal"))
-    console.log(state)
+    // console.log(state)
     useEffect(()=>{
         if(defaultCountry) {
             setCountryId(parseInt(defaultCountry))
@@ -36,8 +36,8 @@ const Index = (props) => {
             }})
         }
     },[countryId])
-    console.log(countryId)
-    console.log(clear)
+    // console.log(countryId)
+    // console.log(clear)
     return (
         <>
         <Wrapper>

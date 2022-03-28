@@ -5,7 +5,7 @@ import { GIDS } from "../../types/gids";
 export const about_edit_bio_action = () => async (dispatch) => {
   await axios.get(`${baseUrl}/api/gids/edit/about/`, head_token)
     .then((response) => {
-      console.log(response);
+      // console.log(response);
       return dispatch({
         type: GIDS.ABOUT_EDIT_BIO,
         payload: response,

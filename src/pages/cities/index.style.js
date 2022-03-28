@@ -10,6 +10,7 @@ export const Wrapper = styled.div`
     }
     .imgBukhara{
         position: relative;
+        font-family: Montserrat !important; 
     }
  
     .msa{
@@ -50,19 +51,19 @@ export const Wrapper = styled.div`
   }
   .bukhara{
     position: absolute;
-    width: 100% !important;
+    width: 100%;
     top:50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    color: #70777B;
+    color: rgba(70, 70, 70, 0.5);
     width: 1033px;
-     
     font-family: Montserrat;
     font-weight: bold;
-    font-size: 250px;
+    font-size: 120px;
     line-height: 130%;
-    text-align: center;
+        text-align: center;
     text-transform: uppercase;
+
   }  
   .text-link{
     color:${mainGreen};
@@ -79,17 +80,32 @@ export const Wrapper = styled.div`
         display: none;
     }
     .bukhara{
-        font-size: 150px;
+        font-size: 120px;
+       
     }
   }
   @media (max-width: 1000px){
     .bukhara{
-        font-size:100px
+        font-size:110px;
+         
     }
   }
   @media (max-width: 600px){
+    .jXZicw img{
+        height:22vh !important;
+    }
+    .imgTop{
+        height:300px !important
+    }
     .bukhara{
-        font-size:60px
+        font-size:50px;
+        
+    }
+  }
+  @media (max-width: 300px){
+    .bukhara{
+        font-size:40px;
+        
     }
   }
  
@@ -136,4 +152,9 @@ export const Wrapper = styled.div`
         }
 
       }
+
+    @media(min-width:1370px){
+        width:1266px;
+        magin:0 auto;
+    }
  `

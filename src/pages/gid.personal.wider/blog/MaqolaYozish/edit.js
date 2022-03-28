@@ -61,7 +61,7 @@ const Index = () => {
         try {
             let newArr = tags ? [...tags] : undefined
             let selectTags = newArr.map(item => item.label)
-            console.log(selectTags)
+            // console.log(selectTags)
             const payload = {
                 title: article.title,
                 image: upload?.name,
@@ -77,7 +77,7 @@ const Index = () => {
 
             putResponse(`/api/posts/article/${id}/`, formData, setPostData)
         } catch (e) {
-            console.log(e)
+            // console.log(e)
         }
     }
     React.useEffect(() => {

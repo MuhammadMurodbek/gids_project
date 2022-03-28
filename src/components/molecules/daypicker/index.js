@@ -12,15 +12,15 @@ export default class Example extends React.Component {
     };
   }
   static getDerivedStateFromProps(props, state) {
-    console.log(props)
-    if(props.postData?.success!==''){
-      state.selectedDays=[]
+    // console.log(props)
+    if (props.postData?.success !== '') {
+      state.selectedDays = []
       // return props.setPostData({success:'', error:'', loading: false})
     }
     // return {favoritecolor: props.favcol };/
   }
   handleDayClick(day, { selected }) {
-    console.log(day);
+    // console.log(day);
     const selectedDays = this.state.selectedDays.concat();
     if (selected) {
       const selectedIndex = selectedDays?.findIndex(selectedDay =>
@@ -31,8 +31,8 @@ export default class Example extends React.Component {
       selectedDays.push(day);
     }
     this.setState({ selectedDays });
-    if(this.props.setData)
-    this.props.setData(selectedDays)
+    if (this.props.setData)
+      this.props.setData(selectedDays)
   }
 
   render() {
@@ -41,14 +41,19 @@ export default class Example extends React.Component {
     // }
     return (
 
-      <div style={{textAlign:'center'}}>
+      <div style={{ textAlign: 'center' }}>
         {
-          this.props.title === "no" ? null:<div style={{fontWeight:'bold', fontSize:'15px', margin:"10px 0", transform: 'translateX(-10px)'}}>Mening ish jadvalim</div>
+          this.props.title === "no" ? null : <div style={{ fontWeight: 'bold', fontSize: '15px', margin: "10px 0", transform: 'translateX(-10px)' }}>Mening ish jadvalim</div>
         }
         <DayPicker
           selectedDays={this.props.default ? this.props.selectedDays : this.state.selectedDays}
-          onDayClick={ this.handleDayClick}
+          onDayClick={this.handleDayClick}
         />
+        <br />
+        <div className='divbg'>
+            <span className='divdisplay' > ish kunlarim  <span className='span_sirkle'></span> </span> 
+            <span className='divdisplay' > band kunlarim <span className='span_sirkle2'></span> </span>
+        </div>
       </div>
     );
   }

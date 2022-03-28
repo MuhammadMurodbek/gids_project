@@ -16,7 +16,7 @@ const Index = (props) => {
   localStorage.setItem('countryOptions', JSON.stringify(options))
   const handleChange = (e) => {
     if(e){
-      console.log(e)
+      // console.log(e)
       setValue(() =>e)
       if(setState) setState(prev=>{return{...prev,  country:e?.value, country_name:options.find(a=>a.value === e?.value)}})
       if(setCountryId) setCountryId(e.value)

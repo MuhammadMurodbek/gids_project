@@ -34,10 +34,12 @@ export default function Index () {
     function onChange ( pageNumber ) {
         history.push(`/blog?page=${pageNumber}`)
         setPagination( { current: pageNumber} )
+        window.scrollTo(0,0)
     }
     
     return (
         <Wrapper>
+            asdfasdfasdfasdf
             <TextTitle width="50%" left="auto" right="auto" bottom="30px" top="80px">
                 { t( "Blog.blog" ) }
             </TextTitle>
@@ -87,6 +89,7 @@ export default function Index () {
                         }
                     </>
             }
+           
         </Wrapper>
     )
 }

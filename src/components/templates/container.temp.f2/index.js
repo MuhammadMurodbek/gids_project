@@ -10,7 +10,7 @@ import { Badge} from 'antd';
 const Index = ({data, type}) => {
     const {t} = useTranslation()
     const getData = JSON.parse(localStorage.getItem('advanced_search')) || false
-    console.log(getData)
+    // console.log(getData)
     return (
         <Wrapper>
             {  

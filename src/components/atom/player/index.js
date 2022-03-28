@@ -2,7 +2,7 @@ import React from 'react'
 import ReactPlayer from 'react-player/lazy'
 import {Wrapper} from "./style"
 const Index = (url) => {
-    console.log(url)
+    // console.log(url)
     return (
         <Wrapper>
             {

@@ -17,7 +17,7 @@ const Index = ({data, role}) => {
         good:"Yaxshi darajada",
         low:'Quyi darajada',
     }
-    console.log(data)
+    // console.log(data)
     return (
         <Wrapper>
             <Title text="Xizmatlar" />

@@ -13,7 +13,7 @@ export const Navbar = styled.div`
     transition: 0.3s all;
     background-color: #fff;
  
-
+    
    @media(max-width:450px){
     .navbar_pad{
         padding:0 !important;
