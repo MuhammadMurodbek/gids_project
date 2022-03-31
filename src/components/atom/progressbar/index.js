@@ -14,7 +14,7 @@ const Index = (props) => {
                 strokeColor={mainGreen}
                 showInfo={true} 
                 type="line"
-                format={e => `${e}%`}
+                format={e => `${e.toFixed(1)}%`}
             />
         </Wrapper>
     )

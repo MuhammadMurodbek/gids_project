@@ -41,17 +41,20 @@ const Gallery = ({ role, setCallback }) => {
         },
 
         beforeUpload(file) {
-            const videoFormat = file.type === "video/wmv" || file.type === "video/mp4";
-            if (!videoFormat) {
-                message.error("video formati notog'ri tanlangan");
-            }
+            // console.log(file)
+            // const videoFormat = file.type === "video/wmv" || file.type === "video/mp4" || file.type === "video/mov" || file.type === "video/avi" || file.type === "video/mkv" || file.type === "video/webm" || file.type === "video/flv" || file.type === "video/x-matroska" || file.type === 'video/quicktime'  ;
+            // if (!videoFormat) {
+            //     message.error("video formati notog'ri tanlangan");
+            //     setLoad(false)
+            // }
             const videoSize = file.size / 1024 / 1024 < 100;
             if (!videoSize) {
                 message.error("videoni hajmi juda katta max(100Mb)");
+                setLoad(false)
             }
             // console.log(videoSize)
             // console.log(file.type)
-            return videoFormat && videoSize;
+            return videoSize;
         }
 
     };
