@@ -118,13 +118,7 @@ const Index = () => {
 
                       <ButtonNavbar  title={t("navbar.Ariza_qoldirish")} url="/application-form" />
                     </>
-
-
               }
-
-
-
-
             </FlexContainer>
             <FlexContainer {...navbarMedia} width="100px" style={{ marginRight: 100 }}>
 
@@ -140,7 +134,6 @@ const Index = () => {
                   customLabels={{ US: "ENG ", UZ: "O'Z ", RU: "РУ " }}
                 />
               </div>
-
               <FlexContainer
                 width="100%"
                 alignItems="center"
@@ -166,12 +159,7 @@ const Index = () => {
 
                   }
                 </>
-
-
-
               </FlexContainer>
-
-
             </FlexContainer>
             <div className="toggle_hamburger" onClick={refreshBtn}>
               <Hamburger toggled={isOpen} toggle={setOpen} color={mainGreen} />

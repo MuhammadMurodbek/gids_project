@@ -31,7 +31,7 @@ export default function Index() {
                         historyState.data?.length > 0 ?
                             historyState?.data?.map((item, index) => (
                                 <Grid key={index} container spacing={1} justifyContent="center" className="services history">
-                                    <Grid item md="11" className="item_md_11">
+                                    <Grid item md="11" xs="12" className="item_md_11">
                                         <div className="services_item" >
                                             <p className="services_1">{objApi[item?.tariff?.name] || "Ma'lumot mavjud emas !!"}</p>
                                             <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent aliquam sit ornare mattis id non aliquam convallis ut.</span>

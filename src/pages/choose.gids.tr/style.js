@@ -21,5 +21,8 @@ export const Wrapper = styled.div`
             flex-direction: column;
         }
     }
+    @media (max-width:450px){
+        padding: 10px 20px;
+    }
     
 `

@@ -15,6 +15,7 @@ export const Navbar = styled.div`
  
     
    @media(max-width:450px){
+    padding: ${props => props.navbarProps > 30 ? "8px 20px " : "15px 20px"};
     .navbar_pad{
         padding:0 !important;
     }

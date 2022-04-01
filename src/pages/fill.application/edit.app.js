@@ -43,7 +43,7 @@ const Index = () => {
             currency: collect?.currency?.value,
         }
         const isValid = await userSchema.isValid(newCollect)
-        if (!isValid) {
+        if (!isValid) { 
             setError(true)
             setBtnLoader(false)
         }

@@ -49,7 +49,7 @@ const Index = () => {
     
     return (
         <Wrapper>
-             
+                
             <Container>
                 <Grid container spacing={1} className="media_grid_flex">
                     <Grid item xs={12} sm={12} md={4}>

@@ -2,10 +2,10 @@ import styled from "styled-components";
 import {mainGreen} from "../../styles/global/colors"
 
 export const Wrapper = styled.div`
-    
     width: 100%;
-    padding: 10px;
-     
+    padding: 10px 0px; 
+    
+    
     p{
         margin: 0;
     }
@@ -50,6 +50,10 @@ export const Wrapper = styled.div`
         line-height: 130%;
         color: #000;
         padding: 10px;
+    }
+    @media(min-width:1400px){
+        width:1400px;
+        margin:0 auto;
     }
     
 `

@@ -221,17 +221,12 @@ const Index = () => {
                                 </Paper>
                             </div>
 
-
-                          
-
-                                    
-
                         </Slider>
                     </div>
 
                 </ComponentFour>
 
-                <TextTitle {...mediaTextField} {...mediaTextFieldSec} top="40px">{t("main.Mf")}
+                <TextTitle {...mediaTextField} {...mediaTextFieldSec} top="40px">{t("main.MijozlarniF")}
                 </TextTitle>
 
                 <Container {...mediaContainer} padding="20px">

@@ -72,8 +72,8 @@ export default function Index() {
                     </Grid>
                 }
                 <div className="historybtn">
-                    <Button className="btn-pey " margin="30px 0" type="outlined" onClick={handleHistory}>Tariflar tarixni ko’rish</Button>
-                    <Button className="btn-pey " margin="30px 0" type="outlined" onClick={handleHistoryPayment}>To'lovlar tarixni ko’rish</Button>
+                    <Button className="btn-pey " width="250px" margin="0px 0" type="outlined" onClick={handleHistory}>Tariflar tarixni ko’rish</Button>
+                    <Button className="btn-pey " width="250px" margin="0px 0" type="outlined" onClick={handleHistoryPayment}>To'lovlar tarixni ko’rish</Button>
                 </div>
 
                 <TextTitle className="text-title text-title11" bottom="70px" top="70px">

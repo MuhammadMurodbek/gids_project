@@ -31,7 +31,7 @@ export default function Index() {
             </PerentAB>
            
  
-            <Blog cities={true}/>
+            <Blog cities={false}/>
         </Wrapper>
     )
 }

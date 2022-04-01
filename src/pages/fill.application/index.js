@@ -77,7 +77,7 @@ const Index = () => {
             showModal()
         }else
             setResponseHook(post_gid_app_action(newCollect))
-    }
+    } 
     React.useEffect(()=>{
         if(appNoToken){
             if(token?.role !=="simple_user"){
@@ -89,7 +89,7 @@ const Index = () => {
     // console.log(collect)
     return (
         <Wrapper onSubmit={ onSubmit }>
-            <TextTitle { ...mediaTextField } { ...mediaTextFieldSec } top="60px" bottom="20px"> {t("arizaqoldirish.title")} </TextTitle>
+            <TextTitle { ...mediaTextField } { ...mediaTextFieldSec } top="40px" bottom="20px"> {t("arizaqoldirish.title")} </TextTitle>
             <Container width="90%" padding="0" margin="40px auto" boxShadow={ shadow }>
                 <Title> {t("arizaqoldirish.vazifa")} </Title>
                 <Container { ...mediaContainer } padding="30px">

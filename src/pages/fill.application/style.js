@@ -48,6 +48,7 @@ export const Wrapper = styled.form`
          line-height: 120%;
     }
     @media (max-width: 600px){
+        padding: 10px 0 !important;
         .title_inner{
             /* font-size: ; */
             margin-bottom:5px;   }

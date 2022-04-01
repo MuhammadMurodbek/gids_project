@@ -44,7 +44,7 @@ const Index = () => {
                             <SelectLabeled isDisabled={state?.can_oral_translate?.label==='Ha' ? false:true} setCollect={setState} collect={state} defaultApiValue={apiValue?.oral_translate_type !== 'consecutive' ? 'Ketma ket' : 'Izchil'} field="oral_translate_type" options={option_yes_sec} width="100%" placeholder="Tanlang" />
                         </FlexContainer>
                     </Container>
-                </Grid>
+                </Grid> 
             </Grid>
             <Grid container spacing={1}>
                 <Grid item xs={12} sm={6} md={4}><DoubleRadioLabel defaultApiValue={apiValue?.express_order ? 'yes' : 'no'} value1="yes" value2="no" sizeLabel="14px" setState={setState} state={state} field="express_order" name1="Ha" name2="Yo'q" label="Shoshilinch buyurtmalarni bajarasizmi?" /></Grid>

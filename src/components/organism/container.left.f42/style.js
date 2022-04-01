@@ -10,6 +10,7 @@ export const Wrapper = styled.div`
         top:-30px;
     }
     @media (max-width:600px){
+          
         .sc-fKFxtB.fMHAxL{
             margin:0 auto;
         }
@@ -26,6 +27,9 @@ export const WrapperContainer = styled.div`
     padding:20px 5px;
     overflow: hidden;
     box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.12);
+    .ssdd{
+        margin-top:-25px
+    }
     p{
         font-size: 14px;
     }
@@ -72,6 +76,12 @@ export const WrapperContainer = styled.div`
     }
     .modalcontainer{
         padding:20px
+    }
+    @media(max-width:970px){
+        .ssdd{
+            margin-top:30px
+        }
+    }
     }
 `
 export const ContainerBottom = styled.div`

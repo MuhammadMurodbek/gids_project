@@ -67,7 +67,7 @@ const   Index = () => {
     return (
         <Wrapper>
             <TextTitle {...mediaTextField} {...mediaTextFieldSec} top="50px" bottom="50px">   </TextTitle>
-            <Container {...mediaContainer} padding="10px 40px" >
+            <Container {...mediaContainer} padding="10px 20px" >
                 <Slider {...settings} className="slider-component">
                     <SliderContainer>
                         <Grid container spacing={1}>

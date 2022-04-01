@@ -7,6 +7,9 @@ export const Wrapper = styled.div`
     .gridCon{
         width: 100%;
     }
+    .asddd, .mavzulardd{
+        margin-left:30px
+    }
     .classed{
         margin-right: 5px;
     }
@@ -16,5 +19,9 @@ export const Wrapper = styled.div`
     .box_child{
         display: flex;
         flex-direction: column;
+    }
+    .newSpans{
+        display:inline;
+        
     }
 `

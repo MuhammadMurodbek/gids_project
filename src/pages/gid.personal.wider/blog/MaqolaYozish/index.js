@@ -108,7 +108,7 @@ const Index = () => {
         <Layout>
             <form onSubmit={handleSubmit}>
                 <TitleComponent>
-                    <TextTitle {...mediaTextField} {...mediaTextFieldSec} font="26px" bottom="20px">{t("maqolaYozish.Maqolayozish")}</TextTitle>
+                    <TextTitle {...mediaTextField} {...mediaTextFieldSec} font="26px" bottom="20px">{t("safarHaqda.Maqolayozish")}</TextTitle>
                     <div className="link" style={{cursor:'pointer'}} onClick={handleBack}>
                         <div className="title-left"> <ImageContainer width="auto" src={icon} /> <span>{t("maqolaYozish.orqaga")}</span>
                         </div>

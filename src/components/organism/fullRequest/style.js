@@ -4,6 +4,7 @@ import {mainGreen} from "../../../styles/global/colors"
 export const Wrapper = styled.div`
     width: 100%;
     margin: 70px 0;
+    padding:0px;
     p{
         margin: 0;
     }

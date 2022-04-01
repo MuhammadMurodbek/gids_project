@@ -49,4 +49,7 @@ export const Wrapper = styled.div`
     padding: 15px;
     margin:20px 0;
 }
+@media(max-width:450px){
+    width:98%
+}
 `

@@ -124,7 +124,7 @@ const Index = ({ state, typeRole, comments, commentCount, commentReview }) => {
                                 <>
                                     <Grid container spacing={1} style={{ marginBottom: 60 }}>
                                         <Grid item sm={12} md={4}><ProgressInfo data={commentCount} /></Grid>
-                                        <Grid item sm={12} md={8}><ProgressTitle data={commentCount} /></Grid>
+                                        <Grid item className='ssdd' sm={12} md={8}><ProgressTitle data={commentCount} /></Grid>
                                     </Grid>
                                     {
                                         commentReview?.map((item, index) => (

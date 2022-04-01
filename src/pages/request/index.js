@@ -58,7 +58,6 @@ export default function Index() {
             
                ))
            }
-             
              <div className="pagination" style={{width:'100%', margin:'40px 0', textAlign:'center'}}>
                 <Pagination current={current} onChange={ onChange } pageSize={6} total={ state?.success?.data?.count } />
             </div>

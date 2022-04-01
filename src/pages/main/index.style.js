@@ -5,7 +5,7 @@ export const WrapperAll = styled.div`
     position: relative;
     width: 100%;
     margin: 0 auto;
-    padding:10px 20px;
+    padding:10px 60px;
     .slider-component{
         background-color:transparent;
     }
@@ -36,6 +36,7 @@ export const WrapperAll = styled.div`
         .grid_container_inner{
             margin-top:30px;
         }
+        padding:10px 10px !important;
     }
     @media (min-width: 1367px){
        width: 1450px;
@@ -257,8 +258,8 @@ export const ComponentFour = styled.div`
         display: none !important;
     }
 
-    @media (max-width:400px){
-        padding: 10px 4px;
+    @media (max-width:500px){
+        padding: 10px 0px !important;
     }
 
     .container{

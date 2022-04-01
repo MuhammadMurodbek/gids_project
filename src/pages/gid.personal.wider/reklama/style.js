@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { mainGreen } from "../../../styles/global/colors"
 
 export const Wrapper01 = styled.div`
+   
+
      width: 100%;
      margin-bottom:90px;
     .payment{
@@ -13,6 +15,7 @@ export const Wrapper01 = styled.div`
         height:115px;
         left:0;
     }
+     
     .btn-pey{
         margin-left: 30px;
     }
@@ -28,9 +31,21 @@ export const Wrapper01 = styled.div`
         margin-bottom:30px;
         margin-left:20px;
     }
+    @media(max-width:576px){
+        .btn-group{
+            margin-right: 0px; 
+        }
+        .btn-pey{
+            margin-left: 0px;
+        }
+       .payment{
+        justify-content: center;
+       }
+    }
 
 `
 export const Wrapper = styled.div`
+ 
     width: 100%;
     padding: 0 80px;
  .text-title{
@@ -57,6 +72,7 @@ export const Wrapper = styled.div`
 }
 .historybtn{
     float: right;
+    
 }
 .text-title11{
     margin-top: 120px;
@@ -71,6 +87,7 @@ export const Wrapper = styled.div`
  }
  .services_item{
      width: 700px;
+     margin-left:5px
     }
  .item_md_11{
      display: flex;
@@ -131,6 +148,7 @@ export const Wrapper = styled.div`
      margin: 0;
      margin-bottom: 10px;
      font-weight: 600;
+     
 }
 .somdiv{
      margin-right: 20px;
@@ -139,12 +157,17 @@ export const Wrapper = styled.div`
  .img12{
      margin-right: 5px;
  }
+ @media(max-width:576px){
+    padding: 0 10px;
+    .historybtn{}
+ }
  
 
 `
 
 
 export const Wrapper02 = styled.div`
+
     width: 100%;
     padding: 0 80px;
     .cashlok02{
@@ -198,6 +221,7 @@ export const Wrapper02 = styled.div`
     padding: 8px;
     background-color:  #EEF7EE;
  }
+
 
 
 `

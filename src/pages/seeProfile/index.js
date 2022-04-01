@@ -33,7 +33,7 @@ export default function Index() {
     }, [])
     useEffect(() => { 
         if(apiData?.success && apiData?.success?.data?.custom_user_id)
-            getResponse(`/api/users/rating/${apiData?.success?.data?.custom_user_id}/`, setCommentApi) 
+            getResponse(`/api/users/rating/${apiData?.success?.data?.custom_user_id}/`, setCommentApi, true) 
     }, [apiData, callback])
     const handlePrev = ()=>{
         history.goBack()
