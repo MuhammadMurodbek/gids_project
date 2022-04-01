@@ -33,7 +33,7 @@ const Index = ({ state, typeRole, comments, commentCount, commentReview }) => {
         native: "Ona tili",
         intermediate: 'Yaxshi'
     }
-    console.log(commentReview)
+    // console.log(commentReview)
     return (
         <Wrapper>
             <WrapperContainer>

@@ -8,6 +8,7 @@ import Blog from "../../pages/blog"
 export default function Index() {
     const { t } = useTranslation()
     return (
+        <>
         <Wrapper>
             <div className="imgBukhara">
                 <ImgContainer className="imgTop"   height="50vh" width="100%" src={bukhara} />
@@ -31,7 +32,8 @@ export default function Index() {
             </PerentAB>
            
  
-            <Blog cities={false}/>
         </Wrapper>
+        <Blog cities={true}/>
+        </>
     )
 }

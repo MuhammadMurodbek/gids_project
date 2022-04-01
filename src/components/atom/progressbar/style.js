@@ -16,7 +16,7 @@ export const Wrapper = styled.div`
         display: flex;
         align-items: center;
         flex-direction: row-reverse;
-        gap:0.8rem;
+        gap:1.2rem;
     }
     .ant-progress-text{
         font-size: 13px;
