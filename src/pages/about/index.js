@@ -35,8 +35,10 @@ export default function Index() {
                                     {t("about.title")}
                                 </div>
                                 <div className="text_main">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam et mi id quis nunc pharetra, augue eget. Cursus commodo, sodales vulputate ut tellus habitant pretium. Morbi placerat vestibulum nulla et enim. Tortor ultricies vitae sed auctor lectus magna.
-                                        Auctor morbi et nisi egestas cursus. Amet, aliquet eget sed neque ultrices nulla eu fermentum. Ipsum vel massa, dui a tellus commodo adipiscing enim nec. Mi hendrerit id egestas porttitor bibendum vulputate. Nisi molestie donec non, pellentesque odio diam vitae.</p>
+                                    <p> Avvalo, siz gits.uz platformasida gid yoki tarjimon sifatida ro’yxatdan o’tib o’zingizga mijoz topishingiz mimkin.
+                                        <br/><br/>w
+                                        Shuningdek, gid yoki tarjimonlarni izlayotgan xorijiy yoki mahallay sayyohlar hamda mijozlar ularni onlayn qidirish va bevosita buyurtma berish imkoniga ham ega.
+                                    </p>
                                 </div>
                                 <FlexContainer {...mediaBtnv} {...mediaImageSecond} width="370px" justifyContent="space-between">
                                     <Link to="/connect">

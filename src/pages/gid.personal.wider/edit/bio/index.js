@@ -128,7 +128,7 @@ const Index = () => {
                     onChange={ handleChange }
                     sizeLabel="15px"
                     width="100%"
-                    label="Otangizni ismi"
+                    label="Otangizning ismi"
                     placeholder="Otangizni ismini yozing..."
                     errorText={ error ? validatorState( state.middle_name, 'min', 3, 'Kamida 3 ta belgidan foydalaning' ) : null }
                   />

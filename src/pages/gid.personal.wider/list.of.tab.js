@@ -4,7 +4,7 @@ import Calendar from "./calendar"
 import Fourth from "./blog"
 import Settings from "./settings"
 import Reklama from "./reklama"
-
+import './main.css'
 
 export const tabs = [
     {
@@ -16,7 +16,7 @@ export const tabs = [
         component: <Edit />,
     },
     {
-        label: <div className="border-div">Kalendar</div>,
+        label: <div className="border-div">Ish jadvali</div>,
         component: <Calendar />,
     },
     {
@@ -44,7 +44,7 @@ export const tabsWriter2 = [
         component: <Edit />,
     },
     {
-        label: <div className="border-div">Kalendar</div>,
+        label: <div className="border-div">Ish jadvali</div>,
         component: <Calendar />,
     },
     {

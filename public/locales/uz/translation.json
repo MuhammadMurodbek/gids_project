@@ -55,11 +55,11 @@
        "arizaQoldrirish":"Ariza qoldirish",
        "Gid_tanlash":"Tanlash",
        "Gidlarga":"Gid va tarjimonlarlar uchun",
-       "textForGid":"Ushbu platforma yordamida siz o’zingiz uchun xorijlik yoki mahalliy sayyohlar yoki mijozlardan buyurtma olishingiz mumkin. Hoziroq ro’yhattan o’ting, barcha zaruriy ma’lumotlaringizni kiriting va ishni boshlang!",
+       "textForGid":"Ushbu platforma yordamida siz o’zingiz uchun xorijlik yoki mahalliy sayyohlar yoki mijozlardan buyurtma olishingiz mumkin. Hoziroq ro’yxatdan o’ting, barcha zaruriy ma’lumotlaringizni kiriting va ishni boshlang!",
        "royhatdanO":"Ro'yxatdan o'tish",
        "ishlashi":"Bu qanday ishlaydi?",
        "royhatdanOtasiz":" Ro’yxatdan o’tasiz",
-       "text02":"Dastlab platformadan gid, tarjimon yoki mijoz sifatida ro’yhatdan o’ting.",
+       "text02":"Dastlab platformadan gid, tarjimon yoki mijoz sifatida ro’yxatdan o’ting.",
        "sorov":"So‘rov qoldiring",
        "text03":"Siz gid va tarjimonni tanlashingiz yoki so’rov qoldirishingiz mumkin.",
        "aloqaga":"Aloqaga chiqing",
@@ -227,7 +227,7 @@
   "maqolaYozish":{
     "Profilni_Korish":"Profilni ko’rish",
     "tahrirlash":"Ma’lumotlarimni tahrirlash",
-    "kalendar":"Kalendar",
+    "kalendar":"Ish jadvali",
     "blog":"Blog",
     "reklama":"Reklama",
     "sozlamalar":"Profil sozlamalari",
@@ -252,7 +252,7 @@
   "GidPk":{
     "Profilni_Korish":"Profilni ko'rish",
     "tahrirlash":"Tahrirlash",
-    "kalendar":"Kalendar",
+    "kalendar":"Ish jadvali",
     "blog":"Blog",
     "reklama":"Reklama",
     "sozlamalar":"Profil sozlamalari",
@@ -301,7 +301,7 @@
 
     "Profilni_Korish":"Profilni ko'rish",
     "tahrirlash":"Tahrirlash",
-    "kalendar":"Kalendar",
+    "kalendar":"Ish jadvali",
     "blog":"Blog",
     "reklama":"Reklama",
     "sozlamalar":"Profil sozlamalari",
@@ -337,7 +337,7 @@
 
     "Profilni_Korish":"Profilni ko'rish",
     "tahrirlash":"Tahrirlash",
-    "kalendar":"Kalendar",
+    "kalendar":"Ish jadvali",
     "blog":"Blog",
     "reklama":"Reklama",
     "sozlamalar":"Profil sozlamalari",
@@ -371,7 +371,7 @@
 
     "Profilni_Korish":"Profilni ko'rish",
     "tahrirlash":"Tahrirlash",
-    "kalendar":"Kalendar",
+    "kalendar":"Ish jadvali",
     "blog":"Blog",
     "reklama":"Reklama",
     "sozlamalar":"Profil sozlamalari",
@@ -399,7 +399,7 @@
   "TillarniBilish":{
     "Profilni_Korish":"Profilni ko'rish",
     "tahrirlash":"Tahrirlash",
-    "kalendar":"Kalendar",
+    "kalendar":"Ish jadvali",
     "blog":"Blog",
     "reklama":"Reklama",
     "sozlamalar":"Profil sozlamalari",
@@ -421,7 +421,7 @@
   "xizmatlar":{
     "Profilni_Korish":"Profilni ko'rish",
     "tahrirlash":"Tahrirlash",
-    "kalendar":"Kalendar",
+    "kalendar":"Ish jadvali",
     "blog":"Blog",
     "reklama":"Reklama",
     "sozlamalar":"Profil sozlamalari",
@@ -450,7 +450,7 @@
   "narxlar":{
     "Profilni_Korish":"Profilni ko’rish",
     "tahrirlash":"Ma’lumotlarimni tahrirlash",
-    "kalendar":"Kalendar",
+    "kalendar":"Ish jadvali",
     "blog":"Blog",
     "reklama":"Reklama",
     "sozlamalar":"Profil sozlamalari",
@@ -474,7 +474,7 @@
 
     "Profilni_Korish":"Profilni ko’rish",
     "tahrirlash":"Ma’lumotlarimni tahrirlash ",
-    "kalendar":"Kalendar",
+    "kalendar":"Ish jadvali",
     "blog":"Blog",
     "reklama":"Reklama",
     "sozlamalar":"Profil sozlamalari",
@@ -499,7 +499,7 @@
 
     "Profilni_Korish":"Profilni ko’rish",
     "tahrirlash":"Ma’lumotlarimni tahrirlash",
-    "kalendar":"Kalendar",
+    "kalendar":"Ish jadvali",
     "blog":"Blog",
     "reklama":"Reklama",
     "sozlamalar":" Profil sozlamalari",
@@ -557,7 +557,7 @@
     
     "Profilni_Korish":"Profilni ko’rish",
     "tahrirlash":"Ma’lumotlarimni tahrirlash",
-    "kalendar":"Kalendar",
+    "kalendar":"Ish jadvali",
     "blog":"Blog",
     "reklama":"Reklama",
     "sozlamalar":"Profil sozlamalari",
@@ -600,7 +600,7 @@
 
     "Profilni_Korish":"Profilni ko’rish",
     "tahrirlash":"Ma’lumotlarimni tahrirlash",
-    "kalendar":"Kalendar",
+    "kalendar":"Ish jadvali",
     "blog":"Blog",
     "reklama":"Reklama",
     "sozlamalar":"Profil sozlamalari",
@@ -622,7 +622,7 @@
    "reklama":{
     "Profilni_Korish":"Profilni ko’rish",
     "tahrirlash":"Ma’lumotlarimni tahrirlash",
-    "kalendar":"Kalendar",
+    "kalendar":"Ish jadvali",
     "blog":"Blog",
     "reklama":"Reklama",
     "sozlamalar":"Profil sozlamalari",

@@ -99,9 +99,9 @@ export default function Index() {
                 <Grid container alignItems="center" spacing={1} diracti>
                     <Grid item xs={12} md={5} >
                         <h3 className="grid1">{t("connect.Kontaktlarimiz")}</h3>
-                        <p>+99893 596-92-20, +99897 726-69-89</p>
-                        <p>salom@gits.uz</p>
-                        <p>  Nukus ko'chasi, 86/3, Toshkent, 100015, O'zbekiston</p>
+                        <p> <b>Tel:</b> +99893 596-92-20</p>
+                        <p> <b>E-mail: </b>  info@gits.uz</p>
+                        <p> <b>Manzil: </b>Nukus ko'chasi, 86/3, Toshkent, 100015, O'zbekiston</p>
                         <div>
                             <img className="icons" src={imgtg} alt="name" />
                             <img className="icons" src={imgfac} alt="facebook" />
