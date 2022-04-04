@@ -29,7 +29,7 @@ const Index = ({data, commentCount}) => {
             <FlexContainer width="auto" alignItems="center" justifyContent="flex-start" flexDirection="column">
                 <Grid container spacing={1} className="info-item">
                     <Grid item sm={3}><ImgContainer src={starImg} width="30px"/></Grid>
-                    <Grid item sm={9}><span>{commentCount?.average || '0'}</span>/5</Grid>
+                    <Grid item sm={9}><span>{t("Gid_Tanlash.rate")}: {commentCount?.average || '0'}</span>/5</Grid>
                 </Grid>
                 <Grid container spacing={1} className="info-item">
                     <Grid item sm={3}><ImgContainer src={comment} width="30px"/></Grid>
