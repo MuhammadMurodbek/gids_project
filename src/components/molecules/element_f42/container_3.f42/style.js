@@ -27,4 +27,16 @@ export const Wrapper = styled.div`
     .bold_text{
         font-weight:bold;
     }
+    .text-tt3::first-letter {
+        text-transform: uppercase !important;
+      }
+`
+export const TextSpan = styled.div`
+display:inline-block;
+text-transform:lowercase;
+ font-weight:bold;
+ &:first-letter {
+    text-transform: uppercase;
+  }
+     
 `

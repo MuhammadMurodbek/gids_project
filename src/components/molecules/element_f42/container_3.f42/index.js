@@ -7,7 +7,7 @@ import cheked from '../../../../assets/img/boglanish/cheked.svg'
 import { Grid } from '@material-ui/core'
 import { useTranslation } from 'react-i18next'
 import { getLabelCountrySecond, getLabelCity } from "../../../../custom/function"
-
+import {TextSpan} from "./style"
 const Index = ({ data, role }) => {
     const { t } = useTranslation()
     // const getRole = JSON.parse(localStorage.getItem("user_token"))
@@ -74,7 +74,7 @@ const Index = ({ data, role }) => {
                             <div className='mavzulardd'>
                                 {
                                     data?.themes?.map((prev, index) => (
-                                        <Text key={index} display="block" text={<span style={{fontWeight:'bold'}}>{prev?.name} - <span style={{fontWeight:'400'}}>{obj[prev?.level]}</span></span>} />
+                                        <Text key={index} display="block" text={<TextSpan>{prev?.name} - <span style={{fontWeight:'400'}}>{obj[prev?.level]}</span></TextSpan>} />
                                     ))
                                 }
                             </div>
@@ -89,7 +89,7 @@ const Index = ({ data, role }) => {
                         <Text title="Mavzular:" />
                         {
                             data?.themes?.map((prev, index) => (
-                                <Text key={index} display="block" text={<span style={{fontWeight:'bold'}}>{prev?.name} - <span style={{fontWeight:'400'}}>{obj[prev?.level]}</span></span>} />
+                                <Text key={index} display="block" text={<TextSpan>{prev?.name} - <TextSpan style={{fontWeight:'400'}}>{obj[prev?.level]}</TextSpan></TextSpan>} />
                             ))
                         }
                     </>)
