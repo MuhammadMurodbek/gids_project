@@ -10,6 +10,7 @@ import { getLabelCountrySecond, getLabelCity } from "../../../../custom/function
 import {TextSpan} from "./style"
 const Index = ({ data, role }) => {
     const { t } = useTranslation()
+    const lan = localStorage.getItem("i18nextLng")
     // const getRole = JSON.parse(localStorage.getItem("user_token"))
     const obj = {
         no: 'Mening mavzuyim emas',
@@ -17,6 +18,7 @@ const Index = ({ data, role }) => {
         good: "Yaxshi darajada",
         low: 'Quyi darajada',
     }
+    
     // console.log(data)
     return (
         <Wrapper>
@@ -27,7 +29,13 @@ const Index = ({ data, role }) => {
 
                     (
                         <>
-                            <Text title="Bir kunlik ish xajmi:" text={<span>&nbsp;{data?.daily_workload}&nbsp;<span style={{textTransform:'lowercase'}}>belgi</span></span> } /> <br /><br />
+                            <Text title="Bir kunlik ish xajmi:" text={<span>&nbsp;{data?.daily_workload}&nbsp;<span style={{textTransform:'lowercase'}}>belgi</span></span> } /> <br />
+                            <Text title="Og’zaki tarjima:" text={<span>&nbsp;{data?.can_oral_translate ? 'Ha (Sinxron)':"Yo'q"}&nbsp;</span> } /> <br />
+                            <Text title="Shoshilinch buyurtmalar:" text={<span>&nbsp;{data?.express_order ? 'Ha':"Yo'q"}&nbsp;</span> } /> <br />
+                            <Text title="Dam olish kunlari buyurtma qabul qilish:" text={<span>&nbsp;{data?.weekend_order ? 'Ha':"Yo'q"}&nbsp;</span> } /> <br />
+                            <Text title="Matnlarni tahrirlash:" text={<span>&nbsp;{data?.edit_text ? 'Ha':"Yo'q"}&nbsp;</span> } /> <br />
+                            <Text title="Internetga doimiy kirish imkoni:" text={<span>&nbsp;{data?.always_online  ? 'Ha':"Yo'q"}&nbsp;</span> } /> <br />
+                            <Text title="Katta hajmdagi fayllarni qabul qilish:" text={<span>&nbsp;{data?.always_online ? 'Ha':"Yo'q"}&nbsp;</span> } /> <br />
                             <Text title="Tarjima qilish uchun CAT dasturlari:" text={data?.cat_programmes?.map(a => " " + a + ",")} />
                             <FlexContainer width="70%" margin="15px 0">
                                 <Grid container spacing={1} className="gridCon">

@@ -34,14 +34,14 @@ const Index = () => {
 
             <Grid container spacing={1}>
                 <Grid item xs={12} sm={6} md={4}>
-                    <TextLabeled setState={setState} state={state} defaultApiValue={apiValue?.daily_workload} field="daily_workload" width="100%" sizeLabel="15px" placeholder="Text" label="Bir kunlik ish hajmingiz" />
+                    <TextLabeled setState={setState} state={state} defaultApiValue={apiValue?.daily_workload} field="daily_workload" width="100%" sizeLabel="15px" placeholder="Text" label="Bir kunlik ish hajmingiz (belgi)" />
                 </Grid>
                 <Grid item xs={12} sm={6} md={4}>
                     <Container padding="37px 0 0" position="relative" top="-22px">
                         <TextTitle font="15px" align="left" top="0" bottom="-10px" color="#262626">Siz og'zaki tarjima ham qilasizmi?</TextTitle>
                         <FlexContainer width="100%" gap="10px">
                             <SelectLabeled setCollect={setState} collect={state} defaultApiValue={apiValue?.can_oral_translate ? 'Ha' : "Yo'q"} field="can_oral_translate" options={option_yes} width="100%" sizeLabel="15px" placeholder="Tanglang" />
-                            <SelectLabeled isDisabled={state?.can_oral_translate?.label==='Ha' ? false:true} setCollect={setState} collect={state} defaultApiValue={apiValue?.oral_translate_type !== 'consecutive' ? 'Ketma ket' : 'Izchil'} field="oral_translate_type" options={option_yes_sec} width="100%" placeholder="Tanlang" />
+                            <SelectLabeled isDisabled={state?.can_oral_translate?.label==='Ha' ? false:true} setCollect={setState} collect={state} defaultApiValue={apiValue?.oral_translate_type !== 'consecutive' ? 'Sinxron' : 'Izchil'} field="oral_translate_type" options={option_yes_sec} width="100%" placeholder="Tanlang" />
                         </FlexContainer>
                     </Container>
                 </Grid> 

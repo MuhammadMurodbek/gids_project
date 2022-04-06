@@ -26,7 +26,7 @@ export const option_yes = [
     { value: 2, label: "Yoq" }
 ]
 export const option_yes_sec = [
-    { value: 'synchronous', label: "Ketma ket" },
+    { value: 'synchronous', label: "Sinxron" },
     { value: 'consecutive', label: "Izchil" }
 ]
 export const objDefault = {
