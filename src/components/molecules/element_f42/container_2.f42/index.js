@@ -44,7 +44,7 @@ const Index = ({data, role}) => {
                         <Text title={t("GidPk.ishtaj")+" "} text={data?.experience_year+" yil" || "Ma'lumot kiritilmagan"}/><br/>
                         <Text title={t("GidPk.ishJoy")+" "} text={data?.work_place || "Ma'lumot kiritilmagan"}/><br/>
                         <Text title={t("GidPk.lavozim")+" "} text={data?.position || "Ma'lumot kiritilmagan"}/><br/>
-                        <Text title={t("GidPk.ishvaqt")+" "} text={data?.work_time || "Ma'lumot kiritilmagan"}/><br/>
+                        <Text title={t("GidPk.ishvaqt")+" "} text={data?.work_time?.replace('|',"-") || "Ma'lumot kiritilmagan"}/><br/>
                     </TextWrapper>
                 </>
             }

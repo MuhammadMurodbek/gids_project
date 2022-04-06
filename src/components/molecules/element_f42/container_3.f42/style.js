@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
         width: 100%;
     }
     .asddd, .mavzulardd{
-        margin-left:30px
+        // margin-left:30px
     }
     .classed{
         margin-right: 5px;
@@ -23,5 +23,8 @@ export const Wrapper = styled.div`
     .newSpans{
         display:inline;
         
+    }
+    .bold_text{
+        font-weight:bold;
     }
 `

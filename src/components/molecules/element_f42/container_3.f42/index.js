@@ -27,8 +27,8 @@ const Index = ({ data, role }) => {
 
                     (
                         <>
-                            <Text title="Bir kunlik ish xajmim:" text={" " + data?.daily_workload} /> <br /><br />
-                            <Text title="Tdaladigaarjima qilish uchun foyn CAT dasturlarim:" text={data?.cat_programmes?.map(a => " " + a + ",")} />
+                            <Text title="Bir kunlik ish xajmi:" text={<span>&nbsp;{data?.daily_workload}&nbsp;<span style={{textTransform:'lowercase'}}>belgi</span></span> } /> <br /><br />
+                            <Text title="Tarjima qilish uchun CAT dasturlari:" text={data?.cat_programmes?.map(a => " " + a + ",")} />
                             <FlexContainer width="70%" margin="15px 0">
                                 <Grid container spacing={1} className="gridCon">
                                     <Grid item md={12} className="asddd">
@@ -74,7 +74,7 @@ const Index = ({ data, role }) => {
                             <div className='mavzulardd'>
                                 {
                                     data?.themes?.map((prev, index) => (
-                                        <Text key={index} display="block" text={prev?.name + "-" + obj[prev?.level]} />
+                                        <Text key={index} display="block" text={<span style={{fontWeight:'bold'}}>{prev?.name} - <span style={{fontWeight:'400'}}>{obj[prev?.level]}</span></span>} />
                                     ))
                                 }
                             </div>
@@ -89,7 +89,7 @@ const Index = ({ data, role }) => {
                         <Text title="Mavzular:" />
                         {
                             data?.themes?.map((prev, index) => (
-                                <Text key={index} display="block" text={prev?.name + "-" + obj[prev?.level]} />
+                                <Text key={index} display="block" text={<span style={{fontWeight:'bold'}}>{prev?.name} - <span style={{fontWeight:'400'}}>{obj[prev?.level]}</span></span>} />
                             ))
                         }
                     </>)
