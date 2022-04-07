@@ -45,7 +45,7 @@ const Index = ({data}) => {
 
                             <div className="gid-info-personal-text top"> 
                                 <div className="text">
-                                    {t("Gid_Tanlash.xizmatlar")} : { data?.excursions?.length>0? data?.excursions?.map((prev)=>" "+prev?.city+",") : "Ma'lumot kiritilmagan"}
+                                    {t("Gid_Tanlash.xizmatlar")} :&nbsp; { data?.excursions?.length>0? data?.excursions?.map((prev, index)=>" "+prev?.city[lang]+`${index !== data?.excursions?.length-1 ? ',':''}`) : "Ma'lumot kiritilmagan"}
                                 </div>
                             </div>
                             
@@ -54,7 +54,7 @@ const Index = ({data}) => {
                                 </div>
                                     {
                                         data?.languages.length > 0 ?
-                                        data?.languages?.map(prev=>" "+languageCheck(prev, lang)+",") : "Ma'lumot kiritilmagan"
+                                        data?.languages?.map((prev, index)=>" "+languageCheck(prev, lang)+`${index !== data?.languages?.length-1 ? ',':''}`) : "Ma'lumot kiritilmagan"
                                     }                            
                                 </div>
                             <div className="gid-info-personal-text">
@@ -63,7 +63,7 @@ const Index = ({data}) => {
                                     width="auto"
                                     margin="-20px 0 0 0px"
                                     line={6}
-                                    text={<p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{data?.bio || "Ma'lumot kiritilmagan"}</p>}
+                                    text={<p> &nbsp;&nbsp;&nbsp;{data?.bio || "Ma'lumot kiritilmagan"}</p>}
                                 />
                             </div>
                         </Container>

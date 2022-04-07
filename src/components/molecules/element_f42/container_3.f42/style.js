@@ -15,6 +15,7 @@ export const Wrapper = styled.div`
     }
     .box{
         display: flex;
+        // margin-top:10px;
     }
     .box_child{
         display: flex;
@@ -30,6 +31,12 @@ export const Wrapper = styled.div`
     .text-tt3::first-letter {
         text-transform: uppercase !important;
       }
+    .yes_no{
+        // font-weight:bold;
+        font-size:13px;
+        position:relative;
+        right:10px;
+    }
 `
 export const TextSpan = styled.div`
 display:inline-block;

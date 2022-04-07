@@ -6,7 +6,7 @@ import { FlexContainer } from "../../../../styles/flex.container"
 import cheked from '../../../../assets/img/boglanish/cheked.svg'
 import { Grid } from '@material-ui/core'
 import { useTranslation } from 'react-i18next'
-import { getLabelCountrySecond, getLabelCity } from "../../../../custom/function"
+// import { getLabelCountrySecond, getLabelCity } from "../../../../custom/function"
 import {TextSpan} from "./style"
 const Index = ({ data, role }) => {
     const { t } = useTranslation()
@@ -69,39 +69,34 @@ const Index = ({ data, role }) => {
                 role === 'gid' ?
                     (
                         <>
+                        
 
                             <FlexContainer width="70%" margin="15px 0">
                                 <Grid container spacing={1} className="gridCon">
-                                    <Grid item md={6} className="as">
-                                        {data?.excursions?.length > 0 ?
-                                            <FlexContainer margin="0 0 10px">
-                                                <img src={cheked} alt="adfdd" className="classed" />
-                                                <Text title="Ekskursiyalar" /><br />
+                                    <Grid item md={12} className="as">
+                                        {/* {data?.excursions?.length > 0 ? */}
+                                            <FlexContainer justifyContent="flex-start" margin="0 0 5px">
+                                                <Text title="Ekskursiyalar :" /> <span className="yes_no">{data?.excursions?.length > 0 ? "Ha":"Yo'q"}</span>
                                             </FlexContainer>
-                                            : null}
-                                        {
-                                            data?.consecutive_translate ?
-                                                <FlexContainer margin="0 0 10px">
-                                                    <img src={cheked} alt="adfdd" className="classed" />
-                                                    <Text title="Og'zaki tarjima (ketma-ket)" />
-                                                </FlexContainer> : null
-                                        }
-                                    </Grid>
-                                    <Grid item md={6} >
-                                        {
-                                            data?.synchronous_translate ?
-                                                <FlexContainer margin="0 0 10px">
-                                                    <img src={cheked} alt="adfdd" className="classed" />
-                                                    <Text title="Sinxron tarjima" /><br />
-                                                </FlexContainer> : null
-                                        }
-                                        {
-                                            data?.written_translate ?
+                                            {/* : null} */}
+                                        {/* {
+                                            data?.consecutive_translate ? */}
+                                                <FlexContainer margin="0 0 5px">
+                                                    <Text title="Og'zaki tarjima (ketma-ket) :" /><span className="yes_no">{data?.consecutive_translate ? "Ha":"Yo'q"}</span>
+                                                </FlexContainer>
+                                        {/* } */}
+                                         {/* {
+                                            data?.synchronous_translate ? */}
+                                                <FlexContainer margin="0 0 5px">
+                                                    <Text title="Sinxron tarjima:" /><span className="yes_no">{data?.synchronous_translate ? "Ha":"Yo'q"}</span>
+                                                </FlexContainer> 
+                                        {/* } */}
+                                        {/* {
+                                            data?.written_translate ? */}
                                                 <>
-                                                    <img src={cheked} alt="adfdd" className="classed" />
-                                                    <Text title="Izchil tarjima" />
-                                                </> : null
-                                        }
+                                                    <Text title="Izchil tarjima:" /><span className="yes_no">{data?.written_translate ? "Ha":"Yo'q"}</span>
+                                                </> 
+                                        {/* } */}
                                     </Grid>
                                 </Grid>
                             </FlexContainer>
@@ -111,7 +106,7 @@ const Index = ({ data, role }) => {
                                     {
                                         data?.excursions?.length > 0 ?
                                             data?.excursions?.map((prev, index) => (
-                                                <span key={index}>{prev?.city + "-" + prev?.country}</span>
+                                                <span key={index}>{prev?.city[lan] + "-" + prev?.country[lan]}</span>
                                             )) : <div>Malumot kiritilmagan</div>
                                     }
                                 </div>

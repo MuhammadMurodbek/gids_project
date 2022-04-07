@@ -26,11 +26,11 @@ const Index = ({data, role}) => {
             {
                 role === 'gid' ? 
                 <TextWrapper>
-                    <Text title= {t("GidPk.institut")} text={" " +checkValues( data?.completed_university)}/><br/>
-                    <Text title={t("GidPk.mutahasis")} text={" "+ checkValues(DEGREES[data?.education_degree])}/><br/>
-                    <Text title="Toifasi: " text={" "+ checkValues(DEGREES_GIT[data?.category])}/><br/>
-                    <Text title="Qo'shimcha kurslar: " text={" "+ data?.additional_courses?.length>0 ? data?.additional_courses?.map(a=>" "+a) : "Ma'lumot kiritilmagan"}/><br/>
-                    <Text title="Ish tajribasi: " text={" "+ data?.experience_year ? data?.experience_year + " yil" : "Ma'lumot kiritilmagan"}/><br/>
+                    <Text margin="0 0 5px" title= {t("GidPk.institut")} text={" " +checkValues( data?.completed_university)}/><br/>
+                    <Text margin="0 0 5px" title={t("GidPk.mutahasis")} text={" "+ checkValues(DEGREES[data?.education_degree])}/><br/>
+                    <Text margin="0 0 5px" title="Toifasi: " text={" "+ checkValues(DEGREES_GIT[data?.category])}/><br/>
+                    <Text margin="0 0 5px" title="Qo'shimcha kurslar: " text={" "+ data?.additional_courses?.length>0 ? data?.additional_courses?.map(a=>" "+a) : "Ma'lumot kiritilmagan"}/><br/>
+                    <Text margin="0 0 5px" title="Ish tajribasi: " text={" "+ data?.experience_year ? data?.experience_year + " yil" : "Ma'lumot kiritilmagan"}/><br/>
                 </TextWrapper>:
                 <>
                     {data?.universities?.map((prev, index) =>(

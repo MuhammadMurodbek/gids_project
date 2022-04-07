@@ -3,6 +3,7 @@ import styled from "styled-components"
 export const ContainerBottom = styled.div`
     display: ${value=>value.display ? value.display : 'inline-block'};
     height: auto;
+    margin:${v=>v.margin};
     margin-right:20px;
 
     i{
