@@ -72,19 +72,7 @@ const Index = () => {
       setTrState({})
     }
   };
-  // useEffect(()=>{
-  //   const comp = <CalendarLabel/>
-  //   if(comp){
-  //     const inp = document.getElementById("141")
-  //     console.log(inp)
-  //   }
-
-  // },[])
-  // const inputSelect = document.querySelector('[id="141"]')
-  // const inputSelects = document.querySelectorAll('input')[4]
-  // console.log(inputSelect)
-
-  // console.log(inputSelects)
+  
   return (
     <Wrapper onSubmit={ ( e ) => e.preventDefault() }>
       {apiValue?.success === "" ? (
@@ -141,7 +129,7 @@ const Index = () => {
                     width="100%"
                     label="Sana"
                     placeholder={moment(state?.birthday).format('DD-MM-YYYY') || "dd-mm-yyyy" }
-                    placeholderValue={ state?.birthday || false }
+                    placeholderValue={ state?.birthday || 'dd-mm-yyyy' }
                     setState={ setState }
                     state={ state }
                     field="birthday"
