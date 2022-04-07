@@ -36,9 +36,10 @@ const Index = ({ data, role }) => {
                             <Text title="Matnlarni tahrirlash:" text={<span>&nbsp;{data?.edit_text ? 'Ha':"Yo'q"}&nbsp;</span> } /> <br />
                             <Text title="Internetga doimiy kirish imkoni:" text={<span>&nbsp;{data?.always_online  ? 'Ha':"Yo'q"}&nbsp;</span> } /> <br />
                             <Text title="Katta hajmdagi fayllarni qabul qilish:" text={<span>&nbsp;{data?.always_online ? 'Ha':"Yo'q"}&nbsp;</span> } /> <br />
-                            <Text title="Tarjima qilish uchun CAT dasturlari:" text={data?.cat_programmes?.map(a => " " + a + ",")} />
+                            <Text title="Tarjima qilish uchun CAT dasturlari:" text={data?.cat_programmes?.length>0 ? data?.cat_programmes?.map(a => " " + a + ","):" Ma'lumot kiritilmagan"} />
                             
-                            <div style={{marginTop:10}}> <Text title="Mavzular:" /></div>
+                            { data?.themes?.length>0 && <div style={{marginTop:10}}> <Text title="Mavzular:" /></div>}
+                            
                             <div className='mavzulardd'>
                                 {
                                     data?.themes?.map((prev, index) => (
