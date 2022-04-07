@@ -37,48 +37,8 @@ const Index = ({ data, role }) => {
                             <Text title="Internetga doimiy kirish imkoni:" text={<span>&nbsp;{data?.always_online  ? 'Ha':"Yo'q"}&nbsp;</span> } /> <br />
                             <Text title="Katta hajmdagi fayllarni qabul qilish:" text={<span>&nbsp;{data?.always_online ? 'Ha':"Yo'q"}&nbsp;</span> } /> <br />
                             <Text title="Tarjima qilish uchun CAT dasturlari:" text={data?.cat_programmes?.map(a => " " + a + ",")} />
-                            <FlexContainer width="70%" margin="15px 0">
-                                <Grid container spacing={1} className="gridCon">
-                                    <Grid item md={12} className="asddd">
-                                        {
-                                            data?.is_freelancer ?
-                                                <div>
-                                                    <img src={cheked} alt="adfdd" className="classed" />
-                                                    <Text title="Freelanserlik" />
-                                                </div>
-                                                : null
-                                        }
-                                        {
-                                            data?.edit_text ?
-                                                <div>
-                                                    <img src={cheked} alt="adfdd" className="classed" />
-                                                    <Text title="Matnlarni tahrirlash" />
-                                                </div>
-                                                : null
-                                        }
-                                        {
-                                            data?.express_order ?
-                                                <div>
-                                                    <img src={cheked} alt="adfdd" className="classed" />
-                                                    <Text title="Shoshilinch buyurtma" />
-                                                    <br />
-                                                </div>
-                                                : null
-                                        }
-                                        {
-                                            data?.weekend_order ?
-                                                <div>
-                                                    <img src={cheked} alt="adfdd" className="classed" />
-                                                    <Text title="Dam olish kunida ishlash" />
-
-                                                </div>
-                                                : null
-                                        }
-                                    </Grid>
-
-                                </Grid>
-                            </FlexContainer>
-                            <Text title="Mavzular:" />
+                            
+                            <div style={{marginTop:10}}> <Text title="Mavzular:" /></div>
                             <div className='mavzulardd'>
                                 {
                                     data?.themes?.map((prev, index) => (
@@ -93,7 +53,7 @@ const Index = ({ data, role }) => {
             {
                 role === 'translator' ?
                     (<>
-                        <img src={cheked} alt="adfdd" className="classed" /> <Text title=" Sinxron" /><br />
+                        {/* <img src={cheked} alt="adfdd" className="classed" /> <Text title=" Sinxron" /><br /> */}
                         <Text title="Mavzular:" />
                         {
                             data?.themes?.map((prev, index) => (
