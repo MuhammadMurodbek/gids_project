@@ -70,4 +70,9 @@ export const Title = styled.div`
         font-size: 18px !important;
     }
 `
+export const WrapEdit = styled.div`
+    .check_pick{
+        background:red !important;
+    }
+`
 export const shadow = '0px 0px 40px 0px rgba(0, 0, 0, 0.08)'
