@@ -53,6 +53,9 @@ export const Wrapper = styled.form`
             /* font-size: ; */
             margin-bottom:5px;   }
     }
+    .wrap-grid{
+        margin-top:10px;
+    }
 `
 export const Title = styled.div`
     width: 100%;

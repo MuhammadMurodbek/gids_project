@@ -22,3 +22,8 @@ export function info() {
       },
     });
   }
+export const currency = [
+  {label:'UZS', value:'sum'},
+  {label:'RUBL', value:'ruble'},
+  {label:'USD',value:'dollar'}
+]

@@ -1,4 +1,4 @@
-import React, {useCallback} from 'react'
+import React, {useCallback, useRef} from 'react'
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
@@ -8,9 +8,9 @@ import DoubleCheck from "../../../components/molecules/doble2"
 import {useTranslation} from 'react-i18next'
 
 const Index = ({setState, state, errorText, defaultApiValue}) => {
-
+    const radioRef = useRef()
     const {t} = useTranslation()
-    const [value, setValue] = React.useState();
+    const [value, setValue] = React.useState('');
     const handleChange = useCallback((event) => {
 
         if(event.target.value){
@@ -23,13 +23,16 @@ const Index = ({setState, state, errorText, defaultApiValue}) => {
     },[value,state])
     React.useEffect(()=>{
         if(defaultApiValue){
-            setValue(defaultApiValue)
+            let df = defaultApiValue
+            setValue(df)
         }
     },[defaultApiValue])
+    console.log(radioRef?.current)
+    // setValue(defaultApiValue)
     return (
         <Wrapper>
              <FormControl component="fieldset">
-                <RadioGroup row={true} aria-label="gender" name="gender1" value={value} onChange={handleChange} >
+                <RadioGroup ref={radioRef} row={true} aria-label="gender" name="gender1" value={value} onChange={handleChange} >
                     <FormControlLabel value="gid" control={<Radio/>} 
                     label={<span>{t("arizaqoldirish.Gid")} </span>} className="first"/>
                     <FormControlLabel value="translator" control={<Radio />}
