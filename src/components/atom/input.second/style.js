@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const InputWrapper = styled.div`
     /* width:'100%'; */
     position:relative;
+    flex-grow:${v=>v.grow};
     .PhoneInputInput{
         border: none;
         background:transparent;

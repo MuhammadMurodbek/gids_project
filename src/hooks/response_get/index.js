@@ -136,6 +136,7 @@ export const postResponse = async ( url, data, setState, noToken ) => {
         } )
 }
 export const putResponse = async ( url, data, setState ) => {
+    setState(prev=>{return{...prev, loading:true}})
     return await axios.put( `${ baseUrl }${ url }`, data, head_token )
         .then( response => setState( { success: response, error: '', loading: false } ) )
         .catch( err => {

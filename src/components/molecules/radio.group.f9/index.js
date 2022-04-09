@@ -21,9 +21,9 @@ const Index = ({setState, state, errorText, defaultApiValue}) => {
             }
         }
     },[value,state])
-    React.useMemo(()=>{
+    React.useEffect(()=>{
         if(defaultApiValue){
-            setValue(()=>defaultApiValue)
+            setValue(defaultApiValue)
         }
     },[defaultApiValue])
     return (

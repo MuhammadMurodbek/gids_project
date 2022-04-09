@@ -1,14 +1,8 @@
-import InputText from "../atom/input.second"
+import InputController from "./input"
+import RadioGroupController from "./radio"
+import SelectController from "./select"
+import Calendar from "./calendar"
+import TextArea from "./textarea"
+import CheckBoxController from "./checkbox"
 
-export const InputController = (Controller, control) => {
-    return(
-        <Controller
-            name="test"
-            control={control}
-            render={({   field: { onChange, onBlur, value, name, ref } }) => {
-                // sending integer instead of string.
-                return <InputText onChange={onChange} value={value} name={name}  ref={ref}/>;
-            }}
-        />
-    )
-}
+export {InputController, RadioGroupController, SelectController, Calendar, TextArea, CheckBoxController}

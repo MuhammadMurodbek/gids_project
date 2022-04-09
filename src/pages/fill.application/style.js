@@ -53,6 +53,9 @@ export const Wrapper = styled.form`
             /* font-size: ; */
             margin-bottom:5px;   }
     }
+    .wrap-grid{
+        margin-top:10px;
+    }
 `
 export const Title = styled.div`
     width: 100%;
@@ -65,6 +68,14 @@ export const Title = styled.div`
     background-color: ${mainGreen};
     @media (max-width:600px){
         font-size: 18px !important;
+    }
+`
+export const WrapEdit = styled.div`
+    .check_pick{
+        background:red !important;
+    }
+    .tra_ext{
+        display:flex;
     }
 `
 export const shadow = '0px 0px 40px 0px rgba(0, 0, 0, 0.08)'

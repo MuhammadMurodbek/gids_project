@@ -9,6 +9,23 @@ export const Wrapper = styled.div`
     .success_icon{
         color:green !important;
     }
+    .log_wrap{
+        width:100%;
+        // background:red;
+        display:flex;
+        justify-content:flex-start;
+        align-items:center;
+        &_item{
+            // flex:0.5;
+            background:#ccc;
+            font-size:0.9rem;
+            padding:15px 8px;
+            position:relative;
+            top:3px; left:1px;
+            border-top-left-radius:5px;
+            border-bottom-left-radius:5px;
+        }
+    }
 `
 export const Label = styled.div`
     font-weight: 600;

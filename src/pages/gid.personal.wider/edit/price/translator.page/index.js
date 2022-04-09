@@ -89,6 +89,7 @@ const Index = () => {
                  getData?.success === '' ? <Spinner marginTop="60px" width={ 50 } height={ 50 } /> :
                  items?.length>0 ?
                  items?.map((prev, index)=>(
+                     <>
                     <Container key={ index }>
                         <Grid container spacing={1} justifyContent="space-between"  alignItems="center">
                             <Grid item xs={12} sm={ 6 } md={4} lg={3}>
@@ -106,12 +107,14 @@ const Index = () => {
                         </Grid>
                         
                     </Container>
-                 ))  : <div style={{textAlign:'center', marginTop:30}}>Narxlar bo'limi bilan ishlash uchun tillarni kiriting..</div>              
-                
-            }
                     <Container width="100%" padding="10px 20px" margin="20px 0 0 15px" textAlign="right">
                         <Button loader={post?.loading} onClick={handleSubmit}>Saqlash</Button>
                     </Container>
+                    </>
+                 ))  : <div style={{textAlign:'center', marginTop:30}}>Narxlar bo'limi bilan ishlash uchun tillarni kiriting..</div>              
+                
+            }
+                   
         </Wrapper>
     )
 }

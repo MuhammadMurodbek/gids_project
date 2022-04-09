@@ -8,13 +8,14 @@ export const Wrapper = styled.div`
         width: 100%;
     }
     .asddd, .mavzulardd{
-        margin-left:30px
+        // margin-left:30px
     }
     .classed{
         margin-right: 5px;
     }
     .box{
         display: flex;
+        // margin-top:10px;
     }
     .box_child{
         display: flex;
@@ -24,4 +25,25 @@ export const Wrapper = styled.div`
         display:inline;
         
     }
+    .bold_text{
+        font-weight:bold;
+    }
+    .text-tt3::first-letter {
+        text-transform: uppercase !important;
+      }
+    .yes_no{
+        // font-weight:bold;
+        font-size:13px;
+        position:relative;
+        right:10px;
+    }
+`
+export const TextSpan = styled.div`
+display:inline-block;
+text-transform:lowercase;
+ font-weight:bold;
+ &:first-letter {
+    text-transform: uppercase;
+  }
+     
 `

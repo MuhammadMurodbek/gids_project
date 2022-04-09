@@ -74,6 +74,7 @@
       "tanlash":"Tanlash"
 },
   "Gid_Tanlash":{
+    "rate":"Reyting",
     "title":"Gid yoki tarjimonni tanlang",
     "fikirlar":"Fikrlar:",
     "kuniga":"Kuniga:",
@@ -273,7 +274,7 @@
     "institut":"Bitirgan instituti / universiteti:",
     "mutahasis":"Mutaxasisligi:",
     "ishtaj":"Ish tajribasi:",
-    "ishJoy":"Is joyi:",
+    "ishJoy":"Ish joyi:",
     "lavozim":"Lavozimi:",
     "ishvaqt":"Ish vaqti:",
     "qoshimcha":"Qo’shimcha kurslar:",
