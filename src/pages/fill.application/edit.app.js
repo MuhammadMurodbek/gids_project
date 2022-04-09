@@ -1,23 +1,25 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from "react-router-dom"
 import { Container } from '../../styles/container/index.style'
-import { shadow } from "./style"
+import { shadow, Title } from "./style"
 import { mediaContainer, mediaContainerWidth } from "./_media"
 import { useForm, Controller } from "react-hook-form"
 import { Grid } from '@material-ui/core'
 import { useTranslation } from 'react-i18next';
 import { TextArea, RadioGroupController, SelectController, Calendar, InputController, CheckBoxController } from "../../components/w.controller.form"
 import { Button } from '../../components/atom/button/index.style'
-import { currency } from "./constant"
+import { currency, CurrencyProp } from "./constant"
 import { WrapEdit } from "./style"
 import { mediaBtn } from "../../custom/global.media.variables"
 import { getApiResponse } from "../../hooks/response_get"
 import TestComponent from "../../components/templates/test.component"
+import {defaultApiValueReset} from "./constant"
+import moment from "moment"
 
 const EditApp = () => {
     const { id } = useParams()
     const { t } = useTranslation()
-    const { handleSubmit, control, watch, setValue } = useForm()
+    const { handleSubmit, control, watch, setValue, reset } = useForm()
     const lan = localStorage.getItem('i18nextLng')
     const country = JSON.parse(localStorage.getItem('countryGlobal'))
     const langs = JSON.parse(localStorage.getItem('lanGlobal'))
@@ -25,17 +27,34 @@ const EditApp = () => {
     const langList = langs?.map((item) => { return { label: item?.name[lan], value: item.id } })
     const [state, setState] = useState({ data: null, loading: false, success: false, error: false })
     const [callback, setCallback] = useState(false)
-    let countryId = watch('country')
+    let countryId = watch('country')                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
     let cityList = country?.filter((item) => item?.id === countryId?.value)[0]?.cities?.map((prev) => { return { label: prev[lan], value: prev?.id } })
-    useEffect(() => { if (countryId) { setValue('city', '') } }, [countryId])
+    useEffect(() => { if (countryId && countryId?.value!==state?.data?.country) { setValue('city', '') } }, [countryId])
     useEffect(() => { getApiResponse(`/api/users/self/application/${id}/`, setState) }, [callback])
+    useEffect(() => {
+        reset(defaultApiValueReset)
+        if(state?.success){
+            let getData = state?.data
+            console.log(getData)
+            reset({
+                ...getData,
+                country:{label:getData?.country_name[lan], value:getData?.country},
+                city:{label:getData.city_name[lan], value:getData.city},
+                start_date:moment(getData?.start_date, 'DD-MM-YYYY'),  
+                end_date:new Date(getData?.end_date),
+                currency:{label:CurrencyProp[getData?.currency], value:currency},
+                languages:getData?.languages?.map((item)=>{return{label:item?.language[lan], value:item.id}}),
+            })
+        }
+    }, [state,id])
     const onSubmit = (data) => {
         console.log(data)
     }
-    console.log(state)
+    // console.log(state?.data)
     return (
         <WrapEdit>
             <Container width="90%" padding="0" margin="40px auto" boxShadow={shadow}>
+             <Title> Arizani taxrirlash </Title>
                 <Container {...mediaContainer} padding="30px">
                     <Container {...mediaContainerWidth} width={state?.success ? '85%':'100%'} >
                         <TestComponent
@@ -55,9 +74,9 @@ const EditApp = () => {
                                                 <Grid item xs={12} sm={12} md={6}>
                                                     {watch('who_need') === 'translator' &&
                                                         <div className="tra_ext">
-                                                            <CheckBoxController name="female" control={control} label="Izchil" />
-                                                            <CheckBoxController name="female" control={control} label="Sinxron" />
-                                                            <CheckBoxController name="female" control={control} label="Yozma" />
+                                                            <CheckBoxController name="is_consecutive" control={control} label="Izchil" />
+                                                            <CheckBoxController name="is_synchronous" control={control} label="Sinxron" />
+                                                            <CheckBoxController name="is_writer" control={control} label="Yozma" />
                                                         </div>
                                                     }
                                                 </Grid>
@@ -70,8 +89,8 @@ const EditApp = () => {
                                         </Grid>
                                         <Grid item xs={12} sm={12} md={7}>
                                             <Grid container spacing={1} alignItems="center" className="wrap-grid">
-                                                <Grid item xs={12} sm={12} md={6}><SelectController control={control} name="country" label1="Gid" label2="Tarjimon" options={countryList} pl={'Davlat tanlang'} /></Grid>
-                                                <Grid item xs={12} sm={12} md={6}><SelectController control={control} name="city" label1="Gid" label2="Tarjimon" options={cityList} pl={'Shahar kiriting'} /></Grid>
+                                                <Grid item xs={12} sm={12} md={6}><SelectController Controller={Controller} control={control} name="country" options={countryList} pl={'Davlat tanlang'} /></Grid>
+                                                <Grid item xs={12} sm={12} md={6}><SelectController Controller={Controller} control={control} name="city" options={cityList} pl={ 'Shahar kiriting'} /></Grid>
                                             </Grid>
                                         </Grid>
 
@@ -82,8 +101,8 @@ const EditApp = () => {
                                         </Grid>
                                         <Grid item xs={12} sm={12} md={7}>
                                             <Grid container spacing={1} alignItems="center" className="wrap-grid">
-                                                <Grid item xs={12} sm={12} md={6}><Calendar control={control} name="dan" /></Grid>
-                                                <Grid item xs={12} sm={12} md={6}><Calendar control={control} name="gacha" /></Grid>
+                                                <Grid item xs={12} sm={12} md={6}><Calendar Controller={Controller} control={control} name="start_date" placeholder={moment(state?.data?.start_date).format('DD-MM-YYYY')} /></Grid>
+                                                <Grid item xs={12} sm={12} md={6}><Calendar Controller={Controller} control={control} name="end_date" placeholder={moment(state?.data?.end_date).format('DD-MM-YYYY')}/></Grid>
                                             </Grid>
                                         </Grid>
                                     </Grid><br />
@@ -109,19 +128,19 @@ const EditApp = () => {
                                         </Grid>
                                         <Grid item xs={12} sm={12} md={7}>
                                             <Grid container spacing={1} alignItems="center" className="wrap-grid">
-                                                <Grid item xs={12} sm={12} md={8}><InputController control={control} name="dan" placeholder="Narx chegarasini yozing" /></Grid>
-                                                <Grid item xs={12} sm={12} md={4}><SelectController control={control} name="cost" options={currency} pl={'Valyuta'} /></Grid>
+                                                <Grid item xs={12} sm={12} md={8}><InputController control={control} name="cost" placeholder="Narx chegarasini yozing" /></Grid>
+                                                <Grid item xs={12} sm={12} md={4}><SelectController control={control} name="currency" options={currency} pl={'Valyuta'} /></Grid>
                                             </Grid>
                                         </Grid>
                                     </Grid><br />
                                     <Grid container spacing={1} alignItems="center" className="wrap-grid">
                                         <Grid item xs={12} sm={12} md={5}>
-                                            <div className="title_inner"> {t("arizaqoldirish.narhi")} </div>
+                                        <div className="title_inner"> {t("arizaqoldirish.jinsi")} </div>
                                         </Grid>
                                         <Grid item xs={12} sm={12} md={7}>
                                             <Grid container spacing={1} alignItems="center" className="wrap-grid">
-                                                <Grid item xs={12} sm={12} md={3}><CheckBoxController name="male" control={control} label="Erkak" /></Grid>
-                                                <Grid item xs={12} sm={12} md={3}><CheckBoxController name="female" control={control} label="Ayol" /></Grid>
+                                                <Grid item xs={12} sm={12} md={3}><CheckBoxController name="is_male" control={control} label="Erkak" /></Grid>
+                                                <Grid item xs={12} sm={12} md={3}><CheckBoxController name="is_female" control={control} label="Ayol" /></Grid>
                                             </Grid>
                                         </Grid>
                                     </Grid><br />

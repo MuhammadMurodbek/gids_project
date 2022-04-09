@@ -27,3 +27,25 @@ export const currency = [
   {label:'RUBL', value:'ruble'},
   {label:'USD',value:'dollar'}
 ]
+export const CurrencyProp = {
+  sum:'SUM',
+  ruble:'RUBL',
+  dollar:'USD'
+}
+export const defaultApiValueReset = {
+  who_need:'',
+  why_need:'',
+  currency:'',
+  people_count:'',
+  is_writer:false,
+  is_consecutive:false,
+  is_synchronous:false,
+  start_date:'',
+  end_date:'',
+  country:'',
+  city:{},
+  is_male:false,
+  is_female:false,
+  languages:[]
+
+}

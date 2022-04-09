@@ -8,5 +8,15 @@ export const Container = styled.div`
         border:none;
         padding:8px;
         background:transparent;
+
+        &::-webkit-input-placeholder{
+            color:red !important;
+        }
+    }
+    .input::placeholder{
+        color:red !important;
+    }
+    input::placeholder{
+        color: #2c2c2c;
     }
 `

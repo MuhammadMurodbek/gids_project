@@ -1,11 +1,10 @@
 import React,{useEffect} from 'react'
 import { Container } from "./style"
-import { Controller } from "react-hook-form";
+// import { Controller } from "react-hook-form";
 import { DatePicker } from 'antd';
 
-const RadioGroupComponent = ({ control, name, label, placeholder }) => {
+const RadioGroupComponent = ({ Controller, control, name, label, placeholder }) => {
     const dateFormat = 'DD-MM-YYYY';
-
     const inputSelect = document.querySelectorAll('.ant-picker-input input')[0]
     const inputSelect2 = document.querySelectorAll('.ant-picker-input input')[1]
     const inputSelect3 = document.querySelectorAll('.ant-picker-input input')[3]
@@ -49,7 +48,7 @@ const RadioGroupComponent = ({ control, name, label, placeholder }) => {
             e.target.value = v + '-';
         }
     })
-
+    // console.log(placeholder)
     return (
         <Container>
             {label && <label>{label}</label>}
@@ -59,9 +58,10 @@ const RadioGroupComponent = ({ control, name, label, placeholder }) => {
                 name={name}
                 render={({ field }) => (
                     <DatePicker
+                        name={name}
                         format={dateFormat}
                         className="input"
-                        placeholderText={placeholder || 'Select date'}
+                        placeholder={placeholder}
                         onChange={(e) => field.onChange(e)}
                         selected={field.value}
                     />
