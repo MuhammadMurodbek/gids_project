@@ -4,6 +4,9 @@ export const WrapperRoundImage = styled.div`
     .modaldiv{
         position: relative;
     }
+    .ant-image-mask{
+        border-radius:50% !important;
+    }
     .pointx{
         position: absolute;
         top: -30px;

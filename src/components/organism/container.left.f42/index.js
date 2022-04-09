@@ -16,6 +16,7 @@ import ProgressInfo from "../../molecules/element_f42/rate.part.f42"
 import CommentPart from "../../molecules/element_f42/comment.f42"
 import { useTranslation } from 'react-i18next'
 import Spinner from "../../atom/loading.spinner.line"
+import { Image } from 'antd';
 import { mediaContainer, mediaContainerSecond, mediaContainerSecondText, mediaContainerPadding } from "./const"
 // import CloseIcon from '@material-ui/icons/Close';
 // import Textarea from '../../atom/textAreaCom';
@@ -42,7 +43,11 @@ const Index = ({ state, typeRole, comments, commentCount, commentReview }) => {
                         <Container position="relative" {...mediaContainerSecond} margin="25px 0 0 20px">
                             <FlexContainer {...mediaContainer} width="100%" alignItems="flex-start" justifyContent="space-between" >
                                 <div className="info_btn"><InfoBtn view={state?.view || 0}/></div>
-                                <ImageContainer src={state?.image || RoundImage} width="160px" height="auto" round="50%" />
+                                <Image
+                                    width={160}
+                                    src={state?.image || RoundImage}
+                                    style={{borderRadius:'50%'}}
+                                />
                                 <Container {...mediaContainerSecondText} margin="-10px 0 0 15px">
                                     <TextTitle align="left" bottom="5px" font="20px">{state?.first_name || 'Mavjud emas'}{" "}{state?.last_name || 'Mavjud emas'}</TextTitle>
                                     <div className="gid-info-personal">{state?.age ? state?.age + " yosh" : 'Yosh kiritilmagan'} | <span style={{ textTransform: "none" }}>{typeRole?.role === 'simple_user' ? "Foydalanuvchi " : typeRole?.role === "writer" ? "Yozma tarjimon" : typeRole?.role === "translator" ? "Og'izaki tarjimon" : "Gid"} </span> </div>

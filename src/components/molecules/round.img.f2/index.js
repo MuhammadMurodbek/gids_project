@@ -7,7 +7,7 @@ import Modal from 'react-awesome-modal';
 import ReactPlayer from 'react-player'
 import CloseIcon from '@material-ui/icons/Close';
 import Button from "../../../components/atom/button";
-
+import { Image } from "antd"
 const Index = (props) => {
 
     const [state, setState] = useState(false);
@@ -40,11 +40,16 @@ const Index = (props) => {
     const { src, width, height, radius } = props
     return (
         <WrapperRoundImage {...mediaBtn} {...mediaWrapper} width={width} height={height} radius={radius}>
-            <ImageContainer {...media} src={src} width="100%" height="100%" round="50%" />
+            {/* <ImageContainer {...media} src={src} width="100%" height="100%" round="50%" /> */}
+            <Image
+                width={100}
+                src={src}
+                style={{ borderRadius: '50%' }}
+            />
             <button onClick={openModal}>
                 <ImageContainer {...imageButton} src={playBtn} width="30px" height="30px" />
             </button>
-             
+
             <section>
                 <Modal
                     visible={state}
@@ -57,13 +62,13 @@ const Index = (props) => {
                             <CloseIcon className="pointx" onClick={closeModal} />
                         </div>
                         {
-                            props?.data?.video ? 
-                            <ReactPlayer
-                                height="500px"
-                                width="1000px"
-                                controls
-                                playing={state}
-                                url={props?.data?.video} />:"Video yuklanmagan"
+                            props?.data?.video ?
+                                <ReactPlayer
+                                    height="500px"
+                                    width="1000px"
+                                    controls
+                                    playing={state}
+                                    url={props?.data?.video} /> : "Video yuklanmagan"
                         }
                     </div>
                 </Modal>

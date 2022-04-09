@@ -9,6 +9,9 @@ export const Wrapper = styled.div`
         right:0;
         top:-30px;
     }
+    .ant-image-mask{
+        border-radius:50%;
+    }
     @media (max-width:600px){
           
         .sc-fKFxtB.fMHAxL{

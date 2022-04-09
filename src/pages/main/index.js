@@ -254,7 +254,7 @@ const Index = () => {
                                 getRole?.role === "writer" ? null
                                     : getRole?.role === "gid" ? null
                                         :
-                                        <Button onClick={onClickbutton} {...mediaBtn}>{t("main.arizaQoldrirish")} </Button>
+                                        <Button type="outlined" onClick={onClickbutton} {...mediaBtn}>{t("main.arizaQoldrirish")} </Button>
                         }
                     </FlexContainer>
                 </div>
