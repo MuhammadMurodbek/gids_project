@@ -9,6 +9,7 @@ import { TextArea, RadioGroupController, SelectController, Calendar, InputContro
 import { Button } from '../../components/atom/button/index.style'
 import {currency} from "./constant"
 import {WrapEdit} from "./style"
+import { mediaBtn } from "../../custom/global.media.variables"
 
 const EditApp = () => {
     const { t } = useTranslation()
@@ -110,7 +111,15 @@ const EditApp = () => {
                                     <InputController control={control} name="people_count" placeholder="Necha kishi bolasizlar?"/>
                                 </Grid>
                             </Grid><br/>
-                            <Button type="submit">Submit</Button>
+                            <Grid container spacing={1} alignItems="center" className="wrap-grid">
+                                <Grid item xs={12} md={5}></Grid>
+                                <Grid item xs={12} md={7}>
+                                    <CheckBoxController name="female" control={control} label="Arizani yoborib, siz foydalanuvchi shartnomasiga rozilik bildirasiz*"/>
+                                </Grid>
+                            </Grid>
+                            <Container width="100%" margin="20px 0 0" textAlign="center" >
+                                <Button type="submit"  {...mediaBtn}>&nbsp; {t("arizaqoldirish.Ayuborish")}</Button>
+                            </Container>
                         </form>
                     </Container>
                 </Container>

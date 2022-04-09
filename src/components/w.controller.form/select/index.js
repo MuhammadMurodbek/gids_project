@@ -4,6 +4,10 @@ import { Controller } from "react-hook-form";
 import {Container} from "./style"
 
 const Multiselect = ({ label, name, options = [], control, pl, isMulti }) => {
+  const customStyles = {
+    menuPortal: provided => ({ ...provided, zIndex: 9999 }),
+    menu: provided => ({ ...provided, zIndex: 9999 })
+  }
   return (
     <Container>
       {label && <label>{label}</label> }
@@ -20,6 +24,8 @@ const Multiselect = ({ label, name, options = [], control, pl, isMulti }) => {
                 onBlur={onBlur}
                 value={value}
                 isMulti={isMulti}
+                menuPortalTarget={document.body}
+                styles={customStyles}
               />
             );
           }}
