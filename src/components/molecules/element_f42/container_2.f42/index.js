@@ -37,7 +37,7 @@ const Index = ({data, role}) => {
                         <TextWrapper key={index} style={{margin:'10px 0'}}>
                             <Text title= {t("GidPk.institut")+" "} text={prev?.name || "Ma'lumot kiritilmagan"} /><br/>
                             <Text title={t("GidPk.yil")+" "} text={prev?.year || "Ma'lumot kiritilmagan"}/><br/>
-                            <Text title={t("GidPk.mutahasis")+" "} text={prev?.speciality || "Ma'lumot kiritilmagan"}/><br/>
+                            <Text title={t("GidPk.mutahasis")+" "} text={prev?.speciality || "Ma'lumot kiritilmagan"}/>
                         </TextWrapper>
                     ))}
                     <TextWrapper>

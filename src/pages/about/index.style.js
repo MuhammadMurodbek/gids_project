@@ -13,6 +13,9 @@ export const Wrapper = styled.div`
 export const ComponentTwo = styled.div`
     width: 100%;
     /* padding:10px 20px; */
+    .text_aa{
+        text-aligin:justify !important;
+    }
     p{
         margin-bottom: 14px;
     }

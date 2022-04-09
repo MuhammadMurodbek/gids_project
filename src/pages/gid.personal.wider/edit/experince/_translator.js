@@ -87,7 +87,7 @@ const Translator = ( { getData } ) => {
           dataList.map( ( item, index ) => (
             <Grid container spacing={ 1 } key={ index }>
               <Grid item xs={ 12 } sm={ 6 } md={ 5 }>
-                <TextLabeledLoop value={ item?.name } label="Bitirgan instituti" />
+                <TextLabeledLoop value={ item?.name } label="Malumoti (institut / universitet nomi)" />
               </Grid>
               <Grid item xs={ 12 } sm={ 6 } md={ 3 }>
                 <TextLabeledLoop value={ item?.year } label="Bitirgan yili" />

@@ -302,7 +302,7 @@ export const ContainerLast = styled.div`
 
     }
     .btnlaset{
-        margin: 4px 0 0 10px;
+        margin: 4px 20px 0 0px;
     }
     @media (max-width:440px){
         padding:10px 4px;
