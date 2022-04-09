@@ -4,12 +4,12 @@ import SpinnerModal from "./spinner.modal"
 import ErrorComponent from "./error.component"
 import toast from 'react-hot-toast';
 import SuccessModal from "./success.modal"
-const Index = ({data, loading, success, error, stitle, etitle}) => {
+const Index = ({data, loading, success, error, stitle, etitle, onSuccess}) => {
     return (
         <TestComponentStyle>
             {loading &&  <SpinnerModal/>}
             {error &&  <ErrorComponent data={data} title={etitle}/>}
-            {success && <SuccessModal data={data} title={stitle}/>}
+            {success && <SuccessModal data={data} title={stitle} onSuccess={onSuccess}/>}
         </TestComponentStyle>
     )
 }

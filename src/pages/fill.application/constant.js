@@ -46,6 +46,7 @@ export const defaultApiValueReset = {
   city:{},
   is_male:false,
   is_female:false,
-  languages:[]
+  languages:[],
+  consent:false
 
 }

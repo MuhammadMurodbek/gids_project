@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from "react-router-dom"
+import { useParams, useHistory } from "react-router-dom"
 import { Container } from '../../styles/container/index.style'
 import { shadow, Title } from "./style"
 import { mediaContainer, mediaContainerWidth } from "./_media"
@@ -11,13 +11,15 @@ import { Button } from '../../components/atom/button/index.style'
 import { currency, CurrencyProp } from "./constant"
 import { WrapEdit } from "./style"
 import { mediaBtn } from "../../custom/global.media.variables"
-import { getApiResponse } from "../../hooks/response_get"
+import { getApiResponse, putApiResponse } from "../../hooks/response_get"
 import TestComponent from "../../components/templates/test.component"
 import {defaultApiValueReset} from "./constant"
 import moment from "moment"
+import TestModal from "../../custom/test.components"
 
 const EditApp = () => {
     const { id } = useParams()
+    const history = useHistory()
     const { t } = useTranslation()
     const { handleSubmit, control, watch, setValue, reset } = useForm()
     const lan = localStorage.getItem('i18nextLng')
@@ -26,6 +28,7 @@ const EditApp = () => {
     const countryList = country?.map((item) => { return { label: item?.name[lan], value: item?.id } })
     const langList = langs?.map((item) => { return { label: item?.name[lan], value: item.id } })
     const [state, setState] = useState({ data: null, loading: false, success: false, error: false })
+    const [postData, setPostData] = useState({ data: null, loading: false, success: false, error: false })
     const [callback, setCallback] = useState(false)
     let countryId = watch('country')                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
     let cityList = country?.filter((item) => item?.id === countryId?.value)[0]?.cities?.map((prev) => { return { label: prev[lan], value: prev?.id } })
@@ -38,21 +41,35 @@ const EditApp = () => {
             console.log(getData)
             reset({
                 ...getData,
+                is_female:getData?.is_female,
                 country:{label:getData?.country_name[lan], value:getData?.country},
                 city:{label:getData.city_name[lan], value:getData.city},
                 start_date:moment(getData?.start_date, 'DD-MM-YYYY'),  
                 end_date:new Date(getData?.end_date),
-                currency:{label:CurrencyProp[getData?.currency], value:currency},
+                currency:{label:CurrencyProp[getData?.currency], value:getData?.currency},
                 languages:getData?.languages?.map((item)=>{return{label:item?.language[lan], value:item.id}}),
             })
         }
     }, [state,id])
     const onSubmit = (data) => {
-        console.log(data)
+        let postData = {
+            ...data,
+            languages:data?.languages?.map(item=>item?.value),
+            currency:data?.currency?.value,
+            country:data?.country?.value,
+            city:data?.city?.value,
+            start_date:moment(data?.start_date).format('YYYY-MM-DD'),
+            end_date:moment(data?.end_date).format('YYYY-MM-DD'),
+            city_name:data?.city,
+            country_name:data?.country,
+        }
+        putApiResponse(`/api/users/self/application/${id}/`, postData, setPostData)
     }
+    const onSuccess = () => history.goBack()
     // console.log(state?.data)
     return (
         <WrapEdit>
+            <TestModal {...postData} etitle={"Status: "+postData?.data?.status+". "+"StatusText: "+postData?.data?.statusText} onSuccess={onSuccess}/>
             <Container width="90%" padding="0" margin="40px auto" boxShadow={shadow}>
              <Title> Arizani taxrirlash </Title>
                 <Container {...mediaContainer} padding="30px">
@@ -128,7 +145,7 @@ const EditApp = () => {
                                         </Grid>
                                         <Grid item xs={12} sm={12} md={7}>
                                             <Grid container spacing={1} alignItems="center" className="wrap-grid">
-                                                <Grid item xs={12} sm={12} md={8}><InputController control={control} name="cost" placeholder="Narx chegarasini yozing" /></Grid>
+                                                <Grid item xs={12} sm={12} md={8}><InputController control={control} name="cost" placeholder="Narx chegarasini yozing" step={0.01} /></Grid>
                                                 <Grid item xs={12} sm={12} md={4}><SelectController control={control} name="currency" options={currency} pl={'Valyuta'} /></Grid>
                                             </Grid>
                                         </Grid>
@@ -155,7 +172,7 @@ const EditApp = () => {
                                     <Grid container spacing={1} alignItems="center" className="wrap-grid">
                                         <Grid item xs={12} md={5}></Grid>
                                         <Grid item xs={12} md={7}>
-                                            <CheckBoxController name="female" control={control} label="Arizani yoborib, siz foydalanuvchi shartnomasiga rozilik bildirasiz*" />
+                                            <CheckBoxController name="consent" control={control} label="Arizani yoborib, siz foydalanuvchi shartnomasiga rozilik bildirasiz*" />
                                         </Grid>
                                     </Grid>
                                     <Container width="100%" margin="30px 0 0" textAlign="center" >

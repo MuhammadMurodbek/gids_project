@@ -3,13 +3,8 @@ import {mainGreen} from "../../../styles/global/colors"
 
 export const Container = styled.div`
    width:100%;
-   // .ant-checkbox {
-   //    background-color:#fff;
-   //    // border-color:green;
-   // }
-
-   // .ant-checkbox-checked{
-   //    background-color:${mainGreen};
-   //    border-color: ${mainGreen};
-   // }
+   .ant-checkbox-checked .ant-checkbox-inner {
+      background-color: #326A32;
+      border-color: #326A32;
+  } 
 `

@@ -56,6 +56,18 @@ export const postApiResponse = async ( url, data, setState, noToken ) => {
             setState( { data:err.response, success:false, error:true, loading:false } )
         } )
 }
+export const putApiResponse = async ( url, data, setState, noToken ) => {
+    setState({data:null, error:false, success:false, loading:true})
+    let headPart = noToken ? {headers: headers} : head_token
+    await axios.put( `${ baseUrl }${ url }`, data, headPart )
+        .then( response => setState( {data:response?.data, success:true, error:false, loading:false } ) )
+        .catch( err => {
+            if(err.response?.status === 403){
+                postRefreshToken(token, postApiResponse( url, data, setState) )
+            }
+            setState( { data:err.response, success:false, error:true, loading:false } )
+        } )
+}
 export const getResponseRegion = async ( url ) => {
     await axios.get( `${ url }`, headers )
         .then( response => localStorage.setItem( 'countries', JSON.stringify( response?.data?.data ) ) )
