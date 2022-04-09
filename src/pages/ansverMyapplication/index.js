@@ -121,7 +121,7 @@ export default function Index() {
                                                     <span>
                                                         {prev?.replier_data?.age}
                                                     </span>|
-                                                    <span style={{ textTransform: 'capitalize' }}>
+                                                    <span  style={{ textTransform: 'none' }}>
                                                         {
                                                             prev?.replier_role === "writer" ?
                                                                 "Yozma tarjimon" :

@@ -31,12 +31,9 @@ export default function Index() {
                     >
                         <Grid item xs={12} md={6} sm={12}>
                             <div className="container-2-1">
-                                <div className="title-second-main-container-text">
-                                    {t("about.title")}
-                                </div>
                                 <div className="text_main">
-                                    <p> Avvalo, siz gits.uz platformasida gid yoki tarjimon sifatida ro’yxatdan o’tib o’zingizga mijoz topishingiz mimkin.
-                                        <br/><br/>w
+                                    <p className='text_aa'> Avvalo, siz gits.uz platformasida gid yoki tarjimon sifatida ro’yxatdan o’tib o’zingizga mijoz topishingiz mimkin.
+                                        <br/><br/>
                                         Shuningdek, gid yoki tarjimonlarni izlayotgan xorijiy yoki mahallay sayyohlar hamda mijozlar ularni onlayn qidirish va bevosita buyurtma berish imkoniga ham ega.
                                     </p>
                                 </div>

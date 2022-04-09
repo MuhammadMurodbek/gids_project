@@ -40,14 +40,14 @@ const Index = ({data}) => {
                     <Grid item xs={12} sm={6}>
                         <Container margin="30px 0 0 0">
                             <TextTitle align="left" font="20px"> {(data?.first_name +" " + data?.last_name) || "Ma'lumot kiritilmagan"} </TextTitle>
-                            <div className="gid-info-personal">{data?.age ? (data?.age + " " + "yosh") : "0 yosh" }  | <span style={{textTransform: "capitalize"}}>{data?.role === "translator" ? "Og'zaki tarjimon" : data?.role === "gid" ? "Gid" : data?.role === "writer" ? "Yozma tarjima" : " " }
+                            <div className="gid-info-personal">{data?.age ? (data?.age + " " + "yosh") : "0 yosh" }  | <span style={{textTransform: "none"}}>{data?.role === "translator" ? "Og'zaki tarjimon" : data?.role === "gid" ? "Gid" : data?.role === "writer" ? "Yozma tarjima" : " " }
                             </span> </div>
 
-                            <div className="gid-info-personal-text top"> 
+                            {/* <div className="gid-info-personal-text top"> 
                                 <div className="text">
                                     {t("Gid_Tanlash.xizmatlar")} :&nbsp; { data?.excursions?.length>0? data?.excursions?.map((prev, index)=>" "+prev?.city[lang]+`${index !== data?.excursions?.length-1 ? ',':''}`) : "Ma'lumot kiritilmagan"}
                                 </div>
-                            </div>
+                            </div> */}
                             
                             <div className="gid-info-personal-text"><div className="text">
                                 {t("Gid_Tanlash.tillar")} : 

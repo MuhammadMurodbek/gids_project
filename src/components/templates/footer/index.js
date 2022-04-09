@@ -57,7 +57,7 @@ const Index = () => {
                         <div className="flex-items">
                             <span>{t("footer.contacts")}</span>
                             <ul>
-                                <li><Link onClick={refreshBtn} to="/">info@git.uz</Link></li>
+                                <li><Link onClick={refreshBtn} to="/">info@gits.uz</Link></li>
                                 <li><Link onClick={refreshBtn} to="/">+998 93 596-92-20</Link> </li>
                                 <li><Link onClick={refreshBtn} to="/connect">{t("footer.sorov")}</Link> </li>
                             </ul>

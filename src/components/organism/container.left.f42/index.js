@@ -45,7 +45,7 @@ const Index = ({ state, typeRole, comments, commentCount, commentReview }) => {
                                 <ImageContainer src={state?.image || RoundImage} width="160px" height="auto" round="50%" />
                                 <Container {...mediaContainerSecondText} margin="-10px 0 0 15px">
                                     <TextTitle align="left" bottom="5px" font="20px">{state?.first_name || 'Mavjud emas'}{" "}{state?.last_name || 'Mavjud emas'}</TextTitle>
-                                    <div className="gid-info-personal">{state?.age ? state?.age + " yosh" : 'Yosh kiritilmagan'} | <span style={{ textTransform: "capitalize" }}>{typeRole?.role === 'simple_user' ? "Foydalanuvchi " : typeRole?.role === "writer" ? "Yozma tarjimon" : typeRole?.role === "translator" ? "Og'izaki tarjimon" : "Gid"} </span> </div>
+                                    <div className="gid-info-personal">{state?.age ? state?.age + " yosh" : 'Yosh kiritilmagan'} | <span style={{ textTransform: "none" }}>{typeRole?.role === 'simple_user' ? "Foydalanuvchi " : typeRole?.role === "writer" ? "Yozma tarjimon" : typeRole?.role === "translator" ? "Og'izaki tarjimon" : "Gid"} </span> </div>
                                     {
                                         typeRole?.role === 'gid' ?
                                             state?.languages?.map((prev, index) => (
@@ -77,7 +77,7 @@ const Index = ({ state, typeRole, comments, commentCount, commentReview }) => {
                                 </div>
                             </ContainerBottom>
                     }
-                    {
+                    { 
                         state?.trainings?.length > 0 ?
                             state?.trainings?.map((prev, index) => (
                                 <ContainerBottom key={index}>

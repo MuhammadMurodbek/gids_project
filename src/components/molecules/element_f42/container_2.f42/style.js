@@ -7,6 +7,7 @@ export const Wrapper = styled.div`
 `
 export const TextWrapper = styled.div`
     width: 100%;
+    text-aligin:justify;
     .text_box{
         display: inline-block;
 

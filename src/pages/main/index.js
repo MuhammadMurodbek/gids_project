@@ -85,6 +85,10 @@ const Index = () => {
         history.push("/application-form")
         window.scrollTo(0, 0);
     }
+
+    const toWIndows1 = ()=>{
+        window.scrollTo(0,0)
+    }
     // console.log("ssss", getRole?.role)
     return (
         <>
@@ -124,11 +128,11 @@ const Index = () => {
                                                     :
                                                     <Button className="btn_medida_last newst" onClick={onClickbutton} {...mediaBtn}>{t("main.arizaQoldrirish")} </Button>
                                     }
-
-                                    {/* </Link> */}
                                     <Link to="/gids">
                                         <Button className="btn_medida_last" {...mediaBtn} type="outlined"> {t("main.Gid_tanlash")} </Button>
                                     </Link>
+
+                                    {/* </Link> */}
                                 </FlexContainer>
                             </div>
                         </Grid>
@@ -172,7 +176,7 @@ const Index = () => {
                                         <ImgContainer width="100%" height="270px" src={img1} />
                                         <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
                                             <div className="title-container">Samarqand</div>
-                                            <Link to="/samarqand?page=1" className="link11">
+                                            <Link to="/samarqand?page=1" onClick={toWIndows1} className="link11">
                                                 {t("main.korish")}
                                                 <img src={img21} alt="asdfasdf" />
                                             </Link>
@@ -186,7 +190,8 @@ const Index = () => {
                                         <ImgContainer width="100%" height="270px" src={img4} />
                                         <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
                                             <div className="title-container">Xiva</div>
-                                            <Link to="/xiva?page=1" className="link11">
+                                            <Link to="/xiva?page=1" className="link11" 
+                                            onClick={toWIndows1} >
                                                 {t("main.korish")}  <img src={img21} alt="asdfasdf" />
                                             </Link>
                                         </FlexContainer>
@@ -200,7 +205,7 @@ const Index = () => {
                                         <ImgContainer width="100%" height="270px" src={img3} />
                                         <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
                                             <div className="title-container">Buhoro</div>
-                                            <Link to="/cities?page=1" className="link11">
+                                            <Link onClick={toWIndows1}  to="/cities?page=1" className="link11">
                                                 {t("main.korish")}  <img src={img21} alt="asdfasdf" />
                                             </Link>
                                         </FlexContainer>
@@ -213,7 +218,7 @@ const Index = () => {
                                         <ImgContainer width="100%" height="270px" src={img2} />
                                         <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
                                             <div className="title-container">Toshkent</div>
-                                            <Link to="/toshkent?page=1" className="link11">
+                                            <Link onClick={toWIndows1}  to="/toshkent?page=1" className="link11">
                                                 {t("main.korish")}  <img src={img21} alt="asdfasdf" />
                                             </Link>
                                         </FlexContainer>
@@ -240,6 +245,9 @@ const Index = () => {
                     </TextTitle>
                     <FlexContainer {...mediaFlexButtons} width="380px" margin="0 auto" alignItems="center" justifyContent="space-between">
 
+                        <Link to="/gids">
+                            <Button type="outlined" className="btnlaset" {...mediaBtn}>{t("main.tanlash")} </Button>
+                        </Link>
                         {
                             getRole?.role === "translator" ? null
                                 :
@@ -248,10 +256,6 @@ const Index = () => {
                                         :
                                         <Button onClick={onClickbutton} {...mediaBtn}>{t("main.arizaQoldrirish")} </Button>
                         }
-
-                        <Link to="/gids">
-                            <Button type="outlined" className="btnlaset" {...mediaBtn}>{t("main.tanlash")} </Button>
-                        </Link>
                     </FlexContainer>
                 </div>
             </ContainerLast>
