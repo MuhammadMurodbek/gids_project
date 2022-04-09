@@ -14,9 +14,9 @@ const Index = ({ data, role }) => {
     // const getRole = JSON.parse(localStorage.getItem("user_token"))
     const obj = {
         no: 'Mening mavzuyim emas',
-        great: "A'lo darajada",
-        good: "Yaxshi darajada",
-        low: 'Quyi darajada',
+        great: "A'lo",
+        good: "Yaxshi",
+        low: 'Quyi',
     }
     
     // console.log(data)
@@ -29,21 +29,21 @@ const Index = ({ data, role }) => {
 
                     (
                         <>
-                            <Text title="Bir kunlik ish xajmi:" text={<span>&nbsp;{data?.daily_workload}&nbsp;<span style={{textTransform:'lowercase'}}>belgi</span></span> } /> <br />
+                            <Text title="Bir kunlik ish xajmi:" text={<TextSpan style={{fontWeight:'400'}}>&nbsp;{data?.daily_workload}&nbsp;<span style={{textTransform:'lowercase'}}>belgi</span></TextSpan> } /> <br />
                             <Text title="Og’zaki tarjima:" text={<span>&nbsp;{data?.can_oral_translate ? 'Ha (Sinxron)':"Yo'q"}&nbsp;</span> } /> <br />
                             <Text title="Shoshilinch buyurtmalar:" text={<span>&nbsp;{data?.express_order ? 'Ha':"Yo'q"}&nbsp;</span> } /> <br />
                             <Text title="Dam olish kunlari buyurtma qabul qilish:" text={<span>&nbsp;{data?.weekend_order ? 'Ha':"Yo'q"}&nbsp;</span> } /> <br />
                             <Text title="Matnlarni tahrirlash:" text={<span>&nbsp;{data?.edit_text ? 'Ha':"Yo'q"}&nbsp;</span> } /> <br />
                             <Text title="Internetga doimiy kirish imkoni:" text={<span>&nbsp;{data?.always_online  ? 'Ha':"Yo'q"}&nbsp;</span> } /> <br />
                             <Text title="Katta hajmdagi fayllarni qabul qilish:" text={<span>&nbsp;{data?.always_online ? 'Ha':"Yo'q"}&nbsp;</span> } /> <br />
-                            <Text title="Tarjima qilish uchun CAT dasturlari:" text={data?.cat_programmes?.length>0 ? data?.cat_programmes?.map(a => " " + a + ","):" Ma'lumot kiritilmagan"} />
+                            <Text title="Tarjima qilish uchun CAT dasturlari:" text={data?.cat_programmes?.length>0 ? data?.cat_programmes?.map(a => <span style={{textTransform:'capitalize'}}>{" " + a + ","}</span>):" Ma'lumot kiritilmagan"} />
                             
                             { data?.themes?.length>0 && <div style={{marginTop:10}}> <Text title="Mavzular:" /></div>}
                             
                             <div className='mavzulardd'>
                                 {
                                     data?.themes?.map((prev, index) => (
-                                        <Text key={index} display="block" text={<TextSpan>{prev?.name} - <span style={{fontWeight:'400'}}>{obj[prev?.level]}</span></TextSpan>} />
+                                        <Text key={index} display="block" text={<><TextSpan>{prev?.name}</TextSpan> - <TextSpan style={{fontWeight:'400'}}>{obj[prev?.level]}</TextSpan></>} />
                                     ))
                                 }
                             </div>
@@ -58,7 +58,7 @@ const Index = ({ data, role }) => {
                         <Text title="Mavzular:" />
                         {
                             data?.themes?.map((prev, index) => (
-                                <Text key={index} display="block" text={<TextSpan>{prev?.name} - <TextSpan style={{fontWeight:'400'}}>{obj[prev?.level]}</TextSpan></TextSpan>} />
+                                <Text key={index} display="block" text={<><TextSpan>{prev?.name}</TextSpan> - <TextSpan style={{fontWeight:'400'}}>{obj[prev?.level]}</TextSpan></>} />
                             ))
                         }
                     </>)
