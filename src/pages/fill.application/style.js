@@ -74,5 +74,8 @@ export const WrapEdit = styled.div`
     .check_pick{
         background:red !important;
     }
+    .tra_ext{
+        display:flex;
+    }
 `
 export const shadow = '0px 0px 40px 0px rgba(0, 0, 0, 0.08)'

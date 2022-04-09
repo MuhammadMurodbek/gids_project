@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useParams } from "react-router-dom"
 import { Container } from '../../styles/container/index.style'
 import { shadow } from "./style"
 import { mediaContainer, mediaContainerWidth } from "./_media"
@@ -7,120 +8,148 @@ import { Grid } from '@material-ui/core'
 import { useTranslation } from 'react-i18next';
 import { TextArea, RadioGroupController, SelectController, Calendar, InputController, CheckBoxController } from "../../components/w.controller.form"
 import { Button } from '../../components/atom/button/index.style'
-import {currency} from "./constant"
-import {WrapEdit} from "./style"
+import { currency } from "./constant"
+import { WrapEdit } from "./style"
 import { mediaBtn } from "../../custom/global.media.variables"
+import { getApiResponse } from "../../hooks/response_get"
+import TestComponent from "../../components/templates/test.component"
 
 const EditApp = () => {
+    const { id } = useParams()
     const { t } = useTranslation()
     const { handleSubmit, control, watch, setValue } = useForm()
     const lan = localStorage.getItem('i18nextLng')
     const country = JSON.parse(localStorage.getItem('countryGlobal'))
     const langs = JSON.parse(localStorage.getItem('lanGlobal'))
     const countryList = country?.map((item) => { return { label: item?.name[lan], value: item?.id } })
-    const langList = langs?.map((item)=>{return{label:item?.name[lan], value:item.id}})
+    const langList = langs?.map((item) => { return { label: item?.name[lan], value: item.id } })
+    const [state, setState] = useState({ data: null, loading: false, success: false, error: false })
+    const [callback, setCallback] = useState(false)
     let countryId = watch('country')
     let cityList = country?.filter((item) => item?.id === countryId?.value)[0]?.cities?.map((prev) => { return { label: prev[lan], value: prev?.id } })
-    useEffect(() => {
-        if (countryId) { setValue('city', '') }
-    }, [countryId])
+    useEffect(() => { if (countryId) { setValue('city', '') } }, [countryId])
+    useEffect(() => { getApiResponse(`/api/users/self/application/${id}/`, setState) }, [callback])
     const onSubmit = (data) => {
         console.log(data)
     }
-
+    console.log(state)
     return (
         <WrapEdit>
             <Container width="90%" padding="0" margin="40px auto" boxShadow={shadow}>
                 <Container {...mediaContainer} padding="30px">
-                    <Container {...mediaContainerWidth} width="85%" >
-                        <form onSubmit={handleSubmit(onSubmit)}>
-                            <Grid container spacing={1} alignItems="center" className="wrap-grid">
-                                <Grid item xs={12} sm={12} md={5}>
-                                    <div className="title_inner"> {t("arizaqoldirish.kimKerak")} </div>
-                                </Grid>
-                                <Grid item xs={12} sm={12} md={7}>
-                                    <RadioGroupController Controller={Controller} control={control} name="radio" label1="Gid" label2="Tarjimon" />
-                                </Grid>
-                            </Grid><br/>
-                            <Grid container spacing={1} alignItems="center" className="wrap-grid">
-                                <Grid item xs={12} sm={12} md={5}>
-                                    <div className="title_inner"> {t("arizaqoldirish.KerakShaharlar")} </div>
-                                </Grid>
-                                <Grid item xs={12} sm={12} md={7}>
+                    <Container {...mediaContainerWidth} width={state?.success ? '85%':'100%'} >
+                        <TestComponent
+                            {...state}
+                            setCallback={()=>setCallback(!callback)}
+                            currentJSX={
+                                <form onSubmit={handleSubmit(onSubmit)}>
                                     <Grid container spacing={1} alignItems="center" className="wrap-grid">
-                                        <Grid item xs={12} sm={12} md={6}><SelectController control={control} name="country" label1="Gid" label2="Tarjimon" options={countryList} pl={'Davlat tanlang'} /></Grid>
-                                        <Grid item xs={12} sm={12} md={6}><SelectController control={control} name="city" label1="Gid" label2="Tarjimon" options={cityList} pl={'Shahar kiriting'} /></Grid>
-                                    </Grid>
-                                </Grid>
-                            
-                            </Grid><br/>
-                            <Grid container spacing={1} alignItems="center" className="wrap-grid">
-                                <Grid item xs={12} sm={12} md={5}>
-                                    <div className="title_inner">{t("arizaqoldirish.KerakSana")}</div>
-                                </Grid>
-                                <Grid item xs={12} sm={12} md={7}>
+                                        <Grid item xs={12} sm={12} md={5}>
+                                            <div className="title_inner"> {t("arizaqoldirish.kimKerak")} </div>
+                                        </Grid>
+                                        <Grid item xs={12} sm={12} md={7}>
+                                            <Grid container spacing={1} alignItems="center" className="wrap-grid">
+                                                <Grid item xs={12} sm={12} md={6}>
+                                                    <RadioGroupController Controller={Controller} control={control} name="who_need" label1="Gid" label2="Tarjimon" value1="gid" value2="translator" />
+                                                </Grid>
+                                                <Grid item xs={12} sm={12} md={6}>
+                                                    {watch('who_need') === 'translator' &&
+                                                        <div className="tra_ext">
+                                                            <CheckBoxController name="female" control={control} label="Izchil" />
+                                                            <CheckBoxController name="female" control={control} label="Sinxron" />
+                                                            <CheckBoxController name="female" control={control} label="Yozma" />
+                                                        </div>
+                                                    }
+                                                </Grid>
+                                            </Grid>
+                                        </Grid>
+                                    </Grid><br />
                                     <Grid container spacing={1} alignItems="center" className="wrap-grid">
-                                        <Grid item xs={12} sm={12} md={6}><Calendar control={control} name="dan" /></Grid>
-                                        <Grid item xs={12} sm={12} md={6}><Calendar control={control} name="gacha" /></Grid>
-                                    </Grid>
-                                </Grid>
-                            </Grid><br/>
-                            <Grid container spacing={1} alignItems="center" className="wrap-grid">
-                                <Grid item xs={12} sm={12} md={5}>
-                                    <div className="title_inner"> {t("arizaqoldirish.Bilishikerak")} </div>
-                                </Grid>
-                                <Grid item xs={12} sm={12} md={7}>
-                                    <SelectController isMulti control={control} name="languages" label1="Gid" label2="Tarjimon" options={langList} pl={'Tillarni tanlang'} />
-                                </Grid>
-                            </Grid><br/>
-                            <Grid container spacing={1} alignItems="center" className="wrap-grid">
-                                <Grid item xs={12} sm={12} md={5}>
-                                    <div className="title_inner"> {t("arizaqoldirish.Bilishikerak")} </div>
-                                </Grid>
-                                <Grid item xs={12} sm={12} md={7}>
-                                    <TextArea control={control} name="why_need" label1="Gid" label2="Tarjimon" pl={'Tillarni tanlang'} />
-                                </Grid>
-                            </Grid><br/>
-                            <Grid container spacing={1} alignItems="center" className="wrap-grid">
-                                <Grid item xs={12} sm={12} md={5}>
-                                <div className="title_inner"> {t("arizaqoldirish.narhi")} </div>
-                                </Grid>
-                                <Grid item xs={12} sm={12} md={7}>
+                                        <Grid item xs={12} sm={12} md={5}>
+                                            <div className="title_inner"> {t("arizaqoldirish.KerakShaharlar")} </div>
+                                        </Grid>
+                                        <Grid item xs={12} sm={12} md={7}>
+                                            <Grid container spacing={1} alignItems="center" className="wrap-grid">
+                                                <Grid item xs={12} sm={12} md={6}><SelectController control={control} name="country" label1="Gid" label2="Tarjimon" options={countryList} pl={'Davlat tanlang'} /></Grid>
+                                                <Grid item xs={12} sm={12} md={6}><SelectController control={control} name="city" label1="Gid" label2="Tarjimon" options={cityList} pl={'Shahar kiriting'} /></Grid>
+                                            </Grid>
+                                        </Grid>
+
+                                    </Grid><br />
                                     <Grid container spacing={1} alignItems="center" className="wrap-grid">
-                                        <Grid item xs={12} sm={12} md={8}><InputController control={control} name="dan" placeholder="Narx chegarasini yozing"/></Grid>
-                                        <Grid item xs={12} sm={12} md={4}><SelectController control={control} name="cost" options={currency} pl={'Valyuta'} /></Grid>
-                                    </Grid>
-                                </Grid>
-                            </Grid><br/>
-                            <Grid container spacing={1} alignItems="center" className="wrap-grid">
-                                <Grid item xs={12} sm={12} md={5}>
-                                <div className="title_inner"> {t("arizaqoldirish.narhi")} </div>
-                                </Grid>
-                                <Grid item xs={12} sm={12} md={7}>
+                                        <Grid item xs={12} sm={12} md={5}>
+                                            <div className="title_inner">{t("arizaqoldirish.KerakSana")}</div>
+                                        </Grid>
+                                        <Grid item xs={12} sm={12} md={7}>
+                                            <Grid container spacing={1} alignItems="center" className="wrap-grid">
+                                                <Grid item xs={12} sm={12} md={6}><Calendar control={control} name="dan" /></Grid>
+                                                <Grid item xs={12} sm={12} md={6}><Calendar control={control} name="gacha" /></Grid>
+                                            </Grid>
+                                        </Grid>
+                                    </Grid><br />
                                     <Grid container spacing={1} alignItems="center" className="wrap-grid">
-                                        <Grid item xs={12} sm={12} md={6}><CheckBoxController name="male" control={control} label="Erkak"/></Grid>
-                                        <Grid item xs={12} sm={12} md={6}><CheckBoxController name="female" control={control} label="Ayol"/></Grid>
+                                        <Grid item xs={12} sm={12} md={5}>
+                                            <div className="title_inner"> {t("arizaqoldirish.Bilishikerak")} </div>
+                                        </Grid>
+                                        <Grid item xs={12} sm={12} md={7}>
+                                            <SelectController isMulti control={control} name="languages" label1="Gid" label2="Tarjimon" options={langList} pl={'Tillarni tanlang'} />
+                                        </Grid>
+                                    </Grid><br />
+                                    <Grid container spacing={1} alignItems="center" className="wrap-grid">
+                                        <Grid item xs={12} sm={12} md={5}>
+                                            <div className="title_inner">  {t("arizaqoldirish.nimagaKerak")}  </div>
+                                        </Grid>
+                                        <Grid item xs={12} sm={12} md={7}>
+                                            <TextArea control={control} name="why_need" label1="Gid" label2="Tarjimon" placeholder="Text kiriting" />
+                                        </Grid>
+                                    </Grid><br />
+                                    <Grid container spacing={1} alignItems="center" className="wrap-grid">
+                                        <Grid item xs={12} sm={12} md={5}>
+                                            <div className="title_inner"> {t("arizaqoldirish.narhi")} </div>
+                                        </Grid>
+                                        <Grid item xs={12} sm={12} md={7}>
+                                            <Grid container spacing={1} alignItems="center" className="wrap-grid">
+                                                <Grid item xs={12} sm={12} md={8}><InputController control={control} name="dan" placeholder="Narx chegarasini yozing" /></Grid>
+                                                <Grid item xs={12} sm={12} md={4}><SelectController control={control} name="cost" options={currency} pl={'Valyuta'} /></Grid>
+                                            </Grid>
+                                        </Grid>
+                                    </Grid><br />
+                                    <Grid container spacing={1} alignItems="center" className="wrap-grid">
+                                        <Grid item xs={12} sm={12} md={5}>
+                                            <div className="title_inner"> {t("arizaqoldirish.narhi")} </div>
+                                        </Grid>
+                                        <Grid item xs={12} sm={12} md={7}>
+                                            <Grid container spacing={1} alignItems="center" className="wrap-grid">
+                                                <Grid item xs={12} sm={12} md={3}><CheckBoxController name="male" control={control} label="Erkak" /></Grid>
+                                                <Grid item xs={12} sm={12} md={3}><CheckBoxController name="female" control={control} label="Ayol" /></Grid>
+                                            </Grid>
+                                        </Grid>
+                                    </Grid><br />
+                                    <Grid container spacing={1} alignItems="center" className="wrap-grid">
+                                        <Grid item xs={12} sm={12} md={5}>
+                                            <div className="title_inner"> {t("arizaqoldirish.nechaKishi")} </div>
+                                        </Grid>
+                                        <Grid item xs={12} sm={12} md={7}>
+                                            <InputController control={control} name="people_count" placeholder="Necha kishi bolasizlar?" />
+                                        </Grid>
+                                    </Grid><br />
+                                    <Grid container spacing={1} alignItems="center" className="wrap-grid">
+                                        <Grid item xs={12} md={5}></Grid>
+                                        <Grid item xs={12} md={7}>
+                                            <CheckBoxController name="female" control={control} label="Arizani yoborib, siz foydalanuvchi shartnomasiga rozilik bildirasiz*" />
+                                        </Grid>
                                     </Grid>
-                                </Grid>
-                            </Grid><br/>
-                            <Grid container spacing={1} alignItems="center" className="wrap-grid">
-                                <Grid item xs={12} sm={12} md={5}>
-                                    <div className="title_inner"> {t("arizaqoldirish.nechaKishi")} </div>
-                                </Grid>
-                                <Grid item xs={12} sm={12} md={7}>
-                                    <InputController control={control} name="people_count" placeholder="Necha kishi bolasizlar?"/>
-                                </Grid>
-                            </Grid><br/>
-                            <Grid container spacing={1} alignItems="center" className="wrap-grid">
-                                <Grid item xs={12} md={5}></Grid>
-                                <Grid item xs={12} md={7}>
-                                    <CheckBoxController name="female" control={control} label="Arizani yoborib, siz foydalanuvchi shartnomasiga rozilik bildirasiz*"/>
-                                </Grid>
-                            </Grid>
-                            <Container width="100%" margin="20px 0 0" textAlign="center" >
-                                <Button type="submit"  {...mediaBtn}>&nbsp; {t("arizaqoldirish.Ayuborish")}</Button>
-                            </Container>
-                        </form>
+                                    <Container width="100%" margin="30px 0 0" textAlign="center" >
+                                        <Grid container spacing={1} alignItems="center" className="wrap-grid">
+                                            <Grid item xs={12} md={5}></Grid>
+                                            <Grid item xs={12} md={7}><Button type="submit"  {...mediaBtn}>&nbsp; {t("arizaqoldirish.Ayuborish")}</Button></Grid>
+                                        </Grid>
+                                        
+                                    </Container>
+                                </form>
+                            }
+                        />
+
                     </Container>
                 </Container>
             </Container>
