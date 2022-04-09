@@ -15,7 +15,7 @@ const Index = ({url}) => {
             {
                 url ? 
                 <Player url={url}/>:
-                <span>Ma'lumot kiritilmagan</span>
+                <span>Video yuklanmagan.</span>
             }
         </Wrapper>
     )

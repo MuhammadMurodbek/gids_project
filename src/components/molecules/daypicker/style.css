@@ -20,8 +20,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;    
+    margin-top:4px;
 }
 .divbg{
-    width: 170px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    font-size: 13px;
+    width: 150px;
     margin: 0 auto;
 }

@@ -14,6 +14,7 @@ import facebook from '../../../assets/img/boglanish/11/facebook.png'
 import instagram from '../../../assets/img/boglanish/11/instagram.png'
 import viber from '../../../assets/img/boglanish/11/viber.png'
 import wechat from '../../../assets/img/boglanish/11/wechat.png'
+import website from '../../../assets/img/website.png'
 
 const mediaContainer={
     m_width:'600px',
@@ -38,15 +39,16 @@ const Index = ({state,commentCount, commentReview}) => {
             </Container>
             <Container padding="20px" margin="20px 0" boxShadow={shadow}>
                 <h3 className="titlss">{t("GidPk.boglanish")}</h3>
-                <p className="textb"> {state?.phone_number}</p>
+                {/* <p className="textb"> {state?.phone_number}</p> */}
                
-                <p className="textb">Web site: <a className='links' target="_blank" href={state?.website  }  > {state?.website  } </a> </p>
+                {/* <p className="textb">Web site: <a className='links' target="_blank" href={state?.website  }  > {state?.website  } </a> </p> */}
                 <div className="imgdiv11">
                     <a target="_blank" href={state?.facebook}>  <ImageContainer width="40px" src={facebook}  /></a>    
                     <a target="_blank" href={state?.telegram}>  <ImageContainer width="40px" src={telegram}  /></a>
                     <a target="_blank" href={state?.instagram}> <ImageContainer width="40px" src={instagram}  /></a>
                     <a target="_blank" href={state?.wechat}>    <ImageContainer width="40px" src={wechat}  /></a>
                     <a target="_blank" href={state?.viber}>     <ImageContainer width="40px" src={viber}  /></a>
+                    <a target="_blank" href={state?.website}>     <ImageContainer width="40px" src={website}  /></a>
                      
                 </div>
             </Container>
