@@ -18,11 +18,19 @@ const media_container = {
 
 const Index = ({data}) => {
     const lang = localStorage.getItem('i18nextLng')
+    // const getRole = JSON.parse(localStorage.getItem("user_token"))
     const { t } = useTranslation()
     const languageCheck = (item, lang) => {
-        if(lang==='en') return item?.from_language__name_en || item?.language__name_en 
-        if(lang==='ru') return item?.from_language__name_ru  || item?.language__name_ru 
-        if(lang==='uz') return item?.from_language__name_uz  || item?.language__name_uz
+        if(data?.role === 'writer'){
+            if(lang==='en') return item?.from_language__name_en +" - "+ item?.to_language__name_en 
+            if(lang==='ru') return item?.from_language__name_ru +" - "+  item?.to_language__name_ru 
+            if(lang==='uz') return item?.from_language__name_uz +" - "+  item?.to_language__name_uz
+        }else{
+            if(lang==='en') return item?.language__name_en 
+            if(lang==='ru') return item?.language__name_ru 
+            if(lang==='uz') return item?.language__name_uz
+        }
+        
     }
     // console.log(data)
     return (
@@ -32,7 +40,7 @@ const Index = ({data}) => {
                     <Grid item xs={12} sm={3}>
                         <Container {...media_container} margin="20px 0 0 0">
                             <FlexContainer width="100%" alignItems="center" justifyContent="space-between" flexDirection="column">
-                                <RoundImageContainer src={data?.image || RoundImage} width="100px" height="auto" data={data}/>
+                                <RoundImageContainer src={data?.image || RoundImage} width="100px" height="auto" role={data?.role}/>
                                 <Info data={data} commentCount={data?.rating}/>
                             </FlexContainer>
                         </Container> 

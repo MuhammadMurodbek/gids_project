@@ -19,7 +19,7 @@ const Index = ({loader, queryObj}) => {
     const [innerTr, setInnerTr] = useState({is_synchronous:false, is_consecutive:false, is_writer:false})
     const [startVal, setStartVal] = useState(false)
     let params = window.location.search
-    console.log(params)
+    // console.log(params)/
     const handleSubmit = () => { 
         // console.log(collect)
         // setStartVal(true)

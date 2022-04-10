@@ -1,5 +1,6 @@
 import { Grid } from '@material-ui/core'
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
+import { useHistory } from "react-router-dom"
 import { Container } from '../../styles/container/index.style'
 import { TextTitle } from '../../styles/textTitle/index.style'
 import { Wrapper } from './style'
@@ -9,10 +10,11 @@ import ImageContainer from "../../components/molecules/img.container"
 import Adds from "../../assets/img/choosegid/adds.jpg"
 import { mediaTextField, mediaTextFieldSec } from "../../custom/global.media.variables"
 import { useTranslation } from 'react-i18next'
-import {getResponse} from "../../hooks/response_get"
+import { getApiResponse } from "../../hooks/response_get"
 import { Pagination } from 'antd';
 import Spinner from "../../components/atom/loading.spinner.line"
-import {searchToObject} from "../../custom/function"
+import { searchToObject } from "../../custom/function"
+import TestComponent from "../../components/templates/test.component"
 
 const mediaGrid = {
     m_width: "962px",
@@ -24,38 +26,41 @@ const mediaGridUSers = {
 }
 const Index = () => {
     const { t } = useTranslation()
+    const history = useHistory()
     let query = window.location.search
     const [queryObj, setQueryObj] = useState(null)
     const [typeQuery, setTypeQuery] = useState('gid')
-    const [ pagination, setPagination ] = useState( {current: 1} )
-    const [state, setState] = useState({ success: '', error: '', loading: false})
-    useEffect(()=>{
-        let filterQuery = query.substr(1)?.split('&')?.filter(a=>!a.includes('type'))?.join('&')
-        let type = query.substr(1)?.split('&')?.filter(a=>a.includes('type'))?.join('&').slice(5)
-        if(type){
-            getResponse(`/api/${type}s/profiles/?${filterQuery}&page=${pagination?.current}`, setState, true)
-        }else{
-            getResponse(`/api/translators/all/?page=${pagination?.current}`, setState, true)
+    const [pagination, setPagination] = useState({ current: 1 })
+    const [state, setState] = useState({ success: '', error: '', loading: false })
+    const [callback, setCallback] = useState(false)
+    useEffect(() => {
+        let filterQuery = query.substr(1)?.split('&')?.filter(a => !a.includes('type'))?.join('&')
+        let type = query.substr(1)?.split('&')?.filter(a => a.includes('type'))?.join('&').slice(5)
+        if (type) {
+            getApiResponse(`/api/${type}s/profiles/?${filterQuery}&page=${pagination?.current}`, setState, true)
+        } else {
+            getApiResponse(`/api/translators/all/?page=${pagination?.current}`, setState, true)
         }
         setTypeQuery(type)
         let urlQuery = searchToObject(query)
         setQueryObj(urlQuery)
-    },[query, pagination])
+    }, [query, pagination, callback])
 
-    function onChange ( pageNumber ) {
-        setPagination( { current: pageNumber} )
-        window.scrollTo(0,0)
+    const onChange = (pageNumber) => {
+        // console.log(pageNumber)
+        setPagination({ current: pageNumber || 1 })
+        window.scrollTo(0, 0)
     }
-    
+    // console.log(state)/
     return (
         <Wrapper>
-                
+
             <Container>
                 <Grid container spacing={1} className="media_grid_flex">
                     <Grid item xs={12} sm={12} md={4}>
-                        <ExtendedSearch loader={state} queryObj={queryObj}/>
+                        <ExtendedSearch loader={state} queryObj={queryObj} />
                         {
-                            state && state?.success?.data?.results.length > 0 ?
+                            state?.success && state?.data?.results?.length > 0 ?
                                 <>
                                     <Container {...mediaGrid} margin="15px 0" >
                                         <ImageContainer src={Adds} width="350px" />
@@ -67,16 +72,21 @@ const Index = () => {
                                 : null
                         }
                     </Grid>
-                    <Grid item xs={12} sm={12} md={8}>
-                        {
-                            state?.success === '' ?  <Spinner marginTop="60px" width={ 50 } height={ 50 } />:
-                            <Container {...mediaGridUSers}>
-                                <ContainerMap data={state?.success?.data}  type={typeQuery} />
-                                <div className="pagination">
-                                    <Pagination className="sss" current={pagination?.current} onChange={ onChange } pageSize={7} total={ state?.success?.data?.count } />
-                                </div>
-                            </Container>
-                        }
+                    <Grid item xs={12} sm={12} md={8} style={!state?.success ? { paddingTop: 40 } : {}}>
+                        <Container {...mediaGridUSers}>
+                            {
+                                <TestComponent
+                                    {...state}
+                                    setCallback={() => setCallback(!callback)}
+                                    currentJSX={
+                                        <ContainerMap data={state?.data} type={typeQuery} />
+                                    }
+                                />
+                            }
+                            <div className="pagination">
+                                <Pagination className="sss" current={pagination?.current} onChange={onChange} pageSize={7} total={state?.data?.count} />
+                            </div>
+                        </Container>
                     </Grid>
                 </Grid>
             </Container>

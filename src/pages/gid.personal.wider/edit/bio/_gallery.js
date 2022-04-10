@@ -21,7 +21,7 @@ const Gallery = ({role}) => {
             setList( imagesList )
         }
     }, [ state ] )
-    console.log(state)
+    // console.log(state)
     // function onSelectImage ( index, image ) {
     //     console.log( index, image )
     // }

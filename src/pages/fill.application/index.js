@@ -85,7 +85,7 @@ const Index = () => {
             }else setResponseHook(post_gid_app_action(appNoToken)) 
         }
     },[])
-    console.log(selector)
+    // console.log(selector)
     // console.log(collect)
     return (
         <Wrapper onSubmit={ onSubmit }>

@@ -30,7 +30,7 @@ export const validator = (type,item,count,textTrue,textFalse, setState, state) =
 }
 
 export const validatorState = (data, type, count, errorText) => {
-    console.log(data, errorText)
+    // console.log(data, errorText)
     let text = ''
     if(type === 'min') {
         if(data === null || data===undefined || data.length < count) text = errorText}

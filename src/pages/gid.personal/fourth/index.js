@@ -63,7 +63,7 @@ const Index = () => {
                 password1: password1 === '' ? undefined : password1,
                 password2: password2 === '' ? undefined : password2
               }
-            console.log(payload)
+            // console.log(payload)
       if(payload?.email !== '' && payload?.phone_number !=='') {
           putResponse('/api/auth/settings/', JSON.parse(JSON.stringify(payload)), setUpdateResponse)
       }

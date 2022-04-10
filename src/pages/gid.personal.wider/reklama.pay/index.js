@@ -32,7 +32,7 @@ export default function Index() {
             Modal.error({title:<span>Xatolik yuz berdi !!!. <br/> Qaytadan urinib ko'ring.</span>, content:JSON.stringify(postState.data?.data).substr(0, 500)})
         }
     },[postState])
-    console.log(postState)
+    // console.log(postState)
     return (
         <Wrapper01>
             <Wrapper02>

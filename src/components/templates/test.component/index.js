@@ -4,7 +4,7 @@ import ErrorComponent from './error.component'
 import { Wrapper } from "./style"
 
 const Index = ({ loading, data, error, success, currentJSX, setCallback }) => {
-    console.log(data)
+    // console.log(data)
     return (
         <>
             <Wrapper>

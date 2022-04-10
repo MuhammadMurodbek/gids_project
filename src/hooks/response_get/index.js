@@ -6,7 +6,7 @@ const token = JSON.parse(localStorage.getItem('user_token'))
 export const postRefreshToken = async (data, refreshFunc) => {
     await axios.post( `${ baseUrl }/api/auth/token/refresh/`, {refresh:data?.refresh}, {headers: headers} )
         .then( response => {
-            console.log(response.data)
+            // console.log(response.data)
             let obj = {
                 ...data,
                 access:response?.data?.access

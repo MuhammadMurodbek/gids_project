@@ -10,9 +10,9 @@ import {useTranslation} from 'react-i18next'
 
 const Index = ({data, commentCount}) => {
     const {t} = useTranslation()
-    console.log(data?.currency_per_day)
+    // console.log(data?.currency_per_day)
     const curr = (item) => {
-        console.log(item)
+        // console.log(item)
         if(item === 'dollar') return '$'
         else if(item === 'sum') return 'S'
         else if(item === 'ruble') return 'R'

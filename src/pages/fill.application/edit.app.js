@@ -38,7 +38,7 @@ const EditApp = () => {
         reset(defaultApiValueReset)
         if(state?.success){
             let getData = state?.data
-            console.log(getData)
+            // console.log(getData)
             reset({
                 ...getData,
                 is_female:getData?.is_female,

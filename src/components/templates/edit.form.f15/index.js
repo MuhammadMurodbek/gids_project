@@ -60,7 +60,7 @@ const Index = ({statePostProps}) => {
         
     }
     useEffect(()=>{
-        console.log(postData?.error?.response)
+        // console.log(postData?.error?.response)
         if(postData){
             if(postData?.success?.status === 200){
                 toast.success("Successfully updated")

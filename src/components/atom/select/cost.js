@@ -25,7 +25,7 @@ const Index = (props) => {
   const [value, setValue] = useState(null);
   const handleChange = 
     (valueChange) => {
-      console.log(valueChange)
+      // console.log(valueChange)
       setValue(valueChange);
       setCollect({idK:idK, value:valueChange, field:[field]})
     //   if (setState) {

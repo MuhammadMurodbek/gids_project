@@ -16,7 +16,7 @@ const Translator = ({setTrains, trains, setTrState, trState, clear, setClear}) =
     const [collect, setCollect] = useState([])
     // const [clear, setClear] = useState(false)
     const {name,year} = state
-    console.log(trains)
+    // console.log(trains)
     const handleClick = useCallback(()=> { 
         if(state.name !== '' && state.year !==''){
             setCollect([...collect, state])

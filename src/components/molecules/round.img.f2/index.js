@@ -37,7 +37,8 @@ const Index = (props) => {
         m_btn_top: "-50px",
         m_btn_right: "20%",
     }
-    const { src, width, height, radius } = props
+    const { src, width, height, radius, role } = props
+    // console.log(role)
     return (
         <WrapperRoundImage {...mediaBtn} {...mediaWrapper} width={width} height={height} radius={radius}>
             {/* <ImageContainer {...media} src={src} width="100%" height="100%" round="50%" /> */}
@@ -45,10 +46,14 @@ const Index = (props) => {
                 width={100}
                 src={src}
                 style={{ borderRadius: '50%' }}
-            />
+            />  
             <button onClick={openModal}>
-                <ImageContainer {...imageButton} src={playBtn} width="30px" height="30px" />
+                {
+                    role !=='writer' &&
+                    <ImageContainer {...imageButton} src={playBtn} width="30px" height="30px" />
+                }
             </button>
+            
 
             <section>
                 <Modal

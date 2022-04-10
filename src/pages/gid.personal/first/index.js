@@ -17,7 +17,7 @@ import {getLabelCountrySecond, getLabelCity} from "../../../custom/function"
 const Index = () => {
     const [state, setState] = useState({success:'',error:''})
     useEffect(() => {getResponse('/api/users/edit/', setState)},[])
-    console.log(state)
+    // console.log(state)
     // const lang = localStorage.getItem('i18nextLng')
     // const getLanguageCity = (data) => {
     //     const lan = localStorage.getItem('i18nextLng')

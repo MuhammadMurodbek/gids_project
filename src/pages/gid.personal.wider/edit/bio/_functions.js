@@ -33,7 +33,7 @@ export const checkValidation = (state) => {
         return true;
     }else {
         let error = [v_city,v_currency,v_country,v_cost,v_end_date,v_start_date,v_language,v_people_count, v_who_need,v_why_need,gender]
-        console.log(error)
+        // console.log(error)
         return false;
     }
 }

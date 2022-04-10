@@ -78,7 +78,7 @@ const GidIndex = () => {
     useEffect(() => {
         setCheckItems({ ...checkItems, ...getData?.success?.data })
         // setState( getData?.success?.data?.excursions )
-        console.log(getData?.success?.data)
+        // console.log(getData?.success?.data)
         let array = getData?.success?.data?.excursions?.map(item => {
             return {
                 city: parseInt(item.city),

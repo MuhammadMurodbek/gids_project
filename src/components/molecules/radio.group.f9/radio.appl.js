@@ -27,7 +27,7 @@ const Index = ({setState, state, errorText, defaultApiValue}) => {
             setValue(df)
         }
     },[defaultApiValue])
-    console.log(radioRef?.current)
+    // console.log(radioRef?.current)/
     // setValue(defaultApiValue)
     return (
         <Wrapper>

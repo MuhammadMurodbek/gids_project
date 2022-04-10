@@ -6,7 +6,7 @@ const ModalSpinner = ({data, title}) => {
   const handleCancel = () => {
     setState(false);
   }
-  console.log(data)
+  // console.log(data)
   return (
     <>
       <Modal width={700} title={<span style={{color:'orangered'}}>{'Xatolik yuz berdi...'}</span>} visible={state} onCancel={handleCancel} onOk={handleCancel}>
