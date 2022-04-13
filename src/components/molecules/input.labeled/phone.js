@@ -30,7 +30,7 @@ const Index = (props) => {
         <Wrapper width={width}>
             <Label size={sizeLabel}>{label}</Label>
             <Input onChange={setPhone} value={phone || "+"+defaultApiValue} paddingRight={password ? "45px":null}/>
-            <span style={{fontSize:'0.85rem'}}>Raqam mavjudligi (12 ta raqam kitiriting): {(phone || "+"+defaultApiValue) && isPossiblePhoneNumber(phone || "+"+defaultApiValue) ? <CheckCircleOutlined className="success_icon"/> : <QuestionCircleOutlined className="error_icon"/>}</span>
+            <span style={{fontSize:'0.85rem'}}>Telefon raqamingizni davlat kodi bilan kiriting: {(phone || "+"+defaultApiValue) && isPossiblePhoneNumber(phone || "+"+defaultApiValue) ? <CheckCircleOutlined className="success_icon"/> : <QuestionCircleOutlined className="error_icon"/>}</span>
         </Wrapper>
     )
 }
