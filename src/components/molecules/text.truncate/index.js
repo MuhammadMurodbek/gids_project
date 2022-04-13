@@ -7,7 +7,7 @@ const Index = (props) => {
     return (
         <Wrapper width={props.width} margin={props.margin} aligin={props.aligin}>
             <Truncate lines={line || 5} ellipsis={<span>...</span>} >
-                <div style={{textAlign:'justify'}}>&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; {text}</div>
+                <div style={{textAlign:'justify'}}> {text}</div>
             </Truncate>
         </Wrapper>
     )
