@@ -104,9 +104,9 @@ const Index = ({ data, role }) => {
                                 <Text title="Ekskursiyalar : " />
                                 <div class="box_child">
                                     {
-                                        data?.excursions?.length > 0 ?
+                                        data?.excursions?.filter((item)=>{if(item?.city && item?.country) return item})?.length > 0 ?
                                             data?.excursions?.map((prev, index) => (
-                                                <span key={index}>{prev?.city[lan] + "-" + prev?.country[lan]}</span>
+                                                <span key={index}>{(prev?.city && prev?.country) && prev?.city[lan] + "-" + prev?.country[lan]}</span>
                                             )) : <div>Malumot kiritilmagan</div>
                                     }
                                 </div>

@@ -116,7 +116,7 @@ const Index = () => {
                         <Grid item xs={12} md={6} sm={12}>
                             <div className="container-2-1 first">
                                 <div className="title-second-main-container-text">{t("main.tadbirkorlarga")}</div>
-                                <p>{t("main.textForTadbirkor")}</p>
+                                <p style={{textAlign:'justify'}}>{t("main.textForTadbirkor")}</p>
                                 <FlexContainer width="400px" {...mediaFlexButtons} justifyContent="space-between">
                                     {/* <Link to="/application-form" > */}
 
@@ -148,7 +148,7 @@ const Index = () => {
                         <Grid item md={6} sm={12}>
                             <div className="container-2-1 second">
                                 <div className="title-second-main-container-text"> {t("main.Gidlarga")} </div>
-                                <p>{t("main.textForGid")}</p>
+                                <p style={{textAlign:'justify'}}>{t("main.textForGid")}</p>
                                 <div>
                                     <Link to="/auth">
                                         <Button className="btn_medida_last" width="300px" {...mediaBtn}> {t("main.royhatdanO")} </Button>

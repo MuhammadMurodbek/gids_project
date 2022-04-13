@@ -20,6 +20,7 @@ export const Wrapper = styled.div`
     .box_child{
         display: flex;
         flex-direction: column;
+        font-size:13px !important;
     }
     .newSpans{
         display:inline;
