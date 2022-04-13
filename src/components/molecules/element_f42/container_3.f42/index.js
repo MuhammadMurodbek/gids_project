@@ -13,7 +13,7 @@ const Index = ({ data, role }) => {
     const lan = localStorage.getItem("i18nextLng")
     // const getRole = JSON.parse(localStorage.getItem("user_token"))
     const obj = {
-        no: 'Mening mavzuyim emas',
+        no: 'Mening mavzuim emas',
         great: "A'lo",
         good: "Yaxshi",
         low: 'Quyi',
