@@ -246,7 +246,7 @@ const Index = () => {
                     <FlexContainer {...mediaFlexButtons} width="380px" margin="0 auto" alignItems="center" justifyContent="space-between">
 
                         <Link to="/gids">
-                            <Button type="outlined" className="btnlaset" {...mediaBtn}>{t("main.tanlash")} </Button>
+                            <Button   className="btnlaset" {...mediaBtn}>{t("main.tanlash")} </Button>
                         </Link>
                         {
                             getRole?.role === "translator" ? null
@@ -254,7 +254,7 @@ const Index = () => {
                                 getRole?.role === "writer" ? null
                                     : getRole?.role === "gid" ? null
                                         :
-                                        <Button  onClick={onClickbutton} {...mediaBtn}>{t("main.arizaQoldrirish")} </Button>
+                                        <Button type="outlined" onClick={onClickbutton} {...mediaBtn}>{t("main.arizaQoldrirish")} </Button>
                         }
                     </FlexContainer>
                 </div>
