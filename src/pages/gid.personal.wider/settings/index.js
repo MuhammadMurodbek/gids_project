@@ -80,7 +80,7 @@ const Index = () => {
                 <Container padding="0" boxShadow={shadow} className="container4">
                     <TitleContainer>
                         <Grid container spacing={5}>
-                            <Grid item xs={12} sm={6}>Kontaktlar</Grid>
+                            <Grid item xs={12} sm={6}>Telefon va e-mail</Grid>
                             <Grid component={Box} display={{ xs: "none", sm: "inline-block" }} item xs={12} sm={6}>Parolni o'zgartirish</Grid>
                         </Grid>
                     </TitleContainer>
