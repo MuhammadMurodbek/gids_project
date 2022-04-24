@@ -111,7 +111,7 @@ const Index = () => {
             </Container>
             <Container width="100%" textAlign="right">
                 <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
-                    <span style={{position:'relative', top:'-2px'}}><input type="checkbox" onClick={(e)=>handleRemember(e)}/> Remeber me</span>
+                    <span style={{position:'relative', top:'-2px'}}><input type="checkbox" onClick={(e)=>handleRemember(e)}/> Eslab qolish</span>
                     <Link to="/auth/reset" className="link"> {t("auth_kirish.forget")} </Link>
                 </FlexContainer>
             </Container>

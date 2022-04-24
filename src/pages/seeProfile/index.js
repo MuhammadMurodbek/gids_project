@@ -44,7 +44,7 @@ export default function Index() {
             <Layout>
                 <Wrapper>
                     <Grid className="gridTitle2" item xs={12} md={6}>
-                        <div onClick={handlePrev} className="comback"> <ArrowBackIcon className="link22" />  Ro’yhatiga qaytish</div>
+                        <div onClick={handlePrev} className="comback"> <ArrowBackIcon className="link22" />  Ro’yxatga qaytish</div>
                     </Grid>
                     {
                         (apiData?.error === '' && apiData?.success === '') ? <Spinner marginTop="60px" width={50} height={50} /> :
