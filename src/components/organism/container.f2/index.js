@@ -5,7 +5,7 @@ import { WrapperContainer } from "./style"
 import Info from "../../molecules/info.f2"
 import RoundImageContainer from "../../molecules/round.img.f2"
 import InfoBtn from "../../molecules/info.btn.f2"
-import RoundImage from "../../../assets/img/choosegid/round.svg"
+import RoundImage from "../../../assets/img/gid-personal/no_user.png"
 import { Grid } from '@material-ui/core'
 import { TextTitle } from '../../../styles/textTitle/index.style'
 import TruncateText from "../../molecules/text.truncate"

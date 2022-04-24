@@ -64,6 +64,7 @@ export default function Index() {
                                     
                                     <Grid item xs={12} md={4}>
                                         <CardMainSecond 
+                                            typeRole={{ role: role }} 
                                             state={apiData?.success?.data} 
                                             commentCount={commentApi?.success?.data?.counts}
                                             commentReview={commentApi?.success?.data?.reviews}

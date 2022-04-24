@@ -39,7 +39,7 @@ const Index = () => {
         if (type) {
             getApiResponse(`/api/${type}s/profiles/?${filterQuery}&page=${pagination?.current}`, setState, true)
         } else {
-            getApiResponse(`/api/translators/all/?page=${pagination?.current}`, setState, true)
+            getApiResponse(`/api/translators/all/?page=${pagination?.current}&page_size=10`, setState, true)
         }
         setTypeQuery(type)
         let urlQuery = searchToObject(query)
