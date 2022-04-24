@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Container } from "../../../styles/container/index.style"
+import { FlexContainer } from "../../../styles/flex.container"
 import Button from "../../../components/atom/button"
 import { Authorization } from "./index.style"
 import { Link } from "react-router-dom"
@@ -14,6 +15,7 @@ const Index = () => {
 
     const { t } = useTranslation()
     // const history = useHistory()
+    const remember = JSON.parse(localStorage.getItem('remember'))
     const [stateEmail, setStateEmail] = useState('')
     const { responseHook, setResponseHook } = useApiData('post_auth_ent_reducer')
     const [emailError, setEmailError] = useState({ error: false, errorText: '' })
@@ -21,6 +23,13 @@ const Index = () => {
     const [passwordError, setPasswordError] = useState({ error: false, errorText: '' })
     const [loader, setLoader] = useState(false)
     const appNoToken = JSON.parse(localStorage.getItem('appNoToken')) || false
+    // console.log(remember)
+    useState(()=>{
+        if(remember){
+            setStateEmail(remember?.username)
+            setStatePassword(remember?.password)
+        }
+    },[])
     const onSubmit = (e) => {
         e.preventDefault()
         let obj = {
@@ -65,10 +74,21 @@ const Index = () => {
             setPasswordError({ error: false, errorText: null })
         }
     }, [stateEmail, statePassword])
+    const handleRemember = (e) => {
+        let obj = {
+            username: stateEmail,
+            password: statePassword,
+        }
+        if(e.target.checked)
+            localStorage.setItem('remember',JSON.stringify(obj))
+        else 
+            localStorage.removeItem('remember')
+    }
     return (
         <Authorization onSubmit={onSubmit}>
             <Container>
                 <AuthInput
+                    state={stateEmail}
                     setState={setStateEmail}
                     title={t("auth_kirish.email2")}
                     error={emailError.error}
@@ -79,6 +99,7 @@ const Index = () => {
             </Container>
             <Container>
                 <AuthInput
+                    state={statePassword}
                     setState={setStatePassword}
                     title={t("auth_kirish.pass")}
                     setError={setStatePassword}
@@ -89,7 +110,10 @@ const Index = () => {
                 />
             </Container>
             <Container width="100%" textAlign="right">
-                <Link to="/auth/reset" className="link"> {t("auth_kirish.forget")} </Link>
+                <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
+                    <span style={{position:'relative', top:'-2px'}}><input type="checkbox" onClick={(e)=>handleRemember(e)}/> Remeber me</span>
+                    <Link to="/auth/reset" className="link"> {t("auth_kirish.forget")} </Link>
+                </FlexContainer>
             </Container>
             <Container {...mediaContainerSecAuth} className="text-right">
                 <Button {...mediaBtnAuth} loader={loader}>
