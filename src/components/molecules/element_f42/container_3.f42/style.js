@@ -36,7 +36,11 @@ export const Wrapper = styled.div`
         // font-weight:bold;
         font-size:13px;
         position:relative;
-        right:10px;
+        right:17px;
+    }
+    .no_data_text{
+        position: relative;
+        right:17px;
     }
 `
 export const TextSpan = styled.div`

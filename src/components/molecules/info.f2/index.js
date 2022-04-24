@@ -29,17 +29,17 @@ const Index = ({data, commentCount}) => {
             <FlexContainer width="auto" alignItems="center" justifyContent="flex-start" flexDirection="column">
                 <Grid container spacing={1} className="info-item">
                     <Grid item sm={3}><ImgContainer src={starImg} width="30px"/></Grid>
-                    <Grid item sm={9}><span>{t("Gid_Tanlash.rate")}: {commentCount?.average || '0'}</span>/5</Grid>
+                    <Grid item sm={9}><span className="comm_val">{t("Gid_Tanlash.rate")}: {commentCount?.average || '0'}</span>/5</Grid>
                 </Grid>
                 <Grid container spacing={1} className="info-item">
                     <Grid item sm={3}><ImgContainer src={comment} width="30px"/></Grid>
-                    <Grid item sm={9}><span>{t("Gid_Tanlash.fikirlar")}</span><div className="comment_count"></div> {" "}{commentCount?.all || '0'}</Grid>
+                    <Grid item sm={9}><span>{t("Gid_Tanlash.fikirlar")}</span><div className="comment_count comm_val">{commentCount?.all || '0'}</div></Grid>
                 </Grid>
                 <Grid container spacing={1} className="info-item">
                     <Grid item sm={3}><ImgContainer src={extraImg} width="30px"/></Grid>
                     <Grid item sm={9} style={{display:'flex'}}>
-                        <span>{t("Gid_Tanlash.kuniga")}{" "}</span>
-                        <div className="c_per_day">{pay(data?.cost_per_day)+" "+curr(data?.currency_per_day) || '0'}</div>
+                        <span>{t("Gid_Tanlash.kuniga")}</span>
+                        <div className="c_per_day comm_val">{pay(data?.cost_per_day)+" "+curr(data?.currency_per_day) || '0'}</div>
                     </Grid>
                 </Grid>
             </FlexContainer>

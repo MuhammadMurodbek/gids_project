@@ -22,7 +22,7 @@ const mediaContainer = {
 }
 const Index = ({typeRole, state, commentCount, commentReview }) => {
     const { t } = useTranslation()
-    const token = JSON.parse(localStorage.getItem('user_token'))
+    // const token = JSON.parse(localStorage.getItem('user_token'))
     console.log(state)
     return (
         <Wrapper>
