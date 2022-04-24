@@ -7,14 +7,14 @@ import { useTranslation } from 'react-i18next'
 const Index = ({data, role}) => {
     const {t} = useTranslation()
     const DEGREES = {
-        higher: "Higher",
-        secondary_special: "Secondary special",
+        higher: "Oliy",
+        secondary_special: "O'rta maxsus",
     }
     const DEGREES_GIT = {
-        highest_category: "Highest category",
-        first_category: "First category",
-        second_category: "Second category",
-        no_category: "No category",
+        highest_category: "Oliy toifali",
+        first_category: "Birinchi toifali",
+        second_category: "Ikkinchi toifali",
+        no_category: "Toifasiz",
     }
     const checkValues = (data)=>{
         if(data) return data

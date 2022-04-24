@@ -58,8 +58,6 @@ const Index = () => {
                                             sizeLabel="15px"
                                             width="100%"
                                             label={ t( "IshTajriba.malumotlar" ) }
-                                           
-                                            
                                             setCollect={ setStateGid }
                                             collect={ stateGid }
                                             field="education_degree"

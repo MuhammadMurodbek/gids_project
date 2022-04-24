@@ -4,6 +4,7 @@ import ImageCrop from "../../organism/image.crop.gallery/new";
 import {CloseCircleFilled} from "@ant-design/icons"
 import {deleteResponse} from "../../../hooks/response_get"
 import 'animate.css';
+import {Image} from "antd"
 function App({list, setCallback, role, url}) {
   const [currentImage, setCurrentImage] = useState(0);
   const [isViewerOpen, setIsViewerOpen] = useState(false);
@@ -36,15 +37,17 @@ function App({list, setCallback, role, url}) {
       {
         list.map((item) => (
           <>
-            <img
+            <Image
               src={ item?.src }
-              onClick={ () => openImageViewer(item.id,item?.src) }
-              width="auto"
-              height="300"
+              width="300px"
+              height={299}
               key={ item?.id }
-              style={{ margin: '2px' }}
+              style={{display:'inline-block', padding: '2px' }}
               alt=""
               className={deleteItem === item.id ? "animate__animated animate__shakeX":''} 
+              // width={160}
+              // src={state?.image || RoundImage}
+              // style={{display:'inline-block'}}
             />
             <span 
               style={

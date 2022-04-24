@@ -87,13 +87,13 @@ const Translator = ( { getData } ) => {
           dataList.map( ( item, index ) => (
             <Grid container spacing={ 1 } key={ index }>
               <Grid item xs={ 12 } sm={ 6 } md={ 5 }>
-                <TextLabeledLoop value={ item?.name } label="Ma'lumoti (institut / universitet nomi)" />
+                <TextLabeledLoop value={ item?.name } sizeLabel="14px" label="Ma'lumoti (institut / universitet nomi)" />
               </Grid>
               <Grid item xs={ 12 } sm={ 6 } md={ 3 }>
-                <TextLabeledLoop value={ item?.year } label="Ma'lumoti (institut / universitet nomi)" />
+                <TextLabeledLoop value={ item?.year } sizeLabel="14px" label="Bitirgan yili" />
               </Grid>
               <Grid item xs={ 12 } sm={ 6 } md={ 3 }>
-                <TextLabeledLoop value={ item?.speciality } label="Mutaxassisligi" />
+                <TextLabeledLoop value={ item?.speciality } sizeLabel="14px" label="Mutaxassisligi" />
               </Grid>
               <Grid item xs={ 12 } sm={ 6 } md={ 1 }>
                 <FlexContainer width="auto" flexDirection="column" gap="8px" margin="45px 0 0 auto" >
@@ -111,16 +111,16 @@ const Translator = ( { getData } ) => {
 
       <Grid container spacing={ 1 }>
         <Grid item xs={ 12 } sm={ 6 } md={ 5 }>
-          <TextLabeled clear={ clear } setClear={ setClear } setState={ setState } state={ state } field="name" sizeLabel="15px" width="100%" label="Ma'lumoti (institut / universitet nomi)" placeholder="Bitirgan Oliy ta’lim mussasasini kiriting" />
+          <TextLabeled clear={ clear } setClear={ setClear } setState={ setState } state={ state } field="name" sizeLabel="14px" width="100%" label="Ma'lumoti (institut / universitet nomi)" placeholder="Bitirgan Oliy ta’lim mussasasini kiriting" />
         </Grid>
         <Grid item xs={ 12 } sm={ 6 } md={ 3 }>
-          <YearPickerSelected clear={ clear } setClear={ setClear } setState={ setState } state={ state } field="year" sizeLabel="15px" width="100%" label="Bitirgan yili"
+          <YearPickerSelected clear={ clear } setClear={ setClear } setState={ setState } state={ state } field="year" sizeLabel="14px" width="100%" label="Bitirgan yili"
           placeholder="Bitirgan yilingizni kiriting "
           />
         </Grid>
         <Grid item xs={ 12 } sm={ 6 } md={ 3 }>
           <TextLabeled clear={ clear } setClear={ setClear } setState={ setState } 
-          state={ state } field="speciality" sizeLabel="15px" width="100%" label="Mutaxassisligi" placeholder="Mutaxassisligizni yozing..." />
+          state={ state } field="speciality" sizeLabel="14px" width="100%" label="Mutaxassisligi" placeholder="Mutaxassisligizni yozing..." />
         </Grid>
         <Grid item xs={ 12 } sm={ 6 } md={ 1 }>
           <FlexContainer width="auto" flexDirection="column" gap="8px" margin="45px 0 0 auto" >

@@ -1,7 +1,7 @@
 export const degrees_gid = [
-    {value:"highest_category", label: "Eng yuqori toifa"}, 
-    {value:"first_category", label: "Birinchi toifa"}, 
-    {value:"second_category", label: "Ikkinchi toifa"}, 
+    {value:"highest_category", label: "Oliy toifali"}, 
+    {value:"first_category", label: "Birinchi toifali"}, 
+    {value:"second_category", label: "Ikkinchi toifali"}, 
     {value:"no_category", label: "Toifasiz"}, 
 ]
 export const degrees = [

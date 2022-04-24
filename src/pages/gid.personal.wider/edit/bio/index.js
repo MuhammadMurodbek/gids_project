@@ -127,7 +127,7 @@ const Index = () => {
                   <CalendarLabel
                     sizeLabel="15px"
                     width="100%"
-                    label="Sana"
+                    label="Tug'ilgan sanangiz"
                     placeholder={moment(state?.birthday).format('DD-MM-YYYY') || "dd-mm-yyyy" }
                     placeholderValue={ state?.birthday || 'dd-mm-yyyy' }
                     setState={ setState }
@@ -140,7 +140,7 @@ const Index = () => {
                   <DoubleRadio
                     sizeLabel="15px"
                     field="gender"
-                    label="Jinsi"
+                    label="Jinsingiz"
                     name1="Erkak"
                     name2="Ayol"
                     value1="male"
@@ -202,7 +202,7 @@ const Index = () => {
           </Container>
           <Container padding="10px 0">
             <TextTitle font="16px" align="left" top="15px">
-              Sertifikat va diplomlaringiz bo‘lsa shu yerga yuklang (jpg, png )
+              Sertifikat va diplomlaringizni yuklang (jpg va png formatida )
             </TextTitle>
             <GroupImageUpload role={ getRole?.role } />
 

@@ -1,8 +1,8 @@
 export const selection = [
-    {value:'native', label:'Native'},
-    {value:'intermediate', label:'Intermediate'},
+    {value:'native', label:'A\'lo'},
+    {value:'intermediate', label:'Yaxshi'},
 ]
 export const SELECTION = {
-    native:"Native",
-    intermediate:"Intermediate"
+    native:"A'lo",
+    intermediate:"Yaxshi"
 }
