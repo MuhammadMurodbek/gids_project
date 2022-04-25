@@ -75,7 +75,7 @@ const Index = () => {
                     <div className="wrap_cal">
                         <Grid container spacing={0} justifyContent="center" alignItems="center" flexDirection="column">
                             <Grid item xs={12} md={6}>
-                                <div style={{ width: '100%', textAlign: 'center' }}>Oylik ish jadvalim</div>
+                                <div style={{ width: '300px', textAlign: 'center' }}>Oylik ish jadvalim</div>
                                 <DayPickerWrapper>
                                     <DayPicker
                                         title="no"
