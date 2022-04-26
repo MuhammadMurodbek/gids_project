@@ -42,11 +42,11 @@ const Index = ({ state, typeRole, comments, commentCount, commentReview }) => {
                     <Grid item xs={12} >
                         <Container position="relative" {...mediaContainerSecond} margin="25px 0 0 20px">
                             <FlexContainer {...mediaContainer} width="100%" alignItems="flex-start" justifyContent="space-between" >
-                                <div className="info_btn"><InfoBtn view={state?.view || 0}/></div>
+                                <div className="info_btn"><InfoBtn view={state?.view || 0} /></div>
                                 <Image
                                     width={160}
                                     src={state?.image || RoundImage}
-                                    style={{borderRadius:'50%'}}
+                                    style={{ borderRadius: '50%' }}
                                 />
                                 <Container {...mediaContainerSecondText} margin="-10px 0 0 15px">
                                     <TextTitle align="left" bottom="5px" font="20px">{state?.first_name || 'Mavjud emas'}{" "}{state?.last_name || 'Mavjud emas'}</TextTitle>
@@ -82,7 +82,7 @@ const Index = ({ state, typeRole, comments, commentCount, commentReview }) => {
                                 </div>
                             </ContainerBottom>
                     }
-                    { 
+                    {
                         state?.trainings?.length > 0 ?
                             state?.trainings?.map((prev, index) => (
                                 <ContainerBottom key={index}>
@@ -125,11 +125,18 @@ const Index = ({ state, typeRole, comments, commentCount, commentReview }) => {
                     {comments?.loading && <Spinner />}
                     {comments?.success &&
                         <>
-                            {commentReview?.length<1 ? <div className="empty_title">Izohlar mavjud emas.</div> :
+                            {commentReview?.length < 1 ? <div className="empty_title">Izohlar mavjud emas.</div> :
                                 <>
                                     <Grid container spacing={1} style={{ marginBottom: 60 }}>
-                                        <Grid item sm={12} md={4}><ProgressInfo data={commentCount} /></Grid>
-                                        <Grid item className='ssdd' sm={12} md={8}><ProgressTitle data={commentCount} /></Grid>
+
+                                        <Grid item sm={12} md={4}>
+                                            <ProgressInfo data={commentCount} />
+                                        </Grid>
+
+                                        <Grid item className='ssdd' sm={12} md={8}>
+                                            <ProgressTitle data={commentCount} />
+                                        </Grid>
+                                        
                                     </Grid>
                                     {
                                         commentReview?.map((item, index) => (

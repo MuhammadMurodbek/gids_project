@@ -8,6 +8,9 @@ export const Wrapper = styled.div`
         width: 1400px;
         margin: 0 auto;
      }
+     .text_aa{
+        text-aligin:justify !important;
+    }
  `
 
 export const ComponentTwo = styled.div`
