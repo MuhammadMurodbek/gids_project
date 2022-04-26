@@ -47,10 +47,10 @@ const Index = () => {
     };
   });
 
-  function refreshBtn(){
-    window.scrollTo(0,0)
+  function refreshBtn() {
+    window.scrollTo(0, 0)
   }
- 
+
   return (
     <div>
       <Navbar navbarProps={scrollY}>
@@ -65,7 +65,7 @@ const Index = () => {
 
             <div className="imgass">
               <Link to="/" onClick={refreshBtn}>
-               
+
                 <img className="img_logo1" src={Logo} alt="safsf" />
               </Link>
             </div>
@@ -81,43 +81,49 @@ const Index = () => {
 
               {
 
-                getRole?.role === "gid"  ?
-                <>
-                <ButtonNavbar title={t("navbar.GTU")} url="/forgits" />
-                <ButtonNavbar title="Blog" url="/blog?page=1" />   
-                <ButtonNavbar title={t("navbar.Arizalar_royhati")} url="/request" />    
-                </>
-                :
-                getRole?.role === "writer"  ?
-                <>
-                <ButtonNavbar title={t("navbar.GTU")} url="/forgits" />
-                <ButtonNavbar title="Blog" url="/blog?page=1" />   
-                <ButtonNavbar title={t("navbar.Arizalar_royhati")} url="/request" />    
-                </>
-                :
-                getRole?.role === "translator"  ?
-                <>
-                <ButtonNavbar  title={t("navbar.GTU")} url="/forgits" />
-                <ButtonNavbar  title="Blog" url="/blog?page=1" />   
-                <ButtonNavbar   title={t("navbar.Arizalar_royhati")} url="/request" />    
-                </>
-                :
-                getRole?.role === "simple_user" ?
+                getRole?.role === "gid" ?
                   <>
-                    <ButtonNavbar  title={t("navbar.GvaTtanlash")} url="/gids" />
-                    <ButtonNavbar  title="Blog" url="/blog?page=1" />
-                    <ButtonNavbar  title={t("navbar.Ariza_qoldirish")} url="/application-form" />
+                    <ButtonNavbar title={t("navbar.GTU")} url="/forgits" />
+                    <ButtonNavbar title="Blog" url="/blog?page=1" />
+                    <ButtonNavbar title={t("navbar.Arizalar_royhati")} url="/request" />
+                    <a href="https://www.travelcars.uz" target="_blank">Transport</a>
                   </>
                   :
+                  getRole?.role === "writer" ?
                     <>
-                      <ButtonNavbar  title={t("navbar.GvaTtanlash")} url="/gids" />
-
-                      <ButtonNavbar  title={t("navbar.GTU")} url="/forgits" />
-
-                      <ButtonNavbar  title="Blog" url="/blog?page=1" />
-
-                      <ButtonNavbar  title={t("navbar.Ariza_qoldirish")} url="/application-form" />
+                      <ButtonNavbar title={t("navbar.GTU")} url="/forgits" />
+                      <ButtonNavbar title="Blog" url="/blog?page=1" />
+                      <ButtonNavbar title={t("navbar.Arizalar_royhati")} url="/request" />
+                      <a href="https://www.travelcars.uz" target="_blank">Transport</a>
                     </>
+                    :
+                    getRole?.role === "translator" ?
+                      <>
+                        <ButtonNavbar title={t("navbar.GTU")} url="/forgits" />
+                        <ButtonNavbar title="Blog" url="/blog?page=1" />
+                        <ButtonNavbar title={t("navbar.Arizalar_royhati")} url="/request" />
+                        <a href="https://www.travelcars.uz" target="_blank">Transport</a>
+                      </>
+                      :
+                      getRole?.role === "simple_user" ?
+                        <>
+                          <ButtonNavbar title={t("navbar.GvaTtanlash")} url="/gids" />
+                          <ButtonNavbar title="Blog" url="/blog?page=1" />
+                          <ButtonNavbar title={t("navbar.Ariza_qoldirish")} url="/application-form" />
+                          <a href="https://www.travelcars.uz" target="_blank">Transport</a>
+                        </>
+                        :
+                        <>
+                          <ButtonNavbar title={t("navbar.GvaTtanlash")} url="/gids" />
+
+                          <ButtonNavbar title={t("navbar.GTU")} url="/forgits" />
+
+                          <ButtonNavbar title="Blog" url="/blog?page=1" />
+
+                          <ButtonNavbar title={t("navbar.Ariza_qoldirish")} url="/application-form" />
+
+                          <a href="https://www.travelcars.uz" target="_blank">Transport</a>
+                        </>
               }
             </FlexContainer>
             <FlexContainer {...navbarMedia} width="100px" style={{ marginRight: 100 }}>

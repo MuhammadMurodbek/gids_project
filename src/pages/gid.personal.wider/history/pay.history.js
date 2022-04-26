@@ -17,7 +17,7 @@ export default function Index() {
     return (
         <Wrapper>
 
-            <Link to="/reklama" className="link-text"> <ArrowBackIcon className="arroles11" /> reklama bo'limiga qaytish  </Link>
+            <Link to="/reklama" className="link-text"> <ArrowBackIcon className="arroles11" /> Reklama bo'limiga qaytish  </Link>
             <TextTitle className="text-title" bottom="50px" top="50px">
                 To’lovlar tarixi
             </TextTitle>

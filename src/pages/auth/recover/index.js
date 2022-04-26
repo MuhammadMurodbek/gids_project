@@ -67,7 +67,7 @@ const Index = () => {
                                     height="300px"
                                     onChange={onChange}
                                     value={value}
-                                    placeholder="Password kiriting..."
+                                    placeholder="Parolni kiriting..."
                                 />;
                             }}
                             />

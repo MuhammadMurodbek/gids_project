@@ -130,6 +130,7 @@ const Todos = ({state, setApiValue, setLoad}) => {
                                     </Grid>
                                     <Grid item xs={12} sm={6} md={6}>
                                         <Select options={optionList} collect={item} setCollect={setItem} field="level" margin="24px 0 0 0" width="100%" placeholder=" Mening mavzuyim emas" />
+                                        <Select options={optionList} collect={item} setCollect={setItem} field="level" margin="24px 0 0 0" width="100%" placeholder=" Mening mavzuyim emas.." />
                                     </Grid>
                                 </Grid>
                             </Grid>

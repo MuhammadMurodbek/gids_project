@@ -116,7 +116,7 @@ const Index = () => {
                         <Grid item xs={12} md={6} sm={12}>
                             <div className="container-2-1 first">
                                 <div className="title-second-main-container-text">{t("main.tadbirkorlarga")}</div>
-                                <p>{t("main.textForTadbirkor")}</p>
+                                <p style={{textAlign:'justify'}}>{t("main.textForTadbirkor")}</p>
                                 <FlexContainer width="400px" {...mediaFlexButtons} justifyContent="space-between">
                                     {/* <Link to="/application-form" > */}
 
@@ -148,7 +148,7 @@ const Index = () => {
                         <Grid item md={6} sm={12}>
                             <div className="container-2-1 second">
                                 <div className="title-second-main-container-text"> {t("main.Gidlarga")} </div>
-                                <p>{t("main.textForGid")}</p>
+                                <p style={{textAlign:'justify'}}>{t("main.textForGid")}</p>
                                 <div>
                                     <Link to="/auth">
                                         <Button className="btn_medida_last" width="300px" {...mediaBtn}> {t("main.royhatdanO")} </Button>
@@ -243,19 +243,17 @@ const Index = () => {
                 <div className="application-last">
                     <TextTitle  {...mediaTextField} {...mediaTextFieldSec} width="50%" left="auto" right="auto" bottom="40px">{t("main.hoziroq")}
                     </TextTitle>
-                    <FlexContainer {...mediaFlexButtons} width="380px" margin="0 auto" alignItems="center" justifyContent="space-between">
+                    <FlexContainer {...mediaFlexButtons} width="420px" margin="0 auto" alignItems="center" justifyContent="space-between">
 
-                        <Link to="/gids">
-                            <Button   className="btnlaset" {...mediaBtn}>{t("main.tanlash")} </Button>
-                        </Link>
-                        {
+                        <Button width="200px" type="outlined" onClick={onClickbutton} {...mediaBtn}>{t("main.arizaQoldrirish")} </Button>&nbsp;
+                        <Button width="200px" onClick={()=>history.push('/gids')} {...mediaBtn}>{t("main.tanlash")} </Button>
+                        {/* {
                             getRole?.role === "translator" ? null
                                 :
                                 getRole?.role === "writer" ? null
                                     : getRole?.role === "gid" ? null
                                         :
-                                        <Button type="outlined" onClick={onClickbutton} {...mediaBtn}>{t("main.arizaQoldrirish")} </Button>
-                        }
+                        } */}
                     </FlexContainer>
                 </div>
             </ContainerLast>

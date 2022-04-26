@@ -3,6 +3,7 @@ import {Wrapper} from './style'
 import ImageContainer from '../../../molecules/img.container'
 import { Grid } from '@material-ui/core'
 import { useTranslation } from 'react-i18next'
+import { Image } from 'antd';
 
 const Index = ({data}) => {
 
@@ -19,7 +20,10 @@ const Index = ({data}) => {
                     {
                         data?.map((item,index) => (
                             <Grid key={index} item xs={12} sm={6}>
-                                <ImageContainer width="100%" src={item?.image} />
+                                <Image 
+                                    width="100%" 
+                                    src={item?.image} 
+                                />
                             </Grid>
                         ))
                     }

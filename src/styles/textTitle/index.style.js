@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const TextTitle = styled.div`
-    text-transform:${value=>value.textTransform}
+    text-transform:${value=>value.textTransform};
     width: ${value=>value.width ? value.width:'100%'};
     font-weight: ${value=>value.fontWeight ? value.fontWeight:'700'};
     text-align: ${value=>value.align ? value.align : 'center'};

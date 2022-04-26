@@ -28,12 +28,15 @@ export const WrapperInfoF2 = styled.div`
         font-size:12px;
         inline-size: 100px;
         display:flex;
-        margin-left:8px;
+        position: relative;
+        top:0.5px; left: 1px;
+        /* margin-left:8px; */
     }
     .comment_count{
         display:inline-block;
         position:relative;
-        top:2px;
+        top:0.6px; left:0.5px;
+
         font-size:12px !important;
     }
 `

@@ -1,13 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import RemoveRedEyeOutlinedIcon from '@material-ui/icons/RemoveRedEyeOutlined';
 import VisibilityOffOutlinedIcon from '@material-ui/icons/VisibilityOffOutlined';
 import {mainGreen} from "../../../styles/global/colors"
 import './styles.css';
 import {Eye, InputWrapper} from "./style"
 
-function TextInput({ type, label, setState, error, errorText, setError }) {
+function TextInput({ type, label, setState, state, error, errorText, setError }) {
   const [value, setValue] = useState('');
-
+  useEffect(() => {
+    if(state){
+      setValue(state)
+    }
+  }, [state])
   function handleChange(e) {
     setValue(e.target.value);
     if(setError) {
@@ -29,7 +33,7 @@ function TextInput({ type, label, setState, error, errorText, setError }) {
 }
 
 export default function App(props) {
-  const {title, password, setState, error, errorText, setError} = props;
+  const {title, password, setState, state, error, errorText, setError} = props;
 
   const [check, setCheck] = useState(true)
   const handleChangeOpen = () => {
@@ -48,6 +52,7 @@ export default function App(props) {
         label={title} 
         type={(password && check) ? "password" : "text"}
         setError={setError} 
+        state={state}
       />
       {
         password ? 

@@ -80,7 +80,7 @@ const Index = () => {
                                         idK={index + 1}
                                         fieldS='currency_per_page_with'
                                         fieldIn="cost_per_page_with"
-                                        title="1 bet uchun - bo'shliqlar bilan 1800 belgi"
+                                        title="1800 belgi (bo'shliqlar bilan)"
                                         defValueCurrency={prev?.currency_per_page_with}
                                         defValueCost={prev?.cost_per_page_with}
                                     />
@@ -93,7 +93,7 @@ const Index = () => {
                                         idK={index + 1}
                                         fieldS='currency_per_page_without'
                                         fieldIn="cost_per_page_without"
-                                        title="1 bet uchun - 1800 belgi bo'sh joysiz"
+                                        title="1800 belgi (bo'shliqlarsiz)"
                                         defValueCurrency={prev?.currency_per_page_without}
                                         defValueCost={prev?.cost_per_page_without}
                                     />

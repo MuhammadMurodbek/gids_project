@@ -64,7 +64,7 @@ const Index = () => {
                     {/* <SelectLabeled label="Internetga doimiy kirish imkoningiz bormi?" setCollect={setState} collect={state} field="always_online" options={option_yes} width="100%" sizeLabel="15px" placeholder="Ha" /> */}
                 </Grid>
                 <Grid item xs={12} md={6} >
-                    <TextTitle font="15px" align="left" top="15px" bottom="-20px" left="20px" color="#262626"> Tarjima qilish uchun qanday CAT dasturlaridan foydalanasiz? <span className="cat_d">(Enter bosish orqali so'zlarni ajrating.)</span> </TextTitle>
+                    <TextTitle font="15px" align="left" top="15px" bottom="-20px" left="20px" color="#262626"> Tarjima qilish uchun qanday CAT dasturlaridan foydalanasiz? <span className="cat_d">(Har bir so'zdan keyin Enter tugmasini bosing)</span> </TextTitle>
                     <div className='inputss'>
                         <MultiValueInput defaultApiValue={apiValue?.cat_programmes} setState={setState} state={state} field="cat_programmes" />
                     </div>

@@ -108,7 +108,7 @@ const Index = () => {
                                     value={state.passwordpassword}
                                     name="password"
                                     label="Hozirgi parolingiz"
-                                    placeholder="Hozirgi Parol" />
+                                    placeholder="Joriy parol" />
                                 <InputLabeled
                                     width="100%"
                                     value={state.password1}

@@ -2,15 +2,30 @@ import styled from "styled-components"
 
 export const Wrapper = styled.div`
     display:flex;
+    justify-content:center;
     width: 100%;
+    // background:green;
     height: auto;
     padding:30px 70px;
-    margin-top:30px;
-    margin-bottom:80px;
+    // margin-top:30px;
+    // margin-bottom:80px;
+    margin:30px auto 80px;
     font-family: Montserrat !important;
+    .wrap_cal{
+        width:450px;
+        // background:red;
+    }
     .container4{
+        // width:400px;
+        text-align:center;
         position:relative;
         z-index:10;
+        // background:red;
+    }
+    .container4.item1{
+        // background:green;
+        positon:relative;
+        left:30px;
     }
     button{
         outline: none;

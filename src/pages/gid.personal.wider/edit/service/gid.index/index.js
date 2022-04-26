@@ -29,15 +29,12 @@ const GidIndex = () => {
     const [postData, setPostData] = useState({ success: '', error: '', loading: false })
     const [checkItems, setCheckItems] = useState({ excursion: false, consecutive_translate: false, synchronous_translate: false, written_translate: false })
     const [countryId, setCountryId] = useState(null)
+    const lang = localStorage.getItem('i18nextLng')
     const { excursion } = checkItems
     const { success, error } = postData
-    const handleAdd = useCallback( () => {
-        if ( value?.country !== '' && value?.city !== '' )
-        {
-            // console.log(state)
-            // console.log(value)
-            setState( [ ...state, value ] )
-            // setValue( { country: '', city: '' } )
+    const handleAdd = useCallback(() => {
+        if (value?.country !== '' && value?.city !== '') {
+            setState([...state, value])
             setClearValue(true)
         } else {
             toast.error('Davlat yoki shahar tanlanmagan')
@@ -56,17 +53,11 @@ const GidIndex = () => {
         })
         setPostData({ ...postData, loading: true })
         const { consecutive_translate, synchronous_translate, written_translate } = checkItems
-        if ( excursion )
-        {
-            // console.log(cloneState)
-            // console.log(value)
-            if(value?.city!=='' && value?.country!=='') cloneState.push({city:value.city, country:value.country})
-            putResponse( '/api/gids/edit/service/', { ...checkItems, excursions: cloneState }, setPostData )
-        } else
-        {
-            // console.log(cloneState)
-            // console.log(value)
-            putResponse( '/api/gids/edit/service/', {
+        if (excursion) {
+            if (value?.city !== '' && value?.country !== '') cloneState.push({ city: value.city, country: value.country })
+            putResponse('/api/gids/edit/service/', { ...checkItems, excursions: cloneState }, setPostData)
+        } else {
+            putResponse('/api/gids/edit/service/', {
                 consecutive_translate: consecutive_translate,
                 synchronous_translate: synchronous_translate,
                 written_translate: written_translate
@@ -77,19 +68,16 @@ const GidIndex = () => {
     useEffect(() => { getResponse('/api/gids/edit/service/', setGetData) }, [])
     useEffect(() => {
         setCheckItems({ ...checkItems, ...getData?.success?.data })
-        // setState( getData?.success?.data?.excursions )
-        // console.log(getData?.success?.data)
         let array = getData?.success?.data?.excursions?.map(item => {
             return {
-                city: parseInt(item.city),
-                country: parseInt(item.country),
+                city: item.city,
+                country: item.country,
             }
         }) || []
         setState(array)
     }, [getData])
     useEffect(() => {
         if (!excursion) {
-            // setValue( { country: '', city: '' } )
             setClearValue(true)
         }
     }, [excursion])
@@ -97,6 +85,7 @@ const GidIndex = () => {
         toastChecker(postData)
         if (postData.success !== '') dispatch(saveTabAction(5))
     }, [success, error])
+    // console.log(state)
     return (
         <Wrapper>
             <Container margin="30px 0 0" padding="10px 0">
@@ -138,13 +127,11 @@ const GidIndex = () => {
                                                         <Grid container spacing={1} key={index}>
                                                             <Grid item xs={12} sm={6} md={6}>
                                                                 <TextLabeledLoop
-                                                                    label={t("xizmatlar.mamalakatlargaEkskurs")} value={getLabelCountry(item?.country) || item?.country_name?.label} />
+                                                                    label={t("xizmatlar.mamalakatlargaEkskurs")} value={item?.country[lang] || 'Mavjud emas'} />
                                                             </Grid>
                                                             <Grid item xs={12} sm={6} md={5}>
                                                                 <TextLabeledLoop
-                                                                    label={t("xizmatlar.shaharlar")} value={
-                                                                        getLabelCity(item?.country, item?.city) || item?.city_name?.label
-                                                                    } />
+                                                                    label={t("xizmatlar.shaharlar")} value={item?.city[lang] || 'Mavud emas'} />
                                                             </Grid>
                                                             <Grid item xs={12} sm={12} md={1}  >
                                                                 <FlexContainer width="100%" alignItems="flex-end" justifyContent="flex-end" margin="44px 0 0 0">
@@ -189,20 +176,20 @@ const GidIndex = () => {
                                                 placeholder={t("kengaytirlgan_Q.ShaharniTanlang")}
                                             />
                                         </Grid>
-                                        <Grid item xs={ 12 } sm={ 12 } md={ 1 }>
-                                        <FlexContainer width="100%" alignItems="flex-end" flexDirection="column" margin="11px 0 0 0">
-                                            <Button
-                                                paddingIcon="10px"
-                                                type="outlined"
-                                                margin="0px 10px 0 0px"
-                                                onClick={ () => setClearValue( true ) }
-                                            >
-                                                <DeleteIcon className="icon" />
-                                            </Button>
-                                            <Button paddingIcon="10px" onClick={ handleAdd } margin="0px 10px 0 10px">
-                                                <AddIcon className="icon" />
-                                            </Button>
-                                        </FlexContainer>
+                                        <Grid item xs={12} sm={12} md={1}>
+                                            <FlexContainer width="100%" alignItems="flex-end" flexDirection="column" margin="11px 0 0 0">
+                                                <Button
+                                                    paddingIcon="10px"
+                                                    type="outlined"
+                                                    margin="0px 10px 0 0px"
+                                                    onClick={() => setClearValue(true)}
+                                                >
+                                                    <DeleteIcon className="icon" />
+                                                </Button>
+                                                <Button paddingIcon="10px" onClick={handleAdd} margin="0px 10px 0 10px">
+                                                    <AddIcon className="icon" />
+                                                </Button>
+                                            </FlexContainer>
                                         </Grid>
                                     </Grid>
                                 </>

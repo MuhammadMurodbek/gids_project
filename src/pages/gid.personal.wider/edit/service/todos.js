@@ -94,7 +94,7 @@ const     Todos = ({translateType, setTranslateType}) => {
                                         <TextTitle font="16px" fontWeight="300" align="left" top="20px">{prev.name}</TextTitle>
                                     </Grid>
                                     <Grid item xs={12} sm={6}>
-                                        <SelectLabeled idK={prev.name} options={optionList} collect={item} setCollect={setItem} field="level" defaultApiValue={prev?.level?.label} width="100%" placeholder="Mavzuyim emas.." />
+                                        <SelectLabeled idK={prev.name} options={optionList} collect={item} setCollect={setItem} field="level" defaultApiValue={prev?.level?.label} width="100%" placeholder="Mening mavzuyim emas.." />
                                     </Grid>
                                 </Grid>
                             </Grid>
@@ -108,10 +108,10 @@ const     Todos = ({translateType, setTranslateType}) => {
                             <Grid item xs={12} sm={10} md={6}>
                                 <Grid container spacing={1}>
                                     <Grid item xs={12} sm={6} md={6} >
-                                        <InputLabeled state={item} setState={setItem} field="name" width="100%" placeholder="Text..." />
+                                        <InputLabeled state={item} setState={setItem} field="name" width="100%" placeholder="Mavzuni yozing" />
                                     </Grid>
                                     <Grid item xs={12} sm={6} md={6}>
-                                        <Select options={optionList} collect={item} setCollect={setItem} field="level" margin="24px 0 0 0" width="100%" placeholder="Mavzuyim emas.." />
+                                        <Select options={optionList} collect={item} setCollect={setItem} field="level" margin="24px 0 0 0" width="100%" placeholder="Mening mavzuyim emas.." />
                                     </Grid>
                                 </Grid>
                             </Grid>

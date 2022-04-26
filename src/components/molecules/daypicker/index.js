@@ -41,7 +41,7 @@ export default class Example extends React.Component {
     // }
     return (
 
-      <div style={{ textAlign: 'center' }}>
+      <div style={{ textAlign: 'center', paddingBottom:'10px' }}>
         {
           this.props.title === "no" ? null :
            <div style={{ fontWeight: 'bold', fontSize: '15px' , margin: "10px 0", transform: 'translateX(-10px)' }} className="oylikcenter">Oylik ish jadvalim</div>

@@ -13,7 +13,12 @@ export const Navbar = styled.div`
     transition: 0.3s all;
     background-color: #fff;
  
-    
+    a{
+        color:#444;
+    }
+    a:hover{
+        color:#326a32;
+    }
    @media(max-width:450px){
     padding: ${props => props.navbarProps > 30 ? "8px 20px " : "15px 20px"};
     .navbar_pad{

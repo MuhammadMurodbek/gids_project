@@ -7,7 +7,15 @@ export const WrapperContainer = styled.div`
     padding:20px 0;
     overflow: hidden;
     box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.12);
-
+    .bio_text{
+        text-align:justify;
+        // background:red;
+    }
+    .bold_text{
+        display:inline-block;
+        text-align:left;
+        font-weight:bold;
+    }
     .gid-info-personal{
             font-size:15px;
         .text{

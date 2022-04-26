@@ -44,7 +44,7 @@ export default function Index() {
             <Layout>
                 <Wrapper>
                     <Grid className="gridTitle2" item xs={12} md={6}>
-                        <div onClick={handlePrev} className="comback"> <ArrowBackIcon className="link22" />  Ro’yhatiga qaytish</div>
+                        <div onClick={handlePrev} className="comback"> <ArrowBackIcon className="link22" />  Ro’yxatga qaytish</div>
                     </Grid>
                     {
                         (apiData?.error === '' && apiData?.success === '') ? <Spinner marginTop="60px" width={50} height={50} /> :
@@ -64,6 +64,7 @@ export default function Index() {
                                     
                                     <Grid item xs={12} md={4}>
                                         <CardMainSecond 
+                                            typeRole={{ role: role }} 
                                             state={apiData?.success?.data} 
                                             commentCount={commentApi?.success?.data?.counts}
                                             commentReview={commentApi?.success?.data?.reviews}
