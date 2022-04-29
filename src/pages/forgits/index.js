@@ -15,8 +15,9 @@ import AccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { Link } from 'react-router-dom';
-import {mediaTextField, mediaTextFieldSec, mediaImage, mediaBtn} from "../../custom/global.media.variables"
-import {useTranslation} from 'react-i18next'
+import { useHistory } from "react-router-dom"
+import { mediaTextField, mediaTextFieldSec, mediaImage, mediaBtn } from "../../custom/global.media.variables"
+import { useTranslation } from 'react-i18next'
 
 
 
@@ -32,24 +33,24 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Index() {
 
-    const {t} = useTranslation()
-
+    const { t } = useTranslation()
+    const history = useHistory()
     const classes = useStyles();
-    const btnType = {btnType: ''}
+    const btnType = { btnType: '' }
     return (
         <div>
             <Wrapper>
                 <ComponentTwo>
                     <Grid container spacing={1} direction="row" className="grid_container">
-                        <Grid item xs={12}md={6} sm={12}>
+                        <Grid item xs={12} md={6} sm={12}>
                             <div className="container-2-1">
-                                <TextTitle {...mediaTextField} {...mediaTextFieldSec} align="left" bottom="30px"  font="48px" lineHeight="56px">
+                                <TextTitle {...mediaTextField} {...mediaTextFieldSec} align="left" bottom="30px" font="48px" lineHeight="56px">
                                     {t("gidlar_uchun.title")}
                                 </TextTitle>
-                                
-                                   <Link to="/auth"> 
-                                        <Button {...mediaBtn} > {t("gidlar_uchun.royhatdanOtish")}</Button>
-                                   </Link>
+
+                                <Link to="/auth">
+                                    <Button {...mediaBtn} > {t("gidlar_uchun.royhatdanOtish")}</Button>
+                                </Link>
                                 {/* </FlexContainer> */}
                             </div>
                         </Grid>
@@ -87,7 +88,7 @@ export default function Index() {
                         {t("gidlar_uchun.kopSavollar")}
                     </TextTitle>
 
-                    <div> 
+                    <div>
                         <Accordion>
                             <AccordionSummary
                                 expandIcon={<ExpandMoreIcon />}
@@ -100,7 +101,7 @@ export default function Index() {
                             </AccordionSummary>
                             <AccordionDetails>
                                 <Typography>
-                                     {t("gidlar_uchun.ha")}
+                                    {t("gidlar_uchun.ha")}
                                 </Typography>
                             </AccordionDetails>
                         </Accordion>
@@ -112,7 +113,7 @@ export default function Index() {
                                 id="panel2a-header"
                             >
                                 <Typography className={classes.heading}>
-                                <div className="title-S">{t("gidlar_uchun.qandayT")}</div>
+                                    <div className="title-S">{t("gidlar_uchun.qandayT")}</div>
                                 </Typography>
                             </AccordionSummary>
                             <AccordionDetails>
@@ -129,7 +130,7 @@ export default function Index() {
                                 id="panel2a-header"
                             >
                                 <Typography className={classes.heading}>
-                                <div className="title-S">{t("gidlar_uchun.tekshirilgan")}</div>
+                                    <div className="title-S">{t("gidlar_uchun.tekshirilgan")}</div>
                                 </Typography>
                             </AccordionSummary>
                             <AccordionDetails>
@@ -146,8 +147,8 @@ export default function Index() {
                                 id="panel2a-header"
                             >
                                 <Typography className={classes.heading}>
-                                <div className="title-S"> {t("gidlar_uchun.qandayKiraman")} </div>
-                               </Typography>
+                                    <div className="title-S"> {t("gidlar_uchun.qandayKiraman")} </div>
+                                </Typography>
                             </AccordionSummary>
                             <AccordionDetails>
                                 <Typography>
@@ -162,11 +163,15 @@ export default function Index() {
                 <ContainerLast>
                     <div className="application-last">
                         <TextTitle {...mediaTextField} {...mediaTextFieldSec} width="50%" left="auto" right="auto" bottom="40px">{t("gidlar_uchun.hoziroq")}</TextTitle>
-                        
-                           <Link to="/auth"> 
-                                <Button {...mediaBtn} className="button-s">{t("gidlar_uchun.royhatdanO")}</Button>
-                           </Link>
-                        
+
+                        <Link to="/auth">
+                            <Button margin={"5px"} width="200px" type="outlined" onClick={() => history.push('/gids')} {...mediaBtn}>{t("main.tanlash")}
+                            </Button>
+
+                            <Button  margin={"5px"}  {...mediaBtn} className="button-s">{t("gidlar_uchun.royhatdanO")}</Button>
+
+                        </Link>
+
                     </div>
                 </ContainerLast>
 

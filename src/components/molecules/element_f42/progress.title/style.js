@@ -4,7 +4,8 @@ export const Wrapper = styled.div`
     height: auto;
     /* background-color:red; */
     margin:0 auto;
-    @media (max-width:460px){
+    
+     @media (max-width:460px){
         &{
             width:300px;
         }

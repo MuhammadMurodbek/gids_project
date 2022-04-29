@@ -27,9 +27,7 @@ export default function Index(props) {
                         {kalendar}
                     </div>
 
-                    <div className="hteg_wrapper">
-                       <div className="hteg img0 tagwidth" style={{cursor:'pointer'}} onClick={handleFilter}> <b> {hteg} </b> </div>
-                    </div>
+                  
                 </div>
             </Grid>
         </Wrapper>

@@ -13,7 +13,7 @@ import { WrapEdit } from "./style"
 import { mediaBtn } from "../../custom/global.media.variables"
 import { getApiResponse, putApiResponse } from "../../hooks/response_get"
 import TestComponent from "../../components/templates/test.component"
-import {defaultApiValueReset} from "./constant"
+import { defaultApiValueReset } from "./constant"
 import moment from "moment"
 import TestModal from "../../custom/test.components"
 
@@ -30,38 +30,38 @@ const EditApp = () => {
     const [state, setState] = useState({ data: null, loading: false, success: false, error: false })
     const [postData, setPostData] = useState({ data: null, loading: false, success: false, error: false })
     const [callback, setCallback] = useState(false)
-    let countryId = watch('country')                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+    let countryId = watch('country')
     let cityList = country?.filter((item) => item?.id === countryId?.value)[0]?.cities?.map((prev) => { return { label: prev[lan], value: prev?.id } })
-    useEffect(() => { if (countryId && countryId?.value!==state?.data?.country) { setValue('city', '') } }, [countryId])
+    useEffect(() => { if (countryId && countryId?.value !== state?.data?.country) { setValue('city', '') } }, [countryId])
     useEffect(() => { getApiResponse(`/api/users/self/application/${id}/`, setState) }, [callback])
     useEffect(() => {
         reset(defaultApiValueReset)
-        if(state?.success){
+        if (state?.success) {
             let getData = state?.data
             // console.log(getData)
             reset({
                 ...getData,
-                is_female:getData?.is_female,
-                country:{label:getData?.country_name[lan], value:getData?.country},
-                city:{label:getData.city_name[lan], value:getData.city},
-                start_date:moment(getData?.start_date, 'DD-MM-YYYY'),  
-                end_date:new Date(getData?.end_date),
-                currency:{label:CurrencyProp[getData?.currency], value:getData?.currency},
-                languages:getData?.languages?.map((item)=>{return{label:item?.language[lan], value:item.id}}),
+                is_female: getData?.is_female,
+                country: { label: getData?.country_name[lan], value: getData?.country },
+                city: { label: getData.city_name[lan], value: getData.city },
+                start_date: moment(getData?.start_date, 'DD-MM-YYYY'),
+                end_date: new Date(getData?.end_date),
+                currency: { label: CurrencyProp[getData?.currency], value: getData?.currency },
+                languages: getData?.languages?.map((item) => { return { label: item?.language[lan], value: item.id } }),
             })
         }
-    }, [state,id])
+    }, [state, id])
     const onSubmit = (data) => {
         let postData = {
             ...data,
-            languages:data?.languages?.map(item=>item?.value),
-            currency:data?.currency?.value,
-            country:data?.country?.value,
-            city:data?.city?.value,
-            start_date:moment(data?.start_date).format('YYYY-MM-DD'),
-            end_date:moment(data?.end_date).format('YYYY-MM-DD'),
-            city_name:data?.city,
-            country_name:data?.country,
+            languages: data?.languages?.map(item => item?.value),
+            currency: data?.currency?.value,
+            country: data?.country?.value,
+            city: data?.city?.value,
+            start_date: moment(data?.start_date).format('YYYY-MM-DD'),
+            end_date: moment(data?.end_date).format('YYYY-MM-DD'),
+            city_name: data?.city,
+            country_name: data?.country,
         }
         putApiResponse(`/api/users/self/application/${id}/`, postData, setPostData)
     }
@@ -69,14 +69,14 @@ const EditApp = () => {
     // console.log(state?.data)
     return (
         <WrapEdit>
-            <TestModal {...postData} etitle={"Status: "+postData?.data?.status+". "+"StatusText: "+postData?.data?.statusText} onSuccess={onSuccess}/>
+            <TestModal {...postData} etitle={"Status: " + postData?.data?.status + ". " + "StatusText: " + postData?.data?.statusText} onSuccess={onSuccess} />
             <Container width="90%" padding="0" margin="40px auto" boxShadow={shadow}>
-             <Title> Arizani taxrirlash </Title>
+                <Title> Arizani taxrirlash </Title>
                 <Container {...mediaContainer} padding="30px">
-                    <Container {...mediaContainerWidth} width={state?.success ? '85%':'100%'} >
+                    <Container {...mediaContainerWidth} width={state?.success ? '85%' : '100%'} >
                         <TestComponent
                             {...state}
-                            setCallback={()=>setCallback(!callback)}
+                            setCallback={() => setCallback(!callback)}
                             currentJSX={
                                 <form onSubmit={handleSubmit(onSubmit)}>
                                     <Grid container spacing={1} alignItems="center" className="wrap-grid">
@@ -107,7 +107,7 @@ const EditApp = () => {
                                         <Grid item xs={12} sm={12} md={7}>
                                             <Grid container spacing={1} alignItems="center" className="wrap-grid">
                                                 <Grid item xs={12} sm={12} md={6}><SelectController Controller={Controller} control={control} name="country" options={countryList} pl={'Davlat tanlang'} /></Grid>
-                                                <Grid item xs={12} sm={12} md={6}><SelectController Controller={Controller} control={control} name="city" options={cityList} pl={ 'Shahar kiriting'} /></Grid>
+                                                <Grid item xs={12} sm={12} md={6}><SelectController Controller={Controller} control={control} name="city" options={cityList} pl={'Shahar kiriting'} /></Grid>
                                             </Grid>
                                         </Grid>
 
@@ -118,8 +118,12 @@ const EditApp = () => {
                                         </Grid>
                                         <Grid item xs={12} sm={12} md={7}>
                                             <Grid container spacing={1} alignItems="center" className="wrap-grid">
-                                                <Grid item xs={12} sm={12} md={6}><Calendar Controller={Controller} control={control} name="start_date" placeholder={moment(state?.data?.start_date).format('DD-MM-YYYY')} /></Grid>
-                                                <Grid item xs={12} sm={12} md={6}><Calendar Controller={Controller} control={control} name="end_date" placeholder={moment(state?.data?.end_date).format('DD-MM-YYYY')}/></Grid>
+                                                <Grid item xs={12} sm={12} md={6}>
+                                                    <Calendar Controller={Controller} control={control} name="start_date" placeholder={moment(state?.data?.start_date).format('DD-MM-YYYY')} />
+                                                </Grid>
+                                                <Grid item xs={12} sm={12} md={6}>
+                                                    <Calendar Controller={Controller} control={control} name="end_date" placeholder={moment(state?.data?.end_date).format('DD-MM-YYYY')} />
+                                                </Grid>
                                             </Grid>
                                         </Grid>
                                     </Grid><br />
@@ -146,18 +150,23 @@ const EditApp = () => {
                                         <Grid item xs={12} sm={12} md={7}>
                                             <Grid container spacing={1} alignItems="center" className="wrap-grid">
                                                 <Grid item xs={12} sm={12} md={8}><InputController control={control} name="cost" placeholder="Narx chegarasini yozing" step={0.01} /></Grid>
-                                                <Grid item xs={12} sm={12} md={4}><SelectController control={control} name="currency" options={currency} pl={'Valyuta'} /></Grid>
+                                                <Grid item xs={12} sm={12} md={4}>
+                                                    <SelectController control={control} name="currency" options={currency} pl={'Valyuta'} /></Grid>
                                             </Grid>
                                         </Grid>
                                     </Grid><br />
                                     <Grid container spacing={1} alignItems="center" className="wrap-grid">
                                         <Grid item xs={12} sm={12} md={5}>
-                                        <div className="title_inner"> {t("arizaqoldirish.jinsi")} </div>
+                                            <div className="title_inner"> {t("arizaqoldirish.jinsi")} </div>
                                         </Grid>
                                         <Grid item xs={12} sm={12} md={7}>
                                             <Grid container spacing={1} alignItems="center" className="wrap-grid">
-                                                <Grid item xs={12} sm={12} md={3}><CheckBoxController name="is_male" control={control} label="Erkak" /></Grid>
-                                                <Grid item xs={12} sm={12} md={3}><CheckBoxController name="is_female" control={control} label="Ayol" /></Grid>
+                                                <Grid item xs={12} sm={12} md={3}>
+                                                    <CheckBoxController name="is_male" control={control} label="Erkak" />
+                                                </Grid>
+                                                <Grid item xs={12} sm={12} md={3}>
+                                                    <CheckBoxController name="is_female" control={control} label="Ayol" />
+                                                </Grid>
                                             </Grid>
                                         </Grid>
                                     </Grid><br />
@@ -172,7 +181,7 @@ const EditApp = () => {
                                     <Grid container spacing={1} alignItems="center" className="wrap-grid">
                                         <Grid item xs={12} md={5}></Grid>
                                         <Grid item xs={12} md={7}>
-                                            <CheckBoxController name="consent" control={control} label="Arizani yoborib, siz foydalanuvchi shartnomasiga rozilik bildirasiz*" />
+                                            <CheckBoxController name="consent" control={control} label="Arizani yoborib, men foydalanuvchi shartnomasiga rozilik bildirasiz*" />
                                         </Grid>
                                     </Grid>
                                     <Container width="100%" margin="30px 0 0" textAlign="center" >
@@ -180,7 +189,7 @@ const EditApp = () => {
                                             <Grid item xs={12} md={5}></Grid>
                                             <Grid item xs={12} md={7}><Button type="submit"  {...mediaBtn}>&nbsp; {t("arizaqoldirish.Ayuborish")}</Button></Grid>
                                         </Grid>
-                                        
+
                                     </Container>
                                 </form>
                             }
@@ -321,9 +330,9 @@ export default EditApp
 //                                             <SelectLang
 //                                                 setState={setCollect}
 //                                                 state={collect}
-//                                                 // field="languages" 
+//                                                 // field="languages"
 //                                                 placeholder={t("arizaqoldirish.BilishikeralPlac")}
-//                                                 // options={ gid_lang_obj } 
+//                                                 // options={ gid_lang_obj }
 //                                                 errorText={error ? validatorState(collect?.languages, 'array', 0, 'Tillar kiritilmagan') : null}
 //                                             />
 //                                         </Grid>

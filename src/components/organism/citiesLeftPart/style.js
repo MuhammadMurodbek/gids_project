@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
     .text-link{
         color: #326A32;
         display: flex;
-        margin-top: 15px;
+
         text-align: center;
     }
     .arrow__readmore{
@@ -30,6 +30,11 @@ export const Wrapper = styled.div`
         width:20px;
         margin-left:5px;
         margin-bottom:3px;
+    }
+    .div_foot{
+        display:flex;
+        aligin-items:center;
+        justify-content: space-between;
     }
  
    

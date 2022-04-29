@@ -13,13 +13,13 @@ export const PercentCount = styled.div`
     text-align: center;
 
     .main{
-        font-size: 60px;
+        font-size: 40px;
         font-weight: bold;
     }
     .extra{
         position: relative;
         top:10px;
-        font-size: 25px;
+        font-size: 20px;
         font-weight: bold;
     }
 `
