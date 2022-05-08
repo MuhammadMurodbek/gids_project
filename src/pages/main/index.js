@@ -86,8 +86,8 @@ const Index = () => {
         window.scrollTo(0, 0);
     }
 
-    const toWIndows1 = ()=>{
-        window.scrollTo(0,0)
+    const toWIndows1 = () => {
+        window.scrollTo(0, 0)
     }
     // console.log("ssss", getRole?.role)
     return (
@@ -116,21 +116,22 @@ const Index = () => {
                         <Grid item xs={12} md={6} sm={12}>
                             <div className="container-2-1 first">
                                 <div className="title-second-main-container-text">{t("main.tadbirkorlarga")}</div>
-                                <p style={{textAlign:'justify'}}>{t("main.textForTadbirkor")}</p>
+                                <p style={{ textAlign: 'justify' }}>{t("main.textForTadbirkor")}</p>
                                 <FlexContainer width="400px" {...mediaFlexButtons} justifyContent="space-between">
                                     {/* <Link to="/application-form" > */}
 
+                                    <Link to="/gids">
+                                        <Button width="200px" onClick={() => history.push('/gids')} {...mediaBtn}>{t("main.tanlash")}
+                                        </Button>
+                                    </Link>
                                     {
                                         getRole?.role === "translator" ? null
                                             :
                                             getRole?.role === "writer" ? null
                                                 : getRole?.role === "gid" ? null
                                                     :
-                                                    <Button className="btn_medida_last newst" onClick={onClickbutton} {...mediaBtn}>{t("main.arizaQoldrirish")} </Button>
+                                                    <Button type="outlined" className="btn_medida_last newst" onClick={onClickbutton} {...mediaBtn}>{t("main.arizaQoldrirish")} </Button>
                                     }
-                                    <Link to="/gids">
-                                        <Button className="btn_medida_last" {...mediaBtn} type="outlined"> {t("main.Gid_tanlash")} </Button>
-                                    </Link>
 
                                     {/* </Link> */}
                                 </FlexContainer>
@@ -148,7 +149,7 @@ const Index = () => {
                         <Grid item md={6} sm={12}>
                             <div className="container-2-1 second">
                                 <div className="title-second-main-container-text"> {t("main.Gidlarga")} </div>
-                                <p style={{textAlign:'justify'}}>{t("main.textForGid")}</p>
+                                <p style={{ textAlign: 'justify' }}>{t("main.textForGid")}</p>
                                 <div>
                                     <Link to="/auth">
                                         <Button className="btn_medida_last" width="300px" {...mediaBtn}> {t("main.royhatdanO")} </Button>
@@ -190,8 +191,8 @@ const Index = () => {
                                         <ImgContainer width="100%" height="270px" src={img4} />
                                         <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
                                             <div className="title-container">Xiva</div>
-                                            <Link to="/xiva?page=1" className="link11" 
-                                            onClick={toWIndows1} >
+                                            <Link to="/xiva?page=1" className="link11"
+                                                onClick={toWIndows1} >
                                                 {t("main.korish")}  <img src={img21} alt="asdfasdf" />
                                             </Link>
                                         </FlexContainer>
@@ -205,7 +206,7 @@ const Index = () => {
                                         <ImgContainer width="100%" height="270px" src={img3} />
                                         <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
                                             <div className="title-container">Buhoro</div>
-                                            <Link onClick={toWIndows1}  to="/cities?page=1" className="link11">
+                                            <Link onClick={toWIndows1} to="/cities?page=1" className="link11">
                                                 {t("main.korish")}  <img src={img21} alt="asdfasdf" />
                                             </Link>
                                         </FlexContainer>
@@ -218,7 +219,7 @@ const Index = () => {
                                         <ImgContainer width="100%" height="270px" src={img2} />
                                         <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
                                             <div className="title-container">Toshkent</div>
-                                            <Link onClick={toWIndows1}  to="/toshkent?page=1" className="link11">
+                                            <Link onClick={toWIndows1} to="/toshkent?page=1" className="link11">
                                                 {t("main.korish")}  <img src={img21} alt="asdfasdf" />
                                             </Link>
                                         </FlexContainer>
@@ -245,11 +246,11 @@ const Index = () => {
                     </TextTitle>
                     <FlexContainer {...mediaFlexButtons} width="420px" margin="0 auto" alignItems="center" justifyContent="space-between">
 
-                        <Button  width="200px" type="outlined" onClick={()=>history.push('/gids')} {...mediaBtn}>{t("main.tanlash")} 
+                        <Button width="200px" onClick={() => history.push('/gids')} {...mediaBtn}>{t("main.tanlash")}
                         </Button>
 
-                        <Button width="200px"  onClick={onClickbutton} {...mediaBtn}>{t("main.arizaQoldrirish")} </Button>&nbsp;
-                        
+                        <Button width="200px" type="outlined" onClick={onClickbutton} {...mediaBtn}>{t("main.arizaQoldrirish")} </Button>&nbsp;
+
                         {/* { 
                             getRole?.role === "translator" ? null
                                 :

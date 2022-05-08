@@ -37,11 +37,16 @@ export const Wrapper = styled.div`
         font-size:13px;
         position:relative;
         right:17px;
+        margin-top:2px
+    }
+    .LtUaO{
+        margin:0
     }
     .no_data_text{
         position: relative;
         right:17px;
     }
+
 `
 export const TextSpan = styled.div`
 display:inline-block;

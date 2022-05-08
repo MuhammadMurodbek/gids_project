@@ -122,7 +122,7 @@ const Index = () => {
 
                           <ButtonNavbar title={t("navbar.Ariza_qoldirish")} url="/application-form" />
 
-                          <a href="https://www.travelcars.uz" target="_blank">Transport</a>
+                          <a className="travelc" href="https://www.travelcars.uz" target="_blank">Transport</a>
                         </>
               }
             </FlexContainer>

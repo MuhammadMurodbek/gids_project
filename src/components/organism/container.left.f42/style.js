@@ -31,7 +31,10 @@ export const WrapperContainer = styled.div`
     overflow: hidden;
     box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.12);
     .ssdd{
-        margin-top:-25px;
+        // margin-top:-25px;
+     }
+     .kQovWC{
+         float:right;
      }
     p{
         font-size: 14px;

@@ -93,30 +93,35 @@ export default function Index() {
     return (
         <div>
             <Wrapper>
-                <TextTitle {...mediaTextField} {...mediaTextFieldSec} top="40px" bottom="50px">
+                {/* <TextTitle {...mediaTextField} {...mediaTextFieldSec} top="40px" bottom="50px">
                     {t("connect.contact")}
-                </TextTitle>
-                <Grid container alignItems="center" spacing={1} diracti>
+                </TextTitle> */}
+                <Grid className='topconect' container alignItems="center" spacing={1} diracti>
                     <Grid item xs={12} md={5} >
                         <h3 className="grid1">{t("connect.Kontaktlarimiz")}</h3>
                         <p> <b>Tel:</b> +99893 596-92-20</p>
                         <p> <b>E-mail: </b>  info@gits.uz</p>
                         <p> <b>Manzil: </b>Nukus ko'chasi, 86/3, Toshkent, 100015, O'zbekiston</p>
-                        <div>
+                        <b>Ish soatlari:</b>
+                        <p className='paragrefd'> Dushanba - Juma</p>
+                        <p className='paragrefd'> (09:00 - 18:00) </p>
+                        <p className='paragrefd'> Shanba </p>
+                        <p className='paragrefd'> (10:00 - 17:00) </p>
+                        <div className='paddingtop'>
                             <img className="icons" src={imgtg} alt="name" />
                             <img className="icons" src={imgfac} alt="facebook" />
                             <img className="icons" src={imginsta} alt="insta" />
                         </div>
                     </Grid>
                     <Grid item xs={12} md={7} className="grid2" >
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m19!1m8!1m3!1d5995.835629564712!2d69.272551!3d41.2888931!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x38ae8b1e6c899caf%3A0xbefcfa0fa695105!2zT09PICJUUkFWRUwgQ0FSUyIgODYsINC60L7RgNC_LiAzIE51a3VzIFN0cmVldCBUYXNoa2VudCAxMDAwMTU!3m2!1d41.288893099999996!2d69.27255099999999!5e0!3m2!1sru!2s!4v1643979461824!5m2!1sru!2s" width="690" height="530"     ></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m19!1m8!1m3!1d5995.835629564712!2d69.272551!3d41.2888931!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x38ae8b1e6c899caf%3A0xbefcfa0fa695105!2zT09PICJUUkFWRUwgQ0FSUyIgODYsINC60L7RgNC_LiAzIE51a3VzIFN0cmVldCBUYXNoa2VudCAxMDAwMTU!3m2!1d41.288893099999996!2d69.27255099999999!5e0!3m2!1sru!2s!4v1643979461824!5m2!1sru!2s" width="650" height="470"     ></iframe>
 
                     </Grid>
                 </Grid>
 
                 <form onSubmit={handleSubmit}>
                     <TextTitle
-                        {...mediaTextField} {...mediaTextFieldSec} top="100px" bottom="100px">
+                        {...mediaTextField} {...mediaTextFieldSec} top="50px" bottom="40px">
                         {t("connect.savol")}
                     </TextTitle>
 

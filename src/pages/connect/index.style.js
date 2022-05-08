@@ -4,7 +4,15 @@ export const Wrapper = styled.div`
     width: 90%;
     margin:0 auto;
     padding:10px    ;
-
+    .topconect{
+        margin-top:50px
+    }
+    .paragrefd{
+        margin:0;
+    }
+    .paddingtop{
+        margin-top:10px
+    }
     .grid1{
         font-weight: 600;
 
@@ -17,7 +25,7 @@ export const Wrapper = styled.div`
         border: none;
     }
     .icons{
-       margin-left: 20px;
+       margin-right: 20px;
     }
     .modaltitle{
          color:#36BF76;

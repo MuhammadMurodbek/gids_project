@@ -25,12 +25,12 @@ const Index = ({ data, role }) => {
         var out = [];
         var len = a?.length;
         var j = 0;
-        for(var i = 0; i < len; i++) {
-             var item = a[i];
-             if(seen[item] !== 1) {
-                   seen[item] = 1;
-                   out[j++] = item;
-             }
+        for (var i = 0; i < len; i++) {
+            var item = a[i];
+            if (seen[item] !== 1) {
+                seen[item] = 1;
+                out[j++] = item;
+            }
         }
         return out;
     }
@@ -52,7 +52,7 @@ const Index = ({ data, role }) => {
                             <Text title="Katta hajmdagi fayllarni qabul qilish:" text={<span>&nbsp;{data?.always_online ? 'Ha' : "Yo'q"}&nbsp;</span>} /> <br />
                             <Text title="Tarjima qilish uchun CAT dasturlari:" text={data?.cat_programmes?.length > 0 ? data?.cat_programmes?.map(a => <span style={{ textTransform: 'capitalize' }}>{" " + a + ","}</span>) : " Ma'lumot kiritilmagan"} />
 
-                            { data?.themes?.length > 0 && <div style={{ marginTop: 10 }}> <Text title="Mavzular:" /></div>}
+                            {data?.themes?.length > 0 && <div style={{ marginTop: 10 }}> <Text title="Mavzular:" /></div>}
 
                             <div className='mavzulardd'>
                                 {
@@ -89,10 +89,14 @@ const Index = ({ data, role }) => {
                                 <Grid container spacing={1} className="gridCon">
                                     <Grid item md={12} className="as">
                                         <FlexContainer justifyContent="flex-start" margin="0 0 5px">
-                                            <Text title="Ekskursiyalar:" /> <span className="yes_no">{data?.excursions?.length > 0 ? "Ha" : "Yo'q"}</span>
+                                            <Text title="Ekskursiyalar:" />
+                                            <span className="yes_no">{data?.excursions?.length > 0 ? "Ha" : "Yo'q"}</span>
                                         </FlexContainer>
                                         <FlexContainer margin="0 0 5px">
-                                            <Text title="Og'zaki tarjima (ketma-ket):" /><span className="yes_no">{data?.consecutive_translate ? "Ha" : "Yo'q"}</span>
+                                            <Text title="Og'zaki tarjima:"/>
+                                            <span className="yes_no">
+                                                {data?.consecutive_translate ? "Ha":"Yo'q"}
+                                            </span>
                                         </FlexContainer>
                                         {data?.consecutive_translate &&
                                             <>

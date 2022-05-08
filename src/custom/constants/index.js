@@ -8,9 +8,10 @@ export const gid_lang_obj=[
 ];
 
 export const currency = [
-    {value:"dollar", label:'USD'},
-    {value:"sum", label:'UZS'},
-    {value:"ruble", label:'RUBL'},
+    {value:"dollar", label:'UZS'},
+    {value:"sum", label:'USD'},
+    {value:"eur", label:'EUR'},
+    {value:"ruble", label:'RUB'},
 ]
 export const CURRENCY_CHECK = {
     dollar:'USD',

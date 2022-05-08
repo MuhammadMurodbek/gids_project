@@ -94,6 +94,9 @@ export const Navbar = styled.div`
     .prof{
         color: #444;
     }
+    .travelc{
+        margin-left:20px;
+    }
 `
 export const MediaNavbar = styled.div`
     position: absolute;

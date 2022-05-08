@@ -149,7 +149,8 @@ const EditApp = () => {
                                         </Grid>
                                         <Grid item xs={12} sm={12} md={7}>
                                             <Grid container spacing={1} alignItems="center" className="wrap-grid">
-                                                <Grid item xs={12} sm={12} md={8}><InputController control={control} name="cost" placeholder="Narx chegarasini yozing" step={0.01} /></Grid>
+                                                <Grid item xs={12} sm={12} md={8}>
+                                                    <InputController control={control} name="cost" placeholder="Narx chegarasini yozing" step={0.01} /></Grid>
                                                 <Grid item xs={12} sm={12} md={4}>
                                                     <SelectController control={control} name="currency" options={currency} pl={'Valyuta'} /></Grid>
                                             </Grid>
