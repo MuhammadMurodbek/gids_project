@@ -84,7 +84,7 @@ const Index = () => {
                                 />
                             }
                             <div className="pagination">
-                                <Pagination className="sss" current={pagination?.current} onChange={onChange} pageSize={7} total={state?.data?.count} />
+                                <Pagination className="sss" current={pagination?.current} onChange={onChange} pageSize={10} total={state?.data?.count} />
                             </div>
                         </Container>
                     </Grid>

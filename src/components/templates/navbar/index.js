@@ -86,7 +86,7 @@ const Index = () => {
                     <ButtonNavbar title={t("navbar.GTU")} url="/forgits" />
                     <ButtonNavbar title="Blog" url="/blog?page=1" />
                     <ButtonNavbar title={t("navbar.Arizalar_royhati")} url="/request" />
-                    <a href="https://www.travelcars.uz" target="_blank">Transport</a>
+                    <a className="transport" href="https://www.travelcars.uz" target="_blank">Transport</a>
                   </>
                   :
                   getRole?.role === "writer" ?
@@ -94,7 +94,7 @@ const Index = () => {
                       <ButtonNavbar title={t("navbar.GTU")} url="/forgits" />
                       <ButtonNavbar title="Blog" url="/blog?page=1" />
                       <ButtonNavbar title={t("navbar.Arizalar_royhati")} url="/request" />
-                      <a href="https://www.travelcars.uz" target="_blank">Transport</a>
+                      <a className="transport" href="https://www.travelcars.uz" target="_blank">Transport</a>
                     </>
                     :
                     getRole?.role === "translator" ?
@@ -102,7 +102,7 @@ const Index = () => {
                         <ButtonNavbar title={t("navbar.GTU")} url="/forgits" />
                         <ButtonNavbar title="Blog" url="/blog?page=1" />
                         <ButtonNavbar title={t("navbar.Arizalar_royhati")} url="/request" />
-                        <a href="https://www.travelcars.uz" target="_blank">Transport</a>
+                        <a className="transport" href="https://www.travelcars.uz" target="_blank">Transport</a>
                       </>
                       :
                       getRole?.role === "simple_user" ?
@@ -110,7 +110,7 @@ const Index = () => {
                           <ButtonNavbar title={t("navbar.GvaTtanlash")} url="/gids" />
                           <ButtonNavbar title="Blog" url="/blog?page=1" />
                           <ButtonNavbar title={t("navbar.Ariza_qoldirish")} url="/application-form" />
-                          <a href="https://www.travelcars.uz" target="_blank">Transport</a>
+                          <a className="transport" href="https://www.travelcars.uz" target="_blank">Transport</a>
                         </>
                         :
                         <>
