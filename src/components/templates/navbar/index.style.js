@@ -16,6 +16,9 @@ export const Navbar = styled.div`
     a{
         color:#444;
     }
+    a.transport{
+        margin-left: 10px;
+    }
     a:hover{
         color:#326a32;
     }
