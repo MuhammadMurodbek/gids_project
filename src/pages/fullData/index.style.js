@@ -58,6 +58,7 @@ export const Wrapper = styled.div`
        display: flex;
        width: 100%;
      }
+    
     .del-edit{
       width:70px;
       // margin-left: 30px;
@@ -72,6 +73,14 @@ export const Wrapper = styled.div`
         margin-right:5px;
         border-color:red;
      }
+     @media (min-width:1400px){
+      .newpagte{
+          width: 1250px;
+          margin: 0 auto;
+           
+
+      }
+  }
     @media (max-width:961px){
       .image_adds{
         display: none;

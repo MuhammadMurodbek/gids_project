@@ -21,7 +21,7 @@ export const tabs = [
         component:<Experience/>,
     },
     {
-        label:<div className="border-div"> darajasi</div>,
+        label:<div className="border-div"> Darajasi</div>,
         component:<Lang/>,
     },
     {
@@ -52,7 +52,7 @@ export const tabsWriter = [
         component:<Experience/>,
     },
     {
-        label:<div className="border-div"> darajasi</div>,
+        label:<div className="border-div"> Darajasi</div>,
         component:<Lang/>,
     },
     {

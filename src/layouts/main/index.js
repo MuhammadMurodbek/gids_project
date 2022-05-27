@@ -18,7 +18,7 @@ const Index = ({children}) => {
     const {isExpired } = useJwt(token1 ? token1.access : undefined)
     useEffect(()=>{
         let token = JSON.parse(localStorage.getItem("user_token"))
-        if(!location.pathname.includes('auth') && location.pathname!=='/'  &&   location.pathname!=='/blog' && location.pathname!=='/forgits' && !location.pathname.includes('request') && location.pathname!=='/about'  &&   location.pathname!=='/connect' && location.pathname!=='/gids' &&location.pathname !=='/seeprofile' && location.pathname !=='/application-form' && location.pathname!=='/cities' && location.pathname !=='/samarqand'  && location.pathname !=='/xiva' && location.pathname !=='/toshkent'){
+        if(!location.pathname.includes('auth') && location.pathname!=='/'  &&   !location.pathname.includes('/blog') && location.pathname!=='/forgits' && !location.pathname.includes('request') && location.pathname!=='/about'  &&   location.pathname!=='/connect' && location.pathname!=='/gids' &&location.pathname !=='/seeprofile' && location.pathname !=='/application-form' && location.pathname!=='/cities' && location.pathname !=='/samarqand'  && location.pathname !=='/xiva' && location.pathname !=='/toshkent'){
             if(!isExpired){
                 let decoded = jwt_decode(token?.access);
                 let date = new Date(decoded?.exp * 1000);

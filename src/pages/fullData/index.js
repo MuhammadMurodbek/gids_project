@@ -22,7 +22,7 @@ export default function Index() {
   const [infoDelete, setInfoDelete] = useState(null)
   const [deleteCallback, setDeleteCallback ] = useState(false)
   useEffect(() => {
-    getResponse(`/api/posts/article/${id}`, setState)
+    getResponse(`/api/posts/article/${id}`, setState,true)
   }, [])
   useEffect(() => {
     if(state?.success) {
@@ -61,7 +61,7 @@ export default function Index() {
           state?.loader ? <Spinner marginTop="60px" width={ 50 } height={ 50 } />:
           (state?.success !== "" && state?.error === '') ?
           <>
-            <Grid justifyContent="center" container spacing={1}>
+            <Grid className="newpagte" justifyContent="center" container spacing={1}>
               <Grid item xs={12} md={8}>
                 <CitiLeftPart
                   title={getArticle.title}

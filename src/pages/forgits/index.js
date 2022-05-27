@@ -165,10 +165,10 @@ export default function Index() {
                         <TextTitle {...mediaTextField} {...mediaTextFieldSec} width="50%" left="auto" right="auto" bottom="40px">{t("gidlar_uchun.hoziroq")}</TextTitle>
 
                         <Link to="/auth">
-                            <Button margin={"5px"} width="200px" type="outlined" onClick={() => history.push('/gids')} {...mediaBtn}>{t("main.tanlash")}
-                            </Button>
 
-                            <Button  margin={"5px"}  {...mediaBtn} className="button-s">{t("gidlar_uchun.royhatdanO")}</Button>
+                            <Button margin={"5px"} width="200px"  onClick={() => history.push('/gids')} {...mediaBtn}>{t("main.tanlash")}
+                            </Button>
+                            <Button type="outlined" margin={"5px"}  {...mediaBtn} className="button-s">{t("gidlar_uchun.royhatdanO")}</Button>
 
                         </Link>
 
