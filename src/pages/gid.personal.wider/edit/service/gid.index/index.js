@@ -102,9 +102,9 @@ const GidIndex = () => {
                                     field1="excursion"
                                     field2="consecutive_translate"
                                     name1={t("xizmatlar.ekskursiyalar")}
-                                    name2={t("xizmatlar.ogzaki")}
+                                    name2={t("xizmatlar.yozma")}
                                     setState={setCheckItems}
-                                    state={checkItems}
+                                    state={checkItems} 
                                 />
                                 <DoubleCheck
                                     flexDirection="column"
@@ -127,7 +127,7 @@ const GidIndex = () => {
                                                         <Grid container spacing={1} key={index}>
                                                             <Grid item xs={12} sm={6} md={6}>
                                                                 <TextLabeledLoop
-                                                                    label={t("xizmatlar.mamalakatlargaEkskurs")} value={item?.country[lang] || 'Mavjud emas'} />
+                                                                    label={t("xizmatlar.mamlakatlargaEkskurs    ")} value={item?.country[lang] || 'Mavjud emas'} />
                                                             </Grid>
                                                             <Grid item xs={12} sm={6} md={5}>
                                                                 <TextLabeledLoop

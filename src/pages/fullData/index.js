@@ -13,6 +13,10 @@ import { getResponse, deleteResponse } from "../../hooks/response_get"
 import Spinner from "../../components/atom/loading.spinner.line"
 // import {error, success} from "../../components/organism/modals"
 import NoDataPage from "../../components/templates/no.data.page.js"
+import './main.css'
+
+
+
 export default function Index() {
   const {id} = useParams()
   const history = useHistory()
@@ -62,13 +66,15 @@ export default function Index() {
           (state?.success !== "" && state?.error === '') ?
           <>
             <Grid className="newpagte" justifyContent="center" container spacing={1}>
-              <Grid item xs={12} md={8}>
+              <Grid className="newspagetss" item xs={12} md={8}>
                 <CitiLeftPart
                   title={getArticle.title}
                   kalendar="23.01.2021"
-                  hteg={getArticle?.tags}
+                  // hteg={getArticle?.tags}
                   url={getArticle?.image}
                   text={getArticle?.content}
+                  name1= {getArticle?.author?.first_name }
+                  lastName = { getArticle?.author?.last_name}
                 />
 
 
@@ -77,14 +83,11 @@ export default function Index() {
                     <b className="mualif-b">Muallif: </b>
                     <span> {getArticle?.author?.first_name  +" "+  getArticle?.author?.last_name}  </span>
                   </div>
-                  {/* <div className="editbtn">
-                    <Button onClick={editFn} type="outlined">edit</Button>
-                  </div>
-                  <div className="deletebtn">
-                    <Button onClick={deleteFn} type="outlined">delete</Button>
-                  </div> */}
                 </div>
               </Grid>
+
+
+
               <Grid item xs={12} md={4} className="image_adds">
                 <div className="imgpard">
                   <ImgContainer src={ad} width="100%" />
@@ -110,3 +113,9 @@ export default function Index() {
 // <Button className="del-edit" type="outlined">
 // <img className="img1" src={delbtn} alt="asdf" />
 // </Button>
+{/* <div className="editbtn">
+  <Button onClick={editFn} type="outlined">edit</Button>
+</div>
+<div className="deletebtn">
+  <Button onClick={deleteFn} type="outlined">delete</Button>
+</div> */}

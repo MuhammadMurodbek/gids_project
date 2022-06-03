@@ -88,16 +88,19 @@ const Index = ({ data, role }) => {
                             <FlexContainer width="70%" margin="15px 0">
                                 <Grid container spacing={1} className="gridCon">
                                     <Grid item md={12} className="as">
+                                        
                                         <FlexContainer justifyContent="flex-start" margin="0 0 5px">
                                             <Text title="Ekskursiyalar:" />
                                             <span className="yes_no">{data?.excursions?.length > 0 ? "Ha" : "Yo'q"}</span>
                                         </FlexContainer>
+
                                         <FlexContainer margin="0 0 5px">
                                             <Text title="Og'zaki tarjima:"/>
                                             <span className="yes_no">
                                                 {data?.consecutive_translate ? "Ha":"Yo'q"}
                                             </span>
                                         </FlexContainer>
+                                        
                                         {data?.consecutive_translate &&
                                             <>
                                                 <FlexContainer margin="0 0 5px">
@@ -112,13 +115,13 @@ const Index = ({ data, role }) => {
                                 </Grid>
                             </FlexContainer>
                             <div class="box">
-                                <Text title="Ekskursiyalar:" />
+                       
                                 <div class="box_child">
                                     {
                                         uniq_fast(data?.excursions)?.filter((item) => { if (item?.city && item?.country) return item })?.length > 0 ?
                                             uniq_fast(data?.excursions)?.map((prev, index) => {
                                                 <span key={index}>{(prev?.city && prev?.country) && prev?.city[lan] + "-" + prev?.country[lan]}</span>
-                                            }) : <div className="no_data_text">Malumot kiritilmagan</div>
+                                            }) : <div className="no_data_text">Ma'lumot kiritilmagan</div>
                                     }
                                 </div>
                             </div>

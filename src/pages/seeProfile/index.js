@@ -37,6 +37,7 @@ export default function Index() {
     }, [apiData, callback])
     const handlePrev = ()=>{
         history.goBack()
+        window.scrollTo(0,0)
     }
 
     return (

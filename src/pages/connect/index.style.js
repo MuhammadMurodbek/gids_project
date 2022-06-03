@@ -5,7 +5,10 @@ export const Wrapper = styled.div`
     margin:0 auto;
     padding:10px    ;
     .topconect{
-        margin-top:50px
+        margin-top:50px;
+        //background:green;
+        display: flex !important;
+        justify-content: center !important;
     }
     .paragrefd{
         margin:0;
@@ -18,7 +21,12 @@ export const Wrapper = styled.div`
 
     }
     .grid2{
-        width: 200px;
+        //background:red;
+    }
+    .gridone{
+//        background:blue;
+        width:300px !important;
+
     }
     .iframe{
         width: 100%;
@@ -49,6 +57,10 @@ export const Wrapper = styled.div`
     .grid_btn{
         margin-bottom: 50px;
     }
+     
+
+
+
     @media (min-width:1367px){
         width:1250px;
         margin:0 auto;

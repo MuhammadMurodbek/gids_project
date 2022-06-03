@@ -69,6 +69,12 @@ export const Wrapper = styled.div`
       // margin-left: 30px;
       // padding: 10px;
     }
+
+.new_boxsh{
+  background:red
+}
+ 
+
     .editbtn{
         margin-right:5px;
         border-color:red;

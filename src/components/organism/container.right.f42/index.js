@@ -14,7 +14,7 @@ import facebook from '../../../assets/img/boglanish/11/facebook.png'
 import instagram from '../../../assets/img/boglanish/11/instagram.png'
 import viber from '../../../assets/img/boglanish/11/viber.png'
 import wechat from '../../../assets/img/boglanish/11/wechat.png'
-import website from '../../../assets/img/website.png'
+import website from '../../../assets/img/boglanish/11/watsapp.png'
 
 const mediaContainer = {
     m_width: '600px',
@@ -47,12 +47,12 @@ const Index = ({typeRole, state, commentCount, commentReview }) => {
 
                 {/* <p className="textb">Web site: <a className='links' target="_blank" href={state?.website  }  > {state?.website  } </a> </p> */}
                 <div className="imgdiv11">
-                    <a target="_blank" href={state?.facebook}>  <ImageContainer width="40px" src={facebook} /></a>
+                    <a target="_blank" href={state?.website}>     <ImageContainer width="40px" src={website} /></a>
                     <a target="_blank" href={state?.telegram}>  <ImageContainer width="40px" src={telegram} /></a>
-                    <a target="_blank" href={state?.instagram}> <ImageContainer width="40px" src={instagram} /></a>
                     <a target="_blank" href={state?.wechat}>    <ImageContainer width="40px" src={wechat} /></a>
                     <a target="_blank" href={state?.viber}>     <ImageContainer width="40px" src={viber} /></a>
-                    <a target="_blank" href={state?.website}>     <ImageContainer width="40px" src={website} /></a>
+                    <a target="_blank" href={state?.facebook}>  <ImageContainer width="40px" src={facebook} /></a>
+                    <a target="_blank" href={state?.instagram}> <ImageContainer width="40px" src={instagram} /></a>
 
                 </div>
             </Container>

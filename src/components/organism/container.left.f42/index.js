@@ -17,6 +17,7 @@ import CommentPart from "../../molecules/element_f42/comment.f42"
 import { useTranslation } from 'react-i18next'
 import Spinner from "../../atom/loading.spinner.line"
 import { Image } from 'antd';
+import './main.css'
 import { mediaContainer, mediaContainerSecond, mediaContainerSecondText, mediaContainerPadding } from "./const"
 // import CloseIcon from '@material-ui/icons/Close';
 // import Textarea from '../../atom/textAreaCom';
@@ -56,7 +57,7 @@ const Index = ({ state, typeRole, comments, commentCount, commentReview }) => {
                                             state?.languages?.map((prev, index) => (
                                                 <div key={index} className={index === 0 ? "gid-info-personal-text top" : "gid-info-personal-text"}>
                                                     <div className="text">{languageCheck(prev, lan) || "Ma'lumot kiritilmagan"}</div>
-                                                   &nbsp; - {degreeLang[prev?.level] || "Ma'lumot kiritilmagan"}
+                                                    &nbsp; - {degreeLang[prev?.level] || "Ma'lumot kiritilmagan"}
                                                 </div>
                                             ))
                                             :
@@ -73,7 +74,7 @@ const Index = ({ state, typeRole, comments, commentCount, commentReview }) => {
 
                 <Container padding="30px">
                     <TextTitle font="15px" fontWeight="600" align="left" color="#326A32">{t("GidPk.OzimHaqimda")}</TextTitle>
-                    <p style={{textAlign:'justify'}}>{state?.bio || 'Bio kiritilmagan'}</p>
+                    <p style={{ textAlign: 'justify' }}>{state?.bio || 'Bio kiritilmagan'}</p>
                     {
                         typeRole?.role === 'gid' ? null :
                             <ContainerBottom style={{ marginBottom: 10 }}>
@@ -112,13 +113,15 @@ const Index = ({ state, typeRole, comments, commentCount, commentReview }) => {
                     <ThirdInfoCard data={state} role={typeRole?.role} />
                 </Container>
             </WrapperContainer>
-            {typeRole?.role === 'writer' ? null :
-                <WrapperContainer>
-                    <Container {...mediaContainerPadding} padding="0 20px">
-                        <Title text={t("GidPk.Gallery")} />
-                        <ImageGallery data={state} />
-                    </Container>
-                </WrapperContainer>}
+            {
+                typeRole?.role === 'writer' ? null :
+                    <WrapperContainer>
+                        <Container {...mediaContainerPadding} padding="0 20px">
+                            <Title text={t("GidPk.Gallery")} />
+                            <ImageGallery data={state} />
+                        </Container>
+                    </WrapperContainer>
+            }
             <WrapperContainer>
                 <Container {...mediaContainerPadding} padding="0 20px">
                     <Title text={t("GidPk.fidbek")} /><br />
@@ -127,16 +130,16 @@ const Index = ({ state, typeRole, comments, commentCount, commentReview }) => {
                         <>
                             {commentReview?.length < 1 ? <div className="empty_title">Izohlar mavjud emas.</div> :
                                 <>
-                                    <Grid container spacing={1} style={{ marginBottom: 60 }}>
+                                    <Grid className='namessss' container  spacing={1} style={{ marginBottom: 60 }}>
 
-                                        <Grid item sm={12} md={4}>
+                                        <Grid item sm={12} md={2}>
                                             <ProgressInfo data={commentCount} />
                                         </Grid>
 
-                                        <Grid item className='ssdd' sm={12} md={8}>
+                                        <Grid item className='ssdd' sm={12} md={4}>
                                             <ProgressTitle data={commentCount} />
                                         </Grid>
-                                        
+
                                     </Grid>
                                     {
                                         commentReview?.map((item, index) => (
