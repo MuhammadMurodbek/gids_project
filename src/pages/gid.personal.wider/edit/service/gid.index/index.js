@@ -45,17 +45,33 @@ const GidIndex = () => {
         setState(clone)
     }
     const handleSubmit = () => {
+        // console.log(state)
         let cloneState = state.map(item => {
-            return {
-                city: item.city,
-                country: item.country,
-            }
+            if(item.hasOwnProperty('city_name'))
+                return {
+                    city: { 
+                        id:item.city, 
+                        uz:item.city_name?.label,
+                        ru:item.city_name?.label,
+                        en:item.city_name?.label,
+                    },
+                    country: {
+                        id:item.country, 
+                        uz:item.country_name?.label,
+                        ru:item.country_name?.label,
+                        en:item.country_name?.label
+                    },
+                }
+            else 
+                return item
         })
+        // console.log(cloneState)
+        let remDuplicate = new Set(cloneState)
         setPostData({ ...postData, loading: true })
         const { consecutive_translate, synchronous_translate, written_translate } = checkItems
         if (excursion) {
             if (value?.city !== '' && value?.country !== '') cloneState.push({ city: value.city, country: value.country })
-            putResponse('/api/gids/edit/service/', { ...checkItems, excursions: cloneState }, setPostData)
+            putResponse('/api/gids/edit/service/', { ...checkItems, excursions: [...remDuplicate] }, setPostData)
         } else {
             putResponse('/api/gids/edit/service/', {
                 consecutive_translate: consecutive_translate,
@@ -85,7 +101,6 @@ const GidIndex = () => {
         toastChecker(postData)
         if (postData.success !== '') dispatch(saveTabAction(5))
     }, [success, error])
-    // console.log(state)
     return (
         <Wrapper>
             <Container margin="30px 0 0" padding="10px 0">
@@ -127,11 +142,11 @@ const GidIndex = () => {
                                                         <Grid container spacing={1} key={index}>
                                                             <Grid item xs={12} sm={6} md={6}>
                                                                 <TextLabeledLoop
-                                                                    label={t("xizmatlar.mamlakatlargaEkskurs    ")} value={item?.country[lang] || 'Mavjud emas'} />
+                                                                    label={t("xizmatlar.mamlakatlargaEkskurs    ")} value={item?.country[lang] || item?.country_name?.label || 'Mavjud emas'} />
                                                             </Grid>
                                                             <Grid item xs={12} sm={6} md={5}>
                                                                 <TextLabeledLoop
-                                                                    label={t("xizmatlar.shaharlar")} value={item?.city[lang] || 'Mavud emas'} />
+                                                                    label={t("xizmatlar.shaharlar")} value={item?.city[lang] || item?.city_name?.label || 'Mavud emas'} />
                                                             </Grid>
                                                             <Grid item xs={12} sm={12} md={1}  >
                                                                 <FlexContainer width="100%" alignItems="flex-end" justifyContent="flex-end" margin="44px 0 0 0">
