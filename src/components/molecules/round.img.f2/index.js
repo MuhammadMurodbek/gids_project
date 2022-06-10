@@ -39,6 +39,8 @@ const Index = (props) => {
     }
     const { src, width, height, radius, role } = props
     // console.log(role)
+
+    console.log(  "======" + props.data )
     return (
         <WrapperRoundImage {...mediaBtn} {...mediaWrapper} width={width} height={height} radius={radius}>
             {/* <ImageContainer {...media} src={src} width="100%" height="100%" round="50%" /> */}
@@ -47,6 +49,7 @@ const Index = (props) => {
                 src={src}
                 style={{ borderRadius: '50%' }}
             />  
+
             <button onClick={openModal}>
                 {
                     role !=='writer' &&

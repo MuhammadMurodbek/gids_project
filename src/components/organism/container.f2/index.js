@@ -31,7 +31,8 @@ const Index = ({ data }) => {
             if (lang === 'uz') return item?.language__name_uz
         }
 
-    }
+    } 
+  
     // console.log(data)
     return (
         // <Badge.Ribbon text="TOP" color="red">
