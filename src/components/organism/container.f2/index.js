@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { FlexContainer } from '../../../styles/flex.container'
 import { Container } from "../../../styles/container/index.style"
 import { WrapperContainer } from "./style"
@@ -8,9 +8,9 @@ import InfoBtn from "../../molecules/info.btn.f2"
 import RoundImage from "../../../assets/img/gid-personal/no_user.png"
 import { Grid } from '@material-ui/core'
 import { TextTitle } from '../../../styles/textTitle/index.style'
-import TruncateText from "../../molecules/text.truncate"
+// import TruncateText from "../../molecules/text.truncate"
 import { useTranslation } from 'react-i18next'
-import { getLabelCity } from "../../../custom/function"
+// import { getLabelCity } from "../../../custom/function"
 const media_container = {
     m_width: "600px",
     m_padding: "10px 0",
