@@ -62,7 +62,6 @@ const GidIndex = () => {
                     country: item.country,
                 }
         })
-        console.log(cloneState)
         if(value.city!=='' && value.country!=='') cloneState.push({city:value.city, country:value.country})
         setPostData({ ...postData, loading: true })
         const { consecutive_translate, synchronous_translate, written_translate } = checkItems
