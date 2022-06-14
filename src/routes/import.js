@@ -1,0 +1,72 @@
+import MainPage from "../pages/main";
+import Auth from "../pages/auth/registration";
+import About from "../pages/about";
+import Forgits from "../pages/forgits";
+import Connect from "../pages/connect";
+import Verify from "../pages/auth/verify";
+import ChooseGids from "../pages/choose.gids.tr";
+import FillOutApplication from "../pages/fill.application";
+import FullData from '../pages/fullData';
+import Request from '../pages/request';
+import Fullrequest from '../pages/follRequest'; 
+import Cities from '../pages/cities';
+import Samarqand from '../pages/cities/Samarqand'
+import Xiva from '../pages/cities/Xiva'
+import Toshkent from '../pages/cities/Toshkent'
+
+import  GidPersonal from '../pages/gid.personal';
+import Article from '../pages/article';
+import AnsverMyapp from '../pages/ansverMyapplication';
+import AnsverMyappEdit from '../pages/fill.application/edit.app';
+import Blog from '../pages/blog';
+import Advertising from '../pages/advertising';
+import ResetPassword from "../pages/auth/recover"
+import GidPersonalWider from "../pages/gid.personal.wider";
+import Pay from '../pages/gid.personal.wider/reklama.pay';
+import Reklama from '../pages/gid.personal.wider/reklama';
+import History from '../pages/gid.personal.wider/history'
+import UpdatePassword from "../pages/auth/update"
+import notFound from "../pages/notFound"
+import SeeProfile from '../pages/seeProfile';
+import MaqolaYozish from '../pages/gid.personal.wider/blog/MaqolaYozish'
+import MaqolaYozishEdit from "../pages/gid.personal.wider/blog/MaqolaYozish/edit"
+import MyAppEdit from "../pages/fullData/editable"
+import PaymentHistory from "../pages/gid.personal.wider/history/pay.history"
+// import GidPersonal from '../pages/gid.personal';
+// import Article from '../pages/article';
+ 
+export {
+    notFound,
+    PaymentHistory,
+    MainPage, 
+    Auth, 
+    About,
+    Forgits, 
+    Verify, 
+    ChooseGids, 
+    Connect, 
+    Request, 
+    Fullrequest, 
+    FillOutApplication,
+    GidPersonal, 
+    Cities,
+    Samarqand,
+    FullData,
+    Article,
+    AnsverMyapp,
+    AnsverMyappEdit,
+    Blog,
+    Advertising,
+    GidPersonalWider,
+    Pay,
+    Reklama,
+    ResetPassword,
+    History, 
+    UpdatePassword,
+    SeeProfile,
+    MaqolaYozish,
+    MaqolaYozishEdit,
+    MyAppEdit,
+    Xiva,
+    Toshkent,
+}

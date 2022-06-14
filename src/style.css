@@ -1,0 +1,48 @@
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:active,
+input:-webkit-autofill:focus {
+    /* background-color: #fafcfa !important; */
+     /* color: #555 !important; */
+    box-shadow: 0 0 0 1000px #fafcfa inset !important;
+    /* -webkit-text-fill-color: #555555 !important;  */
+}
+
+.ecuYMb{
+    position: absolute !important;
+    display: inline-block !important;
+    width: 80px!important;
+    height: 80px !important;
+    top: 134px !important;
+    left: 50% !important;
+    margin-left: -48px !important;
+    z-index: 999 !important;
+    opacity: 0.5 !important;
+}
+.spin{
+    width: 100%;
+    height: 100vh;
+    display:flex;
+    align-items: center !important;
+    justify-content: center !important;
+}
+.empty_title{
+    width:100%;
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+    margin:10px;
+    background:#63ff502e;
+}
+.ant-progress-outer{
+    width: 93%;
+}
+.ant-progress.ant-progress-line.ant-progress-status-success.ant-progress-show-info.ant-progress-default{
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+.ant-progress-text[title='100%']{
+    margin: 0;
+    margin-right: 20px;
+}

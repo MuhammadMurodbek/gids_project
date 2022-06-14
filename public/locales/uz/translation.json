@@ -1,0 +1,707 @@
+{
+  "name": "day.name.nameEn",
+  "description": "descriptionEn",
+
+
+  "navbar" :{
+    "GTU" : "Gid va tarjimonlar uchun",
+    "Blog":"Blog",
+    "Arizalar_royhati":"Arizalar ro'yxati",
+    "Ariza_qoldirish":"Ariza qoldirish",
+    "GvaTtanlash":"Tanlash"
+   },
+   "footer":{
+       "biznigServislar":"Bizning xizmatlar",
+       "tanlash":"Gid yoki tarjimonni tanlash",
+       "GTuchun":"Gid va tarjimonlar uchun",
+       "platformaH":"Platforma haqida",
+       "Blog":"Blog",
+       "contacts": "Aloqa",
+       "email":"info@gits.uz",
+        "tel":"+99893 596-92-20",
+        "sorov":"Savol va takliflar",
+        "huquqiy":"Huquqiy ma’lumotlar",
+        "foydalanish": "Foydalanish shartlari",
+        "maxfiylik":"Maxfiylik siyosati va ommaviy oferta"
+   },
+   "kengaytirlgan_Q":{
+       "kengaytirilgan": "Kengaytirilgan qidiruv",
+       "kimKerak":"Kim kerakligini tanlang",
+       "gid":"Gid",
+       "tarjion":"Tarjimon",
+        "sinxron":"Sinxron",
+        "izchil":"Izchil",
+        "yozmaTarjimon":"Yozma",
+        "Davlat":"Davlat",
+        "DavlatniTanlang":"Davlatni tanlang",
+        "Shaharlar":"Shahar",
+        "ShaharniTanlang":"Shaharni tanlang",
+        "sana":"Sana",
+        "online":"Online",
+        "barchasi":"Barchasi",
+        "til":"Til",
+        "tillarniTanlang":"Tilni tanlang",
+        "jinsi":" Gid yoki tarjimonning jinsi",
+        "erkak":"Erkak",
+        "ayol":"Ayol",
+        "qidirish":"Qidiruv"
+   },
+
+   "main":{
+       "title":"Dunyo bo'ylab ishonchli gidlar va tarjimonlarni taklif qilamiz",
+       "takliflarimiz":"Biz quyidagilarni taklif qilamiz",
+       "tadbirkorlarga":"Biznes uchun",
+       "textForTadbirkor":"O’z biznesingizni rivojlantirish uchun ushbu platforma yordamida tarjimon va gidlar xizmatlaridan foydalanishingiz mumkin. Gid yoki tarjimonni tanlang yoki ariza qoldiring.",
+       "arizaQoldrirish":"Ariza qoldirish",
+       "Gid_tanlash":"Tanlash",
+       "Gidlarga":"Gid va tarjimonlarlar uchun",
+       "textForGid":"Ushbu platforma yordamida siz o’zingiz uchun xorijlik yoki mahalliy sayyohlar yoki mijozlardan buyurtma olishingiz mumkin. Hoziroq ro’yxatdan o’ting, barcha zaruriy ma’lumotlaringizni kiriting va ishni boshlang!",
+       "royhatdanO":"Ro'yxatdan o'tish",
+       "ishlashi":"Bu qanday ishlaydi?",
+       "royhatdanOtasiz":" Ro’yxatdan o’tasiz",
+       "text02":"Dastlab platformadan gid, tarjimon yoki mijoz sifatida ro’yxatdan o’ting.",
+       "sorov":"So‘rov qoldiring",
+       "text03":"Siz gid va tarjimonni tanlashingiz yoki so’rov qoldirishingiz mumkin.",
+       "aloqaga":"Aloqaga chiqing",
+       "text04":"Gid yoki tarjimonni tanlang va u bilan bog’laning.",
+       "ishBoshlanadi":"Ishni boshlang",
+       "text05":"Gid va tarjimon bilan bevosita ishni boshlang",
+       "trendSHahar":"Eng ko’p tashrif buyuradigan shaharlar",
+       "korish":"Ko'rish",
+       "MijozlarniF":"Mijozlarning fikrlari",
+       "hoziroq":"Hoziroq gid va tarjimonni tanlang yoki ariza qoldiring!",
+      "ariza":"Ariza qoldirish",
+      "tanlash":"Tanlash"
+},
+  "Gid_Tanlash":{
+    "rate":"Reyting",
+    "title":"Gid yoki tarjimonni tanlang",
+    "fikirlar":"Fikrlar:",
+    "kuniga":"Kuniga:",
+    "xizmatlar":"Xizmatlar",
+    "tillar":"Tillar",
+    "OzimHaqimda":"O'zim haqimda",
+    "korish":"Ko'rish",
+    "davomi":"Davomi"
+},
+  "gidlar_uchun":{
+    "title":"O'z shahringizda tarjimon yoki gid sifatida ro'yxatdan o'ting",
+    "royhatdanOtish":"Ro'yxatdan o'tish",
+    "takliflarimiz":"Biz nima taklif qilamiz",
+    "bepul":"Bepul ro‘yxatdan o‘ting ",
+    "text01":"Barcha zaruriy ma’lumotlarni kiriting va shaxsiy sahifangizga ega bo’ling. Bu oson va tez.",
+    "mijozlar":"Platforma yordamida mijozlar toping",
+    "text02":"Siz dolzarb so’rovlar ro'yxatini ko'rishingiz va o’zingizga mos keladigan so’rovlarga javob berishingiz mumkin.",
+    "boshlash":"Ishni boshlang!",
+    "text03":"Mijozlarga sifatli xizmat ko’rsatish orqali ijobiy fikrlarga ega bo’ling va o’z faoliyatingizni rivojlantiring.",
+    "kopSavollar":"Ko’p beriladigan savollar",
+    "bepulmi":"Ro’yxatdan o’tish bepulmi?",
+    "ha":"Ha, ro’yxatdan o’tish be’pul",
+    "qandayT":"Mijozlarni qanday topsam bo‘ladi?",
+    "tekshirilgan":"“Tekshirilgan” belgisini qanday qilib olsam bo’ladi?",
+    "qandayKiraman":"Profilga qayerdan kirsam bo‘ladi?",
+    "hoziroq":" Hoziroq gid va tarjimonni tanlang yoki ariza qoldiring!",
+    "royhatdanO":"Ro’yxatdan o’tish"
+  },
+  "about":{
+    "title":"Platforma haqida",
+    "boglanish":"Bog’lanish"
+  },
+  "connect":{
+    "contact":" Biz bilan bog'lanish ",
+    "Kontaktlarimiz":"OOO  ''Innovacio Group''",
+    "tel":"+99893 596-92-20",
+    "email":"info@gits.uz",
+    "manzil":"Toshkent shahar, Mirobod tumani, Nukus ko‘chasi, 86/3",
+    "savol":"Savol yoki taklif jo'natish",
+    "ism":"Ism",
+    "isimPlac":"Ismingizni yozing",
+    "familya":"Familya",
+    "familyaPlac":"Familyangizni yozing",
+    "Email":"E-mail",
+    "emailPlac":"E-mailingizni yozing",
+    "telefon":"Telefon",
+    "telefonPlac":"Telefon raqamingizni yozing",
+    "text":" Savol yoki takliflaringizni yozing",
+    "jonatish":"Jo'natish"
+  },
+  "auth_registr":{
+    "kirish":"Kirish",
+    "royhatdanOtish2":"Ro’yxatdan o’tish",
+    "ismingiz":"Ismingiz",
+    "familya2":"Familyangiz",
+    "user":"Foydalanuchi",
+     "gid":"Gid",
+    "tarjimon":"Og'zaki tarjimon ",
+    "yozmaT":"Yozma tarjimon",
+    "email2":"E-mail ni kiriting",
+    "pass":"Parolingizni kiriting",
+    "repass":"Parolingizni tasdiqlang",
+    "submit":"Ro'yxatdan o'tish"
+  },
+  "auth_kirish":{
+    "kirish":"Kirish",
+    "royhatdanOtish2":"Ro'yxatdan o'tish",
+    "email2":"E-mail ni kiriting",
+    "pass":"Parolni kiriting",
+    "forget":"Parolni unutdim"
+  },
+  "auth_parolniTiklash":{
+    "reset":"Parolni tiklash ",
+    "jonatildi":"*E-mail ga tasdiqlash kodini yuboramiz",
+    "cod":"E-mail ni kiriting",
+    "send":"Kodni yuborish"
+  },
+  "emailni_tasdiqlash":{
+    "textema":" E-mail ni tasdiqlang ",
+    "texts":"admin@gits.uz poshtasiga kod yuborildi. Ushbu kodni pastki qatorga yozing.",
+    "kod":"Kodni kiriting",
+    "qayta":"Kodni qayta yuborish",
+    "tasdiqlash":"Tasdiqlash"
+  },
+  "parolniYangilash":{
+    "update":"Parolni yangilash",
+    "new":"Yangi parol ",
+    "yana":"Yangi parolni tasdiqlang",
+    "sendthe":"Kodni yuborish "
+  },
+  "arizaqoldirish":{
+    "title":"Gid va tarjimonlar uchun ariza qoldirish",
+    "vazifa":"Vazifa tavsifi",
+    "kimKerak":"Kim kerak",
+    "Gid":"Gid",
+    "Tarjimon":"Tarjimon",
+    "sinxron":"Sinxron",
+    "izchil":"Izchil",
+    "yozma":"Yozma",
+    "KerakShaharlar":"Gid/Tarjimon kerak bo’lgan shahar ",
+    "davlat":"Davlat",
+    "shaxarlar":"Shahar",
+    "KerakSana":"Git/Tarjimon kerak bo’lgan sana",
+    "Bilishikerak":"Git/Tarjimon bilishi kerak bo’lgan tillar",
+    "BilishikeralPlac":"Tillarni tanlang",
+    "nimagaKerak":"Nima uchun kerak",
+    "misol":"Misol uchun, shaharni ko’rsatish uchun gid kerak.",
+    "narhi":" Taklif etilgan narx",
+    "chegara":"Narx chegarasini yozing",
+    "jinsi":"Jinsi",
+    "erkak":"Erkak",
+    "ayol":"Ayol",
+    "nechaKishi":"Necha kishi",
+    "nechkishiBolaslar":"Necha kishi bo’lasiz?",
+    "shartnoma":"Arizani yoborib,men Foydalanuvchi shartnomasining shartlariga rozilik bildiraman*",
+    "Ayuborish":"Arizani yuboirish"
+  },
+  "arizalar_royxati":{
+    "title":"Arizalar ro’yxati",
+    "shaxarPlac":"Shaharni kiriting",
+    "raqami":"Ariza raqami",
+    "davomi":"Davomi"
+  },
+  "ToliqAriza":{
+    "qaytish":"Arizalar ro’yxatiga qaytish",
+    "tafsilotlar":"Tafsilotlar",
+    "arizaMatni":"Ariza matni",
+    "elonBeruchi":"E’lon beruvchi:",
+    "shahar":"Shahar:",
+    "sana":"Sana:",
+    "gacha":"Narx (gacha):",
+    "kimKerak":"Kim kerak:",
+    "tillar":"Tillar::",
+    "odamlarSone":"Odamlar soni:",
+    "javobBerish":"Arizaga javob qaytarish",
+    "yozing":"Xabaringizni yozing",
+    "yopish":"Yopish",
+    "yuborish":"Yuborish"
+  },
+  "Blog":{
+    "blog":"Blog",
+    "davomiOqish":"Davomini o'qish"
+  },
+  "safarHaqida":{
+    "title":"Safar qalay o‘tdi?",
+    "text":"Safar taassurotlari bilan o’rtoqlashing!",
+    "Maqolayozish":"Maqola yozish",
+    "Maqolalarim":"Maqolalarim",
+    "tahrirlash":"Tahrirlash"
+  },
+  "maqolaYozish":{
+    "Profilni_Korish":"Profilni ko’rish",
+    "tahrirlash":"Ma’lumotlarimni tahrirlash",
+    "kalendar":"Ish jadvali",
+    "blog":"Blog",
+    "reklama":"Reklama",
+    "sozlamalar":"Profil sozlamalari",
+
+    "Maqola yozish":"Maqola yozish",
+    "orqaga":"Ortga qaytish",
+    "maqolaNomi":"Maqola nomi",
+    "NomiPlace":"Maqolangizni nomini yozing",
+    "taglar":"Teglar",
+    "tagPlace":"Teg yozing",
+    "Text":"Matn",
+    "maqolaniYozing":"Maqolangizni yozing",
+    "joylamoq":"Joylash"
+  },
+  
+ 
+
+
+
+
+
+  "GidPk":{
+    "Profilni_Korish":"Profilni ko'rish",
+    "tahrirlash":"Tahrirlash",
+    "kalendar":"Ish jadvali",
+    "blog":"Blog",
+    "reklama":"Reklama",
+    "sozlamalar":"Profil sozlamalari",
+
+    "OzimHaqimda":"O‘zim haqimda",
+    "reyting":"Reyting::",
+    "fikirlar":"Fikrlar::",
+    "kuniga":"kuniga",
+    "soatiga":"soatiga:",
+    "qatnashgan":"Ishtirok etgan tadbirlarim:",
+    "yil":"Bitirgan yili:",
+    "ozimHaqimdaVideo":"O’zim haqimda video",
+    "boglanish":"Bog'lanish",
+    "sertificat":"Sertifikat va diplomlar",
+    "malumotVaTajriba":"Ma’lumoti va ish tajribasi",
+    "Malumotim":"Ma’lumoti",
+    "toifam":"Toifa",
+    "institut":"Bitirgan instituti / universiteti:",
+    "mutahasis":"Ma'lumoti:",
+    "ishtaj":"Ish tajribasi:",
+    "ishJoy":"Ish joyi:",
+    "lavozim":"Lavozimi:",
+    "ishvaqt":"Ish vaqti:",
+    "qoshimcha":"Qo’shimcha kurslar:",
+    "tiltajriba":"Ish tajribasi:",
+    "bandkunlar":"Gid/Tarjimonning band kunlari",
+    "hizmatlar":"Xizmatlar",
+    "ekskursiyalar":"Ekskursiyalar",
+    "sinxron":"Sinxron tarjima",
+     "izchil":"Izchil tarjima",
+    
+    "yozma":"Yozma tarjimon",
+    "ekskursiyalar2":"Ekskursiyalar: ",
+    "video":"O’zim haqimda video",
+    "sertificatlar":"Sertifikat va diplomlar",
+    "Gallery":"Galereya",
+    "fidbek":"Mijozlarning fikrlari",
+    "alo":"A’lo",
+    "ortacha":"O‘rtacha  ",
+    "yaxshi":"Yaxshi",
+    "yomon":"Yomon",
+    "judaYomon":"Juda yomon",
+    "koproqYuklash":"Ko'proq yuklash"
+  },
+  "MTmenHaqimda":{
+
+    "Profilni_Korish":"Profilni ko'rish",
+    "tahrirlash":"Tahrirlash",
+    "kalendar":"Ish jadvali",
+    "blog":"Blog",
+    "reklama":"Reklama",
+    "sozlamalar":"Profil sozlamalari",
+
+    "menHaqimda":"Men haqimda ",
+    "kantaktlar":"Aloqa",
+    "malumotiIsh":"Ma’lumoti va ish tajribasi",
+    "tillarniBilish":"Tillarni bilish",
+    "hizmatlar":"Xizmatlar",
+    "narxlar":"Narxlar",
+    "videoVagalarey":"Video va galereya",
+
+    "familya":"Familiya",
+    "familyaPlace":"Familiyangizni yozing",
+    "isim":"Ism",
+    "isimPlace":"Ismingizni yozing",
+    "otasiningIsmi":"Otangizning ismi",
+    "otasiIplace":"Otangizning ismini yozing",
+    "tugilganSana":"Tug’ulgan sanangiz",
+    "jins":"Jinsingiz",
+    "erkak":"Erkak",
+    "ayol":"Ayol",
+    "mamlakat":"Davlat",
+    "mamlakatPlace":"Davlatingizni tanlang",
+    "Shaharlar":"Shahar",
+    "ShaharPlace":"Shahringizni tanlang",
+    "OzingizH":"O‘zingiz haqingizda",
+    "OzingizHplace":"O‘zingiz haqingizda yozing",
+    "certificatlar":"Sertifikat va diplomlaringiz bo‘lsa shu yerga yuklang",
+    "saqlash":"Saqlash"
+  },
+  "MT_Kontaktlar":{
+
+    "Profilni_Korish":"Profilni ko'rish",
+    "tahrirlash":"Tahrirlash",
+    "kalendar":"Ish jadvali",
+    "blog":"Blog",
+    "reklama":"Reklama",
+    "sozlamalar":"Profil sozlamalari",
+
+    "menHaqimda":"Men haqimda",
+    "kantaktlar":"Aloqa",
+    "malumotiIsh":"Ma’lumoti va ish tajribasi",
+    "tillarniBilish":"Tillarni bilishi",
+    "hizmatlar":"Xizmatlar",
+    "narxlar":"Narxlar",
+    "videoVagalarey":"Video va galereya",
+
+    "tel":"Telefon * ",
+    "email":"E-mail",
+    "emailKiritish":"E-mail ni kiriting ",
+    "Site":"Sayt",
+    "link":"Havolani kiriting",
+    "Telegram":"Telegram",
+    "telegramPlace":"Telegram profilingiz havolasini kiriting",
+    "WhatsApp":"WhatsApp",
+    "watsapPlace":"WhatsApp profilingiz havolasini kiriting ",
+    "Facebook":"Facebook",
+    "facebookPlace":"Facebook profilingiz havolasini kiriting ",
+    "Wechat":"Wechat",
+    "wechatPlace":"Wechat profilingiz havolasini kiriting ",
+    "Viber":"Viber",
+    "viberPlace":"Viber profilingiz havolasini kiriting ",
+    "saqlash":"Saqlash"
+  },
+  "IshTajriba":{
+
+    "Profilni_Korish":"Profilni ko'rish",
+    "tahrirlash":"Tahrirlash",
+    "kalendar":"Ish jadvali",
+    "blog":"Blog",
+    "reklama":"Reklama",
+    "sozlamalar":"Profil sozlamalari",
+
+    "menHaqimda":"Men haqimda ",
+    "kantaktlar":"Aloqa",
+    "malumotiIsh":"Ma’lumoti va Ish tajribasi",
+    "tillarniBilish":"Tillarni bilish",
+    "hizmatlar":"Xizmatlar",
+    "narxlar":"Narxlar",
+    "videoVagalarey":"Video va galereya",
+
+    "malumotlar":"Ma’lumoti",
+    "oliy":"Oliy",
+    "bitirgan":"Bitirgan instituti /universiteti",
+    "BitirganOliytalimlar":"Bitirgan oliy ta’lim mussasasini kiriting",
+    "toifasi":"Gidning toifasi",
+    "toifaPlace":"Oliy toifali",
+    "qoshimchaKurslar":"Qo‘shimcha kurslar",
+    "oqiganKurslaringiz":"Tamomlagan kurslaringizni yozing",
+    "tajriba":"Tajriba",
+    "year":"yil",
+    "saqlash":"Saqlash"
+  },
+  "TillarniBilish":{
+    "Profilni_Korish":"Profilni ko'rish",
+    "tahrirlash":"Tahrirlash",
+    "kalendar":"Ish jadvali",
+    "blog":"Blog",
+    "reklama":"Reklama",
+    "sozlamalar":"Profil sozlamalari",
+
+    "menHaqimda":"Men haqimda ",
+    "kantaktlar":"Aloqa",
+    "malumotiIsh":"Ma’lumoti va ish tajribasi",
+    "tillarniBilish":"Tillarni bilish",
+    "hizmatlar":"Xizmatlar",
+    "narxlar":"Narxlar",
+    "videoVagalarey":"Video va galereya",
+
+    "til":"Til",
+    "tilPlace":" Tilni kiriting",
+    "bilishDarajasi":"Bilish darajasi",
+    "BilishDPlace":"Til bilish darajangizni belgilang",
+    "save":"Saqlash"
+  },
+  "xizmatlar":{
+    "Profilni_Korish":"Profilni ko'rish",
+    "tahrirlash":"Tahrirlash",
+    "kalendar":"Ish jadvali",
+    "blog":"Blog",
+    "reklama":"Reklama",
+    "sozlamalar":"Profil sozlamalari",
+
+    "menHaqimda":"Men haqimda ",
+    "kantaktlar":"Aloqa",
+    "malumotiIsh":"Ma’lumoti va ish tajribasi",
+    "tillarniBilish":"Tillarni bilish",
+    "hizmatlar":"Xizmatlar",
+    "narxlar":"Narxlar",
+    "videoVagalarey":"Video va galereya",
+    
+    "xizmatlar":"Xizmatlar",
+    "ekskursiyalar":"Ekskursiyalar",
+    "sinxron":"Sinxron tarjima",
+     "izchil":"Izchil tarjima",
+     "yozma":"Yozma tarjimon", 
+
+    "mamlakatlargaEkskurs":"Davlatlarga ekskursiya",
+    "mamlakatPlace":"Davlatni tanlang",
+    "shaharlar":" Shahar",
+    "shaharlarSelect":"Shaharni tanlang",
+    "save":"Saqlash"
+   
+  },
+  "narxlar":{
+    "Profilni_Korish":"Profilni ko’rish",
+    "tahrirlash":"Ma’lumotlarimni tahrirlash",
+    "kalendar":"Ish jadvali",
+    "blog":"Blog",
+    "reklama":"Reklama",
+    "sozlamalar":"Profil sozlamalari",
+
+    "menHaqimda":"Men haqimda",
+    "kantaktlar":"Aloqa",
+    "malumotiIsh":"Ma’lumoti va ish tajribasi",
+    "tillarniBilish":"Tillarni bilish",
+    "hizmatlar":"Xizmatlar",
+    "narxlar":"Narxlar",
+    "videoVagalarey":"Video va galereya",
+
+    
+
+    "birkunlikHizmat":"Bir kunlik xizmat narxi",
+    "birSoatlik":"Bir soatlik xizmat narxi",
+    "saq":"Saqlash"
+    
+  },
+  "Galarey":{
+
+    "Profilni_Korish":"Profilni ko’rish",
+    "tahrirlash":"Ma’lumotlarimni tahrirlash ",
+    "kalendar":"Ish jadvali",
+    "blog":"Blog",
+    "reklama":"Reklama",
+    "sozlamalar":"Profil sozlamalari",
+
+    "menHaqimda":"Men haqimda",
+    "kantaktlar":"Aloqa",
+    "malumotiIsh":"Ma’lumoti va ish tajribasi",
+    "tillarniBilish":"Tillarni bilish",
+    "hizmatlar":"Xizmatlar",
+    "narxlar":"Narxlar",
+    "videoVagalarey":"Video va galereya",
+
+    "Partfolio":"Siz o’z haqingizda video olishingiz mumkin. Bu video profilda bo’ladi. video turi ( mp4, avi, mpg) hajmi 100mb gacha",
+    "galarey":"Sizning galereya",
+    "saqlash":"Saqlash"
+  },
+
+
+
+
+  "Ustniy_MalumotvaIshtajriba":{
+
+    "Profilni_Korish":"Profilni ko’rish",
+    "tahrirlash":"Ma’lumotlarimni tahrirlash",
+    "kalendar":"Ish jadvali",
+    "blog":"Blog",
+    "reklama":"Reklama",
+    "sozlamalar":" Profil sozlamalari",
+
+    "menHaqimda":"Men haqimda",
+    "kantaktlar":"Aloqa",
+    "malumotiIsh":"Ma’lumoti va ish tajribasi",
+    "tillarniBilish":"Tillarni bilish",
+    "xizmatlar":"Xizmatlar",
+    "narxlar":"Narxlar",
+    "videoVagalereya":"Video va galereya",
+    
+    "bitirganInstitu":"Bitirgan instituti /universiteti",
+    "institutNmaePlace":"Bitirgan oliy ta’lim mussasasini kiriting",
+    "bitirganYil":"Bitirgan yili",
+    "YilPlace":"Yil",
+    "Mutahasislig":"Mutaxassislik",
+    "mutahasisligPlace":"Mutaxassislikni yozing ",
+    "tajriba":"Tajriba",
+    "frilancermisiz":"Siz hozir frilansirmisiz?",
+    "yes":"Ha",
+    "No":"Yo’q",
+    "ishJoingizniKorsating":"Ish joyingizni yozing",
+    "text":"Matn",
+    "lavozimingiz":"Lavozimingiz",
+    "ishVaqti":"Ish soatlaringiz",
+    "save":"Saqlash"
+  },
+  "Ustniy_Xizmatlar":{
+    "hizmatlar":"Xizmatlar",
+    "exkursiyalar":"Ekskursiyalar",
+    "sinhron":"Sinxron tarjima",
+     "izchilTarjima":"Izchil tarjima",
+    "yozmaTarjimon":"Yozma tarjima",
+    "MamlakatgaEkskursiya":"Davlatlarga ekskursiya",
+    "MamlakatgaEPlace":"Davlatni tanlang",
+    "shahar":"Shahar",
+    "ShaharPlace":"Shaharni tanlang",
+    "save":"Saqlash"
+  },
+
+
+  "safarHaqda":{
+    "title":"Safar qalay o‘tdi?",
+    "text":"Safar qanday o’tgani haqida maqola yozib boshqalarga foyda ulashing ham daromadingizni kengaytiring!",
+    "Maqolayozish":"Maqola yozish",
+    "Maqolalarim":"Maqolalarim",
+    "tahrirlash":"Tahrirlash"
+  },
+
+
+
+
+  "Pismenniy_Xizmatlar":{
+    
+    "Profilni_Korish":"Profilni ko’rish",
+    "tahrirlash":"Ma’lumotlarimni tahrirlash",
+    "kalendar":"Ish jadvali",
+    "blog":"Blog",
+    "reklama":"Reklama",
+    "sozlamalar":"Profil sozlamalari",
+
+    "menHaqimda":"Men haqimda",
+    "kantaktlar":"Aloqa",
+    "malumotiIsh":"Ma’lumoti va ish tajribasi",
+    "tillarniBilish":"Tillarni bilish",
+    "hizmatlar":"Xizmatlar",
+    "narxlar":"Narxlar",
+    "videoVagalarey":"Video va galereya",
+
+    "bir_kunlikish":"Sizning kundalik ish yuklamangiz",
+    "Text":"Matn",
+    "OgzakiTarjimonlik":"Og’zaki tarjima bilan ham shug’ullanasizmi?",
+    "ha":"Ha",
+    "yoq":"Yo’q",
+    "damdahamIsh":"Dam olish kunlari ham ishlaysizmi?",
+    "TahrirlashBilanHam":"Matnlarni tahrirlash bilan ham shug’ullanasizmi?",
+    "onlineMisizdoim":"Internetga doimiy kirish imkoningiz bormi?",
+    "kattaHajimdagiText":"*Katta hajmdagi fayllarni ham qabul qila olasizmi?",
+    "CAT":"Tarjima qilish qaysi CAT dasturlaridan foydalanasiz?",
+    "tarjimaMavzulari":"Tarjima mavzulari",
+    "Umumiy-mavzular":"Umumiy mavzular",
+    "meningMavzuimEmas":"Mening mavzuim emas",
+    "jamiatVaSiyosat":"Jamiyat va siyosat",
+    "Iqtsod":"Moliya va iqtisod",
+    "Huquqshunoslik":"Huquqshunoslik",
+    "IT":"Informatsion texnologiyalar ",
+    "reklamaVaMarketing":"Reklama va marketing",
+    "yonalishNomi":"Yo’nalish nomi",
+    "sanoatTexnalogiyalari":"Sanoat va texnologiya",
+    "neftVaGaz":"Neft va gaz",
+    "ilimVaTehnika":"Ilmiy-texnik adabiyotlar",
+    "badiyAdabiyot":"Badiiy adabiyot",
+    "tibbiyot":"Tibbiyot va farmatsevtika",
+    "saqlash":"Saqlash"
+  },
+  "Pismini_narxlar":{
+
+    "Profilni_Korish":"Profilni ko’rish",
+    "tahrirlash":"Ma’lumotlarimni tahrirlash",
+    "kalendar":"Ish jadvali",
+    "blog":"Blog",
+    "reklama":"Reklama",
+    "sozlamalar":"Profil sozlamalari",
+
+    "menHaqimda":"Men haqimda",
+    "kantaktlar":"Aloqa",
+    "malumotiIsh":"Ma’lumoti va ish tajribasi",
+    "tillarniBilish":"Tillarni bilish",
+    "hizmatlar":"Xizmatlar",
+    "narxlar":"Narxlar",
+    "videoVagalarey":"Video va galereya",
+
+    "tilniTanlang":"Tilni tanlang",
+    "tilPlace":"Ruschadan - Inglizchaga",
+    "birBetUchun":"1 sahifa uchun – 1 800 belgi (bo’shliqlar bilan)",
+    "boshSiz":"1 sahifa uchun – 1 800 belgi (bo’shliqlarsiz)",
+    "saqlash":"Saqlash"
+   },
+   "reklama":{
+    "Profilni_Korish":"Profilni ko’rish",
+    "tahrirlash":"Ma’lumotlarimni tahrirlash",
+    "kalendar":"Ish jadvali",
+    "blog":"Blog",
+    "reklama":"Reklama",
+    "sozlamalar":"Profil sozlamalari",
+
+    "Hozirgi":"Joriy tarif",
+    "hizmatlarni":"Xizmatlarni tanlang",
+    "tolovturi":"To’lov turini tanlang",
+    "text":"Gits.uz hisobingizni to’ldiring",
+    "xisobingiz":"Sizning hisobingiz:",
+    "Hisobni_toldirish":"Hisobni to’ldiring",
+    "bekor_qilish":"Bekor qilish",
+    "tolov":"To’lov"
+   },
+   "hisobni_toldirish":{
+     "hisobni_toldirish":"Hisobni to’ldiring",
+     "tolov_turini_tanlang":"To’lov turini tanlang",
+     "orqaga":"Ortga",
+     "hisobniToldirish":"Hisobni to’ldiring",
+
+
+
+     "Tolovlar_tarihi":"To’lovlar tarixi"
+    },
+
+   "User_Profil":{
+     "profilni_korish":"Profilni ko’rish",
+     "arizalarim":"Mening arizalarim",
+     "MalumotlarniTaxrirlash":"Ma’lumotlarimni tahrirlash",
+     "profilSozlamalari":"Profil sozlamalari"
+   },
+   "User_Arizalarim":{
+    "profilni_korish":"Profilni ko’rish",
+    "arizalarim":"Mening arizalarim",
+    "MalumotlarniTaxrirlash":"Ma’lumotlarimni tahrirlash",
+    "profilSozlamalari":"Profil sozlamalari",
+
+    "shaharniK":"Shaharni kiriting"
+   },
+   "User_MalumotlarniTax":{
+    "profilni_korish":"Profilni ko’rish",
+    "arizalarim":"Mening arizalarim",
+    "MalumotlarniTaxrirlash":"Ma’lumotlarimni tahrirlash",
+    "profilSozlamalari":"Profil sozlamalari",
+
+    "isim":"Ism",
+    "isimPlace":"Ismingizni yozing",
+    "familya":"Familiya",
+    "familyaPlace":"Familyangizni yozing",
+    "Kompaniya":"Kompaniya",
+    "kompaniePlace":"Kompaniya nomi",
+    "davlat":"Davlat",
+    "mamlaktalarPlace":"Davlatingizni tanlang",
+    "shaxarlar":"Shahar",
+    "shaxarlarPlace":"Shahringizni kiriting",
+    "saqlash":"Saqlash"
+  },
+  "profil_sozlamalari":{
+ 
+    "profilni_korish":"Profilni ko’rish",
+    "arizalarim":"Mening arizalarim",
+    "MalumotlarniTaxrirlash":"Ma’lumotlarimni tahrirlash",
+    "profilSozlamalari":"Profil sozlamalari",
+    
+    "kontaktlar":"Aloqa",
+    "parolniYangilash":"Parolni yangilash",
+    "telefone":"Telefon",
+    "telRaqam":"Raqamingizni kiriting",
+    "hozirgiParol":"Hozirgi parolingiz",
+    "hozirgiParilPlac":"Parolni kiriting",
+    "Email":"E-mail",
+    "EmailPlac":"E-mail ni kiriting",
+    "yangiParol":"Yangi parol",
+    "yangiParolPlac":"Yangi parolni kiriting",
+    "parolniTasdiqlash":"Parolni tasdiqlang ",
+    "tasdilashPlac":"Yangi parolni qayta kiriting",
+    "saqlash":"Saqlash"
+  }
+}
+
+   
+
