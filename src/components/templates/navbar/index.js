@@ -84,7 +84,7 @@ const Index = () => {
                 getRole?.role === "gid" ?
                   <>
                     <ButtonNavbar title={t("navbar.GTU")} url="/forgits" />
-                    <ButtonNavbar title="Blog" url="/blog?page=1" />
+                    <ButtonNavbar title={t("navbar.Blog")} url="/blog?page=1" />
                     <ButtonNavbar title={t("navbar.Arizalar_royhati")} url="/request" />
                     <a className="transport" href="https://www.travelcars.uz" target="_blank">Transport</a>
                   </>
@@ -92,7 +92,7 @@ const Index = () => {
                   getRole?.role === "writer" ?
                     <>
                       <ButtonNavbar title={t("navbar.GTU")} url="/forgits" />
-                      <ButtonNavbar title="Blog" url="/blog?page=1" />
+                      <ButtonNavbar title={t("navbar.Blog")} url="/blog?page=1" />
                       <ButtonNavbar title={t("navbar.Arizalar_royhati")} url="/request" />
                       <a className="transport" href="https://www.travelcars.uz" target="_blank">Transport</a>
                     </>
@@ -100,7 +100,7 @@ const Index = () => {
                     getRole?.role === "translator" ?
                       <>
                         <ButtonNavbar title={t("navbar.GTU")} url="/forgits" />
-                        <ButtonNavbar title="Blog" url="/blog?page=1" />
+                        <ButtonNavbar title={t("navbar.Blog")} url="/blog?page=1" />
                         <ButtonNavbar title={t("navbar.Arizalar_royhati")} url="/request" />
                         <a className="transport" href="https://www.travelcars.uz" target="_blank">Transport</a>
                       </>
@@ -108,7 +108,7 @@ const Index = () => {
                       getRole?.role === "simple_user" ?
                         <>
                           <ButtonNavbar title={t("navbar.GvaTtanlash")} url="/gids" />
-                          <ButtonNavbar title="Blog" url="/blog?page=1" />
+                          <ButtonNavbar title={t("navbar.Blog")} url="/blog?page=1" />
                           <ButtonNavbar title={t("navbar.Ariza_qoldirish")} url="/application-form" />
                           <a className="transport" href="https://www.travelcars.uz" target="_blank">Transport</a>
                         </>
@@ -118,7 +118,7 @@ const Index = () => {
 
                           <ButtonNavbar title={t("navbar.GTU")} url="/forgits" />
 
-                          <ButtonNavbar title="Blog" url="/blog?page=1" />
+                          <ButtonNavbar title={t("navbar.Blog")} url="/blog?page=1" />
 
                           <ButtonNavbar title={t("navbar.Ariza_qoldirish")} url="/application-form" />
 
