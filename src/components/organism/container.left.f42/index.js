@@ -19,6 +19,16 @@ import Spinner from "../../atom/loading.spinner.line"
 import { Image } from 'antd';
 import './main.css'
 import { mediaContainer, mediaContainerSecond, mediaContainerSecondText, mediaContainerPadding } from "./const"
+
+
+
+import telegram from '../../../assets/img/boglanish/11/telegram.png'
+import facebook from '../../../assets/img/boglanish/11/facebook.png'
+import instagram from '../../../assets/img/boglanish/11/instagram.png'
+import viber from '../../../assets/img/boglanish/11/viber.png'
+import wechat from '../../../assets/img/boglanish/11/wechat.png'
+import website from '../../../assets/img/boglanish/11/watsapp.png'
+
 // import CloseIcon from '@material-ui/icons/Close';
 // import Textarea from '../../atom/textAreaCom';
 // import Modal from 'react-awesome-modal';
@@ -35,13 +45,13 @@ const Index = ({ state, typeRole, comments, commentCount, commentReview }) => {
         native: "Ona tili",
         intermediate: 'Yaxshi'
     }
-    // console.log(commentReview)
+
     return (
         <Wrapper>
             <WrapperContainer>
                 <Grid container spacing={1}>
                     <Grid item xs={12} >
-                        <Container position="relative" {...mediaContainerSecond} margin="25px 0 0 20px">
+                        <Container style={{ "display": "flex" }} position="relative" {...mediaContainerSecond} margin="25px 0 0 20px">
                             <FlexContainer {...mediaContainer} width="100%" alignItems="flex-start" justifyContent="space-between" >
                                 <div className="info_btn"><InfoBtn view={state?.view || 0} /></div>
                                 <Image
@@ -68,6 +78,14 @@ const Index = ({ state, typeRole, comments, commentCount, commentReview }) => {
 
                                 </Container>
                             </FlexContainer>
+
+                            {state?.website ? <a className='linkai' target="_blank" href={state?.website}>   <ImageContainer width="40px" src={website} /></a> : ""}
+                            {state?.telegram ? <a className='linkai' target="_blank" href={state?.telegram}>  <ImageContainer width="40px" src={telegram} /></a> : ""}
+                            {state?.wechat ? <a className='linkai' target="_blank" href={state?.wechat}>    <ImageContainer width="40px" src={wechat} /></a> : ""}
+                            {state?.viber ? <a className='linkai' target="_blank" href={state?.viber}>     <ImageContainer width="40px" src={viber} /></a> : ""}
+                            {state?.facebook ? <a className='linkai' target="_blank" href={state?.facebook}>  <ImageContainer width="40px" src={facebook} /></a> : ""}
+                            {state?.instagram ? <a className='linkai' target="_blank" href={state?.instagram}> <ImageContainer width="40px" src={instagram} /></a> : ""}
+
                         </Container>
                     </Grid>
                 </Grid>
@@ -130,7 +148,7 @@ const Index = ({ state, typeRole, comments, commentCount, commentReview }) => {
                         <>
                             {commentReview?.length < 1 ? <div className="empty_title">Izohlar mavjud emas.</div> :
                                 <>
-                                    <Grid className='namessss' container  spacing={1} style={{ marginBottom: 60 }}>
+                                    <Grid className='namessss' container spacing={1} style={{ marginBottom: 60 }}>
 
                                         <Grid item sm={12} md={2}>
                                             <ProgressInfo data={commentCount} />

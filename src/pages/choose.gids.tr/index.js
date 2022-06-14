@@ -7,7 +7,8 @@ import { Wrapper } from './style'
 import ExtendedSearch from "../../components/extended.search"
 import ContainerMap from "../../components/templates/container.temp.f2"
 import ImageContainer from "../../components/molecules/img.container"
-import Adds from "../../assets/img/choosegid/adds.jpg"
+import Adds from "../../assets/img/choosegid/bn1.png"
+import Adds2 from "../../assets/img/choosegid/bn2.png"
 import { mediaTextField, mediaTextFieldSec } from "../../custom/global.media.variables"
 import { useTranslation } from 'react-i18next'
 import { getApiResponse } from "../../hooks/response_get"
@@ -66,6 +67,9 @@ const Index = () => {
                                         <ImageContainer src={Adds} width="350px" />
                                     </Container>
                                     <Container {...mediaGrid} margin="15px 0" >
+                                        <ImageContainer src={Adds2} width="350px" />
+                                    </Container>
+                                     <Container {...mediaGrid} margin="15px 0" >
                                         <ImageContainer src={Adds} width="350px" />
                                     </Container>
                                 </>

@@ -23,7 +23,7 @@ const mediaContainer = {
 const Index = ({typeRole, state, commentCount, commentReview }) => {
     const { t } = useTranslation()
     // const token = JSON.parse(localStorage.getItem('user_token'))
-    console.log(state)
+    // console.log(state)
     return (
         <Wrapper>
             <Container padding="20px" boxShadow={shadow}>
@@ -41,11 +41,11 @@ const Index = ({typeRole, state, commentCount, commentReview }) => {
             <Container padding="20px" margin="20px 0" boxShadow={shadow}>
                 <ImageGallery data={state?.certificates} />
             </Container>
-            <Container padding="20px" margin="20px 0" boxShadow={shadow}>
+            {/* <Container padding="20px" margin="20px 0" boxShadow={shadow}>
                 <h3 className="titlss">{t("GidPk.boglanish")}</h3>
-                {/* <p className="textb"> {state?.phone_number}</p> */}
+                <p className="textb"> {state?.phone_number}</p>
 
-                {/* <p className="textb">Web site: <a className='links' target="_blank" href={state?.website  }  > {state?.website  } </a> </p> */}
+                <p className="textb">Web site: <a className='links' target="_blank" href={state?.website  }  > {state?.website  } </a> </p>
                 <div className="imgdiv11">
                     <a target="_blank" href={state?.website}>     <ImageContainer width="40px" src={website} /></a>
                     <a target="_blank" href={state?.telegram}>  <ImageContainer width="40px" src={telegram} /></a>
@@ -55,7 +55,7 @@ const Index = ({typeRole, state, commentCount, commentReview }) => {
                     <a target="_blank" href={state?.instagram}> <ImageContainer width="40px" src={instagram} /></a>
 
                 </div>
-            </Container>
+            </Container> */}
         </Wrapper>
     )
 }

@@ -204,8 +204,7 @@ const Index = () => {
             <TextTitle font="16px" align="left" top="15px">
               Sertifikat va diplomlaringizni yuklang (jpg va png formatida )
             </TextTitle>
-            <GroupImageUpload role={ getRole?.role } />
-
+            <GroupImageUpload role={ getRole?.role }/>
 
             { getRole?.role !== "gid" ? (
               <>

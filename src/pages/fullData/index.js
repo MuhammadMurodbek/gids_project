@@ -4,7 +4,7 @@ import { Modal} from 'antd';
 import { Grid } from "@material-ui/core";
 import {useParams, useHistory} from "react-router-dom"
 import ImgContainer from "../../components/molecules/img.container";
-import ad from "../../assets/img/citiyes/ad.png";
+import ad from "../../assets/img/citiyes/bn1.png";
 // import delbtn from "../../assets/img/citiyes/buttondel.svg";
 // import edit from "../../assets/img/citiyes/buttonedit.svg";
 import Button from "../../components/atom/button";

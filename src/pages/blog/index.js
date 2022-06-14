@@ -5,7 +5,8 @@ import NoDataPage from "../../components/templates/no.data.page.js"
 import CitiLeftPart from '../../components/organism/citiesLeftPart'
 import ImgContainer from "../../components/molecules/img.container"
 import { getResponse } from "../../hooks/response_get"
-import ad from '../../assets/img/citiyes/ad.png'
+import ad from '../../assets/img/citiyes/bn1.png'
+import ad2 from '../../assets/img/citiyes/bn2.png'
 import { useTranslation } from 'react-i18next'
 import { Grid } from '@material-ui/core'
 import { Pagination } from 'antd';
@@ -79,6 +80,7 @@ export default function Index () {
                                         </Grid>
                                         <Grid xs={ 12 } sm={ 12 } item md={ 4 } className="msa2">
                                             <div className="imgcla"><ImgContainer src={ ad } width="350px" margin="0 auto" /></div>
+                                            <div className="imgcla"><ImgContainer src={ ad2 } width="350px" margin="0 auto" /></div>
                                             <div className="imgcla"><ImgContainer src={ ad } width="350px" margin="0 auto" /></div>
 
                                         </Grid>

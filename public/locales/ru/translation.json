@@ -1,676 +1,698 @@
 {
-    "name": "day.name.nameEn",
-    "description": "descriptionEn",
-    "navbar" :{
-      "forGidAndTras" : "Gid and for translators",
-      "Blog":"Blog",
-      "Applications":"Arizalar ro'yxati"
-     },
-     "footer":{
-         "biznigServislar":"Our service",
-         "tanlash":"Go or choose an interpreter",
-         "GTuchun":"Go or choose an interpreter",
-         "platformaH":"About the platform",
-         "Blog":"Blog",
-         "contacts": "Our contacts",
-         "email":"info@gits.uz",
-          "tel":"+998 93 596-92-20",
-          "sorov":"Send a question",
-          "huquqiy":"Legal information",
-          "foydalanish": "Terms of use"
-     },
-     "kengaytirlgan_Q":{
-         "kengaytirilgan": "Advanced search",
-         "kimKerak":"Choose who you want",
-         "gid":"gid",
-         "tarjion":"Translator",
-          "sinxron":"Synchronous",
-          "izchil":"consistent",
-          "yozmaTarjimon":"Written translator",
-          "Davlat":"State",
-          "DavlatniTanlang":"Select the country",
-          "Shaharlar":"City",
-          "ShaharniTanlang":"Select a city",
-          "sana":"Date",
-          "online":"Online",
-          "barchasi":"All",
-          "til":"Language",
-          "tillarniTanlang":"Select languages",
-          "jinsi":"Gender of the translator",
-          "erkak":"Male",
-          "ayol":"Woman",
-          "qidirish":"Search"
-     },
+  "name": "day.name.nameEn",
+  "description": "descriptionEn",
+
+
+  "navbar" :{
+    "GTU" : "Для гидов и переводчиков",
+    "Blog":"Блог",
+    "Arizalar_royhati":"Список заявок",
+    "Ariza_qoldirish":"Оставить заявку",
+    "GvaTtanlash":"Выбрать"
+   },
+   "footer":{
+       "biznigServislar":"Наши услуги",
+       "tanlash":"Выбрать гида или переводчика",
+       "GTuchun":"Для гидов и переводчиков",
+       "platformaH":"О платформе",
+       "Blog":"Блог",
+       "contacts": "Контакты",
+       "email":"info@gits.uz",
+        "tel":"+99893 596-92-20",
+        "sorov":"Вопросы и предложения",
+        "huquqiy":"Правовая информация",
+        "foydalanish": "Условия использования",
+        "maxfiylik":"Политика конфиденциальности и публичная оферта"
+   },
+   "kengaytirlgan_Q":{
+       "kengaytirilgan": "Расширенный поиск",
+       "kimKerak":"Выберите кто вам нужен",
+       "gid":"Гид",
+       "tarjion":"Переводчик",
+        "sinxron":"Синхронный",
+        "izchil":"Последовательный",
+        "yozmaTarjimon":"Письменный",
+        "Davlat":"Страна",
+        "DavlatniTanlang":"Выберите страну",
+        "Shaharlar":"Город",
+        "ShaharniTanlang":"Выберите город",
+        "sana":"Дата",
+        "online":"Онлайн",
+        "barchasi":"Все",
+        "til":"Язык",
+        "tillarniTanlang":"Выберите язык",
+        "jinsi":"Пол гида или переводчика",
+        "erkak":"Мужчина",
+        "ayol":"Женщина",
+        "qidirish":"Поиск"
+   },
+
+   "main":{
+       "title":"Предлагаем проверенных гидов и переводчиков по всему миру",
+       "takliflarimiz":"Мы предлагаем следующее:",
+       "tadbirkorlarga":"Для бизнеса",
+       "textForTadbirkor":"С помощью этой платформы вы можете воспользоваться услугами переводчиков и гидов для развития своего бизнеса. Выберите гида или переводчика или оставьте заявку.",
+       "arizaQoldrirish":"Оставить заявку",
+       "Gid_tanlash":"Выбрать",
+       "Gidlarga":"Для гидов и переводчиков",
+       "textForGid":"С помощью этой платформы вы можете принять заказы напрямую от иностранных и местных туристов. Зарегистрируйтесь сейчас, введите всю необходимую информацию и начните работу! ",
+       "royhatdanO":"Регистрироваться",
+       "ishlashi":"Как это работает?",
+       "royhatdanOtasiz":"Проходите регистрацию",
+       "text02":"Сначала зарегистрируйтесь на платформе в качестве гида, переводчика или заказчика.",
+       "sorov":"Оставьте заявку",
+       "text03":"Вы можете выбрать гида и переводчика или оставить заявку.",
+       "aloqaga":"Свяжитесь",
+       "text04":"Выберите гида или переводчика и свяжитесь с ними.",
+       "ishBoshlanadi":"Начните работу",
+       "text05":"Начните работать напрямую с гидом и переводчиком.",
+       "trendSHahar":"Самые посещаемые города",
+       "korish":"Смотреть",
+       "MijozlarniF":"Отзывы клиентов",
+       "hoziroq":"Выберите гида и переводчика прямо сейчас или оставьте заявку!",
+      "ariza":"Оставить заявку",
+      "tanlash":"Выбрать"
+},
+  "Gid_Tanlash":{
+    "title":"Выберите гида или переводчика",
+    "fikirlar":"Отзывы:",
+    "kuniga":"За 1 день:",
+    "xizmatlar":"Услуги",
+    "tillar":"Языки",
+    "OzimHaqimda":"О себе",
+    "korish":"Смотреть",
+    "davomi":"Читать далее"
+},
+  "gidlar_uchun":{
+    "title":"Зарегистрируйтесь в качестве переводчика или гида в своем городе",
+    "royhatdanOtish":"Регистрироваться",
+    "takliflarimiz":"Что мы предлагаем",
+    "bepul":"Пройдите регистрацию бесплатно",
+    "text01":"Введите всю необходимую информацию и получите личную страницу. Это легко и быстро.",
+    "mijozlar":"Найдите работу с помощью платформы",
+    "text02":" Вы можете просматривать список текущих запросов и отвечать на те запросы, которые вам лучше подходят.",
+    "boshlash":"Начните работу!",
+    "text03":" Получайте положительные отзывы и развивайте свой бизнес, обеспечивая высокое качество обслуживания своих клиентов.",
+    "kopSavollar":"Часто задаваемые вопросы",
+    "bepulmi":"Регистрация на платформе бесплатна?",
+    "ha":"Да, регистрация бесплатна",
+    "qandayT":"Как найти клиентов?",
+    "tekshirilgan":"Как получить значок «Проверено»?",
+    "qandayKiraman":"Где я могу получить доступ к своему профилю?",
+    "hoziroq":"Выберите гида и переводчика прямо сейчас или оставьте заявку!",
+    "royhatdanO":"Регистрироваться"
+  },
+  "about":{
+    "title":"О платформе",
+    "boglanish":"Контакты"
+  },
+  "connect":{
+    "contact":"Связаться с нами ",
+    "Kontaktlarimiz":"Контакты",
+    "tel":"+99893 596-92-20",
+    "email":"info@gits.uz",
+    "manzil":"г. Ташкент, Мирабадский район, ул. Нукусская, 86/3",
+    "savol":"Отправить вопрос или предложение",
+    "ism":"Имя",
+    "isimPlac":"Напишите имя",
+    "familya":"Фамилия",
+    "familyaPlac":"Напишите фамилию",
+    "Email":"E-mail",
+    "emailPlac":"Напишите E-mail",
+    "telefon":"Телефон",
+    "telefonPlac":"Напишите номер телефона",
+    "text":"Напишите свой вопрос или предложение",
+    "jonatish":"Отправить"
+  },
+  "auth_registr":{
+    "kirish":"Вход",
+    "royhatdanOtish2":"Регистрироваться",
+    "ismingiz":"Ваше имя",
+    "familya2":"Ваша фамилия",
+    "user":"Пользователь",
+     "gid":"Гид",
+    "tarjimon":"Устный переводчик",
+    "yozmaT":"Письменный переводчик",
+    "email2":"Введите свой E-mail",
+    "pass":"Введите свой пароль",
+    "repass":"Подтвердите свой пароль",
+    "submit":"Регистрироваться"
+  },
+  "auth_kirish":{
+    "kirish":"Вход",
+    "royhatdanOtish2":"Регистрироваться",
+    "email2":"Введите E-mail",
+    "pass":"Введите пароль",
+    "forget":"Забыл свой пароль"
+  },
+  "auth_parolniTiklash":{
+    "reset":"Восстановить пароль ",
+    "jonatildi":"*Отправим код подтверждения на ваш E-mail",
+    "cod":"Введите E-mail",
+    "send":"Отправить код"
+  },
+  "emailni_tasdiqlash":{
+    "textema":"Подтвердите E-mail",
+    "texts":"Отправлен код на эл. почту admin@gits.uz. Введите этот код в нижнюю строку.",
+    "kod":"Введите код",
+    "qayta":"Отправить заново код подтверждения",
+    "tasdiqlash":"Подтвердить"
+  },
+  "parolniYangilash":{
+    "update":"Обновить пароль",
+    "new":"Новый пароль",
+    "yana":"Подтвердите новый пароль",
+    "sendthe":"Отправить код"
+  },
+  "arizaqoldirish":{
+    "title":"Оставить заявку для гидов и переводчиков",
+    "vazifa":"Описание работы",
+    "kimKerak":"Кто нужен",
+    "Gid":"Гид",
+    "Tarjimon":"Переводчик",
+    "sinxron":"Синхронный",
+    "izchil":"Последовательный",
+    "yozma":"Письменный",
+    "KerakShaharlar":"Город",
+    "davlat":"Страна",
+    "shaxarlar":"Город",
+    "KerakSana":"Дата",
+    "Bilishikerak":"Язык",
+    "BilishikeralPlac":"Выберите языки",
+    "nimagaKerak":"В каких целях",
+    "misol":"Напр., нужен гид для экскурсии по городу.",
+    "narhi":"Предлагаемая цена",
+    "chegara":"Напишите окончательную цену",
+    "jinsi":"Пол",
+    "erkak":"Мужчина",
+    "ayol":"Женщина",
+    "nechaKishi":"Сколько человек",
+    "nechkishiBolaslar":"Сколько вас человек?",
+    "shartnoma":"Отправляя заявку, принимаю все условия Пользовательского соглашения*",
+    "Ayuborish":"Отправить заявку"
+  },
+  "arizalar_royxati":{
+    "title":"Список заявок",
+    "shaxarPlac":"Введите название города",
+    "raqami":"Номер заявки",
+    "davomi":"Читать далее"
+  },
+  "ToliqAriza":{
+    "qaytish":"Обратно в список заявок",
+    "tafsilotlar":"Подробности",
+    "arizaMatni":"Текст заявки",
+    "elonBeruchi":"Заявитель:",
+    "shahar":"Город:",
+    "sana":"Дата:",
+    "gacha":"Цена (до):",
+    "kimKerak":"Кто нужен:",
+    "tillar":"Языки::",
+    "odamlarSone":"Количество человек:",
+    "javobBerish":"Ответить на заявку",
+    "yozing":"Напишите свое сообщение",
+    "yopish":"Закрыть",
+    "yuborish":"Отправить"
+  },
+  "Blog":{
+    "blog":"Blog",
+    "davomiOqish":"Читать дальше"
+  },
+  "safarHaqida":{
+    "title":"Как прошла поездка?",
+    "text":"Поделитесь впечатлениями о поездке!",
+    "Maqolayozish":"Написать статью",
+    "Maqolalarim":"Мои статьи",
+    "tahrirlash":"Редактировать"
+  },
+  "maqolaYozish":{
+    "Profilni_Korish":"Просмотреть профиль",
+    "tahrirlash":"Редактировать мои данные",
+    "kalendar":"Календарь",
+    "blog":"Блог",
+    "reklama":"Реклама",
+    "sozlamalar":"Настройки профиля",
+
+    "Maqola yozish":"Написать статью",
+    "orqaga":"Вернуться обратно",
+    "maqolaNomi":"Название статьи",
+    "NomiPlace":"Напишите название статьи",
+    "taglar":"Теги",
+    "tagPlace":"Напишите тег",
+    "Text":"Текст",
+    "maqolaniYozing":"Напишите свою статью",
+    "joylamoq":"Разместить"
+  },
   
-     "main":{
-         "title":"We offer trusted guides and translators from around the world",
-         "takliflarimiz":"What we offer",
-         "tadbirkorlarga":"For entrepreneurs",
-         "textForTadbirkor":"With this platform, you can find interpreters and guides to negotiate with foreigners, grow your business. Choose Git for yourself or just leave an application.",
-         "arizaQoldrirish":"Leave an application",
-         "Gid_tanlash":"Gitni tanlash",
-         "Gidlarga":"For the Hitlers",
-         "textForGid":"With this platform, you can find clients and make a career for yourself. Gits.uz platform supports you. Sign up now, fill out your form and start your career!",
-         "royhatdanO":"Sign up",
-         "ishlashi":"This is how it works,",
-         "royhatdanOtasiz":"You sign up",
-         "text02":"You must first register on the platform as Git / Translator or Client.",
-         "sorov":"You leave a request",
-         "text03":"The client can leave a request or choose Git / Translator.",
-         "aloqaga":"Get in touch",
-         "text04":"Once the Interpreter / Git is selected, contact will be made and the work will begin.",
-         "ishBoshlanadi":"Work begins",
-         "text05":"Once you've gotten in touch and agreed on a job, you can get started",
-         "trendSHahar":"Most visited cities",
-         "korish":"See",
-         "MijozlarniF":"Feedback from our customers",
-         "hoziroq":"Choose Git for yourself now or just leave an application.",
-        "ariza":"Leave an application",
-        "tanlash":"Gitni tanlash"
+ 
+
+
+
+
+
+  "GidPk":{
+    "Profilni_Korish":"Просмотреть профиль",
+    "tahrirlash":"Редактировать",
+    "kalendar":"Календарь",
+    "blog":"Блог",
+    "reklama":"Реклама",
+    "sozlamalar":"Настройки профиля",
+
+    "OzimHaqimda":"О себе",
+    "reyting":"Рейтинг:",
+    "fikirlar":"Отзывы:",
+    "kuniga":"за 1 день",
+    "soatiga":"за 1 час:",
+    "qatnashgan":"Мероприятия, где у участвовал (а):",
+    "yil":"Год:",
+    "ozimHaqimdaVideo":"Видео о себе",
+    "boglanish":"Контакты",
+    "sertificat":"Сертификаты и дипломы",
+    "malumotVaTajriba":"Образование и опыт работы",
+    "Malumotim":"Образование",
+    "toifam":"Категория",
+    "institut":"Окончил (а) институт / университет:",
+    "mutahasis":"Специальность:",
+    "ishtaj":"Опыт работы:",
+    "ishJoy":"Место работы:",
+    "lavozim":"Должность:",
+    "ishvaqt":"Часы работы:",
+    "qoshimcha":"Дополнительные курсы:",
+    "tiltajriba":"Опыт работы:",
+    "bandkunlar":"Занятость гида или переводчика ",
+    "hizmatlar":"Услуги",
+    "ekskursiyalar":"Экскурсии",
+    "sinxron":"Синхронный перевод",
+     "izchil":"Последовательный переводчик",
+    "yozma":"Письменный переводчик",
+    "ekskursiyalar2":"Экскурсиялар: ",
+    "video":"Видео о себе",
+    "sertificatlar":"Сертификаты и дипломы",
+    "Gallery":"Галерея",
+    "fidbek":"Отзывы клиентов",
+    "alo":"Отлично",
+    "ortacha":"Очень хорошо",
+    "yaxshi":"Хорошо",
+    "yomon":"Плохо",
+    "judaYomon":"Очень плохо",
+    "koproqYuklash":"Загрузить больше"
   },
-    "Gid_Tanlash":{
-      "rate":"Rate",
-      "title":"Choose a Guide for yourself",
-      "fikirlar":"Comments:",
-      "kuniga":"Up to:",
-      "korish":"See",
-      "davomi":"Read more"
+  "MTmenHaqimda":{
+
+    "Profilni_Korish":"Просмотреть профиль",
+    "tahrirlash":"Редактировать",
+    "kalendar":"Календарь",
+    "blog":"Блог",
+    "reklama":"Реклама",
+    "sozlamalar":"Настройки профиля",
+
+    "menHaqimda":"О себе ",
+    "kantaktlar":"Контакты",
+    "malumotiIsh":"Образование и опыт работы",
+    "tillarniBilish":"Знание языков",
+    "hizmatlar":"Услуги",
+    "narxlar":"Цены",
+    "videoVagalarey":"Видео и галерея",
+
+    "familya":"Фамилия",
+    "familyaPlace":"Напишите фамилию",
+    "isim":"Имя",
+    "isimPlace":"Напишите имя",
+    "otasiningIsmi":"Отчество",
+    "otasiIplace":"Напишите отчество",
+    "tugilganSana":"Дата рождения",
+    "jins":"Пол",
+    "erkak":"Мужчина",
+    "ayol":"Женщина",
+    "mamlakat":"Страна",
+    "mamlakatPlace":"Выберите свою страну",
+    "Shaharlar":"Город",
+    "ShaharPlace":"Выберите свой город",
+    "OzingizH":"О себе",
+    "OzingizHplace":"Напишите несколько слов о себе",
+    "certificatlar":"Загрузите свои сертификаты и дипломы",
+    "saqlash":"Сохранить"
   },
-    "gidlar_uchun":{
-      "title":"Register as a Translator or Git in your hometown",
-      "royhatdanOtish":"Sign up",
-      "takliflarimiz":"What we offer",
-      "bepul":"Sign up for free",
-      "text01":"You fill out your profile and get your personal page. It's fast, easy and free.",
-      "mijozlar":"Find customers using the platform",
-      "text02":"You can also view a list of current queries and respond to customers who are relevant to you.",
-      "boshlash":"Your career get started!",
-      "text03":"Get positive feedback and grow while serving your customers well.",
-      "kopSavollar":"Frequently Asked Questions",
-      "bepulmi":"Is registration free?",
-      "ha":"Yes, of course",
-      "qandayT":"How can I find a client?",
-      "tekshirilgan":"How do I get a 'verified' mark?",
-      "qandayKiraman":"Where can I access my profile?",
-      "hoziroq":"Sign up now, fill out your form and start your career!",
-      "royhatdanO":"Sign up"
-    },
-    "about":{
-      "title":"About the platform",
-      "boglanish":"Connect"
-    },
-    "Biz_bilan_boglanish":{
-      "contact":"contact us",
-      "Kontaktlarimiz":"Our contacts",
-      "tel":"+998 93 596-92-20  ",
-      "email":"info@gits.uz",
-      "manzil":"Tashkent, Yunusobot district, Palonchi street, 4 - 194 sq.m.",
-      "savol":"Send a question",
-      "ism":"Name",
-      "isimPlac":"Write your name",
-      "familya":"Surname",
-      "familyaPlac":"Write your last name",
-      "Email":"Email",
-      "emailPlac":"Enter your email",
-      "telefon":"Phone",
-      "telefonPlac":"Enter your phone number",
-      "text":"If you have any questions or suggestions, please write",
-      "textPlac":"Write if you have a question or suggestion",
-      "jonatish":"Send"
-    },
-    "auth_registr":{
-      "kirish":"Introduction",
-      "royhatdanOtish2":"Registration",
-      "ismingiz":"Your name",
-      "familya2":"Your last name",
-      "tarjimon":"Translator",
-      "email2":"Enter the email",
-      "pass":"Enter your password",
-      "repass":"Parolingizni tasdiqlang",
-      "submit":"Sign up"
-    },
-    "auth_kirish":{
-      "kirish":"Introduction",
-      "royhatdanOtish2":"Registration",
-      "email2":"Enter the email",
-      "pass":"Enter your password",
-      "forget":"Forgot password"
-    },
-    "auth_parolniTiklash":{
-      "reset":"Reset password",
-      "jonatildi":"* We will send a confirmation code to your email",
-      "cod":"Enter your email",
-      "send":"Send the code"
-    },
-    "emailni_tastiqlash":{
-      "textema":"Confirm your email",
-      "texts":"The code was sent to adminov@gits.uz. Type this code down.",
-      "kod":"Enter the code",
-      "qayta":"Send the code again",
-      "tasdiqlash":"Confirmation"
-    },
-    "parolniYangilash":{
-      "update":"Update password",
-      "new":"New Password",
-      "yana":"Confirm the new password",
-      "sendthe":"Send the code"
-    },
-    "arizaqoldirish":{
-      "title":"Leave a form for guides and translators",
-      "vazifa":"Job description",
-      "kimKerak":"Who needs it",
-      "Gid":"Gid",
-      "Tarjimon":"Translator",
-      "sinxron":"Synchronous",
-      "izchil":"Izchil",
-      "KerakShaharlar":"Git / The city where the translator is needed",
-      "davlat":"State",
-      "shaxarlar":"City",
-      "KerakSana":"Go / Date translator needed",
-      "Bilishikerak":"Git / Translator languages  need to know",
-      "BilishikeralPlac":"Selection of languages",
-      "nimagaKerak":"Why do you need it?",
-      "misol":"For example, you need a git to show the city.",
-      "narhi":"Offer price",
-      "chegara":"Write down the price limit",
-      "jinsi":"Gender",
-      "erkak":"Male",
-      "ayol":"Woman",
-      "nechaKishi":"How many people",
-      "nechkishiBolaslar":"How many people are you?",
-      "shartnoma":"By submitting the application, you agree to the user agreement *",
-      "Ayuborish":"Submit the application"
-    },
-    "arizalar_royhati":{
-      "title":"Application list",
-      "shaxarPlac":"Enter the city",
-      "davomi":"Read more"
-    },
-    "ToliqAriza":{
-      "qaytish":"Return to application list",
-      "tafsilotlar":"Details",
-      "arizaMatni":"Application text",
-      "elonBeruchi":"Announcer:",
-      "shahar":"City:",
-      "sana":"Date:",
-      "gacha":"Price(up to)",
-      "kimKerak":"Who needs:",
-      "tillar":"Languages:",
-      "odamlarSone":"Number of people:",
-      "javobBerish":"Reply to application",
-      "yozing":"Write your message",
-      "yopish":"Close",
-      "yuborish":"Send"
-    },
-    "Blog":{
-      "blog":"Blog",
-      "davomiOqish":"Read more",
-      "edit":"Edit"
-    }, 
-    "safarHaqda":{
-      "title":"How was your trip?",
-      "text":"Increase your income by writing articles about how the trip went!",
-      "Maqolayozish":"Write an article",
-      "Maqolalarim":"My articles",
-      "tahrirlash":"Tahrirlash"
-    },
-    "maqolaYozish":{
-      "Profilni_Korish":"View profile",
-      "tahrirlash":"Edit my data",
-      "kalendar":"Calendar",
-      "blog":"Blog",
-      "reklama":"Advertising",
-      "sozlamalar":"Profile settings",
-      "Maqolayozish":"Write an article",
-      "orqaga":"go back",
-      "maqolaNomi":"Article Title",
-      "NomiPlace":"Enter the title of your article",
-      "taglar":"Tags",
-      "tagPlace":"Type a tag",
-      "Text":"Text",
-      "maqolaniYozing":"Write your article",
-      "joylamoq":"Set"
-    },
+  "MT_Kontaktlar":{
+
+    "Profilni_Korish":"Просмотреть профиль",
+    "tahrirlash":"Редактировать",
+    "kalendar":"Календарь",
+    "blog":"Блог",
+    "reklama":"Реклама",
+    "sozlamalar":"Настройки профиля",
+
+    "menHaqimda":"О себе",
+    "kantaktlar":"Контакты",
+    "malumotiIsh":"Образование и опыт работы",
+    "tillarniBilish":"Знание языков",
+    "hizmatlar":"Услуги",
+    "narxlar":"Цены",
+    "videoVagalarey":"Видео и галерея",
+
+    "tel":"Телефон* ",
+    "email":"E-mail",
+    "emailKiritish":"Введите E-mail",
+    "Site":"Сайт",
+    "link":"Введите ссылку",
+    "Telegram":"Телеграм",
+    "telegramPlace":"Введите ссылку на свой профиль в Telegram",
+    "WhatsApp":"WhatsApp",
+    "watsapPlace":"Введите ссылку на свой профиль в WhatsApp",
+    "Facebook":"Facebook",
+    "facebookPlace":"Введите ссылку на свой профиль в Facebook",
+    "Wechat":"Wechat",
+    "wechatPlace":"Введите ссылку на свой профиль в Wechat",
+    "Viber":"Viber",
+    "viberPlace":"Введите ссылку на свой профиль в Viber",
+    "saqlash":"Сохранить"
+  },
+  "IshTajriba":{
+
+    "Profilni_Korish":"Просмотреть профиль",
+    "tahrirlash":"Редактировать",
+    "kalendar":"Календарь",
+    "blog":"Блог",
+    "reklama":"Реклама",
+    "sozlamalar":"Настройки профиля",
+
+    "menHaqimda":"О себе",
+    "kantaktlar":"Контакты",
+    "malumotiIsh":"Образование и опыт работы",
+    "tillarniBilish":"Знание языков",
+    "hizmatlar":"Услуги",
+    "narxlar":"Цены",
+    "videoVagalarey":"Видео и галерея",
+
+    "malumotlar":"Образование",
+    "oliy":"Высшее образование",
+    "bitirgan":"Окончил (а) институт / университет",
+    "BitirganOliytalimlar":"Введите название высшего учебного заведения",
+    "toifasi":"Категория гида",
+    "toifaPlace":"Гид высшей категории",
+    "qoshimchaKurslar":"Дополнительные курсы",
+    "oqiganKurslaringiz":"Напишите куры, которые вы окончили",
+    "tajriba":"Опыт",
+    "year":"год",
+    "saqlash":"Сохранить"
+  },
+  "TillarniBilish":{
+    "Profilni_Korish":"Просмотреть профиль",
+    "tahrirlash":"Редактировать",
+    "kalendar":"Календарь",
+    "blog":"Блог",
+    "reklama":"Реклама",
+    "sozlamalar":"Настройки профиля",
+
+    "menHaqimda":"О себе",
+    "kantaktlar":"Контакты",
+    "malumotiIsh":"Образование и опыт работы",
+    "tillarniBilish":"Знание языков",
+    "hizmatlar":"Услуги",
+    "narxlar":"Цены",
+    "videoVagalarey":"Видео и галерея",
+
+    "til":"Язык",
+    "tilPlace":"Выберите язык",
+    "bilishDarajasi":"Уровень владения языком",
+    "BilishDPlace":"Напишите свой уровень владения языком",
+    "save":"Сохранить"
+  },
+  "xizmatlar":{
+    "Profilni_Korish":"Просмотреть профиль",
+    "tahrirlash":"Редактировать",
+    "kalendar":"Календарь",
+    "blog":"Блог",
+    "reklama":"Реклама",
+    "sozlamalar":"Настройки профиля",
+
+    "menHaqimda":"О себе",
+    "kantaktlar":"Контакты",
+    "malumotiIsh":"Образование и опыт работы",
+    "tillarniBilish":"Знание языков",
+    "hizmatlar":"Услуги",
+    "narxlar":"Цены",
+    "videoVagalarey":"Видео и галерея",
     
+    "xizmatlar":"Услуги",
+    "ekskursiyalar":"Экскурсиялар",
+    "sinxron":"Синхронный перевод",
+     "izchil":"Последовательный перевод",
+     "yozma":"Письменный перевод",
+
+    "mamlakatlargaEkskurs":"Экскурсия по странам",
+    "mamlakatPlace":"Выберите страну",
+    "shaharlar":"Город",
+    "shaharlarSelect":"Выберите город",
+    "save":"Сохранить"
    
-  
-  
-  
-  
-  
-  
-    "Gid_Profilni_ko'rish":{
-      "Profilni_Korish":"View profile",
-      "tahrirlash":"Edit my data",
-      "kalendar":"Calendar",
-      "blog":"Blog",
-      "reklama":"Advertising",
-      "sozlamalar":"Profile settings",
-      "OzimHaqimda":"O‘zim haqimda",
-      "reyting":"Reytingi:",
-      "fikirlar":"Comments:",
-      "kuniga":"in a day",
-      "soatiga":"Hourly:",
-      "ozimHaqimdaVideo":"Video about myself",
-      "malumotVaTajriba":"Education and Work Experience",
-      "Malumotim":"My information:",
-      "toifam":"Category:",
-      "institut":"Graduated from:",
-      "qoshimcha":"Additional courses:",
-      "tiltajriba":"Work Experience:",
-      "bandkunlar":"Guide / Interpreter's busy days",
-      "hizmatlar":"Services",
-      "ekskursiyalar":"Excursions",
-      "ogzaki":"Interpretation (serial)",
-      "sinxron":"Simultaneous translation",
-      "izchil":"consistent translation",
-      "ekskursiyalar2":"Ekskursiyalar: ",
-      "sertificatlar":"My certificates and diplomas",
-      "Gallery":"Gallery",
-      "fidbek":"Customer Feedback",
-      "alo":"excellent",
-      "ortacha":"Average  ",
-      "yomon":"bad",
-      "judaYomon":"Very bad",
-      "koproqYuklash":"More downloads",
-      "fikirqoldirish":"Fikr qoldirish"
+  },
+  "narxlar":{
+    "Profilni_Korish":"Просмотреть профиль",
+    "tahrirlash":"Редактировать мою информацию",
+    "kalendar":"Календарь",
+    "blog":"Блог",
+    "reklama":"Реклама",
+    "sozlamalar":"Настройки профиля",
+
+    "menHaqimda":"О себе",
+    "kantaktlar":"Контакты",
+    "malumotiIsh":"Образование и опыт работы",
+    "tillarniBilish":"Знание языков",
+    "hizmatlar":"Услуги",
+    "narxlar":"Цены",
+    "videoVagalarey":"Видео и галерея",
+
+    
+
+    "birkunlikHizmat":"Стоимость услуги за 1 день",
+    "birSoatlik":"Стоимость услуги за 1 час",
+    "saq":"Сохранить"
+    
+  },
+  "Galarey":{
+
+    "Profilni_Korish":"Просмотреть профиль",
+    "tahrirlash":"Редактировать мою информацию",
+    "kalendar":"Календарь",
+    "blog":"Блог",
+    "reklama":"Реклама",
+    "sozlamalar":"Настройки профиля",
+
+    "menHaqimda":"О себе",
+    "kantaktlar":"Контакты",
+    "malumotiIsh":"Образование и опыт работы",
+    "tillarniBilish":"Знание языков",
+    "hizmatlar":"Услуги",
+    "narxlar":"Цены",
+    "videoVagalarey":"Видео и галерея",
+
+    "Partfolio":"Вы можете снять видео о себе. Это видео будет в профиле.",
+    "galarey":"Ваша галерея",
+    "saqlash":"Сохранить"
+  },
+
+
+
+
+  "Ustniy_MalumotvaIshtajriba":{
+
+    "Profilni_Korish":"Просмотреть профиль",
+    "tahrirlash":"Редактировать мою информацию",
+    "kalendar":"Календарь",
+    "blog":"Блог",
+    "reklama":"Реклама",
+    "sozlamalar":"Настройки профиля",
+
+    "menHaqimda":"О себе",
+    "kantaktlar":"Контакты",
+    "malumotiIsh":"Образование и опыт работы",
+    "tillarniBilish":"Знание языков",
+    "xizmatlar":"Услуги",
+    "narxlar":"Цены",
+    "videoVagalereya":"Видео и галерея",
+    
+    "bitirganInstitu":"Окончил (а) институт / университет",
+    "institutNmaePlace":"Введите название высшего учебного заведения",
+    "bitirganYil":"Год окончания",
+    "YilPlace":"Год",
+    "Mutahasislig":"Специальность",
+    "mutahasisligPlace":"Напишите название специальности",
+    "tajriba":"Опыт",
+    "frilancermisiz":"Вы сейчас работаете фрилансером?",
+    "yes":"Да",
+    "No":"Нет",
+    "ishJoingizniKorsating":"Укажите место работы",
+    "text":"Текст",
+    "lavozimingiz":"Ваша должность",
+    "ishVaqti":"Часы работы",
+    "save":"Сохранить"
+  },
+  "Ustniy_Xizmatlar":{
+    "hizmatlar":"Услуги",
+    "exkursiyalar":"Экскурсии",
+    "sinhron":"Синхронный перевод",
+     "izchilTarjima":"Последовательный перевод",
+    "yozmaTarjimon":"Письменный перевод",
+    "MamlakatgaEkskursiya":"Экскурсия по странам",
+    "MamlakatgaEPlace":"Выберите страну",
+    "shahar":"Город",
+    "ShaharPlace":"Выберите город",
+    "save":"Сохранить"
+  },
+
+
+
+
+
+
+  "Pismenniy_Xizmatlar":{
+    
+    "Profilni_Korish":"Просмотреть профиль",
+    "tahrirlash":"Редактировать мою информацию",
+    "kalendar":"Календарь",
+    "blog":"Блог",
+    "reklama":"Реклама",
+    "sozlamalar":"Настройки профиля",
+
+    "menHaqimda":"О себе",
+    "kantaktlar":"Контакты",
+    "malumotiIsh":"Образование и опыт работы",
+    "tillarniBilish":"Знание языков",
+    "hizmatlar":"Услуги",
+    "narxlar":"Цены",
+    "videoVagalarey":"Видео и галерея",
+
+    "bir_kunlikish":"Ваша ежедневная нагрузка",
+    "Text":"Текст",
+    "OgzakiTarjimonlik":"Выполняете ли Вы устные переводы?",
+    "ha":"Да",
+    "yoq":"Нет",
+    "damdahamIsh":"Выполняете ли Вы заказы в выходные и праздничные дни?",
+    "TahrirlashBilanHam":"Занимаетесь ли Вы корректурой / редактурой текстов?",
+    "onlineMisizdoim":"Имеете ли Вы постоянный доступ в Интернет?",
+    "kattaHajimdagiText":"*Можете принять файлы большого объема?",
+    "CAT":"Какие CAT-программы вы используете для переводов?",
+    "tarjimaMavzulari":"Тематика перевода",
+    "Umumiy-mavzular":"Общая тематика",
+    "meningMavzuimEmas":"Не моя тема",
+    "jamiatVaSiyosat":"Общество и политика",
+    "Iqtsod":"Экономика и финансы",
+    "Huquqshunoslik":"Юриспруденция",
+    "IT":"Информационные технологии",
+    "reklamaVaMarketing":"Реклама и маркетинг",
+    "yonalishNomi":"Название направления",
+    "sanoatTexnalogiyalari":"Промышленность и технология",
+    "neftVaGaz":"Нефть и газ",
+    "ilimVaTehnika":"Научно-техническая литература",
+    "badiyAdabiyot":"Художественная литература",
+    "tibbiyot":"Медицина и фармацевтика",
+    "saqlash":"Сохранить"
+  },
+  "Pismini_narxlar":{
+
+    "Profilni_Korish":"Просмотреть профиль",
+    "tahrirlash":"Редактировать мою информацию",
+    "kalendar":"Календарь",
+    "blog":"Блог",
+    "reklama":"Реклама",
+    "sozlamalar":"Настройки профиля",
+
+    "menHaqimda":"О себе",
+    "kantaktlar":"Контакты",
+    "malumotiIsh":"Образование и опыт работы",
+    "tillarniBilish":"Знание языков",
+    "hizmatlar":"Услуги",
+    "narxlar":"Цены",
+    "videoVagalarey":"Видео и галерея",
+
+    "tilniTanlang":"Выберите язык",
+    "tilPlace":"С русского на узбекский",
+    "birBetUchun":"За 1 страницу – 1 800 знаков (с пробелами)",
+    "boshSiz":"За 1 страницу – 1 800 знаков (без пробелов)",
+    "saqlash":"Сохранить"
+   },
+   "reklama":{
+    "Profilni_Korish":"Просмотреть профиль",
+    "tahrirlash":"Редактировать мою информацию",
+    "kalendar":"Календарь",
+    "blog":"Блог",
+    "reklama":"Реклама",
+    "sozlamalar":"Настройки профиля",
+
+    "Hozirgi":"Текущий тариф",
+    "hizmatlarni":"Выберите услуги",
+    "tolovturi":"Выберите способ оплаты",
+    "text":"Пополните счет в gits.uz",
+    "xisobingiz":"Ваш баланс:",
+    "Hisobni_toldirish":"Пополните счет",
+    "bekor_qilish":"Отменить",
+    "tolov":"Оплатить"
+   },
+   "hisobni_toldirish":{
+     "hisobni_toldirish":"Пополните счет",
+     "tolov_turini_tanlang":"Выберите способ оплаты",
+     "orqaga":"Назад",
+     "hisobniToldirish":"Пополните счет",
+
+
+
+     "Tolovlar_tarihi":"История платежей"
     },
-    "MTmenHaqimda":{
-  
-      "Profilni_Korish":"View profile",
-      "tahrirlash":"Edit my data",
-      "kalendar":"Calendar",
-      "blog":"Blog",
-      "reklama":"Advertising",
-      "sozlamalar":"Profile settings",
-  
-      "menHaqimda":"About Me",
-      "kantaktlar":"Contacts",
-      "malumotiIsh":"Education and Work Experience",
-      "tillarniBilish":"Knowledge of languages",
-      "hizmatlar":"services",
-      "narxlar":"Prices",
-      "videoVagalarey":"Video and gallery",
-  
-      "familya":"Surname",
-      "familyaPlace":"Write your last name",
-      "isim":"Name",
-      "isimPlace":"Write your name",
-      "otasiningIsmi":"Your father's name",
-      "otasiIplace":"Write your father's name",
-      "tugilganSana":"Your date of birth",
-      "jins":"Jinsingiz",
-      "erkak":"Male",
-      "ayol":"Woman",
-      "mamlakat":"Country",
-      "mamlakatPlace":"Choose your country",
-      "Shaharlar":"City",
-      "ShaharPlace":"Choose your city",
-      "OzingizH":"About yourself",
-      "OzingizHplace":"Write about yourself",
-      "certificatlar":"Upload your certificates and diplomas here",
-      "saqlash":"Saqlash"
-    },
-    "MT_Kontaktlar":{
-  
-      "Profilni_Korish":"View profile",
-      "tahrirlash":"Edit my data",
-      "kalendar":"Calendar",
-      "blog":"Blog",
-      "reklama":"Advertising",
-      "sozlamalar":"Profile settings",
-  
-      "menHaqimda":"About Me",
-      "kantaktlar":"Contacts",
-      "malumotiIsh":"Education and Work Experience",
-      "tillarniBilish":"Knowledge of languages",
-      "hizmatlar":"services",
-      "narxlar":"Prices",
-      "videoVagalarey":"Video and gallery",
-  
-      "tel":"Phone",
-      "email":"Email",
-      "emailKiritish":"Enter your mail",
-      "Site":"Web Site",
-      "link":"Enter the link",
-      "Telegram":"Telegram",
-      "telegramPlace":"Enter your Telegram profile link",
-      "WhatsApp":"WhatsApp",
-      "watsapPlace":"Enter your WhatsApp profile link",
-      "Facebook":"Facebook",
-      "facebookPlace":"Enter your Facebook profile link",
-      "Wechat":"Wechat",
-      "wechatPlace":"Enter your Wechat profile link",
-      "Viber":"Viber",
-      "viberPlace":"Enter your Viber profile link",
-      "saqlash":"Save"
-    },
-    "IshTajriba":{
-  
-      "Profilni_Korish":"View profile",
-      "tahrirlash":"Edit my data",
-      "kalendar":"Calendar",
-      "blog":"Blog",
-      "reklama":"Advertising",
-      "sozlamalar":"Profile settings",
-  
-      "menHaqimda":"About Me",
-      "kantaktlar":"Contacts",
-      "malumotiIsh":"Education and Work Experience",
-      "tillarniBilish":"Knowledge of languages",
-      "hizmatlar":"services",
-      "narxlar":"Prices",
-      "videoVagalarey":"Video and gallery",
-  
-      "malumotlar":"Information",
-      "oliy":"Higher education",
-      "bitirgan":"Graduated from the institute",
-      "BitirganOliytalimlar":"Enter a graduate institution",
-      "toifasi":"Category of guide",
-      "toifaPlace":"Top Category Guide",
-      "qoshimchaKurslar":"Additional courses",
-      "oqiganKurslaringiz":"Write down the courses you took",
-      "tajriba":"Experience",
-      "year":"year",
-      "saqlash":"Saqlash"
-    },
-    "TillarniBilish":{
-      "Profilni_Korish":"View profile",
-      "tahrirlash":"Edit my data",
-      "kalendar":"Calendar",
-      "blog":"Blog",
-      "reklama":"Advertising",
-      "sozlamalar":"Profile settings",
-  
-      "menHaqimda":"About Me",
-      "kantaktlar":"Contacts",
-      "malumotiIsh":"Education and Work Experience",
-      "tillarniBilish":"Knowledge of languages",
-      "hizmatlar":"services",
-      "narxlar":"Prices",
-      "videoVagalarey":"Video and gallery",
-  
-      "til":"languages",
-      "tilPlace":"Enter the language",
-      "bilishDarajasi":"Level of knowledge",
-      "BilishDPlace":"Select your level",
-      "save":"Save"
-    },
-    "xizmatlar":{
-      "Profilni_Korish":"View profile",
-      "tahrirlash":"Edit my data",
-      "kalendar":"Calendar",
-      "blog":"Blog",
-      "reklama":"Advertising",
-      "sozlamalar":"Profile settings",
-  
-      "menHaqimda":"About Me",
-      "kantaktlar":"Contacts",
-      "malumotiIsh":"Education and Work Experience",
-      "tillarniBilish":"Knowledge of languages",
-      "hizmatlar":"services",
-      "narxlar":"Prices",
-      "videoVagalarey":"Video and gallery",
-      
-      "xizmatlar":"Services",
-      "ekskursiyalar":"Excursions",
-      "ogzaki":"Interpretation (serial)",
-      "sinxron":"Simultaneous translation",
-      "izchil":"consistent translation",
-      "mamalakatlargaEkskurs":"Excursion to countries",
-      "mamlakatPlace":"Select the country",
-      "shaharlar":"City",
-      "shaharlarSelect":"Select a city",
-      "save":"Save"
-    },
-    "narxlar":{
-      "Profilni_Korish":"View profile",
-      "tahrirlash":"Edit my data",
-      "kalendar":"Calendar",
-      "blog":"Blog",
-      "reklama":"Advertising",
-      "sozlamalar":"Profile settings",
-  
-      "menHaqimda":"About Me",
-      "kantaktlar":"Contacts",
-      "malumotiIsh":"Education and Work Experience",
-      "tillarniBilish":"Knowledge of languages",
-      "hizmatlar":"services",
-      "narxlar":"Prices",
-      "videoVagalarey":"Video and gallery",
-  
-      "birkunlikHizmat":"The cost of one day of service",
-      "birSoatlik":"The cost of an hour of service",
-      "saqlash":"Saqlash"
-      
-    },
-    "Galarey":{
-  
-      "Profilni_Korish":"View profile",
-      "tahrirlash":"Edit my data",
-      "kalendar":"Calendar",
-      "blog":"Blog",
-      "reklama":"Advertising",
-      "sozlamalar":"Profile settings",
-  
-      "menHaqimda":"About Me",
-      "kantaktlar":"Contacts",
-      "malumotiIsh":"Education and Work Experience",
-      "tillarniBilish":"Knowledge of languages",
-      "hizmatlar":"services",
-      "narxlar":"Prices",
-      "videoVagalarey":"Video and gallery",
-  
-      "Partfolio":"You can make a video about yourself. This video is on your profile.",
-      "galarey":"Your gallery",
-      "saqlash":"Save"
-    },
-  
-  
-  
-  
-  
-    "Ustniy_MalumotvaIshtajriba":{
-  
-      "Profilni_Korish":"View profile",
-      "tahrirlash":"Edit my data",
-      "kalendar":"Calendar",
-      "blog":"Blog",
-      "reklama":"Advertising",
-      "sozlamalar":"Profile settings",
-  
-      "menHaqimda":"About Me",
-      "kantaktlar":"Contacts",
-      "malumotiIsh":"Education and Work Experience",
-      "tillarniBilish":"Knowledge of languages",
-      "hizmatlar":"services",
-      "narxlar":"Prices",
-      "videoVagalarey":"Video and gallery",
-      
-      "bitirganInstitu":"Graduated from the institute",
-      "institutNmaePlace":"Enter a graduate institution",
-      "bitirganYil":"Year of graduation",
-      "YilPlace":"Year",
-      "Mutahasislig":"Specialty",
-      "mutahasisligPlace":"Write down your specialty",
-      "tajriba":"Experience",
-      "frilancermisiz":"you are a freelancer now",
-      "yes":"Yes",
-      "No":"No",
-      "ishJoingizniKorsating":"Specify your workplace",
-      "text":"Text",
-      "lavozimingiz":"Your position",
-      "ishVaqti":"Your working hours",
-      "save":"Save"
-    },
-    "Ustniy_Xizmatlar":{
-      "hizmatlar":"Services",
-      "exkursiyalar":"Excursions",
-      "ogzakiTajriba":"Interpretation (serial)",
-      "sinhron":"Simultaneous translation",
-      "yozmaTarjimon":"Written translation",
-      "MamlakatgaEkskursiya":"Excursion to countries",
-      "MamlakatgaEPlace":"Select the country",
-      "shahar":"City",
-      "ShaharPlace":"Select the country",
-      "save":"Save"
-    },
-  
-  
-  
-  
-  
-  
-  
-    "Pismenniy_Xizmatlar":{
-      
-      "Profilni_Korish":"View profile",
-      "tahrirlash":"Edit my data",
-      "kalendar":"Calendar",
-      "blog":"Blog",
-      "reklama":"Advertising",
-      "sozlamalar":"Profile settings",
-  
-      "menHaqimda":"About Me",
-      "kantaktlar":"Contacts",
-      "malumotiIsh":"Education and Work Experience",
-      "tillarniBilish":"Knowledge of languages",
-      "hizmatlar":"services",
-      "narxlar":"Prices",
-      "videoVagalarey":"Video and gallery",
-  
-      "bir_kunlikish":"Your daily workload",
-      "Text":"Text",
-      "OgzakiTarjimonlik":"Do you also do interpreting?",
-      "ha":"Yes",
-      "yoq":"No",
-      "damdahamIsh":"Do you do recreational activities?",
-      "TahrirlashBilanHam":"Do you also edit texts?",
-      "onlineMisizdoim":"Do you have constant access to the Internet?",
-      "kattaHajimdagiText":"* Can you accept large files including?",
-      "CAT":"What CAT programs do you use for translation?",
-      "tarjimaMavzulari":"Translation topics",
-      "Umumiy-mavzular":"General topics",
-      "meningMavzuimEmas":"Not my subject",
-      "jamiatVaSiyosat":"Society and politics",
-      "Iqtsod":"Economics and Finance",
-      "Huquqshunoslik":"Jurisprudence",
-      "IT":"Information Technology",
-      "reklamaVaMarketing":"Advertising and marketing",
-      "yonalishNomi":"Route name",
-      "sanoatTexnalogiyalari":"Industry and technology",
-      "neftVaGaz":"Oil and gas",
-      "iqtsodVaMoliya":"Economics and Finance",
-      "ilimVaTehnika":"Scientific and technical literature",
-      "badiyAdabiyot":"Fiction",
-      "tibbiyot":"Medicine and pharmaceuticals",
-      "saqlash":"Saqlash"
-    },
-    "Pismini_narxlar":{
-  
-      "Profilni_Korish":"View profile",
-      "tahrirlash":"Edit my data",
-      "kalendar":"Calendar",
-      "blog":"Blog",
-      "reklama":"Advertising",
-      "sozlamalar":"Profile settings",
-  
-      "menHaqimda":"About Me",
-      "kantaktlar":"Contacts",
-      "malumotiIsh":"Education and Work Experience",
-      "tillarniBilish":"Knowledge of languages",
-      "hizmatlar":"services",
-      "narxlar":"Prices",
-      "videoVagalarey":"Video and gallery",
-  
-      "tilniTanlang":"Select a language",
-      "tilPlace":"From Russian - to English",
-      "birBetUchun":"For 1 page - 1800 characters with spaces",
-      "boshSiz":"For 1 page - 1800 characters without spaces",
-      "saqlash":"Save"
-     },
-     "reklama":{
-      "Profilni_Korish":"View profile",
-      "tahrirlash":"Edit my data",
-      "kalendar":"Calendar",
-      "blog":"Blog",
-      "reklama":"Advertising",
-      "sozlamalar":"Profile settings",
-  
-      "Hozirgi":"Current tariff",
-      "hizmatlarni":"Select services",
-      "tolovturi":"Please select a payment type",
-      "text":"Top up your Gits.uz account",
-      "xisobingiz":"Your account:",
-      "Hisobni_toldirish":"Replenish the account",
-      "bekor_qilish":"Cancel",
-      "tolov":"Payment"
-     },
-     "hisobni_toldirish":{
-       "hisobni_toldirish":"Replenish the account",
-       "tolov_turini_tanlang":"Please select a payment type",
-       "orqaga":"go back",
-       "hisobniToldirish":"Replenish the account",
-  
-  
-  
-  
-       "Tolovlar_tarihi":"Payment history"
-      },
-  
-  
-     "User_Profil":{
-       "profilni_korish":"View profile",
-       "arizalarim":"My applications",
-       "MalumotlarniTaxrirlash":"Ma’lumotlarimni Tahrirlash",
-       "profilSozlamalari":"Profile Settings"
-     },
-     "User_Arizalarim":{
-      "profilni_korish":"View profile",
-      "arizalarim":"My applications",
-      "MalumotlarniTaxrirlash":"Ma’lumotlarimni Tahrirlash",
-      "profilSozlamalari":"Profile Settings",
-  
-      "shaharniK":"Enter the city"
-     },
-     "User_MalumotlarniTax":{
-      "profilni_korish":"View profile",
-      "arizalarim":"My applications",
-      "MalumotlarniTaxrirlash":"Ma’lumotlarimni Tahrirlash",
-      "profilSozlamalari":"Profile Settings",
-  
-      "isim":"Name",
-      "isimPlace":"Write your name",
-      "familya":"Surname",
-      "familyaPlace":"Write your last name",
-      "Kompaniya":"Company",
-      "kompaniePlace":"Company name",
-      "davlat":"State",
-      "mamlaktalarPlace":"Choose your country",
-      "shaxarlar":"City",
-      "shaxarlarPlace":"Enter your city",
-      "saqlash":"Saqlash"
-    },
-    "profil_sozlamalari":{
-      "Profilni_Korish":"View profile",
-      "tahrirlash":"Edit my data",
-      "kalendar":"Calendar",
-      "blog":"Blog",
-      "reklama":"Advertising",
-      "sozlamalar":"Profile settings",
-      "kontaktlar":"Contacts",
-      "parolniYangilash ":"Password update",
-      "telefone":"Phone",
-      "telRaqam":"Enter your number",
-      "hozirgiParol":"Your current password",
-      "hozirgiParilPlac":"Parolni kiriting",
-      "Email":"Email",
-      "EmailPlac":"Enter your mail",
-      "yangiParol":"New password",
-      "yangiParolPlac":"Enter a new password",
-      "parolniTasdiqlash":"Confirm Password",
-      "tasdilashPlac":"Re-enter the new password",
-      "saqlash":"Save"
-    }
+
+   "User_Profil":{
+     "profilni_korish":"Просмотреть профиль",
+     "arizalarim":"Мои заявки",
+     "MalumotlarniTaxrirlash":"Редактировать мою информацию",
+     "profilSozlamalari":"Настройки профиля"
+   },
+   "User_Arizalarim":{
+    "profilni_korish":"Просмотреть профиль",
+    "arizalarim":"Мои заявки",
+    "MalumotlarniTaxrirlash":"Редактировать мою информацию",
+    "profilSozlamalari":"Настройки профиля",
+
+    "shaharniK":"Введите город"
+   },
+   "User_MalumotlarniTax":{
+    "profilni_korish":"Просмотреть профиль",
+    "arizalarim":"Мои заявки",
+    "MalumotlarniTaxrirlash":"Редактировать мою информацию",
+    "profilSozlamalari":"Настройки профиля",
+
+    "isim":"Имя",
+    "isimPlace":"Напишите имя",
+    "familya":"Фамилия",
+    "familyaPlace":"Напишите фамилию",
+    "Kompaniya":"Компания",
+    "kompaniePlace":"Название компании",
+    "davlat":"Страна",
+    "mamlaktalarPlace":"Выберите свой город",
+    "shaxarlar":"Город",
+    "shaxarlarPlace":"Напишите свой город",
+    "saqlash":"Сохранить"
+  },
+  "profil_sozlamalari":{
+ 
+    "profilni_korish":"Просмотреть профиль",
+    "arizalarim":"Мои заявки",
+    "MalumotlarniTaxrirlash":"Редактировать мою информацию",
+    "profilSozlamalari":"Настройки профиля",
+    
+    "kontaktlar":"Контакты",
+    "parolniYangilash":"Обновить пароль",
+    "telefone":"Телефон",
+    "telRaqam":"Введите номер телефона",
+    "hozirgiParol":"Ваш текущий пароль",
+    "hozirgiParilPlac":"Введите пароль",
+    "Email":"E-mail",
+    "EmailPlac":"Напишите E-mail",
+    "yangiParol":"Новый пароль",
+    "yangiParolPlac":"Введите новый пароль",
+    "parolniTasdiqlash":"Подтвердите пароль",
+    "tasdilashPlac":"Введите новый пароль заново",
+    "saqlash":"Сохранить"
   }
-  
+}
+
+   
+
