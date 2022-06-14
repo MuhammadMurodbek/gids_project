@@ -2,6 +2,7 @@ import styled from "styled-components"
 import {mainGreen} from "../../styles/global/colors"
 
 export const WrapperAll = styled.div`
+   
     position: relative;
     width: 100%;
     margin: 0 auto;

@@ -2,8 +2,12 @@ import React, { useState, useCallback, useEffect } from "react";
 import Select from "react-select";
 import { Wrapper } from "./index.style";
 import "./style.css";
+import { useTranslation } from 'react-i18next'
+
 
 const Index = (props) => {
+
+  const { t } = useTranslation()
   const {width,paddingX, margin,backgroundColor,setState, setCountryId,errorText,field, placeholder, clearValue, setClearValue,
     pcolor,
     defaultApiValue
@@ -51,7 +55,7 @@ const Index = (props) => {
     >
       <Select
         {...props}
-        placeholder={'Davlatni kiriting'}
+        placeholder={t("kengaytirlgan_Q.DavlatniTanlang")}
         options={options}
         value={value}
         onChange={handleChange}

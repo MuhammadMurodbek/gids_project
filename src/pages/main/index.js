@@ -8,7 +8,8 @@ import {
     ContainerLast,
 } from "./index.style"
 import ExtSearch from "../../components/extended.search"
-import mainPicture from "../../assets/img/mainFirst.svg"
+// import mainPicture from "../../assets/img/guid.svg"
+import mainPicture from "../../assets/img/newss.png"
 import Grid from '@material-ui/core/Grid';
 import Button from "../../components/atom/button"
 import ImgContainer from "../../components/molecules/img.container"
@@ -117,7 +118,7 @@ const Index = () => {
                             <div className="container-2-1 first">
                                 <div className="title-second-main-container-text">{t("main.tadbirkorlarga")}</div>
                                 <p style={{ textAlign: 'justify' }}>{t("main.textForTadbirkor")}</p>
-                                <FlexContainer width="400px" {...mediaFlexButtons} justifyContent="space-between">
+                                <FlexContainer width="450px" {...mediaFlexButtons} justifyContent="space-between">
                                     {/* <Link to="/application-form" > */}
 
                                     <Link to="/gids">
@@ -244,12 +245,12 @@ const Index = () => {
                 <div className="application-last">
                     <TextTitle  {...mediaTextField} {...mediaTextFieldSec} width="50%" left="auto" right="auto" bottom="40px">{t("main.hoziroq")}
                     </TextTitle>
-                    <FlexContainer {...mediaFlexButtons} width="420px" margin="0 auto" alignItems="center" justifyContent="space-between">
+                    <FlexContainer {...mediaFlexButtons} width="450px" margin="0 auto" alignItems="center" justifyContent="space-between">
 
                         <Button width="200px" onClick={() => history.push('/gids')} {...mediaBtn}>{t("main.tanlash")}
                         </Button>
 
-                        <Button width="200px" type="outlined" onClick={onClickbutton} {...mediaBtn}>{t("main.arizaQoldrirish")} </Button>&nbsp;
+                        <Button width="220px" type="outlined" onClick={onClickbutton} {...mediaBtn}>{t("main.arizaQoldrirish")} </Button>&nbsp;
 
                         {/* { 
                             getRole?.role === "translator" ? null

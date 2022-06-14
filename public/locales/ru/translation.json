@@ -1,14 +1,13 @@
 {
   "name": "day.name.nameEn",
   "description": "descriptionEn",
-
-
   "navbar" :{
     "GTU" : "Для гидов и переводчиков",
     "Blog":"Блог",
     "Arizalar_royhati":"Список заявок",
     "Ariza_qoldirish":"Оставить заявку",
-    "GvaTtanlash":"Выбрать"
+    "GvaTtanlash":"Выбрать",
+    "kirish":"Вход"
    },
    "footer":{
        "biznigServislar":"Наши услуги",

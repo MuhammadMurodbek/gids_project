@@ -158,7 +158,7 @@ const Index = () => {
                 <>
                   {
                     isExpired ?
-                      <button className="btn_enter" onClick={handleLogout}>Kirish</button>
+                      <button className="btn_enter" onClick={handleLogout}>{t("navbar.kirish")}</button> 
                       :
 
                       <AccountMenu role={getRole?.role} />
