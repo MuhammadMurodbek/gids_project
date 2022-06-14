@@ -115,13 +115,12 @@ const Index = ({ data, role }) => {
                                 </Grid>
                             </FlexContainer>
                             <div class="box">
-                       
                                 <div class="box_child">
                                     {
-                                        uniq_fast(data?.excursions)?.filter((item) => { if (item?.city && item?.country) return item })?.length > 0 ?
-                                            uniq_fast(data?.excursions)?.map((prev, index) => {
-                                                <span key={index}>{(prev?.city && prev?.country) && prev?.city[lan] + "-" + prev?.country[lan]}</span>
-                                            }) : <div className="no_data_text">Ma'lumot kiritilmagan</div>
+                                        data?.excursions?.length ? 
+                                        data?.excursions?.map((item)=>(
+                                            <span key={item?.id}>{item?.country[lan]+"-"+item?.city[lan]}</span>
+                                        )):null
                                     }
                                 </div>
                             </div>

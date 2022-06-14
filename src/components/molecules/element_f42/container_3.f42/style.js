@@ -21,6 +21,12 @@ export const Wrapper = styled.div`
         display: flex;
         flex-direction: column;
         font-size:13px !important;
+        margin-top:10px;
+        // padding-left:10px;
+        span{
+            font-size:0.9rem;
+            line-height:1.3rem;
+        }
     }
     .newSpans{
         display:inline;
