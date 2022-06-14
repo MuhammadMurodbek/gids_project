@@ -45,7 +45,6 @@ const GidIndex = () => {
         setState(clone)
     }
     const handleSubmit = () => {
-        // console.log(state)
         let cloneState = state.map(item => {
             if(item.hasOwnProperty('city_name'))
                 return {
