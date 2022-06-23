@@ -141,11 +141,11 @@ const Index = () => {
                                 <Grid container spacing={2}>
                                     <Grid item xs={12} sm={6}>
                                         <Calendar setState={setCollect} state={collect} field="start_date"
-                                            errorText={error ? validatorState(collect?.start_date, 'string', 0, 'Boshlanish sanasi kiritilmagan') : null} placeholder="Sanani tanlang" />
+                                            errorText={error ? validatorState(collect?.start_date, 'string', 0, 'Boshlanish sanasi kiritilmagan') : null} placeholder={t("arizaqoldirish.sananiTanlang")} />
                                     </Grid>
                                     <Grid item xs={12} sm={6}>
                                         <Calendar setState={setCollect} state={collect} field="end_date"
-                                            errorText={error ? validatorState(collect?.start_date, 'string', 0, 'Tugash sanasi kiritilmagan') : null} placeholder="Sanani tanlang" />
+                                            errorText={error ? validatorState(collect?.start_date, 'string', 0, 'Tugash sanasi kiritilmagan') : null} placeholder={t("arizaqoldirish.sananiTanlang")} />
                                     </Grid>
                                 </Grid>
                             </Grid>

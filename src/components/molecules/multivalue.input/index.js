@@ -2,7 +2,9 @@ import React, {useState, useEffect, useCallback} from 'react'
 import {Wrapper, Comment} from './style'
 import MultipleValueTextInput from 'react-multivalue-text-input';
 import HighlightOffIcon from '@material-ui/icons/Close';
+import { useTranslation } from 'react-i18next';
 const Index = (props) => {
+    const { t } = useTranslation()
     const {field,setState, state, defaultApiValue} = props
     const [array, setArray] = useState([])
     const [check, setCheck] = useState(true)
@@ -26,7 +28,7 @@ const Index = (props) => {
                 onItemAdded={(item, allItems) => handleChange(item)}
                 label={<span className="label">{props?.label}</span>} 
                 name="item-input"
-                placeholder="Matnni kiriting va Enter tugmasini bosing"
+                placeholder={t("IshTajriba.oqiganKurslaringiz")}
                 deleteButton={<span className="icon_del"><HighlightOffIcon/></span>}
                 className="input_multi"
             /> 

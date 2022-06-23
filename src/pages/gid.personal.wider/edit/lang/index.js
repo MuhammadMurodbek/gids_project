@@ -119,7 +119,7 @@ const Index = () => {
                                     setState={ setValue }
                                     state={ value }
                                     disableMulti
-                                    label="Tilni tanlang"
+                                    label={t("TillarniBilish.tilPlace")}
                                     placeholder={ t( "arizaqoldirish.BilishikeralPlac" ) }
                                     setClear={ setClearValue }
                                     clear={ clearValue }

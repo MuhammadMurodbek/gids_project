@@ -7,8 +7,11 @@ import { Grid } from '@material-ui/core';
 import { getApiResponse } from "../../../hooks/response_get"
 import Spinner from "../../../components/molecules/loading.spinner"
 import { objApi } from "../reklama/external"
+import { useTranslation } from 'react-i18next'
 import moment from "moment"
+
 export default function Index() {
+    const {t} = useTranslation()
     const [historyState, setHistoryState] = useState({ data: null, error: false, success: false, loading: false })
 
     useEffect(() => {

@@ -9,6 +9,7 @@
     "Arizalar_royhati":"Arizalar ro'yxati",
     "Ariza_qoldirish":"Ariza qoldirish",
     "GvaTtanlash":"Tanlash",
+    "transport":"Transport",
     "kirish":"Kirish"
    },
    "footer":{
@@ -145,7 +146,8 @@
     "royhatdanOtish2":"Ro'yxatdan o'tish",
     "email2":"E-mail ni kiriting",
     "pass":"Parolni kiriting",
-    "forget":"Parolni unutdim"
+    "forget":"Parolni unutdim",
+    "eslash":"Eslab qolish"
   },
   "auth_parolniTiklash":{
     "reset":"Parolni tiklash ",
@@ -179,6 +181,7 @@
     "davlat":"Davlat",
     "shaxarlar":"Shahar",
     "KerakSana":"Git/Tarjimon kerak bo’lgan sana",
+    "sananiTanlang":"Sanani tanlang",
     "Bilishikerak":"Git/Tarjimon bilishi kerak bo’lgan tillar",
     "BilishikeralPlac":"Tillarni tanlang",
     "nimagaKerak":"Nima uchun kerak",
@@ -217,7 +220,9 @@
   },
   "Blog":{
     "blog":"Blog",
-    "davomiOqish":"Davomini o'qish"
+    "davomiOqish":"Davomini o'qish",
+    "edit":"",
+    "muallif":"Muallif:"
   },
   "safarHaqida":{
     "title":"Safar qalay o‘tdi?",
@@ -252,6 +257,8 @@
 
 
   "GidPk":{
+    "profilGid":"Profil",
+    "Chiqish":"Chiqish",
     "Profilni_Korish":"Profilni ko'rish",
     "tahrirlash":"Tahrirlash",
     "kalendar":"Ish jadvali",
@@ -282,10 +289,12 @@
     "tiltajriba":"Ish tajribasi:",
     "bandkunlar":"Gid/Tarjimonning band kunlari",
     "hizmatlar":"Xizmatlar",
-    "ekskursiyalar":"Ekskursiyalar",
-    "sinxron":"Sinxron tarjima",
-     "izchil":"Izchil tarjima",
-    
+    "ekskursiyalar":"Ekskursiyalar:",
+    "ogzaki":"Og'zaki tarjima:",
+    "sinxron":"Sinxron tarjima:",
+    "izchil":"Izchil tarjima:",
+    "toifasi":"Toifasi:",
+
     "yozma":"Yozma tarjimon",
     "ekskursiyalar2":"Ekskursiyalar: ",
     "video":"O’zim haqimda video",
@@ -297,7 +306,8 @@
     "yaxshi":"Yaxshi",
     "yomon":"Yomon",
     "judaYomon":"Juda yomon",
-    "koproqYuklash":"Ko'proq yuklash"
+    "koproqYuklash":"Ko'proq yuklash",
+    "fikirqoldirish":"Fikr qoldirish"
   },
   "MTmenHaqimda":{
 
@@ -317,11 +327,11 @@
     "videoVagalarey":"Video va galereya",
 
     "familya":"Familiya",
-    "familyaPlace":"Familiyangizni yozing",
+    "familyaPlace":"Familiyangizni yozing...",
     "isim":"Ism",
-    "isimPlace":"Ismingizni yozing",
+    "isimPlace":"Ismingizni yozing...",
     "otasiningIsmi":"Otangizning ismi",
-    "otasiIplace":"Otangizning ismini yozing",
+    "otasiIplace":"Otangizning ismini yozing...",
     "tugilganSana":"Tug’ulgan sanangiz",
     "jins":"Jinsingiz",
     "erkak":"Erkak",
@@ -333,6 +343,7 @@
     "OzingizH":"O‘zingiz haqingizda",
     "OzingizHplace":"O‘zingiz haqingizda yozing",
     "certificatlar":"Sertifikat va diplomlaringiz bo‘lsa shu yerga yuklang",
+    "sertifikatYuklang":"Sertifikat va diplomlaringizni yuklang (jpg va png formatida )",
     "saqlash":"Saqlash"
   },
   "MT_Kontaktlar":{
@@ -393,7 +404,7 @@
     "toifasi":"Gidning toifasi",
     "toifaPlace":"Oliy toifali",
     "qoshimchaKurslar":"Qo‘shimcha kurslar",
-    "oqiganKurslaringiz":"Tamomlagan kurslaringizni yozing",
+    "oqiganKurslaringiz":"Tamomlagan kurslaringizni yozing va Enterni tugmasini bosing",
     "tajriba":"Tajriba",
     "year":"yil",
     "saqlash":"Saqlash"
@@ -416,6 +427,7 @@
 
     "til":"Til",
     "tilPlace":" Tilni kiriting",
+    "tillarniKiriting":"",
     "bilishDarajasi":"Bilish darajasi",
     "BilishDPlace":"Til bilish darajangizni belgilang",
     "save":"Saqlash"
@@ -446,7 +458,8 @@
     "mamlakatPlace":"Davlatni tanlang",
     "shaharlar":" Shahar",
     "shaharlarSelect":"Shaharni tanlang",
-    "save":"Saqlash"
+    "save":"Saqlash",
+    "tanlanmagan":"Davlat yoki shahar tanlanmagan"
    
   },
   "narxlar":{
@@ -491,6 +504,7 @@
 
     "Partfolio":"Siz o’z haqingizda video olishingiz mumkin. Bu video profilda bo’ladi. video turi ( mp4, avi, mpg) hajmi 100mb gacha",
     "galarey":"Sizning galereya",
+    "galareyangiz":"Galereyangiz",
     "saqlash":"Saqlash"
   },
 
@@ -549,7 +563,8 @@
     "text":"Safar qanday o’tgani haqida maqola yozib boshqalarga foyda ulashing ham daromadingizni kengaytiring!",
     "Maqolayozish":"Maqola yozish",
     "Maqolalarim":"Maqolalarim",
-    "tahrirlash":"Tahrirlash"
+    "tahrirlash":"Tahrirlash",
+    "topilmadi":"Ma'lumot topilmadi"
   },
 
 
@@ -636,12 +651,21 @@
     "xisobingiz":"Sizning hisobingiz:",
     "Hisobni_toldirish":"Hisobni to’ldiring",
     "bekor_qilish":"Bekor qilish",
-    "tolov":"To’lov"
+    "tolov":"To’lov",
+    "tarifKorish":"Tariflar tarifini ko'rish",
+    "tolovKorish":"To'lovlar tarifini ko'rish"
+   },
+   "tariflar":{
+    "birHafta":"Bir haftalik tarif",
+    "ikkiHafta":"Ikki haftalik tarif",
+    "birOy":"Bir oylik tariff"
+
    },
    "hisobni_toldirish":{
      "hisobni_toldirish":"Hisobni to’ldiring",
      "tolov_turini_tanlang":"To’lov turini tanlang",
      "orqaga":"Ortga",
+     "tolovQilish":"To‘lov qilish",
      "hisobniToldirish":"Hisobni to’ldiring",
 
 
@@ -690,9 +714,13 @@
     
     "kontaktlar":"Aloqa",
     "parolniYangilash":"Parolni yangilash",
+    "telefonvaemail":"Telefon va e-mail",
+    "parolniOzgartirish":"Parolni o'zgartirish",
     "telefone":"Telefon",
+    "telKiriting": "Telefon raqamingizni davlat kodi bilan kiriting:",
     "telRaqam":"Raqamingizni kiriting",
     "hozirgiParol":"Hozirgi parolingiz",
+    "joriyParol":"Joriy parol",
     "hozirgiParilPlac":"Parolni kiriting",
     "Email":"E-mail",
     "EmailPlac":"E-mail ni kiriting",
@@ -701,6 +729,16 @@
     "parolniTasdiqlash":"Parolni tasdiqlang ",
     "tasdilashPlac":"Yangi parolni qayta kiriting",
     "saqlash":"Saqlash"
+  },
+  "ishJadvali":{
+    "tahrirlash":"Tahrirlash",
+    "bosh":"Bo'sh",
+    "band":"Band",
+    "oylikJadvalim":"Oylik ish jadvalim",
+    "ishKunlarim":"Ish kunlarim",
+    "bandKunlarim":"Band kunlarim",
+    "saqlash":"Saqlash"
+
   }
 }
 

@@ -4,8 +4,10 @@ import {useForm, Controller} from "react-hook-form"
 import InputText from "../../../components/atom/textAreaCom"
 import {postApiResponse} from "../../../hooks/response_get"
 import ModalPost from "../../../custom/test.components"
+import { useTranslation } from 'react-i18next'
 
 const Index = ({setCallback, open, setOpen, customId}) => {
+    const {t} = useTranslation()
     let inputFile = '';
     const token = JSON.parse(localStorage.getItem("user_token"))
     const {handleSubmit, control, formState:{errors}} = useForm()
@@ -35,7 +37,7 @@ const Index = ({setCallback, open, setOpen, customId}) => {
     return (
         <div>
             <ModalPost {...statePost} etitle= {statePost?.data?.status === 400 ? "Siz faqat bir marta xabar yoza olasiz !!!":"Xatolik yuz berdi. Qaytadan urinib ko'ring."} />
-             <Modal title="Fikr qoldirish" visible={open} onOk={handleOk} onCancel={handleCancel} width={800}>
+             <Modal title={t("GidPk.fikirqoldirish")} visible={open} onOk={handleOk} onCancel={handleCancel} width={800}>
                 {(token && token?.hasOwnProperty('access')) ? 
                      <form onSubmit={handleSubmit(onSubmit)}>
                      <Controller

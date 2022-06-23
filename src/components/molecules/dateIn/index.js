@@ -34,7 +34,7 @@ export default function Index({setCollect, collect, setCallback, url}) {
                 <div className="searchI">
                     <button className="button_sub" onClick={handleSubmit}>
                         <SearchIcon />
-                        Qidiruv
+                        {t("kengaytirlgan_Q.qidirish")}
                     </button>
                 </div>
             </Grid>

@@ -7,6 +7,7 @@
     "Arizalar_royhati":"List of applications",
     "Ariza_qoldirish":"Leave an application",
     "GvaTtanlash":"Choosing a guide or translator",
+    "transport":"Transport",
     "kirish":"Kirish"
    },
    "footer":{
@@ -143,7 +144,8 @@
     "email2":"Enter the email",
     "pass":"Enter your password",
     "forget":"Forgot password",
-    "kirish":"Sign In"
+    "kirish":"Sign In",
+    "eslash":"Remember"
   },
   "auth_parolniTiklash":{
     "reset":"Reset password",
@@ -177,6 +179,7 @@
     "davlat":"Country",
     "shaxarlar":"City",
     "KerakSana":"Go / Date translator needed",
+    "sananiTanlang":"Select a date",
     "Bilishikerak":"Git / Translator languages  need to know",
     "BilishikeralPlac":"Selection of languages",
     "nimagaKerak":"Why do you need it?",
@@ -215,14 +218,16 @@
   "Blog":{
     "blog":"Blog",
     "davomiOqish":"Read more",
-    "edit":"Edit"
+    "edit":"Edit",
+    "muallif":"Author:"
   },
   "safarHaqda":{
     "title":"How was your trip?",
     "text":"Increase your income by writing articles about how the trip went!",
     "Maqolayozish":"Write an article",
     "Maqolalarim":"My articles",
-    "tahrirlash":"Edit"
+    "tahrirlash":"Edit",
+    "topilmadi":"Not found"
   },
   "maqolaYozish":{
      
@@ -245,6 +250,8 @@
 
 
   "GidPk":{
+    "profilGid":"Profil",
+    "Chiqish":"Exit",
     "Profilni_Korish":"My profile",
     "tahrirlash":"Edit",
     "kalendar":"Calendar",
@@ -281,9 +288,10 @@
     "bandkunlar":"Guide / Interpreter's busy days",
     "hizmatlar":"Services",
     "ekskursiyalar":"Excursions",
-    "ogzaki":"Interpretation (serial)",
-    "sinxron":"Simultaneous translation",
-    "izchil":"consistent translation",
+    "ogzaki":"Interpretation (serial):",
+    "sinxron":"Simultaneous translation:",
+    "toifasi":"Category:",
+    "izchil":"consistent translation:",
     "ekskursiyalar2":"Ekskursiyalar: ",
     "sertificatlar":"My certificates and diplomas",
     "Gallery":"Gallery",
@@ -312,11 +320,11 @@
     "videoVagalarey":"Video and gallery",
 
     "familya":"Surname",
-    "familyaPlace":"Write your last name",
+    "familyaPlace":"Write your last name...",
     "isim":"Name",
-    "isimPlace":"Write your name",
+    "isimPlace":"Write your name...",
     "otasiningIsmi":"Your father's name",
-    "otasiIplace":"Write your father's name",
+    "otasiIplace":"Write your father's name...",
     "tugilganSana":"Your date of birth",
     "jins":"Gender",
     "erkak":"Male",
@@ -328,6 +336,7 @@
     "OzingizH":"About yourself",
     "OzingizHplace":"Write about yourself",
     "certificatlar":"Upload your certificates and diplomas here",
+    "sertifikatYuklang":"Upload your certificates and diplomas here(in png and jpg format)",
     "saqlash":"Save"
   },
   "MT_Kontaktlar":{
@@ -388,7 +397,7 @@
     "toifasi":"Category of guide",
     "toifaPlace":"Top Category Guide",
     "qoshimchaKurslar":"Additional courses",
-    "oqiganKurslaringiz":"Write down the courses you took",
+    "oqiganKurslaringiz":"Write down the courses you took and press the Enter button",
     "tajriba":"Experience",
     "year":"year",
     "saqlash":"Save" 
@@ -442,7 +451,8 @@
     "mamlakatPlace":"Select the country",
     "shaharlar":"City",
     "shaharlarSelect":"select a city",
-    "save":"Save"
+    "save":"Save",
+    "tanlanmagan":"Country or city not selected"
   },
   "narxlar":{
     "Profilni_Korish":"View profile",
@@ -482,6 +492,7 @@
 
     "Partfolio":"You can make a video about yourself. This video is on your profile.",
     "galarey":"Your gallery",
+    "galareyangiz":"Your gallery",
     "saqlash":"Save"
   },
 
@@ -623,12 +634,21 @@
     "xisobingiz":"Xisobingiz:",
     "Hisobni_toldirish":"Xisobni to‘ldirish",
     "bekor_qilish":"Bekor qilish",
-    "tolov":"To‘lov qilish"
+    "tolov":"To‘lov qilish",
+    "tarifKorish":"View tariff history",
+    "tolovKorish":"View payment history"
+   },
+   "tariflar":{
+    "birHafta":"One weekly tariff",
+    "ikkiHafta":"Two-week tariff",
+    "birOy":"One monthly tariff"
+
    },
    "hisobni_toldirish":{
      "hisobni_toldirish":"Xisobni to‘ldirish",
      "tolov_turini_tanlang":"To‘lov turini tanlang",
      "orqaga":"Ortga qaytish",
+     "tolovQilish":"Pay",
      "hisobniToldirish":"Hisobni to’ldirish",
      "Tolovlar_tarihi":"To’lovlar tarixi"
     },
@@ -687,9 +707,13 @@
 
     "kontaktlar":"Contacts",
     "parolniYangilash":"Password update",
+    "telefonvaemail":"Phone and e-mail",
+    "parolniOzgartirish":"Change password",
     "telefone":"Phone",
+    "telKiriting":"Enter your phone number with the state code:",
     "telRaqam":"Enter your number",
     "hozirgiParol":"Your current password",
+    "joriyParol":"Current password",
     "hozirgiParilPlac":"Parolni kiriting",
     "Email":"Email",
     "EmailPlac":"Enter your mail",
@@ -698,5 +722,15 @@
     "parolniTasdiqlash":"Confirm Password",
     "tasdilashPlac":"Re-enter the new password",
     "saqlash":"Save"
+  },
+  "ishJadvali":{
+    "tahrirlash":"Edit",
+    "bosh":"Empty",
+    "band":"Occupied",
+    "oylikJadvalim":"Monthly work schedule",
+    "ishKunlarim":"Working days",
+    "bandKunlarim":"Busy days",
+    "saqlash":"Save"
+
   }
 }

@@ -36,7 +36,7 @@ const Index = ({ data, role }) => {
     }
     return (
         <Wrapper>
-            <Title text="Xizmatlar" />
+            <Title text={t("GidPk.hizmatlar")} />
 
             {
                 role === 'writer' ?
@@ -90,12 +90,12 @@ const Index = ({ data, role }) => {
                                     <Grid item md={12} className="as">
                                         
                                         <FlexContainer justifyContent="flex-start" margin="0 0 5px">
-                                            <Text title="Ekskursiyalar:" />
+                                            <Text title={t("GidPk.ekskursiyalar")} />
                                             <span className="yes_no">{data?.excursions?.length > 0 ? "Ha" : "Yo'q"}</span>
                                         </FlexContainer>
 
                                         <FlexContainer margin="0 0 5px">
-                                            <Text title="Og'zaki tarjima:"/>
+                                            <Text title={t("GidPk.ogzaki")}/>
                                             <span className="yes_no">
                                                 {data?.consecutive_translate ? "Ha":"Yo'q"}
                                             </span>
@@ -104,10 +104,10 @@ const Index = ({ data, role }) => {
                                         {data?.consecutive_translate &&
                                             <>
                                                 <FlexContainer margin="0 0 5px">
-                                                    <Text title="Sinxron tarjima:" /><span className="yes_no">{data?.synchronous_translate ? "Ha" : "Yo'q"}</span>
+                                                    <Text title={t("GidPk.sinxron")} /><span className="yes_no">{data?.synchronous_translate ? "Ha" : "Yo'q"}</span>
                                                 </FlexContainer>
                                                 <>
-                                                    <Text title="Izchil tarjima:" /><span className="yes_no">{data?.written_translate ? "Ha" : "Yo'q"}</span>
+                                                    <Text title={t("GidPk.izchil")} /><span className="yes_no">{data?.written_translate ? "Ha" : "Yo'q"}</span>
                                                 </>
                                             </>
                                         }

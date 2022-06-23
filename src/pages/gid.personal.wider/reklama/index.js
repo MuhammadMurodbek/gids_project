@@ -72,8 +72,8 @@ export default function Index() {
                     </Grid>
                 }
                 <div className="historybtn">
-                    <Button className="btn-pey " width="250px" margin="0px 0" type="outlined" onClick={handleHistory}>Tariflar tarixini ko’rish</Button>
-                    <Button className="btn-pey " width="250px" margin="0px 0" type="outlined" onClick={handleHistoryPayment}>To'lovlar tarixini ko’rish</Button>
+                    <Button className="btn-pey " width="250px" margin="0px 0" type="outlined" onClick={handleHistory}>{t("reklama.tarifKorish")}</Button>
+                    <Button className="btn-pey " width="250px" margin="0px 0" type="outlined" onClick={handleHistoryPayment}>{t("reklama.tolovKorish")}</Button>
                 </div>
 
                 <TextTitle className="text-title text-title11" bottom="70px" top="70px">
@@ -111,7 +111,7 @@ export default function Index() {
                 }
 
                 <TextTitle className="text-title" bottom="50px" top="50px">
-                    To‘lov turini tanlang
+                    {t("reklama.tolovturi")}
                 </TextTitle>
                 <Grid container spacing={1}>
                     <Grid item md="6" className="cashlok">
@@ -123,15 +123,15 @@ export default function Index() {
                                     raqamdan to‘lov qilish</p>
                                 <p><b>Hisobingizdagi mablag‘:</b> <br /> {myTarif?.data?.wallet || '0'} so’m</p>
                             </div>
-                            <Button width="300px" margin="30px 0" type="outlined" onClick={() => history.push('/reklama/pay')}>Hisobni to‘ldirish</Button>
+                            <Button width="300px" margin="30px 0" type="outlined" onClick={() => history.push('/reklama/pay')}>{t("hisobni_toldirish.hisobni_toldirish")}</Button>
                         </div>
                     </Grid>
                 </Grid>
             </Wrapper>
             <div className="payment">
                 <div className="btn-group">
-                    <Button loader={myTarifPay?.loading} className="btn-pey" margin="30px 0" type="outlined">Bekor qilish</Button>
-                    <Button loader={myTarifPay?.loading} className="btn_payment" onClick={handlePayment}>To‘lov qilish</Button>
+                    <Button loader={myTarifPay?.loading} className="btn-pey" margin="30px 0" type="outlined">{t("reklama.bekor_qilish")}</Button>
+                    <Button loader={myTarifPay?.loading} className="btn_payment" onClick={handlePayment}>{t("hisobni_toldirish.tolovQilish")}</Button>
                 </div>
             </div>
 

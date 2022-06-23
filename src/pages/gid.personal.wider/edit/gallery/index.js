@@ -20,7 +20,7 @@ const Index = () => {
                 <ReactPlayer  width='70%' height='auto' controls url={upload?.success?.data?.video} />
             </div>
         
-            <div style={{margin:'60px 0 15px', fontWeight:'bold'}}>Galereyangiz</div>
+            <div style={{margin:'60px 0 15px', fontWeight:'bold'}}>{t("Galarey.galareyangiz")}</div>
 
 
             <GroupImageUpload role={ getRole?.role } />

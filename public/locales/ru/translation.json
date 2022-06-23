@@ -7,6 +7,7 @@
     "Arizalar_royhati":"Список заявок",
     "Ariza_qoldirish":"Оставить заявку",
     "GvaTtanlash":"Выбрать",
+    "transport":"Транспорт",
     "kirish":"Вход"
    },
    "footer":{
@@ -80,7 +81,8 @@
     "tillar":"Языки",
     "OzimHaqimda":"О себе",
     "korish":"Смотреть",
-    "davomi":"Читать далее"
+    "davomi":"Читать далее",
+    "rate":"Рейтинг"
 },
   "gidlar_uchun":{
     "title":"Зарегистрируйтесь в качестве переводчика или гида в своем городе",
@@ -142,7 +144,8 @@
     "royhatdanOtish2":"Регистрироваться",
     "email2":"Введите E-mail",
     "pass":"Введите пароль",
-    "forget":"Забыл свой пароль"
+    "forget":"Забыл свой пароль",
+    "eslash":"Запомнить"
   },
   "auth_parolniTiklash":{
     "reset":"Восстановить пароль ",
@@ -176,6 +179,7 @@
     "davlat":"Страна",
     "shaxarlar":"Город",
     "KerakSana":"Дата",
+    "sananiTanlang":"Выберите дату",
     "Bilishikerak":"Язык",
     "BilishikeralPlac":"Выберите языки",
     "nimagaKerak":"В каких целях",
@@ -213,8 +217,11 @@
     "yuborish":"Отправить"
   },
   "Blog":{
-    "blog":"Blog",
-    "davomiOqish":"Читать дальше"
+    "blog":"Блог",
+    "davomiOqish":"Читать дальше",
+    "edit":"Редактировать",
+    "muallif":"Автор:"
+    
   },
   "safarHaqida":{
     "title":"Как прошла поездка?",
@@ -222,6 +229,14 @@
     "Maqolayozish":"Написать статью",
     "Maqolalarim":"Мои статьи",
     "tahrirlash":"Редактировать"
+  },
+  "safarHaqda":{
+    "title":"Как прошла поездка?",
+    "text":"Поделитесь преимуществами с другими, написав статью о том, как прошла поездка и расширьте свой доход!",
+    "Maqolayozish":"Написать статью",
+    "Maqolalarim":"Мои статьи",
+    "tahrirlash":"Редактировать",
+    "topilmadi":"Не найдено"
   },
   "maqolaYozish":{
     "Profilni_Korish":"Просмотреть профиль",
@@ -249,6 +264,8 @@
 
 
   "GidPk":{
+    "profilGid":"Профиль",
+    "Chiqish":"Выход",
     "Profilni_Korish":"Просмотреть профиль",
     "tahrirlash":"Редактировать",
     "kalendar":"Календарь",
@@ -279,9 +296,11 @@
     "tiltajriba":"Опыт работы:",
     "bandkunlar":"Занятость гида или переводчика ",
     "hizmatlar":"Услуги",
-    "ekskursiyalar":"Экскурсии",
-    "sinxron":"Синхронный перевод",
-     "izchil":"Последовательный переводчик",
+    "ekskursiyalar":"Экскурсии:",
+    "ogzaki":"Устный перевод:",
+    "sinxron":"Синхронный перевод:",
+    "izchil":"Последовательный переводчик:",
+    "toifasi":"Категория:",
     "yozma":"Письменный переводчик",
     "ekskursiyalar2":"Экскурсиялар: ",
     "video":"Видео о себе",
@@ -293,7 +312,9 @@
     "yaxshi":"Хорошо",
     "yomon":"Плохо",
     "judaYomon":"Очень плохо",
-    "koproqYuklash":"Загрузить больше"
+    "koproqYuklash":"Загрузить больше",
+    "fikirqoldirish":"Оставить отзыв"
+    
   },
   "MTmenHaqimda":{
 
@@ -313,11 +334,11 @@
     "videoVagalarey":"Видео и галерея",
 
     "familya":"Фамилия",
-    "familyaPlace":"Напишите фамилию",
+    "familyaPlace":"Напишите фамилию...",
     "isim":"Имя",
-    "isimPlace":"Напишите имя",
+    "isimPlace":"Напишите имя...",
     "otasiningIsmi":"Отчество",
-    "otasiIplace":"Напишите отчество",
+    "otasiIplace":"Напишите отчество...",
     "tugilganSana":"Дата рождения",
     "jins":"Пол",
     "erkak":"Мужчина",
@@ -329,6 +350,7 @@
     "OzingizH":"О себе",
     "OzingizHplace":"Напишите несколько слов о себе",
     "certificatlar":"Загрузите свои сертификаты и дипломы",
+    "sertifikatYuklang":"Загрузите свои сертификаты и дипломы(в формате png и jpg)",
     "saqlash":"Сохранить"
   },
   "MT_Kontaktlar":{
@@ -389,7 +411,8 @@
     "toifasi":"Категория гида",
     "toifaPlace":"Гид высшей категории",
     "qoshimchaKurslar":"Дополнительные курсы",
-    "oqiganKurslaringiz":"Напишите куры, которые вы окончили",
+    "matnniKiriting":"Введите текст и нажмите Enter",
+    "oqiganKurslaringiz":"Напишите курсы, которые вы окончили и нажмите на кнопку Enter",
     "tajriba":"Опыт",
     "year":"год",
     "saqlash":"Сохранить"
@@ -442,7 +465,8 @@
     "mamlakatPlace":"Выберите страну",
     "shaharlar":"Город",
     "shaharlarSelect":"Выберите город",
-    "save":"Сохранить"
+    "save":"Сохранить",
+    "tanlanmagan":"Cтрана или город не выбрано"
    
   },
   "narxlar":{
@@ -487,6 +511,7 @@
 
     "Partfolio":"Вы можете снять видео о себе. Это видео будет в профиле.",
     "galarey":"Ваша галерея",
+    "galareyangiz":"Ваша галерея",
     "saqlash":"Сохранить"
   },
 
@@ -625,12 +650,21 @@
     "xisobingiz":"Ваш баланс:",
     "Hisobni_toldirish":"Пополните счет",
     "bekor_qilish":"Отменить",
-    "tolov":"Оплатить"
+    "tolov":"Оплатить",
+    "tarifKorish":"Посмотреть историю тарифов",
+    "tolovKorish":"Посмотреть историю платежей"
+   },
+   "tariflar":{
+    "birHafta":"Недельный тариф",
+    "ikkiHafta":"Двухнедельный тариф",
+    "birOy":"Месячный тариф"
+
    },
    "hisobni_toldirish":{
      "hisobni_toldirish":"Пополните счет",
      "tolov_turini_tanlang":"Выберите способ оплаты",
      "orqaga":"Назад",
+     "tolovQilish":"Оплатить",
      "hisobniToldirish":"Пополните счет",
 
 
@@ -679,9 +713,13 @@
     
     "kontaktlar":"Контакты",
     "parolniYangilash":"Обновить пароль",
+    "telefonvaemail":"Телефон и e-mail",
+    "parolniOzgartirish":"Изменить пароль",
     "telefone":"Телефон",
+    "telKiriting":"Введите свой номер телефона с государственным кодом:",
     "telRaqam":"Введите номер телефона",
     "hozirgiParol":"Ваш текущий пароль",
+    "joriyParol":"Текущий пароль",
     "hozirgiParilPlac":"Введите пароль",
     "Email":"E-mail",
     "EmailPlac":"Напишите E-mail",
@@ -690,6 +728,16 @@
     "parolniTasdiqlash":"Подтвердите пароль",
     "tasdilashPlac":"Введите новый пароль заново",
     "saqlash":"Сохранить"
+  },
+  "ishJadvali":{
+    "tahrirlash":"Редактировать",
+    "bosh":"Пусто",
+    "band":"Занято",
+    "oylikJadvalim":"Eжемесячный график работы",
+    "ishKunlarim":"Рабочие дни",
+    "bandKunlarim":"Занятые дни",
+    "saqlash":"Сохранить"
+
   }
 }
 

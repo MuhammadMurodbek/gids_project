@@ -86,7 +86,7 @@ const Index = () => {
                     <ButtonNavbar title={t("navbar.GTU")} url="/forgits" />
                     <ButtonNavbar title={t("navbar.Blog")} url="/blog?page=1" />
                     <ButtonNavbar title={t("navbar.Arizalar_royhati")} url="/request" />
-                    <a className="transport" href="https://www.travelcars.uz" target="_blank">Transport</a>
+                    <a className="transport" href="https://www.travelcars.uz" target="_blank">{t("navbar.transport")}</a>
                   </>
                   :
                   getRole?.role === "writer" ?
@@ -94,7 +94,7 @@ const Index = () => {
                       <ButtonNavbar title={t("navbar.GTU")} url="/forgits" />
                       <ButtonNavbar title={t("navbar.Blog")} url="/blog?page=1" />
                       <ButtonNavbar title={t("navbar.Arizalar_royhati")} url="/request" />
-                      <a className="transport" href="https://www.travelcars.uz" target="_blank">Transport</a>
+                      <a className="transport" href="https://www.travelcars.uz" target="_blank">{t("navbar.transport")}</a>
                     </>
                     :
                     getRole?.role === "translator" ?
@@ -102,7 +102,7 @@ const Index = () => {
                         <ButtonNavbar title={t("navbar.GTU")} url="/forgits" />
                         <ButtonNavbar title={t("navbar.Blog")} url="/blog?page=1" />
                         <ButtonNavbar title={t("navbar.Arizalar_royhati")} url="/request" />
-                        <a className="transport" href="https://www.travelcars.uz" target="_blank">Transport</a>
+                        <a className="transport" href="https://www.travelcars.uz" target="_blank">{t("navbar.transport")}</a>
                       </>
                       :
                       getRole?.role === "simple_user" ?
@@ -110,7 +110,7 @@ const Index = () => {
                           <ButtonNavbar title={t("navbar.GvaTtanlash")} url="/gids" />
                           <ButtonNavbar title={t("navbar.Blog")} url="/blog?page=1" />
                           <ButtonNavbar title={t("navbar.Ariza_qoldirish")} url="/application-form" />
-                          <a className="transport" href="https://www.travelcars.uz" target="_blank">Transport</a>
+                          <a className="transport" href="https://www.travelcars.uz" target="_blank">{t("navbar.transport")}</a>
                         </>
                         :
                         <>
@@ -122,7 +122,7 @@ const Index = () => {
 
                           <ButtonNavbar title={t("navbar.Ariza_qoldirish")} url="/application-form" />
 
-                          <a className="travelc" href="https://www.travelcars.uz" target="_blank">Transport</a>
+                          <a className="travelc" href="https://www.travelcars.uz" target="_blank">{t("navbar.transport")}</a>
                         </>
               }
             </FlexContainer>
