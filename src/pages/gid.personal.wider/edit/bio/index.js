@@ -26,6 +26,10 @@ import { useDispatch, useSelector } from "react-redux";
 import {saveTabAction} from "../../../../redux/actions"
 import moment from "moment"
 // import {getLabelCountry} from "../../../../custom/function"
+
+
+
+
 const Index = () => {
   const {t} = useTranslation()
   const dispatch = useDispatch()
@@ -92,8 +96,8 @@ const Index = () => {
                     onChange={ handleChange }
                     sizeLabel="15px"
                     width="100%"
-                    label="Familiya"
-                    placeholder="Familiyangizni yozing..."
+                    label={t("MTmenHaqimda.familya")}
+                    placeholder={t("MTmenHaqimda.familyaPlace")}
                     errorText={ error ? validatorState( state?.last_name, 'min', 3, 'Familiya kiritilmagan (kamida 3 ta)' ) : null }
                   />
                 </Grid>

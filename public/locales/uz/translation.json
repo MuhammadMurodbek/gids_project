@@ -45,7 +45,9 @@
         "jinsi":" Gid yoki tarjimonning jinsi",
         "erkak":"Erkak",
         "ayol":"Ayol",
-        "qidirish":"Qidiruv"
+        "qidirish":"Qidiruv",
+        "dan":"dd/mm/yyyy  dan",
+        "gacha":"dd/mm/yyyy  gacha"
    },
 
    "main":{
@@ -74,7 +76,7 @@
       "ariza":"Ariza qoldirish",
       "tanlash":"Tanlash"
 },
-  "Gid_Tanlash":{
+  "Gid_Tanlash":{ 
     "rate":"Reyting",
     "title":"Gid yoki tarjimonni tanlang",
     "fikirlar":"Fikrlar:",
@@ -83,7 +85,8 @@
     "tillar":"Tillar",
     "OzimHaqimda":"O'zim haqimda",
     "korish":"Ko'rish",
-    "davomi":"Davomi"
+    "davomi":"Davomi",
+    "reyting":"Reyting:"
 },
   "gidlar_uchun":{
     "title":"O'z shahringizda tarjimon yoki gid sifatida ro'yxatdan o'ting",
@@ -173,7 +176,7 @@
     "Gid":"Gid",
     "Tarjimon":"Tarjimon",
     "sinxron":"Sinxron",
-    "izchil":"Izchil",
+    "izchil":"Izchil",  
     "yozma":"Yozma",
     "KerakShaharlar":"Gid/Tarjimon kerak bo’lgan shahar ",
     "davlat":"Davlat",
@@ -191,6 +194,9 @@
     "nechaKishi":"Necha kishi",
     "nechkishiBolaslar":"Necha kishi bo’lasiz?",
     "shartnoma":"Arizani yoborib,men Foydalanuvchi shartnomasining shartlariga rozilik bildiraman*",
+    "dan":"dd/mm/yyyy  dan",
+    "gacha":"dd/mm/yyyy,  gacha",
+    "valyuta":"Valyuta",
     "Ayuborish":"Arizani yuboirish"
   },
   "arizalar_royhati":{
@@ -245,6 +251,10 @@
     "joylamoq":"Joylash"
   },
   
+  "SeeProfile":{
+    "Rqaytish":"Ro’yxatga qaytish",
+    "fikirQ":"Fikr qoldirish"
+  },
  
 
 
@@ -284,8 +294,8 @@
     "hizmatlar":"Xizmatlar",
     "ekskursiyalar":"Ekskursiyalar",
     "sinxron":"Sinxron tarjima",
-     "izchil":"Izchil tarjima",
-    
+    "izchil":"Izchil tarjima",
+    "yosh":"yosh",
     "yozma":"Yozma tarjimon",
     "ekskursiyalar2":"Ekskursiyalar: ",
     "video":"O’zim haqimda video",
@@ -297,7 +307,8 @@
     "yaxshi":"Yaxshi",
     "yomon":"Yomon",
     "judaYomon":"Juda yomon",
-    "koproqYuklash":"Ko'proq yuklash"
+    "koproqYuklash":"Ko'proq yuklash",
+    "izohlar":"Izohlar mavjud emas."
   },
   "MTmenHaqimda":{
 
@@ -596,7 +607,21 @@
     "ilimVaTehnika":"Ilmiy-texnik adabiyotlar",
     "badiyAdabiyot":"Badiiy adabiyot",
     "tibbiyot":"Tibbiyot va farmatsevtika",
-    "saqlash":"Saqlash"
+    "saqlash":"Saqlash",
+
+
+
+    "birkunlik":"Bir kunlik ish xajmi:",
+    "belgi":"belgi",
+    "ogzakit":"Og’zaki tarjima:",
+    "shoshilikch":"Shoshilinch buyurtmalar:",
+    "damolish":"Dam olish kunlari buyurtma qabul qilish:" ,
+    "tahrirlash2":"Matnlarni tahrirlash:" ,
+    "internet":"Internetga doimiy kirish imkoni:" ,
+    "katta":"Katta hajmdagi fayllarni qabul qilish:" ,
+    "cat":"Tarjima qilish uchun CAT dasturlari:"
+
+
   },
   "Pismini_narxlar":{
 

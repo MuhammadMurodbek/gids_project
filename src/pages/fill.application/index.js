@@ -138,14 +138,14 @@ const Index = () => {
                                 <div className="title_inner">{t("arizaqoldirish.KerakSana")}</div>
                             </Grid>
                             <Grid item xs={12} sm={12} md={7}>
-                                <Grid container spacing={2}>
+                                <Grid container spacing={2}> 
                                     <Grid item xs={12} sm={6}>
                                         <Calendar setState={setCollect} state={collect} field="start_date"
-                                            errorText={error ? validatorState(collect?.start_date, 'string', 0, 'Boshlanish sanasi kiritilmagan') : null} placeholder="Sanani tanlang" />
+                                            errorText={error ? validatorState(collect?.start_date, 'string', 0, 'Boshlanish sanasi kiritilmagan') : null} placeholder={t("arizaqoldirish.dan")} />
                                     </Grid>
                                     <Grid item xs={12} sm={6}>
                                         <Calendar setState={setCollect} state={collect} field="end_date"
-                                            errorText={error ? validatorState(collect?.start_date, 'string', 0, 'Tugash sanasi kiritilmagan') : null} placeholder="Sanani tanlang" />
+                                            errorText={error ? validatorState(collect?.start_date, 'string', 0, 'Tugash sanasi kiritilmagan') : null} placeholder={t("arizaqoldirish.gacha")} />
                                     </Grid>
                                 </Grid>
                             </Grid>
@@ -184,7 +184,8 @@ const Index = () => {
                                         <Input value={collect?.cost || ''} onChange={(e) => setCollect({ ...collect, cost: parseInt(e.target.value) })} width="100%" type="number" placeholder={t("arizaqoldirish.chegara")} errorText={error ? validatorState(collect?.cost, 'max', 0, 'Narx kiritilmagan') : null} />
                                     </Grid>
                                     <Grid item xs={12} sm={4} style={{ position: 'relative', top: 3 }}>
-                                        <Select setCollect={setCollect} collect={collect} field="currency" options={currency} placeholder="Valyuta" errorText={error ? validatorState(collect?.currency, 'object', 0, 'Valyuta kiritilmagan') : null} />
+                                        <Select setCollect={setCollect} collect={collect} field="currency" options={currency} 
+                                        placeholder={t("arizaqoldirish.valyuta")} errorText={error ? validatorState(collect?.currency, 'object', 0, 'Valyuta kiritilmagan') : null} />
                                     </Grid>
                                 </Grid>
                             </Grid>

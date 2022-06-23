@@ -61,7 +61,7 @@ const Index = ({ state, typeRole, comments, commentCount, commentReview }) => {
                                 />
                                 <Container {...mediaContainerSecondText} margin="-10px 0 0 15px">
                                     <TextTitle align="left" bottom="5px" font="20px">{state?.first_name || 'Mavjud emas'}{" "}{state?.last_name || 'Mavjud emas'}</TextTitle>
-                                    <div className="gid-info-personal">{state?.age ? state?.age + " yosh" : 'Yosh kiritilmagan'} | <span style={{ textTransform: "none" }}>{typeRole?.role === 'simple_user' ? "Foydalanuvchi " : typeRole?.role === "writer" ? "Yozma tarjimon" : typeRole?.role === "translator" ? "Og'izaki tarjimon" : "Gid"} </span> </div>
+                                    <div className="gid-info-personal">{state?.age ? state?.age + " " + t("GidPk.yosh") : 'Yosh kiritilmagan'} | <span style={{ textTransform: "none" }}>{typeRole?.role === 'simple_user' ? "Foydalanuvchi " : typeRole?.role === "writer" ? t("GidPk.yozma") : typeRole?.role === "translator" ? "Og'izaki tarjimon" : "Gid"} </span> </div>
                                     {
                                         typeRole?.role === 'gid' ?
                                             state?.languages?.map((prev, index) => (
@@ -93,20 +93,22 @@ const Index = ({ state, typeRole, comments, commentCount, commentReview }) => {
                 <Container padding="30px">
                     <TextTitle font="15px" fontWeight="600" align="left" color="#326A32">{t("GidPk.OzimHaqimda")}</TextTitle>
                     <p style={{ textAlign: 'justify' }}>{state?.bio || 'Bio kiritilmagan'}</p>
-                    {
+                    {/* {
                         typeRole?.role === 'gid' ? null :
                             <ContainerBottom style={{ marginBottom: 10 }}>
-                                <div className="inner-div"> <span className="title">
-                                    {t("GidPk.qatnashgan")}</span>
+                                <div className="inner-div">
+                                    <span className="title">
+                                        {t("GidPk.qatnashgan")}
+                                    </span>
                                 </div>
                             </ContainerBottom>
-                    }
+                    } */}
                     {
                         state?.trainings?.length > 0 ?
                             state?.trainings?.map((prev, index) => (
                                 <ContainerBottom key={index}>
                                     <div className="inner-div">
-                                        <span className="title"> Tadbir: </span>
+                                        <span className="title"> {t("GidPk.qatnashgan")} </span>
                                         <span>{prev?.name}</span>
                                     </div>
 
@@ -146,7 +148,7 @@ const Index = ({ state, typeRole, comments, commentCount, commentReview }) => {
                     {comments?.loading && <Spinner />}
                     {comments?.success &&
                         <>
-                            {commentReview?.length < 1 ? <div className="empty_title">Izohlar mavjud emas.</div> :
+                            {commentReview?.length < 1 ? <div className="empty_title">{t("GidPk.izohlar")}</div> :
                                 <>
                                     <Grid className='namessss' container spacing={1} style={{ marginBottom: 60 }}>
 

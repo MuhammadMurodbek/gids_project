@@ -11,8 +11,13 @@ import NoDataPage from "../../components/templates/no.data.page.js"
 import Spinner from "../../components/atom/loading.spinner.line"
 import {useHistory} from "react-router-dom"
 import ModalContainer from "./modal"
+import { useTranslation } from 'react-i18next'
+
+
 
 export default function Index() {
+
+    const { t } = useTranslation()
     const history = useHistory()
     let query = window.location.search
     function searchToObject(search) {
@@ -40,12 +45,12 @@ export default function Index() {
         window.scrollTo(0,0)
     }
 
-    return (
+    return (  
         <>
             <Layout>
                 <Wrapper>
                     <Grid className="gridTitle2" item xs={12} md={6}>
-                        <div onClick={handlePrev} className="comback"> <ArrowBackIcon className="link22" />  Ro’yxatga qaytish</div>
+                        <div onClick={handlePrev} className="comback"> <ArrowBackIcon className="link22" /> {t("SeeProfile.Rqaytish")} </div>
                     </Grid>
                     {
                         (apiData?.error === '' && apiData?.success === '') ? <Spinner marginTop="60px" width={50} height={50} /> :
@@ -60,7 +65,7 @@ export default function Index() {
                                             commentCount={commentApi?.success?.data?.counts}
                                             commentReview={commentApi?.success?.data?.reviews}
                                         />
-                                        {apiData?.success && <Button onClick={()=>setOpenModal(true)}>Fikr qoldirish</Button>}
+                                        {apiData?.success && <Button onClick={()=>setOpenModal(true)}>{t("SeeProfile.fikirQ")}</Button>}
                                     </Grid>
                                     
                                     <Grid item xs={12} md={4}>
