@@ -3,8 +3,13 @@ import React from 'react';
 import DayPicker, { DateUtils } from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
 import "./style.css";
+import { useTranslation } from 'react-i18next'
+
+
 
 export default class Example extends React.Component {
+  
+  
   constructor(props) {
     super(props);
     this.handleDayClick = this.handleDayClick.bind(this);

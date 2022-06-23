@@ -95,7 +95,7 @@ const Index = ({loader, queryObj}) => {
                 placeholder={
                     queryObj?.date_after ? 
                     moment(queryObj?.date_after).format('DD-MM-YYYY')
-                    :'dd/mm/yyyy dan'
+                    :t("kengaytirlgan_Q.dan")
                 }
                 placeholderValue={queryObj?.date_after ? true:false}
                 // placeholder="dd/mm/yyyy dan"
@@ -108,7 +108,7 @@ const Index = ({loader, queryObj}) => {
                 placeholder={
                     queryObj?.date_before ? 
                     moment(queryObj?.date_before).format('DD-MM-YYYY')
-                    :'dd/mm/yyyy dan'
+                    :t("kengaytirlgan_Q.gacha")
                 }
                 placeholderValue={queryObj?.date_before ? true:false}
             />

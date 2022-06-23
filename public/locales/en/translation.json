@@ -44,7 +44,9 @@
         "jinsi":"Gender of the translator",
         "erkak":"Male",
         "ayol":"Female",
-        "qidirish":"Search"
+        "qidirish":"Search",
+        "dan":"dd/mm/yyyy  dan en",
+        "gacha":"dd/mm/yyyy  gacha en"
    },
 
    "main":{
@@ -82,7 +84,8 @@
     "tillar":"Languages",
     "OzimHaqimda":"About myself",
     "korish":"See",
-    "davomi":"Read more"
+    "davomi":"Read more",
+    "reyting":"Рейтинг:"
 },
   "gidlar_uchun":{
     "title":"Register as a Translator or Git in your hometown",
@@ -166,7 +169,7 @@
     "yana":"Confirm the new password",
     "sendthe":"Send the code"
   },
-  "arizaqoldirish":{
+  "arizaqoldirish":{  
     "title":"Leave a form for guides and translators",
     "vazifa":"Job description",
     "kimKerak":"Who needs it",
@@ -192,6 +195,9 @@
     "nechaKishi":"How many people",
     "nechkishiBolaslar":"How many people are you?",
     "shartnoma":"By submitting the application, you agree to the user agreement *",
+    "dan":"dd/mm/yyyy  dan en",
+    "gacha":"dd/mm/yyyy,  gacha en",
+    "valyuta":"Валюта",
     "Ayuborish":"Submit the application"
   },
   "arizalar_royhati":{
@@ -242,6 +248,11 @@
     "joylamoq":"Set"
   },
   
+  
+  "SeeProfile":{
+    "Rqaytish":"Ro’yxatga qaytish",
+    "fikirQ":"Fikr qoldirish"
+  },
  
 
 
@@ -301,7 +312,8 @@
     "yomon":"bad",
     "judaYomon":"Very bad",
     "koproqYuklash":"More downloads",
-    "fikirqoldirish":"Fikr qoldirish"
+    "fikirqoldirish":"Fikr qoldirish",
+    "izohlar":"Izohlar mavjud emas."
   },
   "MTmenHaqimda":{
     "Profilni_Korish":"View profile",
@@ -595,7 +607,17 @@
     "ilimVaTehnika":"Ilmiy va texnik adabiyotlar",
     "badiyAdabiyot":"Badiiy adabiyot",
     "tibbiyot":"Tibbiyot va farmatsevtika",
-    "saqlash":"Saqlash"
+    "saqlash":"Saqlash",
+
+    "birkunlik":"Bir kunlik ish xajmi:",
+    "belgi":"belgi",
+    "ogzakit":"Og’zaki tarjima:",
+    "shoshilikch":"Shoshilinch buyurtmalar:",
+    "damolish":"Dam olish kunlari buyurtma qabul qilish:" ,
+    "tahrirlash2":"Matnlarni tahrirlash:" ,
+    "internet":"Internetga doimiy kirish imkoni:" ,
+    "katta":"Katta hajmdagi fayllarni qabul qilish:" ,
+    "cat":"Tarjima qilish uchun CAT dasturlari:"
   },
   "Pismini_narxlar":{
     "Profilni_Korish":"Profilni ko'rish",

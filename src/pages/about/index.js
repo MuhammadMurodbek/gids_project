@@ -15,7 +15,7 @@ import { mediaTextField, mediaTextFieldSec, mediaImage, mediaImageSecond } from 
 const mediaBtnv = {
     m_width: "400px",
     m_m_width: '280px',
-}
+} 
 export default function Index() {
 
     const { t } = useTranslation()
@@ -25,7 +25,8 @@ export default function Index() {
         <Wrapper>
             <ComponentTwo>
                 <div className='div321'>
-                    <TextTitle {...mediaTextField} {...mediaTextFieldSec} position="relative" top="30px" bottom="30px"> {t("about.title")} </TextTitle>
+                    <TextTitle {...mediaTextField} {...mediaTextFieldSec} position="relative" top="30px" bottom="30px"> 
+                    {t("about.title")} </TextTitle>
                     {/* <div className="title-second-main-container">Biz nima taklif qilamz</div> */}
                     <Grid container spacing={1} direction="row"
                     >
