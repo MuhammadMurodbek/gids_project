@@ -319,7 +319,16 @@
     "judaYomon":"Juda yomon",
     "koproqYuklash":"Ko'proq yuklash",
     "fikirqoldirish":"Fikr qoldirish",
-    "izohlar":"Izohlar mavjud emas."
+    "izohlar":"Izohlar mavjud emas.",
+    "malumotKiritilmagan":"Ma'lumot kiritilmagan",
+    "videoYuklanmagan":"Video yuklanmagan."
+  },
+  "kommentlar":{
+    "textKiriting":"Text kiriting...",
+    "reytingniBaholang":"Reytingni baholang",
+    "kommentShart":"Izoh qoldirish kerak!!!",
+    "bahoShart":"Baho qo'yish kerak!!!"
+
   },
   "MTmenHaqimda":{
 
@@ -678,13 +687,18 @@
     "Hisobni_toldirish":"Hisobni to’ldiring",
     "bekor_qilish":"Bekor qilish",
     "tolov":"To’lov",
-    "tarifKorish":"Tariflar tarifini ko'rish",
-    "tolovKorish":"To'lovlar tarifini ko'rish"
+    "tarifKorish":"Tariflar tarixini ko'rish",
+    "tolovKorish":"To'lovlar tarixini ko'rish",
+    "tariflar": "Tariflar tarixi",
+    "tolovlar":"To’lovlar tarixi",
+    "rekgaQaytish":"Reklama bo'limiga qaytish",
+    "som":"so‘m"
    },
    "tariflar":{
     "birHafta":"Bir haftalik tarif",
     "ikkiHafta":"Ikki haftalik tarif",
-    "birOy":"Bir oylik tariff"
+    "birOy":"Bir oylik tariff",
+    "tarifEmas":"Sizda tariflar tarixi mavjud emas"
 
    },
    "hisobni_toldirish":{
@@ -692,7 +706,10 @@
      "tolov_turini_tanlang":"To’lov turini tanlang",
      "orqaga":"Ortga",
      "tolovQilish":"To‘lov qilish",
-     "hisobniToldirish":"Hisobni to’ldiring",
+     "hisobniToldirish":"Hisobni to’ldirish",
+     "ortgaQaytish":"Ortga qaytish",
+     "som":"so'm",
+     
 
 
 
@@ -764,6 +781,17 @@
     "ishKunlarim":"Ish kunlarim",
     "bandKunlarim":"Band kunlarim",
     "saqlash":"Saqlash"
+
+  },
+  "toifalar":{
+    "oliyToifali":"Oliy toifali",
+    "birinchiToifali":"Birinchi toifali",
+    "ikkinchiToifali":"Ikkinchi toifali",
+    "toifasizToifali":"Toifasiz"
+  },
+  "mutahasis":{
+    "oliy":"Oliy",
+    "ortaMahsus":"O'rta maxsus"
 
   }
 }

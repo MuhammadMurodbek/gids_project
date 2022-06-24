@@ -15,7 +15,7 @@ const Index = ({url}) => {
             {
                 url ? 
                 <Player url={url}/>:
-                <span>Video yuklanmagan.</span>
+                <span>{t("GidPk.videoYuklanmagan")}</span>
             }
         </Wrapper>
     )

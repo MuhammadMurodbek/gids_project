@@ -50,13 +50,13 @@ const Index = ({setCallback, open, setOpen, customId}) => {
                                      height="300px" 
                                      onChange={onChange} 
                                      value={value} 
-                                     placeholder="Text kiriting..."  
+                                     placeholder={t("kommentlar.textKiriting")} 
                                     
                                  />;
                          }}
                      />
-                      {errors && errors?.comment && <span style={{color:'red'}}>Comment is required !!!</span>}
-                     <div style={{margin:'10px 0 0'}}>Reytingni baholang</div>
+                      {errors && errors?.comment && <span style={{color:'red'}}>{t("kommentlar.kommentShart")}</span>}
+                     <div style={{margin:'10px 0 0'}}>{t("kommentlar.reytingniBaholang")}</div>
                      <Controller
                          name="rating"
                          control={control}
@@ -65,7 +65,7 @@ const Index = ({setCallback, open, setOpen, customId}) => {
                              return <Rate onChange={onChange} value={value} />;
                          }}
                      />
-                     {errors && errors?.rating && <span style={{display:'block', color:'red'}}>Rating is required !!!</span>}
+                     {errors && errors?.rating && <span style={{display:'block', color:'red'}}>{t("kommentlar.bahoShart")}</span>}
                          <input type="submit" ref={input => {inputFile = input}} style={{display:'none'}}/>
                      </form>:
                      <div style={{color:'orangered'}}> Fikr qoldirish uchun ro'yxatdan o'tishingiz kerak...</div>

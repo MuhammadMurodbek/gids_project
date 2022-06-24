@@ -101,7 +101,7 @@ export default function Index() {
           </>:
           <div style={{width:'100%', textAlign:'center'}}>
               <NoDataPage/>
-              <Button type="outlined" onClick={()=>history.push('/gid-personal-wider?tab=0')}>Ortga qaytish</Button>
+              <Button type="outlined" onClick={()=>history.push('/gid-personal-wider?tab=0')}>{t("maqolaYozish.orqaga")}</Button>
           </div> 
         }
       </Wrapper>

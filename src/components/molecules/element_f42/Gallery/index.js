@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 // import { render } from 'react-dom';
 import Gallery from "react-grid-gallery";
-
+import { useTranslation } from 'react-i18next'
 const IMAGES = [
   {
     src: "https://c2.staticflickr.com/9/8817/28973449265_07e3aa5d2e_b.jpg",
@@ -63,6 +63,7 @@ const IMAGES = [
 ];
 
 const Index = (props) => {
+  const { t } = useTranslation()
   const {data} = props;
   const [state, setState] = useState([])
   useEffect(() => {
@@ -82,7 +83,7 @@ const Index = (props) => {
         data?.galleries?.length>0 &&
         (state || props?.list) ? 
         <Gallery {...props} images={state || props?.list} />:
-        <span>Ma'lumot kiritilmagan</span> 
+        <span>{t("GidPk.malumotKiritilmagan")}</span> 
       }
     </div>
   );

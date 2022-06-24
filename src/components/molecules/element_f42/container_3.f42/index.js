@@ -64,7 +64,7 @@ const Index = ({ data, role }) => {
                             <br />
                             <Text title={t("Pismenniy_Xizmatlar.katta")} text={<span>&nbsp;{data?.always_online ? 'Ha' : "Yo'q"}&nbsp;</span>} /> 
                             <br />
-                            <Text title={t("Pismenniy_Xizmatlar.cat")} text={data?.cat_programmes?.length > 0 ? data?.cat_programmes?.map(a => <span style={{ textTransform: 'capitalize' }}>{" " + a + ","}</span>) : " Ma'lumot kiritilmagan"} />
+                            <Text title={t("Pismenniy_Xizmatlar.cat")} text={data?.cat_programmes?.length > 0 ? data?.cat_programmes?.map(a => <span style={{ textTransform: 'capitalize' }}>{" " + a + ","}</span>) : t("GidPk.malumotKiritilmagan")} />
 
                             {data?.themes?.length > 0 && <div style={{ marginTop: 10 }}> <Text title="Mavzular:" /></div>}
 

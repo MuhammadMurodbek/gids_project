@@ -119,7 +119,7 @@ export default function Index({applicationData, setApplicationData, btnText, url
                     <div className="tafsilot-text">
                         <b> <ImageContainer src={kim} /></b>
                         <b>{t("ToliqAriza.gacha")} </b>
-                        <p>{applicationData?.success?.data?.cost + " " +curens[applicationData?.success?.data?.currency] || " Malumot topilmadi"} </p>
+                        <p>{applicationData?.success?.data?.cost + " " +curens[applicationData?.success?.data?.currency] || t("GidPk.malumotKiritilmagan")} </p>
                     </div>
                     <div className="tafsilot-text">
                         <b> <ImageContainer src={narx} /></b>
@@ -129,7 +129,7 @@ export default function Index({applicationData, setApplicationData, btnText, url
                     <div className="tafsilot-text">
                         <b> <ImageContainer src={odamlar} /></b>
                         <b>{t("ToliqAriza.tillar")} </b>
-                        <p>{applicationData?.success?.data?.languages?.map(a=>" "+getLabelLangLocal(a.id)+",") || "Ma'lumot kiritilmagan"}</p>
+                        <p>{applicationData?.success?.data?.languages?.map(a=>" "+getLabelLangLocal(a.id)+",") || t("GidPk.malumotKiritilmagan")}</p>
                     </div>
                     <div className="tafsilot-text">
                         <b> <ImageContainer src={til} /></b>
@@ -145,7 +145,7 @@ export default function Index({applicationData, setApplicationData, btnText, url
                     <div>
                         <div className="div1title">{t("ToliqAriza.arizaMatni")}</div>
                         <p>  
-                             {applicationData?.success?.data?.why_need || "Ma'lumot kiritilmagan"}
+                             {applicationData?.success?.data?.why_need || t("GidPk.malumotKiritilmagan")}
                         </p>   
                     </div>
                     <p className="f-sana">

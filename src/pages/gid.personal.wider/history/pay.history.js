@@ -7,7 +7,11 @@ import { Grid } from '@material-ui/core';
 import { getApiResponse } from "../../../hooks/response_get"
 import Spinner from "../../../components/molecules/loading.spinner"
 import moment from "moment"
+import { useTranslation } from 'react-i18next';
+import { t } from 'i18next';
+
 export default function Index() {
+    const { t } = useTranslation()
     const [historyState, setHistoryState] = useState({ data: null, error: false, success: false, loading: false })
 
     useEffect(() => {
@@ -17,9 +21,9 @@ export default function Index() {
     return (
         <Wrapper>
 
-            <Link to="/reklama" className="link-text"> <ArrowBackIcon className="arroles11" /> Reklama bo'limiga qaytish  </Link>
+            <Link to="/reklama" className="link-text"> <ArrowBackIcon className="arroles11" /> {t("reklama.rekgaQaytish")}  </Link>
             <TextTitle className="text-title" bottom="50px" top="50px">
-                To’lovlar tarixi
+                {t("reklama.tolovlar")}
             </TextTitle>
 
             { historyState.loading && <Spinner />}
@@ -36,7 +40,7 @@ export default function Index() {
                                             <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent aliquam sit ornare mattis id non aliquam convallis ut.</span>
                                         </div>
                                         <div className="right-prise">
-                                            <b className="price_part">{item?.total_sum || '0'} so‘m</b>
+                                            <b className="price_part">{item?.total_sum || '0'} {t("reklama.som")}</b>
                                             <b className="right-b">{moment(item?.payed_time).format('DD.MM.YYYY HH:mm') || '01.01.2000'} gacha</b>
                                         </div>
                                     </Grid>

@@ -66,8 +66,8 @@ const Index = ({ state, typeRole, comments, commentCount, commentReview }) => {
                                         typeRole?.role === 'gid' ?
                                             state?.languages?.map((prev, index) => (
                                                 <div key={index} className={index === 0 ? "gid-info-personal-text top" : "gid-info-personal-text"}>
-                                                    <div className="text">{languageCheck(prev, lan) || "Ma'lumot kiritilmagan"}</div>
-                                                    &nbsp; - {degreeLang[prev?.level] || "Ma'lumot kiritilmagan"}
+                                                    <div className="text">{languageCheck(prev, lan) || t("GidPk.malumotKiritilmagan")}</div>
+                                                    &nbsp; - {degreeLang[prev?.level] || t("GidPk.malumotKiritilmagan")}
                                                 </div>
                                             ))
                                             :
@@ -118,7 +118,7 @@ const Index = ({ state, typeRole, comments, commentCount, commentReview }) => {
                                     </div>
                                 </ContainerBottom>
                             )) :
-                            typeRole?.role === 'gid' ? null : <div style={{ fontSize: '0.86rem' }}>Ma'lumot kiritilmagan</div>
+                            typeRole?.role === 'gid' ? null : <div style={{ fontSize: '0.86rem' }}>{t("GidPk.malumotKiritilmagan")}</div>
                     }
                 </Container>
 

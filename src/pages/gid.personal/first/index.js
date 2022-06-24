@@ -14,7 +14,9 @@ import {mediaFlex, mediaImage, mediaTextFieldExternal, mediaFlexFooter} from "./
 import {getResponse} from "../../../hooks/response_get"
 import Spinner from "../../../components/atom/loading.spinner.line"
 import {getLabelCountrySecond, getLabelCity} from "../../../custom/function"
+import { useTranslation } from 'react-i18next'
 const Index = () => {
+    const {t} = useTranslation()
     const [state, setState] = useState({success:'',error:''})
     useEffect(() => {getResponse('/api/users/edit/', setState)},[])
     // console.log(state)
@@ -42,7 +44,7 @@ const Index = () => {
                                         <div className="icon-text"><ImageContainer src={icon1} width="20px"/>
                                             <div>
                                                 {
-                                                    (getLabelCountrySecond(state?.success?.data?.country)+", "+getLabelCity(state?.success?.data?.country,state?.success?.data?.city))|| "Ma'lumot kiritilmagan"
+                                                    (getLabelCountrySecond(state?.success?.data?.country)+", "+getLabelCity(state?.success?.data?.country,state?.success?.data?.city))|| t("GidPk.malumotKiritilmagan")
                                                 }
                                             </div>
                                         </div>

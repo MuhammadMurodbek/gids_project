@@ -63,7 +63,7 @@ export default function Index() {
                                         <span className="spansa">{objApiText[myTarif.data?.tariff?.name]}</span>
                                     </div>
                                     <div className="right-prise">
-                                        <b>{myTarif?.data?.tariff?.price || '0'} so‘m</b>
+                                        <b>{myTarif?.data?.tariff?.price || '0'} {t("reklama.som")}</b>
                                         <b className="right-b">{moment(myTarif?.data?.top_until_date).format('DD.MM.YYYY') || '01.01.2000'} gacha</b>
                                     </div>
                                 </Grid> :
@@ -97,7 +97,7 @@ export default function Index() {
                                                 <span>{objApiText[item?.name]}</span>
                                             </div>
                                             <div className="somdiv">
-                                                <b >{item?.price} so‘m</b>
+                                                <b >{item?.price} {t("reklama.som")}</b>
                                             </div>
                                         </Grid>
                                     </Grid>

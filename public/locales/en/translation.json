@@ -313,7 +313,16 @@
     "judaYomon":"Very bad",
     "koproqYuklash":"More downloads",
     "fikirqoldirish":"Fikr qoldirish",
-    "izohlar":"Izohlar mavjud emas."
+    "izohlar":"Izohlar mavjud emas.",
+    "malumotKiritilmagan":"Information not entered",
+    "videoYuklanmagan":"Video not uploaded."
+ 
+  },
+  "kommentlar":{
+    "textKiriting":"Enter text...",
+    "reytingniBaholang":"Rate rating",
+    "kommentShart":"Comment is required !!!",
+    "bahoShart":"Rating is required !!!"
   },
   "MTmenHaqimda":{
     "Profilni_Korish":"View profile",
@@ -658,12 +667,15 @@
     "bekor_qilish":"Bekor qilish",
     "tolov":"To‘lov qilish",
     "tarifKorish":"View tariff history",
-    "tolovKorish":"View payment history"
+    "tolovKorish":"View payment history",
+    "som":"sum"
    },
    "tariflar":{
     "birHafta":"One weekly tariff",
     "ikkiHafta":"Two-week tariff",
-    "birOy":"One monthly tariff"
+    "birOy":"One monthly tariff",
+    "tarifEmas":"You do not have a tariff history"
+
 
    },
    "hisobni_toldirish":{
@@ -672,7 +684,9 @@
      "orqaga":"Ortga qaytish",
      "tolovQilish":"Pay",
      "hisobniToldirish":"Hisobni to’ldirish",
-     "Tolovlar_tarihi":"To’lovlar tarixi"
+     "Tolovlar_tarihi":"To’lovlar tarixi",
+     "ortgaQaytish":"Ortga qaytish",
+     "som":"sum"
     },
 
 
@@ -753,6 +767,17 @@
     "ishKunlarim":"Working days",
     "bandKunlarim":"Busy days",
     "saqlash":"Save"
+
+  },
+  "toifalar":{
+    "oliyToifali":"Highest category",
+    "birinchiToifali":"First category",
+    "ikkinchiToifali":"Second category",
+    "toifasizToifali":"Uncategorized"
+  },
+  "mutahasis":{
+    "oliy":"High",
+    "ortaMahsus":"Secondary special"
 
   }
 }

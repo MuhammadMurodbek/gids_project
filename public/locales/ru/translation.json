@@ -324,7 +324,17 @@
     "judaYomon":"Очень плохо",
     "koproqYuklash":"Загрузить больше",
     "fikirqoldirish":"Оставить комментарий",
-    "izohlar":"Комментариев нет."
+    "izohlar":"Комментариев нет.",
+    "malumotKiritilmagan":"Информация не введена",
+    "videoYuklanmagan":"Видео не загружено."
+   
+  },
+  "kommentlar":{
+    "textKiriting":"Введите текст...",
+    "reytingniBaholang":"Оцените рейтинг",
+    "kommentShart":"Комментарий обязателен!!!",
+    "bahoShart":"Оценка обязательна!!!"
+
   },
   "MTmenHaqimda":{
 
@@ -672,13 +682,18 @@
     "Hisobni_toldirish":"Пополните счет",
     "bekor_qilish":"Отменить",
     "tolov":"Оплатить",
-    "tarifKorish":"Историю тарифов",
-    "tolovKorish":"Историю платежей"
+    "tarifKorish":"История тарифов",
+    "tolovKorish":"История платежей",
+    "tariflar": "История тарифов",
+    "tolovlar":"История платежей",
+    "rekgaQaytish":"Вернуться в раздел реклам",
+    "som":"сум"
    },
    "tariflar":{
     "birHafta":"Недельный тариф",
     "ikkiHafta":"Двухнедельный тариф",
-    "birOy":"Месячный тариф"
+    "birOy":"Месячный тариф",
+    "tarifEmas":"У вас нет истории тарифов"
 
    },
    "hisobni_toldirish":{
@@ -686,7 +701,9 @@
      "tolov_turini_tanlang":"Выберите способ оплаты",
      "orqaga":"Назад",
      "tolovQilish":"Оплатить",
-     "hisobniToldirish":"Пополните счет",
+     "hisobniToldirish":"Пополнить счет",
+     "ortgaQaytish":"Вернуться назад",
+     "som":"сум",
 
 
 
@@ -758,6 +775,17 @@
     "ishKunlarim":"Рабочие дни",
     "bandKunlarim":"Занятые дни",
     "saqlash":"Сохранить"
+
+  },
+  "toifalar":{
+    "oliyToifali":"Высшая категория",
+    "birinchiToifali":"Первая категория",
+    "ikkinchiToifali":"Вторая категория",
+    "toifasizToifali":"Без категории"
+  },
+  "mutahasis":{
+    "oliy":"Высшее",
+    "ortaMahsus":"Среднее специальное"
 
   }
 }
