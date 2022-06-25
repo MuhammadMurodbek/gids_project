@@ -66,7 +66,7 @@ const Index = ({ data, role }) => {
                             <br />
                             <Text title={t("Pismenniy_Xizmatlar.cat")} text={data?.cat_programmes?.length > 0 ? data?.cat_programmes?.map(a => <span style={{ textTransform: 'capitalize' }}>{" " + a + ","}</span>) : t("GidPk.malumotKiritilmagan")} />
 
-                            {data?.themes?.length > 0 && <div style={{ marginTop: 10 }}> <Text title="Mavzular:" /></div>}
+                            {data?.themes?.length > 0 && <div style={{ marginTop: 10 }}> <Text title={t("GidPk.mavzular")} /></div>}
 
                             <div className='mavzulardd'>
                                 {
@@ -83,7 +83,7 @@ const Index = ({ data, role }) => {
                 role === 'translator' ?
                     (<>
                         {/* <img src={cheked} alt="adfdd" className="classed" /> <Text title=" Sinxron" /><br /> */}
-                        <Text title="Mavzular:" />
+                        <Text title={t("GidPk.mavzular")} />
                         {
                             data?.themes?.map((prev, index) => (
                                 <Text key={index} display="block" text={<><TextSpan>{prev?.name}</TextSpan> - <TextSpan style={{ fontWeight: '400' }}>{obj[prev?.level]}</TextSpan></>} />

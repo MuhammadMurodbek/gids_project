@@ -8,10 +8,12 @@ import { TextTitle } from '../../../../../styles/textTitle/index.style'
 import DoubleRadioLabel from "../../../../../components/molecules/double.radio.labeled"
 import { option_yes, option_yes_sec, objDefault } from "../_const"
 import MultiValueInput from '../../../../../components/molecules/multivalue.input'
+import { useTranslation } from 'react-i18next'
 import Todos from "../todo.writer"
 import './style.css'
 // import Spinner from "../../../../../components/atom/loading.spinner.line";
 const Index = () => {
+    const { t } = useTranslation()
     const [state, setState] = useState(objDefault)
     const [apiValue, setApiValue] = useState(objDefault)
     const [load, setLoad] = useState({ success: '', error: '' })
@@ -34,28 +36,28 @@ const Index = () => {
 
             <Grid container spacing={1}>
                 <Grid item xs={12} sm={6} md={4}>
-                    <TextLabeled setState={setState} state={state} defaultApiValue={apiValue?.daily_workload} field="daily_workload" width="100%" sizeLabel="15px" placeholder="Text" label="Bir kunlik ish hajmingiz (belgi)" />
+                    <TextLabeled setState={setState} state={state} defaultApiValue={apiValue?.daily_workload} field="daily_workload" width="100%" sizeLabel="15px" placeholder={t("Pismenniy_Xizmatlar.text")} label={t("Pismenniy_Xizmatlar.birKunHajm")} />
                 </Grid>
                 <Grid item xs={12} sm={6} md={4}>
                     <Container padding="37px 0 0" position="relative" top="-22px">
-                        <TextTitle font="15px" align="left" top="0" bottom="-10px" color="#262626">Siz og'zaki tarjima ham qilasizmi?</TextTitle>
+                        <TextTitle font="15px" align="left" top="0" bottom="-10px" color="#262626">{t("Pismenniy_Xizmatlar.ogzakiTarjima")}</TextTitle>
                         <FlexContainer width="100%" gap="10px">
                             <SelectLabeled setCollect={setState} collect={state} defaultApiValue={apiValue?.can_oral_translate ? 'Ha' : "Yo'q"} field="can_oral_translate" options={option_yes} width="100%" sizeLabel="15px" placeholder="Tanglang" />
-                            <SelectLabeled isDisabled={state?.can_oral_translate?.label==='Ha' ? false:true} setCollect={setState} collect={state} defaultApiValue={apiValue?.oral_translate_type !== 'consecutive' ? 'Sinxron' : 'Izchil'} field="oral_translate_type" options={option_yes_sec} width="100%" placeholder="Tanlang" />
+                            <SelectLabeled isDisabled={state?.can_oral_translate?.label==='Ha' ? false:true} setCollect={setState} collect={state} defaultApiValue={apiValue?.oral_translate_type !== 'consecutive' ? t("Pismenniy_Xizmatlar.sinxron") : t("Pismenniy_Xizmatlar.izchil")} field="oral_translate_type" options={option_yes_sec} width="100%" placeholder="Tanlang" />
                         </FlexContainer>
                     </Container>
                 </Grid> 
             </Grid>
             <Grid container spacing={1}>
-                <Grid item xs={12} sm={6} md={4}><DoubleRadioLabel defaultApiValue={apiValue?.express_order ? 'yes' : 'no'} value1="yes" value2="no" sizeLabel="14px" setState={setState} state={state} field="express_order" name1="Ha" name2="Yo'q" label="Shoshilinch buyurtmalarni bajarasizmi?" /></Grid>
-                <Grid item xs={12} sm={6} md={4}><DoubleRadioLabel defaultApiValue={apiValue?.weekend_order ? 'yes' : 'no'} value1="yes" value2="no" sizeLabel="14px" setState={setState} state={state} field="weekend_order" name1="Ha" name2="Yo'q" label="Dam olish kunlari buyurtmalarni bajarasizmi?" /></Grid>
-                <Grid item xs={12} sm={6} md={4}><DoubleRadioLabel defaultApiValue={apiValue?.edit_text ? 'yes' : 'no'} value1="yes" value2="no" sizeLabel="14px" setState={setState} state={state} field="edit_text" name1="Ha" name2="Yo'q" label="Siz matnlarni tahrirlash bilan ham shug'ullanasizmi?" /></Grid>
+                <Grid item xs={12} sm={6} md={4}><DoubleRadioLabel defaultApiValue={apiValue?.express_order ? t("Pismenniy_Xizmatlar.ha") : t("Pismenniy_Xizmatlar.yoq")} value1="yes" value2="no" sizeLabel="14px" setState={setState} state={state} field="express_order" name1={t("Pismenniy_Xizmatlar.ha")} name2={t("Pismenniy_Xizmatlar.yoq")} label={t("Pismenniy_Xizmatlar.shoshilinch")} /></Grid>
+                <Grid item xs={12} sm={6} md={4}><DoubleRadioLabel defaultApiValue={apiValue?.weekend_order ? t("Pismenniy_Xizmatlar.ha") : t("Pismenniy_Xizmatlar.yoq")} value1="yes" value2="no" sizeLabel="14px" setState={setState} state={state} field="weekend_order" name1={t("Pismenniy_Xizmatlar.ha")} name2={t("Pismenniy_Xizmatlar.yoq")} label={t("Pismenniy_Xizmatlar.damOlish")} /></Grid>
+                <Grid item xs={12} sm={6} md={4}><DoubleRadioLabel defaultApiValue={apiValue?.edit_text ? t("Pismenniy_Xizmatlar.ha") : t("Pismenniy_Xizmatlar.yoq")} value1="yes" value2="no" sizeLabel="14px" setState={setState} state={state} field="edit_text" name1={t("Pismenniy_Xizmatlar.ha")} name2={t("Pismenniy_Xizmatlar.yoq")} label={t("Pismenniy_Xizmatlar.matnTahrirlash")} /></Grid>
             </Grid>
             <Grid container spacing={1} style={{ marginTop: 20 }}>
                 <Grid item xs={12} md={6}>
                     <Container padding="37px 0 0" position="relative" top="-22px">
-                        <TextTitle font="15px" align="left" top="0" bottom="-10px" color="#262626">Internetga doimiy kirish imkoningiz bormi?</TextTitle>
-                            <div style={{ fontSize: '0.8rem', marginTop:10 }}>*shu jumladan katta hajmdagi fayllarni qabul qila olasizmi?</div>
+                        <TextTitle font="15px" align="left" top="0" bottom="-10px" color="#262626">{t("Pismenniy_Xizmatlar.onlineMisizdoim")}</TextTitle>
+                            <div style={{ fontSize: '0.8rem', marginTop:10 }}>{t("Pismenniy_Xizmatlar.kattaHajmMatn")}</div>
                         <FlexContainer width="100%" gap="10px">
                             <SelectLabeled defaultApiValue={apiValue?.always_online ? 'Ha' : "Yo'q'"} setCollect={setState} collect={state} field="always_online" options={option_yes} width="30%" sizeLabel="15px" placeholder="Tanlang" />
                             {/* <SelectLabeled setCollect={setState} collect={state} field="oral_translate_type" options={option_yes_sec} width="100%" placeholder="Ketma ket" /> */}
@@ -64,7 +66,7 @@ const Index = () => {
                     {/* <SelectLabeled label="Internetga doimiy kirish imkoningiz bormi?" setCollect={setState} collect={state} field="always_online" options={option_yes} width="100%" sizeLabel="15px" placeholder="Ha" /> */}
                 </Grid>
                 <Grid item xs={12} md={6} >
-                    <TextTitle font="15px" align="left" top="15px" bottom="-20px" left="20px" color="#262626"> Tarjima qilish uchun qanday CAT dasturlaridan foydalanasiz? <span className="cat_d">(Har bir so'zdan keyin Enter tugmasini bosing)</span> </TextTitle>
+                    <TextTitle font="15px" align="left" top="15px" bottom="-20px" left="20px" color="#262626">{t("Pismenniy_Xizmatlar.CAT")} <span className="cat_d">{t("Pismenniy_Xizmatlar.enterBos")}</span> </TextTitle>
                     <div className='inputss'>
                         <MultiValueInput defaultApiValue={apiValue?.cat_programmes} setState={setState} state={state} field="cat_programmes" />
                     </div>

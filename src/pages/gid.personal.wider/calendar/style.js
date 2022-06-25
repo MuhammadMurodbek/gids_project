@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
     margin:30px auto 80px;
     font-family: Montserrat !important;
     .wrap_cal{
-        width:450px;
+        width:390px;
         // background:red;
     }
     .container4{

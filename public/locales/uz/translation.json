@@ -156,7 +156,10 @@
     "reset":"Parolni tiklash ",
     "jonatildi":"*E-mail ga tasdiqlash kodini yuboramiz",
     "cod":"E-mail ni kiriting",
-    "send":"Kodni yuborish"
+    "send":"Kodni yuborish",
+    "Email":"Email kiriting",
+    "Parol":"Parolni kiriting",
+    "xatolik":"Xatolik yuz berdi..."
   },
   "emailni_tasdiqlash":{
     "textema":" E-mail ni tasdiqlang ",
@@ -321,7 +324,11 @@
     "fikirqoldirish":"Fikr qoldirish",
     "izohlar":"Izohlar mavjud emas.",
     "malumotKiritilmagan":"Ma'lumot kiritilmagan",
-    "videoYuklanmagan":"Video yuklanmagan."
+    "videoYuklanmagan":"Video yuklanmagan.",
+    "rasmYuklanmagan":"Rasmlar yuklanmagan",
+    "yoshKiritilmagan":"Yosh kiritilmagan",
+    "bioKiritilmagan":"Bio kiritilmagan",
+    "mavzular":"Mavzular:"
   },
   "kommentlar":{
     "textKiriting":"Text kiriting...",
@@ -365,7 +372,11 @@
     "OzingizHplace":"O‘zingiz haqingizda yozing",
     "certificatlar":"Sertifikat va diplomlaringiz bo‘lsa shu yerga yuklang",
     "sertifikatYuklang":"Sertifikat va diplomlaringizni yuklang (jpg va png formatida )",
-    "saqlash":"Saqlash"
+    "saqlash":"Saqlash",
+    "taqdimotlar":"Taqdimotlar, brifinglar, matbuot anjumanlari, seminarlar va treninglarda qatnashganmisiz?",
+    "nominiYozing":"Nomini yozing",
+    "nominiKiriting":"Nomini kiriting",
+    "yilniKiriting":"Yilni kiriting"
   },
   "MT_Kontaktlar":{
 
@@ -480,7 +491,12 @@
     "shaharlar":" Shahar",
     "shaharlarSelect":"Shaharni tanlang",
     "save":"Saqlash",
-    "tanlanmagan":"Davlat yoki shahar tanlanmagan"
+    "tanlanmagan":"Davlat yoki shahar tanlanmagan",
+    "mavzuYozing":"Mavzuni yozing",
+    "mavzuEmas":"Mening mavzuyim emas..",
+    "tarjima":"Tarjima turini tanlang",
+    "Izchil":"Izchil",
+    "Sinxron":"Sinxron"
    
   },
   "narxlar":{
@@ -500,9 +516,10 @@
     "videoVagalarey":"Video va galereya",
 
     
-
+    "tillar":"Tillar",
     "birkunlikHizmat":"Bir kunlik xizmat narxi",
     "birSoatlik":"Bir soatlik xizmat narxi",
+    "kunigaSoat":"Kuniga necha soat",
     "saq":"Saqlash"
     
   },
@@ -550,20 +567,24 @@
     "videoVagalereya":"Video va galereya",
     
     "bitirganInstitu":"Bitirgan instituti /universiteti",
-    "institutNmaePlace":"Bitirgan oliy ta’lim mussasasini kiriting",
+    "institutNmaePlace":"Bitirgan Oliy ta’lim muassasasini kiriting",
     "bitirganYil":"Bitirgan yili",
     "YilPlace":"Yil",
-    "Mutahasislig":"Mutaxassislik",
+    "Mutahasislig":"Mutaxassisligi",
     "mutahasisligPlace":"Mutaxassislikni yozing ",
     "tajriba":"Tajriba",
     "frilancermisiz":"Siz hozir frilansirmisiz?",
     "yes":"Ha",
     "No":"Yo’q",
-    "ishJoingizniKorsating":"Ish joyingizni yozing",
+    "ishJoingizniKorsating":"Ish joyingizni ko'rsating",
     "text":"Matn",
     "lavozimingiz":"Lavozimingiz",
     "ishVaqti":"Ish soatlaringiz",
-    "save":"Saqlash"
+    "save":"Saqlash",
+    "malumoti":"Ma'lumoti (institut / universitet nomi)",
+    "IshVaqtingiz":"Ish vaqtingiz",
+    "soatgacha":"(...gacha)",
+    "yilKiriting":"Bitirgan yilingizni kiriting"
   },
   "Ustniy_Xizmatlar":{
     "hizmatlar":"Xizmatlar",
@@ -575,7 +596,11 @@
     "MamlakatgaEPlace":"Davlatni tanlang",
     "shahar":"Shahar",
     "ShaharPlace":"Shaharni tanlang",
-    "save":"Saqlash"
+    "save":"Saqlash",
+    "QaysiTildan":"Siz qaysi tildan tarjima qilasiz?",
+    "QaysiTilga":"Siz qaysi tilga tarjima qilasiz?",
+    "tilniKiriting":"Tilni kiriting...",
+    "tarjimaMavzulari":"Tarjima mavzulari"
   },
 
 
@@ -617,7 +642,7 @@
     "TahrirlashBilanHam":"Matnlarni tahrirlash bilan ham shug’ullanasizmi?",
     "onlineMisizdoim":"Internetga doimiy kirish imkoningiz bormi?",
     "kattaHajimdagiText":"*Katta hajmdagi fayllarni ham qabul qila olasizmi?",
-    "CAT":"Tarjima qilish qaysi CAT dasturlaridan foydalanasiz?",
+    "CAT":"Tarjima qilish uchun qanday CAT dasturlaridan foydalanasiz?",
     "tarjimaMavzulari":"Tarjima mavzulari",
     "Umumiy-mavzular":"Umumiy mavzular",
     "meningMavzuimEmas":"Mening mavzuim emas",
@@ -644,8 +669,22 @@
     "tahrirlash2":"Matnlarni tahrirlash:" ,
     "internet":"Internetga doimiy kirish imkoni:" ,
     "katta":"Katta hajmdagi fayllarni qabul qilish:" ,
-    "cat":"Tarjima qilish uchun CAT dasturlari:"
+    "cat":"Tarjima qilish uchun CAT dasturlari:",
+    
+    
 
+
+
+    "birKunHajm":"Bir kunlik ish hajmingiz (belgi)",
+    "ogzakiTarjima":"Siz og'zaki tarjima ham qilasizmi?",
+    "shoshilinch":"Shoshilinch buyurtmalarni bajarasizmi?",
+    "damOlish":"Dam olish kunlari buyurtmalarni bajarasizmi?",
+    "matnTahrirlash":"Siz matnlarni tahrirlash bilan ham shug'ullanasizmi?",
+    "kattaHajmMatn":"*shu jumladan katta hajmdagi fayllarni qabul qila olasizmi?",
+    "enterBos":"(Har bir so'zdan keyin Enter tugmasini bosing)",
+    "text":"Matn",
+    "sinxron":"Sinxron",
+    "izchil":"Izchil"
 
   },
   "Pismini_narxlar":{
@@ -669,7 +708,9 @@
     "tilPlace":"Ruschadan - Inglizchaga",
     "birBetUchun":"1 sahifa uchun – 1 800 belgi (bo’shliqlar bilan)",
     "boshSiz":"1 sahifa uchun – 1 800 belgi (bo’shliqlarsiz)",
-    "saqlash":"Saqlash"
+    "saqlash":"Saqlash",
+    "narxlarBilan":"Narxlarni kiritish uchun tillarni bilish bo'limini to'ldiring"
+    
    },
    "reklama":{
     "Profilni_Korish":"Profilni ko’rish",
@@ -698,7 +739,17 @@
     "birHafta":"Bir haftalik tarif",
     "ikkiHafta":"Ikki haftalik tarif",
     "birOy":"Bir oylik tariff",
-    "tarifEmas":"Sizda tariflar tarixi mavjud emas"
+    "tarifEmas":"Sizda tariflar tarixi mavjud emas",
+    "MavjudEmas":"Sizda tarif mavjud emas",
+    "MazkurBir":"Mazkur tarifda siz profilingizni bir hafta mobaynida topga chiqarish imkoniyatiga ega bo’lasiz.",
+    "MazkurIkki":"Mazkur tarifda siz profilingizni ikki hafta mobaynida topga chiqarish imkoniyatiga ega bo’lasiz.",
+    "MazkurOy":"Mazkur tarifda siz profilingizni bir oy mobaynida topga chiqarish imkoniyatiga ega bo’lasiz.",
+    "tarifTanlang":"Tariflardan birini tanlang!!",
+    "TolovTanlang":"To'lov qilish uchun mavjud tariflardan birini tanlang.",
+    "hisobMablag":"Hisobingizdagi mablag‘:",
+    "hisobdan":"gits.uz dagi hisob",
+    "tolovQilish":"raqamdan to‘lov qilish",
+    "som":"so’m"
 
    },
    "hisobni_toldirish":{
@@ -709,11 +760,14 @@
      "hisobniToldirish":"Hisobni to’ldirish",
      "ortgaQaytish":"Ortga qaytish",
      "som":"so'm",
+     "VariantTanlanmagan":"To'lov varianti tanlanmagan.",
+     "BiriniTanlang":"Xisobni to'ldirish uchun to'lov variantlaridan birini tanlang",
      
 
 
 
-     "Tolovlar_tarihi":"To’lovlar tarixi"
+     "Tolovlar_tarihi":"To’lovlar tarixi",
+     "tolovlarTarixi":"Sizda to'lovlar tarixi mavjud emas"
     },
 
    "User_Profil":{
@@ -794,7 +848,7 @@
     "ortaMahsus":"O'rta maxsus"
 
 
-    
+
 
   }
 }

@@ -27,7 +27,7 @@ const Index = ({data}) => {
                             </Grid>
                         ))
                     }
-                </Grid>:<div>Rasmlar yuklanmagan</div>
+                </Grid>:<div>{t("GidPk.rasmYuklanmagan")}</div>
             }
            
         </Wrapper>

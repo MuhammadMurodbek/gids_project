@@ -1,7 +1,9 @@
 import React,{useState} from 'react';
 import { Modal } from 'antd';
+import { useTranslation } from 'react-i18next'
 
 const ModalSpinner = ({data, title}) => {
+  const { t } = useTranslation()
   const [state, setState] = useState(true)
   const handleCancel = () => {
     setState(false);
@@ -9,8 +11,8 @@ const ModalSpinner = ({data, title}) => {
   // console.log(data)
   return (
     <>
-      <Modal width={700} title={<span style={{color:'orangered'}}>{'Xatolik yuz berdi...'}</span>} visible={state} onCancel={handleCancel} onOk={handleCancel}>
-            <div style={{ color:'orangered'}}>ErrorText: {title}</div><br/>
+      <Modal width={700} title={<span style={{color:'orangered'}}>{t("auth_parolniTiklash.xatolik")}</span>} visible={state} onCancel={handleCancel} onOk={handleCancel}>
+            <div style={{ color:'orangered'}}>{t("auth_parolniTiklash.xatolik")} {title}</div><br/>
       </Modal>
     </>
   );

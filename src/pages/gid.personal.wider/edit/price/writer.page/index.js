@@ -11,7 +11,10 @@ import Spinner from "../../../../../components/atom/loading.spinner.line";
 import { getLabelLangLocal, toastChecker } from "../../../../../custom/function"
 import { useDispatch } from "react-redux";
 import { saveTabAction } from "../../../../../redux/actions"
+import { t } from 'i18next';
+import { useTranslation } from 'react-i18next'
 const Index = () => {
+    const {t} = useTranslation()
     const dispatch = useDispatch()
     const [dataItems, setdataItems] = useState({ success: '', error: '' })
     const [items, setItems] = useState([])
@@ -110,7 +113,7 @@ const Index = () => {
                 items.length === 0
                 ? 
                  <div className='text1'> 
-                    Narxlarni kiritish uchun tillarni bilish bo'limini to'ldiring
+                    {t("Pismini_narxlar.narxlarBilan")}
                  </div>
                 :
                 <Container width="100%" padding="10px 20px" margin="20px 0 0 0" textAlign="right">

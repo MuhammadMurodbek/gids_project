@@ -24,7 +24,7 @@ export default function Index() {
     useEffect(() => { getApiResponse('/api/posts/prices/', setListPayment) }, [])
     const handleAddCash = () => {
         let postData = { total_sum: value, return_url: "http://gits.uz/gid-personal-wider" }
-        if(!value) Modal.error({title:"To'lov varianti tanlanmagan.", content:"Xisobni to'ldirish uchun to'lov variantlaridan birini tanlang"})   
+        if(!value) Modal.error({title: t("hisobni_toldirish.VariantTanlanmagan"), content: t("hisobni_toldirish.BiriniTanlang")})   
         else postApiResponse('/api/posts/create-transaction/',postData, setPostState)
     }
     useEffect(()=>{

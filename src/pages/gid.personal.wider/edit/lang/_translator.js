@@ -65,10 +65,10 @@ const Translator = ( { getData, spinner, setCallback } ) => {
                         items?.map( ( item, index ) => (
                             <Grid key={ index } container spacing={ 1 } justifyContent="space-between">
                                 <Grid item xs={ 12 } sm={ 6 } md={ 6 }>
-                                    <TextLabeledLoop value={ getLabelLangLocal( item.from_language ) } label="Siz qaysi tildan tarjima qilasiz?" />
+                                    <TextLabeledLoop value={ getLabelLangLocal( item.from_language ) } label={t("Ustniy_Xizmatlar.QaysiTildan")} />
                                 </Grid>
                                 <Grid item xs={ 12 } sm={ 6 } md={ 5 }>
-                                    <TextLabeledLoop value={ getLabelLangLocal( item.to_language ) } label="Siz qaysi tilga tarjima qilasiz?" />
+                                    <TextLabeledLoop value={ getLabelLangLocal( item.to_language ) } label={t("Ustniy_Xizmatlar.QaysiTilga")} />
                                 </Grid>
                                 <Grid item xs={ 12 } sm={ 6 } md={ 1 }>
                                     <FlexContainer width="100%" flexDirection="column" gap="4px" margin="46px 0 0 0 ">
@@ -84,10 +84,10 @@ const Translator = ( { getData, spinner, setCallback } ) => {
 
                     <Grid container spacing={ 1 } justifyContent="space-between">
                         <Grid item xs={ 12 } sm={ 6 } md={ 6 }>
-                            <SelectLabeledLang clear={ clear } setClear={ setClear } disableMulti state={ item } setState={ setItem } field="from_language" sizeLabel="15px" width="100%" label="Siz qaysi tildan tarjima qilasiz?" placeholder="Tilni kiriting..." />
+                            <SelectLabeledLang clear={ clear } setClear={ setClear } disableMulti state={ item } setState={ setItem } field="from_language" sizeLabel="15px" width="100%" label={t("Ustniy_Xizmatlar.QaysiTildan")} placeholder={t("Ustniy_Xizmatlar.tilniKiriting")} />
                         </Grid>
                         <Grid item xs={ 12 } sm={ 6 } md={ 5 }>
-                            <SelectLabeledLang clear={ clear } setClear={ setClear } disableMulti state={ item } setState={ setItem } field="to_language" sizeLabel="15px" width="100%" label="Siz qaysi tilga tarjima qilasiz?" placeholder="Tilni kiriting..." />
+                            <SelectLabeledLang clear={ clear } setClear={ setClear } disableMulti state={ item } setState={ setItem } field="to_language" sizeLabel="15px" width="100%" label={t("Ustniy_Xizmatlar.QaysiTilga")} placeholder={t("Ustniy_Xizmatlar.tilniKiriting")} />
                         </Grid>
                         <Grid item xs={ 12 } sm={ 6 } md={ 1 }>
                             <FlexContainer width="100%" flexDirection="column" gap="4px" margin="46px 0 0 0 ">

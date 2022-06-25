@@ -55,9 +55,9 @@ const Index = () => {
                         <Grid container spacing={0} justifyContent="center" alignItems="center" flexDirection="column">
                             <Grid item xs={12} md={6}>
                                 <div style={{ width: '300px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                                    <div style={{ position: 'relative', left: 110 }}>{t("ishJadvali.tahrirlash")}</div>
+                                    <div style={{ position: 'relative', left: 70 }}>{t("ishJadvali.tahrirlash")}</div>
                                     <Switch
-                                        style={busy ? { background: 'red' } : { backgroundColor: "#326a32" }}
+                                        style={busy ? { background: 'red', width: "90px"} : { backgroundColor: "#326a32", width: "90px" }}
                                         checkedChildren={t("ishJadvali.band")}
                                         unCheckedChildren={t("ishJadvali.bosh")}
                                         onClick={() => setBusy(!busy)}

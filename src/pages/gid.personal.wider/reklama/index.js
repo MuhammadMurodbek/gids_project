@@ -15,7 +15,7 @@ import { getApiResponse, postApiResponse } from "../../../hooks/response_get"
 import Spinner from "../../../components/molecules/loading.spinner"
 
 import { objApi, objApiText } from "./external"
-import moment from 'moment';
+import moment from 'moment';    
 export default function Index() {
     const history = useHistory()
     const { t } = useTranslation()
@@ -32,7 +32,7 @@ export default function Index() {
     const handleHistory = () => { history.push('/history') }
     const handleHistoryPayment = () => { history.push('/history/payment') }
     const handlePayment = () => {
-        if (!classId) Modal.error({ title: 'Tariflardan birini tanlang!!', content: "To'lov qilish uchun mavjud tariflardan birini tanlang." });
+        if (!classId) Modal.error({ title: t("tariflar.tarifTanlang"), content: t("tariflar.TolovTanlang") });
         else postApiResponse('/api/posts/ad/', { tariff: classId }, setMyTarifPay)
     }
     useEffect(() => {
@@ -67,7 +67,7 @@ export default function Index() {
                                         <b className="right-b">{moment(myTarif?.data?.top_until_date).format('DD.MM.YYYY') || '01.01.2000'} gacha</b>
                                     </div>
                                 </Grid> :
-                                <div style={{ padding: "20px 0" }}>Sizda tarif mavjud emas</div>
+                                <div style={{ padding: "20px 0" }}>{t("tariflar.MavjudEmas")}</div>
                         }
                     </Grid>
                 }
@@ -119,9 +119,9 @@ export default function Index() {
                             <div className="pay pay2">
                                 <CheckCircleIcon className="icon-g" />
                                 <ImgContainer src={ckashalok} />
-                                <p className="cashlok_text">gits.uz dagi hisob  <br />
-                                    raqamdan to‘lov qilish</p>
-                                <p><b>Hisobingizdagi mablag‘:</b> <br /> {myTarif?.data?.wallet || '0'} so’m</p>
+                                <p className="cashlok_text">{t("tariflar.hisobdan")} <br />
+                                    {t("tariflar.tolovQilish")}</p>
+                                <p><b>{t("tariflar.hisobMablag")}</b> <br /> {myTarif?.data?.wallet || '0'} {t("tariflar.som")}</p>
                             </div>
                             <Button width="300px" margin="30px 0" type="outlined" onClick={() => history.push('/reklama/pay')}>{t("hisobni_toldirish.hisobni_toldirish")}</Button>
                         </div>

@@ -47,7 +47,7 @@ export default function Index() {
                                 </Grid>
                             )) :
                             <Grid container spacing={1} justifyContent="center" className="services history">
-                                <div style={{ padding: '20px 0' }}>Sizda to'lovlar tarixi mavjud emas</div>
+                                <div style={{ padding: '20px 0' }}>{t("hisobni_toldirish.tolovlarTarixi")}</div>
                             </Grid>
                     }
                 </>

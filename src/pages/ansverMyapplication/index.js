@@ -126,11 +126,11 @@ export default function Index() {
                                                     <span  style={{ textTransform: 'none' }}>
                                                         {
                                                             prev?.replier_role === "writer" ?
-                                                                "Yozma tarjimon" :
-                                                                prev?.replier_role === "gid" ?
+                                                                t("auth_registr.yozmaT") :
+                                                                prev?.replier_role === t("auth_registr.gid") ?
                                                                     "Gid" :
                                                                     prev?.replier_role === "translator" ?
-                                                                        "Og'zaki tarjimon" :
+                                                                        t("auth_registr.tarjimon") :
                                                                         t("GidPk.malumotKiritilmagan")
                                                         }
                                                     </span>

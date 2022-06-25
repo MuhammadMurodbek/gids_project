@@ -154,7 +154,10 @@
     "reset":"Reset password",
     "jonatildi":" We will send a confirmation code to your email",
     "cod":"Enter your email",
-    "send":"Confirm"
+    "send":"Confirm",
+    "Email":"Email kiriting",
+    "Parol":"Parolni kiriting",
+    "xatolik":"Xatolik yuz berdi..."
   },
   "emailni_tastiqlash":{
     "textema":"Confirm your email",
@@ -301,6 +304,8 @@
     "ekskursiyalar":"Excursions",
     "ogzaki":"Interpretation (serial):",
     "sinxron":"Simultaneous translation:",
+
+    "yozma":"Yozma tarjimon",
     "toifasi":"Category:",
     "izchil":"consistent translation:",
     "ekskursiyalar2":"Ekskursiyalar: ",
@@ -315,7 +320,11 @@
     "fikirqoldirish":"Fikr qoldirish",
     "izohlar":"Izohlar mavjud emas.",
     "malumotKiritilmagan":"Information not entered",
-    "videoYuklanmagan":"Video not uploaded."
+    "videoYuklanmagan":"Video not uploaded.",
+    "rasmYuklanmagan":"Rasmlar yuklanmagan",
+    "yoshKiritilmagan":"Yosh kiritilmagan",
+    "bioKiritilmagan":"Bio kiritilmagan",
+    "mavzular":"Mavzular:"
  
   },
   "kommentlar":{
@@ -358,7 +367,11 @@
     "OzingizHplace":"Write about yourself",
     "certificatlar":"Upload your certificates and diplomas here",
     "sertifikatYuklang":"Upload your certificates and diplomas here(in png and jpg format)",
-    "saqlash":"Save"
+    "saqlash":"Save",
+    "taqdimotlar":"Taqdimotlar, brifinglar, matbuot anjumanlari, seminarlar va treninglarda qatnashganmisiz?",
+    "nominiYozing":"Nomini yozing",
+    "nominiKiriting":"Nomini kiriting",
+    "yilniKiriting":"Yilni kiriting"
   },
   "MT_Kontaktlar":{
 
@@ -473,7 +486,12 @@
     "shaharlar":"City",
     "shaharlarSelect":"select a city",
     "save":"Save",
-    "tanlanmagan":"Country or city not selected"
+    "tanlanmagan":"Country or city not selected",
+    "mavzuYozing":"Mavzuni yozing",
+    "mavzuEmas":"Mening mavzuyim emas..",
+    "tarjima":"Tarjima turini tanlang",
+    "Izchil":"Izchil",
+    "Sinxron":"Sinxron"
   },
   "narxlar":{
     "Profilni_Korish":"View profile",
@@ -491,8 +509,10 @@
     "narxlar":"Prices",
     "videoVagalarey":"Video and gallery",
 
+    "tillar":"Tillar",
     "birkunlikHizmat":"The cost of one day of service",
     "birSoatlik":"The cost of an hour of service",
+    "kunigaSoat":"Kuniga necha soat",
     "saq":"Saqlash"
   },
   "Galarey":{
@@ -552,7 +572,11 @@
     "text":"Text",
     "lavozimingiz":"Lavozimingiz",
     "ishVaqti":"Ish vaqtingiz",
-    "save":"Saqlash"
+    "save":"Saqlash",
+    "malumoti":"Ma'lumoti (institut / universitet nomi)",
+    "IshVaqtingiz":"Ish vaqtingiz",
+    "soatgacha":"(...gacha)",
+    "yilKiriting":"Bitirgan yilingizni kiriting"
   },
   "Ustniy_Xizmatlar":{
     "hizmatlar":"Services",
@@ -564,7 +588,11 @@
     "MamlakatgaEPlace":"Select the country",
     "shahar":"City",
     "ShaharPlace":"Select the country",
-    "save":"Save"
+    "save":"Save",
+    "QaysiTildan":"Siz qaysi tildan tarjima qilasiz?",
+    "QaysiTilga":"Siz qaysi tilga tarjima qilasiz?",
+    "tilniKiriting":"Tilni kiriting...",
+    "tarjimaMavzulari":"Tarjima mavzulari"
   },
 
 
@@ -626,7 +654,21 @@
     "tahrirlash2":"Matnlarni tahrirlash:" ,
     "internet":"Internetga doimiy kirish imkoni:" ,
     "katta":"Katta hajmdagi fayllarni qabul qilish:" ,
-    "cat":"Tarjima qilish uchun CAT dasturlari:"
+    "cat":"Tarjima qilish uchun CAT dasturlari:",
+
+
+
+
+    "birKunHajm":"Bir kunlik ish hajmingiz (belgi)",
+    "ogzakiTarjima":"Siz og'zaki tarjima ham qilasizmi?",
+    "shoshilinch":"Shoshilinch buyurtmalarni bajarasizmi?",
+    "damOlish":"Dam olish kunlari buyurtmalarni bajarasizmi?",
+    "matnTahrirlash":"Siz matnlarni tahrirlash bilan ham shug'ullanasizmi?",
+    "kattaHajmMatn":"*shu jumladan katta hajmdagi fayllarni qabul qila olasizmi?",
+    "enterBos":"(Har bir so'zdan keyin Enter tugmasini bosing)",
+    "text":"Matn",
+    "sinxron":"Sinxron",
+    "izchil":"Izchil"
   },
   "Pismini_narxlar":{
     "Profilni_Korish":"Profilni ko'rish",
@@ -648,7 +690,8 @@
     "tilPlace":"Rus tilidan - Ingliz tiliga",
     "birBetUchun":"1 bet uchun - bo'shliqlar bilan 1800 belgi",
     "boshSiz":"1 bet uchun - 1800 belgi bo'sh joysiz",
-    "saqlash":"Saqlash"
+    "saqlash":"Saqlash",
+    "narxlarBilan":"Narxlarni kiritish uchun tillarni bilish bo'limini to'ldiring"
    },
    "reklama":{
     "Profilni_Korish":"Profilni ko'rish",
@@ -668,13 +711,23 @@
     "tolov":"To‘lov qilish",
     "tarifKorish":"View tariff history",
     "tolovKorish":"View payment history",
+    "tariflar": "Tariflar tarixi",
+    "tolovlar":"To’lovlar tarixi",
+    "rekgaQaytish":"Reklama bo'limiga qaytish",
     "som":"sum"
    },
    "tariflar":{
     "birHafta":"One weekly tariff",
     "ikkiHafta":"Two-week tariff",
     "birOy":"One monthly tariff",
-    "tarifEmas":"You do not have a tariff history"
+    "tarifEmas":"You do not have a tariff history",
+    "MavjudEmas":"Sizda tarif mavjud emas",
+    "tarifTanlang":"Tariflardan birini tanlang!!",
+    "TolovTanlang":"To'lov qilish uchun mavjud tariflardan birini tanlang.",
+    "hisobMablag":"Hisobingizdagi mablag‘:",
+    "hisobdan":"gits.uz dagi hisob",
+    "tolovQilish":"raqamdan to‘lov qilish",
+    "som":"so’m"
 
 
    },
@@ -686,7 +739,12 @@
      "hisobniToldirish":"Hisobni to’ldirish",
      "Tolovlar_tarihi":"To’lovlar tarixi",
      "ortgaQaytish":"Ortga qaytish",
-     "som":"sum"
+     "som":"sum",
+     "VariantTanlanmagan":"To'lov varianti tanlanmagan.",
+     "BiriniTanlang":"Xisobni to'ldirish uchun to'lov variantlaridan birini tanlang",
+     "tolovlarTarixi":"Sizda to'lovlar tarixi mavjud emas"
+
+     
     },
 
 
