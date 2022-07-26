@@ -143,7 +143,7 @@ const GidIndex = () => {
                                                             </Grid>
                                                             <Grid item xs={12} sm={6} md={5}>
                                                                 <TextLabeledLoop
-                                                                    label={t("xizmatlar.shaharlar")} value={item?.city[lang] || item?.city_name?.label || 'Mavud emas'} />
+                                                                    label={t("xizmatlar.shaharlar")} value={item?.city[lang] || item?.city_name?.label || 'Mavjud emas'} />
                                                             </Grid>
                                                             <Grid item xs={12} sm={12} md={1}  >
                                                                 <FlexContainer width="100%" alignItems="flex-end" justifyContent="flex-end" margin="44px 0 0 0">

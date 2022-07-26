@@ -36,7 +36,7 @@ export default function Index() {
                                 <Grid key={index} container spacing={1} justifyContent="center" className="services history">
                                     <Grid item md="11" xs="12" className="item_md_11">
                                         <div className="services_item" >
-                                            <p className="services_1">To‘lov No.{item.id}</p>
+                                            <p className="services_1">{t("hisobni_toldirish.tolovlar")} No.{item.id}</p>
                                             <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent aliquam sit ornare mattis id non aliquam convallis ut.</span>
                                         </div>
                                         <div className="right-prise">

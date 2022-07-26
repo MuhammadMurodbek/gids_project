@@ -109,7 +109,7 @@ const Index = ({ data, role }) => {
                                         </FlexContainer>
 
                                         <FlexContainer margin="0 0 5px">
-                                            <Text title={t("GidPk.ogzaki")}/>
+                                            <Text title={t("GidPk.yozmaTarjima")}/>
                                             <span className="yes_no">
                                                 {data?.consecutive_translate ? t("Pismenniy_Xizmatlar.ha") : t("Pismenniy_Xizmatlar.yoq")}
                                             </span>
@@ -130,6 +130,7 @@ const Index = ({ data, role }) => {
                             </FlexContainer>
                             <div class="box">
                                 <div class="box_child">
+                                <span><b>{t("GidPk.shaharlar")}</b></span>
                                     {
                                         data?.excursions?.length ?
                                             data?.excursions?.map((item) => (

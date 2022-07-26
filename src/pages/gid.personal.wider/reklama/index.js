@@ -36,12 +36,12 @@ export default function Index() {
         else postApiResponse('/api/posts/ad/', { tariff: classId }, setMyTarifPay)
     }
     useEffect(() => {
-        if (myTarifPay.error && myTarifPay.data?.data?.tariff[0] === 'not enough money') Modal.error({ title: 'Sizda yetarli mablag\' mavjud emas!!!', content: 'Hisobingizni to\'ldiring' })
+        if (myTarifPay.error && myTarifPay.data?.data?.tariff[0] === 'not enough money') Modal.error({ title: t("reklama.yetarliEmas"), content: t("reklama.hisobToldiring")})
         else if (myTarifPay.success) {
-            Modal.success({ title: 'Tarif sotib olish muvaffaqqiyatli amalga oshirildi !!!' })
+            Modal.success({ title: t("tariflar.tarifTolov") })
             setCallback(prev => !prev)
         } else if (myTarifPay.error && !myTarifPay.data?.data?.tariff[0] === 'not enough money') {
-            Modal.error({ title: "Xatolik yuz berdi", content: "Qaytadan urinib ko'ring." })
+            Modal.error({ title: t("tariflar.xatolik"), content: t("tariflar.qaytaUrining")})
         }
     }, [myTarifPay])
     // console.log(myTarifPay)

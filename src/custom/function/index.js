@@ -1,4 +1,5 @@
 import {toast} from "react-hot-toast"
+import { t } from 'i18next';
 const lan = localStorage.getItem("i18nextLng")
 // const gid_lang_obj=[
 //     {value:"en", label:'english'},
@@ -15,7 +16,7 @@ export const get_cities = (data) => {
 }
 
 export const toastChecker = (data, success, error) => {
-    if(data?.success!== '') toast.success(success || 'Successfully uploaded')
+    if(data?.success!== '') toast.success(success || t("profil_sozlamalari.yuklandi"))
     if(data?.error!== '') toast.error(error || 'Something went wrong')
 }
 export const getLabelLang = (id) => {

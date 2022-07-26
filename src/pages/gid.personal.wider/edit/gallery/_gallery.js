@@ -62,7 +62,8 @@ const Gallery = ({ role, setCallback }) => {
     return (
         <div>
             <div className="text_title" >
-                <b > {t("Galarey.Partfolio")} </b>
+                <b > {t("Galarey.Partfolio")} </b><br/>
+                <b > {t("Galarey.Partfolio2")} </b>
             </div>
             <Dragger {...props} className="dragger" >
 
