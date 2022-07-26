@@ -127,7 +127,7 @@ const Index = () => {
                         </Grid>
                     </Container>
                     <Container textAlign="right" padding="30px">
-                        <Button loader={updateResponse?.loading}>Saqlash</Button>
+                        <Button loader={updateResponse?.loading}></Button>
                     </Container>
                 </Container>
             </Wrapper>

@@ -13,10 +13,12 @@ import {selectValue, defaultListValue} from "./_const";
 import {getResponse, putResponse} from "../../../../hooks/response_get"
 import {common} from "../../../../custom/url"
 import {toastChecker} from "../../../../custom/function"
+import { useTranslation } from 'react-i18next'
 import toast from 'react-hot-toast';
 const Todos = ({state, setApiValue, setLoad}) => {
     let arrayList = defaultListValue()
     let optionList = selectValue()
+    const {t} = useTranslation()
     const [items, setItems] = useState(arrayList)
     const [item, setItem] = useState({name:'', level:''})
     const [getData, setGetData] = useState({success:'', error:''})
@@ -99,7 +101,7 @@ const Todos = ({state, setApiValue, setLoad}) => {
              
             <>
                 <TextTitle font="15px" align="left" left="5px" color="#000000d9" bottom="-12px" top="35px" >
-                    Tarjima mavzulari
+                    {t("Pismenniy_Xizmatlar.tarjimaMavzulari")}
                 </TextTitle>
                 <Box sx={{ flexGrow: 1 }}>
                     <Grid container columnSpacing={3} justifyContent="space-between" alignItems="center">
@@ -126,11 +128,11 @@ const Todos = ({state, setApiValue, setLoad}) => {
                             <Grid item xs={12} sm={10} md={6}>
                                 <Grid container spacing={1}>
                                     <Grid item xs={12} sm={6} md={6} >
-                                        <InputLabeled state={item} setState={setItem} field="name" width="100%" placeholder="Mavzuni yozing" />
+                                        <InputLabeled state={item} setState={setItem} field="name" width="100%" placeholder={t("xizmatlar.mavzuYozing")} />
                                     </Grid>
                                     <Grid item xs={12} sm={6} md={6}>
-                                        <Select options={optionList} collect={item} setCollect={setItem} field="level" margin="24px 0 0 0" width="100%" placeholder=" Mening mavzuyim emas" />
-                                        <Select options={optionList} collect={item} setCollect={setItem} field="level" margin="24px 0 0 0" width="100%" placeholder=" Mening mavzuyim emas.." />
+                                        <Select options={optionList} collect={item} setCollect={setItem} field="level" margin="24px 0 0 0" width="100%" placeholder={t("xizmatlar.mavzuEmas")} />
+                                        <Select options={optionList} collect={item} setCollect={setItem} field="level" margin="24px 0 0 0" width="100%" placeholder={t("xizmatlar.mavzuEmas")} />
                                     </Grid>
                                 </Grid>
                             </Grid>
@@ -145,7 +147,7 @@ const Todos = ({state, setApiValue, setLoad}) => {
                 </Container>
 
                 <Container padding="10px 0" textAlign="right">
-                    <Button loader={postApiData.loading} onClick={handleSubmit}>Saqlash</Button>
+                    <Button loader={postApiData.loading} onClick={handleSubmit}>{t("narxlar.saq")}</Button>
                 </Container>
             </>
             }

@@ -5,6 +5,7 @@ import RemoveRedEyeOutlinedIcon from '@material-ui/icons/RemoveRedEyeOutlined';
 import VisibilityOffOutlinedIcon from '@material-ui/icons/VisibilityOffOutlined';
 import {mainGreen} from "../../../styles/global/colors"
 import {QuestionCircleOutlined, CheckCircleOutlined} from '@ant-design/icons'
+import {useTranslation} from 'react-i18next'
 import PhoneInput, {
     formatPhoneNumber,
     formatPhoneNumberIntl,
@@ -13,6 +14,7 @@ import PhoneInput, {
   } from "react-phone-number-input";
 const Index = (props) => {
     
+    const {t} = useTranslation()
     const {width, label, password, sizeLabel, setState, state, field, defaultApiValue, clear, setClear, idK} = props
     const [phone, setPhone] = useState()
     // console.log(props?.defaultApiValue)
@@ -30,7 +32,7 @@ const Index = (props) => {
         <Wrapper width={width}>
             <Label size={sizeLabel}>{label}</Label>
             <Input onChange={setPhone} value={phone || "+"+defaultApiValue} paddingRight={password ? "45px":null}/>
-            <span style={{fontSize:'0.85rem'}}>Telefon raqamingizni davlat kodi bilan kiriting: {(phone || "+"+defaultApiValue) && isPossiblePhoneNumber(phone || "+"+defaultApiValue) ? <CheckCircleOutlined className="success_icon"/> : <QuestionCircleOutlined className="error_icon"/>}</span>
+            <span style={{fontSize:'0.85rem'}}>{t("profil_sozlamalari.telKiriting")}{(phone || "+"+defaultApiValue) && isPossiblePhoneNumber(phone || "+"+defaultApiValue) ? <CheckCircleOutlined className="success_icon"/> : <QuestionCircleOutlined className="error_icon"/>}</span>
         </Wrapper>
     )
 }

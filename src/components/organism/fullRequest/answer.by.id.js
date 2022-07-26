@@ -124,7 +124,7 @@ export default function Index({applicationData, setApplicationData, btnText, url
                     <div className="tafsilot-text">
                         <b> <ImageContainer src={odamlar} /></b>
                         <b>{t("ToliqAriza.tillar")} </b>
-                        <p>{getData?.success?.data?.languages?.map(a=>" "+getLabelLangLocal(a)+",") || "Ma'lumot kiritilmagan"}</p>
+                        <p>{getData?.success?.data?.languages?.map(a=>" "+getLabelLangLocal(a)+",") || t("GidPk.malumotKiritilmagan")}</p>
                     </div>
                     <div className="tafsilot-text">
                         <b> <ImageContainer src={til} /></b>
@@ -140,7 +140,7 @@ export default function Index({applicationData, setApplicationData, btnText, url
                     <div>
                         <div className="div1title">{t("ToliqAriza.arizaMatni")}</div>
                         <p>  
-                             {getData?.success?.data?.why_need || "Ma'lumot kiritilmagan"}
+                             {getData?.success?.data?.why_need || t("GidPk.malumotKiritilmagan")}
                         </p>   
                     </div>
                     <p className="f-sana">

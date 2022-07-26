@@ -127,7 +127,7 @@ const Index = () => {
                                     placeholder={t("maqolaYozish.NomiPlace")} />
 
                                 <br /><br />
-                                <p className='paragref'>Tags</p>
+                                <p className='paragref'>{t("maqolaYozish.taglar")}</p>
                                 <Select
                                     defaultValue={[colourOptions[2], colourOptions[3]]}
                                     isMulti

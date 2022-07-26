@@ -108,8 +108,8 @@ const Index = () => {
                     onChange={ handleChange }
                     sizeLabel="15px"
                     width="100%"
-                    label="Ism"
-                    placeholder="Ismingizni yozing..."
+                    label={t("MTmenHaqimda.isim")}
+                    placeholder={t("MTmenHaqimda.isimPlace")}
                     errorText={ error ? validatorState( state?.first_name, 'min', 3, 'Ism kiritilmagan (kamida 3 ta)' ) : null }
                   />
                 </Grid>
@@ -120,8 +120,8 @@ const Index = () => {
                     onChange={ handleChange }
                     sizeLabel="15px"
                     width="100%"
-                    label="Otangizning ismi"
-                    placeholder="Otangizni ismini yozing..."
+                    label={t("MTmenHaqimda.otasiningIsmi")}
+                    placeholder={t("MTmenHaqimda.otasiIplace")}
                     errorText={ error ? validatorState( state.middle_name, 'min', 3, 'Kamida 3 ta belgidan foydalaning' ) : null }
                   />
                 </Grid>
@@ -131,7 +131,7 @@ const Index = () => {
                   <CalendarLabel
                     sizeLabel="15px"
                     width="100%"
-                    label="Tug'ilgan sanangiz"
+                    label={t("MTmenHaqimda.tugilganSana")}
                     placeholder={moment(state?.birthday).format('DD-MM-YYYY') || "dd-mm-yyyy" }
                     placeholderValue={ state?.birthday || 'dd-mm-yyyy' }
                     setState={ setState }
@@ -144,9 +144,9 @@ const Index = () => {
                   <DoubleRadio
                     sizeLabel="15px"
                     field="gender"
-                    label="Jinsingiz"
-                    name1="Erkak"
-                    name2="Ayol"
+                    label={t("MTmenHaqimda.jins")}
+                    name1={t("MTmenHaqimda.erkak")}
+                    name2={t("MTmenHaqimda.ayol")}
                     value1="male"
                     value2="female"
                     state={ state }
@@ -166,7 +166,7 @@ const Index = () => {
                       setState={setState} 
                       state={state}
                       placeholder="Davlatni kiriting"
-                      label="Davlatni kiriting"
+                      label={t("kengaytirlgan_Q.DavlatniTanlang")}
                       defaultApiValue={
                         {value:state?.country, label:countryGlobal?.find(a=>a.id===state?.country)?.name} ||
                         {value:1, label:countryGlobal?.find(a=>a.id===1)?.name}
@@ -182,7 +182,7 @@ const Index = () => {
                         setState={setState}
                         state={state} 
                         isDisabled={countryId === null ? true:false}
-                        label="Shaharni kiriting"
+                        label={t("kengaytirlgan_Q.ShaharniTanlang")}
                         placeholder={t("kengaytirlgan_Q.ShaharniTanlang")}
                         defaultApiValue={{value:state?.city, label:state?.city_name}}
                     />
@@ -195,8 +195,8 @@ const Index = () => {
           <Container padding="10px 0">
             <TextArea
               width="100%"
-              label="O‘zingiz haqingizda"
-              placeholder="O‘zingiz haqingizda yozing..."
+              label={t("MTmenHaqimda.OzingizH")}
+              placeholder={t("MTmenHaqimda.OzingizHplace")}
               value={ state?.bio }
               field="bio"
               state={ state }
@@ -206,7 +206,7 @@ const Index = () => {
           </Container>
           <Container padding="10px 0">
             <TextTitle font="16px" align="left" top="15px">
-              Sertifikat va diplomlaringizni yuklang (jpg va png formatida )
+              {t("MTmenHaqimda.sertifikatYuklang")}
             </TextTitle>
             <GroupImageUpload role={ getRole?.role }/>
 
@@ -218,7 +218,7 @@ const Index = () => {
             ) : null }
             <div className="btnGrop">
               <Button calssName="saqlashbtn" onClick={ handleSubmit } loader={ responseHook?.loading } type="submit">
-                Saqlash
+                {t("MTmenHaqimda.saqlash")}
               </Button>
             </div>
           </Container>

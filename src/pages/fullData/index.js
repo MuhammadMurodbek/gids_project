@@ -13,11 +13,14 @@ import { getResponse, deleteResponse } from "../../hooks/response_get"
 import Spinner from "../../components/atom/loading.spinner.line"
 // import {error, success} from "../../components/organism/modals"
 import NoDataPage from "../../components/templates/no.data.page.js"
+import { useTranslation } from 'react-i18next';
 import './main.css'
+import { t } from "i18next";
 
 
 
 export default function Index() {
+  const { t } = useTranslation()
   const {id} = useParams()
   const history = useHistory()
   const getRole = JSON.parse(localStorage.getItem("user_token"));
@@ -80,7 +83,7 @@ export default function Index() {
 
                 <div className="mualif">
                   <div className="mualif-text">
-                    <b className="mualif-b">Muallif: </b>
+                    <b className="mualif-b">{t("Blog.muallif")} </b>
                     <span> {getArticle?.author?.first_name  +" "+  getArticle?.author?.last_name}  </span>
                   </div>
                 </div>
@@ -98,7 +101,7 @@ export default function Index() {
           </>:
           <div style={{width:'100%', textAlign:'center'}}>
               <NoDataPage/>
-              <Button type="outlined" onClick={()=>history.push('/gid-personal-wider?tab=0')}>Ortga qaytish</Button>
+              <Button type="outlined" onClick={()=>history.push('/gid-personal-wider?tab=0')}>{t("maqolaYozish.orqaga")}</Button>
           </div> 
         }
       </Wrapper>

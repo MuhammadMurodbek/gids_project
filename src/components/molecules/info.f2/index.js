@@ -36,7 +36,7 @@ const Index = ({ data, commentCount }) => {
                 </Grid>
                 <Grid container spacing={1} className="info-item">
                     <Grid item sm={3}><ImgContainer src={comment} width="30px" /></Grid>
-                    <Grid item sm={9}><span>{t("Gid_Tanlash.fikirlar")}</span><div className="comment_count comm_val">
+                    <Grid item sm={9}><span>{t("Gid_Tanlash.fikirlar")+" "}</span><div className="comment_count comm_val">
                         {commentCount?.all || '0'}</div>
                     </Grid>
                 </Grid>

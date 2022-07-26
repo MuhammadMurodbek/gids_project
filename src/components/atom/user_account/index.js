@@ -7,11 +7,12 @@ import { useHistory } from "react-router-dom"
 import { getResponse } from "../../../hooks/response_get"
 import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
 import LogoutIcon from '@mui/icons-material/Logout';
+import { useTranslation } from 'react-i18next'
 
 const getRole = JSON.parse(localStorage.getItem("user_token"));
 const Index = ({ role }) => {
 
-
+    const {t} = useTranslation()
     const [getData, setGetData] = useState({ success: '', error: '', loading: false })
     const history = useHistory()
     const getRole = JSON.parse(localStorage.getItem("user_token"))
@@ -32,7 +33,7 @@ const Index = ({ role }) => {
                         style={{color:"#326A32", marginRight:"10px" }}
                         />
                         <span  >
-                            Profil
+                            {t("GidPk.profilGid")}
                         </span>
                     </span>
                 </Link>
@@ -45,7 +46,7 @@ const Index = ({ role }) => {
                 <span  style={{display:"flex"}} >
                     <LogoutIcon style={{color:"#326A32", marginRight:"10px" }} />
                     <span>
-                        Chiqish
+                        {t("GidPk.Chiqish")}
                     </span>
                 </span>
             </Menu.Item>

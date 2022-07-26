@@ -7,6 +7,7 @@
     "Arizalar_royhati":"List of applications",
     "Ariza_qoldirish":"Leave an application",
     "GvaTtanlash":"Choosing a guide or translator",
+    "transport":"Transport",
     "kirish":"Kirish"
    },
    "footer":{
@@ -146,13 +147,17 @@
     "email2":"Enter the email",
     "pass":"Enter your password",
     "forget":"Forgot password",
-    "kirish":"Sign In"
+    "kirish":"Sign In",
+    "eslash":"Remember"
   },
   "auth_parolniTiklash":{
     "reset":"Reset password",
     "jonatildi":" We will send a confirmation code to your email",
     "cod":"Enter your email",
-    "send":"Confirm"
+    "send":"Confirm",
+    "Email":"Email kiriting",
+    "Parol":"Parolni kiriting",
+    "xatolik":"Xatolik yuz berdi..."
   },
   "emailni_tastiqlash":{
     "textema":"Confirm your email",
@@ -180,6 +185,7 @@
     "davlat":"Country",
     "shaxarlar":"City",
     "KerakSana":"Go / Date translator needed",
+    "sananiTanlang":"Select a date",
     "Bilishikerak":"Git / Translator languages  need to know",
     "BilishikeralPlac":"Selection of languages",
     "nimagaKerak":"Why do you need it?",
@@ -221,14 +227,16 @@
   "Blog":{
     "blog":"Blog",
     "davomiOqish":"Read more",
-    "edit":"Edit"
+    "edit":"Edit",
+    "muallif":"Author:"
   },
   "safarHaqda":{
     "title":"How was your trip?",
     "text":"Increase your income by writing articles about how the trip went!",
     "Maqolayozish":"Write an article",
     "Maqolalarim":"My articles",
-    "tahrirlash":"Edit"
+    "tahrirlash":"Edit",
+    "topilmadi":"Not found"
   },
   "maqolaYozish":{
      
@@ -256,6 +264,8 @@
 
 
   "GidPk":{
+    "profilGid":"Profil",
+    "Chiqish":"Exit",
     "Profilni_Korish":"My profile",
     "tahrirlash":"Edit",
     "kalendar":"Calendar",
@@ -292,9 +302,12 @@
     "bandkunlar":"Guide / Interpreter's busy days",
     "hizmatlar":"Services",
     "ekskursiyalar":"Excursions",
-    "ogzaki":"Interpretation (serial)",
-    "sinxron":"Simultaneous translation",
-    "izchil":"consistent translation",
+    "ogzaki":"Interpretation (serial):",
+    "sinxron":"Simultaneous translation:",
+
+    "yozma":"Yozma tarjimon",
+    "toifasi":"Category:",
+    "izchil":"consistent translation:",
     "ekskursiyalar2":"Ekskursiyalar: ",
     "sertificatlar":"My certificates and diplomas",
     "Gallery":"Gallery",
@@ -305,7 +318,20 @@
     "judaYomon":"Very bad",
     "koproqYuklash":"More downloads",
     "fikirqoldirish":"Fikr qoldirish",
-    "izohlar":"Izohlar mavjud emas."
+    "izohlar":"Izohlar mavjud emas.",
+    "malumotKiritilmagan":"Information not entered",
+    "videoYuklanmagan":"Video not uploaded.",
+    "rasmYuklanmagan":"Rasmlar yuklanmagan",
+    "yoshKiritilmagan":"Yosh kiritilmagan",
+    "bioKiritilmagan":"Bio kiritilmagan",
+    "mavzular":"Mavzular:"
+ 
+  },
+  "kommentlar":{
+    "textKiriting":"Enter text...",
+    "reytingniBaholang":"Rate rating",
+    "kommentShart":"Comment is required !!!",
+    "bahoShart":"Rating is required !!!"
   },
   "MTmenHaqimda":{
     "Profilni_Korish":"View profile",
@@ -324,11 +350,11 @@
     "videoVagalarey":"Video and gallery",
 
     "familya":"Surname",
-    "familyaPlace":"Write your last name",
+    "familyaPlace":"Write your last name...",
     "isim":"Name",
-    "isimPlace":"Write your name",
+    "isimPlace":"Write your name...",
     "otasiningIsmi":"Your father's name",
-    "otasiIplace":"Write your father's name",
+    "otasiIplace":"Write your father's name...",
     "tugilganSana":"Your date of birth",
     "jins":"Gender",
     "erkak":"Male",
@@ -340,7 +366,12 @@
     "OzingizH":"About yourself",
     "OzingizHplace":"Write about yourself",
     "certificatlar":"Upload your certificates and diplomas here",
-    "saqlash":"Save"
+    "sertifikatYuklang":"Upload your certificates and diplomas here(in png and jpg format)",
+    "saqlash":"Save",
+    "taqdimotlar":"Taqdimotlar, brifinglar, matbuot anjumanlari, seminarlar va treninglarda qatnashganmisiz?",
+    "nominiYozing":"Nomini yozing",
+    "nominiKiriting":"Nomini kiriting",
+    "yilniKiriting":"Yilni kiriting"
   },
   "MT_Kontaktlar":{
 
@@ -400,7 +431,7 @@
     "toifasi":"Category of guide",
     "toifaPlace":"Top Category Guide",
     "qoshimchaKurslar":"Additional courses",
-    "oqiganKurslaringiz":"Write down the courses you took",
+    "oqiganKurslaringiz":"Write down the courses you took and press the Enter button",
     "tajriba":"Experience",
     "year":"year",
     "saqlash":"Save" 
@@ -454,7 +485,13 @@
     "mamlakatPlace":"Select the country",
     "shaharlar":"City",
     "shaharlarSelect":"select a city",
-    "save":"Save"
+    "save":"Save",
+    "tanlanmagan":"Country or city not selected",
+    "mavzuYozing":"Mavzuni yozing",
+    "mavzuEmas":"Mening mavzuyim emas..",
+    "tarjima":"Tarjima turini tanlang",
+    "Izchil":"Izchil",
+    "Sinxron":"Sinxron"
   },
   "narxlar":{
     "Profilni_Korish":"View profile",
@@ -472,8 +509,10 @@
     "narxlar":"Prices",
     "videoVagalarey":"Video and gallery",
 
+    "tillar":"Tillar",
     "birkunlikHizmat":"The cost of one day of service",
     "birSoatlik":"The cost of an hour of service",
+    "kunigaSoat":"Kuniga necha soat",
     "saq":"Saqlash"
   },
   "Galarey":{
@@ -494,6 +533,7 @@
 
     "Partfolio":"You can make a video about yourself. This video is on your profile.",
     "galarey":"Your gallery",
+    "galareyangiz":"Your gallery",
     "saqlash":"Save"
   },
 
@@ -532,7 +572,11 @@
     "text":"Text",
     "lavozimingiz":"Lavozimingiz",
     "ishVaqti":"Ish vaqtingiz",
-    "save":"Saqlash"
+    "save":"Saqlash",
+    "malumoti":"Ma'lumoti (institut / universitet nomi)",
+    "IshVaqtingiz":"Ish vaqtingiz",
+    "soatgacha":"(...gacha)",
+    "yilKiriting":"Bitirgan yilingizni kiriting"
   },
   "Ustniy_Xizmatlar":{
     "hizmatlar":"Services",
@@ -544,7 +588,11 @@
     "MamlakatgaEPlace":"Select the country",
     "shahar":"City",
     "ShaharPlace":"Select the country",
-    "save":"Save"
+    "save":"Save",
+    "QaysiTildan":"Siz qaysi tildan tarjima qilasiz?",
+    "QaysiTilga":"Siz qaysi tilga tarjima qilasiz?",
+    "tilniKiriting":"Tilni kiriting...",
+    "tarjimaMavzulari":"Tarjima mavzulari"
   },
 
 
@@ -606,9 +654,26 @@
     "tahrirlash2":"Matnlarni tahrirlash:" ,
     "internet":"Internetga doimiy kirish imkoni:" ,
     "katta":"Katta hajmdagi fayllarni qabul qilish:" ,
+<<<<<<< HEAD
     "cat":"Tarjima qilish uchun CAT dasturlari:"
     
+=======
+    "cat":"Tarjima qilish uchun CAT dasturlari:",
+>>>>>>> 4455e4a5271e826489b347651a8d0baece8760a5
 
+
+
+
+    "birKunHajm":"Bir kunlik ish hajmingiz (belgi)",
+    "ogzakiTarjima":"Siz og'zaki tarjima ham qilasizmi?",
+    "shoshilinch":"Shoshilinch buyurtmalarni bajarasizmi?",
+    "damOlish":"Dam olish kunlari buyurtmalarni bajarasizmi?",
+    "matnTahrirlash":"Siz matnlarni tahrirlash bilan ham shug'ullanasizmi?",
+    "kattaHajmMatn":"*shu jumladan katta hajmdagi fayllarni qabul qila olasizmi?",
+    "enterBos":"(Har bir so'zdan keyin Enter tugmasini bosing)",
+    "text":"Matn",
+    "sinxron":"Sinxron",
+    "izchil":"Izchil"
   },
   "Pismini_narxlar":{
     "Profilni_Korish":"Profilni ko'rish",
@@ -630,7 +695,8 @@
     "tilPlace":"Rus tilidan - Ingliz tiliga",
     "birBetUchun":"1 bet uchun - bo'shliqlar bilan 1800 belgi",
     "boshSiz":"1 bet uchun - 1800 belgi bo'sh joysiz",
-    "saqlash":"Saqlash"
+    "saqlash":"Saqlash",
+    "narxlarBilan":"Narxlarni kiritish uchun tillarni bilish bo'limini to'ldiring"
    },
    "reklama":{
     "Profilni_Korish":"Profilni ko'rish",
@@ -647,14 +713,43 @@
     "xisobingiz":"Xisobingiz:",
     "Hisobni_toldirish":"Xisobni to‘ldirish",
     "bekor_qilish":"Bekor qilish",
-    "tolov":"To‘lov qilish"
+    "tolov":"To‘lov qilish",
+    "tarifKorish":"View tariff history",
+    "tolovKorish":"View payment history",
+    "tariflar": "Tariflar tarixi",
+    "tolovlar":"To’lovlar tarixi",
+    "rekgaQaytish":"Reklama bo'limiga qaytish",
+    "som":"sum"
+   },
+   "tariflar":{
+    "birHafta":"One weekly tariff",
+    "ikkiHafta":"Two-week tariff",
+    "birOy":"One monthly tariff",
+    "tarifEmas":"You do not have a tariff history",
+    "MavjudEmas":"Sizda tarif mavjud emas",
+    "tarifTanlang":"Tariflardan birini tanlang!!",
+    "TolovTanlang":"To'lov qilish uchun mavjud tariflardan birini tanlang.",
+    "hisobMablag":"Hisobingizdagi mablag‘:",
+    "hisobdan":"gits.uz dagi hisob",
+    "tolovQilish":"raqamdan to‘lov qilish",
+    "som":"so’m"
+
+
    },
    "hisobni_toldirish":{
      "hisobni_toldirish":"Xisobni to‘ldirish",
      "tolov_turini_tanlang":"To‘lov turini tanlang",
      "orqaga":"Ortga qaytish",
+     "tolovQilish":"Pay",
      "hisobniToldirish":"Hisobni to’ldirish",
-     "Tolovlar_tarihi":"To’lovlar tarixi"
+     "Tolovlar_tarihi":"To’lovlar tarixi",
+     "ortgaQaytish":"Ortga qaytish",
+     "som":"sum",
+     "VariantTanlanmagan":"To'lov varianti tanlanmagan.",
+     "BiriniTanlang":"Xisobni to'ldirish uchun to'lov variantlaridan birini tanlang",
+     "tolovlarTarixi":"Sizda to'lovlar tarixi mavjud emas"
+
+     
     },
 
 
@@ -711,9 +806,13 @@
 
     "kontaktlar":"Contacts",
     "parolniYangilash":"Password update",
+    "telefonvaemail":"Phone and e-mail",
+    "parolniOzgartirish":"Change password",
     "telefone":"Phone",
+    "telKiriting":"Enter your phone number with the state code:",
     "telRaqam":"Enter your number",
     "hozirgiParol":"Your current password",
+    "joriyParol":"Current password",
     "hozirgiParilPlac":"Parolni kiriting",
     "Email":"Email",
     "EmailPlac":"Enter your mail",
@@ -722,5 +821,26 @@
     "parolniTasdiqlash":"Confirm Password",
     "tasdilashPlac":"Re-enter the new password",
     "saqlash":"Save"
+  },
+  "ishJadvali":{
+    "tahrirlash":"Edit",
+    "bosh":"Empty",
+    "band":"Occupied",
+    "oylikJadvalim":"Monthly work schedule",
+    "ishKunlarim":"Working days",
+    "bandKunlarim":"Busy days",
+    "saqlash":"Save"
+
+  },
+  "toifalar":{
+    "oliyToifali":"Highest category",
+    "birinchiToifali":"First category",
+    "ikkinchiToifali":"Second category",
+    "toifasizToifali":"Uncategorized"
+  },
+  "mutahasis":{
+    "oliy":"High",
+    "ortaMahsus":"Secondary special"
+
   }
 }

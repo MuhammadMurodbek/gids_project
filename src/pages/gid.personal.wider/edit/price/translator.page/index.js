@@ -13,8 +13,10 @@ import { getLabelLangLocal, toastChecker } from "../../../../../custom/function"
 import { hours } from "./_const"
 import { useDispatch } from "react-redux";
 import { saveTabAction } from "../../../../../redux/actions"
+import { useTranslation } from 'react-i18next'
 // import {postResponse} from "../../../../../hooks/response_get"
 const Index = () => {
+    const {t} = useTranslation()
     const dispatch = useDispatch()
     const [getData, setGetData] = useState( { success: '', error: ''})
     const [stateCurr, setStateCurr] = useState({idK:null, currency:null})
@@ -93,25 +95,25 @@ const Index = () => {
                     <Container key={ index }>
                         <Grid container spacing={1} justifyContent="space-between"  alignItems="center">
                             <Grid item xs={12} sm={ 6 } md={4} lg={3}>
-                                <TextLabeledLoop label="Tillar" value={(getLabelLangLocal(prev?.from_language)+"->"+getLabelLangLocal(prev?.to_language) || null)}/>
+                                <TextLabeledLoop label={t("narxlar.tillar")} value={(getLabelLangLocal(prev?.from_language)+"->"+getLabelLangLocal(prev?.to_language) || null)}/>
                             </Grid>
                             <Grid item xs={12} sm={ 6 } md={3} lg={3}>
-                                <PriceCurrency prev={prev} setStateCurr={setStateCurr} stateCurr={stateCurr} defaultCost={prev?.cost_per_hour} defaultCurr={prev?.currency_per_hour} setState={setItem} state={item} idK={index+1} fieldS='currency_per_hour' fieldIn="cost_per_hour" title="Bir soatlik xizmat narxi" />
+                                <PriceCurrency prev={prev} setStateCurr={setStateCurr} stateCurr={stateCurr} defaultCost={prev?.cost_per_hour} defaultCurr={prev?.currency_per_hour} setState={setItem} state={item} idK={index+1} fieldS='currency_per_hour' fieldIn="cost_per_hour" title={t("narxlar.birSoatlik")} />
                             </Grid>
                             <Grid item xs={12} sm={ 6 } md={3} lg={3}>
-                                <PriceCurrency prev={prev} setStateCurr={setStateCurr} stateCurr={stateCurr} defaultCost={prev?.cost_per_day} defaultCurr={prev?.currency_per_day} setState={setItem} state={item} idK={index+1} fieldS='currency_per_day' fieldIn="cost_per_day" title="Bir kunlik xizmat narxi" />
+                                <PriceCurrency prev={prev} setStateCurr={setStateCurr} stateCurr={stateCurr} defaultCost={prev?.cost_per_day} defaultCurr={prev?.currency_per_day} setState={setItem} state={item} idK={index+1} fieldS='currency_per_day' fieldIn="cost_per_day" title={t("narxlar.birkunlikHizmat")} />
                             </Grid>
                             <Grid item xs={12} sm={ 6 } md={2} lg={2}>
-                                <SelectLabel prev={prev['work_time_per_day']} options={hours} field="work_time_per_day" setCollect={setItem} collect={item} idK={index+1} width="100%" label="Kuniga necha soat" placeholder="24" />
+                                <SelectLabel prev={prev['work_time_per_day']} options={hours} field="work_time_per_day" setCollect={setItem} collect={item} idK={index+1} width="100%" label={t("narxlar.kunigaSoat")} placeholder="24" />
                             </Grid>
                         </Grid>
                         
                     </Container>
                     <Container width="100%" padding="10px 20px" margin="20px 0 0 15px" textAlign="right">
-                        <Button loader={post?.loading} onClick={handleSubmit}>Saqlash</Button>
+                        <Button loader={post?.loading} onClick={handleSubmit}>{t("Pismini_narxlar.saqlash")}</Button>
                     </Container>
                     </>
-                 ))  : <div style={{textAlign:'center', marginTop:30}}>Narxlar bo'limi bilan ishlash uchun tillarni kiriting..</div>              
+                 ))  : <div style={{textAlign:'center', marginTop:30}}>{t("Pismini_narxlar.narxlarBilan")}</div>              
                 
             }
                    

@@ -9,8 +9,12 @@ import toast from 'react-hot-toast'
 import Spinner from "../../../../components/atom/loading.spinner.line";
 import { useDispatch } from 'react-redux'
 import { saveTabAction } from "../../../../redux/actions"
+import { useTranslation } from 'react-i18next'
+import { t } from 'i18next'
 
 const Index = () => {
+
+    const { t } = useTranslation()
     const dispatch = useDispatch()
     const getRole = JSON.parse(localStorage.getItem("user_token"))
     const [apiResponse, setApiResponse] = useState({ success: '', error: '' })
@@ -64,7 +68,7 @@ const Index = () => {
                             </Grid>
                         </Grid>
                         <Container padding="20px 0 5px" textAlign="right">
-                            <Button loader={apiRes?.loading} className="btns" onClick={handleSubmit}>Saqlash</Button>
+                            <Button loader={apiRes?.loading} className="btns" onClick={handleSubmit}>{t("IshTajriba.saqlash")}</Button>
                         </Container>
                     </>
                 )

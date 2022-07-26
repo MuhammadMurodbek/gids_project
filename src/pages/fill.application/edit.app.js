@@ -91,8 +91,8 @@ const EditApp = () => {
                                                 <Grid item xs={12} sm={12} md={6}>
                                                     {watch('who_need') === 'translator' &&
                                                         <div className="tra_ext">
-                                                            <CheckBoxController name="is_consecutive" control={control} label="Izchil" />
-                                                            <CheckBoxController name="is_synchronous" control={control} label="Sinxron" />
+                                                            <CheckBoxController name="is_consecutive" control={control} label={t("arizaqoldirish.izchil")} />
+                                                            <CheckBoxController name="is_synchronous" control={control} label={t("arizaqoldirish.sinxron")} />
                                                             <CheckBoxController name="is_writer" control={control} label="Yozma" />
                                                         </div>
                                                     }

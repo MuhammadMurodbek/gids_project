@@ -23,18 +23,18 @@ export default function Index({setCollect, collect, setCallback, url}) {
                 </div>
                 <div className="select_date">
                     <Date field="date_after"
-                        placeholder="dd/mm/yyyy  dan "
+                        placeholder={t("arizaqoldirish.dan")}
                         setState={setCollect} />
                 </div>
                 <div className="select_date">
                     <Date field="date_before"
-                        placeholder="dd/mm/yyyy  dan "
+                        placeholder={t("arizaqoldirish.gacha")}
                         setState={setCollect} />
                 </div>
                 <div className="searchI">
                     <button className="button_sub" onClick={handleSubmit}>
                         <SearchIcon />
-                        Qidiruv
+                        {t("kengaytirlgan_Q.qidirish")}
                     </button>
                 </div>
             </Grid>

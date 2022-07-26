@@ -61,13 +61,13 @@ const Index = ({ state, typeRole, comments, commentCount, commentReview }) => {
                                 />
                                 <Container {...mediaContainerSecondText} margin="-10px 0 0 15px">
                                     <TextTitle align="left" bottom="5px" font="20px">{state?.first_name || 'Mavjud emas'}{" "}{state?.last_name || 'Mavjud emas'}</TextTitle>
-                                    <div className="gid-info-personal">{state?.age ? state?.age + " " + t("GidPk.yosh") : 'Yosh kiritilmagan'} | <span style={{ textTransform: "none" }}>{typeRole?.role === 'simple_user' ? "Foydalanuvchi " : typeRole?.role === "writer" ? t("GidPk.yozma") : typeRole?.role === "translator" ? "Og'izaki tarjimon" : "Gid"} </span> </div>
+                                    <div className="gid-info-personal">{state?.age ? state?.age + " " + t("GidPk.yosh") : t("GidPk.yoshKiritilmagan")} | <span style={{ textTransform: "none" }}>{typeRole?.role === 'simple_user' ? "Foydalanuvchi " : typeRole?.role === "writer" ? t("GidPk.yozma") : typeRole?.role === "translator" ? t("auth_registr.tarjimon") : t("auth_registr.gid")} </span> </div>
                                     {
                                         typeRole?.role === 'gid' ?
                                             state?.languages?.map((prev, index) => (
                                                 <div key={index} className={index === 0 ? "gid-info-personal-text top" : "gid-info-personal-text"}>
-                                                    <div className="text">{languageCheck(prev, lan) || "Ma'lumot kiritilmagan"}</div>
-                                                    &nbsp; - {degreeLang[prev?.level] || "Ma'lumot kiritilmagan"}
+                                                    <div className="text">{languageCheck(prev, lan) || t("GidPk.malumotKiritilmagan")}</div>
+                                                    &nbsp; - {degreeLang[prev?.level] || t("GidPk.malumotKiritilmagan")}
                                                 </div>
                                             ))
                                             :
@@ -92,7 +92,7 @@ const Index = ({ state, typeRole, comments, commentCount, commentReview }) => {
 
                 <Container padding="30px">
                     <TextTitle font="15px" fontWeight="600" align="left" color="#326A32">{t("GidPk.OzimHaqimda")}</TextTitle>
-                    <p style={{ textAlign: 'justify' }}>{state?.bio || 'Bio kiritilmagan'}</p>
+                    <p style={{ textAlign: 'justify' }}>{state?.bio || t("GidPk.bioKiritilmagan")}</p>
                     {/* {
                         typeRole?.role === 'gid' ? null :
                             <ContainerBottom style={{ marginBottom: 10 }}>
@@ -118,7 +118,7 @@ const Index = ({ state, typeRole, comments, commentCount, commentReview }) => {
                                     </div>
                                 </ContainerBottom>
                             )) :
-                            typeRole?.role === 'gid' ? null : <div style={{ fontSize: '0.86rem' }}>Ma'lumot kiritilmagan</div>
+                            typeRole?.role === 'gid' ? null : <div style={{ fontSize: '0.86rem' }}>{t("GidPk.malumotKiritilmagan")}</div>
                     }
                 </Container>
 

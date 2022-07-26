@@ -9,11 +9,13 @@ import Button from "../../../components/atom/button"
 import { postResponse, getResponse } from "../../../hooks/response_get"
 import moment from "moment"
 import { toast } from "react-hot-toast"
+import { useTranslation } from 'react-i18next'
 const mediaContainer = {
     m_width: '940px',
     m_m_width: '300px',
 }
 const Index = () => {
+    const {t} = useTranslation()
     const getRole = JSON.parse(localStorage.getItem("user_token"));
     const [dateState, setDateState] = useState([])
     const [postData, setPostData] = useState({ success: '', error: '', loading: false })
@@ -53,11 +55,11 @@ const Index = () => {
                         <Grid container spacing={0} justifyContent="center" alignItems="center" flexDirection="column">
                             <Grid item xs={12} md={6}>
                                 <div style={{ width: '300px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                                    <div style={{ position: 'relative', left: 110 }}>Tahrirlash</div>
+                                    <div style={{ position: 'relative', left: 70 }}>{t("ishJadvali.tahrirlash")}</div>
                                     <Switch
-                                        style={busy ? { background: 'red' } : { backgroundColor: "#326a32" }}
-                                        checkedChildren="Band"
-                                        unCheckedChildren="Bo'sh"
+                                        style={busy ? { background: 'red', width: "90px"} : { backgroundColor: "#326a32", width: "90px" }}
+                                        checkedChildren={t("ishJadvali.band")}
+                                        unCheckedChildren={t("ishJadvali.bosh")}
                                         onClick={() => setBusy(!busy)}
                                     />
                                 </div>
@@ -66,7 +68,7 @@ const Index = () => {
                                 </DayPickerWrapper>
                             </Grid>
                             <Grid item xs={12} md={6} style={{ marginTop: 15 }}>
-                                <Button onClick={handleSubmit} type="outlined" style={{ width: "300px" }} loader={postData.loading}>Saqlash</Button>
+                                <Button onClick={handleSubmit} type="outlined" style={{ width: "300px" }} loader={postData.loading}>{t("ishJadvali.saqlash")}</Button>
                             </Grid>
                         </Grid>
                     </div>
@@ -75,7 +77,7 @@ const Index = () => {
                     <div className="wrap_cal">
                         <Grid container spacing={0} justifyContent="center" alignItems="center" flexDirection="column">
                             <Grid item xs={12} md={6}>
-                                <div style={{ width: '300px', textAlign: 'center' }}>Oylik ish jadvalim</div>
+                                <div style={{ width: '300px', textAlign: 'center' }}>{t("ishJadvali.oylikJadvalim")}</div>
                                 <DayPickerWrapper>
                                     <DayPicker
                                         title="no"

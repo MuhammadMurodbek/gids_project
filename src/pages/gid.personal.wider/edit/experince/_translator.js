@@ -111,16 +111,16 @@ const Translator = ( { getData } ) => {
 
       <Grid container spacing={ 1 }>
         <Grid item xs={ 12 } sm={ 6 } md={ 5 }>
-          <TextLabeled clear={ clear } setClear={ setClear } setState={ setState } state={ state } field="name" sizeLabel="14px" width="100%" label="Ma'lumoti (institut / universitet nomi)" placeholder="Bitirgan Oliy ta’lim mussasasini kiriting" />
+          <TextLabeled clear={ clear } setClear={ setClear } setState={ setState } state={ state } field="name" sizeLabel="14px" width="100%" label={t("Ustniy_MalumotvaIshtajriba.malumoti")} placeholder={t("Ustniy_MalumotvaIshtajriba.institutNmaePlace")} />
         </Grid>
         <Grid item xs={ 12 } sm={ 6 } md={ 3 }>
-          <YearPickerSelected clear={ clear } setClear={ setClear } setState={ setState } state={ state } field="year" sizeLabel="14px" width="100%" label="Bitirgan yili"
-          placeholder="Bitirgan yilingizni kiriting "
+          <YearPickerSelected clear={ clear } setClear={ setClear } setState={ setState } state={ state } field="year" sizeLabel="14px" width="100%" label={t("Ustniy_MalumotvaIshtajriba.bitirganYil")}
+          placeholder={t("Ustniy_MalumotvaIshtajriba.yilKiriting")}
           />
         </Grid>
         <Grid item xs={ 12 } sm={ 6 } md={ 3 }>
           <TextLabeled clear={ clear } setClear={ setClear } setState={ setState } 
-          state={ state } field="speciality" sizeLabel="14px" width="100%" label="Mutaxassisligi" placeholder="Mutaxassisligizni yozing..." />
+          state={ state } field="speciality" sizeLabel="14px" width="100%" label={t("Ustniy_MalumotvaIshtajriba.Mutahasislig")} placeholder={t("Ustniy_MalumotvaIshtajriba.mutahasisligPlace")} />
         </Grid>
         <Grid item xs={ 12 } sm={ 6 } md={ 1 }>
           <FlexContainer width="auto" flexDirection="column" gap="8px" margin="45px 0 0 auto" >
@@ -145,8 +145,8 @@ const Translator = ( { getData } ) => {
             <TextLabeled
               sizeLabel="15px"
               width="100%"
-              label="Ish joyingizni ko'rsating"
-              placeholder="Matn"
+              label={t("Ustniy_MalumotvaIshtajriba.ishJoingizniKorsating")}
+              placeholder={t("Ustniy_MalumotvaIshtajriba.text")}
               setState={ setPostData }
               state={ postData }
               field="work_place"
@@ -157,8 +157,8 @@ const Translator = ( { getData } ) => {
             <TextLabeled
               sizeLabel="15px"
               width="100%"
-              label="Lavozimingiz"
-              placeholder="Matn"
+              label={t("Ustniy_MalumotvaIshtajriba.lavozimingiz")}
+              placeholder={t("Ustniy_MalumotvaIshtajriba.text")}
               setState={ setPostData }
               state={ postData }
               field="position"
@@ -169,7 +169,7 @@ const Translator = ( { getData } ) => {
             <SelectLabeled
               sizeLabel="15px"
               width="100%"
-              label="Tajriba"
+              label={t("Ustniy_MalumotvaIshtajriba.tajriba")}
               placeholder="yil"
               options={ options_year }
               setCollect={ setPostData }
@@ -197,7 +197,7 @@ const Translator = ( { getData } ) => {
         <Grid container style={ { alignItems: 'center' } }>
           <Grid item xs={ 12 } sm={ 6 } md={ 2 } style={ { marginRight: 8 } }>
             <TimePicker
-              label="Ish vaqtingiz (...dan)"
+              label={t("Ustniy_MalumotvaIshtajriba.IshVaqtingiz")}
               setState={ setPostData }
               state={ postData }
               field="from"
@@ -207,7 +207,7 @@ const Translator = ( { getData } ) => {
           </Grid>
           <Grid item xs={ 12 } sm={ 6 } md={ 2 }>
             <TimePicker
-              label="(...gacha)"
+              label={t("Ustniy_MalumotvaIshtajriba.soatgacha")}
               setState={ setPostData }
               state={ postData }
               field="to"

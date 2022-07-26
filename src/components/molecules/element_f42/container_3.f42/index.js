@@ -64,9 +64,9 @@ const Index = ({ data, role }) => {
                             <br />
                             <Text title={t("Pismenniy_Xizmatlar.katta")} text={<span>&nbsp;{data?.always_online ? 'Ha' : "Yo'q"}&nbsp;</span>} /> 
                             <br />
-                            <Text title={t("Pismenniy_Xizmatlar.cat")} text={data?.cat_programmes?.length > 0 ? data?.cat_programmes?.map(a => <span style={{ textTransform: 'capitalize' }}>{" " + a + ","}</span>) : " Ma'lumot kiritilmagan"} />
+                            <Text title={t("Pismenniy_Xizmatlar.cat")} text={data?.cat_programmes?.length > 0 ? data?.cat_programmes?.map(a => <span style={{ textTransform: 'capitalize' }}>{" " + a + ","}</span>) : t("GidPk.malumotKiritilmagan")} />
 
-                            {data?.themes?.length > 0 && <div style={{ marginTop: 10 }}> <Text title="Mavzular:" /></div>}
+                            {data?.themes?.length > 0 && <div style={{ marginTop: 10 }}> <Text title={t("GidPk.mavzular")} /></div>}
 
                             <div className='mavzulardd'>
                                 {
@@ -83,7 +83,7 @@ const Index = ({ data, role }) => {
                 role === 'translator' ?
                     (<>
                         {/* <img src={cheked} alt="adfdd" className="classed" /> <Text title=" Sinxron" /><br /> */}
-                        <Text title="Mavzular:" />
+                        <Text title={t("GidPk.mavzular")} />
                         {
                             data?.themes?.map((prev, index) => (
                                 <Text key={index} display="block" text={<><TextSpan>{prev?.name}</TextSpan> - <TextSpan style={{ fontWeight: '400' }}>{obj[prev?.level]}</TextSpan></>} />
@@ -104,12 +104,12 @@ const Index = ({ data, role }) => {
                                     <Grid item md={12} className="as">
 
                                         <FlexContainer justifyContent="flex-start" margin="0 0 5px">
-                                            <Text title="Ekskursiyalar:" />
+                                            <Text title={t("GidPk.ekskursiyalar")} />
                                             <span className="yes_no">{data?.excursions?.length > 0 ? "Ha" : "Yo'q"}</span>
                                         </FlexContainer>
 
                                         <FlexContainer margin="0 0 5px">
-                                            <Text title="Og'zaki tarjima:" />
+                                            <Text title={t("GidPk.ogzaki")}/>
                                             <span className="yes_no">
                                                 {data?.consecutive_translate ? "Ha" : "Yo'q"}
                                             </span>
@@ -118,10 +118,10 @@ const Index = ({ data, role }) => {
                                         {data?.consecutive_translate &&
                                             <>
                                                 <FlexContainer margin="0 0 5px">
-                                                    <Text title="Sinxron tarjima:" /><span className="yes_no">{data?.synchronous_translate ? "Ha" : "Yo'q"}</span>
+                                                    <Text title={t("GidPk.sinxron")} /><span className="yes_no">{data?.synchronous_translate ? "Ha" : "Yo'q"}</span>
                                                 </FlexContainer>
                                                 <>
-                                                    <Text title="Izchil tarjima:" /><span className="yes_no">{data?.written_translate ? "Ha" : "Yo'q"}</span>
+                                                    <Text title={t("GidPk.izchil")} /><span className="yes_no">{data?.written_translate ? "Ha" : "Yo'q"}</span>
                                                 </>
                                             </>
                                         }

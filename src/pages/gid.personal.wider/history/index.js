@@ -7,8 +7,11 @@ import { Grid } from '@material-ui/core';
 import { getApiResponse } from "../../../hooks/response_get"
 import Spinner from "../../../components/molecules/loading.spinner"
 import { objApi } from "../reklama/external"
+import { useTranslation } from 'react-i18next'
 import moment from "moment"
+
 export default function Index() {
+    const {t} = useTranslation()
     const [historyState, setHistoryState] = useState({ data: null, error: false, success: false, loading: false })
 
     useEffect(() => {
@@ -18,9 +21,9 @@ export default function Index() {
     return (
         <Wrapper>
 
-            <Link to="/reklama" className="link-text"> <ArrowBackIcon className="arroles11" /> Reklama bo'limiga qaytish  </Link>
+            <Link to="/reklama" className="link-text"> <ArrowBackIcon className="arroles11" /> {t("reklama.rekgaQaytish")}</Link>
             <TextTitle className="text-title" bottom="50px" top="50px">
-                Tariflar tarixi
+                {t("reklama.tariflar")}
             </TextTitle>
 
             { historyState.loading && <Spinner />}
@@ -37,14 +40,14 @@ export default function Index() {
                                             <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent aliquam sit ornare mattis id non aliquam convallis ut.</span>
                                         </div>
                                         <div className="right-prise">
-                                            <b className="price_part">{item?.tariff?.price || '0'} so‘m</b>
+                                            <b className="price_part">{item?.tariff?.price || '0'} {t("hisobni_toldirish.som")}</b>
                                             <b className="right-b">{moment(item?.created_date).format('DD.MM.YYYY') || '01.01.2000'} gacha</b>
                                         </div>
                                     </Grid>
                                 </Grid>
                             )) :
                             <Grid container spacing={1} justifyContent="center" className="services history">
-                                <div style={{ padding: '20px 0' }}>Sizda tariflar tarixi mavjud emas</div>
+                                <div style={{ padding: '20px 0' }}>{t("tariflar.tarifEmas")}</div>
                             </Grid>
                     }
                 </>

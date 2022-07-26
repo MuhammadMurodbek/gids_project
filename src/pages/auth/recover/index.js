@@ -49,7 +49,7 @@ const Index = () => {
                                     height="300px"
                                     onChange={onChange}
                                     value={value}
-                                    placeholder="Email kiriting..."
+                                    placeholder={t("auth_parolniTiklash.Email")}
                                 />;
                             }}
 
@@ -67,7 +67,7 @@ const Index = () => {
                                     height="300px"
                                     onChange={onChange}
                                     value={value}
-                                    placeholder="Parolni kiriting..."
+                                    placeholder={t("auth_parolniTiklash.Parol")}
                                 />;
                             }}
                             />

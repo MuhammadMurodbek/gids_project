@@ -9,8 +9,10 @@ import TextLabeledLoop from "../../../../components/atom/text.labeled"
 import DeleteIcon from '@material-ui/icons/Delete';
 import 'animate.css';
 import YearPicker from "../../../../components/molecules/year.picker.labeled"
+import { useTranslation } from 'react-i18next'
 import toast from 'react-hot-toast';
 const Translator = ({setTrains, trains, setTrState, trState, clear, setClear}) => {
+    const { t } = useTranslation()
     const [delBool, setDelBool] = useState();
     const [state, setState] = useState({name:'', year:''})
     const [collect, setCollect] = useState([])
@@ -61,17 +63,17 @@ const Translator = ({setTrains, trains, setTrState, trState, clear, setClear}) =
     return (
         <div>
                <TextTitle font="16px" align="left" top="65px">
-                 Taqdimotlar, brifinglar, matbuot anjumanlari, seminarlar va treninglarda qatnashganmisiz?
+                {t("MTmenHaqimda.taqdimotlar")}
                 </TextTitle>
             {
                 collect?.length>0 ?
                 collect.map((item, index)=>(
                     <Grid container spacing={ 1 } key={ index } className={ delBool === item ?  'animate__animated animate__fadeOutLeft': 'animate__animated animate__fadeInUp'}>
                         <Grid item md={ 9 } xs={ 7 }> 
-                            <TextLabeledLoop label="" value={ item?.name } placeholder="Nomini kiriting"/>
+                            <TextLabeledLoop label="" value={ item?.name } placeholder={t("MTmenHaqimda.nominiKiriting")}/>
                         </Grid>
                         <Grid item md={ 2 } xs={ 4 }>
-                        <TextLabeledLoop label="" value={ item?.year } placeholder="Yilni kiriting"/>
+                        <TextLabeledLoop label="" value={ item?.year } placeholder={t("MTmenHaqimda.yilniKiriting")}/>
                         </Grid>
                         <Grid item md={ 1 } xs={ 1 }>
                             <div style={ { position: 'relative', top: 11 } }>
@@ -89,7 +91,7 @@ const Translator = ({setTrains, trains, setTrState, trState, clear, setClear}) =
                     <InputLabeled
                       sizeLabel="15px"
                       width="100%"
-                      placeholder="Nomini yozing"
+                      placeholder={t("MTmenHaqimda.nominiYozing")}
                       setState={setState}
                       state={state}
                       field="name"
@@ -104,7 +106,7 @@ const Translator = ({setTrains, trains, setTrState, trState, clear, setClear}) =
                        setState={setState}
                        state={state}
                        field="year"
-                       placeholder="Yilni kiriting"
+                       placeholder={t("MTmenHaqimda.yilniKiriting")}
                     />
                     {/* <InputLabeled
                       sizeLabel="15px"

@@ -4,8 +4,10 @@ import {useForm, Controller} from "react-hook-form"
 import InputText from "../../../components/atom/textAreaCom"
 import {postApiResponse} from "../../../hooks/response_get"
 import ModalPost from "../../../custom/test.components"
+import { useTranslation } from 'react-i18next'
 
 const Index = ({setCallback, open, setOpen, customId}) => {
+    const {t} = useTranslation()
     let inputFile = '';
     const token = JSON.parse(localStorage.getItem("user_token"))
     const {handleSubmit, control, formState:{errors}} = useForm()
@@ -35,7 +37,7 @@ const Index = ({setCallback, open, setOpen, customId}) => {
     return (
         <div>
             <ModalPost {...statePost} etitle= {statePost?.data?.status === 400 ? "Siz faqat bir marta xabar yoza olasiz !!!":"Xatolik yuz berdi. Qaytadan urinib ko'ring."} />
-             <Modal title="Fikr qoldirish" visible={open} onOk={handleOk} onCancel={handleCancel} width={800}>
+             <Modal title={t("GidPk.fikirqoldirish")} visible={open} onOk={handleOk} onCancel={handleCancel} width={800}>
                 {(token && token?.hasOwnProperty('access')) ? 
                      <form onSubmit={handleSubmit(onSubmit)}>
                      <Controller
@@ -48,13 +50,13 @@ const Index = ({setCallback, open, setOpen, customId}) => {
                                      height="300px" 
                                      onChange={onChange} 
                                      value={value} 
-                                     placeholder="Text kiriting..."  
+                                     placeholder={t("kommentlar.textKiriting")} 
                                     
                                  />;
                          }}
                      />
-                      {errors && errors?.comment && <span style={{color:'red'}}>Comment is required !!!</span>}
-                     <div style={{margin:'10px 0 0'}}>Reytingni baholang</div>
+                      {errors && errors?.comment && <span style={{color:'red'}}>{t("kommentlar.kommentShart")}</span>}
+                     <div style={{margin:'10px 0 0'}}>{t("kommentlar.reytingniBaholang")}</div>
                      <Controller
                          name="rating"
                          control={control}
@@ -63,7 +65,7 @@ const Index = ({setCallback, open, setOpen, customId}) => {
                              return <Rate onChange={onChange} value={value} />;
                          }}
                      />
-                     {errors && errors?.rating && <span style={{display:'block', color:'red'}}>Rating is required !!!</span>}
+                     {errors && errors?.rating && <span style={{display:'block', color:'red'}}>{t("kommentlar.bahoShart")}</span>}
                          <input type="submit" ref={input => {inputFile = input}} style={{display:'none'}}/>
                      </form>:
                      <div style={{color:'orangered'}}> Fikr qoldirish uchun ro'yxatdan o'tishingiz kerak...</div>

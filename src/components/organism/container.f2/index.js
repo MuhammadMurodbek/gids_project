@@ -53,7 +53,7 @@ const Index = ({ data }) => {
                 </Grid>
                 <Grid item xs={12} sm={6}>
                     <Container margin="30px 0 0 0">
-                        <TextTitle align="left" font="20px"> {(data?.first_name + " " + data?.last_name) || "Ma'lumot kiritilmagan"} </TextTitle>
+                        <TextTitle align="left" font="20px"> {(data?.first_name + " " + data?.last_name) || t("GidPk.malumotKiritilmagan")} </TextTitle>
                         <div className="gid-info-personal">{data?.age ? (data?.age + " " + "yosh") : "0 yosh"}  | <span style={{ textTransform: "none" }}>{data?.role === "translator" ? "Og'zaki tarjimon" : data?.role === "gid" ? "Gid" : data?.role === "writer" ? "Yozma tarjimon" : " "}
                         </span> </div>
                         <div className="gid-info-personal-text"><div className="text">
@@ -61,11 +61,11 @@ const Index = ({ data }) => {
                                 </div>
                             {
                                 data?.languages.length > 0 ?
-                                    data?.languages?.map((prev, index) => " " + languageCheck(prev, lang) + `${index !== data?.languages?.length - 1 ? ',' : ''}`) : "Ma'lumot kiritilmagan"
+                                    data?.languages?.map((prev, index) => " " + languageCheck(prev, lang) + `${index !== data?.languages?.length - 1 ? ',' : ''}`) : t("GidPk.malumotKiritilmagan")
                             }
                         </div>
                         <div className="gid-info-personal-text">
-                            <div className="bio_text"><div className="bold_text">{t("Gid_Tanlash.OzimHaqimda")}:</div> {data?.bio ? data?.bio?.slice(0,300)+"..." : "Ma'lumot kiritilmagan"}</div>
+                            <div className="bio_text"><div className="bold_text">{t("Gid_Tanlash.OzimHaqimda")}:</div> {data?.bio ? data?.bio?.slice(0,300)+"..." : t("GidPk.malumotKiritilmagan")}</div>
                             {/* <div className="text" style={{display:'inline-block'}}>  {t("Gid_Tanlash.OzimHaqimda")} :</div> */}
                             {/* <TruncateText
                                 width="auto"

@@ -1,3 +1,4 @@
+import { t } from 'i18next';
 import React from 'react';
 import DayPicker, { DateUtils } from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
@@ -49,7 +50,7 @@ export default class Example extends React.Component {
       <div style={{ textAlign: 'center', paddingBottom:'10px' }}>
         {
           this.props.title === "no" ? null :
-           <div style={{ fontWeight: 'bold', fontSize: '15px' , margin: "10px 0", transform: 'translateX(-10px)' }} className="oylikcenter">Oylik ish jadvalim</div>
+           <div style={{ fontWeight: 'bold', fontSize: '15px' , margin: "10px 0", transform: 'translateX(-10px)' }} className="oylikcenter">{t("ishJadvali.oylikJadvalim")}</div>
         }
         <DayPicker
           selectedDays={this.props.default ? this.props.selectedDays : this.state.selectedDays}
@@ -57,8 +58,8 @@ export default class Example extends React.Component {
         />
         <br />
         <div className='divbg'>
-            <span className='divdisplay'><span className='span_sirkle'></span>&nbsp;Ish kunlarim </span> 
-            <span className='divdisplay'><span className='span_sirkle2'></span> &nbsp;Band kunlarim </span>
+            <span className='divdisplay'><span className='span_sirkle'></span>&nbsp;{t("ishJadvali.ishKunlarim")} </span> 
+            <span className='divdisplay'><span className='span_sirkle2'></span> &nbsp;{t("ishJadvali.bandKunlarim")} </span>
         </div>
       </div>
     );

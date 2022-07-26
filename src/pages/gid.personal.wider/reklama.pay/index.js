@@ -11,8 +11,10 @@ import Spinner from "../../../components/molecules/loading.spinner"
 import click from '../../../assets/img/advertasing/img1.png';
 import { Modal} from 'antd';
 import { getApiResponse, postApiResponse } from "../../../hooks/response_get"
+import { useTranslation } from 'react-i18next'
 
 export default function Index() {
+    const { t } = useTranslation()
     const history = useHistory()
     const routerBack = () => history.push('/reklama')
     const [value, setValue] = React.useState(0);
@@ -22,7 +24,7 @@ export default function Index() {
     useEffect(() => { getApiResponse('/api/posts/prices/', setListPayment) }, [])
     const handleAddCash = () => {
         let postData = { total_sum: value, return_url: "http://gits.uz/gid-personal-wider" }
-        if(!value) Modal.error({title:"To'lov varianti tanlanmagan.", content:"Xisobni to'ldirish uchun to'lov variantlaridan birini tanlang"})   
+        if(!value) Modal.error({title: t("hisobni_toldirish.VariantTanlanmagan"), content: t("hisobni_toldirish.BiriniTanlang")})   
         else postApiResponse('/api/posts/create-transaction/',postData, setPostState)
     }
     useEffect(()=>{
@@ -37,7 +39,7 @@ export default function Index() {
         <Wrapper01>
             <Wrapper02>
                 <TextTitle font="24px" align="left" className="text-title" bottom="30px" top="70px">
-                    Xisobni to‘ldirish
+                    {t("reklama.Hisobni_toldirish")}
                 </TextTitle>
                 {listPayment.loading && <Spinner/>}
                 {listPayment.success && (
@@ -47,7 +49,7 @@ export default function Index() {
                                 <Radio.Group onChange={onChange} value={value} className="radio_group">
                                 {
                                     listPayment.data?.map((item,index)=>(
-                                        <Radio key={index} value={item} className="price_item">&nbsp; {item} so'm</Radio>
+                                        <Radio key={index} value={item} className="price_item">&nbsp; {item} {t("hisobni_toldirish.som")}</Radio>
                                     ))
                                 }
                             </Radio.Group>:
@@ -57,7 +59,7 @@ export default function Index() {
                     </>)
                 }
                 <TextTitle font="24px" align="left"  className="text-title" bottom="30px" top="80px">
-                    To‘lov turini tanlang
+                    {t("reklama.tolovturi")}
                 </TextTitle>
                 <Grid container spacing={1}>
                     <Grid item md="10" className="cashlok">
@@ -72,8 +74,8 @@ export default function Index() {
             </Wrapper02>
             <div className="payment">
                 <div className="btn-group">
-                    <Button className="btn-pey" margin="30px 0" type="outlined" onClick={routerBack}>Ortga qaytish</Button>
-                    <Button loader={postState.loading} className="btn-pey" margin="30px 0" onClick={handleAddCash} >Hisobni to’ldirish</Button>
+                    <Button className="btn-pey" margin="30px 0" type="outlined" onClick={routerBack}>{t("hisobni_toldirish.ortgaQaytish")}</Button>
+                    <Button loader={postState.loading} className="btn-pey" margin="30px 0" onClick={handleAddCash} >{t("hisobni_toldirish.hisobniToldirish")}</Button>
                 </div>
             </div>
         </Wrapper01>

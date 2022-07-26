@@ -10,9 +10,11 @@ import Button from "../../components/atom/button";
 import true400 from '../../assets/img/advertasing/truebg.svg';
 import fols from '../../assets/img/advertasing/fols.svg';
 import ckashalok from '../../assets/img/advertasing/kashlok.svg';
+import { useTranslation } from 'react-i18next';
 
 
 export default function Index() {
+    const { t } = useTranslation()
     return (
         <Wrapper01>
             <Wrapper>
@@ -29,7 +31,7 @@ export default function Index() {
                             <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent aliquam sit ornare mattis id non aliquam convallis ut.</span>
                         </div>
                         <div>
-                            <b>1 500 so‘m</b>
+                            <b>1 500 {t("reklama.som")}</b>
                         </div>
                     </Grid>
                 </Grid>
@@ -45,7 +47,7 @@ export default function Index() {
                         </div>
 
                         <div>
-                            <b>1 500 so‘m</b>
+                            <b>1 500 {t("reklama.som")}</b>
                         </div>
                     </Grid>
                 </Grid>
@@ -59,7 +61,7 @@ export default function Index() {
                             <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent aliquam sit ornare mattis id non aliquam convallis ut.</span>
                         </div>
                         <div>
-                            <b>1 500 so‘m</b>
+                            <b>1 500 {t("reklama.som")}</b>
                         </div>
                     </Grid>
                 </Grid>
@@ -75,7 +77,7 @@ export default function Index() {
                                 <ImgContainer src={ckashalok} />
                                 <p className="cashlok_text">Gits.uz xisob  <br />
                                     raqamidan to‘lash</p>
-                                <p><b>Xisobingiz:</b> 20 000 so’m</p>
+                                <p><b>Xisobingiz:</b> 20 000 {t("reklama.som")}</p>
                             </div>
                             <Button width="300px" margin="30px 0" type="outlined">Xisobni to‘ldirish</Button>
                         </div>
@@ -85,7 +87,7 @@ export default function Index() {
                                 <ImgContainer src={ckashalok} />
                                 <p className="cashlok_text">Gits.uz xisob  <br />
                                     raqamidan to‘lash</p>
-                                <p><b>Xisobingiz:</b> 20 000 so’m</p>
+                                <p><b>Xisobingiz:</b> 20 000 {t("reklama.som")}</p>
                             </div>
                             <Button width="300px" margin="30px 0" type="outlined">Xisobni to‘ldirish</Button>
                         </div>

@@ -11,13 +11,10 @@ import NoDataPage from "../../components/templates/no.data.page.js"
 import Spinner from "../../components/atom/loading.spinner.line"
 import {useHistory} from "react-router-dom"
 import ModalContainer from "./modal"
-import { useTranslation } from 'react-i18next'
-
-
+import { useTranslation } from 'react-i18next';
 
 export default function Index() {
-
-    const { t } = useTranslation()
+    const {t} = useTranslation()
     const history = useHistory()
     let query = window.location.search
     function searchToObject(search) {
@@ -65,7 +62,7 @@ export default function Index() {
                                             commentCount={commentApi?.success?.data?.counts}
                                             commentReview={commentApi?.success?.data?.reviews}
                                         />
-                                        {apiData?.success && <Button onClick={()=>setOpenModal(true)}>{t("SeeProfile.fikirQ")}</Button>}
+                                        {apiData?.success && <Button onClick={()=>setOpenModal(true)}>{t("GidPk.fikirqoldirish")}</Button>}
                                     </Grid>
                                     
                                     <Grid item xs={12} md={4}>

@@ -2,6 +2,7 @@ import React from 'react'
 import { Input,InputWrapper } from './style'
 import "react-phone-number-input/style.css";
 import {QuestionCircleOutlined, CheckCircleOutlined} from '@ant-design/icons'
+import {useTranslation} from 'react-i18next'
 import PhoneInput, {
   formatPhoneNumber,
   formatPhoneNumberIntl,
@@ -10,13 +11,14 @@ import PhoneInput, {
 } from "react-phone-number-input";
 const Index = (props) => {
     // const {errorText} = props;
+    const {t} = useTranslation()
     const {state, setState, value, onChange} = props;
     return (
         <InputWrapper>
             <PhoneInput
                 {...props}
                 international
-                placeholder="Enter phone number"
+                placeholder={t("profil_sozlamalari.telRaqam")}
                 value={value}
                 maxLength={17}
                 onChange={onChange}

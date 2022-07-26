@@ -14,6 +14,7 @@ import { deleteResponse, patchResponseNonFile } from "../../hooks/response_get"
 import PersonIcon from '@mui/icons-material/Person';
 import {success, error} from "./functions"
 import { SyncOutlined } from '@ant-design/icons';
+import { useTranslation } from 'react-i18next'
 
 export const mediaImage = {
     m_width: "960px",
@@ -21,6 +22,7 @@ export const mediaImage = {
     m_m_text_align: "center",
 }
 export default function Index() {
+    const {t} = useTranslation()
     const history = useHistory()
     const [callback, setCallback] = useState(false)
     const [patchResponseData, setPatchResponseData] = useState({success:'', error:'', loading:false})
@@ -124,17 +126,17 @@ export default function Index() {
                                                     <span  style={{ textTransform: 'none' }}>
                                                         {
                                                             prev?.replier_role === "writer" ?
-                                                                "Yozma tarjimon" :
-                                                                prev?.replier_role === "gid" ?
+                                                                t("auth_registr.yozmaT") :
+                                                                prev?.replier_role === t("auth_registr.gid") ?
                                                                     "Gid" :
                                                                     prev?.replier_role === "translator" ?
-                                                                        "Og'zaki tarjimon" :
-                                                                        "Ma'lumot kiritilmagan"
+                                                                        t("auth_registr.tarjimon") :
+                                                                        t("GidPk.malumotKiritilmagan")
                                                         }
                                                     </span>
                                                 </div>
                                                 <div className="feedbeeck-text">
-                                                    {prev?.reply || "Ma'lumot kiritilmagan"}
+                                                    {prev?.reply || t("GidPk.malumotKiritilmagan")}
                                                 </div>
 
                                                 <div className="btn-groups">
