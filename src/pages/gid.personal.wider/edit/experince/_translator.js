@@ -146,7 +146,7 @@ const Translator = ( { getData } ) => {
               sizeLabel="15px"
               width="100%"
               label={t("Ustniy_MalumotvaIshtajriba.ishJoingizniKorsating")}
-              placeholder={t("Ustniy_MalumotvaIshtajriba.text")}
+              placeholder={t("Ustniy_MalumotvaIshtajriba.ishKiriting")}
               setState={ setPostData }
               state={ postData }
               field="work_place"
@@ -158,7 +158,7 @@ const Translator = ( { getData } ) => {
               sizeLabel="15px"
               width="100%"
               label={t("Ustniy_MalumotvaIshtajriba.lavozimingiz")}
-              placeholder={t("Ustniy_MalumotvaIshtajriba.text")}
+              placeholder={t("Ustniy_MalumotvaIshtajriba.lavozimKiriting")}
               setState={ setPostData }
               state={ postData }
               field="position"
@@ -188,7 +188,7 @@ const Translator = ( { getData } ) => {
               setCollect={ setPostData }
               collect={ setPostData }
               field="is_freelancer"
-              defaultApiValue={ getData?.success?.data ? getData?.success?.data?.is_freelancer ? "Ha" : "Yoq" : false }
+              defaultApiValue={ getData?.success?.data ? getData?.success?.data?.is_freelancer ? "Ha" : "Yo'q" : false }
             />
           </Grid> */}
         </Grid>

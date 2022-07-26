@@ -3,8 +3,10 @@ import styled from "styled-components"
 import { TextTitle } from "../../../../../styles/textTitle/index.style"
 import InputLabeled from "../../../../../components/atom/input.second"
 import Selection from "../../../../../components/atom/select"
+import { useTranslation } from 'react-i18next'
 import {currency, CURRENCY_CHECK} from "../../../../../custom/constants"
 const PriceCurrency = (props) => {
+    const { t } = useTranslation()
     const { title, defValueCost, defValueCurrency, setState, state, fieldIn, fieldS, idK, handleChangeInput } = props
    
     return (
@@ -18,7 +20,7 @@ const PriceCurrency = (props) => {
                         defaultValue={state[fieldIn] || defValueCost}
                         onChange={(e)=>handleChangeInput(e.target.value, fieldIn, idK)}
                         name={fieldIn}
-                        placeholder="Son kiriting.." 
+                        placeholder={t("narxlar.sonKiriting")} 
                         step="0.001"
                         style={{position: "relative", top:13}} 
                     />

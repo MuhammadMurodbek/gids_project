@@ -49,7 +49,7 @@ const Index = () => {
                     <>
                         <Grid container spacing={2}>
                             <Grid item xs={12} sm={6} md={4}>
-                                <InputLabel log="hhttps://whatsapp.com/" setState={setState} state={state} field="website" defaultApiValue={apiResponse?.success?.data?.website?.substr(8)} sizeLabel="15px" width="100%" label="Whatsapp" placeholder="https://www.whatsapp.com/user-name" />
+                                <InputLabel log="https://whatsapp.com/" setState={setState} state={state} field="website" defaultApiValue={apiResponse?.success?.data?.website?.substr(8)} sizeLabel="15px" width="100%" label="Whatsapp" placeholder="https://www.whatsapp.com/user-name" />
                             </Grid> 
                             <Grid item xs={12} sm={6} md={4}>
                                 <InputLabel log="https://t.me/" setState={setState} state={state} field="telegram" defaultApiValue={apiResponse?.success?.data?.telegram?.slice(13)} sizeLabel="15px" width="100%" label="Telegram" placeholder="https://t.me/user-name" />

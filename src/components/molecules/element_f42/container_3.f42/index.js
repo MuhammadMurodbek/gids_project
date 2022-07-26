@@ -16,10 +16,10 @@ const Index = ({ data, role }) => {
     const lan = localStorage.getItem("i18nextLng")
     // const getRole = JSON.parse(localStorage.getItem("user_token"))
     const obj = {
-        no: 'Mening mavzuim emas',
-        great: "A'lo",
-        good: "Yaxshi",
-        low: 'Quyi',
+        no: t("Pismenniy_Xizmatlar.meningMavzuimEmas"),
+        great: t("Pismenniy_Xizmatlar.alo"),
+        good: t("Pismenniy_Xizmatlar.yaxshi"),
+        low: t("Pismenniy_Xizmatlar.orta"),
     }
 
     console.log(uniq_fast(data?.excursions))
@@ -50,19 +50,19 @@ const Index = ({ data, role }) => {
                             </TextSpan>} />
                             <br />
                             <Text title={t("Pismenniy_Xizmatlar.ogzakit")}
-                                text={<span>&nbsp;{data?.can_oral_translate ? 'Ha (Sinxron)' : "Yo'q"}&nbsp;
+                                text={<span>&nbsp;{data?.can_oral_translate ? t("Pismenniy_Xizmatlar.haS") : t("Pismenniy_Xizmatlar.yoq")}&nbsp;
                                 </span>} />
                             <br />
-                            <Text title={t("Pismenniy_Xizmatlar.shoshilikch")} text={<span>&nbsp;{data?.express_order ? 'Ha' : "Yo'q"}&nbsp;</span>} /> 
+                            <Text title={t("Pismenniy_Xizmatlar.shoshilikch")} text={<span>&nbsp;{data?.express_order ? t("Pismenniy_Xizmatlar.ha")  : t("Pismenniy_Xizmatlar.yoq") }&nbsp;</span>} /> 
                             <br />
-                            <Text title={t("Pismenniy_Xizmatlar.damolish")} text={<span>&nbsp;{data?.weekend_order ? 'Ha' : "Yo'q"}&nbsp;</span>} /> 
+                            <Text title={t("Pismenniy_Xizmatlar.damolish")} text={<span>&nbsp;{data?.weekend_order ? t("Pismenniy_Xizmatlar.ha")  : t("Pismenniy_Xizmatlar.yoq") }&nbsp;</span>} /> 
                             <br />
-                            <Text title={t("Pismenniy_Xizmatlar.tahrirlash2")} text={<span>&nbsp;{data?.edit_text ? 'Ha' : "Yo'q"}&nbsp;</span>} />
+                            <Text title={t("Pismenniy_Xizmatlar.tahrirlash2")} text={<span>&nbsp;{data?.edit_text ? t("Pismenniy_Xizmatlar.ha")  : t("Pismenniy_Xizmatlar.yoq") }&nbsp;</span>} />
                              <br />
-                            <Text title={t("Pismenniy_Xizmatlar.internet")} text={<span>&nbsp;{data?.always_online ? 'Ha' : "Yo'q"}&nbsp;
+                            <Text title={t("Pismenniy_Xizmatlar.internet")} text={<span>&nbsp;{data?.always_online ? t("Pismenniy_Xizmatlar.ha")  : t("Pismenniy_Xizmatlar.yoq") }&nbsp;
                             </span>} /> 
                             <br />
-                            <Text title={t("Pismenniy_Xizmatlar.katta")} text={<span>&nbsp;{data?.always_online ? 'Ha' : "Yo'q"}&nbsp;</span>} /> 
+                            <Text title={t("Pismenniy_Xizmatlar.katta")} text={<span>&nbsp;{data?.always_online ? t("Pismenniy_Xizmatlar.ha")  : t("Pismenniy_Xizmatlar.yoq") }&nbsp;</span>} /> 
                             <br />
                             <Text title={t("Pismenniy_Xizmatlar.cat")} text={data?.cat_programmes?.length > 0 ? data?.cat_programmes?.map(a => <span style={{ textTransform: 'capitalize' }}>{" " + a + ","}</span>) : t("GidPk.malumotKiritilmagan")} />
 
@@ -105,23 +105,23 @@ const Index = ({ data, role }) => {
 
                                         <FlexContainer justifyContent="flex-start" margin="0 0 5px">
                                             <Text title={t("GidPk.ekskursiyalar")} />
-                                            <span className="yes_no">{data?.excursions?.length > 0 ? "Ha" : "Yo'q"}</span>
+                                            <span className="yes_no">{data?.excursions?.length > 0 ? t("Pismenniy_Xizmatlar.ha") : t("Pismenniy_Xizmatlar.yoq")}</span>
                                         </FlexContainer>
 
                                         <FlexContainer margin="0 0 5px">
                                             <Text title={t("GidPk.ogzaki")}/>
                                             <span className="yes_no">
-                                                {data?.consecutive_translate ? "Ha" : "Yo'q"}
+                                                {data?.consecutive_translate ? t("Pismenniy_Xizmatlar.ha") : t("Pismenniy_Xizmatlar.yoq")}
                                             </span>
                                         </FlexContainer>
 
                                         {data?.consecutive_translate &&
                                             <>
                                                 <FlexContainer margin="0 0 5px">
-                                                    <Text title={t("GidPk.sinxron")} /><span className="yes_no">{data?.synchronous_translate ? "Ha" : "Yo'q"}</span>
+                                                    <Text title={t("GidPk.sinxron")} /><span className="yes_no">{data?.synchronous_translate ? t("Pismenniy_Xizmatlar.ha") : t("Pismenniy_Xizmatlar.yoq")}</span>
                                                 </FlexContainer>
                                                 <>
-                                                    <Text title={t("GidPk.izchil")} /><span className="yes_no">{data?.written_translate ? "Ha" : "Yo'q"}</span>
+                                                    <Text title={t("GidPk.izchil")} /><span className="yes_no">{data?.written_translate ? t("Pismenniy_Xizmatlar.ha") : t("Pismenniy_Xizmatlar.yoq")}</span>
                                                 </>
                                             </>
                                         }

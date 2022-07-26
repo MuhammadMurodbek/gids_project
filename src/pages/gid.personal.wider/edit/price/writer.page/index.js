@@ -71,7 +71,7 @@ const Index = () => {
                             <Grid container spacing={1} justifyContent="space-between" alignItems="center">
                                 <Grid item xs={12} sm={6} md={4} lg={3}>
                                     <TextLabeledLoop
-                                        label="Tillar"
+                                        label={t("narxlar.tillar")}
                                         value={(getLabelLangLocal(prev?.from_language) + "->" + getLabelLangLocal(prev?.to_language) || null)}
                                     />
                                 </Grid>
@@ -83,7 +83,7 @@ const Index = () => {
                                         idK={index + 1}
                                         fieldS='currency_per_page_with'
                                         fieldIn="cost_per_page_with"
-                                        title="1800 belgi (bo'shliqlar bilan)"
+                                        title={t("narxlar.boshliqBilan")}
                                         defValueCurrency={prev?.currency_per_page_with}
                                         defValueCost={prev?.cost_per_page_with}
                                     />
@@ -96,7 +96,7 @@ const Index = () => {
                                         idK={index + 1}
                                         fieldS='currency_per_page_without'
                                         fieldIn="cost_per_page_without"
-                                        title="1800 belgi (bo'shliqlarsiz)"
+                                        title={t("narxlar.boshliqSiz")}
                                         defValueCurrency={prev?.currency_per_page_without}
                                         defValueCost={prev?.cost_per_page_without}
                                     />
@@ -117,7 +117,7 @@ const Index = () => {
                  </div>
                 :
                 <Container width="100%" padding="10px 20px" margin="20px 0 0 0" textAlign="right">
-                    <Button loader={post?.loading} onClick={handleSubmit}>Saqlash</Button>
+                    <Button loader={post?.loading} onClick={handleSubmit}>{t("narxlar.saq")}</Button>
                 </Container>
             }
 

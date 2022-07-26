@@ -23,7 +23,7 @@ export const defaultListValue = () => [
 
 export const option_yes = [
     { value: 1, label: "Ha" },
-    { value: 2, label: "Yoq" }
+    { value: 2, label: "Yo'q" }
 ]
 export const option_yes_sec = [
     { value: 'synchronous', label: "Sinxron" },

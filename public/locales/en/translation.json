@@ -79,7 +79,7 @@
     "rate":"Rate",
     "title":"Choose a Guide for yourself",
     "fikirlar":"Comments:",
-    "kuniga":"Up to:",
+    "kuniga":"Up to: ",
     "xizmatlar":"Services (cities)",
     "tillar":"Languages",
     "OzimHaqimda":"About myself",
@@ -98,13 +98,16 @@
     "boshlash":"Your career get started!",
     "text03":"Get positive feedback and grow while serving your customers well.",
     "kopSavollar":"Frequently Asked Questions",
-    "bepulmi":"Is registration free?",
-    "ha":"Yes, of course",
-    "qandayT":"How can I find a client?",
-    "tekshirilgan":"How do I get a 'verified' mark?",
-    "qandayKiraman":"Where can I access my profile?",
+    "royhatQanday":"What do I need to do to register as a guide and interpreter?",
+    "royhatUchun":"To register as a guide and interpreter, click on the “Login” button, go to the “Registration” section and enter all the necessary information or call us, our manager will help you with registration.",
+    "mijozlarT":"How to find clients?",
+    "topishMijoz":"Clients can find guides and interpreters through an online search engine or the “Select” section and contact them directly. In addition, you can contact customers by responding to current inquiries in the Inquiry List section.",
+    "qandayTop":"How can I raise my profile to the “top”?",
+    "topgaChiqish":"Log in to your profile and top up your account in the “Advertising” section and choose a weekly or monthly rate. After payment, your profile will appear in the “top”. ",
     "hoziroq":"Sign up now, fill out your form and start your career!",
-    "royhatdanO":"Sign up"
+    "royhatdanO":"Sign up",
+    "bepulmi":"Is registration free?",
+    "haBepul":"Yes, registration is free."
   },
   "about":{ 
     "title":"About the platform",
@@ -121,13 +124,25 @@
     "isimPlac":"Write your name",
     "familya":"Surname",
     "familyaPlac":"Write your last name",
-    "Email":"Email",
+    "Email":"Email:",
     "emailPlac":"Enter your email",
     "telefon":"Phone",
     "telefonPlac":"Enter your phone number",
     "text":"If you have any questions or suggestions, please write",
     "textPlac":"Write if you have a question or suggestion",
-    "jonatish":"Send"
+    "jonatish":"Send",
+
+    "num":"Tel:",
+    "Manzil":"Manzil:",
+    "Nukus":"Nukus ko'chasi, 86/3",
+    "Toshkent":" Toshkent,  100015, O'zbekiston",
+    "ish":"Ish soatlari:",
+    "dushanba":"Dushanba - Juma",
+    "shanba":"Shanba ",
+    "yakshanba":"Yakshanba",
+    "dam":"Dam olish kuni",
+    "rahmat":"Rahmat!",
+    "qabul":"Savol yoki taklifingiz qabul qilindi! "
   },
   "auth_registr":{
     "kirish":"Sigin in",
@@ -272,6 +287,9 @@
     "blog":"Blog",
     "reklama":"Advertising",
     "sozlamalar":"Profile settings",
+    "gid":"Gid",
+    "yozmaT":"Yozma tarjimon",
+    "ogzakiT":"Og'zaki tarjimon",
 
 
     "OzimHaqimda":"About me",
@@ -305,13 +323,14 @@
     "ogzaki":"Interpretation (serial):",
     "sinxron":"Simultaneous translation:",
 
+    "yosh":"years old",
     "yozma":"Yozma tarjimon",
     "toifasi":"Category:",
     "izchil":"consistent translation:",
     "ekskursiyalar2":"Ekskursiyalar: ",
     "sertificatlar":"My certificates and diplomas",
     "Gallery":"Gallery",
-    "fidbek":"Customer Feedback",
+    "fidbek":"Customer feedback",
     "alo":"excellent",
     "ortacha":"Average  ",
     "yomon":"bad",
@@ -368,7 +387,7 @@
     "certificatlar":"Upload your certificates and diplomas here",
     "sertifikatYuklang":"Upload your certificates and diplomas here(in png and jpg format)",
     "saqlash":"Save",
-    "taqdimotlar":"Taqdimotlar, brifinglar, matbuot anjumanlari, seminarlar va treninglarda qatnashganmisiz?",
+    "taqdimotlar":"Taqdimotlar, brifinglar, matbuot anjumanlari, seminarlar va treninglarda ishtirok etganmisiz?",
     "nominiYozing":"Nomini yozing",
     "nominiKiriting":"Nomini kiriting",
     "yilniKiriting":"Yilni kiriting"
@@ -488,7 +507,7 @@
     "save":"Save",
     "tanlanmagan":"Country or city not selected",
     "mavzuYozing":"Mavzuni yozing",
-    "mavzuEmas":"Mening mavzuyim emas..",
+    "mavzuEmas":"Mening mavzuim emas..",
     "tarjima":"Tarjima turini tanlang",
     "Izchil":"Izchil",
     "Sinxron":"Sinxron"
@@ -513,7 +532,10 @@
     "birkunlikHizmat":"The cost of one day of service",
     "birSoatlik":"The cost of an hour of service",
     "kunigaSoat":"Kuniga necha soat",
-    "saq":"Saqlash"
+    "saq":"Saqlash",
+    "sonKiriting":"Son kiriting..",
+    "boshliqBilan":"1800 belgi (bo'shliqlar bilan)",
+    "boshliqSiz":"1800 belgi (bo'shliqlarsiz) "
   },
   "Galarey":{
     "Profilni_Korish":"View profile",
@@ -567,7 +589,7 @@
     "tajriba":"Tajriba",
     "frilancermisiz":"Siz hozirda frilansansiz?",
     "yes":"Ha",
-    "No":"Yoq",
+    "No":"Yo'q",
     "ishJoingizniKorsating":"Ish joyingizni ko'rsating",
     "text":"Text",
     "lavozimingiz":"Lavozimingiz",
@@ -576,7 +598,13 @@
     "malumoti":"Ma'lumoti (institut / universitet nomi)",
     "IshVaqtingiz":"Ish vaqtingiz",
     "soatgacha":"(...gacha)",
-    "yilKiriting":"Bitirgan yilingizni kiriting"
+    "yilKiriting":"Bitirgan yilingizni kiriting",
+
+    "birYil":"1 yil",
+    "birUch":"1-3 yil",
+    "uchBesh":"3-5 yil",
+    "beshOn":"5-10 yil",
+    "onPlus":"10+ yil"
   },
   "Ustniy_Xizmatlar":{
     "hizmatlar":"Services",
@@ -622,7 +650,8 @@
     "Text":"Text",
     "OgzakiTarjimonlik":"Siz og'zaki tarjima ham qilasizmi?",
     "ha":"Ha",
-    "yoq":"Yoq",
+    "haS":"Ha (Sinxron)",
+    "yoq":"Yo'q",
     "shoshilich":"Shoshilinch buyurtmalarni bajarasizmi?",
     "damdahamIsh":"Dam olish kunlari buyurtmalarni bajarasizmi?",
     "TahrirlashBilanHam":"Siz matnlarni tahrirlash bilan ham shug'ullanasizmi?",
@@ -631,7 +660,11 @@
     "CAT":"Tarjima qilish uchun qanday CAT dasturlaridan foydalanasiz?",
     "tarjimaMavzulari":" Tarjima mavzulari ",
     "Umumiy-mavzular":" Umumiy mavzular",
-    "meningMavzuimEmas":"Mening mavzuyim emas",
+    "meningMavzuimEmas":"Mening mavzuim emas",
+    "alo":"A’lo",
+    "yaxshi":"Yaxshi",
+    "orta":"O’rta",
+
     "jamiatVaSiyosat":"Jamiyat va siyosat",
     "Iqtsod":"Iqtisodiyot va moliya",
     "Huquqshunoslik":"Huquqshunoslik",
@@ -654,16 +687,7 @@
     "tahrirlash2":"Matnlarni tahrirlash:" ,
     "internet":"Internetga doimiy kirish imkoni:" ,
     "katta":"Katta hajmdagi fayllarni qabul qilish:" ,
-<<<<<<< HEAD
-    "cat":"Tarjima qilish uchun CAT dasturlari:"
-    
-=======
-    "cat":"Tarjima qilish uchun CAT dasturlari:",
->>>>>>> 4455e4a5271e826489b347651a8d0baece8760a5
-
-
-
-
+    "cat":"Tarjima qilish uchun CAT dasturlari: ",
     "birKunHajm":"Bir kunlik ish hajmingiz (belgi)",
     "ogzakiTarjima":"Siz og'zaki tarjima ham qilasizmi?",
     "shoshilinch":"Shoshilinch buyurtmalarni bajarasizmi?",

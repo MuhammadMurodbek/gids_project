@@ -96,12 +96,12 @@ export default function Index() {
                                 id="panel1a-header"
                             >
                                 <Typography className={classes.heading}>
-                                    <div className="title-S">{t("gidlar_uchun.bepulmi")}</div>
+                                    <div className="title-S">{t("gidlar_uchun.royhatQanday")}</div>
                                 </Typography>
                             </AccordionSummary>
                             <AccordionDetails>
                                 <Typography>
-                                    {t("gidlar_uchun.ha")}
+                                    {t("gidlar_uchun.royhatUchun")}
                                 </Typography>
                             </AccordionDetails>
                         </Accordion>
@@ -113,13 +113,12 @@ export default function Index() {
                                 id="panel2a-header"
                             >
                                 <Typography className={classes.heading}>
-                                    <div className="title-S">{t("gidlar_uchun.qandayT")}</div>
+                                    <div className="title-S">{t("gidlar_uchun.bepulmi")}</div>
                                 </Typography>
                             </AccordionSummary>
                             <AccordionDetails>
                                 <Typography>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-                                    sit amet blandit leo lobortis eget.
+                                    {t("gidlar_uchun.haBepul")}
                                 </Typography>
                             </AccordionDetails>
                         </Accordion>
@@ -130,13 +129,12 @@ export default function Index() {
                                 id="panel2a-header"
                             >
                                 <Typography className={classes.heading}>
-                                    <div className="title-S">{t("gidlar_uchun.tekshirilgan")}</div>
+                                    <div className="title-S">{t("gidlar_uchun.mijozlarT")}</div>
                                 </Typography>
                             </AccordionSummary>
                             <AccordionDetails>
                                 <Typography>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-                                    sit amet blandit leo lobortis eget.
+                                    {t("gidlar_uchun.topishMijoz")}
                                 </Typography>
                             </AccordionDetails>
                         </Accordion>
@@ -147,13 +145,12 @@ export default function Index() {
                                 id="panel2a-header"
                             >
                                 <Typography className={classes.heading}>
-                                    <div className="title-S"> {t("gidlar_uchun.qandayKiraman")} </div>
+                                    <div className="title-S"> {t("gidlar_uchun.qandayTop")} </div>
                                 </Typography>
                             </AccordionSummary>
                             <AccordionDetails>
                                 <Typography>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-                                    sit amet blandit leo lobortis eget.
+                                    {t("gidlar_uchun.topgaChiqish")}
                                 </Typography>
                             </AccordionDetails>
                         </Accordion>
