@@ -28,7 +28,7 @@ const Index = () => {
 
   // console.log(expired);
   const { t, i18n } = useTranslation()
-  React.useMemo(() => { i18n.changeLanguage('uz') }, [])
+  // React.useMemo(() => { i18n.changeLanguage('uz') }, [])
 
   const [scrollY, setScrollY] = useState(0);
   function logit() {

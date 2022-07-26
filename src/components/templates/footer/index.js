@@ -77,9 +77,9 @@ const Index = () => {
                         className="second-container"
                         style={check ? { display: "none" } : null}
                     >
-                        <span><Link onClick={refreshBtn} to="/"><img src={tg} alt="tg" /></Link></span>
-                        <span><Link onClick={refreshBtn} to="/"><img src={f} alt="f" /></Link></span>
-                        <span><Link onClick={refreshBtn} to="/"><img src={i} alt="i" /></Link></span>
+                        <span><a href='https://t.me/gits_uz' target="_blank"><img src={tg} alt="tg" /></a></span>
+                        <span><a href='https://www.facebook.com/gits.uz' target="_blank"><img src={f} alt="f" /></a></span>
+                        <span><a href='https://www.instagram.com/gits_uz/' target="_blank"><img src={i} alt="i" /></a></span>
                     </FlexContainer>
                 </div>
                 <div className="footer-bottom-comp" style={check ? { display: 'none' } : null}>
