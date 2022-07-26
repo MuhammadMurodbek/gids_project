@@ -35,8 +35,6 @@ const Index = () => {
     setScrollY(window.pageYOffset);
   }
 
-
-
   useEffect(() => {
     function watchScroll() {
       window.addEventListener("scroll", logit);
@@ -77,7 +75,6 @@ const Index = () => {
               alignItems="center"
               justifyContent="center"
             >
-
 
               {
 
