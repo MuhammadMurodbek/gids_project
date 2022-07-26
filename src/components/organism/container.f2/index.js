@@ -54,7 +54,7 @@ const Index = ({ data }) => {
                 <Grid item xs={12} sm={6}>
                     <Container margin="30px 0 0 0">
                         <TextTitle align="left" font="20px"> {(data?.first_name + " " + data?.last_name) || t("GidPk.malumotKiritilmagan")} </TextTitle>
-                        <div className="gid-info-personal">{data?.age ? (data?.age + " " + "yosh") : "0 yosh"}  | <span style={{ textTransform: "none" }}>{data?.role === "translator" ? "Og'zaki tarjimon" : data?.role === "gid" ? "Gid" : data?.role === "writer" ? "Yozma tarjimon" : " "}
+                        <div className="gid-info-personal">{data?.age ? (data?.age + " " + t("GidPk.yosh")) : "0 yosh"}  | <span style={{ textTransform: "none" }}>{data?.role === "translator" ? "Og'zaki tarjimon" : data?.role === "gid" ? t("GidPk.gid") : data?.role === "writer" ? t("GidPk.yozmaT") : " "}
                         </span> </div>
                         <div className="gid-info-personal-text"><div className="text">
                             {t("Gid_Tanlash.tillar")} :

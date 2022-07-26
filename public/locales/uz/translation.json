@@ -81,7 +81,7 @@
     "rate":"Reyting",
     "title":"Gid yoki tarjimonni tanlang",
     "fikirlar":"Fikrlar:",
-    "kuniga":"Kuniga:",
+    "kuniga":"Kuniga: ",
     "xizmatlar":"Xizmatlar",
     "tillar":"Tillar",
     "OzimHaqimda":"O'zim haqimda",
@@ -100,11 +100,14 @@
     "boshlash":"Ishni boshlang!",
     "text03":"Mijozlarga sifatli xizmat ko’rsatish orqali ijobiy fikrlarga ega bo’ling va o’z faoliyatingizni rivojlantiring.",
     "kopSavollar":"Ko’p beriladigan savollar",
+    "royhatQanday":"Gid va tarjimon sifatida ro’yxatdan o’tish uchun nima qilish kerak?",
+    "royhatUchun":"Gid va tarjimon sifatida ro’yxatdan o’tish uchun «Kirish» tugmasini bosib, “Ro’yxatdan o’tish” bo’limiga o’ting va barcha zaruriy ma’lumotlarni kiriting yoki bizga qo’ng’iroq qiling, menejerimiz ro’yxatdan o’tishingizga yordam beradi.",
     "bepulmi":"Ro’yxatdan o’tish bepulmi?",
-    "ha":"Ha, ro’yxatdan o’tish be’pul",
-    "qandayT":"Mijozlarni qanday topsam bo‘ladi?",
-    "tekshirilgan":"“Tekshirilgan” belgisini qanday qilib olsam bo’ladi?",
-    "qandayKiraman":"Profilga qayerdan kirsam bo‘ladi?",
+    "haBepul":"Ha, ro’yxatdan o’tish bepul.",
+    "mijozlarT":"Mijozlarni qanday topish mumkin?",
+    "topishMijoz":"Mijozlar saytdagi onlayn qidiruv tizimi yoki “Tanlash” bo’limi orqali gid va tarjimonlarni topishlari va ular bilan bevosita aloqaga chiqishlari mumkin. Bundan tashqari, siz “Ariza qoldirish” bo’limiga kelib tushgan arizalarga javob qaytarish orqali mijozlar bilan bo’g’lanish imkoniga ega bo’lasiz.",
+    "qandayTop":"O’z profilimni qanday qilib “top”ga chiqarishim mimkin?",
+    "topgaChiqish":"O’z profilingizga kiring va “Reklama” bo’limida hisobingizni to’ldirib, haftalik yoki oylik tarifni tanlang. To’lov amalga oshirilgandan so’ng profilingiz “top”ga chiqadi. ",
     "hoziroq":" Hoziroq gid va tarjimonni tanlang yoki ariza qoldiring!",
     "royhatdanO":"Ro’yxatdan o’tish"
   },
@@ -123,12 +126,24 @@
     "isimPlac":"Ismingizni yozing",
     "familya":"Familya",
     "familyaPlac":"Familyangizni yozing",
-    "Email":"E-mail",
+    "Email":"E-mail:",
     "emailPlac":"E-mailingizni yozing",
     "telefon":"Telefon",
     "telefonPlac":"Telefon raqamingizni yozing",
     "text":" Savol yoki takliflaringizni yozing",
-    "jonatish":"Jo'natish"
+    "jonatish":"Jo'natish",
+
+    "num":"Tel:",
+    "Manzil":"Manzil:",
+    "Nukus":"Nukus ko'chasi, 86/3",
+    "Toshkent":" Toshkent,  100015, O'zbekiston",
+    "ish":"Ish soatlari:",
+    "dushanba":"Dushanba - Juma",
+    "shanba":"Shanba ",
+    "yakshanba":"Yakshanba",
+    "dam":"Dam olish kuni",
+    "rahmat":"Rahmat!",
+    "qabul":"Savol yoki taklifingiz qabul qilindi! "
   },
   "auth_registr":{
     "kirish":"Kirish",
@@ -278,6 +293,9 @@
     "blog":"Blog",
     "reklama":"Reklama",
     "sozlamalar":"Profil sozlamalari",
+    "gid":"Gid",
+    "yozmaT":"Yozma tarjimon",
+    "ogzakiT":"Og'zaki tarjimon",
 
     "OzimHaqimda":"O‘zim haqimda",
     "reyting":"Reyting::",
@@ -293,7 +311,7 @@
     "Malumotim":"Ma’lumoti",
     "toifam":"Toifa",
     "institut":"Bitirgan instituti / universiteti:",
-    "mutahasis":"Ma'lumoti:",
+    "mutahasis":"Mutaxassisligi:",
     "ishtaj":"Ish tajribasi:",
     "ishJoy":"Ish joyi:",
     "lavozim":"Lavozimi:",
@@ -316,6 +334,7 @@
     "Gallery":"Galereya",
     "fidbek":"Mijozlarning fikrlari",
     "alo":"A’lo",
+    "orta":"O’rta",
     "ortacha":"O‘rtacha  ",
     "yaxshi":"Yaxshi",
     "yomon":"Yomon",
@@ -373,7 +392,7 @@
     "certificatlar":"Sertifikat va diplomlaringiz bo‘lsa shu yerga yuklang",
     "sertifikatYuklang":"Sertifikat va diplomlaringizni yuklang (jpg va png formatida )",
     "saqlash":"Saqlash",
-    "taqdimotlar":"Taqdimotlar, brifinglar, matbuot anjumanlari, seminarlar va treninglarda qatnashganmisiz?",
+    "taqdimotlar":"Taqdimotlar, brifinglar, matbuot anjumanlari, seminarlar va treninglarda ishtirok etganmisiz?",
     "nominiYozing":"Nomini yozing",
     "nominiKiriting":"Nomini kiriting",
     "yilniKiriting":"Yilni kiriting"
@@ -436,7 +455,7 @@
     "toifasi":"Gidning toifasi",
     "toifaPlace":"Oliy toifali",
     "qoshimchaKurslar":"Qo‘shimcha kurslar",
-    "oqiganKurslaringiz":"Tamomlagan kurslaringizni yozing va Enterni tugmasini bosing",
+    "oqiganKurslaringiz":"Tamomlagan kurslaringizni yozing va Enter tugmasini bosing",
     "tajriba":"Tajriba",
     "year":"yil",
     "saqlash":"Saqlash"
@@ -520,7 +539,11 @@
     "birkunlikHizmat":"Bir kunlik xizmat narxi",
     "birSoatlik":"Bir soatlik xizmat narxi",
     "kunigaSoat":"Kuniga necha soat",
-    "saq":"Saqlash"
+    "saq":"Saqlash",
+    "sonKiriting":"Son kiriting..",
+    "boshliqBilan":"1800 belgi (bo'shliqlar bilan)",
+    "boshliqSiz":"1800 belgi (bo'shliqlarsiz) "
+
     
   },
   "Galarey":{
@@ -576,15 +599,23 @@
     "frilancermisiz":"Siz hozir frilansirmisiz?",
     "yes":"Ha",
     "No":"Yo’q",
-    "ishJoingizniKorsating":"Ish joyingizni ko'rsating",
+    "ishJoingizniKorsating":"Ish joyingiz",
+    "ishKiriting":"Ish joyingizni kiriting",
     "text":"Matn",
     "lavozimingiz":"Lavozimingiz",
+    "lavozimKiriting":"Lavozimingizni kiriting",
     "ishVaqti":"Ish soatlaringiz",
     "save":"Saqlash",
     "malumoti":"Ma'lumoti (institut / universitet nomi)",
     "IshVaqtingiz":"Ish vaqtingiz",
     "soatgacha":"(...gacha)",
-    "yilKiriting":"Bitirgan yilingizni kiriting"
+    "yilKiriting":"Bitirgan yilingizni kiriting",
+
+    "birYil":"1 yil",
+    "birUch":"1-3 yil",
+    "uchBesh":"3-5 yil",
+    "beshOn":"5-10 yil",
+    "onPlus":"10+ yil"
   },
   "Ustniy_Xizmatlar":{
     "hizmatlar":"Xizmatlar",
@@ -637,6 +668,7 @@
     "Text":"Matn",
     "OgzakiTarjimonlik":"Og’zaki tarjima bilan ham shug’ullanasizmi?",
     "ha":"Ha",
+    "haS":"Ha (Sinxron)",
     "yoq":"Yo’q",
     "damdahamIsh":"Dam olish kunlari ham ishlaysizmi?",
     "TahrirlashBilanHam":"Matnlarni tahrirlash bilan ham shug’ullanasizmi?",
@@ -646,6 +678,11 @@
     "tarjimaMavzulari":"Tarjima mavzulari",
     "Umumiy-mavzular":"Umumiy mavzular",
     "meningMavzuimEmas":"Mening mavzuim emas",
+    "alo":"A’lo",
+    "yaxshi":"Yaxshi",
+    "orta":"O’rta",
+
+    
     "jamiatVaSiyosat":"Jamiyat va siyosat",
     "Iqtsod":"Moliya va iqtisod",
     "Huquqshunoslik":"Huquqshunoslik",
@@ -669,7 +706,7 @@
     "tahrirlash2":"Matnlarni tahrirlash:" ,
     "internet":"Internetga doimiy kirish imkoni:" ,
     "katta":"Katta hajmdagi fayllarni qabul qilish:" ,
-    "cat":"Tarjima qilish uchun CAT dasturlari:",
+    "cat":"Tarjima qilish uchun CAT dasturlari: ",
     
     
 
@@ -832,7 +869,7 @@
     "bosh":"Bo'sh",
     "band":"Band",
     "oylikJadvalim":"Oylik ish jadvalim",
-    "ishKunlarim":"Ish kunlarim",
+    "ishKunlarim":"Bo'sh kunlarim",
     "bandKunlarim":"Band kunlarim",
     "saqlash":"Saqlash"
 

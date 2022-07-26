@@ -18,8 +18,8 @@ const ModalContainer = ({setState, state}) => {
                     onClickAway={closeModal}>
                     <div className="modaldiv">
                         <div className="closebtn">  <CloseIcon className="pointx" onClick={closeModal} /></div>
-                        <h1 className="modaltitle">Savolingiz Muvaffaqiyatli qabul qilindi</h1>
-                        <p>Qisqa vaqt ichida o‘rganib chiqib, tez orada javob berishga harakat qilamiz.</p>
+                        <h1 className="modaltitle">{t("connect.rahmat")}</h1>
+                        <p>{t("connect.qabul")}</p>
 
                     </div>
                 </Modal>

@@ -100,16 +100,16 @@ export default function Index() {
                 <Grid className='topconect' container alignItems="center" spacing={1} diracti>
                     <Grid className='gridone' item xs={12} md={3} >
                         <h3 className="grid1">{t("connect.Kontaktlarimiz")}</h3>
-                        <p> <b>Tel:</b> +99893 596-92-20</p>
-                        <p> <b>E-mail: </b>  info@gits.uz</p>
-                        <p> <b>Manzil: </b>Nukus ko'chasi, 86/3 <br/> Toshkent,  100015, O'zbekiston</p>
-                        <b>Ish soatlari:</b>
-                        <p className='paragrefd'> Dushanba - Juma</p>
+                        <p> <b>{t("connect.num")}</b> +99893 596-92-20</p>
+                        <p> <b>{t("connect.Email")} </b>  info@gits.uz</p>
+                        <p> <b>{t("connect.Manzil")} </b>{t("connect.Nukus")}<br/> {t("connect.Toshkent")}</p>
+                        <b>{t("connect.ish")}</b>
+                        <p className='paragrefd'> {t("connect.dushanba")}</p>
                         <p className='paragrefd'> (09:00 - 18:00) </p>
-                        <p className='paragrefd'> Shanba </p>
+                        <p className='paragrefd'> {t("connect.shanba")}</p>
                         <p className='paragrefd'> (10:00 - 17:00) </p>
-                        <p className='paragrefd'> Yakshanba </p>
-                        <p className='paragrefd'> Dam olish kuni </p>
+                        <p className='paragrefd'> {t("connect.yakshanba")}</p>
+                        <p className='paragrefd'> {t("connect.dam")}</p>
                         <div className='paddingtop'>
                             <img className="icons" src={imgtg} alt="name"/>
                             <img className="icons" src={imgfac} alt="facebook"/>
@@ -198,8 +198,8 @@ export default function Index() {
                         onClickAway={closeModal}>
                         <div className="modaldiv">
                             <div className="closebtn">  <CloseIcon className="pointx" onClick={closeModal} /></div>
-                            <h1 className="modaltitle">Savolingiz Muvaffaqiyatli qabul qilindi</h1>
-                            <p>Qisqa vaqt ichida o‘rganib chiqib, tez orada javob berishga harakat qilamiz.</p>
+                            <h1 className="modaltitle">{t("connect.rahmat")}</h1>
+                            <p>{t("connect.qabul")}</p>
                         </div>
                     </Modal>
                 </section>
