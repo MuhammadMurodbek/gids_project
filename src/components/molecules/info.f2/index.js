@@ -31,7 +31,7 @@ const Index = ({ data, commentCount }) => {
                 <Grid container spacing={1} className="info-item">
                     <Grid item sm={3}><ImgContainer src={starImg} width="30px" /></Grid>
                     <Grid item sm={9}>
-                        <span className="comm_val">{t("Gid_Tanlash.reyting")} {commentCount?.average || '0'}</span>/5
+                        <span className="comm_val">{t("Gid_Tanlash.rate")} {commentCount?.average || '0'}</span>/5
                     </Grid>
                 </Grid>
                 <Grid container spacing={1} className="info-item">

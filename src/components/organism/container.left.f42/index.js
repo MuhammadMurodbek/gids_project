@@ -28,6 +28,7 @@ import instagram from '../../../assets/img/boglanish/11/instagram.png'
 import viber from '../../../assets/img/boglanish/11/viber.png'
 import wechat from '../../../assets/img/boglanish/11/wechat.png'
 import website from '../../../assets/img/boglanish/11/watsapp.png'
+import { textAlign } from '@mui/system'
 
 // import CloseIcon from '@material-ui/icons/Close';
 // import Textarea from '../../atom/textAreaCom';
@@ -78,13 +79,19 @@ const Index = ({ state, typeRole, comments, commentCount, commentReview }) => {
 
                                 </Container>
                             </FlexContainer>
-
+                            <div style={{width: "100%"}}>
+                            <div style={{textAlign: "end"}}>
                             {state?.website ? <a className='linkai' target="_blank" href={state?.website}>   <ImageContainer width="40px" src={website} /></a> : ""}
                             {state?.telegram ? <a className='linkai' target="_blank" href={state?.telegram}>  <ImageContainer width="40px" src={telegram} /></a> : ""}
                             {state?.wechat ? <a className='linkai' target="_blank" href={state?.wechat}>    <ImageContainer width="40px" src={wechat} /></a> : ""}
                             {state?.viber ? <a className='linkai' target="_blank" href={state?.viber}>     <ImageContainer width="40px" src={viber} /></a> : ""}
                             {state?.facebook ? <a className='linkai' target="_blank" href={state?.facebook}>  <ImageContainer width="40px" src={facebook} /></a> : ""}
                             {state?.instagram ? <a className='linkai' target="_blank" href={state?.instagram}> <ImageContainer width="40px" src={instagram} /></a> : ""}
+                            </div>
+                            <div style={{marginTop: "20px", fontSize: "12px", textAlign: "end", paddingRight: "10px"}}><b>{t("GidPk.boglanishIcons")}</b> </div>
+                            </div>
+                            
+                          
 
                         </Container>
                     </Grid>
