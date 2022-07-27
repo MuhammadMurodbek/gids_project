@@ -353,7 +353,8 @@
     "bioKiritilmagan":"Bio kiritilmagan",
     "mavzular":"Mavzular:",
     "shaharlar":"Quyidagi shaharlarda ekskursiyalar o'tkazaman:",
-    "galereyFoto":"Photo not uploaded"
+    "galereyFoto":"Photo not uploaded",
+    "boglanishIcons":"* Ushbu ijtimoiy tarmoqlar orqali men bilan bog'lanishingiz mumkin."
  
   },
   "kommentlar":{
@@ -608,7 +609,7 @@
     "ishVaqti":"Ish vaqtingiz",
     "save":"Saqlash",
     "malumoti":"Ma'lumoti (institut / universitet nomi)",
-    "IshVaqtingiz":"Ish vaqtingiz (...dan",
+    "IshVaqtingiz":"Ish vaqtingiz (...dan)",
     "soatgacha":"(...gacha)",
     "yilKiriting":"Bitirgan yilingizni kiriting",
 
