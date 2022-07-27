@@ -48,6 +48,7 @@ export const WrapperAll = styled.div`
         margin:30px 0;
         border:2px solid red
     }
+    
 `;
 
 export const ComponentOne = styled.div`
@@ -55,10 +56,9 @@ export const ComponentOne = styled.div`
 
     @media (max-width:444px){
         padding:10px 4px;
-        
-
     }
 
+   
     .paper{
         padding: theme.spacing(2);
         text-align: 'center';
@@ -94,7 +94,7 @@ export const ComponentOne = styled.div`
         img{
             /* min-width:400px; */
             width: 850px;
-            margin-top:65px;
+            margin-top:25px;
             object-fit: cover;
 
             @media (max-width: 444px){

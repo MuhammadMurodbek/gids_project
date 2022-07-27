@@ -35,6 +35,8 @@ import img2 from '../../assets/img/main/ee.jpg'
 import img3 from '../../assets/img/main/we.jpg'
 import img4 from '../../assets/img/main/wee.jpg'
 import img5 from '../../assets/img/main/ds.jpg'
+import './main1.css'
+
 
 const settings = {
 
@@ -105,7 +107,7 @@ const Index = () => {
                         <Grid item xs={12} md={8} sm={12}>
                             <div className="right-part">
                                 <div> {t("main.title")} </div>
-                                <img src={mainPicture} className="img_main" alt="guvd" />
+                                <img  src={mainPicture} className="img_main" alt="guvd" />
                             </div>
                         </Grid>
                     </Grid>
