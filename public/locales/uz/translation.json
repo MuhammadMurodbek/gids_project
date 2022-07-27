@@ -201,9 +201,9 @@
     "KerakShaharlar":"Gid/Tarjimon kerak bo’lgan shahar ",
     "davlat":"Davlat",
     "shaxarlar":"Shahar",
-    "KerakSana":"Git/Tarjimon kerak bo’lgan sana",
+    "KerakSana":"Gid/Tarjimon kerak bo’lgan sana",
     "sananiTanlang":"Sanani tanlang",
-    "Bilishikerak":"Git/Tarjimon bilishi kerak bo’lgan tillar",
+    "Bilishikerak":"Gid/Tarjimon bilishi kerak bo’lgan tillar",
     "BilishikeralPlac":"Tillarni tanlang",
     "nimagaKerak":"Nima uchun kerak",
     "misol":"Misol uchun, shaharni ko’rsatish uchun gid kerak.",
@@ -214,7 +214,7 @@
     "ayol":"Ayol",
     "nechaKishi":"Necha kishi",
     "nechkishiBolaslar":"Necha kishi bo’lasiz?",
-    "shartnoma":"Arizani yoborib,men Foydalanuvchi shartnomasining shartlariga rozilik bildiraman*",
+    "shartnoma":"Arizani yuborib, men Foydalanuvchi shartnomasining shartlariga rozilik bildiraman*",
     "dan":"dd/mm/yyyy  dan",
     "gacha":"dd/mm/yyyy,  gacha",
     "valyuta":"Valyuta",
@@ -249,8 +249,8 @@
     "muallif":"Muallif:"
   },
   "safarHaqida":{
-    "title":"Safar qalay o‘tdi?",
-    "text":"Safar taassurotlari bilan o’rtoqlashing!",
+    "title":"Tadbir qanday o‘tdi?",
+    "text":"Ishtirok etgan tadbirlaringiz bilan bo'lishing va yangi mijozlar toping!",
     "Maqolayozish":"Maqola yozish",
     "Maqolalarim":"Maqolalarim",
     "tahrirlash":"Tahrirlash"
@@ -322,6 +322,7 @@
     "hizmatlar":"Xizmatlar",
     "ekskursiyalar":"Ekskursiyalar:",
     "ogzaki":"Og'zaki tarjima:",
+    "yozmaTarjima":"Yozma tarjima: ",
     "sinxron":"Sinxron tarjima:",
     "izchil":"Izchil tarjima:",
     "toifasi":"Toifasi:",
@@ -347,7 +348,9 @@
     "rasmYuklanmagan":"Rasmlar yuklanmagan",
     "yoshKiritilmagan":"Yosh kiritilmagan",
     "bioKiritilmagan":"Bio kiritilmagan",
-    "mavzular":"Mavzular:"
+    "mavzular":"Mavzular:",
+    "shaharlar":"Quyidagi shaharlarda ekskursiyalar o'tkazaman:",
+    "galereyFoto":"Fotosurat yuklanmagan"
   },
   "kommentlar":{
     "textKiriting":"Text kiriting...",
@@ -477,7 +480,7 @@
     "videoVagalarey":"Video va galereya",
 
     "til":"Til",
-    "tilPlace":" Tilni kiriting",
+    "tilPlace":" Tilni tanlang",
     "tillarniKiriting":"",
     "bilishDarajasi":"Bilish darajasi",
     "BilishDPlace":"Til bilish darajangizni belgilang",
@@ -503,9 +506,9 @@
     "ekskursiyalar":"Ekskursiyalar",
     "sinxron":"Sinxron tarjima",
      "izchil":"Izchil tarjima",
-     "yozma":"Yozma tarjimon", 
+     "yozma":"Yozma tarjima", 
 
-    "mamlakatlargaEkskurs":"Davlatlarga ekskursiya",
+    "mamlakatlargaEkskurs":"Davlat",
     "mamlakatPlace":"Davlatni tanlang",
     "shaharlar":" Shahar",
     "shaharlarSelect":"Shaharni tanlang",
@@ -563,10 +566,12 @@
     "narxlar":"Narxlar",
     "videoVagalarey":"Video va galereya",
 
-    "Partfolio":"Siz o’z haqingizda video olishingiz mumkin. Bu video profilda bo’ladi. video turi ( mp4, avi, mpg) hajmi 100mb gacha",
-    "galarey":"Sizning galereya",
-    "galareyangiz":"Galereyangiz",
-    "saqlash":"Saqlash"
+    "Partfolio":"Video (mp4, avi, mpg formatida - 100 mb gacha)*",
+    "Partfolio2":"(O'zingiz yoki xizmatlaringiz haqida video joylashtirishingiz mumkin)",
+    "galarey":"Video",
+    "galareyangiz":"Galereya (jpg va png formatida)*",
+    "saqlash":"Saqlash",
+    "rasmGalereya":"(O'z fotosuratlaringizni va ekskursiyalar davomida olingan suratlarni joylashtirishingiz mumkin)"
   },
 
 
@@ -607,7 +612,7 @@
     "ishVaqti":"Ish soatlaringiz",
     "save":"Saqlash",
     "malumoti":"Ma'lumoti (institut / universitet nomi)",
-    "IshVaqtingiz":"Ish vaqtingiz",
+    "IshVaqtingiz":"Ish vaqtingiz (...dan)",
     "soatgacha":"(...gacha)",
     "yilKiriting":"Bitirgan yilingizni kiriting",
 
@@ -630,14 +635,14 @@
     "save":"Saqlash",
     "QaysiTildan":"Siz qaysi tildan tarjima qilasiz?",
     "QaysiTilga":"Siz qaysi tilga tarjima qilasiz?",
-    "tilniKiriting":"Tilni kiriting...",
+    "tilniKiriting":"Tilni tanlang...",
     "tarjimaMavzulari":"Tarjima mavzulari"
   },
 
 
   "safarHaqda":{
-    "title":"Safar qalay o‘tdi?",
-    "text":"Safar qanday o’tgani haqida maqola yozib boshqalarga foyda ulashing ham daromadingizni kengaytiring!",
+    "title":"Safaringiz qanday o‘tdi?",
+    "text":"Safar taassurotlaringiz bilan bo’lishing va yangi mijozlar toping.",
     "Maqolayozish":"Maqola yozish",
     "Maqolalarim":"Maqolalarim",
     "tahrirlash":"Tahrirlash",
@@ -770,7 +775,9 @@
     "tariflar": "Tariflar tarixi",
     "tolovlar":"To’lovlar tarixi",
     "rekgaQaytish":"Reklama bo'limiga qaytish",
-    "som":"so‘m"
+    "som":"so‘m",
+    "yetarliEmas":"Sizda yetarli mablag' mavjud emas!!!",
+    "hisobToldiring":"Hisobingizni to'ldiring"
    },
    "tariflar":{
     "birHafta":"Bir haftalik tarif",
@@ -786,7 +793,10 @@
     "hisobMablag":"Hisobingizdagi mablag‘:",
     "hisobdan":"gits.uz dagi hisob",
     "tolovQilish":"raqamdan to‘lov qilish",
-    "som":"so’m"
+    "som":"so’m",
+    "tarifTolov":"Tarif bo’yicha to’lov muvaffaqiyatli amalga oshirildi!",
+    "xatolik":"Xatolik yuz berdi",
+    "qaytaUrining":"Qaytadan urinib ko'ring."
 
    },
    "hisobni_toldirish":{
@@ -804,7 +814,8 @@
 
 
      "Tolovlar_tarihi":"To’lovlar tarixi",
-     "tolovlarTarixi":"Sizda to'lovlar tarixi mavjud emas"
+     "tolovlarTarixi":"Sizda to'lovlar tarixi mavjud emas",
+     "tolovlar":"To‘lov"
     },
 
    "User_Profil":{
@@ -862,7 +873,8 @@
     "yangiParolPlac":"Yangi parolni kiriting",
     "parolniTasdiqlash":"Parolni tasdiqlang ",
     "tasdilashPlac":"Yangi parolni qayta kiriting",
-    "saqlash":"Saqlash"
+    "saqlash":"Saqlash",
+    "yuklandi":"Muvaffaqiyatli yuklandi"
   },
   "ishJadvali":{
     "tahrirlash":"Tahrirlash",

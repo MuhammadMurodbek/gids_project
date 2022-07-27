@@ -245,9 +245,16 @@
     "edit":"Edit",
     "muallif":"Author:"
   },
+  "safarHaqida":{
+    "title":"How was the event?",
+    "text":"Share the events you've attended and find new customers!",
+    "Maqolayozish":"Writing an article",
+    "Maqolalarim":"My articles",
+    "tahrirlash":"Editing"
+  },
   "safarHaqda":{
     "title":"How was your trip?",
-    "text":"Increase your income by writing articles about how the trip went!",
+    "text":"Share your impressions of the trip to attract new customers.",
     "Maqolayozish":"Write an article",
     "Maqolalarim":"My articles",
     "tahrirlash":"Edit",
@@ -321,6 +328,7 @@
     "hizmatlar":"Services",
     "ekskursiyalar":"Excursions",
     "ogzaki":"Interpretation (serial):",
+    "yozmaTarjima":"Yozma tarjima: ",
     "sinxron":"Simultaneous translation:",
 
     "yosh":"years old",
@@ -343,7 +351,9 @@
     "rasmYuklanmagan":"Rasmlar yuklanmagan",
     "yoshKiritilmagan":"Yosh kiritilmagan",
     "bioKiritilmagan":"Bio kiritilmagan",
-    "mavzular":"Mavzular:"
+    "mavzular":"Mavzular:",
+    "shaharlar":"Quyidagi shaharlarda ekskursiyalar o'tkazaman:",
+    "galereyFoto":"Photo not uploaded"
  
   },
   "kommentlar":{
@@ -496,10 +506,10 @@
     "xizmatlar":"Services",
     "ekskursiyalar":"Excursions",
     "ogzaki":"Interpretation (serial)",
-    "sinxron":"Simultaneous translation",
-    "izchil":"Written translator",
+    "sinxron":"Simultaneous translate",
+    "izchil":"Written translate",
 
-    "yozma":"Written translator",
+    "yozma":"Written translate",
     "mamalakatlargaEkskurs":"Excursion to countries",
     "mamlakatPlace":"Select the country",
     "shaharlar":"City",
@@ -553,9 +563,11 @@
     "narxlar":"Prices",
     "videoVagalarey":"Video and gallery",
 
-    "Partfolio":"You can make a video about yourself. This video is on your profile.",
-    "galarey":"Your gallery",
+    "Partfolio":"Video (in mp4, avi, mpg format - up to 100 mb)*",
+    "Partfolio2":"(You can post a video about yourself or your services)",
+    "galarey":"Video",
     "galareyangiz":"Your gallery",
+    "rasmGalereya":"(O'z fotosuratlaringizni va ekskursiyalar davomida olingan suratlarni joylashtirishingiz mumkin)",
     "saqlash":"Save"
   },
 
@@ -596,7 +608,7 @@
     "ishVaqti":"Ish vaqtingiz",
     "save":"Saqlash",
     "malumoti":"Ma'lumoti (institut / universitet nomi)",
-    "IshVaqtingiz":"Ish vaqtingiz",
+    "IshVaqtingiz":"Ish vaqtingiz (...dan",
     "soatgacha":"(...gacha)",
     "yilKiriting":"Bitirgan yilingizni kiriting",
 
@@ -619,7 +631,7 @@
     "save":"Save",
     "QaysiTildan":"Siz qaysi tildan tarjima qilasiz?",
     "QaysiTilga":"Siz qaysi tilga tarjima qilasiz?",
-    "tilniKiriting":"Tilni kiriting...",
+    "tilniKiriting":"Tilni tanlang...",
     "tarjimaMavzulari":"Tarjima mavzulari"
   },
 
@@ -743,7 +755,9 @@
     "tariflar": "Tariflar tarixi",
     "tolovlar":"To’lovlar tarixi",
     "rekgaQaytish":"Reklama bo'limiga qaytish",
-    "som":"sum"
+    "som":"sum",
+    "yetarliEmas":"Sizda yetarli mablag' mavjud emas!!!",
+    "hisobToldiring":"Hisobingizni to'ldiring"
    },
    "tariflar":{
     "birHafta":"One weekly tariff",
@@ -756,7 +770,10 @@
     "hisobMablag":"Hisobingizdagi mablag‘:",
     "hisobdan":"gits.uz dagi hisob",
     "tolovQilish":"raqamdan to‘lov qilish",
-    "som":"so’m"
+    "som":"so’m",
+    "tarifTolov":"Tarif bo’yicha to’lov muvaffaqiyatli amalga oshirildi!",
+    "xatolik":"Xatolik yuz berdi",
+    "qaytaUrining":"Qaytadan urinib ko'ring."
 
 
    },
@@ -771,7 +788,8 @@
      "som":"sum",
      "VariantTanlanmagan":"To'lov varianti tanlanmagan.",
      "BiriniTanlang":"Xisobni to'ldirish uchun to'lov variantlaridan birini tanlang",
-     "tolovlarTarixi":"Sizda to'lovlar tarixi mavjud emas"
+     "tolovlarTarixi":"Sizda to'lovlar tarixi mavjud emas",
+     "tolovlar":"To‘lov"
 
      
     },
@@ -844,12 +862,13 @@
     "yangiParolPlac":"Enter a new password",
     "parolniTasdiqlash":"Confirm Password",
     "tasdilashPlac":"Re-enter the new password",
-    "saqlash":"Save"
+    "saqlash":"Save",
+    "yuklandi":"Successfully uploaded"
   },
   "ishJadvali":{
     "tahrirlash":"Edit",
-    "bosh":"Empty",
-    "band":"Occupied",
+    "bosh":"Free",
+    "band":"Busy",
     "oylikJadvalim":"Monthly work schedule",
     "ishKunlarim":"Working days",
     "bandKunlarim":"Busy days",

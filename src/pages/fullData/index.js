@@ -5,29 +5,21 @@ import { Grid } from "@material-ui/core";
 import {useParams, useHistory} from "react-router-dom"
 import ImgContainer from "../../components/molecules/img.container";
 import ad from "../../assets/img/citiyes/bn1.png";
-// import delbtn from "../../assets/img/citiyes/buttondel.svg";
-// import edit from "../../assets/img/citiyes/buttonedit.svg";
 import Button from "../../components/atom/button";
 import CitiLeftPart from "../../components/organism/citiesLeftPart";
-import { getResponse, deleteResponse } from "../../hooks/response_get"
+import { getResponse } from "../../hooks/response_get"
 import Spinner from "../../components/atom/loading.spinner.line"
-// import {error, success} from "../../components/organism/modals"
 import NoDataPage from "../../components/templates/no.data.page.js"
 import { useTranslation } from 'react-i18next';
 import './main.css'
-import { t } from "i18next";
-
-
 
 export default function Index() {
   const { t } = useTranslation()
   const {id} = useParams()
   const history = useHistory()
-  const getRole = JSON.parse(localStorage.getItem("user_token"));
   const [state, setState] = useState({success: '', error: '', loader:false})
   const [getArticle, setGetArticle] = useState({})
   const [infoDelete, setInfoDelete] = useState(null)
-  const [deleteCallback, setDeleteCallback ] = useState(false)
   useEffect(() => {
     getResponse(`/api/posts/article/${id}`, setState,true)
   }, [])
@@ -36,9 +28,6 @@ export default function Index() {
       setGetArticle(state.success.data)
     }
   }, [state])
-  const deleteFn = () => {
-    deleteResponse(`/api/posts/article/${id}/`, getArticle?.title, setDeleteCallback, setInfoDelete)
-  }
   
   useEffect(()=>{
     if(infoDelete && infoDelete?.status === 204){
@@ -58,9 +47,9 @@ export default function Index() {
       },)
     } 
   },[infoDelete])
-  const editFn = () => {
-    history.push(`/write-article/edit/${id}`)
-  }
+  // const editFn = () => {
+  //   history.push(`/write-article/edit/${id}`)
+  // }
   return (
     <div>
       <Wrapper>
@@ -72,8 +61,8 @@ export default function Index() {
               <Grid className="newspagetss" item xs={12} md={8}>
                 <CitiLeftPart
                   title={getArticle.title}
-                  kalendar="23.01.2021"
-                  // hteg={getArticle?.tags}
+                  kalendar={getArticle?.created_at}
+                  hteg={getArticle?.tags}
                   url={getArticle?.image}
                   text={getArticle?.content}
                   name1= {getArticle?.author?.first_name }

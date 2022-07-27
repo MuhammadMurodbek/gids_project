@@ -4,7 +4,7 @@ import { SecurityScanOutlined } from '@ant-design/icons'
 import { mainGreen } from "../../styles/global/colors"
 import Security from "../../assets/img/security.png"
 const ModalBtn = ({ showModal, handleOk, handleCancel, isModalVisible , type}) => {
-  
+  console.log(type)
   return (
     <>
       <div >
@@ -15,7 +15,7 @@ const ModalBtn = ({ showModal, handleOk, handleCancel, isModalVisible , type}) =
 
           <p style={{ fontSize: '1.1rem', textAlign: 'center' }}>
             <SecurityScanOutlined style={{ fontSize: '1.4rem', color: mainGreen, marginTop: 20, position: 'relative', top: 4 }} />
-            {type}ni junatish uchun avval ro'yxatdan o'tishingiz kerak !!!
+            {type}ni yuborish uchun avval ro'yxatdan o'tishingiz kerak.
           </p>
         </Modal>
       </div>

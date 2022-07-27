@@ -93,7 +93,7 @@ export const ComponentOne = styled.div`
 
         img{
             /* min-width:400px; */
-            width: 760px;
+            width: 850px;
             margin-top:65px;
             object-fit: cover;
 

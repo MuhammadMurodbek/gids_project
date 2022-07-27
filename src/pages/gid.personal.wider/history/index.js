@@ -40,7 +40,7 @@ export default function Index() {
                                             <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent aliquam sit ornare mattis id non aliquam convallis ut.</span>
                                         </div>
                                         <div className="right-prise">
-                                            <b className="price_part">{item?.tariff?.price || '0'} {t("hisobni_toldirish.som")}</b>
+                                            <b className="price_part">{item?.tariff?.price || '0'} {t("tariflar.som")}</b>
                                             <b className="right-b">{moment(item?.created_date).format('DD.MM.YYYY') || '01.01.2000'} gacha</b>
                                         </div>
                                     </Grid>

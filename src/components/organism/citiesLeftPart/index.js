@@ -19,7 +19,6 @@ export default function index(props) {
         let url = `/api/posts/article/?tag=${hteg}`
         getResponse(url, setState)
     }
-
     return (
         <Wrapper>
             <Grid className="msa" container spacing={1}>
@@ -52,7 +51,7 @@ export default function index(props) {
                         </Link>
 
                         <div className="hteg_wrapper">
-                            <div className="hteg img0 tagwidth" style={{ cursor: 'pointer' }} onClick={handleFilter}> <b> {hteg} </b> </div>
+                            <div className="hteg img0 tagwidth" style={{ cursor: 'pointer' }} onClick={handleFilter}> <b> {hteg?.map(item=>item?.substring(1))} </b> </div>
                         </div>
                     </div>
                 </Grid>
