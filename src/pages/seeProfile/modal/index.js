@@ -73,7 +73,10 @@ const Index = ({setCallback, open, setOpen, customId}) => {
                
 
 
-               
+
+
+
+
             </Modal>
         </div>
     )
