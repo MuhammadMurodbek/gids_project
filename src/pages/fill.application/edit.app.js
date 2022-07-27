@@ -182,7 +182,7 @@ const EditApp = () => {
                                     <Grid container spacing={1} alignItems="center" className="wrap-grid">
                                         <Grid item xs={12} md={5}></Grid>
                                         <Grid item xs={12} md={7}>
-                                            <CheckBoxController name="consent" control={control} label="Arizani yoborib, men foydalanuvchi shartnomasiga rozilik bildirasiz*" />
+                                            <CheckBoxController name="consent" control={control} label="Arizani yuborib, men foydalanuvchi shartnomasiga rozilik bildirasiz*" />
                                         </Grid>
                                     </Grid>
                                     <Container width="100%" margin="30px 0 0" textAlign="center" >
