@@ -12,7 +12,6 @@ const Index = (props) => {
   const lang = localStorage.getItem('i18nextLng')
   const [value, setValue] = useState(null);
   let citiesValue = country?.find(prev=>prev.id === countryId) || null
-  console.log(citiesValue)
   let options = citiesValue?.cities?.map((val)=>{
     return{
         value:val?.id,

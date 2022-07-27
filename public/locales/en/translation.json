@@ -48,7 +48,9 @@
         "dan":"dd/mm/yyyy  dan en",
         "gacha":"dd/mm/yyyy  gacha en"
    },
-
+   "tab":{
+    "seeProfile":"My profile"
+   },
    "main":{
        "title":"We offer trusted guides and translators from around the world",
        "takliflarimiz":"What we offer",
