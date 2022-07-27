@@ -73,7 +73,11 @@
        "MijozlarniF":"Feedback from our customers",
        "hoziroq":"Choose Git for yourself now or just leave an application.",
       "ariza":" Application",
-      "tanlash":"Guid selection "
+      "tanlash":"Guid selection ",
+      "Toshkent":"Toshkent",
+      "Samarqand":"Samarqand",
+      "Buhoro":"Buhoro",
+      "Xiva":"Xiva"
 },
   "Gid_Tanlash":{
     "rate":"Rate",
@@ -111,7 +115,9 @@
   },
   "about":{ 
     "title":"About the platform",
-    "boglanish":"Connect"
+    "boglanish":"Connect",
+    "Avvalo":"Avvalo, siz gits.uz platformasida gid yoki tarjimon sifatida ro’yxatdan o’tib o’zingizga mijoz topishingiz mimkin.",
+    "Shuningdek":" Shuningdek, gid yoki tarjimonlarni izlayotgan xorijiy yoki mahallay sayyohlar hamda mijozlar ularni onlayn qidirish va bevosita buyurtma berish imkoniga ham ega."
   },
   "connect":{
     "contact":"Contact us",
@@ -216,7 +222,12 @@
     "dan":"dd/mm/yyyy  dan en",
     "gacha":"dd/mm/yyyy,  gacha en",
     "valyuta":"Валюта",
-    "Ayuborish":"Submit the application"
+    "Ayuborish":"Submit the application",
+    "ariza":"Arizani topshirish faqat",
+    "foydalanuvchi":"Foydalanuvchi",
+    "ruhsat":"roliga ruhsat berilgan",
+    "foydalanuvchiR": "",
+    "arizaBekor":"Arizani bekor qilish"
   },
   "arizalar_royhati":{
     "title":"Application list",

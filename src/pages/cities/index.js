@@ -4,6 +4,7 @@ import ImgContainer from "../../components/molecules/img.container"
 import bukhara from '../../assets/img/citiyes/bukhara2.png'
 import { useTranslation } from 'react-i18next'
 import Blog from "../../pages/blog"
+import Buhoro from '../../assets/img/main/Buhoro.jpg'
 
 export default function Index() {
     const { t } = useTranslation()
@@ -11,7 +12,7 @@ export default function Index() {
         <>
         <Wrapper>
             <div className="imgBukhara">
-                <ImgContainer className="imgTop"   height="50vh" width="100%" src={bukhara} />
+                <ImgContainer className="imgTop"   height="50vh" width="100%" src={Buhoro} />
                 <p className="bukhara">Bukhara</p>
             </div>
             <PerentAB>

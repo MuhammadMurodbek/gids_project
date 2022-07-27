@@ -33,9 +33,9 @@ export default function Index() {
                         <Grid item xs={12} md={6} sm={12}>
                             <div className="container-2-1">
                                 <div className="text_main"  >
-                                    <p style={{textAlign:'justify'}}> Avvalo, siz gits.uz platformasida gid yoki tarjimon sifatida ro’yxatdan o’tib o’zingizga mijoz topishingiz mimkin.
+                                    <p style={{textAlign:'justify'}}> {t("about.Avvalo")}
                                         <br/><br/>
-                                        Shuningdek, gid yoki tarjimonlarni izlayotgan xorijiy yoki mahallay sayyohlar hamda mijozlar ularni onlayn qidirish va bevosita buyurtma berish imkoniga ham ega.
+                                        {t("about.Shuningdek")}
                                     </p>
                                 </div>
                                 <FlexContainer {...mediaBtnv} {...mediaImageSecond} width="370px" justifyContent="space-between">

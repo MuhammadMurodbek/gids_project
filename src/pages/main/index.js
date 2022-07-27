@@ -175,26 +175,26 @@ const Index = () => {
                             <div className="carouseldiv">
                                 <Paper style={{ overflow: 'hidden' }}>
                                     <div className="container">
-                                        <ImgContainer width="100%" height="270px" src={img1} />
+                                        <ImgContainer width="100%" height="270px" src={img2} />
                                         <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
-                                            <div className="title-container">Samarqand</div>
-                                            <Link to="/samarqand?page=1" onClick={toWIndows1} className="link11">
-                                                {t("main.korish")}
-                                                <img src={img21} alt="asdfasdf" />
+                                            <div className="title-container">{t("main.Toshkent")}</div>
+                                            <Link onClick={toWIndows1} to="/toshkent?page=1" className="link11">
+                                                {t("main.korish")}  <img src={img21} alt="asdfasdf" />
                                             </Link>
                                         </FlexContainer>
                                     </div>
                                 </Paper>
                             </div>
+
                             <div className="carouseldiv">
                                 <Paper style={{ overflow: 'hidden' }}>
                                     <div className="container">
-                                        <ImgContainer width="100%" height="270px" src={img4} />
+                                        <ImgContainer width="100%" height="270px" src={img1} />
                                         <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
-                                            <div className="title-container">Xiva</div>
-                                            <Link to="/xiva?page=1" className="link11"
-                                                onClick={toWIndows1} >
-                                                {t("main.korish")}  <img src={img21} alt="asdfasdf" />
+                                            <div className="title-container">{t("main.Samarqand")}</div>
+                                            <Link to="/samarqand?page=1" onClick={toWIndows1} className="link11">
+                                                {t("main.korish")}
+                                                <img src={img21} alt="asdfasdf" />
                                             </Link>
                                         </FlexContainer>
                                     </div>
@@ -206,7 +206,7 @@ const Index = () => {
                                     <div className="container">
                                         <ImgContainer width="100%" height="270px" src={img3} />
                                         <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
-                                            <div className="title-container">Buhoro</div>
+                                            <div className="title-container">{t("main.Buhoro")}</div>
                                             <Link onClick={toWIndows1} to="/cities?page=1" className="link11">
                                                 {t("main.korish")}  <img src={img21} alt="asdfasdf" />
                                             </Link>
@@ -214,19 +214,24 @@ const Index = () => {
                                     </div>
                                 </Paper>
                             </div>
+
                             <div className="carouseldiv">
                                 <Paper style={{ overflow: 'hidden' }}>
                                     <div className="container">
-                                        <ImgContainer width="100%" height="270px" src={img2} />
+                                        <ImgContainer width="100%" height="270px" src={img4} />
                                         <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
-                                            <div className="title-container">Toshkent</div>
-                                            <Link onClick={toWIndows1} to="/toshkent?page=1" className="link11">
+                                            <div className="title-container">{t("main.Xiva")}</div>
+                                            <Link to="/xiva?page=1" className="link11"
+                                                onClick={toWIndows1} >
                                                 {t("main.korish")}  <img src={img21} alt="asdfasdf" />
                                             </Link>
                                         </FlexContainer>
                                     </div>
                                 </Paper>
                             </div>
+
+                        
+                           
 
                         </Slider>
                     </div>

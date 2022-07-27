@@ -111,9 +111,9 @@ export default function Index() {
                         <p className='paragrefd'> {t("connect.yakshanba")}</p>
                         <p className='paragrefd'> {t("connect.dam")}</p>
                         <div className='paddingtop'>
-                            <img className="icons" src={imgtg} alt="name"/>
-                            <img className="icons" src={imgfac} alt="facebook"/>
-                            <img className="icons" src={imginsta} alt="insta"/>
+                            <a href='https://t.me/gits_uz' target="_blank"><img className="icons" src={imgtg} alt="name"/></a>
+                            <a href='https://www.facebook.com/gits.uz' target="_blank"><img className="icons" src={imgfac} alt="facebook"/></a>
+                            <a href='https://www.instagram.com/gits_uz/' target="_blank"><img className="icons" src={imginsta} alt="insta"/></a>
                         </div>
                     </Grid>
                     <Grid item xs={12} md={6} className="grid2" >

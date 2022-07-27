@@ -75,7 +75,15 @@
        "MijozlarniF":"Mijozlarning fikrlari",
        "hoziroq":"Hoziroq gid va tarjimonni tanlang yoki ariza qoldiring!",
       "ariza":"Ariza qoldirish",
-      "tanlash":"Tanlash"
+      "tanlash":"Tanlash",
+      "Toshkent":"Toshkent",
+      "Samarqand":"Samarqand",
+      "Buhoro":"Buhoro",
+      "Xiva":"Xiva",
+      "BuharaText1":"Oʻzbekiston Respublikasining qadimiy shaharlaridan biri, Buxoro viloyatining maʼmuriy, iqtisodiy va madaniy markazi. Buyuk ipаk yoʻlida yirik tijorat markazlaridan boʻlgan. Oʻzbekistonning janubiy-gʻarbida, Zarafshon daryosi quyi oqimida joylashgan. Toshkentdan 616 km. Buxoro 2 ta shahar rayoni (Fayzulla Xoʻjayev va Toʻqimachilik)ga boʻlingan. Aholisi 280000 (2019). Buxoro shahri qadim zamonlarda qanday nomlangani — nomaʼlum. Milodiy V asrga oid xitoy manbalarida Buxoro shahri Nyumi tarzida tilga olinib oʻtilgan. Binobarin, shaharda shu nomdagi mulk hukmdorining qarorgohi ham boʻlgan. Tan imperiyasining VII asrga oid solnomalarida Buxoro shahri An (Ango), Ansi, Buxo (Buxe, Fuxo) shakllarida qayd etib oʻtilgan. Keyinchalik shahar har xil nomlana boshladi. Arab qadimiy manbalarda u Bumiskat, Madinat us-sufriya (Mis shahar), Numijkat (soʻgʻdcha numij yoki namich degani mashhur degan maʼnoni anglatgan) tarzida keltirilgan. Qadimiy zamonlarda yashagan mahalliy mualliflarning fikricha, shaharning nomi Buxor, yaʼni „Sanamlar turgan ibodatxona“ maʼnosini anglatuvchi bir soʻzdan kelib chiqqan.",
+      "BuharaText2":"Ayrim tadqiqotchilarning faraz qilishlaricha, Buxoro nomi mintaqaning eng asosiy buddaviylik ibodatxonasi vixara yoki ana shu vixaraning sug'diy transkripsiyasi boʻlmish buxoro (ibodatxona) soʻzidan kelib chiqqan. Ammo buddaviylik va moniylik diniy taʼlimotlariga oid osori atiqalar shahar hududida ham, umuman, Buxoro vohasida ham topilgan emas.",
+      "BuharaText3":"Buxoro (Buxara) toponimi ilk bor Soʻgʻd yozuvlari bilan Buxoroda zarb qilingan mis tangalarida tilga olingan (milodiy IV-V asrlar). ",
+      "BuharaText4":"Buxoro shahri sharqning mashhur qadimiy shaharlaridan biri. Arxeologik maʼlumotlarga koʻra, Buxoroga miloddan avval VI asrda asos solingan.  Zarafshon daryosining quyi oqimida joylashgan Buxoro shahri va uning atrofidagi yerlar qadimda nihoyatda xushmanzara — hayvonot va oʻsimlik dunyosi betakror, koʻl va oqar suvlarga boy boʻlib, tarixchi Narshaxiyning „Buxoro tarixi“asaridagi maʼlumotlar buni tasdiqlaydi."
 },
   "Gid_Tanlash":{ 
     "rate":"Reyting",
@@ -113,7 +121,9 @@
   },
   "about":{
     "title":"Platforma haqida",
-    "boglanish":"Bog’lanish"
+    "boglanish":"Bog’lanish",
+    "Avvalo":"Avvalo, siz gits.uz platformasida gid yoki tarjimon sifatida ro’yxatdan o’tib o’zingizga mijoz topishingiz mimkin.",
+    "Shuningdek":" Shuningdek, gid yoki tarjimonlarni izlayotgan xorijiy yoki mahallay sayyohlar hamda mijozlar ularni onlayn qidirish va bevosita buyurtma berish imkoniga ham ega."
   },
   "connect":{
     "contact":" Biz bilan bog'lanish ",
@@ -218,7 +228,12 @@
     "dan":"dd/mm/yyyy  dan",
     "gacha":"dd/mm/yyyy,  gacha",
     "valyuta":"Valyuta",
-    "Ayuborish":"Arizani yuboirish"
+    "Ayuborish":"Arizani yuboirish",
+    "ariza":"Arizani yuborish uchun",
+    "foydalanuvchi":"Foydalanuvchi",
+    "ruhsat":"sifatida ro'yxhatdan o'ting",
+    "foydalanuvchiR":"",
+    "arizaBekor":"Arizani bekor qilish"
   },
   "arizalar_royhati":{
     "title":"Arizalar ro’yxati",
