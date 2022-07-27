@@ -86,9 +86,9 @@ export default function BasicTabs() {
     <div>
      
       <Wrapper>
-        { !appNoToken &&
-            <div style={{position:'absolute', color:'orangered'}}>&nbsp; {t("arizaqoldirish.ariza")} <strong> {t("arizaqoldirish.foydalanuvchi")}</strong>  {t("arizaqoldirish.ruhsat")}<strong>{t("arizaqoldirish.foydalanuvchiR")}</strong>
-              <Tooltip visible placement="right" title={<span>{t("arizaqoldirish.arizaBekor")}</span>}>
+        { appNoToken &&
+            <div style={{position:'absolute', color:'orangered'}}>&nbsp; Arizani yuborish uchun <strong>Foydalanuvchi</strong> sifatida ro'yxatdan o'ting. 
+              <Tooltip visible placement="right" title={<span>Arizani bekor qilish</span>}>
                 &nbsp;&nbsp;<button onClick={handleCancelApp} className="btn_cancel_app"><CloseCircleOutlined style={{fontSize:'1.1rem', position:'relative', top:'2px', color:'#326A32'}}/></button>
               </Tooltip>
             </div>

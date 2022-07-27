@@ -64,6 +64,7 @@ const GidIndex = () => {
         })
         if(value.city!=='' && value.country!=='') cloneState.push({city:value.city, country:value.country})
         setPostData({ ...postData, loading: true })
+        console.log(cloneState)
         const { consecutive_translate, synchronous_translate, written_translate } = checkItems
         if (excursion) {
             putResponse('/api/gids/edit/service/', { ...checkItems, excursions: cloneState }, setPostData)

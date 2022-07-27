@@ -1,12 +1,12 @@
 import React from 'react'
 import {Wrapper} from "./style"
-import {tabs} from "./list.of.tab"
+import {Tabs} from "./list.of.tab"
 import TabMenu from "../../components/organism/tabmenu"
 
 const Index = () => {
     return (
         <Wrapper>
-            <TabMenu tabs={tabs}/>
+            <TabMenu tabs={Tabs()}/>
         </Wrapper>
     )
 }
