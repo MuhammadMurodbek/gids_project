@@ -11,27 +11,27 @@ export const Tabs = () => {
     const {t} = useTranslation()
     return [
         {
-            label: <div className="border-div first">{t('tab.seeProfile')}</div>,
+            label: <div className="border-div first">{t('MTmenHaqimda.Profilni_Korish')}</div>,
             component: <First />,
         },
         {
-            label: <div className="border-div">Tahrirlash</div>,
+            label: <div className="border-div">{t("MTmenHaqimda.tahrirlash")}</div>,
             component: <Edit />,
         },
         {
-            label: <div className="border-div">Ish jadvali</div>,
+            label: <div className="border-div">{t("MTmenHaqimda.kalendar")}</div>,
             component: <Calendar />,
         },
         {
-            label: <div className="border-div">Blog</div>,
+            label: <div className="border-div">{t("MTmenHaqimda.blog")}</div>,
             component: <Fourth />,
         },
         {
-            label: <div className="border-div">Reklama</div>,
+            label: <div className="border-div">{t("MTmenHaqimda.reklama")}</div>,
             component: <Reklama />,
         },
         {
-            label: <div className="border-div">Sozlamalar</div>,
+            label: <div className="border-div">{t("MTmenHaqimda.sozlama")}</div>,
             component: <Settings />,
         },
     ];
@@ -47,19 +47,19 @@ export const TabsWriter2 = () => {
             component: <First />,
         },
         {
-            label: <div className="border-div">Tahrirlash</div>,
+            label: <div className="border-div">{t("MTmenHaqimda.tahrirlash")}</div>,
             component: <Edit />,
         },
         {
-            label: <div className="border-div">Ish jadvali</div>,
+            label: <div className="border-div">{t("MTmenHaqimda.kalendar")}</div>,
             component: <Calendar />,
         },
         {
-            label: <div className="border-div">Reklama</div>,
+            label: <div className="border-div">{t("MTmenHaqimda.reklama")}</div>,
             component: <Reklama />,
         },
         {
-            label: <div className="border-div">Sozlamalar</div>,
+            label: <div className="border-div">{t("MTmenHaqimda.sozlama")}</div>,
             component: <Settings />,
         },
     ];

@@ -208,7 +208,7 @@ const Index = () => {
                                     <div className="container">
                                         <ImgContainer width="100%" height="270px" src={img3} />
                                         <FlexContainer width="100%" alignItems="center" justifyContent="space-between">
-                                            <div className="title-container">{t("main.Buhoro")}</div>
+                                            <div className="title-container">{t("main.Buxoro")}</div>
                                             <Link onClick={toWIndows1} to="/cities?page=1" className="link11">
                                                 {t("main.korish")}  <img src={img21} alt="asdfasdf" />
                                             </Link>

@@ -22,7 +22,7 @@ const Index = () => {
         if (apiValue) {
             let obj = state
             obj.daily_workload = apiValue?.daily_workload
-            obj.always_online = apiValue?.always_online ? 'Ha' : "Yo'q'"
+            obj.always_online = apiValue?.always_online ? 'Ha' : "Yo'q"
             obj.express_order = apiValue?.express_order ? 'yes' : 'no'
             obj.weekend_order = apiValue?.weekend_order ? 'yes' : 'no'
             obj.edit_text = apiValue?.edit_text ? 'yes' : 'no'
@@ -59,7 +59,7 @@ const Index = () => {
                         <TextTitle font="15px" align="left" top="0" bottom="-10px" color="#262626">{t("Pismenniy_Xizmatlar.onlineMisizdoim")}</TextTitle>
                             <div style={{ fontSize: '0.8rem', marginTop:10 }}>{t("Pismenniy_Xizmatlar.kattaHajmMatn")}</div>
                         <FlexContainer width="100%" gap="10px">
-                            <SelectLabeled defaultApiValue={apiValue?.always_online ? 'Ha' : "Yo'q'"} setCollect={setState} collect={state} field="always_online" options={option_yes} width="30%" sizeLabel="15px" placeholder="Tanlang" />
+                            <SelectLabeled defaultApiValue={apiValue?.always_online ? 'Ha' : "Yo'q"} setCollect={setState} collect={state} field="always_online" options={option_yes} width="30%" sizeLabel="15px" placeholder="Tanlang" />
                             {/* <SelectLabeled setCollect={setState} collect={state} field="oral_translate_type" options={option_yes_sec} width="100%" placeholder="Ketma ket" /> */}
                         </FlexContainer>
                     </Container>

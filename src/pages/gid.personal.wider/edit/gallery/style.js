@@ -21,4 +21,8 @@ export const Wrapper = styled.div`
     .galarey{
         margin: 30px 0;
     }
+    #VideoPlayer > *{
+        aspect-ratio: 16/9;
+        width: 100%;
+    }
 `
