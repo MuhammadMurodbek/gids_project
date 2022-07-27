@@ -13,7 +13,7 @@ export const tabs = [
         component:<Bio/>,
     },
     {
-        label:<div className="border-div">Aloqa</div>,
+        label:<div className="border-div"></div>,
         component:<Contact/>,
     },
     {
