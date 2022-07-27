@@ -10,8 +10,6 @@ import Spinner from "../../../../components/atom/loading.spinner.line";
 import { useDispatch } from 'react-redux'
 import { saveTabAction } from "../../../../redux/actions"
 import { useTranslation } from 'react-i18next'
-// import { t } from 'i18next'
-
 const Index = () => {
 
     const { t } = useTranslation()
