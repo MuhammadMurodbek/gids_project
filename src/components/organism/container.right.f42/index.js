@@ -8,14 +8,6 @@ import MediaPlayer from "../../molecules/element_f42/media.player"
 import ImageGallery from "../../molecules/element_f42/reward.gallery"
 import ImageContainer from '../../molecules/img.container'
 import { useTranslation } from 'react-i18next';
-
-import telegram from '../../../assets/img/boglanish/11/telegram.png'
-import facebook from '../../../assets/img/boglanish/11/facebook.png'
-import instagram from '../../../assets/img/boglanish/11/instagram.png'
-import viber from '../../../assets/img/boglanish/11/viber.png'
-import wechat from '../../../assets/img/boglanish/11/wechat.png'
-import website from '../../../assets/img/boglanish/11/watsapp.png'
-
 const mediaContainer = {
     m_width: '600px',
     m_padding: '10px 0',

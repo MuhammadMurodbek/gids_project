@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Select from "react-select";
 import { Wrapper } from "./index.style";
 import "./style.css";
@@ -12,38 +12,26 @@ const Index = (props) => {
   const lang = localStorage.getItem('i18nextLng')
   const [value, setValue] = useState(null);
   let citiesValue = country?.find(prev=>prev.id === countryId) || null
-  let options = citiesValue?.cities?.map((val,index)=>{
+  console.log(citiesValue)
+  let options = citiesValue?.cities?.map((val)=>{
     return{
-        value:index+1,
+        value:val?.id,
         label:val[lang]
     }
   })||null
   localStorage.setItem('cityOptions', JSON.stringify(options))
-  // console.log(country)
-  // console.log(citiesValue)
-  // console.log(options)
   const handleChange = (e) => {
-    // console.log(e)
     setValue(()=>e)
     if(setState) setState(prev=>{return{...prev, city:e?.value, city_name:options.find(a=>a.value === e?.value)}})
   }
-  // console.log(value)
-  // console.log(state)
   useEffect(()=>{
     if(clearValue){
       setValue('')
       setClearValue(false)
     }
   },[clearValue])
-  // useEffect(()=>{
-  //   if(countryId){
-  //     setValue(null)
-  //   }
-  // },[countryId])
   useEffect(() =>{
-    // console.log('merge')
     if(defaultApiValue){
-      // console.log(defaultApiValue)
       let labelData = ''
       if(lang==='uz') labelData = defaultApiValue?.label?.uz
       if(lang==='en') labelData = defaultApiValue?.label?.en
