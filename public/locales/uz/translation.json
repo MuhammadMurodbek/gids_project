@@ -249,8 +249,8 @@
     "muallif":"Muallif:"
   },
   "safarHaqida":{
-    "title":"Safar qalay o‘tdi?",
-    "text":"Safar taassurotlari bilan o’rtoqlashing!",
+    "title":"Tadbir qanday o‘tdi?",
+    "text":"Ishtirok etgan tadbirlaringiz bilan bo'lishing va yangi mijozlar toping!",
     "Maqolayozish":"Maqola yozish",
     "Maqolalarim":"Maqolalarim",
     "tahrirlash":"Tahrirlash"
@@ -349,7 +349,8 @@
     "yoshKiritilmagan":"Yosh kiritilmagan",
     "bioKiritilmagan":"Bio kiritilmagan",
     "mavzular":"Mavzular:",
-    "shaharlar":"Quyidagi shaharlarda ekskursiyalar o'tkazaman:"
+    "shaharlar":"Quyidagi shaharlarda ekskursiyalar o'tkazaman:",
+    "galereyFoto":"Fotosurat yuklanmagan"
   },
   "kommentlar":{
     "textKiriting":"Text kiriting...",
@@ -479,7 +480,7 @@
     "videoVagalarey":"Video va galereya",
 
     "til":"Til",
-    "tilPlace":" Tilni kiriting",
+    "tilPlace":" Tilni tanlang",
     "tillarniKiriting":"",
     "bilishDarajasi":"Bilish darajasi",
     "BilishDPlace":"Til bilish darajangizni belgilang",
@@ -566,7 +567,7 @@
     "videoVagalarey":"Video va galereya",
 
     "Partfolio":"Video (mp4, avi, mpg formatida - 100 mb gacha)*",
-    "Partfolio2":"(o'zingiz yoki xizmatlaringiz haqida video joylashtirishingiz mumkin)",
+    "Partfolio2":"(O'zingiz yoki xizmatlaringiz haqida video joylashtirishingiz mumkin)",
     "galarey":"Video",
     "galareyangiz":"Galereya (jpg va png formatida)*",
     "saqlash":"Saqlash",
@@ -611,7 +612,7 @@
     "ishVaqti":"Ish soatlaringiz",
     "save":"Saqlash",
     "malumoti":"Ma'lumoti (institut / universitet nomi)",
-    "IshVaqtingiz":"Ish vaqtingiz",
+    "IshVaqtingiz":"Ish vaqtingiz (...dan)",
     "soatgacha":"(...gacha)",
     "yilKiriting":"Bitirgan yilingizni kiriting",
 
@@ -634,7 +635,7 @@
     "save":"Saqlash",
     "QaysiTildan":"Siz qaysi tildan tarjima qilasiz?",
     "QaysiTilga":"Siz qaysi tilga tarjima qilasiz?",
-    "tilniKiriting":"Tilni kiriting...",
+    "tilniKiriting":"Tilni tanlang...",
     "tarjimaMavzulari":"Tarjima mavzulari"
   },
 

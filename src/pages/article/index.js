@@ -22,15 +22,15 @@ export default function Index() {
     return (
         <Wrapper>
             <AboutTravel>
-                <TextTitle {...mediaTextField} {...mediaTextFieldSec}>{t("safarHaqda.title")}</TextTitle>
-                <p className="aboutT__text">{t("safarHaqda.text")}</p>
+                <TextTitle {...mediaTextField} {...mediaTextFieldSec}>{t("safarHaqida.title")}</TextTitle>
+                <p className="aboutT__text">{t("safarHaqida.text")}</p>
                 <TextTitle width="50%" left="auto" right="auto" bottom="40px">
                     <Link to="/write-article">
-                        <Button>{t("safarHaqda.Maqolayozish")}</Button>
+                        <Button>{t("safarHaqida.Maqolayozish")}</Button>
                     </Link>
                 </TextTitle>
             </AboutTravel>
-            <TextTitle {...mediaTextField} {...mediaTextFieldSec} >{t("safarHaqda.Maqolalarim")}</TextTitle>
+            <TextTitle {...mediaTextField} {...mediaTextFieldSec} >{t("safarHaqida.Maqolalarim")}</TextTitle>
             {/* <Grid justifyContent="center" className="grid_container" container spacing={1}>
                 <Grid item xs={12} md={8}>
 

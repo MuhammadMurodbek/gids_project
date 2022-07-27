@@ -83,7 +83,7 @@ const Index = (props) => {
         data?.galleries?.length>0 &&
         (state || props?.list) ? 
         <Gallery {...props} images={state || props?.list} />:
-        <span>{t("GidPk.malumotKiritilmagan")}</span> 
+        <span>{t("GidPk.galereyFoto")}</span> 
       }
     </div>
   );

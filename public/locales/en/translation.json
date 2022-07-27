@@ -245,6 +245,13 @@
     "edit":"Edit",
     "muallif":"Author:"
   },
+  "safarHaqida":{
+    "title":"How was the event?",
+    "text":"Share the events you've attended and find new customers!",
+    "Maqolayozish":"Writing an article",
+    "Maqolalarim":"My articles",
+    "tahrirlash":"Editing"
+  },
   "safarHaqda":{
     "title":"How was your trip?",
     "text":"Share your impressions of the trip to attract new customers.",
@@ -345,7 +352,8 @@
     "yoshKiritilmagan":"Yosh kiritilmagan",
     "bioKiritilmagan":"Bio kiritilmagan",
     "mavzular":"Mavzular:",
-    "shaharlar":"Quyidagi shaharlarda ekskursiyalar o'tkazaman:"
+    "shaharlar":"Quyidagi shaharlarda ekskursiyalar o'tkazaman:",
+    "galereyFoto":"Photo not uploaded"
  
   },
   "kommentlar":{
@@ -556,7 +564,7 @@
     "videoVagalarey":"Video and gallery",
 
     "Partfolio":"Video (in mp4, avi, mpg format - up to 100 mb)*",
-    "Partfolio2":"(you can post a video about yourself or your services)",
+    "Partfolio2":"(You can post a video about yourself or your services)",
     "galarey":"Video",
     "galareyangiz":"Your gallery",
     "rasmGalereya":"(O'z fotosuratlaringizni va ekskursiyalar davomida olingan suratlarni joylashtirishingiz mumkin)",
@@ -600,7 +608,7 @@
     "ishVaqti":"Ish vaqtingiz",
     "save":"Saqlash",
     "malumoti":"Ma'lumoti (institut / universitet nomi)",
-    "IshVaqtingiz":"Ish vaqtingiz",
+    "IshVaqtingiz":"Ish vaqtingiz (...dan",
     "soatgacha":"(...gacha)",
     "yilKiriting":"Bitirgan yilingizni kiriting",
 
@@ -623,7 +631,7 @@
     "save":"Save",
     "QaysiTildan":"Siz qaysi tildan tarjima qilasiz?",
     "QaysiTilga":"Siz qaysi tilga tarjima qilasiz?",
-    "tilniKiriting":"Tilni kiriting...",
+    "tilniKiriting":"Tilni tanlang...",
     "tarjimaMavzulari":"Tarjima mavzulari"
   },
 
@@ -859,8 +867,8 @@
   },
   "ishJadvali":{
     "tahrirlash":"Edit",
-    "bosh":"Empty",
-    "band":"Occupied",
+    "bosh":"Free",
+    "band":"Busy",
     "oylikJadvalim":"Monthly work schedule",
     "ishKunlarim":"Working days",
     "bandKunlarim":"Busy days",
