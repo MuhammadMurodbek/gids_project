@@ -10,5 +10,4 @@ const Index = () => {
         </Wrapper>
     )
 }
-
 export default Index
