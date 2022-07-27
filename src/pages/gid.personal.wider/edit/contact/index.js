@@ -10,8 +10,6 @@ import Spinner from "../../../../components/atom/loading.spinner.line";
 import { useDispatch } from 'react-redux'
 import { saveTabAction } from "../../../../redux/actions"
 import { useTranslation } from 'react-i18next'
-import { t } from 'i18next'
-
 const Index = () => {
 
     const { t } = useTranslation()
@@ -24,12 +22,12 @@ const Index = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         let postState = {
-            website: state?.website ? 'https://' + state?.website : undefined,
-            telegram: state?.telegram ? 'https://t.me/' + state?.telegram : undefined,
-            instagram: state?.instagram ? 'https://instagram.com/' + state?.instagram : undefined,
-            facebook: state?.facebook ? 'https://facebook.com/' + state?.facebook : undefined,
-            wechat: state?.wechat ? 'https://wechat.com/' + state?.wechat : undefined,
-            viber: state?.viber ? 'https://viber.com/' + state?.viber : undefined
+            website: state?.website ? 'https://' + state?.website : '',
+            telegram: state?.telegram ? 'https://t.me/' + state?.telegram : '',
+            instagram: state?.instagram ? 'https://instagram.com/' + state?.instagram : '',
+            facebook: state?.facebook ? 'https://facebook.com/' + state?.facebook : '',
+            wechat: state?.wechat ? 'https://wechat.com/' + state?.wechat : '',
+            viber: state?.viber ? 'https://viber.com/' + state?.viber : ''
         }
         putResponse(`/api/${getRole?.role}s/edit/contact/`, JSON.parse(JSON.stringify(postState)), setApiRes)
     }
@@ -49,7 +47,7 @@ const Index = () => {
                     <>
                         <Grid container spacing={2}>
                             <Grid item xs={12} sm={6} md={4}>
-                                <InputLabel log="https://whatsapp.com/" setState={setState} state={state} field="website" defaultApiValue={apiResponse?.success?.data?.website?.substr(8)} sizeLabel="15px" width="100%" label="Whatsapp" placeholder="https://www.whatsapp.com/user-name" />
+                                <InputLabel log="https://whatsapp.com/" setState={setState} state={state} field="website" defaultApiValue={apiResponse?.success?.data?.website?.substr(8)} sizeLabel="15px" width="100%" label="Website" placeholder="https://www.whatsapp.com/user-name" />
                             </Grid> 
                             <Grid item xs={12} sm={6} md={4}>
                                 <InputLabel log="https://t.me/" setState={setState} state={state} field="telegram" defaultApiValue={apiResponse?.success?.data?.telegram?.slice(13)} sizeLabel="15px" width="100%" label="Telegram" placeholder="https://t.me/user-name" />

@@ -19,9 +19,6 @@ import Spinner from "../../atom/loading.spinner.line"
 import { Image } from 'antd';
 import './main.css'
 import { mediaContainer, mediaContainerSecond, mediaContainerSecondText, mediaContainerPadding } from "./const"
-
-
-
 import telegram from '../../../assets/img/boglanish/11/telegram.png'
 import facebook from '../../../assets/img/boglanish/11/facebook.png'
 import instagram from '../../../assets/img/boglanish/11/instagram.png'

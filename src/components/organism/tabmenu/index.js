@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 import { useHistory } from 'react-router'
 import {searchToObject} from "../../../custom/function"
+import {useTranslation} from 'react-i18next'
 function TabPanel(props) {
   const { children, value, index, ...other } = props
 
@@ -41,6 +42,7 @@ function a11yProps(index) {
 }
 
 export default function BasicTabs(props) {
+  const {t} = useTranslation()
   const [value, setValue] = React.useState(0)
   const { tabs } = props
   const history = useHistory()
