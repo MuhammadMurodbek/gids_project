@@ -71,12 +71,6 @@ const Index = ({setCallback, open, setOpen, customId}) => {
                      <div style={{color:'orangered'}}> Fikr qoldirish uchun ro'yxatdan o'tishingiz kerak...</div>
                 }
                
-
-
-
-
-
-
             </Modal>
         </div>
     )
