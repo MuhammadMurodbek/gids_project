@@ -33,11 +33,11 @@ const Index = () => {
     }
     useEffect(() => {
         if (apiRes?.success !== "") {
-            toast.success("Ma'lumotlaringiz muvaffaqiyatli yuklandi")
+            toast.success(t("kommentlar.yuklandi"))
             getResponse(`/api/${getRole?.role}s/edit/contact/`, setApiResponse)
             dispatch(saveTabAction(2))
         } else if (apiRes?.error !== "") {
-            toast.error("Xatolik mavjud, qaytadan urinib ko'ring")
+            toast.error(t("kommentlar.xatolikMavjud"))
         }
     }, [apiRes])
     return (

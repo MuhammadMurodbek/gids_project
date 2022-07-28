@@ -40,8 +40,8 @@ const Index = ({ state, typeRole, comments, commentCount, commentReview }) => {
         if (lang === 'uz' && item) return item?.language__name_uz + " tili"
     }
     const degreeLang = {
-        native: "Ona tili",
-        intermediate: 'Yaxshi'
+        native: t("TillarniBilish.onaTili"),
+        intermediate: t("TillarniBilish.yaxshi")
     }
 
     return (
@@ -85,7 +85,7 @@ const Index = ({ state, typeRole, comments, commentCount, commentReview }) => {
                             {state?.facebook ? <a className='linkai' target="_blank" href={state?.facebook}>  <ImageContainer width="40px" src={facebook} /></a> : ""}
                             {state?.instagram ? <a className='linkai' target="_blank" href={state?.instagram}> <ImageContainer width="40px" src={instagram} /></a> : ""}
                             </div>
-                            <div style={{marginTop: "20px", fontSize: "12px", textAlign: "end", paddingRight: "10px"}}><b>{t("GidPk.boglanishIcons")}</b> </div>
+                            {state?.telegram || state?.website || state?.wechat || state?.viber || state?.facebook || state?.instagram?<div style={{marginTop: "20px", fontSize: "12px", textAlign: "end", paddingRight: "10px"}}><b>{t("GidPk.boglanishIcons")}</b> </div>:""}
                             </div>
                             
                           

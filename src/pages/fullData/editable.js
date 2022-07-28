@@ -13,7 +13,10 @@ import { getResponse, deleteResponse } from "../../hooks/response_get"
 import Spinner from "../../components/atom/loading.spinner.line"
 // import {error, success} from "../../components/organism/modals"
 import NoDataPage from "../../components/templates/no.data.page.js"
+import { useTranslation } from 'react-i18next'
+
 export default function Index() {
+  const { t } = useTranslation()
   const {id} = useParams()
   const history = useHistory()
   const getRole = JSON.parse(localStorage.getItem("user_token"));
@@ -36,7 +39,7 @@ export default function Index() {
   useEffect(()=>{
     if(infoDelete && infoDelete?.status === 204){
       Modal.success({
-        content:'Deleted successfully',
+        content: t("MTmenHaqimda.ochirildi"),
         onOk() {
             history.push('/gid-personal-wider?tab=3')
         },
@@ -44,7 +47,7 @@ export default function Index() {
     } 
     if(infoDelete && infoDelete?.status !== 204){
       Modal.error({
-        content:'Something went wrong',
+        content: t("MTmenHaqimda.notogri"),
       },)
     } 
   },[infoDelete])
@@ -70,14 +73,14 @@ export default function Index() {
 
                 <div className="mualif">
                   <div className="mualif-text">
-                    <b className="mualif-b">Muallif: </b>
+                    <b className="mualif-b">{t("Blog.muallif")}</b>
                     <span> {getArticle?.author?.first_name  +" "+  getArticle?.author?.last_name}  </span>
                   </div>
                   <div className="editbtn">
-                    <Button onClick={editFn} type="outlined">edit</Button>
+                    <Button onClick={editFn} type="outlined">{t("MTmenHaqimda.edit")}</Button>
                   </div>
                   <div className="deletebtn">
-                    <Button onClick={deleteFn} type="outlined">delete</Button>
+                    <Button onClick={deleteFn} type="outlined">{t("MTmenHaqimda.delete")}</Button>
                   </div>
                 </div>
               </Grid>
@@ -91,7 +94,7 @@ export default function Index() {
           </>:
           <div style={{width:'100%', textAlign:'center'}}>
               <NoDataPage/>
-              <Button type="outlined" onClick={()=>history.push('/gid-personal-wider?tab=0')}>Ortga qaytish</Button>
+              <Button type="outlined" onClick={()=>history.push('/gid-personal-wider?tab=0')}>{t("MTmenHaqimda.ortga")}</Button>
           </div> 
         }
       </Wrapper>

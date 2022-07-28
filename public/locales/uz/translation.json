@@ -116,7 +116,8 @@
     "OzimHaqimda":"O'zim haqimda",
     "korish":"Ko'rish",
     "davomi":"Davomi",
-    "reyting":"Reyting:"
+    "reyting":"Reyting:",
+    "soatiga":"Bir soat: "
 },
   "gidlar_uchun":{
     "title":"O'z shahringizda tarjimon yoki gid sifatida ro'yxatdan o'ting",
@@ -188,7 +189,13 @@
     "email2":"E-mail ni kiriting",
     "pass":"Parolingizni kiriting",
     "repass":"Parolingizni tasdiqlang",
-    "submit":"Ro'yxatdan o'tish"
+    "submit":"Ro'yxatdan o'tish",
+    "ismKamida":"Ism kiriting (kamida 3 ta belgi)",
+    "FamiliyaKamida":"Familiya kiriting (kamida 3 ta belgi)",
+    "FoydalanuvchiTuri":"Foydalanuvchi turi tanlanmagan",
+    "EmailXato":"Emailda kiritishda xatolik mavjud",
+    "KamidaBel":"Kamida 8 ta belgidan foydalaning (A,z,0,*,/,9)",
+    "ParolXato":"Parolni tasdiqlashda xatolik mavjud"
   },
   "auth_kirish":{
     "kirish":"Kirish",
@@ -196,7 +203,11 @@
     "email2":"E-mail ni kiriting",
     "pass":"Parolni kiriting",
     "forget":"Parolni unutdim",
-    "eslash":"Eslab qolish"
+    "eslash":"Eslab qolish",
+    "loginYoki":"Login yoki parol xato",
+    "toliqKiritilmagan":"Ma'lumotlar to'liq kiritilmagan",
+    "Kamida":"Kamida 8 ta belgidan foydalaning [A-z, 0-9]",
+    "emailKiritilmagan":"Email kiritilmagan"
   },
   "auth_parolniTiklash":{
     "reset":"Parolni tiklash ",
@@ -254,7 +265,16 @@
     "foydalanuvchi":"Foydalanuvchi",
     "ruhsat":"sifatida ro'yxhatdan o'ting",
     "foydalanuvchiR":"",
-    "arizaBekor":"Arizani bekor qilish"
+    "arizaBekor":"Arizani bekor qilish",
+    "kimKiritilmagan":"Kim kerakligi kiritilmagan",
+    "sanaKiritilmagan":"Boshlanish sanasi kiritilmagan",
+    "tugashKiritilmagan":"Tugash sanasi kiritilmagan",
+    "tilKiritilmagan":"Tillar kiritilmagan",
+    "sababKiritilmagan":"Sabab kiritilmagan",
+    "narxKiritilmagan":"Narx kiritilmagan",
+    "valyutaKiritilmagan":"Valyuta kiritilmagan",
+    "jinsiTanlanmagan":"Jinsi tanlanmagan",
+    "odamKiritilmagan":"Odamlar soni kiritilmagan"
   },
   "arizalar_royhati":{
     "title":"Arizalar ro’yxati",
@@ -393,7 +413,9 @@
     "textKiriting":"Text kiriting...",
     "reytingniBaholang":"Reytingni baholang",
     "kommentShart":"Izoh qoldirish kerak!!!",
-    "bahoShart":"Baho qo'yish kerak!!!"
+    "bahoShart":"Baho qo'yish kerak!!!",
+    "yuklandi":"Ma'lumotlaringiz muvaffaqiyatli yuklandi",
+    "xatolikMavjud":"Xatolik mavjud, qaytadan urinib ko'ring"
 
   },
   "MTmenHaqimda":{
@@ -438,7 +460,14 @@
     "taqdimotlar":"Taqdimotlar, brifinglar, matbuot anjumanlari, seminarlar va treninglarda ishtirok etganmisiz?",
     "nominiYozing":"Nomini yozing",
     "nominiKiriting":"Nomini kiriting",
-    "yilniKiriting":"Yilni kiriting"
+    "yilniKiriting":"Yilni kiriting",
+    "ochirildi":"Muvaffaqiyatli oʻchirildi",
+    "notogri":"Nimadir noto'g'ri bajarildi",
+    "ozgarildi":"Ma'lumotlarinngiz o'zgartirildi",
+    "edit":"Tahrirlash",
+    "delete":"O'chirish",
+    "ortga":"Ortga qaytish",
+    "loaded":"Muvaffaqiyatli yuklandi"
   },
   "MT_Kontaktlar":{
 
@@ -524,7 +553,10 @@
     "tillarniKiriting":"",
     "bilishDarajasi":"Bilish darajasi",
     "BilishDPlace":"Til bilish darajangizni belgilang",
-    "save":"Saqlash"
+    "save":"Saqlash",
+    "onaTili":"Ona tili",
+    "alo":"A'lo",
+    "yaxshi":"Yaxshi"
   },
   "xizmatlar":{
     "Profilni_Korish":"Profilni ko'rish",
@@ -836,7 +868,10 @@
     "som":"so’m",
     "tarifTolov":"Tarif bo’yicha to’lov muvaffaqiyatli amalga oshirildi!",
     "xatolik":"Xatolik yuz berdi",
-    "qaytaUrining":"Qaytadan urinib ko'ring."
+    "qaytaUrining":"Qaytadan urinib ko'ring.",
+    "tolovSumma":"To'lov miqdori: ",
+    "muddati":"Amal qilish muddati:",
+    "gacha":"gacha"
 
    },
    "hisobni_toldirish":{
@@ -915,6 +950,7 @@
     "tasdilashPlac":"Yangi parolni qayta kiriting",
     "saqlash":"Saqlash",
     "yuklandi":"Muvaffaqiyatli yuklandi"
+    
   },
   "ishJadvali":{
     "tahrirlash":"Tahrirlash",

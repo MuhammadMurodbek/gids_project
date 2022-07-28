@@ -37,12 +37,13 @@ export default function Index() {
                                     <Grid item md="11" xs="12" className="item_md_11">
                                         <div className="services_item" >
                                             <p className="services_1">{t("hisobni_toldirish.tolovlar")} No.{item.id}</p>
-                                            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent aliquam sit ornare mattis id non aliquam convallis ut.</span>
+                                            {/* <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent aliquam sit ornare mattis id non aliquam convallis ut.</span> */}
+                                            <div className="right-prise">
+                                            <b className="price_part">{t("tariflar.tolovSumma")} {item?.total_sum || '0'} {t("reklama.som")}</b>
+                                            <b className="right-b">{t("tariflar.muddati")} {moment(item?.payed_time).format('DD.MM.YYYY HH:mm') || '01.01.2000'} {t("tariflar.gacha")}</b>
                                         </div>
-                                        <div className="right-prise">
-                                            <b className="price_part">{item?.total_sum || '0'} {t("reklama.som")}</b>
-                                            <b className="right-b">{moment(item?.payed_time).format('DD.MM.YYYY HH:mm') || '01.01.2000'} gacha</b>
                                         </div>
+                                     
                                     </Grid>
                                 </Grid>
                             )) :
