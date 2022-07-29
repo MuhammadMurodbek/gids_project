@@ -12,7 +12,7 @@ export const Tabs = () => {
     const {t} = useTranslation()
     return [
         {
-            label:<div className="border-div first">Men <br className="br"/> haqimda</div>,
+            label:<div className="border-div first">{t('MTmenHaqimda.menHaqimda')}</div>,
             component:<Bio/>,
         },
         {
@@ -47,7 +47,7 @@ export const TabsWriter = () => {
     const {t} = useTranslation()
     return [
         {
-            label:<div className="border-div first">Men  haqimda</div>,
+            label:<div className="border-div first">{t('MTmenHaqimda.menHaqimda')}</div>,
             component:<Bio/>,
         },
         {
@@ -55,19 +55,19 @@ export const TabsWriter = () => {
             component:<Contact/>,
         },
         {
-            label:<div className="border-div">{t('MTmenHaqimda.tillarniBilish')}</div>,
+            label:<div className="border-div">{t('MTmenHaqimda.IshTajriba')}</div>,
             component:<Experience/>,
         },
         {
-            label:<div className="border-div">{t('MTmenHaqimda.hizmatlar')}</div>,
+            label:<div className="border-div">{t('MTmenHaqimda.tillarniBilish')}</div>,
             component:<Lang/>,
         },
         {
-            label:<div className="border-div">{t('MTmenHaqimda.narxlar')}</div>,
+            label:<div className="border-div">{t('MTmenHaqimda.hizmatlar')}</div>,
             component:<Service/>,
         },
         {
-            label:<div className="border-div">Narxlar</div>,
+            label:<div className="border-div">{t('MTmenHaqimda.narxlar')}</div>,
             component:<Price/>,
         },
     ];

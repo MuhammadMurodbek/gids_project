@@ -6,8 +6,11 @@ import "./style.css"
 import Loader from "react-loader-spinner";
 import toast from "react-hot-toast"
 import {postResponse} from "../../../hooks/response_get"
+import { useTranslation } from 'react-i18next';
+
 const Demo = ({loading, setLoading, list, setCallback, role, urlType}) => {
   const [url, setUrl] = useState({success:'', error:'', loading:'false'})
+  const { t } = useTranslation()
   const onChange = ( newFileList) => {
     return null
   };
@@ -26,8 +29,8 @@ const Demo = ({loading, setLoading, list, setCallback, role, urlType}) => {
     if(url?.success!=='' || url?.error!==''){
       setCallback(prev=>!prev)
     }
-    if(url?.success!=='') toast.success('Loaded successfully')
-    else if(url?.error!=='') toast.error('Something went wrong')
+    if(url?.success!=='') toast.success(t("MTmenHaqimda.loaded"))
+    else if(url?.error!=='') toast.error(t("MTmenHaqimda.notogri"))
   },[url])
   return(
       <div className="cropper_container ext">

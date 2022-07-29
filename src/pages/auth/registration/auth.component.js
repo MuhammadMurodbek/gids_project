@@ -40,11 +40,11 @@ const Index = () => {
         if (!(stateEmail.includes('@') || stateEmail.length > 0) || statePassword.length < 8) {
             if (!(stateEmail.includes('@'))) {
                 setLoader(false)
-                setEmailError({ error: true, errorText: 'Email kiritilmagan' })
+                setEmailError({ error: true, errorText: t("auth_kirish.emailKiritilmagan") })
             }
             if (statePassword.length < 8) {
                 setLoader(false)
-                setPasswordError({ error: true, errorText: 'Kamida 8 ta belgidan foydalaning [A-z, 0-9]' })
+                setPasswordError({ error: true, errorText:  t("auth_kirish.Kamida")})
             }
         } else setResponseHook(post_auth_ent_action(obj))
     }
@@ -58,8 +58,8 @@ const Index = () => {
             setLoader(false)
             switch (responseHook.status) {
                 case 200: return Success(responseHook?.data?.data)
-                case 400: return toast.error("Ma'lumotlar to'liq kiritilmagan")
-                case 401: return toast.error("Login yoki parol xato")
+                case 400: return toast.error(t("auth_kirish.toliqKiritilmagan"))
+                case 401: return toast.error(t("auth_kirish.loginYoki"))
                 default: return null
             }
         }

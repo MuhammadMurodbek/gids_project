@@ -32,7 +32,7 @@ export default function Index() {
   useEffect(()=>{
     if(infoDelete && infoDelete?.status === 204){
       Modal.success({
-        content:'Deleted successfully',
+        content: t("MTmenHaqimda.ochirildi"),
         onOk() {
             history.push('/gid-personal-wider?tab=0')
         },
@@ -40,7 +40,7 @@ export default function Index() {
     } 
     if(infoDelete && infoDelete?.status !== 204){
       Modal.error({
-        content:'Something went wrong',
+        content: t("MTmenHaqimda.notogri"),
         onOk() {
             history.push('/gid-personal-wider?tab=0')
         },

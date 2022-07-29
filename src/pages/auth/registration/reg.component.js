@@ -41,12 +41,12 @@ const Index = () => {
       ];
     
     const validatorFunction = () => {
-        let v_name = validator('min', stateName, 3,  'Ism kiriting (kamida 3 ta belgi)', '', setNameV, nameV)
-        let v_last = validator('min', stateLast, 3,  'Familiya kiriting (kamida 3 ta belgi)', '', setLastV, lastV)
-        let v_email = validator('email', stateEmail, 3, 'Emailda kiritishda xatolik mavjud', '', setEmailV, emailV)
-        let v_select = validator('select', select, 3, 'Foydalanuvchi turi tanlanmagan', '', setSelectV,selectV)
-        let v_pass = validator('min', statePassword, 8, 'Kamida 8 ta belgidan foydalaning (A,z,0,*,/,9)', '', setPasswordV,passwordV)
-        let v_pass_r = validator('min', statePasswordRecover, 8, 'Parolni tasdiqlashda xatolik mavjud', '', setPasswordRecoverV, passwordRecoverV)
+        let v_name = validator('min', stateName, 3,  t("auth_registr.ismKamida"), '', setNameV, nameV)
+        let v_last = validator('min', stateLast, 3,  t("auth_registr.FamiliyaKamida"), '', setLastV, lastV)
+        let v_email = validator('email', stateEmail, 3, t("auth_registr.EmailXato"), '', setEmailV, emailV)
+        let v_select = validator('select', select, 3, t("auth_registr.FoydalanuvchiTuri"), '', setSelectV,selectV)
+        let v_pass = validator('min', statePassword, 8, t("auth_registr.KamidaBel"), '', setPasswordV,passwordV)
+        let v_pass_r = validator('min', statePasswordRecover, 8, t("auth_registr.ParolXato"), '', setPasswordRecoverV, passwordRecoverV)
         
         if(v_name === '' && v_last === '' && v_email=== '' && v_select==='' && v_pass==='' && v_pass_r ==='') return true
         else return false
@@ -67,7 +67,7 @@ const Index = () => {
         let check = validatorFunction()
          let check_password = statePasswordRecover===statePassword
         if((statePasswordRecover !== statePassword) || !check) {
-            setPasswordRecoverV({...passwordRecoverV, errorText:'Parolni tasdiqlashda xatolik mavjud'})
+            setPasswordRecoverV({...passwordRecoverV, errorText: t("auth_registr.ParolXato")})
             setLoader(false)
         }
       

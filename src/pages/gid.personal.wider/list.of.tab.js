@@ -43,7 +43,7 @@ export const TabsWriter2 = () => {
 
     return [
         {
-            label: <div className="border-div first">{t('tab.seeProfile')}</div>,
+            label: <div className="border-div first">{t('MTmenHaqimda.Profilni_Korish')}</div>,
             component: <First />,
         },
         {

@@ -102,7 +102,7 @@ const Index = () => {
                                 <RadioGroup
                                     setState={setCollect}
                                     state={collect}
-                                    errorText={error ? validatorState(collect?.who_need, 'string', 0, 'Kim kerakligi kiritilmagan') : null}
+                                    errorText={error ? validatorState(collect?.who_need, 'string', 0, t("arizaqoldirish.kimKiritilmagan")) : null}
                                 />
                             </Grid>
                         </Grid>
@@ -141,11 +141,11 @@ const Index = () => {
                                 <Grid container spacing={2}> 
                                     <Grid item xs={12} sm={6}>
                                         <Calendar setState={setCollect} state={collect} field="start_date"
-                                            errorText={error ? validatorState(collect?.start_date, 'string', 0, 'Boshlanish sanasi kiritilmagan') : null} placeholder={t("arizaqoldirish.dan")} />
+                                            errorText={error ? validatorState(collect?.start_date, 'string', 0, t("arizaqoldirish.sanaKiritilmagan")) : null} placeholder={t("arizaqoldirish.dan")} />
                                     </Grid>
                                     <Grid item xs={12} sm={6}>
                                         <Calendar setState={setCollect} state={collect} field="end_date"
-                                            errorText={error ? validatorState(collect?.start_date, 'string', 0, 'Tugash sanasi kiritilmagan') : null} placeholder={t("arizaqoldirish.gacha")} />
+                                            errorText={error ? validatorState(collect?.start_date, 'string', 0, t("arizaqoldirish.tugashKiritilmagan")) : null} placeholder={t("arizaqoldirish.gacha")} />
                                     </Grid>
                                 </Grid>
                             </Grid>
@@ -161,7 +161,7 @@ const Index = () => {
                                     // field="languages" 
                                     placeholder={t("arizaqoldirish.BilishikeralPlac")}
                                     // options={ gid_lang_obj } 
-                                    errorText={error ? validatorState(collect?.languages, 'array', 0, 'Tillar kiritilmagan') : null}
+                                    errorText={error ? validatorState(collect?.languages, 'array', 0, t("arizaqoldirish.tilKiritilmagan")) : null}
                                 />
                             </Grid>
                         </Grid>
@@ -171,7 +171,7 @@ const Index = () => {
                             </Grid>
                             <Grid item xs={12} sm={12} md={7}>
                                 <TextArea onChange={(e) => setCollect({ ...collect, why_need: e.target.value })} cols="20" rows="5" wrap="hard" maxlength="10"
-                                    placeholder={t("arizaqoldirish.misol")} width="100%" errorText={error ? validatorState(collect?.why_need, 'string', 0, 'Sabab kiritilmagan') : null} />
+                                    placeholder={t("arizaqoldirish.misol")} width="100%" errorText={error ? validatorState(collect?.why_need, 'string', 0, t("arizaqoldirish.sababKiritilmagan")) : null} />
                             </Grid>
                         </Grid>
                         <Grid container spacing={1} alignItems="center" className="wrap-grid">
@@ -181,11 +181,11 @@ const Index = () => {
                             <Grid item xs={12} sm={12} md={7}>
                                 <Grid container spacing={1} alignItems="center">
                                     <Grid item xs={12} sm={8}>
-                                        <Input value={collect?.cost || ''} onChange={(e) => setCollect({ ...collect, cost: parseInt(e.target.value) })} width="100%" type="number" placeholder={t("arizaqoldirish.chegara")} errorText={error ? validatorState(collect?.cost, 'max', 0, 'Narx kiritilmagan') : null} />
+                                        <Input value={collect?.cost || ''} onChange={(e) => setCollect({ ...collect, cost: parseInt(e.target.value) })} width="100%" type="number" placeholder={t("arizaqoldirish.chegara")} errorText={error ? validatorState(collect?.cost, 'max', 0, t("arizaqoldirish.narxKiritilmagan")) : null} />
                                     </Grid>
                                     <Grid item xs={12} sm={4} style={{ position: 'relative', top: 3 }}>
                                         <Select setCollect={setCollect} collect={collect} field="currency" options={currency} 
-                                        placeholder={t("arizaqoldirish.valyuta")} errorText={error ? validatorState(collect?.currency, 'object', 0, 'Valyuta kiritilmagan') : null} />
+                                        placeholder={t("arizaqoldirish.valyuta")} errorText={error ? validatorState(collect?.currency, 'object', 0, t("arizaqoldirish.valyutaKiritilmagan")) : null} />
                                     </Grid>
                                 </Grid>
                             </Grid>
@@ -206,7 +206,7 @@ const Index = () => {
                                     field2="is_female"
                                     state={collect}
                                     setState={setCollect}
-                                    errorText={(error && !(collect?.is_male || collect?.is_female)) ? "Jinsi tanlanmagan" : null}
+                                    errorText={(error && !(collect?.is_male || collect?.is_female)) ? t("arizaqoldirish.jinsiTanlanmagan") : null}
                                 />
                             </Grid>
                         </Grid>
@@ -215,7 +215,7 @@ const Index = () => {
                                 <div className="title_inner"> {t("arizaqoldirish.nechaKishi")} </div>
                             </Grid>
                             <Grid item xs={12} sm={12} md={7}>
-                                <Input value={collect?.people_count || ''} onChange={(e) => setCollect({ ...collect, people_count: parseInt(e.target.value) })} width="100%" type="number" placeholder={t("arizaqoldirish.nechkishiBolaslar")} errorText={error ? validatorState(collect?.people_count, 'max', 0, 'People count kiritilmagan') : null} />
+                                <Input value={collect?.people_count || ''} onChange={(e) => setCollect({ ...collect, people_count: parseInt(e.target.value) })} width="100%" type="number" placeholder={t("arizaqoldirish.nechkishiBolaslar")} errorText={error ? validatorState(collect?.people_count, 'max', 0, t("arizaqoldirish.odamKiritilmagan")) : null} />
                             </Grid>
                         </Grid>
                         <Grid container spacing={1} alignItems="center" className="wrap-grid">
