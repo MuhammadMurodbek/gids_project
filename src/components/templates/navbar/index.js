@@ -63,7 +63,6 @@ const Index = () => {
 
             <div className="imgass">
               <Link to="/" onClick={refreshBtn}>
-
                 <img className="img_logo1" src={Logo} alt="safsf" />
               </Link>
             </div>
@@ -124,7 +123,6 @@ const Index = () => {
               }
             </FlexContainer>
             <FlexContainer {...navbarMedia} width="100px" style={{ marginRight: 100 }}>
-
               <div className="userNav11">
                 <ReactFlagsSelect
                   selected={selected}
