@@ -35,7 +35,7 @@ const Demo = ({loading, setLoading, list, setCallback, role, urlType}) => {
   return(
       <div className="cropper_container ext">
         <div className="icon_wrapper ext">
-            <ImgCrop modalOk="ok" name="image" onModalOk={handleSubmitOk} rotate shape="rect" >
+            <ImgCrop minZoom={-10} grid aspect={3/2} modalOk="ok" name="image" onModalOk={handleSubmitOk} rotate shape="rect" >
                 <Upload onChange={onChange} name="image">
                     <div className="icb add_icon gall">
                         {
