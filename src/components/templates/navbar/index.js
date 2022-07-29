@@ -20,7 +20,7 @@ const Index = () => {
   }
 
   const [isOpen, setOpen] = useState(false);
-  const [selected, setSelected] = useState("RU");
+  const [selected, setSelected] = useState("UZ");
 
   const getRole = JSON.parse(localStorage.getItem("user_token"));
   const expired = localStorage.getItem("expired")
@@ -123,7 +123,6 @@ const Index = () => {
               }
             </FlexContainer>
             <FlexContainer {...navbarMedia} width="100px" style={{ marginRight: 100 }}>
-
               <div className="userNav11">
                 <ReactFlagsSelect
                   selected={selected}
