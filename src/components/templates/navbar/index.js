@@ -139,7 +139,6 @@ const Index = () => {
                 width="100%"
                 alignItems="center"
                 justifyContent="center"
-
               >
                 <NavLink
                   to={
