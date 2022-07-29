@@ -7,6 +7,7 @@ export const NavLinkWrapper = styled.div`
         color:#fafcfa !important;
         background-color: ${mainGreen};
         padding:10px 32px;
+        text-align: center;
     }
 `
 export const ButtonNavbar = styled(NavLink)`

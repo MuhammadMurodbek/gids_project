@@ -46,7 +46,14 @@
         "ayol":"Женщина",
         "qidirish":"Поиск",
         "dan":"дд/мм/гггг от",
-        "gacha":"дд/мм/гггг до"
+        "gacha":"дд/мм/гггг до",
+        "kimKiritilmagan":"Укажите тип",
+        "davlatKiriting":"Введите город (страну)",
+        "sanaKiritilmagan":"Введите дату",
+        "tilKiritilmagan":"Выберите языки",
+        "jinsiTanlanmagan":"Укажите пол",
+        "tuniniTanlang":"Выберите тип",
+        "toliqKiritilmagan":"Введите данные полностью"
    },
    "tab":{
     "seeProfile":"Онлайн---"
@@ -214,7 +221,9 @@
     "send":"Отправить код",
     "Email":"Введите Email",
     "Parol":"Введите пароль",
-    "xatolik":"Произошла ошибка ..."
+    "xatolik":"Произошла ошибка ...",
+    "parolniKiriting":"Введите пароль...(не менее 4ех символов) ",
+    "emailKir":"Введите электронную почту..."
   },
   "emailni_tasdiqlash":{
     "textema":"Подтвердите E-mail",
@@ -623,7 +632,8 @@
     "saq":"Сохранить",
     "sonKiriting":"Введите число..",
     "boshliqBilan":"1800 символов (с пробелами)",
-    "boshliqSiz":"1800 символов (без пробелов)"
+    "boshliqSiz":"1800 символов (без пробелов)",
+    "davomiligi":"средняя продолжительность дня 8 - 9 часов"
     
   },
   "Galarey":{

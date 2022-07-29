@@ -12,32 +12,32 @@ export const Tabs = () => {
     const {t} = useTranslation()
     return [
         {
-            label:<div className="border-div first">{t('MTmenHaqimda.menHaqimda')}</div>,
+            label:<div className="border-div first" id="tahrirlash">{t('MTmenHaqimda.menHaqimda')}</div>,
             component:<Bio/>,
         },
         {
-            label:<div className="border-div">{t('MTmenHaqimda.kantaktlar')}</div>,
+            label:<div className="border-div" id="tahrirlash">{t('MTmenHaqimda.kantaktlar')}</div>,
             component:<Contact/>,
         },
         {
-            label:<div className="border-div">{t('MTmenHaqimda.IshTajriba')}</div>,
+            label:<div className="border-div" id="tahrirlash">{t('MTmenHaqimda.IshTajriba')}</div>,
             component:<Experience/>,
         },
         {
-            label:<div className="border-div"> {t('MTmenHaqimda.tillarniBilish')}</div>,
+            label:<div className="border-div" id="tahrirlash"> {t('MTmenHaqimda.tillarniBilish')}</div>,
             component:<Lang/>,
         },
         {
-            label:<div className="border-div"> {t('MTmenHaqimda.hizmatlar')}</div>,
+            label:<div className="border-div" id="tahrirlash"> {t('MTmenHaqimda.hizmatlar')}</div>,
             component:<Service/>,
         },
         
         {
-            label:<div className="border-div">{t('MTmenHaqimda.narxlar')}</div>,
+            label:<div className="border-div" id="tahrirlash">{t('MTmenHaqimda.narxlar')}</div>,
             component:<Price/>,
         },
         {
-            label:<div className="border-div">{t('MTmenHaqimda.galereya')}</div>,
+            label:<div className="border-div" id="tahrirlash">{t('MTmenHaqimda.galereya')}</div>,
             component:<Gallery/>,
         },
     ];
@@ -47,27 +47,27 @@ export const TabsWriter = () => {
     const {t} = useTranslation()
     return [
         {
-            label:<div className="border-div first">{t('MTmenHaqimda.menHaqimda')}</div>,
+            label:<div className="border-div first" id="tahrirlash">{t('MTmenHaqimda.menHaqimda')}</div>,
             component:<Bio/>,
         },
         {
-            label:<div className="border-div">{t('MTmenHaqimda.kantaktlar')}</div>,
+            label:<div className="border-div" id="tahrirlash"> {t('MTmenHaqimda.kantaktlar')}</div>,
             component:<Contact/>,
         },
         {
-            label:<div className="border-div">{t('MTmenHaqimda.IshTajriba')}</div>,
+            label:<div className="border-div" id="tahrirlash"> {t('MTmenHaqimda.IshTajriba')}</div>,
             component:<Experience/>,
         },
         {
-            label:<div className="border-div">{t('MTmenHaqimda.tillarniBilish')}</div>,
+            label:<div className="border-div" id="tahrirlash"> {t('MTmenHaqimda.tillarniBilish')}</div>,
             component:<Lang/>,
         },
         {
-            label:<div className="border-div">{t('MTmenHaqimda.hizmatlar')}</div>,
+            label:<div className="border-div" id="tahrirlash"> {t('MTmenHaqimda.hizmatlar')}</div>,
             component:<Service/>,
         },
         {
-            label:<div className="border-div">{t('MTmenHaqimda.narxlar')}</div>,
+            label:<div className="border-div" id="tahrirlash"> {t('MTmenHaqimda.narxlar')}</div>,
             component:<Price/>,
         },
     ];

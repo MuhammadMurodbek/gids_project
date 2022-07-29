@@ -54,7 +54,7 @@ const Index = () => {
                                 <TextTitle font="14px" align="left" position="relative" p_top="20px">
                                     { t( "narxlar.birkunlikHizmat" ) }
                                 </TextTitle>
-                                <div className="wrap_class">
+                                <div className="wrap_class" style={{flexWrap: "wrap"}}>
                                     <InputLabeled
                                         width="170px"
                                         placeholder="0"
@@ -75,14 +75,14 @@ const Index = () => {
                                             placeholder={ CURRENCY[ getData?.success?.data?.currency_per_day ] || "$" }
                                         />
                                     </div>
-                                    <p>* средняя продолжительность дня 8 - 9 часов</p>
+                                    <p>* {t("narxlar.davomiligi")}</p>
                                 </div>
                             </div>
                             <div>
                                 <TextTitle font="14px" align="left" position="relative" p_top="20px">
                                     { t( "narxlar.birSoatlik" ) }
                                 </TextTitle>
-                                <div className="wrap_class">
+                                <div className="wrap_class" style={{flexWrap: "wrap"}}>
                                     <InputLabeled
                                         width="170px"
                                         placeholder="0"
@@ -104,7 +104,7 @@ const Index = () => {
                                             placeholder={ CURRENCY[ getData?.success?.data?.currency_per_hour ] || "$" }
                                         />
                                     </div>
-                                    <p>* средняя продолжительность дня 8 - 9 часов</p>
+                                    <p>* {t("narxlar.davomiligi")}</p>
                                 </div>
                             </div>
                         </>

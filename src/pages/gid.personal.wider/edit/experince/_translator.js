@@ -38,7 +38,7 @@ const Translator = ( { getData } ) => {
       setDelBool( '' )
     } else
     {
-      toast.error( "Ma'lumotlarni to'liq kiriting" )
+      toast.error( t("kengaytirlgan_Q.toliqKiritilmagan") )
     }
   }, [ name, year, delBool, speciality ] )
   const handleDelete = ( item ) => {
@@ -87,13 +87,13 @@ const Translator = ( { getData } ) => {
           dataList.map( ( item, index ) => (
             <Grid container spacing={ 1 } key={ index }>
               <Grid item xs={ 12 } sm={ 6 } md={ 5 }>
-                <TextLabeledLoop value={ item?.name } sizeLabel="14px" label="Ma'lumoti (institut / universitet nomi)" />
+                <TextLabeledLoop value={ item?.name } sizeLabel="14px" label={t("Ustniy_MalumotvaIshtajriba.malumoti")} />
               </Grid>
               <Grid item xs={ 12 } sm={ 6 } md={ 3 }>
-                <TextLabeledLoop value={ item?.year } sizeLabel="14px" label="Bitirgan yili" />
+                <TextLabeledLoop value={ item?.year } sizeLabel="14px" label={t("Ustniy_MalumotvaIshtajriba.bitirganYil")} />
               </Grid>
               <Grid item xs={ 12 } sm={ 6 } md={ 3 }>
-                <TextLabeledLoop value={ item?.speciality } sizeLabel="14px" label="Mutaxassisligi" />
+                <TextLabeledLoop value={ item?.speciality } sizeLabel="14px" label={t("Ustniy_MalumotvaIshtajriba.Mutahasislig")} />
               </Grid>
               <Grid item xs={ 12 } sm={ 6 } md={ 1 }>
                 <FlexContainer width="auto" flexDirection="column" gap="8px" margin="45px 0 0 auto" >

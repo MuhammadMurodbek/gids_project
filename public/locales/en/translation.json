@@ -46,7 +46,15 @@
         "ayol":"Female",
         "qidirish":"Search",
         "dan":"dd/mm/yyyy  dan en",
-        "gacha":"dd/mm/yyyy  gacha en"
+        "gacha":"dd/mm/yyyy  gacha en",
+        "kimKiritilmagan":"Turini kiriting",
+        "davlatKiriting":"Davlat (shahar) kiriting",
+        "sanaKiritilmagan":"Sana Kiriting",
+        "tilKiritilmagan":"Tillarni kiriting",
+        "valyutaKiritilmagan":"Valyuta kiritilmagan",
+        "jinsiTanlanmagan":"Jinsini kiriting",
+        "tuniniTanlang":"Turni tanlang",
+        "toliqKiritilmagan":"Ma'lumotlarni to'liq kiriting"
    },
    "tab":{
     "seeProfile":"My profile"
@@ -214,7 +222,9 @@
     "send":"Confirm",
     "Email":"Email kiriting",
     "Parol":"Parolni kiriting",
-    "xatolik":"Xatolik yuz berdi..."
+    "xatolik":"Xatolik yuz berdi...",
+    "parolniKiriting":"Parolni kiriting... (kamida 4 ta belgi)",
+    "emailKir":"Email kiriting..."
   },
   "emailni_tastiqlash":{
     "textema":"Confirm your email",
@@ -618,7 +628,8 @@
     "saq":"Saqlash",
     "sonKiriting":"Son kiriting..",
     "boshliqBilan":"1800 belgi (bo'shliqlar bilan)",
-    "boshliqSiz":"1800 belgi (bo'shliqlarsiz) "
+    "boshliqSiz":"1800 belgi (bo'shliqlarsiz) ",
+    "davomiligi":"kunning o'rtacha davomiyligi 8-9 soat"
   },
   "Galarey":{
     "Profilni_Korish":"View profile",

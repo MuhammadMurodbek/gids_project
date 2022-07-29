@@ -29,7 +29,7 @@ const Translator = ( { getData, spinner, setCallback } ) => {
             setItem( { from_language: '', to_language: '' } )
         } else
         {
-            toast.error( "Ma'lumotlarni to'liq kiriting" )
+            toast.error( t("kengaytirlgan_Q.toliqKiritilmagan") )
         }
     }, [ item ] )
     const handleDelete = ( item ) => {

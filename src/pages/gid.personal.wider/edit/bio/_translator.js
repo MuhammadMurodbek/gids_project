@@ -30,7 +30,7 @@ const Translator = ({setTrains, trains, setTrState, trState, clear, setClear}) =
             setClear(true)
             setState({name:'',year:''})
         }else{
-            toast.error("Ma'lumotlarni to'liq kiriting")
+            toast.error(t("kengaytirlgan_Q.toliqKiritilmagan"))
         }
 
     },[name, year, delBool])

@@ -71,7 +71,7 @@ const Index = () => {
                                 />;
                             }}
                             />
-                            {errors && errors?.password && <span style={{color:'red', fontSize:'0.8rem'}}>Password kiriting... (kamida 4 ta element)</span>}
+                            {errors && errors?.password && <span style={{color:'red', fontSize:'0.8rem'}}>{t("auth_parolniTiklash.parolniKiriting")}</span>}
                     </Container>
                     <Container padding="0px 10px" textAlign="right">
                         <Button onClick={handleClick} margin="0px 0 0">

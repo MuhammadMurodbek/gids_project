@@ -9,7 +9,7 @@ import { useTranslation } from 'react-i18next';
 import { useHistory } from 'react-router-dom'
 
 const MediaNavbarContainer = (props) => {
-    const { t } = useTranslation()
+    const { t , i18n} = useTranslation()
 
     const getRole = JSON.parse(localStorage.getItem("user_token"));
 
@@ -59,39 +59,43 @@ const MediaNavbarContainer = (props) => {
                 {
                     userToken?.role !=='simple_user'?
                     <span onClick={handleClick}>
-                        <ButtonNavbar title="Gid va tarjimonlar uchun" url="/forgits" />
+                        <ButtonNavbar title={t("navbar.GTU")} url="/forgits" />
                     </span> :
                     null
                     
                 }
                 <span onClick={handleClick}>
-                    <ButtonNavbar title="Blog" url="/blog?page=1" />
+                    <ButtonNavbar title={t("navbar.Blog")} url="/blog?page=1" />
                 </span>
                 {
                     userToken?.role === "simple_user" ?
                         <span onClick={handleClick}>
-                            <ButtonNavbar title="Ariza qoldirish" url="/application-form" />
+                            <ButtonNavbar title={t("navbar.Ariza_qoldirish")} url="/application-form" />
                         </span> :
                         null
                 }
                 {
                     userToken?.role !== "simple_user" ?
                     <span onClick={handleClick}>
-                        <ButtonNavbar title="Arizalar ro'yhati" url="/request" />
+                        <ButtonNavbar title={t("navbar.Arizalar_royhati")} url="/request" />
                     </span> :
                     null
                 }
                 <ReactFlagsSelect
                     selected={selected}
-                    onSelect={code => setSelected(code)}
+                    onSelect={(code) => {
+                        i18n.changeLanguage(code.toLowerCase())
+                        setSelected(code)
+                        localStorage.setItem("language", code)
+                      }}
                     countries={["UZ", "RU", "US"]}
                     customLabels={{ "US": "en", "UZ": "uz", "RU": "ru" }}
                 />
                 <span onClick={handleProfile}>
-                    <ButtonNavbar title="Profile" url="" />
+                    <ButtonNavbar title={t("GidPk.profilGid")} url="" />
                 </span>
                 <span onClick={handleLogout}>
-                    <ButtonNavbar title="Logout" url="" />
+                    <ButtonNavbar title={t("GidPk.Chiqish")} url="" />
                 </span>
 
 

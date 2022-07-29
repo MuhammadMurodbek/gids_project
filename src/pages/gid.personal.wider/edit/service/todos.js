@@ -45,7 +45,7 @@ const     Todos = ({translateType, setTranslateType}) => {
     }},[getData])
     const handleAdd = useCallback(() => {
         if(item?.name ==='' || item?.level === ''){
-            toast.error("Ma'lumotlarni to'liq kiriting")
+            toast.error(t("kengaytirlgan_Q.toliqKiritilmagan"))
         }else{
             setItems([...items, item])
         }

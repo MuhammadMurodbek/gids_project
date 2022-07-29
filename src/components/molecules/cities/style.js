@@ -73,4 +73,9 @@ export const Wrapper = styled.div`
       /* color:red !important; */
     }
   }
+  @media (max-width: 446px ){
+    p, .title-div-text{
+      width: 47%;
+    }
+  }
 ` 

@@ -22,8 +22,8 @@ export default function Index() {
     return (
         <Wrapper>
             <AboutTravel>
-                <TextTitle {...mediaTextField} {...mediaTextFieldSec}>{t("safarHaqida.title")}</TextTitle>
-                <p className="aboutT__text">{t("safarHaqida.text")}</p>
+                <TextTitle {...mediaTextField} {...mediaTextFieldSec}>{t("safarHaqda.title")}</TextTitle>
+                <p className="aboutT__text">{t("safarHaqda.text")}</p>
                 <TextTitle width="50%" left="auto" right="auto" bottom="40px">
                     <Link to="/write-article">
                         <Button>{t("safarHaqida.Maqolayozish")}</Button>
