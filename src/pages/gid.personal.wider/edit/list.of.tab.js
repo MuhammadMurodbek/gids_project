@@ -16,28 +16,28 @@ export const Tabs = () => {
             component:<Bio/>,
         },
         {
-            label:<div className="border-div">{t('innerTab.connect')}</div>,
+            label:<div className="border-div">{t('MTmenHaqimda.kantaktlar')}</div>,
             component:<Contact/>,
         },
         {
-            label:<div className="border-div">Ish tajribasi</div>,
+            label:<div className="border-div">{t('MTmenHaqimda.IshTajriba')}</div>,
             component:<Experience/>,
         },
         {
-            label:<div className="border-div"> Til bilish darajasi</div>,
+            label:<div className="border-div"> {t('MTmenHaqimda.tillarniBilish')}</div>,
             component:<Lang/>,
         },
         {
-            label:<div className="border-div">Xizmatlar</div>,
+            label:<div className="border-div"> {t('MTmenHaqimda.hizmatlar')}</div>,
             component:<Service/>,
         },
         
         {
-            label:<div className="border-div">Narxlar</div>,
+            label:<div className="border-div">{t('MTmenHaqimda.narxlar')}</div>,
             component:<Price/>,
         },
         {
-            label:<div className="border-div">Galereya</div>,
+            label:<div className="border-div">{t('MTmenHaqimda.galereya')}</div>,
             component:<Gallery/>,
         },
     ];
@@ -47,23 +47,23 @@ export const TabsWriter = () => {
     const {t} = useTranslation()
     return [
         {
-            label:<div className="border-div first">Men <br className="br"/> haqimda</div>,
+            label:<div className="border-div first">Men  haqimda</div>,
             component:<Bio/>,
         },
         {
-            label:<div className="border-div">{t('innerTab.connect')}</div>,
+            label:<div className="border-div">{t('MTmenHaqimda.kantaktlar')}</div>,
             component:<Contact/>,
         },
         {
-            label:<div className="border-div">Ish tajribasi</div>,
+            label:<div className="border-div">{t('MTmenHaqimda.tillarniBilish')}</div>,
             component:<Experience/>,
         },
         {
-            label:<div className="border-div">Til bilish darajasi</div>,
+            label:<div className="border-div">{t('MTmenHaqimda.hizmatlar')}</div>,
             component:<Lang/>,
         },
         {
-            label:<div className="border-div">Xizmatlar</div>,
+            label:<div className="border-div">{t('MTmenHaqimda.narxlar')}</div>,
             component:<Service/>,
         },
         {

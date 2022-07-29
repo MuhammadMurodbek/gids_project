@@ -17,10 +17,10 @@ const Index = () => {
             <Gallery role={getRole?.role} setCallback={setCallback}/>
             
             <div style={{width: '100%', marginTop: '30px', height: 'auto', display: 'flex', alignItems: 'center', justifyContent:'center' }}>
-                <ReactPlayer  width='70%' height='auto' controls url={upload?.success?.data?.video} />
+                <ReactPlayer width='70%' height='auto' controls url={upload?.success?.data?.video} id="VideoPlayer"/>
             </div>
         
-            <div style={{margin:'60px 0 15px', fontWeight:'bold'}}>{t("Galarey.galareyangiz")}<br/>{t("Galarey.rasmGalereya")}</div>
+            <div style={{margin:'60px 0 15px'}}><span style={{fontWeight:'bold'}}>{t("Galarey.galareyangiz")}</span><br/><i>{t("Galarey.rasmGalereya")}</i></div>
 
 
             <GroupImageUpload role={ getRole?.role } />

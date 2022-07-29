@@ -20,7 +20,7 @@ const Index = () => {
   }
 
   const [isOpen, setOpen] = useState(false);
-  const [selected, setSelected] = useState("UZ");
+  const [selected, setSelected] = useState("RU");
 
   const getRole = JSON.parse(localStorage.getItem("user_token"));
   const expired = localStorage.getItem("expired")
@@ -63,7 +63,6 @@ const Index = () => {
 
             <div className="imgass">
               <Link to="/" onClick={refreshBtn}>
-
                 <img className="img_logo1" src={Logo} alt="safsf" />
               </Link>
             </div>

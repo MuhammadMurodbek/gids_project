@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
     .ant-dropdown-link{
         position: absolute;
         width:100px;
-        left:20px;
+        left:40px;
          top:10px;
         color:#333;
         /* background-color: green; */
