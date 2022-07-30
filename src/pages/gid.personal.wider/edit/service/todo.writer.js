@@ -9,7 +9,7 @@ import Button from "../../../../components/atom/button"
 import styled from "styled-components"
 import AddIcon from '@material-ui/icons/Add'
 import Box from '@mui/material/Box';
-import {selectValue, defaultListValue} from "./_const";
+import {SelectValue, defaultListValue} from "./_const";
 import {getResponse, putResponse} from "../../../../hooks/response_get"
 import {common} from "../../../../custom/url"
 import {toastChecker} from "../../../../custom/function"
@@ -17,7 +17,7 @@ import { useTranslation } from 'react-i18next'
 import toast from 'react-hot-toast';
 const Todos = ({state, setApiValue, setLoad}) => {
     let arrayList = defaultListValue()
-    let optionList = selectValue()
+    let optionList = SelectValue()
     const {t} = useTranslation()
     const [items, setItems] = useState(arrayList)
     const [item, setItem] = useState({name:'', level:''})
@@ -73,8 +73,8 @@ const Todos = ({state, setApiValue, setLoad}) => {
     const handleSubmit = () => {
         let obj = {
             ...state,
-            always_online:state?.always_online?.label==='Ha' ? true:false,
-            can_oral_translate:state?.can_oral_translate?.label==='Ha' ? true:false,
+            always_online:state?.always_online?.label=== t("Pismenniy_Xizmatlar.ha")? true:false,
+            can_oral_translate:state?.can_oral_translate?.label=== t("Pismenniy_Xizmatlar.ha") ? true:false,
             edit_text:state?.edit_text==='yes' ? true:false,
             express_order:state?.express_order==='yes' ? true:false,
             oral_translate_type:state?.oral_translate_type?.value,

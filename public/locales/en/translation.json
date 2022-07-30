@@ -396,6 +396,7 @@
     "ogzaki":"Interpretation (serial):",
     "yozmaTarjima":"Yozma tarjima: ",
     "sinxron":"Simultaneous translation:",
+    "izchilPervod":"Последовательный перевод",
 
     "yosh":"years old",
     "yozma":"Yozma tarjimon",
@@ -542,7 +543,7 @@
     "qoshimchaKurslar":"Additional courses",
     "oqiganKurslaringiz":"Write down the courses you took and press the Enter button",
     "tajriba":"Experience",
-    "year":"year",
+    "year":" year",
     "saqlash":"Save" 
   },
   "TillarniBilish":{
@@ -747,6 +748,7 @@
     "OgzakiTarjimonlik":"Siz og'zaki tarjima ham qilasizmi?",
     "ha":"Ha",
     "haS":"Ha (Sinxron)",
+    "HaIz":"Ha (Izchil)",
     "yoq":"Yo'q",
     "shoshilich":"Shoshilinch buyurtmalarni bajarasizmi?",
     "damdahamIsh":"Dam olish kunlari buyurtmalarni bajarasizmi?",

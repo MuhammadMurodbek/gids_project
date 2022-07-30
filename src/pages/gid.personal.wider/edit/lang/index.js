@@ -12,7 +12,7 @@ import TextLabeledLoop from "../../../../components/atom/text.labeled"
 import { useTranslation } from 'react-i18next'
 import { postResponse, getResponse, deleteResponse } from "../../../../hooks/response_get"
 import uuid from 'react-uuid'
-import { selection, SELECTION } from "./_constants"
+import { Selection, SELECTION } from "./_constants"
 import Spinner from "../../../../components/atom/loading.spinner.line";
 import FadeIn from 'react-fade-in';
 import Translator from "./_translator"
@@ -130,7 +130,7 @@ const Index = () => {
                                 <SelectLabeled
                                     setClearValue={ setClearValue }
                                     clearValue={ clearValue }
-                                    options={ selection }
+                                    options={ Selection() }
                                     collect={ value }
                                     setCollect={ setValue }
                                     field="level"

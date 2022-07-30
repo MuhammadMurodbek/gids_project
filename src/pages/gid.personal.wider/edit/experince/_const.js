@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next'
+
 export const degrees_gid = [
     {value:"highest_category", label: "Oliy toifali"}, 
     {value:"first_category", label: "Birinchi toifali"}, 
@@ -8,13 +10,25 @@ export const degrees = [
     {value:"higher", label: "Oliy"}, 
     {value:"secondary_special", label: "O'rta maxsus"}, 
 ]
+export const Options_year = () =>{
+    const { t } = useTranslation()
+
+    return[
+    { value: "0-1", label: t("Ustniy_MalumotvaIshtajriba.birYil") },
+    { value: "1-3", label: t("Ustniy_MalumotvaIshtajriba.birUch") },
+    { value: "3-5", label: t("Ustniy_MalumotvaIshtajriba.uchBesh") },
+    { value: "5-10", label: t("Ustniy_MalumotvaIshtajriba.beshOn") },
+    { value: "10+", label: t("Ustniy_MalumotvaIshtajriba.onPlus") },
+]
+}
 export const options_year = [
-    { value: "0-1", label: "1 yil" },
-    { value: "1-3", label: "1-3 yil" },
+    { value: "0-1", label: "0-1 yil"},
+    { value: "1-3", label: "1-3 yil"},
     { value: "3-5", label: "3-5 yil" },
     { value: "5-10", label: "5-10 yil" },
     { value: "10+", label: "10+ yil" },
 ]
+
 export const options_yes = [
     { value: true, label: "Ha" },
     { value: false, label: "Yo'q" }

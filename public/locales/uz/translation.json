@@ -539,7 +539,7 @@
     "qoshimchaKurslar":"Qo‘shimcha kurslar",
     "oqiganKurslaringiz":"Tamomlagan kurslaringizni yozing va Enter tugmasini bosing",
     "tajriba":"Tajriba",
-    "year":"yil",
+    "year":" yil",
     "saqlash":"Saqlash"
   },
   "TillarniBilish":{
@@ -757,6 +757,7 @@
     "OgzakiTarjimonlik":"Og’zaki tarjima bilan ham shug’ullanasizmi?",
     "ha":"Ha",
     "haS":"Ha (Sinxron)",
+    "HaIz":"Ha (Izchil)",
     "yoq":"Yo’q",
     "damdahamIsh":"Dam olish kunlari ham ishlaysizmi?",
     "TahrirlashBilanHam":"Matnlarni tahrirlash bilan ham shug’ullanasizmi?",

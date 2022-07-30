@@ -10,7 +10,7 @@ import Button from "../../../../components/atom/button";
 import TextLabeledLoop from "../../../../components/atom/text.labeled"
 import DeleteIcon from '@material-ui/icons/Delete';
 import { Container } from '../../../../styles/container/index.style'
-import { options_year, options_yes } from "./_const"
+import { Options_year, options_yes } from "./_const"
 import { useTranslation } from 'react-i18next'
 import { putResponse, getResponse } from '../../../../hooks/response_get'
 import { common } from "../../../../custom/url"
@@ -170,12 +170,12 @@ const Translator = ( { getData } ) => {
               sizeLabel="15px"
               width="100%"
               label={t("Ustniy_MalumotvaIshtajriba.tajriba")}
-              placeholder="yil"
-              options={ options_year }
+              placeholder={t("IshTajriba.year")}
+              options={ Options_year() }
               setCollect={ setPostData }
               collect={ setPostData }
               field="experience_year"
-              defaultApiValue={ getData?.success?.data ? getData?.success?.data?.experience_year + " yil" : false }
+              defaultApiValue={ getData?.success?.data ? getData?.success?.data?.experience_year +  t("IshTajriba.year") : false }
             />
           </Grid>
           {/* <Grid item xs={ 12 } sm={ 6 } md={ 2 } style={ { position: 'relative', top: 3 } }>

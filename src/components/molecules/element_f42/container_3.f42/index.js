@@ -52,6 +52,7 @@ const Index = ({ data, role }) => {
                             <Text title={t("Pismenniy_Xizmatlar.ogzakit")}
                                 text={<span>&nbsp;{data?.can_oral_translate ? t("Pismenniy_Xizmatlar.haS") : t("Pismenniy_Xizmatlar.yoq")}&nbsp;
                                 </span>} />
+                                
                             <br />
                             <Text title={t("Pismenniy_Xizmatlar.shoshilikch")} text={<span>&nbsp;{data?.express_order ? t("Pismenniy_Xizmatlar.ha")  : t("Pismenniy_Xizmatlar.yoq") }&nbsp;</span>} /> 
                             <br />

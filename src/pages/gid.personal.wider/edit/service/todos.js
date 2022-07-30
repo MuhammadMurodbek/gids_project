@@ -9,7 +9,7 @@ import Button from "../../../../components/atom/button"
 import styled from "styled-components"
 import AddIcon from '@material-ui/icons/Add'
 import Box from '@mui/material/Box';
-import {selectValue, defaultListValue} from "./_const";
+import {SelectValue, defaultListValue} from "./_const";
 import {getResponse, putResponse} from "../../../../hooks/response_get"
 import {common} from "../../../../custom/url"
 import {toastChecker} from "../../../../custom/function"
@@ -18,7 +18,7 @@ import { useTranslation } from 'react-i18next';
 
 const     Todos = ({translateType, setTranslateType}) => {
     let arrayList = defaultListValue()
-    let optionList = selectValue()
+    let optionList = SelectValue()
     const { t } = useTranslation()
     const [items, setItems] = useState(arrayList)
     const [item, setItem] = useState({name:'', level:''})

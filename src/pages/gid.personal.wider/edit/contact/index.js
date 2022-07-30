@@ -22,7 +22,7 @@ const Index = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         let postState = {
-            website: state?.website ? 'https://' + state?.website : '',
+            website: state?.website ? 'https://whatsapp.com/' + state?.website : '',
             telegram: state?.telegram ? 'https://t.me/' + state?.telegram : '',
             instagram: state?.instagram ? 'https://instagram.com/' + state?.instagram : '',
             facebook: state?.facebook ? 'https://facebook.com/' + state?.facebook : '',
