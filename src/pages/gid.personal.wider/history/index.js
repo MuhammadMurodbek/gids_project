@@ -17,7 +17,7 @@ export default function Index() {
     useEffect(() => {
         getApiResponse('/api/posts/ad-history/', setHistoryState)
     }, [])
-    // console.log(historyState)
+ 
     return (
         <Wrapper>
 
@@ -43,6 +43,7 @@ export default function Index() {
                                             <b className="right-b">{t("tariflar.muddati")} {moment(item?.created_date).format('DD.MM.YYYY') || '01.01.2000'} {t("tariflar.gacha")}</b>
                                         </div>
                                         </div>
+                                       
                                         
                                     </Grid>
                                 </Grid>
