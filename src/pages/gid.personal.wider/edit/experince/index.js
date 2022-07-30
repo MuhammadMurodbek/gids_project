@@ -114,7 +114,7 @@ const Index = () => {
                                             collect={ stateGid }
                                             field="experience_year"
                                             pcolor={ getData.success?.data || false }
-                                            placeholder={ getData.success?.data?.experience_year + ' yil' || t( "IshTajriba.year" ) }
+                                            placeholder={ getData.success?.data?.experience_year + t( "IshTajriba.year") || t( "IshTajriba.year" ) }
                                         />
                                     </Grid>
                                 </Grid>

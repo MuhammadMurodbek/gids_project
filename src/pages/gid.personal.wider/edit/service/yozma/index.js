@@ -6,7 +6,7 @@ import { FlexContainer } from '../../../../../styles/flex.container'
 import { Container } from '../../../../../styles/container/index.style'
 import { TextTitle } from '../../../../../styles/textTitle/index.style'
 import DoubleRadioLabel from "../../../../../components/molecules/double.radio.labeled"
-import { option_yes, option_yes_sec, objDefault } from "../_const"
+import { Option_yes, Option_yes_sec, objDefault } from "../_const"
 import MultiValueInput from '../../../../../components/molecules/multivalue.input'
 import { useTranslation } from 'react-i18next'
 import Todos from "../todo.writer"
@@ -42,8 +42,8 @@ const Index = () => {
                     <Container padding="37px 0 0" position="relative" top="-22px">
                         <TextTitle font="15px" align="left" top="0" bottom="-10px" color="#262626">{t("Pismenniy_Xizmatlar.ogzakiTarjima")}</TextTitle>
                         <FlexContainer width="100%" gap="10px">
-                            <SelectLabeled setCollect={setState} collect={state} defaultApiValue={apiValue?.can_oral_translate ? t("Pismenniy_Xizmatlar.ha") : t("Pismenniy_Xizmatlar.yoq")} field="can_oral_translate" options={option_yes} width="100%" sizeLabel="15px" placeholder="Tanglang" />
-                            <SelectLabeled isDisabled={state?.can_oral_translate?.label==='Ha' ? false:true} setCollect={setState} collect={state} defaultApiValue={apiValue?.oral_translate_type !== 'consecutive' ? t("Pismenniy_Xizmatlar.sinxron") : t("Pismenniy_Xizmatlar.izchil")} field="oral_translate_type" options={option_yes_sec} width="100%" placeholder="Tanlang" />
+                            <SelectLabeled setCollect={setState} collect={state} defaultApiValue={apiValue?.can_oral_translate ? t("Pismenniy_Xizmatlar.ha") : t("Pismenniy_Xizmatlar.yoq")} field="can_oral_translate" options={Option_yes()} width="100%" sizeLabel="15px" placeholder="Tanglang" />
+                            <SelectLabeled isDisabled={state?.can_oral_translate?.label===t("Pismenniy_Xizmatlar.ha") ? false:true} setCollect={setState} collect={state} defaultApiValue={apiValue?.oral_translate_type !== 'consecutive' ? t("Pismenniy_Xizmatlar.sinxron") : t("Pismenniy_Xizmatlar.izchil")} field="oral_translate_type" options={Option_yes_sec()} width="100%" placeholder="Tanlang" />
                         </FlexContainer>
                     </Container>
                 </Grid> 
@@ -59,7 +59,7 @@ const Index = () => {
                         <TextTitle font="15px" align="left" top="0" bottom="-10px" color="#262626">{t("Pismenniy_Xizmatlar.onlineMisizdoim")}</TextTitle>
                             <div style={{ fontSize: '0.8rem', marginTop:10 }}>{t("Pismenniy_Xizmatlar.kattaHajmMatn")}</div>
                         <FlexContainer width="100%" gap="10px">
-                            <SelectLabeled defaultApiValue={apiValue?.always_online ? t("Pismenniy_Xizmatlar.ha") : t("Pismenniy_Xizmatlar.yoq")} setCollect={setState} collect={state} field="always_online" options={option_yes} width="30%" sizeLabel="15px" placeholder="Tanlang" />
+                            <SelectLabeled defaultApiValue={apiValue?.always_online ? t("Pismenniy_Xizmatlar.ha") : t("Pismenniy_Xizmatlar.yoq")} setCollect={setState} collect={state} field="always_online" options={Option_yes()} width="30%" sizeLabel="15px" placeholder="Tanlang" />
                             {/* <SelectLabeled setCollect={setState} collect={state} field="oral_translate_type" options={option_yes_sec} width="100%" placeholder="Ketma ket" /> */}
                         </FlexContainer>
                     </Container>

@@ -30,7 +30,7 @@ const Index = ({data, role}) => {
                     <Text margin="0 0 5px" title={t("GidPk.mutahasis")} text={" "+ checkValues(DEGREES[data?.education_degree])}/><br/>
                     <Text margin="0 0 5px" title={t("GidPk.toifasi")} text={" "+ checkValues(DEGREES_GIT[data?.category])}/><br/>
                     <Text margin="0 0 5px" title={t("GidPk.qoshimcha")+" "} text={" "+ data?.additional_courses?.length>0 ? data?.additional_courses?.map(a=>" "+a) : t("GidPk.malumotKiritilmagan")}/><br/>
-                    <Text margin="0 0 5px" title={t("GidPk.ishtaj")+" "} text={" "+ data?.experience_year ? data?.experience_year + " yil" : t("GidPk.malumotKiritilmagan")}/><br/>
+                    <Text margin="0 0 5px" title={t("GidPk.ishtaj")+" "} text={" "+ data?.experience_year ? data?.experience_year + " "+ t("GidPk.yosh") : t("GidPk.malumotKiritilmagan")}/><br/>
                 </TextWrapper>:
                 <>
                     {data?.universities?.map((prev, index) =>(
@@ -41,7 +41,7 @@ const Index = ({data, role}) => {
                         </TextWrapper>
                     ))}
                     <TextWrapper>
-                        <Text title={t("GidPk.ishtaj")+" "} text={data?.experience_year+" yil" || t("GidPk.malumotKiritilmagan")}/><br/>
+                        <Text title={t("GidPk.ishtaj")+" "} text={data?.experience_year +" "+ t("GidPk.yosh") || t("GidPk.malumotKiritilmagan")}/><br/>
                         <Text title={t("GidPk.ishJoy")+" "} text={data?.work_place || t("GidPk.malumotKiritilmagan")}/><br/>
                         <Text title={t("GidPk.lavozim")+" "} text={data?.position || t("GidPk.malumotKiritilmagan")}/><br/>
                         <Text title={t("GidPk.ishvaqt")+" "} text={data?.work_time?.replace('|',"-") || t("GidPk.malumotKiritilmagan")}/><br/>

@@ -1,9 +1,14 @@
-export const selectValue =()=> [
-    { value:'no', label:'Mening mavzuim emas'},
-    { value:'low', label:"O'rta"},
-    { value:'good', label:"Yaxshi"},
-    { value:'great', label:"A'lo"},
+import { useTranslation } from "react-i18next"
+
+export const SelectValue =()=> {
+    const {t} = useTranslation()
+    return[
+    { value:'no', label: t("Pismenniy_Xizmatlar.meningMavzuimEmas")},
+    { value:'low', label: t("Pismenniy_Xizmatlar.orta")},
+    { value:'good', label: t("Pismenniy_Xizmatlar.yaxshi")},
+    { value:'great', label: t("Pismenniy_Xizmatlar.alo")},
 ]
+}
 export const SELECTVALUE = {
     
 }
@@ -21,14 +26,22 @@ export const defaultListValue = () => [
     {name:'Tibbiyot va farmatsevtika', level:{ value:'no', label:"Mavzuim emas"}},
 ]
 
-export const option_yes = [
-    { value: 1, label: "Ha" },
-    { value: 2, label: "Yo'q" }
+export const Option_yes = () =>{
+    const {t} = useTranslation()
+
+    return[
+    { value: 1, label: t("Ustniy_MalumotvaIshtajriba.yes") },
+    { value: 2, label: t("Ustniy_MalumotvaIshtajriba.No") }
+];
+}
+export const Option_yes_sec = () =>{
+    const {t} = useTranslation()
+
+    return[
+    { value: 'synchronous', label: t("xizmatlar.Sinxron") },
+    { value: 'consecutive', label: t("xizmatlar.Izchil") }
 ]
-export const option_yes_sec = [
-    { value: 'synchronous', label: "Sinxron" },
-    { value: 'consecutive', label: "Izchil" }
-]
+}
 export const objDefault = {
     daily_workload: null,
     can_oral_translate: true,

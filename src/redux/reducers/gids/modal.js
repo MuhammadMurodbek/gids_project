@@ -22,7 +22,7 @@ export function info() {
   
   export function error() {
     Modal.error({
-      title: 'Arizangiz junatilmadi',
+      title: 'Arizangiz junatilmadis',
       content: 'Arizani junatishda xatolik mavjud...',
     });
   }
