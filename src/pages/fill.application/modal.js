@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import { Modal } from 'antd';
 import { SecurityScanOutlined } from '@ant-design/icons'
 import { mainGreen } from "../../styles/global/colors"
+import { useTranslation } from "react-i18next"
 import Security from "../../assets/img/security.png"
 const ModalBtn = ({ showModal, handleOk, handleCancel, isModalVisible , type}) => {
+  const {t} = useTranslation()
+
   console.log(type)
   return (
     <>
@@ -15,7 +18,7 @@ const ModalBtn = ({ showModal, handleOk, handleCancel, isModalVisible , type}) =
 
           <p style={{ fontSize: '1.1rem', textAlign: 'center' }}>
             <SecurityScanOutlined style={{ fontSize: '1.4rem', color: mainGreen, marginTop: 20, position: 'relative', top: 4 }} />
-            {type}nis yuborish uchun avval ro'yxatdan o'tishingiz kerak.
+            {t("arizaqoldirish.ArizaOldin")}
           </p>
         </Modal>
       </div>

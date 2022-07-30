@@ -287,7 +287,8 @@
     "odamKiritilmagan":"Odamlar soni kiritilmagan",
     "arizaJunatilmadi":"Arizangiz junatilmadi",
     "arizaXato":"Arizani junatishda xatolik mavjud...",
-    "serverError":"Serverdagi ichki xatolik"
+    "serverError":"Serverdagi ichki xatolik",
+    "ArizaOldin":"Arizani yuborish uchun avval ro'yxatdan o'tishingiz kerak."
   },
   "arizalar_royhati":{
     "title":"Arizalar ro’yxati",
