@@ -6,7 +6,7 @@ import Button from "../../../../components/atom/button"
 import { Container } from '../../../../styles/container/index.style'
 import SelectLabeled from "../../../../components/molecules/select.labeled"
 import { useTranslation } from 'react-i18next'
-import { degrees, options_year, degrees_gid, DEGREES, DEGREES_GIT } from "./_const"
+import { degrees, Options_year, degrees_gid, DEGREES, DEGREES_GIT } from "./_const"
 import MultiInput from "../../../../components/molecules/multivalue.input"
 import { putResponse, getResponse } from "../../../../hooks/response_get"
 import toast from 'react-hot-toast'
@@ -15,6 +15,13 @@ import {common} from "../../../../custom/url"
 import Spinner from "../../../../components/atom/loading.spinner.line";
 import { useDispatch } from 'react-redux'
 import {saveTabAction} from "../../../../redux/actions"
+
+
+
+
+
+
+
 
 const Index = () => {
     const { t } = useTranslation()
@@ -42,6 +49,30 @@ const Index = () => {
         if ( postGid?.error !== '' ) toast.error( 'Failed to save data' )
     }, [ postGid ] )
     // console.log('first')
+
+
+
+
+    const Options_year2 = [
+    { value: "0-1", label: `${t("Ustniy_MalumotvaIshtajriba.birYil")}`},
+    { value: "1-3", label: `${t("Ustniy_MalumotvaIshtajriba.birUch")}`},
+    { value: "3-5", label: `${t("Ustniy_MalumotvaIshtajriba.uchBesh")}`},
+    { value: "5-10", label: `${t("Ustniy_MalumotvaIshtajriba.beshOn")}`},
+    { value: "10+", label: `${t("Ustniy_MalumotvaIshtajriba.onPlus")}`},
+    ]
+    const degreesGit = [
+        {value:"higher", label: `${t("mutahasis.oliy")}`}, 
+        {value:"secondary_special", label: `${t("mutahasis.ortaMahsus")}`}, 
+    ]
+    const degrees_Gid = [
+        {value:"highest_category", label: `${t("toifalar.oliyToifali")}`}, 
+        {value:"first_category", label: `${t("toifalar.birinchiToifali")}`}, 
+        {value:"second_category", label: `${t("toifalar.ikkinchiToifali")}`}, 
+        {value:"no_category", label: `${t("toifalar.toifasizToifali")}`}, 
+    ]
+    
+
+
     return (
         <Wrapper onSubmit={(e) =>e.preventDefault() }>
             {getRole?.role === "gid" ?
@@ -54,7 +85,7 @@ const Index = () => {
                                 <Grid container spacing={ 1 }>
                                     <Grid item xs={ 12 } sm={ 6 } md={ 4 }>
                                         <SelectLabeled
-                                            options={ degrees }
+                                            options={ degreesGit }
                                             sizeLabel="15px"
                                             width="100%"
                                             label={ t( "IshTajriba.malumotlar" ) }
@@ -81,7 +112,7 @@ const Index = () => {
                                     </Grid>
                                     <Grid item xs={ 12 } sm={ 6 } md={ 4 }>
                                         <SelectLabeled
-                                            options={ degrees_gid }
+                                            options={ degrees_Gid }
                                             sizeLabel="15px"
                                             width="100%"
                                             setCollect={ setStateGid }
@@ -109,7 +140,7 @@ const Index = () => {
                                         <SelectLabeled
                                             sizeLabel="15px" width="100%"
                                             label={ t( "IshTajriba.tajriba" ) }
-                                            options={ options_year }
+                                            options={ Options_year2 }
                                             setCollect={ setStateGid }
                                             collect={ stateGid }
                                             field="experience_year"
