@@ -45,6 +45,8 @@ export default function Index() {
         }
     }, [myTarifPay])
     // console.log(myTarifPay)
+    console.log(objApi)
+    console.log(objApiText)
     return (
         <Wrapper01>
             <Wrapper>

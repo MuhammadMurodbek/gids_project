@@ -281,7 +281,10 @@
     "narxKiritilmagan":"Цена не указана",
     "valyutaKiritilmagan":"Не указана валюта",
     "jinsiTanlanmagan":"Не указан пол",
-    "odamKiritilmagan":"Не указано количество людей"
+    "odamKiritilmagan":"Не указано количество людей",
+    "arizaJunatilmadi":"Ваша заявка не отправлена",
+    "arizaXato":"При отправке заявки произошла ошибка...",
+    "serverError":"Внутренняя ошибка сервера"
   },
   "arizalar_royhati":{
     "title":"Список заявок",

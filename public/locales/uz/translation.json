@@ -284,7 +284,10 @@
     "narxKiritilmagan":"Narx kiritilmagan",
     "valyutaKiritilmagan":"Valyuta kiritilmagan",
     "jinsiTanlanmagan":"Jinsi tanlanmagan",
-    "odamKiritilmagan":"Odamlar soni kiritilmagan"
+    "odamKiritilmagan":"Odamlar soni kiritilmagan",
+    "arizaJunatilmadi":"Arizangiz junatilmadi",
+    "arizaXato":"Arizani junatishda xatolik mavjud...",
+    "serverError":"Serverdagi ichki xatolik"
   },
   "arizalar_royhati":{
     "title":"Arizalar ro’yxati",
