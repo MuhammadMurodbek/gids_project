@@ -66,7 +66,7 @@ export default function Index() {
                                     </div>
                                     <div className="right-prise">
                                         <b>{myTarif?.data?.tariff?.price || '0'} {t("reklama.som")}</b>
-                                        <b className="right-b">{moment(myTarif?.data?.top_until_date).format('DD.MM.YYYY') || '01.01.2000'} gacha</b>
+                                        <b className="right-b">{t("tariflar.muddati")} {moment(myTarif?.data?.top_until_date).format('DD.MM.YYYY') || '01.01.2000'} {t("tariflar.gacha")}</b>
                                     </div>
                                 </Grid> :
                                 <div style={{ padding: "20px 0" }}>{t("tariflar.MavjudEmas")}</div>
