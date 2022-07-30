@@ -16,7 +16,7 @@ import {toastChecker} from "../../../../custom/function"
 import toast from 'react-hot-toast';
 import { useTranslation } from 'react-i18next';
 
-const     Todos = ({translateType, setTranslateType}) => {
+const       Todos = ({translateType, setTranslateType}) => {
     let arrayList = defaultListValue()
     let optionList = selectValue()
     const { t } = useTranslation()

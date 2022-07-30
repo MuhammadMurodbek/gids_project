@@ -60,7 +60,7 @@ export default function Index () {
                                                         key={ item.id }
                                                         title={ item.title }
                                                         kalendar={ moment( item.created_at ) === "" ? "" : moment( item.created_at ).format( "MM.DD.YYYY" ) }
-                                                        hteg={ item.tags }
+                                                        // hteg={ item.tags }
                                                         url={ item.image }
                                                         text={ item.mini_content }
                                                         id={ item.id }

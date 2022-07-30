@@ -62,7 +62,7 @@ export default function Index() {
                 <CitiLeftPart
                   title={getArticle.title}
                   kalendar={getArticle?.created_at}
-                  hteg={getArticle?.tags}
+                  // hteg={getArticle?.tags}
                   url={getArticle?.image}
                   text={getArticle?.content}
                   name1= {getArticle?.author?.first_name }
