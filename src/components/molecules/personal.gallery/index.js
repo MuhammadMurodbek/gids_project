@@ -24,8 +24,6 @@ function App({list, setCallback, role, url}) {
     setIsViewerOpen(false);
   };
   const handleDelete = (index, src) => {
-    // console.log(index, src)
-    // console.log(list)
     let imageDelete = list.find(prev=>prev.src===src)
     if(imageDelete){
       setDeleteItem(imageDelete?.id)
@@ -45,9 +43,6 @@ function App({list, setCallback, role, url}) {
               style={{display:'inline-block', padding: '2px' }}
               alt=""
               className={deleteItem === item.id ? "animate__animated animate__shakeX":''} 
-              // width={160}
-              // src={state?.image || RoundImage}
-              // style={{display:'inline-block'}}
             />
             <span 
               style={
