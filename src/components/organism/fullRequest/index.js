@@ -127,14 +127,14 @@ export default function Index({applicationData, setApplicationData, btnText, url
                         <p>{applicationData?.success?.data?.who_need}</p>
                     </div>
                     <div className="tafsilot-text">
-                        <b> <ImageContainer src={odamlar} /></b>
+                        <b> <ImageContainer src={til} /></b>
                         <b>{t("ToliqAriza.tillar")} </b>
                         <p>{applicationData?.success?.data?.languages?.map(a=>" "+getLabelLangLocal(a.id)+",") || t("GidPk.malumotKiritilmagan")}</p>
                     </div>
                     <div className="tafsilot-text">
-                        <b> <ImageContainer src={til} /></b>
+                        <b> <ImageContainer src={odamlar} /></b>
                         <b>{t("ToliqAriza.odamlarSone")} </b>
-                        <p> {applicationData?.success?.data?.people_count} kishi</p>
+                        <p> {applicationData?.success?.data?.people_count} {t("ToliqAriza.kishis")}</p>
                     </div>
                     <Button onClick={openModal} type="button" className="btnRequest">
                         {btnText}

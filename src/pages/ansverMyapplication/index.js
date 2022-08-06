@@ -47,7 +47,7 @@ export default function Index() {
     React.useEffect(()=>{
         if(patchResponseData?.success!=='' && patchResponseData?.error===''){
             Modal.success({
-                title:'Arizangiz bekor qilindi !!',
+                title: `${t("arizamodal.arizaBekor")}`,
                 onOk() {
                     history.push('/gid-personal?tab=1')
                 }})
@@ -63,7 +63,7 @@ export default function Index() {
     return (
         <Wrapper>
             <Myapplication
-                btnText="Arizani taxrirlash"
+                btnText={t("arizamodal.arizaniTaxrirlash")}
                 setApplicationData={setApplicationData}
                 applicationData={applicationData}
                 callback={callback}
@@ -74,7 +74,7 @@ export default function Index() {
                         <div className="btnBack">
                             <Button type="outlined" onClick={cancelReply} >
                                 {patchResponseData?.loading && <SyncOutlined spin={true} /> } 
-                                Arizani bekor qilish 
+                                {t("arizamodal.arizaniBekorQilish")}
                             </Button>
             
                         </div>
@@ -82,8 +82,8 @@ export default function Index() {
                         <div className="title-answers">
                             {
                                 applicationData?.success?.data?.replies.length > 0 ?
-                                    <span>Quyidagi arizangizga javob qaytargan Gid/Tarjimonlardan birini tanlang va u bilan bog’laning</span> :
-                                    <span>Ushbu arizangizga javoblar mavjud emas</span>
+                                    <span>{t("arizamodal.javobQayraganGid")}</span> :
+                                    <span>{t("arizamodal.JavobMavjudEmas")}</span>
                             }
                         </div>
                         {

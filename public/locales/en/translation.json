@@ -660,6 +660,12 @@
     "saqlash":"Save"
   },
 
+  "arizamodal":{
+    "modaltextjonatildi":"Arizangiz muvaffaqiyatli jo’natildi.",
+    "arizaJonatilmadi":"Arizangiz jo’natilmadi.",
+    "arizaXatolik":"Arizani junatishda xatolik mavjud..."
+  },
+
 
 
   "Ustniy_MalumotvaIshtajriba":{

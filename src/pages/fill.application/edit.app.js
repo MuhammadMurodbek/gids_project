@@ -71,7 +71,7 @@ const EditApp = () => {
         <WrapEdit>
             <TestModal {...postData} etitle={"Status: " + postData?.data?.status + ". " + "StatusText: " + postData?.data?.statusText} onSuccess={onSuccess} />
             <Container width="90%" padding="0" margin="40px auto" boxShadow={shadow}>
-                <Title> Arizani taxrirlash </Title>
+                <Title>{t("arizamodal.arizaniTaxrirlash")} </Title>
                 <Container {...mediaContainer} padding="30px">
                     <Container {...mediaContainerWidth} width={state?.success ? '85%' : '100%'} >
                         <TestComponent
@@ -86,14 +86,14 @@ const EditApp = () => {
                                         <Grid item xs={12} sm={12} md={7}>
                                             <Grid container spacing={1} alignItems="center" className="wrap-grid">
                                                 <Grid item xs={12} sm={12} md={6}>
-                                                    <RadioGroupController Controller={Controller} control={control} name="who_need" label1="Gid" label2="Tarjimon" value1="gid" value2="translator" />
+                                                    <RadioGroupController Controller={Controller} control={control} name="who_need" label1={t("arizaqoldirish.Gid")} label2={t("arizaqoldirish.Tarjimon")}  value1="gid" value2="translator" />
                                                 </Grid>
                                                 <Grid item xs={12} sm={12} md={6}>
                                                     {watch('who_need') === 'translator' &&
                                                         <div className="tra_ext">
                                                             <CheckBoxController name="is_consecutive" control={control} label={t("arizaqoldirish.izchil")} />
                                                             <CheckBoxController name="is_synchronous" control={control} label={t("arizaqoldirish.sinxron")} />
-                                                            <CheckBoxController name="is_writer" control={control} label="Yozma" />
+                                                            <CheckBoxController name="is_writer" control={control} label={t("arizaqoldirish.yozma")} />
                                                         </div>
                                                     }
                                                 </Grid>
@@ -140,7 +140,7 @@ const EditApp = () => {
                                             <div className="title_inner">  {t("arizaqoldirish.nimagaKerak")}  </div>
                                         </Grid>
                                         <Grid item xs={12} sm={12} md={7}>
-                                            <TextArea control={control} name="why_need" label1="Gid" label2="Tarjimon" placeholder="Text kiriting" />
+                                            <TextArea control={control} name="why_need" label1="Gid" label2="Tarjimon" placeholder={t("arizaqoldirish.misol")} />
                                         </Grid>
                                     </Grid><br />
                                     <Grid container spacing={1} alignItems="center" className="wrap-grid">
@@ -150,7 +150,7 @@ const EditApp = () => {
                                         <Grid item xs={12} sm={12} md={7}>
                                             <Grid container spacing={1} alignItems="center" className="wrap-grid">
                                                 <Grid item xs={12} sm={12} md={8}>
-                                                    <InputController control={control} name="cost" placeholder="Narx chegarasini yozing" step={0.01} /></Grid>
+                                                    <InputController control={control} name="cost" placeholder={t("arizaqoldirish.chegara")} step={0.01} /></Grid>
                                                 <Grid item xs={12} sm={12} md={4}>
                                                     <SelectController control={control} name="currency" options={currency} pl={'Valyuta'} /></Grid>
                                             </Grid>
@@ -163,10 +163,10 @@ const EditApp = () => {
                                         <Grid item xs={12} sm={12} md={7}>
                                             <Grid container spacing={1} alignItems="center" className="wrap-grid">
                                                 <Grid item xs={12} sm={12} md={3}>
-                                                    <CheckBoxController name="is_male" control={control} label="Erkak" />
+                                                    <CheckBoxController name="is_male" control={control} label= {t("arizaqoldirish.erkak")} />
                                                 </Grid>
                                                 <Grid item xs={12} sm={12} md={3}>
-                                                    <CheckBoxController name="is_female" control={control} label="Ayol" />
+                                                    <CheckBoxController name="is_female" control={control} label={t("arizaqoldirish.ayol")} />
                                                 </Grid>
                                             </Grid>
                                         </Grid>
@@ -176,13 +176,13 @@ const EditApp = () => {
                                             <div className="title_inner"> {t("arizaqoldirish.nechaKishi")} </div>
                                         </Grid>
                                         <Grid item xs={12} sm={12} md={7}>
-                                            <InputController control={control} name="people_count" placeholder="Necha kishi bolasizlar?" />
+                                            <InputController control={control} name="people_count" placeholder={t("arizaqoldirish.nechkishiBolaslar")}  />
                                         </Grid>
                                     </Grid><br />
                                     <Grid container spacing={1} alignItems="center" className="wrap-grid">
                                         <Grid item xs={12} md={5}></Grid>
                                         <Grid item xs={12} md={7}>
-                                            <CheckBoxController name="consent" control={control} label="Arizani yuborib, men foydalanuvchi shartnomasiga rozilik bildirasiz*" />
+                                            <CheckBoxController name="consent" control={control} label={t("arizaqoldirish.shartnoma")} />
                                         </Grid>
                                     </Grid>
                                     <Container width="100%" margin="30px 0 0" textAlign="center" >

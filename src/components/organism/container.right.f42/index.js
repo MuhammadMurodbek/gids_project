@@ -19,7 +19,7 @@ const Index = ({typeRole, state, commentCount, commentReview }) => {
     return (
         <Wrapper>
             <Container padding="20px" boxShadow={shadow}>
-                <InfoSecond commentCount={commentCount} commentReview={commentReview} />
+                <InfoSecond commentCount={commentCount} data={state} commentReview={commentReview} />
             </Container>
             <Container margin="20px 0" {...mediaContainer} padding="20px" boxShadow={shadow}>
                 <DayPicker default selectedDays={state?.busy_days?.map(item => new Date(item)) || []} />

@@ -666,7 +666,17 @@
 
 
 "arizamodal":{
-    "modaltextjonatildi":"Arizangiz muvaffaqiyatli junatildi."
+    "rahmat":"Rahmat!",
+    "modaltextjonatildi":"Arizangiz muvaffaqiyatli jo’natildi.",
+    "arizaJonatilmadi":"Arizangiz jo’natilmadi.",
+    "arizaXatolik":"Arizani junatishda xatolik mavjud...",
+    "arizaBekor":"Arizangiz bekor qilindi !!",
+    "arizaniBekorQilish":" Arizani bekor qilish ",
+    "javobQayraganGid":"Quyidagi arizangizga javob qaytargan Gid/Tarjimonlardan birini tanlang va u bilan bog’laning",
+    "JavobMavjudEmas":"Ushbu arizangizga javoblar mavjud emas",
+    "arizaniTaxrirlash":"Arizani taxrirlash",
+    "arizaRoyhatOting":"Зарегистрируйтесь, чтобы отправить заявку!"
+    
 },
 
   "Ustniy_MalumotvaIshtajriba":{
@@ -924,9 +934,10 @@
    },
    "User_Arizalarim":{
     "profilni_korish":"Profilni ko’rish",
-    "arizalarim":"Mening arizalarim",
+    "arizalarim":"Arizalarim",
     "MalumotlarniTaxrirlash":"Ma’lumotlarimni tahrirlash",
     "profilSozlamalari":"Profil sozlamalari",
+    
 
     "shaharniK":"Shaharni kiriting"
    },
