@@ -42,7 +42,8 @@ export const Wrapper = styled.div`
 }
 .right-b{
     font-size:13px;
-    margin-top: 10px;
+    // margin-top: 10px;
+
 }
 .history{
     background: #EEF7EE;

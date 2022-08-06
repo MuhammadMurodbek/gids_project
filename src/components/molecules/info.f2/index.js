@@ -18,13 +18,14 @@ const Index = ({ data, commentCount }) => {
         else if (item === 'sum') return 'S'
         else if (item === 'ruble') return 'R'
         else if (!item) return ''
-
+        
     }
     const pay = (item) => {
         if (item) return Math.trunc(item)
         else return '0'
     }
-    // console.log(commentCount, commentReview)
+     console.log(curr(data?.currency_per_day)+ "--------------");
+    //  console.log(data?.currency_per_hour);
     return (
         <WrapperInfoF2>
             <FlexContainer width="auto" alignItems="center" justifyContent="flex-start" flexDirection="column">
@@ -47,7 +48,7 @@ const Index = ({ data, commentCount }) => {
                     <Grid item sm={9} style={{ display: 'flex' }}>
                         <span className='text_fild'>{t("Gid_Tanlash.kuniga")}</span>
                         <div className="c_per_day comm_val ">
-                            {pay(data?.cost_per_day) + " " + curr(data?.currency_per_day) || '0'}
+                            {pay(data?.cost_per_day) + "-" + curr(data?.currency_per_day) || '0'}
                         </div>
                     </Grid>
                 </Grid>
@@ -58,7 +59,7 @@ const Index = ({ data, commentCount }) => {
                     <Grid item sm={9} style={{ display: 'flex' }}>
                         <span className='text_fild'>{t("Gid_Tanlash.soatiga")}</span>
                         <div className="c_per_day comm_val ">
-                            {pay(data?.cost_per_hour) + " " + curr(data?.currency_per_hour) || '0'}
+                            {pay(data?.cost_per_hour) + "-" + curr(data?.currency_per_hour)  || '0'}
                         </div>
                     </Grid>
                 </Grid>

@@ -305,12 +305,13 @@
     "sana":"Sana:",
     "gacha":"Narx (gacha):",
     "kimKerak":"Kim kerak:",
-    "tillar":"Tillar::",
+    "tillar":"Tillar:",
     "odamlarSone":"Odamlar soni:",
-    "javobBerish":"Arizaga javob qaytarish",
+    "javobBerish":"Arizaga javob berish",
     "yozing":"Xabaringizni yozing",
     "yopish":"Yopish",
-    "yuborish":"Yuborish"
+    "yuborish":"Yuborish",
+    "kishis":"kishi"
   },
   "Blog":{
     "blog":"Blog",
@@ -338,6 +339,7 @@
     "maqolaNomi":"Maqola nomi",
     "NomiPlace":"Maqolangizni nomini yozing",
     "taglar":"Teglar",
+    "tegPlceholder":"Tegni tanlang",
     "tagPlace":"Teg yozing",
     "Text":"Matn",
     "maqolaniYozing":"Maqolangizni yozing",
@@ -541,7 +543,7 @@
     "toifasi":"Gidning toifasi",
     "toifaPlace":"Oliy toifali",
     "qoshimchaKurslar":"Qo‘shimcha kurslar",
-    "oqiganKurslaringiz":"Tamomlagan kurslaringizni yozing va Enter tugmasini bosing",
+    "oqiganKurslaringiz":"CAT dasturlarini yozing va Enter tugmasini bosing",
     "tajriba":"Tajriba",
     "year":" yil",
     "saqlash":"Saqlash"
@@ -658,11 +660,14 @@
     "galarey":"Video",
     "galareyangiz":"Galereya (jpg va png formatida)*",
     "saqlash":"Saqlash",
-    "rasmGalereya":"(O'z fotosuratlaringizni va ekskursiyalar davomida olingan suratlarni joylashtirishingiz mumkin)"
+    "rasmGalereya":"(O'z fotosuratlaringizni va ekskursiyalar davomida olingan suratlarni joylashtirishingiz mumkin)",
+    "rasmGalereya2":"(O'z fotosuratlaringizni va tadbirlar davomida olingan suratlarni joylashtirishingiz mumkin)"
   },
 
 
-
+"arizamodal":{
+    "modaltextjonatildi":"Arizangiz muvaffaqiyatli junatildi."
+},
 
   "Ustniy_MalumotvaIshtajriba":{
 
@@ -729,7 +734,9 @@
 
   "safarHaqda":{
     "title":"Safaringiz qanday o‘tdi?",
+    "title2Ogzaki":"Tadbir qanday o'tdi?",
     "text":"Safar taassurotlaringiz bilan bo’lishing va yangi mijozlar toping.",
+    "text2Ogzaki":"Ishtirok etgan tadbirlaringiz bilan bo'lishing va yangi mijozlar toping.",
     "Maqolayozish":"Maqola yozish",
     "Maqolalarim":"Maqolalarim",
     "tahrirlash":"Tahrirlash",
@@ -887,8 +894,8 @@
     "qaytaUrining":"Qaytadan urinib ko'ring.",
     "tolovSumma":"To'lov miqdori: ",
     "muddati":"Amal qilish muddati:",
-    "gacha":"gacha"
-
+    "tolovMiqdori":"To'lov miqdori:",
+    "gacha":"gacha" 
    },
    "hisobni_toldirish":{
      "hisobni_toldirish":"Hisobni to’ldiring",

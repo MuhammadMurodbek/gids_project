@@ -37,7 +37,7 @@ const Index = (props) => {
         }
     },[countryId])
     // console.log(countryId)
-    // console.log(clear)
+    // console.log(defaultCountry)
     return (
         <>
         <Wrapper>

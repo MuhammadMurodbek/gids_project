@@ -32,6 +32,6 @@ const Index = ({data}) => {
            
         </Wrapper>
     )
-}
+}   
 
 export default Index

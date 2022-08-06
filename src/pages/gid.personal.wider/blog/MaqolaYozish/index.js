@@ -137,6 +137,7 @@ const Index = () => {
                                     onChange={handleTagChange}
                                     className="basic-multi-select"
                                     classNamePrefix="select"
+                                    placeholder={t("maqolaYozish.tegPlceholder")}
                                     
                                 />
                             </Grid>

@@ -13,6 +13,7 @@ import moment from "moment"
 import { toast } from "react-hot-toast"
 
 const Index = ({loader, queryObj}) => {
+     
     const history = useHistory()
     const { t } = useTranslation()
     const [postData, setPostData] = useState({ success: '', error: '', loading: false })
@@ -60,7 +61,7 @@ const Index = ({loader, queryObj}) => {
             setStartVal(false)
         }
     },[collect])
-    // console.log(queryObj)
+    // console.log(  "-----------------")
     // console.log(collect)
     return (
         <Wrapper width="350px">

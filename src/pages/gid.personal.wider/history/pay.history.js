@@ -27,7 +27,7 @@ export default function Index() {
             </TextTitle>
 
             { historyState.loading && <Spinner />}
-            {
+            {  
                 historyState?.success &&
                 <>
                     {

@@ -44,6 +44,8 @@ const Index = () => {
             } )
         }
     }, [ getData ] )
+
+    console.log(getData?.success?.data?.cost_per_hour);
     return (
         <Wrapper>
             <Container>
@@ -90,7 +92,7 @@ const Index = () => {
                                         state={ state }
                                         setState={ setState }
                                         field="cost_per_hour"
-                                        defaultApiValue={ getData?.success?.data?.cost_per_hour || '' }
+                                        defaultApiValue={ getData?.success?.data?.cost_per_hour || '' }  //dddddddddd
                                     />
                                     <div className="wrap_class_inner">
                                         <Selection

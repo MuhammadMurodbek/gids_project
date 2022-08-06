@@ -1,37 +1,52 @@
-import React, {useState, useEffect} from 'react'
-import { AboutTravel, Wrapper } from './index.style'
-import { TextTitle } from '../../styles/textTitle/index.style'
+import React, { useState, useEffect } from "react";
+import { AboutTravel, Wrapper } from "./index.style";
+import { TextTitle } from "../../styles/textTitle/index.style";
 import Button from "../../components/atom/button";
-import { Grid } from '@material-ui/core';
-import CitiLeftPart from '../../components/organism/citiesLeftPart';
-import ImgContainer from "../../components/molecules/img.container"
-import ad from '../../assets/img/citiyes/ad.png'
-import xitoy from '../../assets/img/citiyes/xitoy.png';
-import { mediaTextField, mediaTextFieldSec, mediaBtn } from "../../custom/global.media.variables"
-import { Link } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
-import {getResponse} from "../../hooks/response_get"
+import { Grid } from "@material-ui/core";
+import CitiLeftPart from "../../components/organism/citiesLeftPart";
+import ImgContainer from "../../components/molecules/img.container";
+import ad from "../../assets/img/citiyes/ad.png";
+import xitoy from "../../assets/img/citiyes/xitoy.png";
+import {
+  mediaTextField,
+  mediaTextFieldSec,
+  mediaBtn,
+} from "../../custom/global.media.variables";
+import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { getResponse } from "../../hooks/response_get";
 
 export default function Index() {
-    const {t} = useTranslation()    
-    // const [getState, setState] = useState({success:'', error:'', loading:false})
-    // useEffect(()=>{
-    //     getResponse('/')
-    // },[])
+  const { t } = useTranslation();
+  // const [getState, setState] = useState({success:'', error:'', loading:false})
+  // useEffect(()=>{
+  //     getResponse('/')
+  // },[])
+  const getRole = JSON.parse(localStorage.getItem("user_token"));
 
-    return (
-        <Wrapper>
-            <AboutTravel>
-                <TextTitle {...mediaTextField} {...mediaTextFieldSec}>{t("safarHaqda.title")}</TextTitle>
-                <p className="aboutT__text">{t("safarHaqda.text")}</p>
-                <TextTitle width="50%" left="auto" right="auto" bottom="40px">
-                    <Link to="/write-article">
-                        <Button>{t("safarHaqida.Maqolayozish")}</Button>
-                    </Link>
-                </TextTitle>
-            </AboutTravel>
-            <TextTitle {...mediaTextField} {...mediaTextFieldSec} >{t("safarHaqida.Maqolalarim")}</TextTitle>
-            {/* <Grid justifyContent="center" className="grid_container" container spacing={1}>
+  // getRole?.role === "writer"
+  // getRole?.role === "translator"
+
+  return (
+    <Wrapper>
+      <AboutTravel>
+        <TextTitle {...mediaTextField} {...mediaTextFieldSec}>
+            {getRole?.role === "translator" ?  t("safarHaqda.title2Ogzaki") : t("safarHaqda.title") }
+        </TextTitle>
+        <p className="aboutT__text">
+        {getRole?.role === "translator" ? t("safarHaqda.text2Ogzaki") : t("safarHaqda.text") }
+        
+        </p>
+        <TextTitle width="50%" left="auto" right="auto" bottom="40px">
+          <Link to="/write-article">
+            <Button>{t("safarHaqida.Maqolayozi")}</Button>
+          </Link>
+        </TextTitle>
+      </AboutTravel>
+      <TextTitle {...mediaTextField} {...mediaTextFieldSec}>
+        {t("safarHaqida.Maqolalarim")}
+      </TextTitle>
+      {/* <Grid justifyContent="center" className="grid_container" container spacing={1}>
                 <Grid item xs={12} md={8}>
 
                         <CitiLeftPart
@@ -78,7 +93,6 @@ export default function Index() {
                     </Grid>
                 </Grid>
             </Grid> */}
-
-        </Wrapper>
-    )
+    </Wrapper>
+  );
 }

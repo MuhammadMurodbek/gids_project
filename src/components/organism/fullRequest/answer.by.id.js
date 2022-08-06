@@ -75,6 +75,8 @@ export default function Index({applicationData, setApplicationData, btnText, url
         // console.log(e.target.value)
         setComment(e.target.value)
     }
+// console.log(getData?.success?.data?.languages);
+
 
     return (
         <Wrapper>
@@ -114,7 +116,7 @@ export default function Index({applicationData, setApplicationData, btnText, url
                     <div className="tafsilot-text">
                         <b> <ImageContainer src={kim} /></b>
                         <b>{t("ToliqAriza.gacha")} </b>
-                        <p>{getData?.success?.data?.cost + " " +curens[getData?.success?.data?.currency] || " Malumot topilmadi"} </p>
+                        <p>{getData?.success?.data?.cost + " " +curens[getData?.success?.data?.currency] || t("GidPk.malumotKiritilmagan")} </p>
                     </div>
                     <div className="tafsilot-text">
                         <b> <ImageContainer src={narx} /></b>
@@ -129,7 +131,7 @@ export default function Index({applicationData, setApplicationData, btnText, url
                     <div className="tafsilot-text">
                         <b> <ImageContainer src={til} /></b>
                         <b>{t("ToliqAriza.odamlarSone")} </b>
-                        <p> {getData?.success?.data?.people_count} kishi</p>
+                        <p> {getData?.success?.data?.people_count} {t("ToliqAriza.kishis")} </p>
                     </div>
                     <Button onClick={openModal} type="button" className="btnRequest">
                         {btnText}

@@ -1,10 +1,12 @@
 import { Modal } from 'antd';
-
-export function info() {
-    Modal.info({
-      title: 'This is a notification message',
-      content: (
-        <div>
+import { useTransition } from 'react';
+import { useTranslation } from "react-i18next";
+// t("arizamodal.modaltextjonatildi")
+export function info() { 
+  Modal.info({
+    title: 'This is a notification message',
+    content: (
+      <div>
           <p>some messages...some messages...</p>
           <p>some messages...some messages...</p>
         </div>
@@ -13,12 +15,17 @@ export function info() {
     });
   }
   
-  export function success() {
-    Modal.success({
-      content: 'Arizangiz muvaffaqiyatli junatildi !!!',
-    });
+   function Success22() {
+    const {t} = useTransition()
 
+    Modal.success({
+      content:  "Arizangiz muvaffaqiyatli jo’natildi.",
+    });
+    return(
+      <></>
+    )
   }
+  export default Success22;
   
   export function error() {
     Modal.error({

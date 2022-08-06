@@ -9,7 +9,7 @@ import {
 } from "./index.style"
 import ExtSearch from "../../components/extended.search"
 // import mainPicture from "../../assets/img/guid.svg"
-import mainPicture from "../../assets/img/rasm01.png"
+import mainPicture from "../../assets/img/R11.png"
 import Grid from '@material-ui/core/Grid';
 import Button from "../../components/atom/button"
 import ImgContainer from "../../components/molecules/img.container"

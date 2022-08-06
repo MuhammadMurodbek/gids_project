@@ -22,7 +22,7 @@ const Index = ({ data, role }) => {
         low: t("Pismenniy_Xizmatlar.orta"),
     }
 
-    console.log(uniq_fast(data?.excursions))
+ 
     function uniq_fast(a) {
         var seen = {};
         var out = [];

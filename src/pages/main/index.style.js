@@ -72,7 +72,7 @@ export const ComponentOne = styled.div`
         div{
             width:90%;
             margin:25px 0;
-            font-size:32px;
+            font-size:32px; 
             font-weight: 600;
             text-align: center;
             line-height: 1.4em;
@@ -94,7 +94,7 @@ export const ComponentOne = styled.div`
         img{
             /* min-width:400px; */
             width: 850px;
-            margin-top:25px;
+            margin-top:140px;
             object-fit: cover;
 
             @media (max-width: 444px){

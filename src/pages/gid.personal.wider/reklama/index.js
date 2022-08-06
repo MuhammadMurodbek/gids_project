@@ -54,7 +54,7 @@ export default function Index() {
                     {t("reklama.Hozirgi")}
                 </TextTitle>
                 {myTarif.loading && <Spinner />}
-                {
+                {  
                     myTarif.success &&
                     <Grid container spacing={1} justifyContent="center" className="services history">
                         {
@@ -65,8 +65,8 @@ export default function Index() {
                                         <span className="spansa">{objApiText[myTarif.data?.tariff?.name]}</span>
                                     </div>
                                     <div className="right-prise">
-                                        <b>{myTarif?.data?.tariff?.price || '0'} {t("reklama.som")}</b>
-                                        <b className="right-b">{t("tariflar.muddati")} {moment(myTarif?.data?.top_until_date).format('DD.MM.YYYY') || '01.01.2000'} {t("tariflar.gacha")}</b>
+                                        <b> {t("tariflar.tolovMiqdori")} {myTarif?.data?.tariff?.price || '0'} {t("reklama.som")}</b>
+                                        <b className="right-b">{t("tariflar.muddati")} {moment(myTarif?.data?.top_until_date).format('DD.MM.YYYY') || '01.01.2000'}  {t("tariflar.gacha")}</b>
                                     </div>
                                 </Grid> :
                                 <div style={{ padding: "20px 0" }}>{t("tariflar.MavjudEmas")}</div>

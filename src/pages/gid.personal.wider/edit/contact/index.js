@@ -40,6 +40,14 @@ const Index = () => {
             toast.error(t("kommentlar.xatolikMavjud"))
         }
     }, [apiRes])
+
+    console.log(apiResponse?.success?.data?.website);
+console.log(apiResponse?.success?.data?.telegram);
+console.log(apiResponse?.success?.data?.instagram);
+console.log(apiResponse?.success?.data?.facebook);
+console.log(apiResponse?.success?.data?.wechat);
+console.log(apiResponse?.success?.data?.viber);
+
     return (
         <Wrapper>
             {
@@ -47,22 +55,22 @@ const Index = () => {
                     <>
                         <Grid container spacing={2}>
                             <Grid item xs={12} sm={6} md={4}>
-                                <InputLabel log="https://whatsapp.com/" setState={setState} state={state} field="website" defaultApiValue={apiResponse?.success?.data?.website?.substr(8)} sizeLabel="15px" width="100%" label="Website" placeholder="https://www.whatsapp.com/user-name" />
+                                <InputLabel log="https://whatsapp.com/" setState={setState} state={state} field="website"   defaultApiValue={apiResponse?.success?.data?.website?.substr(21)}   sizeLabel="15px" width="100%" label="whatsapp" placeholder="https://www.whatsapp.com/user-name" />
                             </Grid> 
                             <Grid item xs={12} sm={6} md={4}>
-                                <InputLabel log="https://t.me/" setState={setState} state={state} field="telegram" defaultApiValue={apiResponse?.success?.data?.telegram?.slice(13)} sizeLabel="15px" width="100%" label="Telegram" placeholder="https://t.me/user-name" />
+                                <InputLabel log="https://t.me/"         setState={setState} state={state} field="telegram"  defaultApiValue={apiResponse?.success?.data?.telegram?.slice(13)}  sizeLabel="15px" width="100%" label="Telegram" placeholder="https://t.me/user-name" />
                             </Grid>
                             <Grid item xs={12} sm={6} md={4}>
-                                <InputLabel log="https://instagram.com/" setState={setState} state={state} field="instagram" defaultApiValue={apiResponse?.success?.data?.instagram?.slice(22)} sizeLabel="15px" width="100%" label="Instagram" placeholder="https://www.instagram.com/user-name" />
+                                <InputLabel log="https://instagram.com/"setState={setState} state={state} field="instagram" defaultApiValue={apiResponse?.success?.data?.instagram?.slice(22)} sizeLabel="15px" width="100%" label="Instagram" placeholder="https://www.instagram.com/user-name" />
                             </Grid>
                             <Grid item xs={12} sm={6} md={4}>
-                                <InputLabel log="https://facebook.com/" setState={setState} state={state} field="facebook" defaultApiValue={apiResponse?.success?.data?.facebook?.slice(21)} sizeLabel="15px" width="100%" label="Facebook" placeholder="https://www.facebook.com/user_name" />
+                                <InputLabel log="https://facebook.com/" setState={setState} state={state} field="facebook"  defaultApiValue={apiResponse?.success?.data?.facebook?.slice(21)}  sizeLabel="15px" width="100%" label="Facebook" placeholder="https://www.facebook.com/user_name" />
                             </Grid>
                             <Grid item xs={12} sm={6} md={4}>
-                                <InputLabel log="https://wechat.com/" setState={setState} state={state} field="wechat" defaultApiValue={apiResponse?.success?.data?.wechat?.slice(19)} sizeLabel="15px" width="100%" label="Wechat" placeholder="https://spacekid.me/user-name" />
+                                <InputLabel log="https://viber.com/"    setState={setState} state={state} field="viber"     defaultApiValue={apiResponse?.success?.data?.viber?.slice(18)}     sizeLabel="15px" width="100%" label="Viber" placeholder="https://viber.me/user-name" />
                             </Grid>
                             <Grid item xs={12} sm={6} md={4}>
-                                <InputLabel log="https://viber.com/" setState={setState} state={state} field="viber" defaultApiValue={apiResponse?.success?.data?.viber?.slice(18)} sizeLabel="15px" width="100%" label="Viber" placeholder="https://viber.me/user-name" />
+                                <InputLabel log="https://wechat.com/"   setState={setState} state={state} field="wechat"    defaultApiValue={apiResponse?.success?.data?.wechat?.slice(19)}    sizeLabel="15px" width="100%" label="Wechat" placeholder="https://spacekid.me/user-name" />
                             </Grid>
                         </Grid>
                         <Container padding="20px 0 5px" textAlign="right">

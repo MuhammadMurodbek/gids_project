@@ -33,6 +33,10 @@ export default function Index() {
         setPagination( { current: pageNumber} )
         window.scrollTo(0,0)
     }
+
+console.log(articleList);
+    
+
     return (
         <Wrapper> 
         
@@ -50,13 +54,17 @@ export default function Index() {
                 item={item}
                 manzil={item.why_need}
                 name={item?.full_name?.first_name + " " + item?.full_name?.last_name}
-                gpss={item?.country_name?.uz + " "+ item?.city_name?.uz}
+                gpss={item?.country_name?.uz + " | "+ item?.city_name?.uz}
                 dan={item?.start_date}
                 gacha={item?.end_date}
                 sana={moment(item.created_at).format("DD.MM.YYYY")}
+                
             />
+ 
             
-               ))
+            
+            
+            ))
            }
              <div className="pagination" style={{width:'100%', margin:'40px 0', textAlign:'center'}}>
                 <Pagination current={current} onChange={ onChange } pageSize={6} total={ state?.success?.data?.count } />

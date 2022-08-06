@@ -141,6 +141,7 @@ export const Wrapper = styled.div`
     }
      .Abukhara-text-more{
          padding: 20px;
+         text-align: justify;
      }
      @media (max-width: 600px){
         .Abuhoro-text{
