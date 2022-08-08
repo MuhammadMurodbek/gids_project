@@ -81,7 +81,7 @@ const Index = () => {
     React.useEffect(() => {
         if (appNoToken) {
             if (token?.role !== "simple_user") {
-                warning("Ariza junatish faqat 'Foydalanuvchi' roli uchun ruxsat berilgan !!!")
+                warning(`${"arizamodal.arizaRoyhatOting"}`)
             } else setResponseHook(post_gid_app_action(appNoToken))
         }
     }, [])

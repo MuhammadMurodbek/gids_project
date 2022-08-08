@@ -8,19 +8,19 @@ export const Tabs = () => {
     const {t} = useTranslation()
     return[
         {
-            label:<p className="border-div first">{t('mainTab:Profilni_korish')}</p>,
+            label:<p className="border-div first">{t('User_Arizalarim.profilni_korish')}</p>,
             component:<First/>,
         },
         {
-            label:<p className="border-div">Arizalarim</p>,
+            label:<p className="border-div">{t('User_Arizalarim.arizalarim')}</p>,
             component:<Second/>,
         },
         {
-            label:<p className="border-div">Ma’lumotlarimni Tahrirlash</p>,
+            label:<p className="border-div">{t('User_Arizalarim.MalumotlarniTaxrirlash')}</p>,
             component:<Third/>,
         },
         {
-            label:<p className="border-div">Profilni Sozlamalari</p>,
+            label:<p className="border-div">{t('User_Arizalarim.profilSozlamalari')}</p>,
             component:<Fourth/>,
         },
     ];

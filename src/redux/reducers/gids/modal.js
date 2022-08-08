@@ -1,6 +1,8 @@
 import { Modal } from 'antd';
-import { useTransition } from 'react';
 import { useTranslation } from "react-i18next";
+import { t } from 'i18next';
+
+
 // t("arizamodal.modaltextjonatildi")
 export function info() { 
   Modal.info({
@@ -15,23 +17,26 @@ export function info() {
     });
   }
   
-   function Success22() {
-    const {t} = useTransition()
-
-    Modal.success({
-      content:  "Arizangiz muvaffaqiyatli jo’natildi.",
-    });
+   export const Success22 = () => {
+    // const {t} = useTranslation()
+    
     return(
-      <></>
+    Modal.success({
+      title: `${t("arizamodal.rahmat")}`,
+      content: `${t("arizamodal.modaltextjonatildi")}`
+    })
     )
   }
   export default Success22;
   
-  export function error() {
+  export const Error22 = () => {
+
+    return(
     Modal.error({
-      title: 'Arizangiz junatilmadi',
-      content: 'Arizani junatishda xatolik mavjud...',
-    });
+      title: `${t("arizamodal.arizaJonatilmadi")}`,
+      content: `${t("arizamodal.arizaXatolik")}`,
+    })
+    )
   }
   
   export function warning() {

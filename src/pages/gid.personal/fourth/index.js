@@ -10,6 +10,7 @@ import Box from "@material-ui/core/Box";
 import { getResponse, putResponse } from '../../../hooks/response_get'
 import {toast} from "react-hot-toast"
 import {toastChecker} from "../../../custom/function"
+import { useTranslation } from "react-i18next"
 const mediaContainer = {
     m_width: "500px",
     m_padding: "10px 5px",
@@ -17,6 +18,7 @@ const mediaContainer = {
 
 const Index = () => {
     const [response, setResponse] = useState({ success: '', error: '' })
+    const {t} = useTranslation()
     const [updateResponse, setUpdateResponse] = useState({ success: '', error: '', loading: false})
     const [edit, setEdit] = useState({})
     const [state, setState] = useState({
@@ -80,8 +82,8 @@ const Index = () => {
                 <Container padding="0" boxShadow={shadow} className="container4">
                     <TitleContainer>
                         <Grid container spacing={5}>
-                            <Grid item xs={12} sm={6}>Telefon va e-mail</Grid>
-                            <Grid component={Box} display={{ xs: "none", sm: "inline-block" }} item xs={12} sm={6}>Parolni o'zgartirish</Grid>
+                            <Grid item xs={12} sm={6}>{t("profil_sozlamalari.telefonvaemail")}</Grid>
+                            <Grid component={Box} display={{ xs: "none", sm: "inline-block" }} item xs={12} sm={6}>{t("profil_sozlamalari.parolniOzgartirish")}</Grid>
                         </Grid>
                     </TitleContainer>
                     <Container {...mediaContainer} padding="20px 40px">
@@ -91,8 +93,8 @@ const Index = () => {
                                     field="phone_number"
                                     setState={setEdit}
                                     state={edit}
-                                    label="Telefon"
-                                    placeholder="Raqamingizni kiriting" 
+                                    label={t("profil_sozlamalari.telefone")}
+                                    placeholder={t("profil_sozlamalari.telRaqam")}
                                     defaultApiValue={edit?.phone_number}
                                 />
                                 
@@ -100,34 +102,34 @@ const Index = () => {
                                     onChange={hendlEdit}
                                     value={edit?.email}
                                     name="email"
-                                    label="E-mail"
-                                    placeholder="Pochtangizni kiriting" />
+                                    label={t("profil_sozlamalari.Email")}
+                                    placeholder={t("profil_sozlamalari.EmailPlac")} />
                             </Grid>
                             <Grid item xs={12} sm={6}>
                                 <InputLabeled width="100%"
                                     onChange={hendlChanch}
                                     value={password}
                                     name="password"
-                                    label="Hozirgi parolingiz"
-                                    placeholder="Hozirgi Parol" />
+                                    label={t("profil_sozlamalari.hozirgiParol")}
+                                    placeholder={t("profil_sozlamalari.joriyParol")} />
                                 <InputLabeled
                                     width="100%"
                                     value={password1}
                                     name="password1"
                                     onChange={hendlChanch}
-                                    label="Yangi parol"
-                                    placeholder="Yangi parolni kiriting" password />
+                                    label={t("profil_sozlamalari.yangiParol")}
+                                    placeholder={t("profil_sozlamalari.yangiParolPlac")} password />
                                 <InputLabeled width="100%"
                                     value={password2}
                                     name="password2"
                                     onChange={hendlChanch}
-                                    label="Parolni tasdiqlang"
-                                    placeholder="Yangi parolni qayta kiriting" password />
+                                    label={t("profil_sozlamalari.parolniTasdiqlash")}
+                                    placeholder={t("profil_sozlamalari.tasdilashPlac")} password />
                             </Grid>
                         </Grid>
                     </Container>
                     <Container textAlign="right" padding="30px">
-                        <Button loader={updateResponse?.loading}></Button>
+                        <Button loader={updateResponse?.loading}>{t("profil_sozlamalari.saqlash")}</Button>
                     </Container>
                 </Container>
             </Wrapper>

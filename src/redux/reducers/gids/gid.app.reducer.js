@@ -1,6 +1,6 @@
 import { toast } from "react-hot-toast";
-import { info, warning, error} from "./modal"
-import Success22 from './modal'
+import { info, warning, Error22, Success22} from "./modal"
+// import Success22 from './modal'
 
 const initialState = {
     loading: false,
@@ -17,7 +17,7 @@ const Success = (data) => {
     return {payload:data,loading:false}
 }
 const Error = (data) => {
-    error(data)
+    Error22(data)
     toast.remove()
     localStorage.removeItem('appNoToken')
     return {...initialState,loading:false,} 

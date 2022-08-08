@@ -670,7 +670,18 @@
   },
 
 
-
+  "arizamodal":{
+    "rahmat":"Спасибо",
+    "modaltextjonatildi":"Ваша заявка успешно отправлена.",
+    "arizaJonatilmadi":"Ваша заявка не отправлена.",
+    "arizaXatolik":"При отправке заявки произошла ошибка...",
+    "arizaBekor":"Ваша заявка была отменена!!",
+    "arizaniBekorQilish":"Отменить заявку ",
+    "javobQayraganGid":"Выберите одного из гидов/переводчиков, откликнувшихся на вашу заявку, и свяжитесь с ним",
+    "JavobMavjudEmas":"Нет ответов на ваш запрос",
+    "arizaniTaxrirlash":"Редактировать заявку",
+    "arizaRoyhatOting":""
+  },
 
   "Ustniy_MalumotvaIshtajriba":{
 
