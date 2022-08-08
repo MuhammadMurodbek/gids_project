@@ -25,7 +25,7 @@ const Index = ({state, setState, error, statePostProps}) => {
                         placeholder={t("User_MalumotlarniTax.isimPlace")}
                         value={state.first_name}
                         onChange={handleChange}
-                        errorText={error ? validatorState(state?.first_name, 'min', 3, 'Ims kiritilmagan (kamida 3 ta belgi)'):null}
+                        errorText={error ? validatorState(state?.first_name, 'min', 3, t("User_MalumotlarniTax.ismKiritilmagan")):null}
                     />
                 </Grid>
                 <Grid item xs={12} sm={12} md={6}>
@@ -36,7 +36,7 @@ const Index = ({state, setState, error, statePostProps}) => {
                         placeholder= {t("User_MalumotlarniTax.familyaPlace")}
                         value={state.last_name}
                         onChange={handleChange}
-                        errorText={error ? validatorState(state?.last_name, 'min', 3, 'Familiya kiritilmagan (kamida 3 ta belgi)'):null}
+                        errorText={error ? validatorState(state?.last_name, 'min', 3, t("User_MalumotlarniTax.familyaKiritilmagan")):null}
                     />
                 </Grid>
             </Grid>
@@ -49,7 +49,7 @@ const Index = ({state, setState, error, statePostProps}) => {
                         placeholder= {t("User_MalumotlarniTax.kompaniePlace")}
                         value={state.company}
                         onChange={handleChange}
-                        errorText={error ? validatorState(state?.company, 'min', 3, 'Tashkilot nomi kiritilmagan (kamida 3 ta belgi)'):null}
+                        errorText={error ? validatorState(state?.company, 'min', 3,  t("User_MalumotlarniTax.tashkilotKiritilmagan")):null}
                     />
                 </Grid>
             </Grid>

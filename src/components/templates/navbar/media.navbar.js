@@ -13,7 +13,7 @@ const MediaNavbarContainer = (props) => {
 
     const getRole = JSON.parse(localStorage.getItem("user_token"));
 
-    const [selected, setSelected] = useState('US');
+    const [selected, setSelected] = useState('RU');
     const handleClick = () => {
         props.setOpen(false)
     }

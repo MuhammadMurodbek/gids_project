@@ -109,7 +109,7 @@ const Index = () => {
                         </Grid>
                         
                     </Container>
-                    <Container width="100%" padding="10px 20px" margin="20px 0 0 15px" textAlign="right">
+                    <Container width="100%" padding="10px 20px" margin="20px 0 0 15px" textAlign="right" className='CostStoreSave'>
                         <Button loader={post?.loading} onClick={handleSubmit}>{t("Pismini_narxlar.saqlash")}</Button>
                     </Container>
                     </>

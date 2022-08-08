@@ -39,7 +39,7 @@ export default function Index() {
         </p>
         <TextTitle width="50%" left="auto" right="auto" bottom="40px">
           <Link to="/write-article">
-            <Button>{t("safarHaqida.Maqolayozi")}</Button>
+            <Button>{t("safarHaqida.Maqolayozish")}</Button>
           </Link>
         </TextTitle>
       </AboutTravel>
