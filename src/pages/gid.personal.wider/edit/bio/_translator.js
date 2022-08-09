@@ -86,7 +86,7 @@ const Translator = ({setTrains, trains, setTrState, trState, clear, setClear}) =
                 )) :null
             }
                
-                <Grid container spacing={ 1 }>
+                <Grid container spacing={ 1 } className='brifings'>
                   <Grid item md={ 9 } xs={ 7 }>
                     <InputLabeled
                       sizeLabel="15px"

@@ -270,7 +270,7 @@
     "Ayuborish":"Отправить заявку" ,
     "ariza":"Для того, чтобы отправить заявку",
     "foydalanuvchi":"",
-    "ruhsat":"вам нужно пройти регистрацию как ",
+    "ruhsat":"вам нужно пройти регистрацию ",
     "foydalanuvchiR":"Пользователь",
     "arizaBekor":"Отменить заявку",
     "kimKiritilmagan":"Не указан кто нужен",
@@ -939,7 +939,10 @@
     "mamlaktalarPlace":"Выберите свой город",
     "shaxarlar":"Город",
     "shaxarlarPlace":"Напишите свой город",
-    "saqlash":"Сохранить"
+    "saqlash":"Сохранить",
+     "ismKiritilmagan":"Введите имя (не менее 3ех символов)",
+    "familyaKiritilmagan":"Введите фамилию (не менее 3ех символов)",
+    "tashkilotKiritilmagan":"Введите названиe организации (не менее 3ех символов)"
   },
   "profil_sozlamalari":{
  

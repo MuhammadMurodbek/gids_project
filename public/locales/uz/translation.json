@@ -273,7 +273,7 @@
     "Ayuborish":"Arizani yuboirish",
     "ariza":"Arizani yuborish uchun",
     "foydalanuvchi":"Foydalanuvchi",
-    "ruhsat":"sifatida ro'yxhatdan o'ting",
+    "ruhsat":"ro'yxhatdan o'ting",
     "foydalanuvchiR":"",
     "arizaBekor":"Arizani bekor qilish",
     "kimKiritilmagan":"Kim kerakligi kiritilmagan",
@@ -285,8 +285,8 @@
     "valyutaKiritilmagan":"Valyuta kiritilmagan",
     "jinsiTanlanmagan":"Jinsi tanlanmagan",
     "odamKiritilmagan":"Odamlar soni kiritilmagan",
-    "arizaJunatilmadi":"Arizangiz junatilmadi",
-    "arizaXato":"Arizani junatishda xatolik mavjud...",
+    "arizaJunatilmadi":"Arizangiz jo'natilmadi",
+    "arizaXato":"Arizani jo'natishda xatolik mavjud...",
     "serverError":"Serverdagi ichki xatolik",
     "ArizaOldin":"Arizani yuborish uchun avval ro'yxatdan o'tishingiz kerak."
   },
@@ -669,14 +669,13 @@
     "rahmat":"Rahmat!",
     "modaltextjonatildi":"Arizangiz muvaffaqiyatli jo’natildi.",
     "arizaJonatilmadi":"Arizangiz jo’natilmadi.",
-    "arizaXatolik":"Arizani junatishda xatolik mavjud...",
+    "arizaXatolik":"Arizani jo'natishda xatolik mavjud...",
     "arizaBekor":"Arizangiz bekor qilindi !!",
     "arizaniBekorQilish":" Arizani bekor qilish ",
     "javobQayraganGid":"Quyidagi arizangizga javob qaytargan Gid/Tarjimonlardan birini tanlang va u bilan bog’laning",
     "JavobMavjudEmas":"Ushbu arizangizga javoblar mavjud emas",
     "arizaniTaxrirlash":"Arizani taxrirlash",
     "arizaRoyhatOting":"Ariza jo’natish uchun ro’yxatdan o’ting!"
-    
 },
 
   "Ustniy_MalumotvaIshtajriba":{
@@ -957,7 +956,10 @@
     "mamlaktalarPlace":"Davlatingizni tanlang",
     "shaxarlar":"Shahar",
     "shaxarlarPlace":"Shahringizni kiriting",
-    "saqlash":"Saqlash"
+    "saqlash":"Saqlash",
+    "ismKiritilmagan":"Ism kiritilmagan (kamida 3 ta belgi)",
+    "familyaKiritilmagan":"Familiya kiritilmagan (kamida 3 ta belgi)",
+    "tashkilotKiritilmagan":"Tashkilot nomi kiritilmagan (kamida 3 ta belgi)"
   },
   "profil_sozlamalari":{
  

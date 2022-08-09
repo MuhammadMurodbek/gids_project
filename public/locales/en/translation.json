@@ -934,7 +934,8 @@
     "mamlaktalarPlace":"Mamlakatingizni tanlang",
     "shaxarlar":"Shahar",
     "shaxarlarPlace":"Shahringizni kiriting",
-    "saqlash":"Saqlash"
+    "saqlash":"Saqlash",
+    "ismKiritilmagan":"Ism kiritilmagan (kamida 3 ta belgi)"
   },
   "profil_sozlamalari":{
     "Profilni_Korish":"View profile",
