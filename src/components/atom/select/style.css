@@ -33,9 +33,9 @@
     .MuiGrid-grid-md-2{
         max-width: 58.333333% !important;
     }
-    .MuiGrid-spacing-xs-1 > .MuiGrid-item{
+    /* .MuiGrid-spacing-xs-1 > .MuiGrid-item{
         max-width: 100% !important;
-    }
+    } */
     .empty_title{
         width: auto !important;
     }

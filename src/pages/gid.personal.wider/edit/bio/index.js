@@ -53,7 +53,7 @@ const Index = () => {
       if(!api.trainings) api.trainings = []
       setState( api );
     }
-    if ( apiValue?.error !== "" ) { toast.error( "Ma'lumotlarni yuklashda xatolik mavjud" ); }
+    if ( apiValue?.error !== "" ) { toast.error( t("User_MalumotlarniTax.xatolikMavjud") ); }
   }, [ apiValue ] );
   const handleChange = ( e ) => { setState( { ...state, [ e.target.name ]: e.target.value } ) };
   const handleSubmit = async () => {
@@ -98,7 +98,7 @@ const Index = () => {
                     width="100%"
                     label={t("MTmenHaqimda.familya")}
                     placeholder={t("MTmenHaqimda.familyaPlace")}
-                    errorText={ error ? validatorState( state?.last_name, 'min', 3, 'Familiya kiritilmagan (kamida 3 ta)' ) : null }
+                    errorText={ error ? validatorState( state?.last_name, 'min', 3, t("User_MalumotlarniTax.familyaKiritilmagan") ) : null }
                   />
                 </Grid>
                 <Grid item xs={ 12 } md={ 4 }>
@@ -110,7 +110,7 @@ const Index = () => {
                     width="100%"
                     label={t("MTmenHaqimda.isim")}
                     placeholder={t("MTmenHaqimda.isimPlace")}
-                    errorText={ error ? validatorState( state?.first_name, 'min', 3, 'Ism kiritilmagan (kamida 3 ta)' ) : null }
+                    errorText={ error ? validatorState( state?.first_name, 'min', 3, t("User_MalumotlarniTax.ismKiritilmagan") ) : null }
                   />
                 </Grid>
                 <Grid item xs={ 12 } md={ 4 }>
@@ -122,7 +122,7 @@ const Index = () => {
                     width="100%"
                     label={t("MTmenHaqimda.otasiningIsmi")}
                     placeholder={t("MTmenHaqimda.otasiIplace")}
-                    errorText={ error ? validatorState( state.middle_name, 'min', 3, 'Kamida 3 ta belgidan foydalaning' ) : null }
+                    errorText={ error ? validatorState( state.middle_name, 'min', 3, t("User_MalumotlarniTax.kamidaUchta")) : null }
                   />
                 </Grid>
               </Grid>
@@ -137,7 +137,7 @@ const Index = () => {
                     setState={ setState }
                     state={ state }
                     field="birthday"
-                    errorText={ error ? validatorState( state.birthday, 'min', 3, 'Sana kiritilmagan' ) : null }
+                    errorText={ error ? validatorState( state.birthday, 'min', 3, t("User_MalumotlarniTax.sanaKiritilmagan") ) : null }
                   />
                 </Grid>
                 <Grid item xs={ 12 } md={ 4 }>
@@ -152,7 +152,7 @@ const Index = () => {
                     state={ state }
                     setState={ setState }
                     defaultApiValue={apiValue?.success?.data?.gender}
-                    errorText={ error ? validatorState( state.gender, 'min', 3, 'Jinsi tanlanmagan' ) : null }
+                    errorText={ error ? validatorState( state.gender, 'min', 3, t("User_MalumotlarniTax.jinsiTanlanmagan") ) : null }
                   />
                 </Grid>
                 <Grid item xs={ 12 } md={ 4 }></Grid>

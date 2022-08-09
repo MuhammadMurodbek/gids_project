@@ -942,7 +942,12 @@
     "saqlash":"Сохранить",
      "ismKiritilmagan":"Введите имя (не менее 3ех символов)",
     "familyaKiritilmagan":"Введите фамилию (не менее 3ех символов)",
-    "tashkilotKiritilmagan":"Введите названиe организации (не менее 3ех символов)"
+    "tashkilotKiritilmagan":"Введите названиe организации (не менее 3ех символов)",
+    "xatolikMavjud":"Ошибка при загрузке данных",
+    "kamidaUchta":"Используйте не менее 3 символов",
+    "sanaKiritilmagan":"Введите дату",
+    "jinsiTanlanmagan":"Укажите пол"
+    
   },
   "profil_sozlamalari":{
  

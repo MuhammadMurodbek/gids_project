@@ -960,7 +960,12 @@
     "saqlash":"Saqlash",
     "ismKiritilmagan":"Ism kiritilmagan (kamida 3 ta belgi)",
     "familyaKiritilmagan":"Familiya kiritilmagan (kamida 3 ta belgi)",
-    "tashkilotKiritilmagan":"Tashkilot nomi kiritilmagan (kamida 3 ta belgi)"
+    "tashkilotKiritilmagan":"Tashkilot nomi kiritilmagan (kamida 3 ta belgi)",
+    "xatolikMavjud":"Ma'lumotlarni yuklashda xatolik mavjud",
+    "kamidaUchta":"Kamida 3 ta belgidan foydalaning",
+    "sanaKiritilmagan":"Sana kiritilmagan",
+    "jinsiTanlanmagan":"Jinsi tanlanmagan"
+    
   },
   "profil_sozlamalari":{
  
