@@ -25,7 +25,9 @@ const PriceCurrency = (props) => {
                         style={{position: "relative", top:13}} 
                     />
                     <div className="wrap_class_inner">
-                        <Selection options={currency} setCollect={setState} collect={ state } field={fieldS} defaultApiValue={CURRENCY_CHECK[defValueCurrency]} idK={idK} width="150px" placeholder="$" />
+                        <Selection options={currency} setCollect={setState} collect={ state } field={fieldS} defaultApiValue={CURRENCY_CHECK[defValueCurrency]} idK={idK} width="150px"
+                         placeholder={defValueCurrency} />
+                         
                     </div>
                 </div>
             </div>

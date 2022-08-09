@@ -44,9 +44,19 @@ export default function Index() {
             Modal.error({ title: t("tariflar.xatolik"), content: t("tariflar.qaytaUrining")})
         }
     }, [myTarifPay])
-    // console.log(myTarifPay)
-    console.log(objApi)
-    console.log(objApiText)
+    
+    const objApi2 = {
+        one_week:t("tariflar.birHafta"),
+        two_week:t("tariflar.ikkiHafta"),
+        one_month:t("tariflar.birOy")
+    }
+
+      const objApiText2 = {
+        one_week: t("tariflar.MazkurBir"),
+        two_week: t("tariflar.MazkurIkki"),
+        one_month: t("tariflar.MazkurOy")
+    }
+
     return (
         <Wrapper01>
             <Wrapper>
@@ -61,12 +71,14 @@ export default function Index() {
                             myTarif.data?.is_top ?
                                 <Grid item md="11" sm="11" xs="11" className="item_md_11">
                                     <div className="services_item" >
-                                        <p className="services_1">{objApi[myTarif.data?.tariff?.name] || 'Yangi tarif'}</p>
-                                        <span className="spansa">{objApiText[myTarif.data?.tariff?.name]}</span>
+                                        <p className="services_1">{objApi2[myTarif.data?.tariff?.name] || 'Yangi tarif'}</p>
+                                        <span className="spansa">{objApiText2[myTarif.data?.tariff?.name]}</span>
                                     </div>
                                     <div className="right-prise">
                                         <b> {t("tariflar.tolovMiqdori")} {myTarif?.data?.tariff?.price || '0'} {t("reklama.som")}</b>
                                         <b className="right-b">{t("tariflar.muddati")} {moment(myTarif?.data?.top_until_date).format('DD.MM.YYYY') || '01.01.2000'}  {t("tariflar.gacha")}</b>
+
+                                        {/* {console.log(myTarif?.data?.top_until_date + " hozirgi")} */}
                                     </div>
                                 </Grid> :
                                 <div style={{ padding: "20px 0" }}>{t("tariflar.MavjudEmas")}</div>
@@ -95,8 +107,8 @@ export default function Index() {
                                         </Grid>
                                         <Grid item md="11" sm="11" xs="11" className="item_md_11">
                                             <div className="services_item" >
-                                                <p className="services_1">{objApi[item?.name]}</p>
-                                                <span>{objApiText[item?.name]}</span>
+                                                <p className="services_1">{objApi2[item?.name]}</p>
+                                                <span>{objApiText2[item?.name]}</span>
                                             </div>
                                             <div className="somdiv">
                                                 <b >{item?.price} {t("reklama.som")}</b>

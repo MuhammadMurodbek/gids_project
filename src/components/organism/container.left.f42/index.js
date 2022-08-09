@@ -43,6 +43,23 @@ const Index = ({ state, typeRole, comments, commentCount, commentReview }) => {
         native: t("TillarniBilish.onaTili"),
         intermediate: t("TillarniBilish.yaxshi")
     }
+ 
+    let new_yosh = state?.age;
+    let nyosh = new_yosh % 10
+    let yosh11 = "";
+
+    
+    if(nyosh === 0 || nyosh === 1){
+        yosh11 = t("yoshlar.god")
+    }
+    else if( nyosh >=2 && nyosh <= 4 ){
+        yosh11 = t("yoshlar.goda")
+    }
+    else if(nyosh >= 5){
+        yosh11 = t("yoshlar.let")
+    }
+    
+    console.log(yosh11 + " ddffsf");
 
     return (
         <Wrapper>
@@ -59,7 +76,11 @@ const Index = ({ state, typeRole, comments, commentCount, commentReview }) => {
                                 />
                                 <Container {...mediaContainerSecondText} margin="-10px 0 0 15px">
                                     <TextTitle align="left" bottom="5px" font="20px">{state?.first_name || 'Mavjud emas'}{" "}{state?.last_name || 'Mavjud emas'}</TextTitle>
-                                    <div className="gid-info-personal">{state?.age ? state?.age + " " + t("GidPk.yosh") : t("GidPk.yoshKiritilmagan")} | <span style={{ textTransform: "none" }}>{typeRole?.role === 'simple_user' ? "Foydalanuvchi " : typeRole?.role === "writer" ? t("GidPk.yozma") : typeRole?.role === "translator" ? t("auth_registr.tarjimon") : t("auth_registr.gid")} </span> </div>
+                                    <div className="gid-info-personal">
+                                    {state?.age}
+                                        {state?.age ? " " + yosh11 + " " : t("GidPk.yoshKiritilmagan")} | <span style={{ textTransform: "none" }}>{typeRole?.role === 'simple_user' ? "Foydalanuvchi " : typeRole?.role === "writer" ? t("GidPk.yozma") : typeRole?.role === "translator" ? t("auth_registr.tarjimon") : t("auth_registr.gid")}
+                                        </span>
+                                    </div>
                                     {
                                         typeRole?.role === 'gid' ?
                                             state?.languages?.map((prev, index) => (
@@ -76,19 +97,19 @@ const Index = ({ state, typeRole, comments, commentCount, commentReview }) => {
 
                                 </Container>
                             </FlexContainer>
-                            <div style={{width: "100%"}}>
-                            <div style={{textAlign: "end"}}>
-                            {state?.website ? <a className='linkai' target="_blank" href={state?.website}>   <ImageContainer width="40px" src={website} /></a> : ""}
-                            {state?.telegram ? <a className='linkai' target="_blank" href={state?.telegram}>  <ImageContainer width="40px" src={telegram} /></a> : ""}
-                            {state?.wechat ? <a className='linkai' target="_blank" href={state?.wechat}>    <ImageContainer width="40px" src={wechat} /></a> : ""}
-                            {state?.viber ? <a className='linkai' target="_blank" href={state?.viber}>     <ImageContainer width="40px" src={viber} /></a> : ""}
-                            {state?.facebook ? <a className='linkai' target="_blank" href={state?.facebook}>  <ImageContainer width="40px" src={facebook} /></a> : ""}
-                            {state?.instagram ? <a className='linkai' target="_blank" href={state?.instagram}> <ImageContainer width="40px" src={instagram} /></a> : ""}
+                            <div style={{ width: "100%" }}>
+                                <div style={{ textAlign: "end" }}>
+                                    {state?.website ? <a className='linkai' target="_blank" href={state?.website}>   <ImageContainer width="40px" src={website} /></a> : ""}
+                                    {state?.telegram ? <a className='linkai' target="_blank" href={state?.telegram}>  <ImageContainer width="40px" src={telegram} /></a> : ""}
+                                    {state?.wechat ? <a className='linkai' target="_blank" href={state?.wechat}>    <ImageContainer width="40px" src={wechat} /></a> : ""}
+                                    {state?.viber ? <a className='linkai' target="_blank" href={state?.viber}>     <ImageContainer width="40px" src={viber} /></a> : ""}
+                                    {state?.facebook ? <a className='linkai' target="_blank" href={state?.facebook}>  <ImageContainer width="40px" src={facebook} /></a> : ""}
+                                    {state?.instagram ? <a className='linkai' target="_blank" href={state?.instagram}> <ImageContainer width="40px" src={instagram} /></a> : ""}
+                                </div>
+                                {state?.telegram || state?.website || state?.wechat || state?.viber || state?.facebook || state?.instagram ? <div style={{ marginTop: "20px", fontSize: "12px", textAlign: "end", paddingRight: "10px" }}><b>{t("GidPk.boglanishIcons")}</b> </div> : ""}
                             </div>
-                            {state?.telegram || state?.website || state?.wechat || state?.viber || state?.facebook || state?.instagram?<div style={{marginTop: "20px", fontSize: "12px", textAlign: "end", paddingRight: "10px"}}><b>{t("GidPk.boglanishIcons")}</b> </div>:""}
-                            </div>
-                            
-                          
+
+
 
                         </Container>
                     </Grid>

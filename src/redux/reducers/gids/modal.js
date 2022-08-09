@@ -22,7 +22,7 @@ export function info() {
     
     return(
     Modal.success({
-      title: `${t("arizamodal.rahmat")}`,
+      title:  <h2> {t("arizamodal.rahmat")} </h2>,
       content: `${t("arizamodal.modaltextjonatildi")}`
     })
     )

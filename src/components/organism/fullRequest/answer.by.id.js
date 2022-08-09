@@ -37,9 +37,10 @@ export default function Index({applicationData, setApplicationData, btnText, url
 
     const [state, setState] = useState(false);
     const curens={
-        dollar:"USD",
-        ruble:"RUBL",
-        sum:"SUM"
+        UZS:"UZS",
+        USD:"USD",
+        RUB:"RUB",
+        EUR:"EUR"
     }
 
     function openModal() {
@@ -75,8 +76,8 @@ export default function Index({applicationData, setApplicationData, btnText, url
         // console.log(e.target.value)
         setComment(e.target.value)
     }
-// console.log(getData?.success?.data?.languages);
-
+console.log(getData?.success?.data?.who_need);
+// console.log(curens[getData?.success?.data?.currency] + "dddddd");
 
     return (
         <Wrapper>
@@ -109,7 +110,7 @@ export default function Index({applicationData, setApplicationData, btnText, url
                         <b> <ImageContainer src={cal} /></b>
                         <b>{t("ToliqAriza.sana")} </b>
                         <p>
-                            {moment(getData?.success?.data?.start_date).format('DD.MM.YYYY')} - &nbsp;
+                            {moment(getData?.success?.data?.start_date).format('DD.MM.YYYY')} -&nbsp;
                             {moment(getData?.success?.data?.end_date).format('DD.MM.YYYY')} 
                         </p>
                     </div>

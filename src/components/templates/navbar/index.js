@@ -21,7 +21,6 @@ const Index = () => {
 
   const [isOpen, setOpen] = useState(false);
   const [selected, setSelected] = useState("RU");
-
   const getRole = JSON.parse(localStorage.getItem("user_token"));
   const expired = localStorage.getItem("expired")
   const { isExpired } = useJwt(getRole?.access)

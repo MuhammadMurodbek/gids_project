@@ -1,10 +1,15 @@
 export const currency = [
-    {value:'dollar', label: 'USD'},
-    {value:'ruble', label: 'RUB'},
-    {value:'sum', label: 'UZS'}
+    {value:'UZS', label: 'UZS'},
+    {value:'USD', label: 'USD'},
+    {value:'RUB', label: 'RUB'},
+    {value:'EUR', label: 'EUR'}
 ]
 export const CURRENCY = {
-    dollar:'USD',
-    ruble:"RUBLE",
-    sum:"UZS"
+    UZS:"UZS",
+    USD:'USD',
+    RUB:"RUB",
+    EUR:'EUR'
 }
+
+
+ 

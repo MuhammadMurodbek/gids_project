@@ -43,21 +43,25 @@ const Index = () => {
                         <TextTitle font="15px" align="left" top="0" bottom="-10px" color="#262626">{t("Pismenniy_Xizmatlar.ogzakiTarjima")}</TextTitle>
                         <FlexContainer width="100%" gap="10px">
                             <SelectLabeled setCollect={setState} collect={state} defaultApiValue={apiValue?.can_oral_translate ? t("Pismenniy_Xizmatlar.ha") : t("Pismenniy_Xizmatlar.yoq")} field="can_oral_translate" options={Option_yes()} width="100%" sizeLabel="15px" placeholder="Tanglang" />
-                            <SelectLabeled isDisabled={state?.can_oral_translate?.label===t("Pismenniy_Xizmatlar.ha") ? false:true} setCollect={setState} collect={state} defaultApiValue={apiValue?.oral_translate_type !== 'consecutive' ? t("Pismenniy_Xizmatlar.sinxron") : t("Pismenniy_Xizmatlar.izchil")} field="oral_translate_type" options={Option_yes_sec()} width="100%" placeholder="Tanlang" />
+                            <SelectLabeled isDisabled={state?.can_oral_translate?.label === t("Pismenniy_Xizmatlar.ha") ? false : true} setCollect={setState} collect={state} defaultApiValue={apiValue?.oral_translate_type !== 'consecutive' ? t("Pismenniy_Xizmatlar.sinxron") : t("Pismenniy_Xizmatlar.izchil")} field="oral_translate_type" options={Option_yes_sec()} width="100%" placeholder="Tanlang" />
                         </FlexContainer>
                     </Container>
-                </Grid> 
+                </Grid>
             </Grid>
             <Grid container spacing={1}>
-                <Grid item xs={12} sm={6} md={4}><DoubleRadioLabel defaultApiValue={apiValue?.express_order ? t("Pismenniy_Xizmatlar.ha") : t("Pismenniy_Xizmatlar.yoq")} value1="yes" value2="no" sizeLabel="14px" setState={setState} state={state} field="express_order" name1={t("Pismenniy_Xizmatlar.ha")} name2={t("Pismenniy_Xizmatlar.yoq")} label={t("Pismenniy_Xizmatlar.shoshilinch")} /></Grid>
-                <Grid item xs={12} sm={6} md={4}><DoubleRadioLabel defaultApiValue={apiValue?.weekend_order ? t("Pismenniy_Xizmatlar.ha") : t("Pismenniy_Xizmatlar.yoq")} value1="yes" value2="no" sizeLabel="14px" setState={setState} state={state} field="weekend_order" name1={t("Pismenniy_Xizmatlar.ha")} name2={t("Pismenniy_Xizmatlar.yoq")} label={t("Pismenniy_Xizmatlar.damOlish")} /></Grid>
+                <Grid item xs={12} sm={6} md={4}>
+                    <DoubleRadioLabel defaultApiValue={apiValue?.express_order ? t("Pismenniy_Xizmatlar.ha") : t("Pismenniy_Xizmatlar.yoq")} value1="yes" value2="no" sizeLabel="14px" setState={setState} state={state} field="express_order" name1={t("Pismenniy_Xizmatlar.ha")} name2={t("Pismenniy_Xizmatlar.yoq")} label={t("Pismenniy_Xizmatlar.shoshilinch")} />
+                        </Grid>
+                <Grid item xs={12} sm={6} md={4}>
+                    <DoubleRadioLabel defaultApiValue={apiValue?.weekend_order ? t("Pismenniy_Xizmatlar.ha") : t("Pismenniy_Xizmatlar.yoq")} value1="yes" value2="no" sizeLabel="14px" setState={setState} state={state} field="weekend_order" name1={t("Pismenniy_Xizmatlar.ha")} name2={t("Pismenniy_Xizmatlar.yoq")} label={t("Pismenniy_Xizmatlar.damOlish")} />
+                    </Grid>
                 <Grid item xs={12} sm={6} md={4}><DoubleRadioLabel defaultApiValue={apiValue?.edit_text ? t("Pismenniy_Xizmatlar.ha") : t("Pismenniy_Xizmatlar.yoq")} value1="yes" value2="no" sizeLabel="14px" setState={setState} state={state} field="edit_text" name1={t("Pismenniy_Xizmatlar.ha")} name2={t("Pismenniy_Xizmatlar.yoq")} label={t("Pismenniy_Xizmatlar.matnTahrirlash")} /></Grid>
             </Grid>
             <Grid container spacing={1} style={{ marginTop: 20 }}>
                 <Grid item xs={12} md={6}>
                     <Container padding="37px 0 0" position="relative" top="-22px">
                         <TextTitle font="15px" align="left" top="0" bottom="-10px" color="#262626">{t("Pismenniy_Xizmatlar.onlineMisizdoim")}</TextTitle>
-                            <div style={{ fontSize: '0.8rem', marginTop:10 }}>{t("Pismenniy_Xizmatlar.kattaHajmMatn")}</div>
+                        <div style={{ fontSize: '0.8rem', marginTop: 10 }}>{t("Pismenniy_Xizmatlar.kattaHajmMatn")}</div>
                         <FlexContainer width="100%" gap="10px">
                             <SelectLabeled defaultApiValue={apiValue?.always_online ? t("Pismenniy_Xizmatlar.ha") : t("Pismenniy_Xizmatlar.yoq")} setCollect={setState} collect={state} field="always_online" options={Option_yes()} width="30%" sizeLabel="15px" placeholder="Tanlang" />
                             {/* <SelectLabeled setCollect={setState} collect={state} field="oral_translate_type" options={option_yes_sec} width="100%" placeholder="Ketma ket" /> */}

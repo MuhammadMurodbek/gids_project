@@ -72,7 +72,7 @@ const       Todos = ({translateType, setTranslateType}) => {
                     level:prev?.level?.value
                 }
             }))
-        }
+        } 
         // console.log(postData)
         putResponse(common.personal.edit.services, postData, setPostApiData)
     }

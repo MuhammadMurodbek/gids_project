@@ -18,6 +18,13 @@ export default function Index() {
         getApiResponse('/api/posts/ad-history/', setHistoryState)
     }, [])
  
+      const objApi2 = {
+        one_week:t("tariflar.birHafta"),
+        two_week:t("tariflar.ikkiHafta"),
+        one_month:t("tariflar.birOy")
+    }
+
+console.log("ddd ");
     return (
         <Wrapper>
 
@@ -36,14 +43,16 @@ export default function Index() {
                                 <Grid key={index} container spacing={1} justifyContent="center" className="services history">
                                     <Grid item md="11" xs="12" className="item_md_11">
                                         <div className="services_item" >
-                                            <p className="services_1">{objApi[item?.tariff?.name] || "Ma'lumot mavjud emas !!"}</p>
+                                            <p className="services_1">{objApi2[item?.tariff?.name] || "Ma'lumot mavjud emas !!"}</p>
                                             {/* <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent aliquam sit ornare mattis id non aliquam convallis ut.</span> */}
                                             <div className="right-prise">
                                             <b className="price_part">{t("tariflar.tolovSumma")} {item?.tariff?.price || '0'} {t("tariflar.som")}</b>
-                                            <b className="right-b">{t("tariflar.muddati")} {moment(item?.created_date).format('DD.MM.YYYY') || '01.01.2000'} {t("tariflar.gacha")}</b>
+                                            <b className="right-b">{t("tariflar.muddati")} 
+                                            {moment(item?.created_date).format('DD.MM.YYYY') || '01.01.2000'} 
+                                            {t("tariflar.gacha")}</b>
                                         </div>
                                         </div>
-                                       
+                                       {/* {console.log(item)} */}
                                         
                                     </Grid>
                                 </Grid>
