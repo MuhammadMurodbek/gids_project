@@ -26,6 +26,7 @@ const mediaGridUSers = {
     m_width: "768px",
 }
 const Index = () => {
+    
     const { t } = useTranslation()
     const history = useHistory()
     let query = window.location.search
@@ -53,6 +54,7 @@ const Index = () => {
         window.scrollTo(0, 0)
     }
     // console.log(state)/
+    console.log(state.data, 'dfdf')
     return (
         <Wrapper>
 

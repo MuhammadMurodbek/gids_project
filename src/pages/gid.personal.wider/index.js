@@ -5,6 +5,7 @@ import TabMenu from "../../components/organism/tabmenu"
 import {useHistory} from "react-router-dom"
 import {Modal} from "antd"
 const Index = () => {
+    
     const history = useHistory()
     let query = window.location.search
     const getRole = JSON.parse(localStorage.getItem("user_token"))

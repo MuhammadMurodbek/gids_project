@@ -51,7 +51,7 @@ const Index = () => {
                             }}
 
                         />
-                        {errors && errors?.email && <span style={{color:'red', fontSize:'0.8rem'}}>Email kiriting...</span>}
+                        {errors && errors?.email && <span style={{color:'red', fontSize:'0.8rem'}}>{t("auth_parolniTiklash.emailKir")}</span>}
                         <br/>
                         <Controller
                             name="password"
@@ -68,7 +68,7 @@ const Index = () => {
                                 />;
                             }}
                             />
-                            {errors && errors?.password && <span style={{color:'red', fontSize:'0.8rem'}}>Password kiriting... (kamida 4 ta element)</span>}
+                            {errors && errors?.password && <span style={{color:'red', fontSize:'0.8rem'}}>{t("auth_parolniTiklash.parolniKiriting")}</span>}
                             <br/>
                             <Controller
                                 name="code"
@@ -85,7 +85,7 @@ const Index = () => {
                                     />;
                                 }}
                             />
-                            {errors && errors?.code && <span style={{color:'red', fontSize:'0.8rem'}}>Password kiriting... (kamida 4 ta element)</span>}
+                            {errors && errors?.code && <span style={{color:'red', fontSize:'0.8rem'}}>{t("auth_parolniTiklash.parolniKiriting")}</span>}
                     </Container>
                     <Container padding="0px 10px" textAlign="right">
                         <Button onClick={handleClick} margin="0px 0 0">
@@ -95,7 +95,7 @@ const Index = () => {
                 </form>
             </ContainerVerify>
         </FlexContainer>
-        <TestModal {...postState} etitle="Kod noto'g'ri tasdiqlangan..."/>
+        <TestModal {...postState} etitle={t("auth_parolniTiklash.kodTasdiqlang")}/>
         </>
     )
 }

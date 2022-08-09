@@ -52,7 +52,7 @@ const MediaNavbarContainer = (props) => {
                 {
                     userToken?.role === 'simple_user' ?
                         <span onClick={handleClick}>
-                            <ButtonNavbar title="Gid yoki tarjimonni tanlash" url="/gids" />
+                            <ButtonNavbar title={t("footer.tanlash")} url="/gids" />
                         </span> :
                         null
                 }

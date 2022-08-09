@@ -6,9 +6,11 @@ import playBtn from "../../../assets/img/choosegid/playbtn.svg"
 import Modal from 'react-awesome-modal';
 import ReactPlayer from 'react-player'
 import CloseIcon from '@material-ui/icons/Close';
+import { useTranslation } from "react-i18next"
 import Button from "../../../components/atom/button";
 import { Image } from "antd"
 const Index = (props) => {
+    const {t} = useTranslation()
     const {data} = props
     const [state, setState] = useState(false);
     function openModal() {
@@ -75,7 +77,7 @@ const Index = (props) => {
                                     width="1000px"
                                     controls
                                     playing={state}
-                                    url={data?.video} /> : "Video yuklanmagan"
+                                    url={data?.video} /> : t("GidPk.videoYuklanmagan")
                         }
                     </div>
                 </Modal>

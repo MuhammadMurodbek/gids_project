@@ -26,10 +26,10 @@ const Index = () => {
     }
     useEffect( () => {
         if ( postData?.success !== '' ) {
-            toast.success( "Successfully saved" )
+            toast.success( t("profil_sozlamalari.yuklandi") )
             dispatch(saveTabAction(6))
         }
-        if ( postData?.error !== '' ) toast.error( "Failed to load data" )
+        if ( postData?.error !== '' ) toast.error( t("profil_sozlamalari.failed") )
     }, [ postData ] )
     useEffect( () => { getResponse( '/api/gids/edit/cost/', setGetData ) }, [] )
     useEffect( () => {

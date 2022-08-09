@@ -425,7 +425,8 @@
     "mavzular":"Mavzular:",
     "shaharlar":"Quyidagi shaharlarda ekskursiyalar o'tkazaman:",
     "galereyFoto":"Photo not uploaded",
-    "boglanishIcons":"* Ushbu ijtimoiy tarmoqlar orqali men bilan bog'lanishingiz mumkin."
+    "boglanishIcons":"* Ushbu ijtimoiy tarmoqlar orqali men bilan bog'lanishingiz mumkin.",
+    "mavjudEmas":"Mavjud emas"
  
   },
   "kommentlar":{
@@ -480,6 +481,7 @@
     "nominiKiriting":"Nomini kiriting",
     "yilniKiriting":"Yilni kiriting",
     "ochirildi":"Deleted successfully",
+    "failed":"Failed to load data",
     "notogri":"Something went wrong",
     "ozgarildi":"Your information has been changed",
     "edit":"Edit",

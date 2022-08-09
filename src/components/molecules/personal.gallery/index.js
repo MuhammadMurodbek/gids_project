@@ -48,7 +48,7 @@ function App({list, setCallback, role, url}) {
               style={
                 {
                   position: 'absolute', 
-                  width:100, 
+                  width:10, 
                   height:100, 
                   zIndex:1,
                 }
