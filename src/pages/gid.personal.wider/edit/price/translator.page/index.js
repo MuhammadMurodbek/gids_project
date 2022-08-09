@@ -107,7 +107,7 @@ const Index = () => {
                                 <SelectLabel prev={prev['work_time_per_day']} options={hours} field="work_time_per_day" setCollect={setItem} collect={item} idK={index+1} width="100%" label={t("narxlar.kunigaSoat")} placeholder="24" />
                             </Grid>
                         </Grid>
-                        
+                        x
                     </Container>
                     <Container width="100%" padding="10px 20px" margin="20px 0 0 15px" textAlign="right" className='CostStoreSave'>
                         <Button loader={post?.loading} onClick={handleSubmit}>{t("Pismini_narxlar.saqlash")}</Button>
