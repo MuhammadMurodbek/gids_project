@@ -675,7 +675,7 @@
     "javobQayraganGid":"Quyidagi arizangizga javob qaytargan Gid/Tarjimonlardan birini tanlang va u bilan bog’laning",
     "JavobMavjudEmas":"Ushbu arizangizga javoblar mavjud emas",
     "arizaniTaxrirlash":"Arizani taxrirlash",
-    "arizaRoyhatOting":"Зарегистрируйтесь, чтобы отправить заявку!"
+    "arizaRoyhatOting":"Ariza jo’natish uchun ro’yxatdan o’ting!"
     
 },
 
@@ -1005,10 +1005,18 @@
   "mutahasis":{
     "oliy":"Oliy",
     "ortaMahsus":"O'rta maxsus"
-
-
-
-
+  },
+  
+  "userss":{
+    "uzs" : "UZS",
+    "usd" : "USD",
+    "eur" : "EUR",
+    "rub" : "RUB"
+  },
+  "yoshlar":{
+    "god":"yosh",
+    "goda":"yosh",
+    "let":"yosh"
   }
 }
 

@@ -84,9 +84,11 @@ const Index = () => {
                                         fieldS='currency_per_page_with'
                                         fieldIn="cost_per_page_with"
                                         title={t("narxlar.boshliqBilan")}
-                                        defValueCurrency={prev?.currency_per_page_with}
                                         defValueCost={prev?.cost_per_page_with}
+                                        defValueCurrency={prev?.currency_per_page_with}
                                     />
+                                    {/* {console.log(prev?.currency_per_page_with + "---------")}
+                                    {console.log(prev?.cost_per_page_with + "---------")} */}
                                 </Grid>
                                 <Grid item xs={12} sm={6} md={3} lg={3}>
                                     <PriceCurrency

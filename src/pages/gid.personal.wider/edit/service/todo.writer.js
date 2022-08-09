@@ -68,7 +68,7 @@ const Todos = ({state, setApiValue, setLoad}) => {
                 return prev
             })
             setItems([...update])
-        }
+        } 
     },[item])
     const handleSubmit = () => {
         let obj = {
@@ -89,11 +89,15 @@ const Todos = ({state, setApiValue, setLoad}) => {
                 }
             }))
         }
-        
+         
         // console.log(postData)
         putResponse(common.personal.edit.services, {...obj, ...postData}, setPostApiData)
     }
     useEffect(()=>{toastChecker(postApiData)},[postApiData])
+
+    console.log(items);
+
+
     return (
         <TodosWrapper>
              {

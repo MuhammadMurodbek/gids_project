@@ -12,7 +12,7 @@ import { useTranslation } from 'react-i18next'
 import moment from "moment"
 import { toast } from "react-hot-toast"
 
-const Index = ({loader, queryObj}) => {
+const  Index = ({loader, queryObj}) => {
      
     const history = useHistory()
     const { t } = useTranslation()

@@ -37,11 +37,18 @@ export default function Index({applicationData, setApplicationData, btnText, url
     const { t } = useTranslation();
 
     const [state, setState] = useState(false);
+    // const curens={
+    //     dollar:"USD",
+    //     ruble:"RUBL",
+    //     sum:"SUM"
+    // }
     const curens={
-        dollar:"USD",
-        ruble:"RUBL",
-        sum:"SUM"
+        UZS:"UZS",
+        USD:"USD",
+        RUB:"RUB",
+        EUR:"EUR"
     }
+
 
     function openModal() {
         // setState(true);

@@ -81,7 +81,7 @@ const Index = () => {
     React.useEffect(() => {
         if (appNoToken) {
             if (token?.role !== "simple_user") {
-                warning(`${"arizamodal.arizaRoyhatOting"}`)
+                warning(t("arizamodal.arizaRoyhatOting"))
             } else setResponseHook(post_gid_app_action(appNoToken))
         }
     }, [])
@@ -89,7 +89,8 @@ const Index = () => {
     // console.log(collect)
     return (
         <Wrapper onSubmit={onSubmit}>
-            <TextTitle {...mediaTextField} {...mediaTextFieldSec} top="40px" bottom="20px"> {t("arizaqoldirish.title")} </TextTitle>
+            <TextTitle {...mediaTextField} {...mediaTextFieldSec} top="40px" bottom="20px"> 
+            {t("arizaqoldirish.title")} </TextTitle>
             <Container width="90%" padding="0" margin="40px auto" boxShadow={shadow}>
                 <Title> {t("arizaqoldirish.vazifa")} </Title>
                 <Container {...mediaContainer} padding="30px">
@@ -106,6 +107,10 @@ const Index = () => {
                                 />
                             </Grid>
                         </Grid>
+
+
+
+                        
                         <Grid container spacing={1} alignItems="center" className="wrap-grid">
                             <Grid item xs={12} sm={12} md={5}>
                                 <div className="title_inner"> {t("arizaqoldirish.KerakShaharlar")} </div>

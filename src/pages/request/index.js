@@ -34,7 +34,7 @@ export default function Index() {
         window.scrollTo(0,0)
     }
 
-console.log(articleList);
+console.log({t});
     
 
     return (
@@ -60,10 +60,6 @@ console.log(articleList);
                 sana={moment(item.created_at).format("DD.MM.YYYY")}
                 
             />
- 
-            
-            
-            
             ))
            }
              <div className="pagination" style={{width:'100%', margin:'40px 0', textAlign:'center'}}>

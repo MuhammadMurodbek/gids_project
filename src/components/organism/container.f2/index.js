@@ -33,6 +33,25 @@ const Index = ({ data }) => {
 
     } 
   
+
+    let new_yosh = data?.age;
+    let nyosh = new_yosh % 10
+    let yosh11 = "";
+
+
+    if(nyosh === 0 || nyosh === 1){
+        yosh11 = t("yoshlar.god")
+    }
+    else if( nyosh >=2 && nyosh <= 4 ){
+        yosh11 = t("yoshlar.goda")
+    }
+    else if(nyosh >= 5){
+        yosh11 = t("yoshlar.let")
+    }
+
+
+
+
     // console.log(data)
     return (
         // <Badge.Ribbon text="TOP" color="red">
@@ -54,9 +73,10 @@ const Index = ({ data }) => {
                 <Grid item xs={12} sm={6}>
                     <Container margin="30px 0 0 0">
                         <TextTitle align="left" font="20px"> {(data?.first_name + " " + data?.last_name) || t("GidPk.malumotKiritilmagan")} </TextTitle>
-                        <div className="gid-info-personal">{data?.age ? (data?.age + " " + t("GidPk.yosh")) : "0 yosh"}  | <span style={{ textTransform: "none" }}>{data?.role === "translator" ? t("GidPk.ogzakiT") : data?.role === "gid" ? t("GidPk.gid") : data?.role === "writer" ? t("GidPk.yozmaT") : " "}
+                        <div className="gid-info-personal">{data?.age ? (data?.age + " " + yosh11 ) : "0 yosh"}  | <span style={{ textTransform: "none" }}>{data?.role === "translator" ? t("GidPk.ogzakiT") : data?.role === "gid" ? t("GidPk.gid") : data?.role === "writer" ? t("GidPk.yozmaT") : " "}
                         </span> </div>
-                        <div className="gid-info-personal-text"><div className="text">
+                        <div className="gid-info-personal-text">
+                            <div className="text">
                             {t("Gid_Tanlash.tillar")} :
                                 </div>
                             {

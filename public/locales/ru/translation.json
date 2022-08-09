@@ -680,7 +680,7 @@
     "javobQayraganGid":"Выберите одного из гидов/переводчиков, откликнувшихся на вашу заявку, и свяжитесь с ним",
     "JavobMavjudEmas":"Нет ответов на ваш запрос",
     "arizaniTaxrirlash":"Редактировать заявку",
-    "arizaRoyhatOting":""
+    "arizaRoyhatOting":"Для того, чтобы отправить заявку вам нужно пройти регистрацию! "
   },
 
   "Ustniy_MalumotvaIshtajriba":{
@@ -986,9 +986,14 @@
   "mutahasis":{
     "oliy":"Высшее",
     "ortaMahsus":"Среднее специальное"
+  },
 
+  "yoshlar":{
+    "god":"год",
+    "goda":"года",
+    "let":"лет"
   }
 }
-
+   
    
 
