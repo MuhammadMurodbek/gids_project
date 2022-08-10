@@ -226,12 +226,17 @@
     "parolniKiriting":"Parolni kiriting... (kamida 4 ta belgi)",
     "emailKir":"Email kiriting..."
   },
-  "emailni_tastiqlash":{
+  "emailni_tasdiqlash":{
     "textema":"Confirm your email",
     "texts":"The code was sent to adminov@gits.uz. Type this code down.",
     "kod":"Enter the code",
     "qayta":"Send the code again",
-    "tasdiqlash":"Confirmation"
+    "tasdiqlash":"Confirmation",
+    "kodTasdiqlang":"Kodni tasdiqlang",
+    "emailKod":"Emailingizga kod yuborildi",
+    "succes":"Succes",
+    "succesCreated":"Successfully created",
+    "statusText":"StatusText"
   },
   "parolniYangilash":{
     "update":"Update password",

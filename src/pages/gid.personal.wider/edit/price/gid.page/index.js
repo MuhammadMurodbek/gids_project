@@ -45,7 +45,7 @@ const Index = () => {
         }
     }, [ getData ] )
 
-    console.log(getData?.success?.data?.cost_per_hour);
+    // console.log(getData?.success?.data?.cost_per_hour);
     return (
         <Wrapper>
             <Container>

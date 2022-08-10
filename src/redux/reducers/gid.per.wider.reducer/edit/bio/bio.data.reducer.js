@@ -21,7 +21,7 @@ const post_bio_data_reducer = (state = initialState, action) => {
         case "POST_BIO_DATA_0" : return {loading:true,payload:null};
         case "POST_BIO_DATA_1" : return Success(action.payload);
         case "POST_BIO_DATA_400": return Error('Qaytadan tekshirib, urinib ko\'ring')
-        case "POST_BIO_DATA_401": return Error("Ma'lumot to'\lfirishlikda xatolik mavjud")
+        case "POST_BIO_DATA_401": return Error("Ma'lumot to'\ldirishda xatolik mavjud")
 
         case "INT_500" : return Error("Internal server error");
         

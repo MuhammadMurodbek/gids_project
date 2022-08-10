@@ -56,7 +56,8 @@
         "valyutaKiritilmagan":"Valyuta kiritilmagan",
         "jinsiTanlanmagan":"Jinsini kiriting",
         "tuniniTanlang":"Turni tanlang",
-        "toliqKiritilmagan":"Ma'lumotlarni to'liq kiriting"
+        "toliqKiritilmagan":"Ma'lumotlarni to'liq kiriting",
+        "tillarniTan":"Tillarni tanlang"
    },
 
    "main":{
@@ -234,7 +235,12 @@
     "texts":"admin@gits.uz poshtasiga kod yuborildi. Ushbu kodni pastki qatorga yozing.",
     "kod":"Kodni kiriting",
     "qayta":"Kodni qayta yuborish",
-    "tasdiqlash":"Tasdiqlash"
+    "tasdiqlash":"Tasdiqlash",
+    "kodTasdiqlang":"Kodni tasdiqlang",
+    "emailKod":"Emailingizga kod yuborildi",
+    "succes":"Muvaffaqiyatli",
+    "succesCreated":"Muvaffaqiyatli yaratildi",
+    "statusText":"Matn holati"
   },
   "parolniYangilash":{
     "update":"Parolni yangilash",
@@ -289,7 +295,10 @@
     "arizaJunatilmadi":"Arizangiz jo'natilmadi",
     "arizaXato":"Arizani jo'natishda xatolik mavjud...",
     "serverError":"Serverdagi ichki xatolik",
-    "ArizaOldin":"Arizani yuborish uchun avval ro'yxatdan o'tishingiz kerak."
+    "ArizaOldin":"Arizani yuborish uchun avval ro'yxatdan o'tishingiz kerak.",
+    "davlatKiritilmagan":"Davlat (Shahar) kiritilmagan",
+    "DavlatniTanlang":"Davlat tanlang",
+    "ShaharKiriting":"Shahar kiriting"
   },
   "arizalar_royhati":{
     "title":"Arizalar ro’yxati",

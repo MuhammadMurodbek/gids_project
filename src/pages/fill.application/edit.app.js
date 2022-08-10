@@ -106,8 +106,8 @@ const EditApp = () => {
                                         </Grid>
                                         <Grid item xs={12} sm={12} md={7}>
                                             <Grid container spacing={1} alignItems="center" className="wrap-grid">
-                                                <Grid item xs={12} sm={12} md={6}><SelectController Controller={Controller} control={control} name="country" options={countryList} pl={'Davlat tanlang'} /></Grid>
-                                                <Grid item xs={12} sm={12} md={6}><SelectController Controller={Controller} control={control} name="city" options={cityList} pl={'Shahar kiriting'} /></Grid>
+                                                <Grid item xs={12} sm={12} md={6}><SelectController Controller={Controller} control={control} name="country" options={countryList} pl={t("arizaqoldirish.DavlatniTanlang")} /></Grid>
+                                                <Grid item xs={12} sm={12} md={6}><SelectController Controller={Controller} control={control} name="city" options={cityList} pl={t("arizaqoldirish.ShaharKiriting")} /></Grid>
                                             </Grid>
                                         </Grid>
 
@@ -132,7 +132,7 @@ const EditApp = () => {
                                             <div className="title_inner"> {t("arizaqoldirish.Bilishikerak")} </div>
                                         </Grid>
                                         <Grid item xs={12} sm={12} md={7}>
-                                            <SelectController isMulti control={control} name="languages" label1="Gid" label2="Tarjimon" options={langList} pl={'Tillarni tanlang'} />
+                                            <SelectController isMulti control={control} name="languages" label1="Gid" label2="Tarjimon" options={langList} pl={t("kengaytirlgan_Q.tillarniTan")} />
                                         </Grid>
                                     </Grid><br />
                                     <Grid container spacing={1} alignItems="center" className="wrap-grid">

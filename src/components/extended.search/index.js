@@ -119,7 +119,7 @@ const  Index = ({loader, queryObj}) => {
                 setCollect={setCollect}
                 collect={collect}
                 field="lang"
-                placeholder="Tillarni tanlang"
+                placeholder={t("kengaytirlgan_Q.tillarniTan")}
                 defaultValueApi={queryObj?.lang}
             />
             {startVal && (!collect.hasOwnProperty('languages') || !collect?.languages?.length>0) && <span className="errors_search">{t("kengaytirlgan_Q.tilKiritilmagan")}</span>}

@@ -17,7 +17,7 @@ export const get_cities = (data) => {
 
 export const toastChecker = (data, success, error) => {
     if(data?.success!== '') toast.success(success || t("profil_sozlamalari.yuklandi"))
-    if(data?.error!== '') toast.error(error || 'Something went wrong')
+    if(data?.error!== '') toast.error(error || t("MTmenHaqimda.notogri"))
 }
 export const getLabelLang = (id) => {
     const lanGlobal = JSON.parse( localStorage.getItem( "lanGlobal"))

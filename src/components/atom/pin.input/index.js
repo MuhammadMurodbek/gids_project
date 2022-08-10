@@ -1,6 +1,10 @@
 import React,{useState} from "react"
 import { VerificationPin } from "react-verification-pin";
+import { useTranslation } from 'react-i18next';
+
 const YourComponent = () => {
+  const { t } = useTranslation();
+
   const [status, setStatus] = useState("process");
 
   const handleOnFinish = (code) => {
@@ -13,7 +17,7 @@ const YourComponent = () => {
       }, 300000);
     } else {
       setTimeout(() => {
-        setStatus("success");
+        setStatus(t("emailni_tasdiqlash.succes"));
       }, 30000);
     }
   };
@@ -23,8 +27,8 @@ const YourComponent = () => {
       type="number"
       inputsNumber={5}
       status={status}
-      title="Kodni tasdiqlang"
-      subTitle="Emailingizga kod yuborildi"
+      title={t("emailni_tasdiqlash.kodTasdiqlang")}
+      subTitle={t("emailni_tasdiqlash.emailKod")}
       onFinish={handleOnFinish}
     />
   );
