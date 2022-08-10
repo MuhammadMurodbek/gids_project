@@ -49,7 +49,7 @@ export default function Index({applicationData, setApplicationData, btnText, url
     function closeModal() {
         setState(false)
         setComment('')
-    }
+    } 
 
     function submit() {
         let sendData = {
@@ -67,18 +67,20 @@ export default function Index({applicationData, setApplicationData, btnText, url
 
     useEffect(() => {
         if (response?.success !== "") {
-            toast.success("habaringiz muofaqiyatli jonatildi")
+            toast.success(t("ToliqAriza.habarJonatildi"))
         } else if (response?.error !== '')
-            toast.error("siz faqat bir martta habar yoza olasiz")
+            toast.error(t("ToliqAriza.birmartta"))
     }, [response])
   
     function setText(e) {
         // console.log(e.target.value)
         setComment(e.target.value)
     }
-console.log(getData?.success?.data?.who_need);
-// console.log(curens[getData?.success?.data?.currency] + "dddddd");
-
+ 
+    const i18lang = localStorage.getItem("i18nextLng")
+    let who_need2 = ""
+    getData?.success?.data?.who_need === "gitd" ? who_need2 = t("kengaytirlgan_Q.gid") : who_need2 = t("auth_registr.yozmaT")
+    
     return (
         <Wrapper>
             <Grid container spacing={1} direction="row" justifyContent="center" className="freque">
@@ -104,7 +106,12 @@ console.log(getData?.success?.data?.who_need);
                     <div className="tafsilot-text">
                         <b> <ImageContainer src={gps} /></b>
                         <b>{t("ToliqAriza.shahar")} </b>
-                        <p> {getData?.success?.data?.country_name?.uz}</p>
+                        <p> {
+                            i18lang === "uz" ? getData?.success?.data?.country_name?.uz 
+                            :i18lang === "ru" ? getData?.success?.data?.country_name?.ru
+                            :i18lang === "en" ? getData?.success?.data?.country_name?.en : ""
+                        
+                        }</p>
                     </div>
                     <div className="tafsilot-text">
                         <b> <ImageContainer src={cal} /></b>
@@ -122,7 +129,7 @@ console.log(getData?.success?.data?.who_need);
                     <div className="tafsilot-text">
                         <b> <ImageContainer src={narx} /></b>
                         <b>{t("ToliqAriza.kimKerak")} </b>
-                        <p>{getData?.success?.data?.who_need}</p>
+                        <p>{who_need2}</p>
                     </div>
                     <div className="tafsilot-text">
                         <b> <ImageContainer src={til} /></b>

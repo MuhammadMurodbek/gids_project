@@ -57,7 +57,7 @@ const Index = ({ data, commentCount }) => {
                         <span className='text_fild'>{t("Gid_Tanlash.kuniga")}</span>
                         <div className="c_per_day comm_val ">
                             {pay(data?.cost_per_day) + " " + curr(data?.currency_per_day) || '0'}
-                            {console.log(data?.currency_per_day + " ========= ")}
+                             
                         </div>
                     </Grid> 
                 </Grid>

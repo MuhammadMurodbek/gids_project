@@ -34,11 +34,10 @@ export default function Index() {
         window.scrollTo(0,0)
     }
 
-console.log({t});
-    
+    const i18lang = localStorage.getItem("i18nextLng")
 
     return (
-        <Wrapper> 
+        <Wrapper>   
         
             <TextTitle top="100px" bottom="50px">
                {t("arizalar_royhati.title")}
@@ -54,7 +53,11 @@ console.log({t});
                 item={item}
                 manzil={item.why_need}
                 name={item?.full_name?.first_name + " " + item?.full_name?.last_name}
-                gpss={item?.country_name?.uz + " | "+ item?.city_name?.uz}
+                gpss={
+                    i18lang === "uz" ? item?.country_name?.uz + " | "+ item?.city_name?.uz 
+                   :i18lang === "ru" ? item?.country_name?.ru + " | "+ item?.city_name?.ru
+                   :i18lang === "en" ? item?.country_name?.en + " | "+ item?.city_name?.en : ""
+                }
                 dan={item?.start_date}
                 gacha={item?.end_date}
                 sana={moment(item.created_at).format("DD.MM.YYYY")}

@@ -321,7 +321,9 @@
     "yozing":"Xabaringizni yozing",
     "yopish":"Yopish",
     "yuborish":"Yuborish",
-    "kishis":"kishi"
+    "kishis":"kishi",
+    "habarJonatildi":"Xabaringiz muvaffaqiyatli yuborildi",
+    "birmartta": "Siz faqat bitta xabar yuborishingiz mumkin."
   },
   "Blog":{
     "blog":"Blog",

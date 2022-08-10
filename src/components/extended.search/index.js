@@ -61,8 +61,7 @@ const  Index = ({loader, queryObj}) => {
             setStartVal(false)
         }
     },[collect])
-    // console.log(  "-----------------")
-    // console.log(collect)
+     // console.log(collect)
     return (
         <Wrapper width="350px">
             <div className="title-header">
