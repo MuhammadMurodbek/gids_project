@@ -125,12 +125,12 @@ console.log(getData?.success?.data?.who_need);
                         <p>{getData?.success?.data?.who_need}</p>
                     </div>
                     <div className="tafsilot-text">
-                        <b> <ImageContainer src={odamlar} /></b>
+                        <b> <ImageContainer src={til} /></b>
                         <b>{t("ToliqAriza.tillar")} </b>
                         <p>{getData?.success?.data?.languages?.map(a=>" "+getLabelLangLocal(a)+",") || t("GidPk.malumotKiritilmagan")}</p>
                     </div>
                     <div className="tafsilot-text">
-                        <b> <ImageContainer src={til} /></b>
+                        <b> <ImageContainer src={odamlar} /></b>
                         <b>{t("ToliqAriza.odamlarSone")} </b>
                         <p> {getData?.success?.data?.people_count} {t("ToliqAriza.kishis")} </p>
                     </div>

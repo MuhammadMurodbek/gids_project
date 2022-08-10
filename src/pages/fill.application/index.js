@@ -123,7 +123,7 @@ const Index = () => {
                                             setState={setCollect}
                                             setCountryId={setCountryId}
                                             placeholder={t("arizaqoldirish.davlat")}
-                                            errorText={error ? validatorState(collect?.country, 'min', 3, 'Davlat (Shahar) kiritilmagan') : null}
+                                            errorText={error ? validatorState(collect?.country, 'min', 3, t("arizaqoldirish.davlatKiritilmagan")) : null}
                                         />
                                     </Grid>
                                     <Grid item xs={12} sm={6}>
