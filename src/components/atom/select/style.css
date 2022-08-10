@@ -22,11 +22,43 @@
     width: 100% !important;
 } */
 /* @media  */
+
 @media only screen and (max-width: 707px){
     .selects{
         width:100% !important;
     }
-  
+   
+    .videoPlayer{
+        width: 100% !important;
+    }
+    .sectionPlayer{
+        height: auto !important;
+    }
+    .closebtn{
+        width: 40px;
+        left: 75%;
+        position: relative;
+    }
+}
+@media screen and (max-width: 720px){
+    .WrapperInfoF2{
+        margin-left: 55px !important;
+    }
+    .btnChooseGids{
+        margin-right: 50px !important;
+    }
+    
+}
+@media screen and (max-width: 600px) {
+    .ant-image{
+        position: relative;
+        top: -30px !important;
+        left: 20px !important;
+    }
+    .btnChooseGids{
+        margin-right: 0px !important;
+    }
+    
 }
 @media screen and (max-width: 576px) {
     .RegisterError{
@@ -39,9 +71,6 @@
     .MuiGrid-grid-md-2{
         max-width: 58.333333% !important;
     }
-    /* .MuiGrid-spacing-xs-1 > .MuiGrid-item{
-        max-width: 100% !important;
-    } */
     .empty_title{
         width: auto !important;
     }
@@ -76,6 +105,9 @@
     }
     .kZEBGz .mualif{
         width: auto !important;
+    }
+    .WrapperInfoF2{
+        margin-left: 20px !important;
     }
     
     
