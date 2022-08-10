@@ -143,7 +143,7 @@ const Index = ({ state, typeRole, comments, commentCount, commentReview }) => {
                                     </div>
                                 </ContainerBottom>
                             )) :
-                            typeRole?.role === 'gid' ? null : <div style={{ fontSize: '0.86rem' }}>{t("GidPk.malumotKiritilmagan")}</div>
+                            typeRole?.role === 'gid' ? null : <div style={{ fontSize: '0.86rem' }}><b>{t("GidPk.qatnashgan")}</b> {t("GidPk.malumotKiritilmagan")}</div>
                     }
                 </Container>
 

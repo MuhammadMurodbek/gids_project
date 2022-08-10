@@ -4,8 +4,11 @@ import InDate from '../../components/molecules/dateIn'
 import MyRequests from '../../components/organism/request';
 import noDataImg from "../../assets/img/undraw/no_data.svg"
 import Spinner from "../../components/atom/loading.spinner.line"
+import { useTranslation } from 'react-i18next';
 import moment from "moment"
 export default function   Index({success, setCollect, collect, setCallback}) {
+    const { t } = useTranslation();
+
     const array_data = success?.data?.results
     const lang = localStorage.getItem('i18nextLng')
     // console.log(array_data)
@@ -30,7 +33,7 @@ export default function   Index({success, setCollect, collect, setCallback}) {
                                 />
                             ))
                         :<div className="wrapper_no_data">
-                            <span>Ma'lumot topilmadi</span>
+                            <span>{t("arizaqoldirish.malumotTopilmadi")}</span>
                             <img className="no_data_img" src={noDataImg} alt="sd"/>
                         </div>
                     }

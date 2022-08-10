@@ -295,7 +295,8 @@
     "ArizaOldin":"Прежде чем отправить заявку, вы должны пройти регистрацию!",
     "davlatKiritilmagan":"Страна (город) не указан",
     "DavlatniTanlang":"Выберите страну",
-    "ShaharKiriting":"Введите город"
+    "ShaharKiriting":"Введите город",
+    "malumotTopilmadi":"Информация не найдена"
   },
   "arizalar_royhati":{
     "title":"Список заявок",
