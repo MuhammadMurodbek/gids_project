@@ -23,6 +23,7 @@ const Index = ({data, type}) => {
                                     item.is_top ? 
                                     <Badge.Ribbon text="TOP" color="red">
                                         <ContainerMap data={item} type={type}/>
+                                        
                                     </Badge.Ribbon>:
                                      <ContainerMap data={item} type={type}/>
                                 }

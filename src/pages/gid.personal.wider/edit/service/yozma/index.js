@@ -70,7 +70,7 @@ const Index = () => {
                     {/* <SelectLabeled label="Internetga doimiy kirish imkoningiz bormi?" setCollect={setState} collect={state} field="always_online" options={option_yes} width="100%" sizeLabel="15px" placeholder="Ha" /> */}
                 </Grid>
                 <Grid item xs={12} md={6} >
-                    <TextTitle font="15px" align="left" top="15px" bottom="-20px" left="20px" color="#262626">{t("Pismenniy_Xizmatlar.CAT")} <span className="cat_d">{t("Pismenniy_Xizmatlar.enterBos")}</span> </TextTitle>
+                    <TextTitle className='writerCAT' font="15px" align="left" top="15px" bottom="-20px" left="20px" color="#262626">{t("Pismenniy_Xizmatlar.CAT")} <span className="cat_d">{t("Pismenniy_Xizmatlar.enterBos")}</span> </TextTitle>
                     <div className='inputss'>
                         <MultiValueInput defaultApiValue={apiValue?.cat_programmes} setState={setState} state={state} field="cat_programmes" />
                     </div>

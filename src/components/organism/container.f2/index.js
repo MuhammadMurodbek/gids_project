@@ -26,9 +26,9 @@ const Index = ({ data }) => {
             if (lang === 'ru') return item?.from_language__name_ru + " - " + item?.to_language__name_ru
             if (lang === 'uz') return item?.from_language__name_uz + " - " + item?.to_language__name_uz
         } else {
-            if (lang === 'en') return item?.language__name_en
-            if (lang === 'ru') return item?.language__name_ru
-            if (lang === 'uz') return item?.language__name_uz
+            if (lang === 'en') return data?.role == "gid" ?  item?.language__name_en :  item?.from_language__name_en + " - " + item?.to_language__name_en
+            if (lang === 'ru') return data?.role == "gid" ?  item?.language__name_ru :  item?.from_language__name_ru + " - " + item?.to_language__name_ru
+            if (lang === 'uz') return data?.role == "gid" ?  item?.language__name_uz :  item?.from_language__name_uz + " - " + item?.to_language__name_uz
         }
 
     } 
@@ -73,7 +73,7 @@ const Index = ({ data }) => {
                 <Grid item xs={12} sm={6}>
                     <Container margin="30px 0 0 0">
                         <TextTitle align="left" font="20px"> {(data?.first_name + " " + data?.last_name) || t("GidPk.malumotKiritilmagan")} </TextTitle>
-                        <div className="gid-info-personal">{data?.age ? (data?.age + " " + yosh11 ) : "0 yosh"}  | <span style={{ textTransform: "none" }}>{data?.role === "translator" ? t("GidPk.ogzakiT") : data?.role === "gid" ? t("GidPk.gid") : data?.role === "writer" ? t("GidPk.yozmaT") : " "}
+                        <div className="gid-info-personal">{data?.age ? (data?.age + " " + yosh11 ) : t("GidPk.yoshKiritilmagan")}  | <span style={{ textTransform: "none" }}>{data?.role === "translator" ? t("GidPk.ogzakiT") : data?.role === "gid" ? t("GidPk.gid") : data?.role === "writer" ? t("GidPk.yozmaT") : " "}
                         </span> </div>
                         <div className="gid-info-personal-text">
                             <div className="text">

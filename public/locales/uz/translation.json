@@ -226,7 +226,8 @@
     "Parol":"Parolni kiriting",
     "xatolik":"Xatolik yuz berdi...",
     "parolniKiriting":"Parolni kiriting... (kamida 4 ta belgi)",
-    "emailKir":"Email kiriting..."
+    "emailKir":"Email kiriting...",
+    "kodTasdiqlang":"Kod noto'g'ri tasdiqlangan..."
   },
   "emailni_tasdiqlash":{
     "textema":" E-mail ni tasdiqlang ",
@@ -423,7 +424,9 @@
     "mavzular":"Mavzular:",
     "shaharlar":"Quyidagi shaharlarda ekskursiyalar o'tkazaman:",
     "galereyFoto":"Fotosurat yuklanmagan",
-    "boglanishIcons":"* Ushbu ijtimoiy tarmoqlar orqali men bilan bog'lanishingiz mumkin."
+    "boglanishIcons":"* Ushbu ijtimoiy tarmoqlar orqali men bilan bog'lanishingiz mumkin.",
+    "mavjudEmas":"Информации нет"
+
   },
   "kommentlar":{
     "textKiriting":"Text kiriting...",
@@ -431,7 +434,10 @@
     "kommentShart":"Izoh qoldirish kerak!!!",
     "bahoShart":"Baho qo'yish kerak!!!",
     "yuklandi":"Ma'lumotlaringiz muvaffaqiyatli yuklandi",
-    "xatolikMavjud":"Xatolik mavjud, qaytadan urinib ko'ring"
+    "xatolikMavjud":"Xatolik mavjud, qaytadan urinib ko'ring",
+    "fikirqoldirish":"Fikr qoldirish uchun ro'yxatdan o'tishingiz kerak...",
+    "sizFarqatBir":"Siz faqat bir marta xabar yoza olasiz !!!",
+    "XatolikYuzBerdi":"Xatolik yuz berdi. Qaytadan urinib ko'ring."
 
   },
   "MTmenHaqimda":{
@@ -959,8 +965,22 @@
     "saqlash":"Saqlash",
     "ismKiritilmagan":"Ism kiritilmagan (kamida 3 ta belgi)",
     "familyaKiritilmagan":"Familiya kiritilmagan (kamida 3 ta belgi)",
-    "tashkilotKiritilmagan":"Tashkilot nomi kiritilmagan (kamida 3 ta belgi)"
+    "tashkilotKiritilmagan":"Tashkilot nomi kiritilmagan (kamida 3 ta belgi)",
+    "xatolikMavjud":"Ma'lumotlarni yuklashda xatolik mavjud",
+    "kamidaUchta":"Kamida 3 ta belgidan foydalaning",
+    "sanaKiritilmagan":"Sana kiritilmagan",
+    "jinsiTanlanmagan":"Jinsi tanlanmagan"
+    
   },
+
+  "baho":{
+    "alo":"A'lo",
+    "yaxshi":"Yaxshi",
+    "ortancha":"O'rtacha",
+    "yomon":"Yomon",
+    "judaYomon":"Juda yomon"
+  },
+
   "profil_sozlamalari":{
  
     "profilni_korish":"Profilni ko’rish",

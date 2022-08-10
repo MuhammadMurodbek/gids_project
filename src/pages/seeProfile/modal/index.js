@@ -36,7 +36,7 @@ const Index = ({setCallback, open, setOpen, customId}) => {
     },[statePost])
     return (
         <div>
-            <ModalPost {...statePost} etitle= {statePost?.data?.status === 400 ? "Siz faqat bir marta xabar yoza olasiz !!!":"Xatolik yuz berdi. Qaytadan urinib ko'ring."} />
+            <ModalPost {...statePost} etitle= {statePost?.data?.status === 400 ? t("kommentlar.sizFarqatBir"): t("kommentlar.XatolikYuzBerdi")} />
              <Modal title={t("GidPk.fikirqoldirish")} visible={open} onOk={handleOk} onCancel={handleCancel} width={800}>
                 {(token && token?.hasOwnProperty('access')) ? 
                      <form onSubmit={handleSubmit(onSubmit)}>
@@ -68,7 +68,7 @@ const Index = ({setCallback, open, setOpen, customId}) => {
                      {errors && errors?.rating && <span style={{display:'block', color:'red'}}>{t("kommentlar.bahoShart")}</span>}
                          <input type="submit" ref={input => {inputFile = input}} style={{display:'none'}}/>
                      </form>:
-                     <div style={{color:'orangered'}}> Fikr qoldirish uchun ro'yxatdan o'tishingiz kerak...</div>
+                     <div style={{color:'orangered'}}> {t("kommentlar.fikirqoldirish")}</div>
                 }
                
             </Modal>

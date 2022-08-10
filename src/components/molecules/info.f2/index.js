@@ -14,7 +14,11 @@ const Index = ({ data, commentCount }) => {
     // console.log(data?.currency_per_day)
     const curr = (item) => {
         // console.log(item)
-        if (item === 'dollar') return '$'
+        if (item === 'USD') return '$'
+        else if (item === 'UZS') return 'S'
+        else if (item === 'RUB') return 'R'
+        else if (item === 'EUR') return 'E'
+        else if (item === 'dollar') return '$'
         else if (item === 'sum') return 'S'
         else if (item === 'ruble') return 'R'
         else if (item === 'EUR') return 'E'

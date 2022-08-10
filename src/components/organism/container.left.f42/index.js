@@ -75,10 +75,10 @@ const Index = ({ state, typeRole, comments, commentCount, commentReview }) => {
                                     style={{ borderRadius: '50%' }}
                                 />
                                 <Container {...mediaContainerSecondText} margin="-10px 0 0 15px">
-                                    <TextTitle align="left" bottom="5px" font="20px">{state?.first_name || 'Mavjud emas'}{" "}{state?.last_name || 'Mavjud emas'}</TextTitle>
+                                    <TextTitle align="left" bottom="5px" font="20px">{state?.first_name || t("GidPk.mavjudEmas")}{" "}{state?.last_name || t("GidPk.mavjudEmas")}</TextTitle>
                                     <div className="gid-info-personal">
                                     {state?.age}
-                                        {state?.age ? " " + yosh11 + " " : t("GidPk.yoshKiritilmagan")} | <span style={{ textTransform: "none" }}>{typeRole?.role === 'simple_user' ? "Foydalanuvchi " : typeRole?.role === "writer" ? t("GidPk.yozma") : typeRole?.role === "translator" ? t("auth_registr.tarjimon") : t("auth_registr.gid")}
+                                        {state?.age ? " " + yosh11 + " " : t("GidPk.yoshKiritilmagan")} | <span style={{ textTransform: "none" }}>{typeRole?.role === 'simple_user' ? t("arizaqoldirish.foydalanuvchi") : typeRole?.role === "writer" ? t("GidPk.yozma") : typeRole?.role === "translator" ? t("auth_registr.tarjimon") : t("auth_registr.gid")}
                                         </span>
                                     </div>
                                     {
@@ -91,7 +91,7 @@ const Index = ({ state, typeRole, comments, commentCount, commentReview }) => {
                                             ))
                                             :
                                             state?.languages?.map((prev, index) => (
-                                                <div key={index} className="gid-info-personal-text"><div className="text">{prev?.from_language_name[lan] || 'Mavjud emas'}</div> - <div className="text">{prev?.to_language_name[lan] || 'Mavjud emas'}</div></div>
+                                                <div key={index} className="gid-info-personal-text"><div className="text">{prev?.from_language_name[lan] || t("GidPk.mavjudEmas")}</div> - <div className="text">{prev?.to_language_name[lan] || t("GidPk.mavjudEmas")}</div></div>
                                             ))
                                     }
 
@@ -181,7 +181,7 @@ const Index = ({ state, typeRole, comments, commentCount, commentReview }) => {
                                             <ProgressInfo data={commentCount} />
                                         </Grid>
 
-                                        <Grid item className='ssdd' sm={12} md={4}>
+                                        <Grid item className='ssdd' style={{maxWidth: "66.6%"}} sm={12} md={4}>
                                             <ProgressTitle data={commentCount} />
                                         </Grid>
 

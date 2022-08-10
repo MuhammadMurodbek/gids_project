@@ -15,6 +15,12 @@
 .css-1okebmr-indicatorSeparator{
     display:none !important;
 }
+.progressTitle{
+    max-width: 66% !important;
+}
+/* .iFJeRb {
+    width: 100% !important;
+} */
 /* @media  */
 @media only screen and (max-width: 707px){
     .selects{
@@ -33,9 +39,9 @@
     .MuiGrid-grid-md-2{
         max-width: 58.333333% !important;
     }
-    .MuiGrid-spacing-xs-1 > .MuiGrid-item{
+    /* .MuiGrid-spacing-xs-1 > .MuiGrid-item{
         max-width: 100% !important;
-    }
+    } */
     .empty_title{
         width: auto !important;
     }
@@ -61,6 +67,12 @@
     }
     .MuiGrid-spacing-xs-3 > .MuiGrid-item{
         padding: 0px !important;
+    }
+    .gDSYoz .wrap_cal{
+        width: 100% !important;
+    }
+    .writerCAT{
+        margin-left: 0px !important;
     }
     
     
