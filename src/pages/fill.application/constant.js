@@ -23,14 +23,15 @@ export function info() {
     });
   }
 export const currency = [
-  {label:'UZS', value:'sum'},
-  {label:'RUBL', value:'ruble'},
-  {label:'USD',value:'dollar'}
+  {label:'UZS', value:'UZS'},
+  {label:'RUB', value:'RUB'},
+  {label:'USD',value:'USD'},
+  {label:'EUR',value:'EUR'}
 ]
 export const CurrencyProp = {
-  sum:'SUM',
-  ruble:'RUBL',
-  dollar:'USD'
+  UZS:'UZS',
+  RUB:'RUB',
+  USD:'USD'
 }
 export const defaultApiValueReset = {
   who_need:'',

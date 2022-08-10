@@ -429,7 +429,7 @@
     "malumotKiritilmagan":"Ma'lumot kiritilmagan",
     "videoYuklanmagan":"Video yuklanmagan.",
     "rasmYuklanmagan":"Rasmlar yuklanmagan",
-    "yoshKiritilmagan":"Yosh kiritilmagan",
+    "yoshKiritilmagan":"",
     "bioKiritilmagan":"Bio kiritilmagan",
     "mavzular":"Mavzular:",
     "shaharlar":"Quyidagi shaharlarda ekskursiyalar o'tkazaman:",
@@ -918,8 +918,9 @@
     "xatolik":"Xatolik yuz berdi",
     "qaytaUrining":"Qaytadan urinib ko'ring.",
     "tolovSumma":"To'lov miqdori: ",
-    "muddati":"Amal qilish muddati:",
-    "tolovMiqdori":"To'lov miqdori:",
+    "muddati":"Amal qilish muddati: ",
+    "olinganSana":"Harid qilingan sana: ",
+    "tolovMiqdori":"To'lov miqdori: ",
     "gacha":"gacha" 
    },
    "hisobni_toldirish":{
