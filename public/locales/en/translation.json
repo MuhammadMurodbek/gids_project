@@ -291,7 +291,8 @@
     "arizaJunatilmadi":"Arizangiz junatilmadi",
     "arizaXato":"Arizani junatishda xatolik mavjud...",
     "serverError":"Serverdagi ichki xatolik",
-    "ArizaOldin":"Arizani yuborish uchun avval ro'yxatdan o'tishingiz kerak."
+    "ArizaOldin":"Arizani yuborish uchun avval ro'yxatdan o'tishingiz kerak.",
+    "malumotTopilmadi":"Ma'lumot topilmadi"
   },
   "arizalar_royhati":{
     "title":"Application list",
