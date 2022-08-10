@@ -30,7 +30,7 @@ const Index = () => {
             wechat: state?.wechat ? 'https://wechat.com/' + state?.wechat : "",
             viber: state?.viber ? 'https://viber.com/' + state?.viber : ""
         }
-
+        
         putResponse(`/api/${getRole?.role}s/edit/contact/`, JSON.parse(JSON.stringify(postState)), setApiRes)
         setAfterData(apiResponse?.success?.data)
     }
@@ -52,12 +52,7 @@ const Index = () => {
     // console.log(apiResponse?.success?.data?.telegram);
 
 
-    console.log(state?.facebook + " -=-=-=");
-    console.log(state?.wechat + " -=-=-=");
-    console.log(state?.viber + " -=-=-=");
-    console.log(state?.instagram + " -=-=-=");
-    console.log(state?.telegram + " -=-=-=");
-    console.log("  ");
+   
 
 
     return (

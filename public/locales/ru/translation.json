@@ -425,7 +425,7 @@
     "malumotKiritilmagan":"Информации нет",
     "videoYuklanmagan":"Видео не загружено.",
     "rasmYuklanmagan":"Фотографии еще не загружены",
-    "yoshKiritilmagan":"Возраст не указан",
+    "yoshKiritilmagan":"  ",
     "bioKiritilmagan":"Био нет",
     "mavzular":"Тематика:",
     "shaharlar":"Провожу экскурсии в след. городах:",
@@ -894,6 +894,7 @@
     "qaytaUrining":"Попробуйте снова.",
     "tolovSumma":"Оплаченная сумма: ",
     "muddati":"Срок действия: до",
+    "olinganSana":"Дата покупки: ",
     "tolovMiqdori":"Недельный тариф:",
     "gacha":""
 
@@ -908,10 +909,8 @@
      "som":"сум",
      "VariantTanlanmagan":"Не выбран способ оплаты",
      "BiriniTanlang":"Для пополнения счета выберите один из способов оплаты",
-
-
-
      "Tolovlar_tarihi":"История платежей",
+     
      "tolovlarTarixi":"У вас нет история платежей",
      "tolovlar":"Платеж"
     },

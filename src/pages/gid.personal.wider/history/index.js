@@ -47,9 +47,9 @@ console.log("ddd ");
                                             {/* <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent aliquam sit ornare mattis id non aliquam convallis ut.</span> */}
                                             <div className="right-prise">
                                             <b className="price_part">{t("tariflar.tolovSumma")} {item?.tariff?.price || '0'} {t("tariflar.som")}</b>
-                                            <b className="right-b">{t("tariflar.muddati")} 
+                                            <b className="right-b">{t("tariflar.olinganSana")} 
                                             {moment(item?.created_date).format('DD.MM.YYYY') || '01.01.2000'} 
-                                            {t("tariflar.gacha")}</b>
+                                             </b>
                                         </div>
                                         </div>
                                        {/* {console.log(item)} */}
