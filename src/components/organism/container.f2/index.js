@@ -59,7 +59,7 @@ const Index = ({ data }) => {
             <Grid container spacing={1}>
                 <Grid item xs={12} sm={3}>
                     <Container {...media_container} margin="20px 0 0 0">
-                        <FlexContainer width="100%" alignItems="center" justifyContent="space-between" flexDirection="column">
+                        <FlexContainer width="100%" alignItems="center" justifyContent="space-between" flexDirection="column" className='AccContainer'>
                             <RoundImageContainer 
                                 src={data?.image || RoundImage} 
                                 width="100px" height="auto" 

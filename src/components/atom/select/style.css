@@ -88,11 +88,12 @@
 @media screen and (max-width: 720px){
     .WrapperInfoF2{
         margin-left: 55px !important;
+     
     }
     .btnChooseGids{
         margin-right: 50px !important;
-    }
-    
+        padding: 12px 16px !important;
+    }    
 }
 @media screen and (max-width: 600px) {
     .ant-image{
@@ -102,6 +103,21 @@
     }
     .btnChooseGids{
         margin-right: 0px !important;
+        padding: 14px 32px !important;
+    }
+       .WrapperInfoF2{
+        width: 50% !important;
+        margin-left: 0px !important;
+    }
+    .c_per_day{
+        width: auto !important;
+    }
+    .AccContainer{
+        display: flex;
+        flex-direction: row !important;
+    }
+    .AccImgBlock{
+        width: 50% !important;
     }
     
 }
@@ -150,9 +166,6 @@
     }
     .kZEBGz .mualif{
         width: auto !important;
-    }
-    .WrapperInfoF2{
-        margin-left: 20px !important;
     }
     .PkService{
         width: 100% !important;

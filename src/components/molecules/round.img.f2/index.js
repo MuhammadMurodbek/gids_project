@@ -36,15 +36,15 @@ const Index = (props) => {
     }
     const mediaBtn = {
         m_btn_width: "600px",
-        m_btn_top: "-50px",
-        m_btn_right: "20%",
+        m_btn_top: "0",
+        m_btn_right: "-20px",
     }
     const { src, width, height, radius, role } = props
     // console.log(role)
 
     // console.log(  "======" + props.data )
     return (
-        <WrapperRoundImage {...mediaBtn} {...mediaWrapper} width={width} height={height} radius={radius}>
+        <WrapperRoundImage {...mediaBtn} {...mediaWrapper} width={width} height={height} radius={radius}  className="AccImgBlock">
             <Image
                 width={100}
                 src={src}
