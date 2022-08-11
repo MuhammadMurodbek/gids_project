@@ -22,6 +22,11 @@ export const Container = styled.div`
         margin:${a=>a.m_margin};
         text-align:${a=>a.m_text_align} !important;
     }
+    @media (max-width: 1180px){
+        .chooseImage{
+            width: 100%;
+        }
+    }
   
     
 

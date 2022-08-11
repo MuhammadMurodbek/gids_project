@@ -124,7 +124,7 @@ const Index = ({ data, role }) => {
                         <>
 
 
-                            <FlexContainer width="70%" margin="15px 0">
+                            <FlexContainer width="70%" margin="15px 0" className='PkService'>
                                 <Grid container spacing={1} className="gridCon">
                                     <Grid item md={12} className="as">
 

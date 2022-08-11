@@ -18,7 +18,7 @@ import { searchToObject } from "../../custom/function"
 import TestComponent from "../../components/templates/test.component"
 
 const mediaGrid = {
-    m_width: "962px",
+    m_width: "959.5px",
     m_display: "none"
 }
 const mediaGridUSers = {
@@ -26,7 +26,7 @@ const mediaGridUSers = {
     m_width: "768px",
 }
 const Index = () => {
-    
+
     const { t } = useTranslation()
     const history = useHistory()
     let query = window.location.search
@@ -66,13 +66,13 @@ const Index = () => {
                             state?.success && state?.data?.results?.length > 0 ?
                                 <>
                                     <Container {...mediaGrid} margin="15px 0" >
-                                        <ImageContainer src={Adds} width="350px" />
+                                        <ImageContainer src={Adds} className="ImagesChoose" width="350px" />
                                     </Container>
                                     <Container {...mediaGrid} margin="15px 0" >
-                                        <ImageContainer src={Adds2} width="350px" />
+                                        <ImageContainer src={Adds2} className="ImagesChoose" width="350px"/>
                                     </Container>
                                      <Container {...mediaGrid} margin="15px 0" >
-                                        <ImageContainer src={Adds} width="350px" />
+                                        <ImageContainer src={Adds} className="ImagesChoose" width="350px" />
                                     </Container>
                                 </>
                                 : null

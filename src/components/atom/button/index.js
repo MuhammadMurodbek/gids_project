@@ -21,7 +21,7 @@ const Index = (props) => {
                 during={1000}
                 style={{position: "relative"}}
             >
-              <Button {...props}/> 
+              <Button {...props} /> 
             </Ripples>
             <div className="progress" style={loader ? {display:'inline-block'}:{display:'none'}}><Progress color="#fff" width={17} height={17}/></div>
         </ButtonWrapper>

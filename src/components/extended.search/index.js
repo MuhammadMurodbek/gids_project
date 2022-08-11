@@ -75,7 +75,7 @@ const  Index = ({loader, queryObj}) => {
     },[collect])
      // console.log(collect)
     return (
-        <Wrapper width="350px">
+        <Wrapper width="350px" id='searchWrapper'>
             <div className="title-header">
                 {t("kengaytirlgan_Q.kengaytirilgan")}
             </div>
@@ -152,7 +152,7 @@ const  Index = ({loader, queryObj}) => {
             />
             {startVal && !collect.hasOwnProperty('search_type') && <span className="errors_search">{t("kengaytirlgan_Q.tuniniTanlang")}</span>}
             <div className="button-wrapper">
-                <Button loader={postData?.loading} onClick={handleSubmit} width="260px" name={t("kengaytirlgan_Q.qidirish")} />
+                <Button loader={postData?.loading} onClick={handleSubmit} width="260px" className="btnChooseGids" name={t("kengaytirlgan_Q.qidirish")} />
             </div>
         </Wrapper>
     )

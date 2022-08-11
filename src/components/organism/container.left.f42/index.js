@@ -67,7 +67,7 @@ const Index = ({ state, typeRole, comments, commentCount, commentReview }) => {
                 <Grid container spacing={1}>
                     <Grid item xs={12} >
                         <Container style={{ "display": "flex" }} position="relative" {...mediaContainerSecond} margin="25px 0 0 20px">
-                            <FlexContainer {...mediaContainer} width="100%" alignItems="flex-start" justifyContent="space-between" >
+                            <FlexContainer {...mediaContainer} width="100%" alignItems="flex-start" justifyContent="space-between" className='infoMain' >
                                 <div className="info_btn"><InfoBtn view={state?.view || 0} /></div>
                                 <Image
                                     width={160}

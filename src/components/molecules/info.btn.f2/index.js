@@ -35,7 +35,7 @@ const Index = ({data}) => {
                     <FlexContainer width="auto" alignItems="center" className="count"><VisibilityIcon/>{" "}{data?.view || '0'}</FlexContainer>
                 </FlexContainer>
                 
-                    <Button {...mediaButton} onClick={()=>handleClick(data?.id, data?.role)}  width="100%">
+                    <Button {...mediaButton} className="btnChooseGids" onClick={()=>handleClick(data?.id, data?.role)}  width="100%">
                      {t("Gid_Tanlash.korish")} 
                      </Button>
             </FlexContainer>

@@ -73,6 +73,7 @@ const Index = (props) => {
                         {
                             data?.video ?
                                 <ReactPlayer
+                                    className="videoPlayer"
                                     height="500px"
                                     width="1000px"
                                     controls

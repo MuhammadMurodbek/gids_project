@@ -33,5 +33,13 @@ export const ImgWrapper = styled.div`
             height:${a=>a.media_height_value}
         }
     }
+    @media (min-width: 1180px){
+        .ImagesChoose{
+            width: 100% !important;
+        }
+        .ImagesChoose img{
+            width: 350px !important;
+        }
+    }
    
 `

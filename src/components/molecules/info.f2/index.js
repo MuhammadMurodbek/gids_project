@@ -39,7 +39,7 @@ const Index = ({ data, commentCount }) => {
     // console.log(getRole.role);
      
     return (
-        <WrapperInfoF2>
+        <WrapperInfoF2 className='WrapperInfoF2'>
             <FlexContainer width="auto" alignItems="center" justifyContent="flex-start" flexDirection="column">
                 <Grid container spacing={1} className="info-item">
                     <Grid item sm={3}><ImgContainer src={starImg} width="30px" /></Grid>
