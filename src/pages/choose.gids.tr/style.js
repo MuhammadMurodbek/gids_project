@@ -14,15 +14,19 @@ export const Wrapper = styled.div`
     @media(min-width:1367px){
             width: 1450px;
             margin: 0 auto;
-    }
-   
-    @media (max-width:962px){
+    }  
+    @media (max-width:959px){
         .media_grid_flex{
             flex-direction: column;
         }
     }
     @media (max-width:450px){
         padding: 10px 20px;
+    }
+    @media (max-width: 1180px){
+        .ImagesChoose, .ImagesChoose img{
+            width: 100% !important;
+        }
     }
     
 `

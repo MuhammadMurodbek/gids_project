@@ -22,6 +22,51 @@
     width: 100% !important;
 } */
 /* @media  */
+@media (max-width: 1180px){
+    #searchWrapper{
+        width: 100% !important
+    }
+    .WrapperInfoF2{
+        margin-left: 55px !important;
+    }
+    .btnChooseGids{
+        margin-right: 50px !important;
+    }
+    .closebtn{
+        width: 50px;
+        left: 80%;
+        position: relative;
+    }
+    .videoPlayer{
+        width: 100% !important;
+    }
+    .sectionPlayer{
+        height: auto !important;
+    }
+    .etdsOH{
+        width: 100% !important;
+    }
+    .DayPicker{
+        width: 100% !important;
+    }
+    .ContainerImage{
+        width: 100% !important;
+    }
+ 
+    
+}
+@media screen and (max-width: 960px) {
+    .DayPicker{
+        width: 300px !important;
+    }
+    
+}
+@media screen and (max-width: 750px) {
+    .wrap_cal{
+        width: 100% !important;
+    }
+    
+}
 
 @media only screen and (max-width: 707px){
     .selects{
@@ -64,9 +109,9 @@
     .RegisterError{
         width: 95% !important;
     }
-    .geobLB {
+    /* .geobLB {
         width: 100% !important;
-    }
+    } */
    
     .MuiGrid-grid-md-2{
         max-width: 58.333333% !important;
@@ -88,7 +133,7 @@
         width: auto !important;
     }
     .DayPicker{
-        width: 100% !important;
+        width: 300px !important;
     }
     .MuiGrid-spacing-xs-3{
         width: 100% !important;
@@ -97,7 +142,7 @@
     .MuiGrid-spacing-xs-3 > .MuiGrid-item{
         padding: 0px !important;
     }
-    .gDSYoz .wrap_cal{
+    .wrap_cal{
         width: 100% !important;
     }
     .writerCAT{
@@ -108,6 +153,15 @@
     }
     .WrapperInfoF2{
         margin-left: 20px !important;
+    }
+    .PkService{
+        width: 100% !important;
+    }
+    @media screen and (max-width: 400px) {
+        .infoMain{
+            width: 75% !important;
+        }
+        
     }
     
     

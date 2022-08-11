@@ -14,4 +14,27 @@ export const Wrapper = styled.div`
             margin-left:15px
         }
     }
+    @media(max-width: 1180px){
+        .fas.fa-search{
+            left: 180px;
+        }
+    }
+    @media(max-width: 970px){
+        .btnChooseGids{
+            width: 240px;
+        }
+    }
+    @media(max-width: 959px){
+        .fas.fa-search{
+            left: 54%;
+        }
+        .btnChooseGids{
+            width: 260px;
+        }
+    }
+    @media(max-width: 600px){
+        .fas.fa-search{
+            left: 63%;
+        }
+    }
 `

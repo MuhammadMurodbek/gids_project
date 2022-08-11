@@ -3,7 +3,7 @@ import {ImgWrapper} from "./index.styled"
 const Index = (props) => {
     const {media_height, media_height_value, media_width_value, m_m_width, m_m_text_align} = props
     return (
-        <ImgWrapper 
+        <ImgWrapper className='ImagesChoose'
             width={props.width} 
             height={props.height} 
             round={props.round} 
@@ -16,7 +16,7 @@ const Index = (props) => {
             m_m_width={m_m_width}
             m_m_text_align={m_m_text_align}
         >
-           <img 
+           <img
                 src={props.src} 
                 alt="alt" 
                 style={{
