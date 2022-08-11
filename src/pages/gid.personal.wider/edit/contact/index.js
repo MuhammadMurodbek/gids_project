@@ -16,23 +16,29 @@ const Index = () => {
     const dispatch = useDispatch()
     const getRole = JSON.parse(localStorage.getItem("user_token"))
     const [apiResponse, setApiResponse] = useState({ success: '', error: '' })
-    useEffect(() => { getResponse(`/api/${getRole?.role}s/edit/contact/`, setApiResponse) }, [])
     const [apiRes, setApiRes] = useState({ success: '', error: '', loading: false })
+    useEffect(() => { 
+        setApiResponse({success:'',error:''})
+        getResponse(`/api/${getRole?.role}s/edit/contact/`, setApiResponse) 
+    }, [])
+    useEffect(()=>{
+        if(apiResponse.success!==''){
+            setState({...apiResponse?.success?.data})
+        }
+    },[apiResponse?.success])
     const [state, setState] = useState({ telegram: '', instagram: '', facebook: '', wechat: '', viber: '' })
-    const [afterdata, setAfterData] = useState({})
     const handleSubmit = (e) => {
+        const {telegram, instagram, facebook, wechat, viber} = state
         e.preventDefault()
 
         let postState = {
-            telegram: state?.telegram ? 'https://t.me/' + state?.telegram : "",
-            instagram: state?.instagram ? 'https://instagram.com/' + state?.instagram : "",
-            facebook: state?.facebook ? 'https://facebook.com/' + state?.facebook : "",
-            wechat: state?.wechat ? 'https://wechat.com/' + state?.wechat : "",
-            viber: state?.viber ? 'https://viber.com/' + state?.viber : ""
+            telegram: telegram ? telegram?.includes('https') ? telegram : 'https://t.me/' + telegram : '',
+            instagram: instagram ? instagram?.includes('https') ? instagram : 'https://instagram.com/' + instagram : '',
+            facebook: facebook ? facebook?.includes('https') ? facebook : 'https://facebook.com/' + facebook : '',
+            wechat: wechat ? wechat?.includes('https') ? wechat : 'https://wechat.com/' + wechat : '',
+            viber: viber ? viber?.includes('https') ? viber : 'https://viber.com/' + viber : ''
         }
-        
         putResponse(`/api/${getRole?.role}s/edit/contact/`, JSON.parse(JSON.stringify(postState)), setApiRes)
-        setAfterData(apiResponse?.success?.data)
     }
     useEffect(() => {
         if (apiRes?.success !== "") {
@@ -44,17 +50,6 @@ const Index = () => {
         }
 
     }, [apiRes])
- 
-    // console.log(apiResponse?.success?.data?.viber);
-    // console.log(apiResponse?.success?.data?.wechat);
-    // console.log(apiResponse?.success?.data?.facebook);
-    // console.log(apiResponse?.success?.data?.instagram);
-    // console.log(apiResponse?.success?.data?.telegram);
-
-
-   
-
-
     return (
         <Wrapper>
             {

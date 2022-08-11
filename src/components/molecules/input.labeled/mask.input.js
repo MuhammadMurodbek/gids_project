@@ -9,7 +9,7 @@ const Index = (props) => {
         if(setState){
             setState({...state, [field]:phone})
         }
-    },[phone])
+    },[phone, field, defaultApiValue])
     useEffect(()=>{
         if(defaultApiValue){
             // if(field === 'website') defaultApiValue.substr(0,8)

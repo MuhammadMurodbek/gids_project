@@ -60,7 +60,7 @@ const Index = () => {
         // console.log(edit)
           const payload = {
                 email: edit?.email,
-                phone_number: edit?.phone_number?.substr(1),
+                phone_number: edit?.phone_number?.replace('+',''),
                 password: password ==='' ? undefined : password,
                 password1: password1 === '' ? undefined : password1,
                 password2: password2 === '' ? undefined : password2
