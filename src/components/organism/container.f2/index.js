@@ -39,13 +39,13 @@ const Index = ({ data }) => {
     let yosh11 = "";
 
 
-    if(nyosh === 0 || nyosh === 1){
+    if(nyosh === 1){
         yosh11 = t("yoshlar.god")
     }
     else if( nyosh >=2 && nyosh <= 4 ){
         yosh11 = t("yoshlar.goda")
     }
-    else if(nyosh >= 5){
+    else if(nyosh === 0 || nyosh >= 5){
         yosh11 = t("yoshlar.let")
     }
 

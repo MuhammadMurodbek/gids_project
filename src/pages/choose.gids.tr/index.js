@@ -54,7 +54,7 @@ const Index = () => {
         window.scrollTo(0, 0)
     }
     // console.log(state)/
-    console.log(state.data, 'dfdf')
+    
     return (
         <Wrapper>
 

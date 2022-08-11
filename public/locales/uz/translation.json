@@ -834,10 +834,6 @@
     "internet":"Internetga doimiy kirish imkoni:" ,
     "katta":"Katta hajmdagi fayllarni qabul qilish:" ,
     "cat":"Tarjima qilish uchun CAT dasturlari: ",
-    
-    
-
-
 
     "birKunHajm":"Bir kunlik ish hajmingiz (belgi)",
     "ogzakiTarjima":"Siz og'zaki tarjima ham qilasizmi?",
@@ -1052,8 +1048,24 @@
     "god":"yosh",
     "goda":"yosh",
     "let":"yosh"
+  },
+
+  "tematika":{
+    "umumiyM":"Umumiy mavzular",
+    "jamiyatS":"Jamiyat va siyosat",
+    "IqtisodiyotM":"Iqtisodiyot va moliya",
+    "Huquq":"Huquqshunoslik",
+    "AxborotT":"Axborot texnologiyalari",
+    "reklamaM":"Reklama va marketing",
+    "sanoatT":"Sanoat va texnologiya",
+    "NeftvaG":"Neft va gaz",
+    "IlmiyvaTex":"Ilmiy va texnik adabiyotlar",
+    "badiyAdabiyot":"Badiiy adabiyot",
+    "tibiyotF":"Tibbiyot va farmatsevtika"
   }
+  
 }
 
    
 
+ 

@@ -47,6 +47,11 @@ const Index = () => {
     //         return{...prev, success:''}
     //     })
     // }
+
+    console.log(getData?.success?.data + " ==============") 
+
+
+
     return (
         <>
             <Wrapper>

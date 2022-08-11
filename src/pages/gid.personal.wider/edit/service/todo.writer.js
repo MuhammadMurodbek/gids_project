@@ -98,6 +98,25 @@ const Todos = ({state, setApiValue, setLoad}) => {
     console.log(items);
 
 
+    const itemsName = (item) => {
+        
+        if (item === 'Umumiy mavzular') return t("tematika.umumiyM")
+        else if (item === 'Jamiyat va siyosat') return t("tematika.jamiyatS")
+        else if (item === 'Iqtisodiyot va moliya') return t("tematika.IqtisodiyotM")
+        else if (item === 'Huquqshunoslik') return t("tematika.Huquq")
+        else if (item === 'Axborot texnologiyalari') return t("tematika.AxborotT")
+        else if (item === 'Reklama va marketing') return t("tematika.reklamaM")
+        else if (item === 'Sanoat va texnologiya') return t("tematika.sanoatT")
+        else if (item === 'Neft va gaz') return t("tematika.NeftvaG")
+        else if (item === 'Ilmiy va texnik adabiyotlar') return t("tematika.IlmiyvaTex")
+        else if (item === 'Badiiy adabiyot') return t("tematika.badiyAdabiyot")
+        else if (item === 'Tibbiyot va farmatsevtika') return t("tematika.tibiyotF")
+        else return item
+    }
+
+
+
+
     return (
         <TodosWrapper>
              {
@@ -115,7 +134,9 @@ const Todos = ({state, setApiValue, setLoad}) => {
                             <Grid key={index} item xs={12} md={6}>
                                 <Grid container alignItems="center">
                                     <Grid item xs={12} sm={6}>
-                                        <TextTitle font="16px" fontWeight="300" align="left" top="20px">{prev.name}</TextTitle>
+                                        <TextTitle font="16px" fontWeight="300" align="left" top="20px">
+                                            {itemsName(prev.name)}
+                                            </TextTitle>
                                     </Grid>
                                     <Grid item xs={12} sm={6}>
                                         <SelectLabeled idK={prev.name} options={optionList} collect={item} setCollect={setItem} field="level" defaultApiValue={prev?.level?.label} width="100%" placeholder="Mening mavzuyim emas.." />

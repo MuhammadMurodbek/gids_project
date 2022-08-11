@@ -81,6 +81,10 @@ export default function Index({applicationData, setApplicationData, btnText, url
     let who_need2 = ""
     getData?.success?.data?.who_need === "gitd" ? who_need2 = t("kengaytirlgan_Q.gid") : who_need2 = t("auth_registr.yozmaT")
     
+
+    let a1 = getData?.success?.data?.languages.length;
+
+
     return (
         <Wrapper>
             <Grid container spacing={1} direction="row" justifyContent="center" className="freque">
@@ -134,7 +138,10 @@ export default function Index({applicationData, setApplicationData, btnText, url
                     <div className="tafsilot-text">
                         <b> <ImageContainer src={til} /></b>
                         <b>{t("ToliqAriza.tillar")} </b>
-                        <p>{getData?.success?.data?.languages?.map(a=>" "+getLabelLangLocal(a)+",") || t("GidPk.malumotKiritilmagan")}</p>
+                        <p>
+                            {getData?.success?.data?.languages?.map(a=>" "+ getLabelLangLocal(a) +  
+                             `${a1>1 ? ", " : "" }` ) || t("GidPk.malumotKiritilmagan")}
+                            </p>
                     </div>
                     <div className="tafsilot-text">
                         <b> <ImageContainer src={odamlar} /></b>

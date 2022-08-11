@@ -24,7 +24,7 @@ const Index = (props) => {
     // console.log(value)
     const handleChange = (event) => {
         setValue(event.target.value);
-        if(setState) {
+        if(setState) {  
             if(field) {
                 setState({...state, [field]:event.target.value})
             }else
@@ -37,8 +37,11 @@ const Index = (props) => {
             <Label margin={marginLabel} size={sizeLabel}>{label}</Label>
             <FormControl component="fieldset" className="wrapper-container">
                 <RadioGroup  row={true} aria-label="gender" name="gender1" value={value} onChange={handleChange}>
+
                     <FormControlLabel value={value1 || "gid"} control={<Radio style={{color:mainGreen}} />} label={<span style={{fontSize:'15px'}}>{name1}</span>} className="first"/>
+
                     <FormControlLabel value={value2 || "translator"} control={<Radio style={{color:mainGreen}}/>} label={<span style={{fontSize:'15px'}}>{name2}</span>} />
+
                 </RadioGroup>
             </FormControl>
             <span style={{position: 'absolute', fontSize:'11px', left:0, bottom:-18,  fontStyle:'italic', color:'red'}}>

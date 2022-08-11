@@ -22,7 +22,7 @@ const Index = ({ data, role }) => {
         low: t("Pismenniy_Xizmatlar.orta"),
     }
 
- 
+
     function uniq_fast(a) {
         var seen = {};
         var out = [];
@@ -37,6 +37,24 @@ const Index = ({ data, role }) => {
         }
         return out;
     }
+
+    const itemsName = (item) => {
+        
+        if (item === 'Umumiy mavzular') return t("tematika.umumiyM")
+        else if (item === 'Jamiyat va siyosat') return t("tematika.jamiyatS")
+        else if (item === 'Iqtisodiyot va moliya') return t("tematika.IqtisodiyotM")
+        else if (item === 'Huquqshunoslik') return t("tematika.Huquq")
+        else if (item === 'Axborot texnologiyalari') return t("tematika.AxborotT")
+        else if (item === 'Reklama va marketing') return t("tematika.reklamaM")
+        else if (item === 'Sanoat va texnologiya') return t("tematika.sanoatT")
+        else if (item === 'Neft va gaz') return t("tematika.NeftvaG")
+        else if (item === 'Ilmiy va texnik adabiyotlar') return t("tematika.IlmiyvaTex")
+        else if (item === 'Badiiy adabiyot') return t("tematika.badiyAdabiyot")
+        else if (item === 'Tibbiyot va farmatsevtika') return t("tematika.tibiyotF")
+        else return item
+    }
+
+
     return (
         <Wrapper>
             <Title text={t("GidPk.hizmatlar")} />
@@ -52,18 +70,18 @@ const Index = ({ data, role }) => {
                             <Text title={t("Pismenniy_Xizmatlar.ogzakit")}
                                 text={<span>&nbsp;{data?.can_oral_translate ? t("Pismenniy_Xizmatlar.haS") : t("Pismenniy_Xizmatlar.yoq")}&nbsp;
                                 </span>} />
-                                
+
                             <br />
-                            <Text title={t("Pismenniy_Xizmatlar.shoshilikch")} text={<span>&nbsp;{data?.express_order ? t("Pismenniy_Xizmatlar.ha")  : t("Pismenniy_Xizmatlar.yoq") }&nbsp;</span>} /> 
+                            <Text title={t("Pismenniy_Xizmatlar.shoshilikch")} text={<span>&nbsp;{data?.express_order ? t("Pismenniy_Xizmatlar.ha") : t("Pismenniy_Xizmatlar.yoq")}&nbsp;</span>} />
                             <br />
-                            <Text title={t("Pismenniy_Xizmatlar.damolish")} text={<span>&nbsp;{data?.weekend_order ? t("Pismenniy_Xizmatlar.ha")  : t("Pismenniy_Xizmatlar.yoq") }&nbsp;</span>} /> 
+                            <Text title={t("Pismenniy_Xizmatlar.damolish")} text={<span>&nbsp;{data?.weekend_order ? t("Pismenniy_Xizmatlar.ha") : t("Pismenniy_Xizmatlar.yoq")}&nbsp;</span>} />
                             <br />
-                            <Text title={t("Pismenniy_Xizmatlar.tahrirlash2")} text={<span>&nbsp;{data?.edit_text ? t("Pismenniy_Xizmatlar.ha")  : t("Pismenniy_Xizmatlar.yoq") }&nbsp;</span>} />
-                             <br />
-                            <Text title={t("Pismenniy_Xizmatlar.internet")} text={<span>&nbsp;{data?.always_online ? t("Pismenniy_Xizmatlar.ha")  : t("Pismenniy_Xizmatlar.yoq") }&nbsp;
-                            </span>} /> 
+                            <Text title={t("Pismenniy_Xizmatlar.tahrirlash2")} text={<span>&nbsp;{data?.edit_text ? t("Pismenniy_Xizmatlar.ha") : t("Pismenniy_Xizmatlar.yoq")}&nbsp;</span>} />
                             <br />
-                            <Text title={t("Pismenniy_Xizmatlar.katta")} text={<span>&nbsp;{data?.always_online ? t("Pismenniy_Xizmatlar.ha")  : t("Pismenniy_Xizmatlar.yoq") }&nbsp;</span>} /> 
+                            <Text title={t("Pismenniy_Xizmatlar.internet")} text={<span>&nbsp;{data?.always_online ? t("Pismenniy_Xizmatlar.ha") : t("Pismenniy_Xizmatlar.yoq")}&nbsp;
+                            </span>} />
+                            <br />
+                            <Text title={t("Pismenniy_Xizmatlar.katta")} text={<span>&nbsp;{data?.always_online ? t("Pismenniy_Xizmatlar.ha") : t("Pismenniy_Xizmatlar.yoq")}&nbsp;</span>} />
                             <br />
                             <Text title={t("Pismenniy_Xizmatlar.cat")} text={data?.cat_programmes?.length > 0 ? data?.cat_programmes?.map(a => <span style={{ textTransform: 'capitalize' }}>{" " + a + ","}</span>) : t("GidPk.malumotKiritilmagan")} />
 
@@ -72,7 +90,10 @@ const Index = ({ data, role }) => {
                             <div className='mavzulardd'>
                                 {
                                     data?.themes?.map((prev, index) => (
-                                        <Text key={index} display="block" text={<><TextSpan>{prev?.name}</TextSpan> - <TextSpan style={{ fontWeight: '400' }}>{obj[prev?.level]}</TextSpan></>} />
+                                        <Text key={index} display="block" text={<>
+                                            <TextSpan>
+                                             {itemsName(prev?.name)}
+                                            </TextSpan> - <TextSpan style={{ fontWeight: '400' }}>{obj[prev?.level]}</TextSpan></>} />
                                     ))
                                 }
                             </div>
@@ -87,7 +108,10 @@ const Index = ({ data, role }) => {
                         <Text title={t("GidPk.mavzular")} />
                         {
                             data?.themes?.map((prev, index) => (
-                                <Text key={index} display="block" text={<><TextSpan>{prev?.name}</TextSpan> - <TextSpan style={{ fontWeight: '400' }}>{obj[prev?.level]}</TextSpan></>} />
+                                <Text key={index} display="block" text={<>
+                                    <TextSpan>
+                                    {itemsName(prev?.name)}
+                                    </TextSpan> - <TextSpan style={{ fontWeight: '400' }}>{obj[prev?.level]}</TextSpan></>} />
                             ))
                         }
                     </>)
@@ -110,7 +134,7 @@ const Index = ({ data, role }) => {
                                         </FlexContainer>
 
                                         <FlexContainer margin="0 0 5px">
-                                            <Text title={t("GidPk.yozmaTarjima")}/>
+                                            <Text title={t("GidPk.yozmaTarjima")} />
                                             <span className="yes_no">
                                                 {data?.consecutive_translate ? t("Pismenniy_Xizmatlar.ha") : t("Pismenniy_Xizmatlar.yoq")}
                                             </span>
@@ -131,7 +155,7 @@ const Index = ({ data, role }) => {
                             </FlexContainer>
                             <div class="box">
                                 <div class="box_child">
-                                <span><b>{t("GidPk.shaharlar")}</b></span>
+                                    <span><b>{t("GidPk.shaharlar")}</b></span>
                                     {
                                         data?.excursions?.length ?
                                             data?.excursions?.map((item) => (
