@@ -22,4 +22,7 @@ export const WrapperInfoBtn = styled.div`
         }
         /* background-color: green; */
     }
+    @media(max-width: 600px){
+        padding-right: 0px;
+    }
 `
