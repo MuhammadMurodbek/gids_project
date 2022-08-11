@@ -23,12 +23,24 @@ const  Index = ({loader, queryObj}) => {
     let params = window.location.search
     // console.log(params)/
     const handleSubmit = () => { 
-        // console.log(collect)
+
+        // console.log(collect?.search_type + " -=-=-=")
+        let  search_type22 = null;
+        if(collect?.search_type == "online"){
+            search_type22 = true
+            console.log(search_type22);
+        }
+        else if(collect?.search_type == "all"){
+            search_type22 = false
+            console.log(search_type22);
+        }
+
         // setStartVal(true)
+        
         let array = Object.keys(collect)
         if(array?.length>=9 && collect?.languages?.length>0){
             setPostData({ ...postData, loading: true })
-            let urlOther = `type=${innerTr?.is_writer ? 'writer' : collect?.type}&gender=${(collect?.male && collect?.female)? undefined: collect?.male ? 'male' : collect?.female ? 'female' : undefined}&country=${collect?.country}&city=${collect?.city || queryObj?.city}&lang=${collect?.languages?.map(item => item?.value)}&date_after=${collect?.date_after}&date_before=${collect?.date_before}&${collect?.search_type}=0`
+            let urlOther = `type=${innerTr?.is_writer ? 'writer' : collect?.type}&gender=${(collect?.male && collect?.female)? undefined: collect?.male ? 'male' : collect?.female ? 'female' : undefined}&country=${collect?.country}&city=${collect?.city || queryObj?.city}&lang=${collect?.languages?.map(item => item?.value)}&date_after=${search_type22 ? collect?.date_after : ""}&date_before=${search_type22 ? collect?.date_before : ""}&${collect?.search_type}=0`
             let filterUrl = urlOther.split('&').filter(a=>!a.includes('undefined')).join('&')
             history.push('/gids?'+filterUrl)
         }else{

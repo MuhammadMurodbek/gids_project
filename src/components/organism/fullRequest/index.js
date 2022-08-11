@@ -136,7 +136,8 @@ export default function Index({applicationData, setApplicationData, btnText, url
                     <div className="tafsilot-text">
                         <b> <ImageContainer src={til} /></b>
                         <b>{t("ToliqAriza.tillar")} </b>
-                        <p>{applicationData?.success?.data?.languages?.map(a=>" "+getLabelLangLocal(a.id)+",") || t("GidPk.malumotKiritilmagan")}</p>
+                        <p>
+                            {applicationData?.success?.data?.languages?.map(a=>" "+getLabelLangLocal(a.id)+"") || t("GidPk.malumotKiritilmagan")}</p>
                     </div>
                     <div className="tafsilot-text">
                         <b> <ImageContainer src={odamlar} /></b>
