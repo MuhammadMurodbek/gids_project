@@ -8,3 +8,4 @@ const useApiData = (reducer) => {
     return {responseHook, setResponseHook}
 }
 export default useApiData
+      

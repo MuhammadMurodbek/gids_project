@@ -94,12 +94,20 @@ const Todos = ({state, setApiValue, setLoad}) => {
         putResponse(common.personal.edit.services, {...obj, ...postData}, setPostApiData)
     }
     useEffect(()=>{toastChecker(postApiData)},[postApiData])
+    // console.log(item);
+    // console.log(items[8].level.label);
 
-    console.log(items);
+
+    const itemsLable = (item) => {
+        if (item === 'Mening mavzuim emas'|| item === "Не моя тематика") return t("Pismenniy_Xizmatlar.meningMavzuimEmas")
+        else if (item === 'A’lo' || item === "Отлично") return t("Pismenniy_Xizmatlar.alo")
+        else if (item === 'Yaxshi' || item === "Хорошо") return t("Pismenniy_Xizmatlar.yaxshi")
+        else if (item === 'O’rta' || "Среднее") return t("Pismenniy_Xizmatlar.orta")
+        else return item
+    }
 
 
     const itemsName = (item) => {
-        
         if (item === 'Umumiy mavzular') return t("tematika.umumiyM")
         else if (item === 'Jamiyat va siyosat') return t("tematika.jamiyatS")
         else if (item === 'Iqtisodiyot va moliya') return t("tematika.IqtisodiyotM")
@@ -113,9 +121,7 @@ const Todos = ({state, setApiValue, setLoad}) => {
         else if (item === 'Tibbiyot va farmatsevtika') return t("tematika.tibiyotF")
         else return item
     }
-
-
-
+// console.log(prev?.level?.label);
 
     return (
         <TodosWrapper>
@@ -136,10 +142,12 @@ const Todos = ({state, setApiValue, setLoad}) => {
                                     <Grid item xs={12} sm={6}>
                                         <TextTitle font="16px" fontWeight="300" align="left" top="20px">
                                             {itemsName(prev.name)}
-                                            </TextTitle>
+                                        </TextTitle>
                                     </Grid>
                                     <Grid item xs={12} sm={6}>
-                                        <SelectLabeled idK={prev.name} options={optionList} collect={item} setCollect={setItem} field="level" defaultApiValue={prev?.level?.label} width="100%" placeholder="Mening mavzuyim emas.." />
+                                        <SelectLabeled idK={prev.name} options={optionList} collect={item} setCollect={setItem} field="level" 
+                                        defaultApiValue={ itemsLable(prev?.level?.label)} width="100%" 
+                                        placeholder={t("xizmatlar.mavzuEmas")} />
                                     </Grid>
                                 </Grid>
                             </Grid>
@@ -157,7 +165,8 @@ const Todos = ({state, setApiValue, setLoad}) => {
                                     </Grid>
                                     <Grid item xs={12} sm={6} md={6}>
                                         {/* <Select options={optionList} collect={item} setCollect={setItem} field="level" margin="24px 0 0 0" width="100%" placeholder={t("xizmatlar.ss")} /> */}
-                                        <Select options={optionList} collect={item} setCollect={setItem} field="level" margin="24px 0 0 0" width="100%" placeholder={t("xizmatlar.mavzuEmas")} />
+                                        <Select options={optionList} collect={item} setCollect={setItem} field="level" margin="24px 0 0 0" width="100%"
+                                         placeholder={t("xizmatlar.mavzuEmas")} />
                                     </Grid>
                                 </Grid>
                             </Grid>

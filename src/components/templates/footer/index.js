@@ -6,8 +6,9 @@ import tg from '../../../assets/img/footer/tg.svg'
 import f from '../../../assets/img/footer/f.svg'
 import i from '../../../assets/img/footer/i.svg'
 import { useTranslation } from 'react-i18next'
- 
-
+import logoss from '../../../assets/img/about/log.png'
+import { width } from '@mui/system'
+import './foter.css'
 const Index = () => {
     const location = useLocation()
     const { pathname } = location
@@ -21,19 +22,19 @@ const Index = () => {
         } else {
             setCheck(false)
         }
-       
+
     }, [])
     const mediaFlexContainer = {
         m_width: "800px",
         m_padding: "10px 0",
         m_textAlign: "center",
     }
-    function refreshBtn(){
-        window.scrollTo(0,0)
-      }
+    function refreshBtn() {
+        window.scrollTo(0, 0)
+    }
     return (
         <>
-        
+
             <FooterWrapper padding={check ? '0px' : "10px 0 0"}>
                 <div className='width1'>
                     <FlexContainer
@@ -83,7 +84,12 @@ const Index = () => {
                     </FlexContainer>
                 </div>
                 <div className="footer-bottom-comp" style={check ? { display: 'none' } : null}>
-                    <span>Copyright 2022 Gits.uz - All rights reserved. QWERTY AL-FAJR | Tashkent,Uzbekistan.</span>
+                    
+                        <pre className='preeee'>
+                            All rights reserved. Created by the <a href='https://www.instagram.com/afshon_official/' target="_blank"> <img src={logoss} width="25px"></img>
+                            QWERTY AL-FAJR  Compniy </a> | Tashkent,Uzbekistan.
+                        </pre>
+                  
                 </div>
 
             </FooterWrapper>

@@ -28,7 +28,8 @@ const Index = (props) => {
         >
             <Checkbox name={name1} setState={setState} state={state} field="is_synchronous"/>
             <Checkbox name={name2} setState={setState} state={state} field="is_consecutive"/>
-            <Checkbox name={name3} setState={setState} state={state} field="is_writer" setDefaultValue={setDefaultValue}/>
+            <Checkbox name={name3} setState={setState} state={state} field="is_writer" 
+            setDefaultValue={setDefaultValue}/>
         </FlexContainer>
     )
 }

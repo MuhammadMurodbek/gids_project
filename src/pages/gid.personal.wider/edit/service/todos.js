@@ -98,6 +98,13 @@ const Todos = ({ translateType, setTranslateType }) => {
         else return item
     }
 
+    const itemsLable = (item) => {
+        if (item === 'Mening mavzuim emas'|| item === "Не моя тематика") return t("Pismenniy_Xizmatlar.meningMavzuimEmas")
+        else if (item === 'A’lo' || item === "Отлично") return t("Pismenniy_Xizmatlar.alo")
+        else if (item === 'Yaxshi' || item === "Хорошо") return t("Pismenniy_Xizmatlar.yaxshi")
+        else if (item === 'O’rta' || "Среднее") return t("Pismenniy_Xizmatlar.orta")
+        else return item
+    }
 
 
 
@@ -122,7 +129,7 @@ const Todos = ({ translateType, setTranslateType }) => {
                                                         </TextTitle>
                                                     </Grid>
                                                     <Grid item xs={12} sm={6}>
-                                                        <SelectLabeled idK={prev.name} options={optionList} collect={item} setCollect={setItem} field="level" defaultApiValue={prev?.level?.label} width="100%" placeholder={t("xizmatlar.mavzuEmas")} />
+                                                        <SelectLabeled idK={prev.name} options={optionList} collect={item} setCollect={setItem} field="level" defaultApiValue={ itemsLable(prev?.level?.label)} width="100%" placeholder={t("xizmatlar.mavzuEmas")} />
                                                     </Grid>
                                                 </Grid>
                                             </Grid>

@@ -140,10 +140,12 @@ export default function Index() {
                                                 </div>
 
                                                 <div className="btn-groups">
-                                                    <Button onClick={() => deleteReply(prev?.id, prev?.replier_data?.full_name?.first_name)} type="outlined">O’chirish</Button>
-
+                                                    <Button onClick={() => deleteReply(prev?.id, prev?.replier_data?.full_name?.first_name)} type="outlined">
+                                                        {t("User_Arizalarim.ochirish")}
+                                                    </Button>
+ 
                                                     <Button onClick={()=>handleClick(prev?.replier_data?.full_name?.id, prev?.replier_role)}  className="btn-Pview">
-                                                        Profilni ko’rish
+                                                        {t("User_Arizalarim.profilniKorish")}
                                                     </Button>
                                                 </div>
 

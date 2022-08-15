@@ -254,10 +254,12 @@ const Index = () => {
                     </TextTitle>
                     <FlexContainer {...mediaFlexButtons} width="450px" margin="0 auto" alignItems="center" justifyContent="space-between">
 
-                        <Button width="200px" onClick={() => history.push('/gids')} {...mediaBtn}>{t("main.tanlash")}
+                        <Button className="nses" width="200px" onClick={() => history.push('/gids')} {...mediaBtn}>
+                            {t("main.tanlash")}
                         </Button>
 
-                        <Button width="220px" type="outlined" onClick={onClickbutton} {...mediaBtn}>{t("main.arizaQoldrirish")} </Button>&nbsp;
+                        <Button className="nses"  width="220px" type="outlined" onClick={onClickbutton} {...mediaBtn}>
+                            {t("main.arizaQoldrirish")} </Button>&nbsp;
 
                         {/* { 
                             getRole?.role === "translator" ? null

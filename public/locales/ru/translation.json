@@ -370,7 +370,7 @@
  
   "SeeProfile":{
     "Rqaytish":"Вернуться к списку",
-    "fikirQ":"Оставить комментарий"
+    "fikirQ":"Оставить отзыв"
   },
  
 
@@ -432,7 +432,7 @@
     "yomon":"Плохо",
     "judaYomon":"Очень плохо",
     "koproqYuklash":"Загрузить больше",
-    "fikirqoldirish":"Оставить комментарий",
+    "fikirqoldirish":"Оставить отзыв",
     "izohlar":" Отзывов еще нет ",
     "malumotKiritilmagan":"Информации нет",
     "videoYuklanmagan":"Видео не загружено.",
@@ -628,8 +628,8 @@
     "shaharlarSelect":"Выберите город",
     "save":"Сохранить",
     "tanlanmagan":"Cтрана или город не выбрано",
-    "mavzuYozing":"Напишите тему",
-    "mavzuEmas":"Не моя тема..",
+    "mavzuYozing":"Напишите тематика",
+    "mavzuEmas":"Не моя тематика",
     "tarjima":"Выберите вид перевода",
     "Izchil":"Последовательный",
     "Sinxron":"Синхронный"
@@ -938,7 +938,8 @@
     "arizalarim":"Мои заявки",
     "MalumotlarniTaxrirlash":"Редактировать мою информацию",
     "profilSozlamalari":"Настройки профиля",
-
+    "ochirish":"Удалить",
+    "profilniKorish":"Просмотреть профиль",
     "shaharniK":"Введите город"
    },
    "User_MalumotlarniTax":{
@@ -980,7 +981,6 @@
     "arizalarim":"Мои заявки",
     "MalumotlarniTaxrirlash":"Редактировать мою информацию",
     "profilSozlamalari":"Настройки профиля",
-    
     "kontaktlar":"Контакты",
     "parolniYangilash":"Обновить пароль",
     "telefonvaemail":"Телефон и e-mail",
@@ -1008,14 +1008,15 @@
     "ishKunlarim":"Свободные дни",
     "bandKunlarim":"Рабочие дни",
     "saqlash":"Сохранить"
-
   },
+
   "toifalar":{
     "oliyToifali":"Высшая категория",
     "birinchiToifali":"Первая категория",
     "ikkinchiToifali":"Вторая категория",
     "toifasizToifali":"Без категории"
   },
+
   "mutahasis":{
     "oliy":"Высшее",
     "ortaMahsus":"Среднее специальное"

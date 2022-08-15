@@ -25,8 +25,13 @@ const Index = ({data}) => {
     const history = useHistory()
     const handleClick = (id, role) => {
         history.push(`/seeprofile?id=${id}&role=${role}`)
+        window.scrollTo(0,0)
     }
     // console.log(data)
+
+    function totop(){
+        window.scrollTo(0,0)
+    }
     return (
         <WrapperInfoBtn>
             <FlexContainer  width="100%" height="100%" alignItems="center" justifyContent="space-between" flexDirection="column">

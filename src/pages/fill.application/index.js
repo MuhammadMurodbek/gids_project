@@ -232,7 +232,9 @@ const Index = () => {
                         </Grid>
                     </Container>
                     <Container width="100%" textAlign="center" >
-                        <Button loader={responseHook?.loading} {...mediaBtn}>&nbsp; {t("arizaqoldirish.Ayuborish")} </Button>
+                        <Button loader={responseHook?.loading} {...mediaBtn}>
+                            &nbsp; {t("arizaqoldirish.Ayuborish")}
+                         </Button>
                     </Container>
                 </Container>
             </Container>

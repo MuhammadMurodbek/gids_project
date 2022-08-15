@@ -39,7 +39,7 @@ const Index = ({ data, role }) => {
     }
 
     const itemsName = (item) => {
-        
+
         if (item === 'Umumiy mavzular') return t("tematika.umumiyM")
         else if (item === 'Jamiyat va siyosat') return t("tematika.jamiyatS")
         else if (item === 'Iqtisodiyot va moliya') return t("tematika.IqtisodiyotM")
@@ -68,9 +68,7 @@ const Index = ({ data, role }) => {
                             </TextSpan>} />
                             <br />
                             <Text title={t("Pismenniy_Xizmatlar.ogzakit")}
-                                text={<span>&nbsp;{data?.can_oral_translate ? t("Pismenniy_Xizmatlar.haS") : t("Pismenniy_Xizmatlar.yoq")}&nbsp;
-                                </span>} />
-
+                                text={<span>&nbsp;{data?.can_oral_translate ? t("Pismenniy_Xizmatlar.haS") : t("Pismenniy_Xizmatlar.yoq")}&nbsp;</span>} />
                             <br />
                             <Text title={t("Pismenniy_Xizmatlar.shoshilikch")} text={<span>&nbsp;{data?.express_order ? t("Pismenniy_Xizmatlar.ha") : t("Pismenniy_Xizmatlar.yoq")}&nbsp;</span>} />
                             <br />
@@ -92,8 +90,9 @@ const Index = ({ data, role }) => {
                                     data?.themes?.map((prev, index) => (
                                         <Text key={index} display="block" text={<>
                                             <TextSpan>
-                                             {itemsName(prev?.name)}
-                                            </TextSpan> - <TextSpan style={{ fontWeight: '400' }}>{obj[prev?.level]}</TextSpan></>} />
+                                                {itemsName(prev?.name)}
+                                            </TextSpan>  <TextSpan style={{ fontWeight: '400' }}>
+                                                {obj[prev?.level]}</TextSpan></>} />
                                     ))
                                 }
                             </div>
@@ -110,7 +109,7 @@ const Index = ({ data, role }) => {
                             data?.themes?.map((prev, index) => (
                                 <Text key={index} display="block" text={<>
                                     <TextSpan>
-                                    {itemsName(prev?.name)}
+                                        {itemsName(prev?.name)}
                                     </TextSpan> - <TextSpan style={{ fontWeight: '400' }}>{obj[prev?.level]}</TextSpan></>} />
                             ))
                         }

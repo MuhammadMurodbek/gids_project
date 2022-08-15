@@ -30,11 +30,10 @@ const Index = ({ data, commentCount }) => {
         else return '0'
     }
 
-    const getRole = JSON.parse(localStorage.getItem("user_token"));
+    const getRole = data?.role;
     //  console.log(data?.currency_per_day + " " + data?.currency_per_day +  " ----------------");
     // console.log(data?.costs[0].cost_per_day);
     // console.log(data?.costs[0].currency_per_day);
-    // console.log(data);
     // console.log(commentCount?.all + "-----------");
     // console.log(getRole.role);
      
@@ -55,8 +54,8 @@ const Index = ({ data, commentCount }) => {
                 </Grid>
 
                 {
-                    getRole?.role == "writer" ? "" :
-                    getRole?.role == "translator" ? 
+                    getRole == "writer" ? null :
+                    getRole == "translator" ? 
                     <>
                             <Grid container spacing={1} className="info-item">
                                 <Grid item sm={3}>
@@ -65,7 +64,7 @@ const Index = ({ data, commentCount }) => {
                                 <Grid item sm={9} style={{ display: 'flex' }}>
                                     <span className='text_fild'>{t("Gid_Tanlash.kuniga")}</span>
                                     <div className="c_per_day comm_val ">
-                                        {pay(data?.costs[0].cost_per_day) + " " + curr(data?.costs[0].currency_per_day) || '0'}
+                                        {pay(data?.costs[0].cost_per_day) + "" + curr(data?.costs[0].currency_per_day) || '0'}
      
                                     </div>
                                 </Grid>
@@ -77,7 +76,7 @@ const Index = ({ data, commentCount }) => {
                                 <Grid item sm={9} style={{ display: 'flex' }}>
                                     <span className='text_fild'>{t("Gid_Tanlash.soatiga")}</span>
                                     <div className="c_per_day comm_val">
-                                        {pay(data?.costs[0]?.cost_per_hour) + " " + curr(data?.costs[0]?.currency_per_hour) || '0'}
+                                        {pay(data?.costs[0]?.cost_per_hour) + "" + curr(data?.costs[0]?.currency_per_hour) || '0'}
                                     </div>
                                 </Grid>
                             </Grid>
@@ -91,7 +90,7 @@ const Index = ({ data, commentCount }) => {
                                 <Grid item sm={9} style={{ display: 'flex' }}>
                                     <span className='text_fild'>{t("Gid_Tanlash.kuniga")}</span>
                                     <div className="c_per_day comm_val ">
-                                        {pay(data?.cost_per_day) + " " + curr(data?.currency_per_day) || '0'}
+                                        {pay(data?.cost_per_day) + "" + curr(data?.currency_per_day) || '0'}
      
                                     </div>
                                 </Grid>
@@ -103,7 +102,7 @@ const Index = ({ data, commentCount }) => {
                                 <Grid item sm={9} style={{ display: 'flex' }}>
                                     <span className='text_fild'>{t("Gid_Tanlash.soatiga")}</span>
                                     <div className="c_per_day comm_val ">
-                                        {pay(data?.cost_per_hour) + " " + curr(data?.currency_per_hour) || '0'}
+                                        {pay(data?.cost_per_hour) + "" + curr(data?.currency_per_hour) || '0'}
                                     </div>
                                 </Grid>
                             </Grid>
