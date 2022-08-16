@@ -11,9 +11,7 @@ import './main.css'
 
 const Index = ({ data, commentCount }) => {
     const { t } = useTranslation()
-    // console.log(data?.currency_per_day)
     const curr = (item) => {
-        // console.log(item)
         if (item === 'USD') return '$'
         else if (item === 'UZS') return 'S'
         else if (item === 'RUB') return 'R'
@@ -29,16 +27,8 @@ const Index = ({ data, commentCount }) => {
         if (item) return Math.trunc(item)
         else return '0'
     }
-
-    const getRole = data?.role;
-    //  console.log(data?.currency_per_day + " " + data?.currency_per_day +  " ----------------");
-    // console.log(data?.costs[0].cost_per_day);
-    // console.log(data?.costs[0].currency_per_day);
-    // console.log(commentCount?.all + "-----------");
-    // console.log(getRole.role);
-     
     return (
-        <WrapperInfoF2 className='WrapperInfoF2'>
+        <WrapperInfoF2>
             <FlexContainer width="auto" alignItems="center" justifyContent="flex-start" flexDirection="column">
                 <Grid container spacing={1} className="info-item">
                     <Grid item sm={3}><ImgContainer src={starImg} width="30px" /></Grid>
@@ -52,62 +42,32 @@ const Index = ({ data, commentCount }) => {
                         {commentCount?.all || '0'}</div>
                     </Grid>
                 </Grid>
-
-                {
-                    getRole == "writer" ? null :
-                    getRole == "translator" ? 
-                    <>
-                            <Grid container spacing={1} className="info-item">
-                                <Grid item sm={3}>
-                                    <ImgContainer src={extraImg} width="30px" />
-                                </Grid>
-                                <Grid item sm={9} style={{ display: 'flex' }}>
-                                    <span className='text_fild'>{t("Gid_Tanlash.kuniga")}</span>
-                                    <div className="c_per_day comm_val ">
-                                        {pay(data?.costs[0].cost_per_day) + "" + curr(data?.costs[0].currency_per_day) || '0'}
-     
-                                    </div>
-                                </Grid>
-                            </Grid>
-                            <Grid container spacing={1} className="info-item">
-                                <Grid item sm={3}>
-                                    <ImgContainer src={extraImg} width="30px" />
-                                </Grid>
-                                <Grid item sm={9} style={{ display: 'flex' }}>
-                                    <span className='text_fild'>{t("Gid_Tanlash.soatiga")}</span>
-                                    <div className="c_per_day comm_val">
-                                        {pay(data?.costs[0]?.cost_per_hour) + "" + curr(data?.costs[0]?.currency_per_hour) || '0'}
-                                    </div>
-                                </Grid>
-                            </Grid>
-                        </> 
-                        :
-                        <>
-                            <Grid container spacing={1} className="info-item">
-                                <Grid item sm={3}>
-                                    <ImgContainer src={extraImg} width="30px" />
-                                </Grid>
-                                <Grid item sm={9} style={{ display: 'flex' }}>
-                                    <span className='text_fild'>{t("Gid_Tanlash.kuniga")}</span>
-                                    <div className="c_per_day comm_val ">
-                                        {pay(data?.cost_per_day) + "" + curr(data?.currency_per_day) || '0'}
-     
-                                    </div>
-                                </Grid>
-                            </Grid>
-                            <Grid container spacing={1} className="info-item">
-                                <Grid item sm={3}>
-                                    <ImgContainer src={extraImg} width="30px" />
-                                </Grid>
-                                <Grid item sm={9} style={{ display: 'flex' }}>
-                                    <span className='text_fild'>{t("Gid_Tanlash.soatiga")}</span>
-                                    <div className="c_per_day comm_val ">
-                                        {pay(data?.cost_per_hour) + "" + curr(data?.currency_per_hour) || '0'}
-                                    </div>
-                                </Grid>
-                            </Grid>
-                        </>
+                {data?.hasOwnProperty('cost_per_day') &&
+                    <Grid container spacing={1} className="info-item">
+                        <Grid item sm={3}>
+                            <ImgContainer src={extraImg} width="30px" />
+                        </Grid>
+                        <Grid item sm={9} style={{ display: 'flex' }}>
+                            <span className='text_fild'>{t("Gid_Tanlash.kuniga")}</span>
+                            <div className="c_per_day comm_val ">
+                                {pay(data?.cost_per_day) + " " + curr(data?.currency_per_day) || '0'}
+                            </div>
+                        </Grid>
+                    </Grid>
+                }{data?.hasOwnProperty('cost_per_hour') &&
+                    <Grid container spacing={1} className="info-item">
+                        <Grid item sm={3}>
+                            <ImgContainer src={extraImg} width="30px" />
+                        </Grid>
+                        <Grid item sm={9} style={{ display: 'flex' }}>
+                            <span className='text_fild'>{t("Gid_Tanlash.soatiga")}</span>
+                            <div className="c_per_day comm_val ">
+                                {pay(data?.cost_per_hour) + " " + curr(data?.currency_per_hour) || '0'}
+                            </div>
+                        </Grid>
+                    </Grid>
                 }
+
             </FlexContainer>
         </WrapperInfoF2>
     )
