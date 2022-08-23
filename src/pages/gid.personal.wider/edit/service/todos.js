@@ -138,7 +138,7 @@ const Todos = ({ translateType, setTranslateType }) => {
                             </Grid>
                         </Box>
                         <Container padding="10px 0">
-                            <Box sx={{ flexGrow: 1 }}>
+                             <Box sx={{ flexGrow: 1 }}>
                                 <Grid container columnSpacing={3} alignItems="center" justifyContent="space-between">
                                     <Grid item xs={12} sm={10} md={6}>
                                         <Grid container spacing={1}>

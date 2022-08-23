@@ -46,7 +46,7 @@ console.log("ddd ");
                                             <p className="services_1">{objApi2[item?.tariff?.name] || "Ma'lumot mavjud emas !!"}</p>
                                             {/* <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent aliquam sit ornare mattis id non aliquam convallis ut.</span> */}
                                             <div className="right-prise">
-                                            <b className="price_part">{t("tariflar.tolovSumma")} {item?.tariff?.price || '0'} {t("tariflar.som")}</b>
+                                            <b className="right-b">{t("tariflar.tolovSumma")} {item?.tariff?.price || '0'} {t("tariflar.som")}</b>
                                             <b className="right-b">{t("tariflar.olinganSana")} 
                                             {moment(item?.created_date).format('DD.MM.YYYY') || '01.01.2000'} 
                                              </b>

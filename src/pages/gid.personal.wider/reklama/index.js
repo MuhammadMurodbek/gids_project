@@ -75,7 +75,7 @@ export default function Index() {
                                         <span className="spansa">{objApiText2[myTarif.data?.tariff?.name]}</span>
                                     </div>
                                     <div className="right-prise">
-                                        <b> {t("tariflar.tolovMiqdori")} {myTarif?.data?.tariff?.price || '0'} {t("reklama.som")}</b>
+                                        <b className="right-b"> {t("tariflar.tolovMiqdori")} {myTarif?.data?.tariff?.price || '0'} {t("reklama.som")}</b>
                                         <b className="right-b">{t("tariflar.muddati")} {moment(myTarif?.data?.top_until_date).format('DD.MM.YYYY') || '01.01.2000'}  {t("tariflar.gacha")}</b>
 
                                         {/* {console.log(myTarif?.data?.top_until_date + " hozirgi")} */}

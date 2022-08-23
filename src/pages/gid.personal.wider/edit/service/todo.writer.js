@@ -161,7 +161,7 @@ const Todos = ({state, setApiValue, setLoad}) => {
                             <Grid item xs={12} sm={10} md={6}>
                                 <Grid container spacing={1}>
                                     <Grid item xs={12} sm={6} md={6} >
-                                        <InputLabeled state={item} setState={setItem} field="name" width="100%" placeholder={t("xizmatlar.mavzuYozing")} />
+                                        <InputLabeled state={item} setState={setItem} field="name" width="100%" placeholder={t("xizmatlar.mavzuYozingu")} />
                                     </Grid>
                                     <Grid item xs={12} sm={6} md={6}>
                                         {/* <Select options={optionList} collect={item} setCollect={setItem} field="level" margin="24px 0 0 0" width="100%" placeholder={t("xizmatlar.ss")} /> */}
