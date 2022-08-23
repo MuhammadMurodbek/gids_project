@@ -128,5 +128,9 @@ export const Wrapper = styled.div`
         display: flex;
         justify-content: flex-end;
     }
+    .external_div{
+        margin-left:60px;
+        font-style:italic;
+    }
 
  `

@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Wrapper } from './style'
 import { Link } from 'react-router-dom'
 import { Grid } from '@material-ui/core';
@@ -12,8 +12,6 @@ import narx from '../../../assets/img/request/narx.svg';
 import odamlar from '../../../assets/img/request/odamlar.svg';
 import Button from "../../atom/button";
 import til from '../../../assets/img/request/til.svg';
-// import imgpen from '../../../assets/img/request/pen#fff.svg';
-// import ImgContainer from "../../../components/molecules/img.container";
 import CloseIcon from '@material-ui/icons/Close';
 import Modal from 'react-awesome-modal';
 import { useParams } from 'react-router-dom';
@@ -25,11 +23,10 @@ import { getResponse } from '../../../hooks/response_get';
 import moment from 'moment';
 import {getLabelLangLocal} from "../../../custom/function"
 
-export default function Index({applicationData, setApplicationData, btnText, url}) {
+export default function Index({btnText}) {
     const [comment, setComment] = useState('')
     const [getData, setGetData] = useState({ success: '', error: '' })
     const [response, setResponse] = useState({ success: '', error: '' })
-    // const [applicationData, setApplicationData] = useState({ success: '', error: '', loading: false })
     const getRole = JSON.parse(localStorage.getItem("user_token"))
 
     const { id } = useParams()
@@ -73,18 +70,15 @@ export default function Index({applicationData, setApplicationData, btnText, url
     }, [response])
   
     function setText(e) {
-        // console.log(e.target.value)
         setComment(e.target.value)
     }
  
     const i18lang = localStorage.getItem("i18nextLng")
     let who_need2 = ""
     getData?.success?.data?.who_need === "gitd" ? who_need2 = t("kengaytirlgan_Q.gid") : who_need2 = t("auth_registr.yozmaT")
-    
 
     let a1 = getData?.success?.data?.languages.length;
-
-
+    let dataApi = getData?.success?.data
     return (
         <Wrapper>
             <Grid container spacing={1} direction="row" justifyContent="center" className="freque">
@@ -133,8 +127,17 @@ export default function Index({applicationData, setApplicationData, btnText, url
                     <div className="tafsilot-text">
                         <b> <ImageContainer src={narx} /></b>
                         <b>{t("ToliqAriza.kimKerak")} </b>
-                        <p>{who_need2}</p>
+                        <p>{dataApi?.who_need}</p>
                     </div>
+                    {
+                        dataApi?.who_need === 'translator' && 
+                        <div className='external_div'>
+                            <span>{dataApi?.is_consecutive && "Consecutive"}</span>
+                            <span>{dataApi?.is_synchronous && ", Synchronous"}</span>
+                            <span>{dataApi?.is_writer && ", Writer"}</span>
+                        </div>
+                    }
+                   
                     <div className="tafsilot-text">
                         <b> <ImageContainer src={til} /></b>
                         <b>{t("ToliqAriza.tillar")} </b>
