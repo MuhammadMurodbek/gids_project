@@ -8,17 +8,13 @@ import InfoBtn from "../../molecules/info.btn.f2"
 import RoundImage from "../../../assets/img/gid-personal/no_user.png"
 import { Grid } from '@material-ui/core'
 import { TextTitle } from '../../../styles/textTitle/index.style'
-// import TruncateText from "../../molecules/text.truncate"
 import { useTranslation } from 'react-i18next'
-// import { getLabelCity } from "../../../custom/function"
 const media_container = {
     m_width: "600px",
     m_padding: "10px 0",
 }
-
 const Index = ({ data }) => {
     const lang = localStorage.getItem('i18nextLng')
-    // const getRole = JSON.parse(localStorage.getItem("user_token"))
     const { t } = useTranslation()
     const languageCheck = (item, lang) => {
         if (data?.role === 'writer') {
@@ -26,19 +22,15 @@ const Index = ({ data }) => {
             if (lang === 'ru') return item?.from_language__name_ru + " - " + item?.to_language__name_ru
             if (lang === 'uz') return item?.from_language__name_uz + " - " + item?.to_language__name_uz
         } else {
-            if (lang === 'en') return data?.role == "gid" ?  item?.language__name_en :  item?.from_language__name_en + " - " + item?.to_language__name_en
-            if (lang === 'ru') return data?.role == "gid" ?  item?.language__name_ru :  item?.from_language__name_ru + " - " + item?.to_language__name_ru
-            if (lang === 'uz') return data?.role == "gid" ?  item?.language__name_uz :  item?.from_language__name_uz + " - " + item?.to_language__name_uz
+            if (lang === 'en') return data?.role === "gid" ?  item?.language__name_en :  item?.from_language__name_en + " - " + item?.to_language__name_en
+            if (lang === 'ru') return data?.role === "gid" ?  item?.language__name_ru :  item?.from_language__name_ru + " - " + item?.to_language__name_ru
+            if (lang === 'uz') return data?.role === "gid" ?  item?.language__name_uz :  item?.from_language__name_uz + " - " + item?.to_language__name_uz
         }
 
     } 
-  
-
     let new_yosh = data?.age;
     let nyosh = new_yosh % 10
     let yosh11 = "";
-
-
     if(nyosh === 1){
         yosh11 = t("yoshlar.god")
     }
@@ -48,13 +40,7 @@ const Index = ({ data }) => {
     else if(nyosh === 0 || nyosh >= 5){
         yosh11 = t("yoshlar.let")
     }
-
-
-
-
-    // console.log(data)
     return (
-        // <Badge.Ribbon text="TOP" color="red">
         <WrapperContainer>
             <Grid container spacing={1}>
                 <Grid item xs={12} sm={3}>
@@ -80,19 +66,12 @@ const Index = ({ data }) => {
                             {t("Gid_Tanlash.tillar")} :
                                 </div>
                             {
-                                data?.languages.length > 0 ?
+                                data?.languages?.length > 0 ?
                                     data?.languages?.map((prev, index) => " " + languageCheck(prev, lang) + `${index !== data?.languages?.length - 1 ? ',' : ''}`) : t("GidPk.malumotKiritilmagan")
                             }
                         </div>
                         <div className="gid-info-personal-text">
                             <div className="bio_text"><div className="bold_text">{t("Gid_Tanlash.OzimHaqimda")}:</div> {data?.bio ? data?.bio?.slice(0,300)+"..." : t("GidPk.malumotKiritilmagan")}</div>
-                            {/* <div className="text" style={{display:'inline-block'}}>  {t("Gid_Tanlash.OzimHaqimda")} :</div> */}
-                            {/* <TruncateText
-                                width="auto"
-                                // margin="-20px 0 0 0px"
-                                line={6}
-                                text={<div style={{textAlign:'justify'}}> <span className="text" style={{ display: 'inline-block', fontWeight:'bold !important' }}>  {t("Gid_Tanlash.OzimHaqimda")} :</span>   {data?.bio || "Ma'lumot kiritilmagan"}</div>}
-                            /> */}
                         </div>
                     </Container>
                 </Grid>
@@ -101,7 +80,6 @@ const Index = ({ data }) => {
                 </Grid>
             </Grid>
         </WrapperContainer>
-        // </Badge.Ribbon>
     )
 }
 

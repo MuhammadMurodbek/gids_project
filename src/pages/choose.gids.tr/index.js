@@ -1,19 +1,14 @@
 import { Grid } from '@material-ui/core'
 import React, { useEffect, useState } from 'react'
-import { useHistory } from "react-router-dom"
 import { Container } from '../../styles/container/index.style'
-import { TextTitle } from '../../styles/textTitle/index.style'
 import { Wrapper } from './style'
 import ExtendedSearch from "../../components/extended.search"
 import ContainerMap from "../../components/templates/container.temp.f2"
 import ImageContainer from "../../components/molecules/img.container"
 import Adds from "../../assets/img/choosegid/bn1.png"
 import Adds2 from "../../assets/img/choosegid/bn2.png"
-import { mediaTextField, mediaTextFieldSec } from "../../custom/global.media.variables"
-import { useTranslation } from 'react-i18next'
 import { getApiResponse } from "../../hooks/response_get"
 import { Pagination } from 'antd';
-import Spinner from "../../components/atom/loading.spinner.line"
 import { searchToObject } from "../../custom/function"
 import TestComponent from "../../components/templates/test.component"
 
@@ -26,9 +21,6 @@ const mediaGridUSers = {
     m_width: "768px",
 }
 const Index = () => {
-
-    const { t } = useTranslation()
-    const history = useHistory()
     let query = window.location.search
     const [queryObj, setQueryObj] = useState(null)
     const [typeQuery, setTypeQuery] = useState('gid')
@@ -49,12 +41,9 @@ const Index = () => {
     }, [query, pagination, callback])
 
     const onChange = (pageNumber) => {
-        // console.log(pageNumber)
         setPagination({ current: pageNumber || 1 })
         window.scrollTo(0, 0)
     }
-    // console.log(state)/
-    
     return (
         <Wrapper>
 

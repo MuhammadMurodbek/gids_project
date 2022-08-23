@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import {
     WrapperAll,
     ComponentOne,
@@ -9,7 +9,11 @@ import {
 } from "./index.style"
 import ExtSearch from "../../components/extended.search"
 // import mainPicture from "../../assets/img/guid.svg"
+<<<<<<< HEAD
 import mainPicture from "../../assets/img/about/g222.png"
+=======
+import mainPicture from "../../assets/img/image.jpg"
+>>>>>>> 46a2891289e78e4415cfd2fbc20b1bbaab4ba9ef
 import Grid from '@material-ui/core/Grid';
 import Button from "../../components/atom/button"
 import ImgContainer from "../../components/molecules/img.container"
@@ -34,7 +38,6 @@ import img1 from '../../assets/img/main/samarqand.webp'
 import img2 from '../../assets/img/main/ee.jpg'
 import img3 from '../../assets/img/main/we.jpg'
 import img4 from '../../assets/img/main/wee.jpg'
-import img5 from '../../assets/img/main/ds.jpg'
 import './main1.css'
 
 
