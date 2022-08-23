@@ -9,11 +9,9 @@ import {
 } from "./index.style"
 import ExtSearch from "../../components/extended.search"
 // import mainPicture from "../../assets/img/guid.svg"
-<<<<<<< HEAD
-import mainPicture from "../../assets/img/about/g222.png"
-=======
-import mainPicture from "../../assets/img/image.jpg"
->>>>>>> 46a2891289e78e4415cfd2fbc20b1bbaab4ba9ef
+//  import mainPicture from "../../assets/img/about/g222.png"
+ import mainPicture from "../../assets/img/image.jpg"
+ 
 import Grid from '@material-ui/core/Grid';
 import Button from "../../components/atom/button"
 import ImgContainer from "../../components/molecules/img.container"
