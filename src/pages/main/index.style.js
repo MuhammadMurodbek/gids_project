@@ -94,14 +94,12 @@ export const ComponentOne = styled.div`
         img{
             /* min-width:400px; */
             width: 850px;
-<<<<<<< HEAD
             // margin-top:140px;
             object-fit: cover;
-=======
-            height:938px;
-            margin-top:40px;
+
+            // height:938px;
+            // margin-top:40px;
             // object-fit: cover;
->>>>>>> 46a2891289e78e4415cfd2fbc20b1bbaab4ba9ef
 
             @media (max-width: 444px){
                 width:280px !important;
@@ -124,7 +122,7 @@ export const ComponentTwo = styled.div`
     @media (max-width:440px){
         padding:10px 4px;
         .btn_medida_last{
-            width:250px !important;
+            // width:250px !important;
             margin-top:10px
         }
         .newst{

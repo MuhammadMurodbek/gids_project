@@ -22,7 +22,7 @@ import toast from 'react-hot-toast';
 import { getResponse } from '../../../hooks/response_get';
 import moment from 'moment';
 import {getLabelLangLocal} from "../../../custom/function"
-
+import './main.css'
 export default function Index({btnText}) {
     const [comment, setComment] = useState('')
     const [getData, setGetData] = useState({ success: '', error: '' })
@@ -127,16 +127,16 @@ export default function Index({btnText}) {
                     <div className="tafsilot-text">
                         <b> <ImageContainer src={narx} /></b>
                         <b>{t("ToliqAriza.kimKerak")} </b>
-                        <p>{dataApi?.who_need}</p>
-                    </div>
-                    {
+                        {/* <p>{dataApi?.who_need}</p> */}
+                    { 
                         dataApi?.who_need === 'translator' && 
-                        <div className='external_div'>
-                            <span>{dataApi?.is_consecutive && "Consecutive"}</span>
-                            <span>{dataApi?.is_synchronous && ", Synchronous"}</span>
-                            <span>{dataApi?.is_writer && ", Writer"}</span>
-                        </div>
+                        <>
+                            <span>{dataApi?.is_consecutive && ", izchil"}</span>
+                            <span>{dataApi?.is_synchronous && ", sinhron"}</span>
+                            <span>{dataApi?.is_writer && ", yozma"}</span>
+                        </>
                     }
+                    </div>
                    
                     <div className="tafsilot-text">
                         <b> <ImageContainer src={til} /></b>
