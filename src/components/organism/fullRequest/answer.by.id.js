@@ -23,6 +23,7 @@ import { getResponse } from '../../../hooks/response_get';
 import moment from 'moment';
 import {getLabelLangLocal} from "../../../custom/function"
 import './main.css'
+
 export default function Index({btnText}) {
     const [comment, setComment] = useState('')
     const [getData, setGetData] = useState({ success: '', error: '' })
