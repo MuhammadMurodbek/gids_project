@@ -19,6 +19,10 @@ export default function index(props) {
         let url = `/api/posts/article/?tag=${hteg}`
         getResponse(url, setState)
     }
+
+    function totopp(){
+        window.scrollTo(0,0)
+    }
     return (
         <Wrapper>
             <Grid className="msa" container spacing={1}>
@@ -41,9 +45,9 @@ export default function index(props) {
                     </div>
                      */}
                      
-                    <div className='div_foot'>
+                    <div className='div_foot' onClick={totopp}>
 
-                        <Link className="text-link" to={`/blog/${myApp ? 'my' : 'user'}/${id}`}>
+                        <Link className="text-link" to={`/blog/${myApp ? 'my' : 'user'}/${id}`}   >
                             {btnText}
                             {btnText === "Tahrirlash" ?
                                 <img className='penimg' src={imgpen} alt="asdf"></img>

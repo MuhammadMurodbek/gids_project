@@ -11,6 +11,9 @@ export const Wrapper = styled.div`
      .text_aa{
         text-aligin:justify !important;
     }
+    @media (max-width:450px){
+        padding:10px 30px;
+        }
  `
 
 export const ComponentTwo = styled.div`

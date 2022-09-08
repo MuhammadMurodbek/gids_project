@@ -5,3 +5,9 @@
     padding: 30px !important;
     padding-bottom: 38px !important;
 }
+@media(max-width:450px){
+    .msa{
+        padding: 0px !important;
+        padding-bottom: 38px !important;
+    }
+}

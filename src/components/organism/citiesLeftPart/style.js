@@ -35,6 +35,7 @@ export const Wrapper = styled.div`
         display:flex;
         aligin-items:center;
         justify-content: space-between;
+       
     }
  
    

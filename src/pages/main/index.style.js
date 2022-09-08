@@ -56,9 +56,7 @@ export const ComponentOne = styled.div`
 
     @media (max-width:444px){
         padding:10px 4px;
-    }
-
-   
+    }  
     .paper{
         padding: theme.spacing(2);
         text-align: 'center';

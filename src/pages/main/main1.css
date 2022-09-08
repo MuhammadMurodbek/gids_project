@@ -1,9 +1,13 @@
 .img_main{
-    /* width:75% !important */
- 
-    width:100% !important;
- 
+    /* width:75% !important */ 
+    width:99.5% !important;
 }
+@media(min-width:1367px){
+    .img_main{
+        width: 93% !important;
+    }
+}
+ 
 .nses{
     margin-top: 10px;
 }

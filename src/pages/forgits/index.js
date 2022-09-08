@@ -18,7 +18,7 @@ import { Link } from 'react-router-dom';
 import { useHistory } from "react-router-dom"
 import { mediaTextField, mediaTextFieldSec, mediaImage, mediaBtn } from "../../custom/global.media.variables"
 import { useTranslation } from 'react-i18next'
-
+import './forgit.css'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -45,7 +45,9 @@ export default function Index() {
                         <Grid item xs={12} md={6} sm={12}>
                             <div className="container-2-1">
                                 <TextTitle {...mediaTextField} {...mediaTextFieldSec} align="left" bottom="30px" font="48px" lineHeight="56px">
-                                    {t("gidlar_uchun.title")}
+                                    <p className='tilefor'>
+                                      {t("gidlar_uchun.title")}
+                                    </p>
                                 </TextTitle>
 
                                 <Link to="/auth">
@@ -61,8 +63,11 @@ export default function Index() {
                 </ComponentTwo>
 
                 <Takliflar>
-                    <TextTitle {...mediaTextField} {...mediaTextFieldSec} top="100px" bottom="100px">
-                        {t("gidlar_uchun.takliflarimiz")}
+                    <TextTitle {...mediaTextField} {...mediaTextFieldSec} >
+                        <p className='takliflar'>
+                           {t("gidlar_uchun.takliflarimiz")}
+                        </p>
+
                     </TextTitle>
                     <Grid container spacing={1} direction="row">
                         <Grid className="text1" item xs={12} md={4} sm={12}>

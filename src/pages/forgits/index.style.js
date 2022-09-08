@@ -19,11 +19,12 @@ export const TextColor = styled.span`
 `
 export const Takliflar = styled.div`
     padding: 10px 90px;  
-    margin: 50px 0;
+ 
     @media (min-width:1367px){
         width: 1400px ;
         margin: 0 auto;
     }
+    
     @media (max-width: 768px) {
         .text{
             padding:0 5px !important;
@@ -32,6 +33,9 @@ export const Takliflar = styled.div`
         .sc-lmoMya.bRHnII{
             margin:20px 0;
         }
+    }
+    @media(max-width:450px){
+        margin: 0;
     }
         .text1{
             text-align: center;
