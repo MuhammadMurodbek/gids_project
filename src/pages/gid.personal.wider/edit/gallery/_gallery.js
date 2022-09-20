@@ -14,7 +14,7 @@ const Gallery = ({ role, setCallback }) => {
     name: "video",
     multiple: false,
     method: "PUT",
-    action: `http://165.232.76.226/api/${role}s/edit/video/`,
+    action: `https://api.gits.uz/api/${role}s/edit/video/`,
     headers: {
       Authorization: `Bearer ${token?.access}`,
     },

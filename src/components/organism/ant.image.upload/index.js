@@ -54,7 +54,7 @@ class Avatar extends React.Component {
         listType="picture-card"
         className="avatar-uploader"
         showUploadList={false}
-        action="http://165.232.76.226/api/users/edit/"
+        action="https://api.gits.uz/api/users/edit/"
         beforeUpload={beforeUpload}
         onChange={this.handleChange}
       >
