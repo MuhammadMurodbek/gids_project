@@ -10,11 +10,10 @@ import WriterIndex from "./yozma"
 // import { Container } from '../../../../styles/container/index.style'
 // import { TextTitle } from '../../../../styles/textTitle/index.style'
 // import DoubleRadioLabel from "../../../../components/molecules/double.radio.labeled"
-import {option_yes, Option_yes_sec, objDefault} from "./_const"
+import {objDefault} from "./_const"
 // import MultiValueInput from '../../../../components/molecules/multivalue.input'
 // import Todos from "./todo.writer"
 const Index = () => {
-    const [state, setState] = useState(objDefault)
     const getRole = JSON.parse(localStorage.getItem("user_token"))
     // console.log(state)
 

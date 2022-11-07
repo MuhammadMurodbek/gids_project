@@ -32,7 +32,7 @@ export default function Index() {
     const [commentApi, setCommentApi] = useState({success:'', error:''})
     useEffect(() => { 
         getResponse(`/api/${role}s/profiles/${id}/`, setApiData, true) 
-    }, [])
+    }, []);
     useEffect(() => { 
         if(apiData?.success && apiData?.success?.data?.custom_user_id)
             getResponse(`/api/users/rating/${apiData?.success?.data?.custom_user_id}/`, setCommentApi, true) 

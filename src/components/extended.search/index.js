@@ -25,22 +25,22 @@ const  Index = ({loader, queryObj}) => {
     const handleSubmit = () => { 
 
         // console.log(collect?.search_type + " -=-=-=")
-        let  search_type22 = null;
-        if(collect?.search_type == "online"){
-            search_type22 = true
-            console.log(search_type22);
-        }
-        else if(collect?.search_type == "all"){
-            search_type22 = false
-            console.log(search_type22);
-        }
+        let search_type22 = collect?.search_type == "online";
+        // if(collect?.search_type == "online"){
+        //     search_type22 = true
+        //     console.log(search_type22);
+        // }
+        // else if(collect?.search_type == "all"){
+        //     search_type22 = false
+        //     console.log(search_type22);
+        // }
 
         // setStartVal(true)
         
         let array = Object.keys(collect)
         if(array?.length>=9 && collect?.languages?.length>0){
             setPostData({ ...postData, loading: true })
-            let urlOther = `type=${innerTr?.is_writer ? 'writer' : collect?.type}&gender=${(collect?.male && collect?.female)? undefined: collect?.male ? 'male' : collect?.female ? 'female' : undefined}&country=${collect?.country}&city=${collect?.city || queryObj?.city}&lang=${collect?.languages?.map(item => item?.value)}&date_after=${search_type22 ? collect?.date_after : ""}&date_before=${search_type22 ? collect?.date_before : ""}&${collect?.search_type}=0`
+            let urlOther = `type=${innerTr?.is_writer ? 'writer' : collect?.type}&gender=${(collect?.male && collect?.female)? undefined: collect?.male ? 'male' : collect?.female ? 'female' : undefined}&country=${collect?.country}&city=${collect?.city || queryObj?.city}&lang=${collect?.languages?.map(item => item?.value)}&date_after=${collect?.date_after}&date_before=${collect?.date_before}&state=${collect?.search_type}`;
             let filterUrl = urlOther.split('&').filter(a=>!a.includes('undefined')).join('&')
             history.push('/gids?'+filterUrl)
         }else{
@@ -62,7 +62,7 @@ const  Index = ({loader, queryObj}) => {
                 date_before:queryObj?.date_before,
                 male:queryObj?.gender==='male' ? true:false,
                 female:queryObj?.gender ==='female' ? true:false,
-                search_type:queryObj?.all==='0' ? 'all':queryObj?.online==='0' ? 'online':undefined
+                search_type: queryObj?.state
             }})
         }
     },[queryObj])
@@ -148,7 +148,7 @@ const  Index = ({loader, queryObj}) => {
                 state={collect}
                 name1={t("kengaytirlgan_Q.online")}
                 name2={t("kengaytirlgan_Q.barchasi")} 
-                defaultApiValue={queryObj?.online === '0' ? 'online' : queryObj?.all === '0' ? 'all':undefined}
+                defaultApiValue={queryObj?.state}
             />
             {startVal && !collect.hasOwnProperty('search_type') && <span className="errors_search">{t("kengaytirlgan_Q.tuniniTanlang")}</span>}
             <div className="button-wrapper">

@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react';
+import React from 'react';
 import MainPage from "./pages"
 import GlobalStyle from "./styles/global"
 import {getGlobals, getResponseRegion} from "./hooks/response_get"

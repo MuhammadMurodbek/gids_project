@@ -27,22 +27,35 @@ const Index = () => {
     const [pagination, setPagination] = useState({ current: 1 })
     const [state, setState] = useState({ success: '', error: '', loading: false })
     const [callback, setCallback] = useState(false)
+
+
+
+
     useEffect(() => {
-        let filterQuery = query.substr(1)?.split('&')?.filter(a => !a.includes('type'))?.join('&')
-        let type = query.substr(1)?.split('&')?.filter(a => a.includes('type'))?.join('&').slice(5)
+
+        const params = new URLSearchParams(query);
+        let state = params.get('state');
+        if (state == 'all') {
+            params.delete('date_after');
+            params.delete('date_before');
+        }
+        const type = params.get('type');
+        params.delete('type');
+
+
         if (type) {
-            getApiResponse(`/api/${type}s/profiles/?${filterQuery}&page=${pagination?.current}`, setState, true)
+            getApiResponse(`/api/${type}s/profiles/?${params.toString()}&page=${pagination?.current}`, setState, true);
         } else {
-            getApiResponse(`/api/translators/all/?page=${pagination?.current}&page_size=10`, setState, true)
+            getApiResponse(`/api/translators/all/?page=${pagination?.current}&page_size=10`, setState, true);
         }
         setTypeQuery(type)
-        let urlQuery = searchToObject(query)
+        let urlQuery = searchToObject(query);
         setQueryObj(urlQuery)
-    }, [query, pagination, callback])
+    }, [query, pagination, callback]);
 
     const onChange = (pageNumber) => {
-        setPagination({ current: pageNumber || 1 })
-        window.scrollTo(0, 0)
+        setPagination({ current: pageNumber || 1 });
+        window.scrollTo(0, 0);
     }
     return (
         <Wrapper>
@@ -58,9 +71,9 @@ const Index = () => {
                                         <ImageContainer src={Adds} className="ImagesChoose" width="350px" />
                                     </Container>
                                     <Container {...mediaGrid} margin="15px 0" >
-                                        <ImageContainer src={Adds2} className="ImagesChoose" width="350px"/>
+                                        <ImageContainer src={Adds2} className="ImagesChoose" width="350px" />
                                     </Container>
-                                     <Container {...mediaGrid} margin="15px 0" >
+                                    <Container {...mediaGrid} margin="15px 0" >
                                         <ImageContainer src={Adds} className="ImagesChoose" width="350px" />
                                     </Container>
                                 </>
