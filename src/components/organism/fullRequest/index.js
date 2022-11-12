@@ -124,12 +124,12 @@ export default function Index({applicationData, setApplicationData, btnText, url
                         </p>
                     </div>
                     <div className="tafsilot-text">
-                        <b> <ImageContainer src={kim} /></b>
+                        <b> <ImageContainer src={narx} /></b>
                         <b>{t("ToliqAriza.gacha")} </b>
                         <p>{applicationData?.success?.data?.cost + " " +curens[applicationData?.success?.data?.currency] || t("GidPk.malumotKiritilmagan")} </p>
                     </div>
                     <div className="tafsilot-text">
-                        <b> <ImageContainer src={narx} /></b>
+                        <b> <ImageContainer src={kim} /></b>
                         <b>{t("ToliqAriza.kimKerak")} </b>
                         <p>{applicationData?.success?.data?.who_need}</p>
                     </div>

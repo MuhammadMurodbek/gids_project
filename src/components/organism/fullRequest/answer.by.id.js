@@ -75,11 +75,21 @@ export default function Index({btnText}) {
     }
  
     const i18lang = localStorage.getItem("i18nextLng")
-    let who_need2 = ""
-    getData?.success?.data?.who_need === "gitd" ? who_need2 = t("kengaytirlgan_Q.gid") : who_need2 = t("auth_registr.yozmaT")
+    // getData?.success?.data?.who_need === "gitd" ? who_need2 = t("kengaytirlgan_Q.gid") : who_need2 = t("auth_registr.yozmaT")
 
     let a1 = getData?.success?.data?.languages.length;
     let dataApi = getData?.success?.data
+
+    console.log(dataApi?.is_writer, 123456789);
+    let who_need_text = [
+        dataApi?.is_consecutive ? "izchil" : null,
+        dataApi?.is_synchronous ? "sinhron" : null,
+        dataApi?.is_writer ? "yozma" : null,
+        dataApi?.who_need == "Gid" ? 'Gid' : null
+    ].filter((val,i) => {
+        console.log(val, 987654321,i);
+        return !!val
+    });
     return (
         <Wrapper>
             <Grid container spacing={1} direction="row" justifyContent="center" className="freque">
@@ -121,21 +131,30 @@ export default function Index({btnText}) {
                         </p>
                     </div>
                     <div className="tafsilot-text">
-                        <b> <ImageContainer src={kim} /></b>
+                        <b> <ImageContainer src={narx} /></b>
                         <b>{t("ToliqAriza.gacha")} </b>
                         <p>{getData?.success?.data?.cost + " " +curens[getData?.success?.data?.currency] || t("GidPk.malumotKiritilmagan")} </p>
                     </div>
                     <div className="tafsilot-text">
-                        <b> <ImageContainer src={narx} /></b>
+                        <b> <ImageContainer src={kim} /></b>
                         <b>{t("ToliqAriza.kimKerak")} </b>
                         {/* <p>{dataApi?.who_need}</p> */}
                     { 
-                        dataApi?.who_need === 'translator' && 
-                        <>
-                            <span>{dataApi?.is_consecutive && ", izchil"}</span>
-                            <span>{dataApi?.is_synchronous && ", sinhron"}</span>
-                            <span>{dataApi?.is_writer && ", yozma"}</span>
+                        dataApi?.who_need === 'translator' ?
+                        <> 
+                            {/* <span>{dataApi?.is_consecutive && "izchil"}</span>
+                            <span>{dataApi?.is_synchronous && "sinhron"}</span> */}
+                            {/* <span>{dataApi?.is_writer && "yozma"}</span> */}
+                            {/* {who_need_text.map((e) =>{
+                                return (<span>{e}</span>)
+                            })} */}
+                            <span>{who_need_text.join(",")}</span>
                         </>
+                        :
+                        <>
+                        <span>Gid</span>
+                        </>
+
                     }
                     </div>
                    
