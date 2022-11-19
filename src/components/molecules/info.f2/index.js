@@ -64,34 +64,7 @@ const Index = ({ data, commentCount }) => {
                                 <Grid item sm={9} style={{ display: 'flex' }}>
                                     <span className='text_fild'>{t("Gid_Tanlash.kuniga")}</span>
                                     <div className="c_per_day comm_val ">
-                                        {pay(data?.costs[0].cost_per_day) + "" + curr(data?.costs[0].currency_per_day) || '0'}
-     
-                                    </div>
-                                </Grid>
-                            </Grid>
-                            <Grid container spacing={1} className="info-item">
-                                <Grid item sm={3}>
-                                    <ImgContainer src={extraImg} width="30px" />
-                                </Grid>
-                                <Grid item sm={9} style={{ display: 'flex' }}>
-                                    <span className='text_fild'>{t("Gid_Tanlash.soatiga")}</span>
-                                    <div className="c_per_day comm_val">
-                                        {pay(data?.costs[0]?.cost_per_hour) + "" + curr(data?.costs[0]?.currency_per_hour) || '0'}
-                                    </div>
-                                </Grid>
-                            </Grid>
-                        </> 
-                        :
-                        <>
-                            <Grid container spacing={1} className="info-item">
-                                <Grid item sm={3}>
-                                    <ImgContainer src={extraImg} width="30px" />
-                                </Grid>
-                                <Grid item sm={9} style={{ display: 'flex' }}>
-                                    <span className='text_fild'>{t("Gid_Tanlash.kuniga")}</span>
-                                    <div className="c_per_day comm_val ">
-                                        {pay(data?.cost_per_day) + "" + curr(data?.currency_per_day) || '0'}
-     
+                
                                     </div>
                                 </Grid>
                             </Grid>
