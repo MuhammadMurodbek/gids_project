@@ -1,8 +1,0 @@
-.border-div{
-    text-transform: none !important;
-}
-@media screen and (max-width: 600px) {
-    #tahrirlash{
-        min-width: 100% !important;
-    }
-}

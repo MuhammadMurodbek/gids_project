@@ -9,25 +9,6 @@ import FillOutApplication from "../pages/fill.application";
 import FullData from '../pages/fullData';
 import Request from '../pages/request';
 import Fullrequest from '../pages/follRequest'; 
-import Cities from '../pages/cities';
-import Samarqand from '../pages/cities/Samarqand'
-import Xiva from '../pages/cities/Xiva'
-import Toshkent from '../pages/cities/Toshkent'
-
-import  GidPersonal from '../pages/gid.personal';
-import Article from '../pages/article';
-import AnsverMyapp from '../pages/ansverMyapplication';
-import AnsverMyappEdit from '../pages/fill.application/edit.app';
-import Blog from '../pages/blog';
-import Advertising from '../pages/advertising';
-import ResetPassword from "../pages/auth/recover"
-import GidPersonalWider from "../pages/gid.personal.wider";
-import Pay from '../pages/gid.personal.wider/reklama.pay';
-import Reklama from '../pages/gid.personal.wider/reklama';
-import History from '../pages/gid.personal.wider/history'
-import UpdatePassword from "../pages/auth/update"
-import notFound from "../pages/notFound"
-import SeeProfile from '../pages/seeProfile';
 import MaqolaYozish from '../pages/gid.personal.wider/blog/MaqolaYozish'
 import MaqolaYozishEdit from "../pages/gid.personal.wider/blog/MaqolaYozish/edit"
 import MyAppEdit from "../pages/fullData/editable"
