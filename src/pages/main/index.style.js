@@ -152,7 +152,7 @@ export const ComponentTwo = styled.div`
     }
     .title-second-main-container{
         width:100%;
-        margin:60px 0;
+        margin:20px 0;
         font-size:28px;
         font-weight:700;
         text-align:center;
@@ -188,8 +188,15 @@ export const ComponentTwo = styled.div`
 export const ComponentThree = styled.div`
     width:100%;
 
+    .vertical-timeline-element-date{
+        padding:0;
+    }
+
     @media (max-width:400px){
-        padding: 10px 4px;
+        padding-top: 10px;
+        padding-right: 4px;
+        padding-bottom: 0px;
+        padding-left: 4px;
     }
 
     .vertical-timeline::before{
@@ -199,6 +206,7 @@ export const ComponentThree = styled.div`
     }
     .vertical-timeline-element-content.bounce-in{
         box-shadow:none;
+        padding-bottom:0;
     }
     .timeline-part{
         width:80%;

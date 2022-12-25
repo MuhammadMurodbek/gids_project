@@ -89,7 +89,7 @@ export default function Index() {
                 </Takliflar>
 
                 <Savollar>
-                    <TextTitle {...mediaTextField} {...mediaTextFieldSec} top="100px" bottom="100px">
+                    <TextTitle {...mediaTextField} {...mediaTextFieldSec} top="20px" bottom="2А0px">
                         {t("gidlar_uchun.kopSavollar")}
                     </TextTitle>
 

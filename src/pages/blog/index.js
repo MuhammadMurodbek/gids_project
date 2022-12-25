@@ -42,7 +42,7 @@ export default function Index () {
     return (
         <Wrapper> 
           
-            <TextTitle width="50%" left="auto" right="auto" bottom="30px" top="50px">
+            <TextTitle width="50%" left="auto" right="auto" bottom="5px" top="30px">
                 { t( "Blog.blog" ) }
             </TextTitle>
             {

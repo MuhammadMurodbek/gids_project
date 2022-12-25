@@ -9,7 +9,7 @@ import { useTranslation } from 'react-i18next';
 import { useHistory } from 'react-router-dom'
 
 const MediaNavbarContainer = (props) => {
-    const { t , i18n} = useTranslation()
+    const { t, i18n } = useTranslation()
 
     const getRole = JSON.parse(localStorage.getItem("user_token"));
 
@@ -85,46 +85,100 @@ const MediaNavbarContainer = (props) => {
 
                     getRole?.role === "gid" ?
                         <>
-                            <ButtonNavbar title={t("navbar.GTU")} url="/forgits" />
-                            <ButtonNavbar title={t("navbar.Blog")} url="/blog?page=1" />
-                            <ButtonNavbar title={t("navbar.Arizalar_royhati")} url="/request" />
-                            <a className="transport" href="https://www.travelcars.uz" target="_blank">{t("navbar.transport")}</a>
+                            <span onClick={handleClick}>
+
+                                <ButtonNavbar title={t("navbar.GTU")} url="/forgits" />
+                            </span>
+                            <span onClick={handleClick}>
+                                <ButtonNavbar title={t("navbar.Blog")} url="/blog?page=1" />
+                            </span>
+                            <span onClick={handleClick}>
+                                <ButtonNavbar title={t("navbar.Arizalar_royhati")} url="/request" />
+                            </span>
+                            
+                            <a className="transport" style={
+                                {
+                                    color: "#000"
+                                }
+                            } href="https://www.travelcars.uz" target="_blank">{t("navbar.transport")}</a>
                         </>
                         :
                         getRole?.role === "writer" ?
                             <>
+                                <span onClick={handleClick}>
                                 <ButtonNavbar title={t("navbar.GTU")} url="/forgits" />
+                                </span>
+                                <span onClick={handleClick}>
                                 <ButtonNavbar title={t("navbar.Blog")} url="/blog?page=1" />
+                                </span>
+                                <span onClick={handleClick}>
                                 <ButtonNavbar title={t("navbar.Arizalar_royhati")} url="/request" />
-                                <a className="transport" href="https://www.travelcars.uz" target="_blank">{t("navbar.transport")}</a>
+                                </span>
+
+                                <a className="transport" style={
+                                    {
+                                        color: "#000"
+                                    }
+                                } href="https://www.travelcars.uz" target="_blank">{t("navbar.transport")}</a>
                             </>
                             :
                             getRole?.role === "translator" ?
                                 <>
+                                    <span onClick={handleClick}>
                                     <ButtonNavbar title={t("navbar.GTU")} url="/forgits" />
+                                    </span>
+                                    <span onClick={handleClick}>
                                     <ButtonNavbar title={t("navbar.Blog")} url="/blog?page=1" />
+                                    </span>
+                                    <span onClick={handleClick}>
                                     <ButtonNavbar title={t("navbar.Arizalar_royhati")} url="/request" />
-                                    <a className="transport" href="https://www.travelcars.uz" target="_blank">{t("navbar.transport")}</a>
+                                    </span>
+                                    <a className="transport" style={
+                                        {
+                                            color: "#000"
+                                        }
+                                    } href="https://www.travelcars.uz" target="_blank">{t("navbar.transport")}</a>
                                 </>
                                 :
                                 getRole?.role === "simple_user" ?
                                     <>
+                                        <span onClick={handleClick}>
                                         <ButtonNavbar title={t("navbar.GvaTtanlash")} url="/gids" />
+                                        </span>
+                                        <span onClick={handleClick}>
                                         <ButtonNavbar title={t("navbar.Blog")} url="/blog?page=1" />
+                                        </span>
+                                        <span onClick={handleClick}>
                                         <ButtonNavbar title={t("navbar.Ariza_qoldirish")} url="/application-form" />
-                                        <a className="transport" href="https://www.travelcars.uz" target="_blank">{t("navbar.transport")}</a>
+                                        </span>
+
+                                        <a className="transport" style={
+                                            {
+                                                color: "#000"
+                                            }
+                                        } href="https://www.travelcars.uz" target="_blank">{t("navbar.transport")}</a>
                                     </>
                                     :
                                     <>
-                                        <ButtonNavbar title={t("navbar.GvaTtanlash")} url="/gids" />
-
+                                        <span onClick={handleClick}>
+                                        <ButtonNavbar  title={t("navbar.GvaTtanlash")} url="/gids" />
+                                        </span>
+                                        
+                                        <span onClick={handleClick}>
                                         <ButtonNavbar title={t("navbar.GTU")} url="/forgits" />
-
+                                        </span>
+                                        <span onClick={handleClick}>
                                         <ButtonNavbar title={t("navbar.Blog")} url="/blog?page=1" />
-
+                                        </span>
+                                        <span onClick={handleClick}>
                                         <ButtonNavbar title={t("navbar.Ariza_qoldirish")} url="/application-form" />
+                                        </span>
 
-                                        <a className="travelc" href="https://www.travelcars.uz" target="_blank">{t("navbar.transport")}</a>
+                                        <a className="travelc" style={
+                                            {
+                                                color: "#000"
+                                            }
+                                        } href="https://www.travelcars.uz" target="_blank">{t("navbar.transport")}</a>
                                     </>
                 }
                 <ReactFlagsSelect
@@ -133,7 +187,7 @@ const MediaNavbarContainer = (props) => {
                         i18n.changeLanguage(code.toLowerCase())
                         setSelected(code)
                         localStorage.setItem("language", code)
-                      }}
+                    }}
                     countries={["UZ", "RU", "US"]}
                     customLabels={{ "US": "en", "UZ": "uz", "RU": "ru" }}
                 />

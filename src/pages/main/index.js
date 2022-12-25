@@ -170,7 +170,7 @@ const Index = () => {
 
                 <ComponentFour>
 
-                    <TextTitle {...mediaTextField} {...mediaTextFieldSec} top="0px" bottom="60px">{t("main.trendSHahar")}
+                    <TextTitle {...mediaTextField} {...mediaTextFieldSec} top="0px" bottom="10px">{t("main.trendSHahar")}
                     </TextTitle>
 
                     <div>
@@ -241,12 +241,12 @@ const Index = () => {
 
                 </ComponentFour>
 
-                {/* <TextTitle {...mediaTextField} {...mediaTextFieldSec} top="40px">{t("main.MijozlarniF")}
+                <TextTitle {...mediaTextField} {...mediaTextFieldSec} top="40px">{t("main.MijozlarniF")}
                 </TextTitle>
 
                 <Container {...mediaContainer} padding="20px">
                     <SliderComponent />
-                </Container> */}
+                </Container>
 
             </WrapperAll>
             <ContainerLast>

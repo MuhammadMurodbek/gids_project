@@ -33,7 +33,7 @@ export const ComponentTwo = styled.div`
     }
     .title-second-main-container{
         width:100%;
-        margin:60px 0;
+        margin:20px 0;
         font-size:28px;
         font-weight:700;
         text-align:center;

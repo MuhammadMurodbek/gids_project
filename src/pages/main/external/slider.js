@@ -72,7 +72,7 @@ const Index = () => {
             <TextTitle {...mediaTextField} {...mediaTextFieldSec} top="50px" bottom="50px">   </TextTitle>
             <Container {...mediaContainer} padding="10px 20px" >
                 <Slider {...settings} className="slider-component">
-                    <SliderContainer>
+                    {/* <SliderContainer>
                         <Grid container spacing={1}>
                             <Grid item xs={12} sm={12} md={4} style={{ padding: 0 }}>
                                 <ImageContainer
@@ -99,7 +99,7 @@ const Index = () => {
                                 </Container>
                             </Grid>
                         </Grid>
-                    </SliderContainer>
+                    </SliderContainer> */}
                     <SliderContainer>
                         <Grid container spacing={1}>
                             <Grid item xs={12} sm={12} md={4} style={{ padding: 0 }}>
