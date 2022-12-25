@@ -24,6 +24,8 @@ export default function App() {
     <TimeLineWrapper>
       <div className="timeline-part">
         <div className="timeline-title title"> {t("main.ishlashi")} </div>
+        <br/>
+        
         <VerticalTimeline className="timeline-container">
           <VerticalTimelineElement
             className="vertical-timeline-element--work"

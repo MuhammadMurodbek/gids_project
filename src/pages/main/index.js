@@ -241,12 +241,12 @@ const Index = () => {
 
                 </ComponentFour>
 
-                <TextTitle {...mediaTextField} {...mediaTextFieldSec} top="40px">{t("main.MijozlarniF")}
+                {/* <TextTitle {...mediaTextField} {...mediaTextFieldSec} top="40px">{t("main.MijozlarniF")}
                 </TextTitle>
 
                 <Container {...mediaContainer} padding="20px">
                     <SliderComponent />
-                </Container>
+                </Container> */}
 
             </WrapperAll>
             <ContainerLast>

@@ -80,7 +80,7 @@ export const ComponentOne = styled.div`
             }
             @media (max-width: 1045px){
                 /* background-color:red; */
-                margin-top: 40px;
+                margin-top: 15px;
                 width:100%;
                 padding:0 20px;
             }
@@ -205,7 +205,8 @@ export const ComponentThree = styled.div`
         margin: 0 auto;
         .timeline-title{
             width:100%;
-            margin:60px 0;
+            margin:30px 0;
+            margin-top: 0px;
             font-size:28px;
             font-weight:bold;
             text-align:center;

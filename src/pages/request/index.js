@@ -39,13 +39,13 @@ export default function Index() {
     return (
         <Wrapper>   
         
-            <TextTitle top="100px" bottom="50px">
+            <TextTitle top="35px" bottom="20px">
                {t("arizalar_royhati.title")}
             </TextTitle>
              
-            <InDate url="request" setCallback={setCallback} collect={collect} setCollect={setCollect}  />
+            <InDate url="request" marginTop={0} setCallback={setCallback} collect={collect} setCollect={setCollect}  />
            {
-               state?.success === '' ? <Spinner marginTop="60px" width={ 50 } height={ 50 } />:
+               state?.success === '' ? <Spinner width={ 50 } height={ 50 } />:
                articleList?.map((item,index) =>(
                 <Requests 
                 key={index}

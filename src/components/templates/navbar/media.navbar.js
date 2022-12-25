@@ -49,7 +49,7 @@ const MediaNavbarContainer = (props) => {
 
             <FlexContainer margin="30px 0 0 0" gap="10px" padding="0 15px" width="100%" alignItems="center" flexDirection="column" justifyContent="space-around">
 
-                {
+                {/* {
                     userToken?.role === 'simple_user' ?
                         <span onClick={handleClick}>
                             <ButtonNavbar title={t("footer.tanlash")} url="/gids" />
@@ -80,6 +80,52 @@ const MediaNavbarContainer = (props) => {
                         <ButtonNavbar title={t("navbar.Arizalar_royhati")} url="/request" />
                     </span> :
                     null
+                } */}
+                {
+
+                    getRole?.role === "gid" ?
+                        <>
+                            <ButtonNavbar title={t("navbar.GTU")} url="/forgits" />
+                            <ButtonNavbar title={t("navbar.Blog")} url="/blog?page=1" />
+                            <ButtonNavbar title={t("navbar.Arizalar_royhati")} url="/request" />
+                            <a className="transport" href="https://www.travelcars.uz" target="_blank">{t("navbar.transport")}</a>
+                        </>
+                        :
+                        getRole?.role === "writer" ?
+                            <>
+                                <ButtonNavbar title={t("navbar.GTU")} url="/forgits" />
+                                <ButtonNavbar title={t("navbar.Blog")} url="/blog?page=1" />
+                                <ButtonNavbar title={t("navbar.Arizalar_royhati")} url="/request" />
+                                <a className="transport" href="https://www.travelcars.uz" target="_blank">{t("navbar.transport")}</a>
+                            </>
+                            :
+                            getRole?.role === "translator" ?
+                                <>
+                                    <ButtonNavbar title={t("navbar.GTU")} url="/forgits" />
+                                    <ButtonNavbar title={t("navbar.Blog")} url="/blog?page=1" />
+                                    <ButtonNavbar title={t("navbar.Arizalar_royhati")} url="/request" />
+                                    <a className="transport" href="https://www.travelcars.uz" target="_blank">{t("navbar.transport")}</a>
+                                </>
+                                :
+                                getRole?.role === "simple_user" ?
+                                    <>
+                                        <ButtonNavbar title={t("navbar.GvaTtanlash")} url="/gids" />
+                                        <ButtonNavbar title={t("navbar.Blog")} url="/blog?page=1" />
+                                        <ButtonNavbar title={t("navbar.Ariza_qoldirish")} url="/application-form" />
+                                        <a className="transport" href="https://www.travelcars.uz" target="_blank">{t("navbar.transport")}</a>
+                                    </>
+                                    :
+                                    <>
+                                        <ButtonNavbar title={t("navbar.GvaTtanlash")} url="/gids" />
+
+                                        <ButtonNavbar title={t("navbar.GTU")} url="/forgits" />
+
+                                        <ButtonNavbar title={t("navbar.Blog")} url="/blog?page=1" />
+
+                                        <ButtonNavbar title={t("navbar.Ariza_qoldirish")} url="/application-form" />
+
+                                        <a className="travelc" href="https://www.travelcars.uz" target="_blank">{t("navbar.transport")}</a>
+                                    </>
                 }
                 <ReactFlagsSelect
                     selected={selected}

@@ -3,7 +3,7 @@ import {mainGreen} from "../../../styles/global/colors";
 
  export const Wrapper = styled.div`
     width: 90%;
-    margin:50px auto;
+    margin:15px auto;
     padding-top: 10px;
     margin-bottom: 50px;
     .button_sub{
