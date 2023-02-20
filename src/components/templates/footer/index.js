@@ -7,7 +7,6 @@ import f from '../../../assets/img/footer/f.svg'
 import i from '../../../assets/img/footer/i.svg'
 import { useTranslation } from 'react-i18next'
 import logoss from '../../../assets/img/about/log.png'
-import { width } from '@mui/system'
 import './foter.css'
 const Index = () => {
     const location = useLocation()
@@ -49,25 +48,25 @@ const Index = () => {
                         <div className="flex-items">
                             <span>{t("footer.biznigServislar")}</span>
                             <ul>
-                                <li><Link onClick={refreshBtn} to="/about"> {t("footer.platformaH")} </Link></li>
-                                <li><Link onClick={refreshBtn} to="/gids">{t("footer.tanlash")}</Link></li>
-                                <li><Link onClick={refreshBtn} to="/forgits">{t("footer.GTuchun")}</Link></li>
-                                <li><Link onClick={refreshBtn} to="/blog"> {t("footer.Blog")} </Link></li>
+                                <li><Link style={{color:"white"}} onClick={refreshBtn} to="/about"> {t("footer.platformaH")} </Link></li>
+                                <li><Link style={{color:"white"}} onClick={refreshBtn} to="/gids">{t("footer.tanlash")}</Link></li>
+                                <li><Link style={{color:"white"}} onClick={refreshBtn} to="/forgits">{t("footer.GTuchun")}</Link></li>
+                                <li><Link style={{color:"white"}} onClick={refreshBtn} to="/blog"> {t("footer.Blog")} </Link></li>
                             </ul>
                         </div>
                         <div className="flex-items">
                             <span>{t("footer.contacts")}</span>
                             <ul>
-                                <li><Link onClick={refreshBtn} to="/">info@gits.uz</Link></li>
-                                <li><Link onClick={refreshBtn} to="/">+998 93 596-92-20</Link> </li>
-                                <li><Link onClick={refreshBtn} to="/connect">{t("footer.sorov")}</Link> </li>
+                                <li><Link style={{color:"white"}} onClick={refreshBtn} to="/">info@gits.uz</Link></li>
+                                <li><Link style={{color:"white"}} onClick={refreshBtn} to="/">+998 93 596-92-20</Link> </li>
+                                <li><Link style={{color:"white"}} onClick={refreshBtn} to="/connect">{t("footer.sorov")}</Link> </li>
                             </ul>
                         </div>
                         <div className="flex-items">
                             <span>{t("footer.huquqiy")}</span>
                             <ul>
-                                <li><Link onClick={refreshBtn} to="/"> {t("footer.foydalanish")} </Link> </li>
-                                <li><Link onClick={refreshBtn} to="/">  {t("footer.maxfiylik")} </Link> </li>
+                                <li><Link style={{color:"white"}} onClick={refreshBtn} to="/"> {t("footer.foydalanish")} </Link> </li>
+                                <li><Link style={{color:"white"}} onClick={refreshBtn} to="/">  {t("footer.maxfiylik")} </Link> </li>
                             </ul>
                         </div>
                     </FlexContainer>

@@ -1,14 +1,12 @@
-import React, {useState,useEffect} from 'react'
-import { getResponse } from "../../hooks/response_get"
-import { Wrapper} from './index.style'
-import { TextTitle } from '../../styles/textTitle/index.style'
-import InDate from '../../components/molecules/dateIn'
-import Button from "../../components/atom/button";
-import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
+import React, {useState,useEffect} from 'react';
+import { getResponse } from "../../hooks/response_get";
+import { Wrapper} from './index.style';
+import { TextTitle } from '../../styles/textTitle/index.style';
+import InDate from '../../components/molecules/dateIn';
 import Requests from '../../components/organism/request/';
 import {useTranslation} from 'react-i18next';
-import moment from 'moment'
-import Spinner from "../../components/atom/loading.spinner.line"
+import moment from 'moment';
+import Spinner from "../../components/atom/loading.spinner.line";
 import { Pagination } from 'antd';
 
 export default function Index() {
@@ -21,7 +19,7 @@ export default function Index() {
     const {current} = pagination
     useEffect(() =>{
         getResponse(`/api/users/applications/?page=${current}&country=${collect?.country}&city=${collect?.city}&date_after=${collect?.date_after}&date_before=${collect?.date_before}`, setState, true)
-    },[callback, current])
+    },[callback, current,collect])
     useEffect( () => {
         if ( state?.success )
         {

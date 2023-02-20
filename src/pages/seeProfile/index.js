@@ -1,17 +1,27 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect,lazy } from 'react'
 import { Grid } from '@material-ui/core'
-import Layout from "../../layouts/gid.personal.page"
 import { Wrapper } from "./style"
-import Button from "../../components/atom/button"
-import ArrowBackIcon from '@material-ui/icons/ArrowBack';
-import CardMain from "../../components/organism/container.left.f42"
-import CardMainSecond from "../../components/organism/container.right.f42"
 import { getResponse } from "../../hooks/response_get"
-import NoDataPage from "../../components/templates/no.data.page.js"
 import Spinner from "../../components/atom/loading.spinner.line"
 import {useHistory} from "react-router-dom"
-import ModalContainer from "./modal"
 import { useTranslation } from 'react-i18next';
+
+// import Layout from "../../layouts/gid.personal.page"
+// import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+// import CardMainSecond from "../../components/organism/container.right.f42"
+// import NoDataPage from "../../components/templates/no.data.page.js"
+// import ModalContainer from "./modal"
+// import Button from "../../components/atom/button"
+// import CardMain from "../../components/organism/container.left.f42"
+
+const CardMain = lazy(() => import("../../components/organism/container.left.f42"));
+const Button = lazy(() => import("../../components/atom/button"));
+const Layout = lazy(() => import("../../layouts/gid.personal.page"));
+const ArrowBackIcon = lazy(() => import("@material-ui/icons/ArrowBack"));
+const CardMainSecond = lazy(() => import("../../components/organism/container.right.f42"));
+const NoDataPage = lazy(() => import("../../components/templates/no.data.page.js"));
+const ModalContainer = lazy(() => import("./modal"));
+
 
 export default function Index() {
     const {t} = useTranslation()
@@ -32,7 +42,7 @@ export default function Index() {
     const [commentApi, setCommentApi] = useState({success:'', error:''})
     useEffect(() => { 
         getResponse(`/api/${role}s/profiles/${id}/`, setApiData, true) 
-    }, []);
+    }, [role,id]);
     useEffect(() => { 
         if(apiData?.success && apiData?.success?.data?.custom_user_id)
             getResponse(`/api/users/rating/${apiData?.success?.data?.custom_user_id}/`, setCommentApi, true) 

@@ -1,5 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
 import {mainGreen} from "./colors"
+
+
+
 const GlobalStyle = createGlobalStyle`
   *,*:before, *:after{
       box-sizing: border-box;

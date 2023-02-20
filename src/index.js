@@ -1,22 +1,23 @@
-import React from 'react';
+import {Suspense,StrictMode,lazy} from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-import "./style.css"
 import reportWebVitals from './reportWebVitals';
 import { Provider } from "react-redux"
 import store from "./redux/reducers"
 import './i18n'
 import Spinner from "./components/atom/loading.spinner.line"
+// lazy(() => import('./style.css'));
+import './style.css';
+const App = lazy(() => import('./App'));
  
 
 ReactDOM.render(
-  <React.StrictMode>
-    <React.Suspense fallback={<div className="spin"><Spinner width="50px" height="50px" marginTop="200px"/></div> }>
+  <StrictMode>
+    <Suspense fallback={<div className="spin"><Spinner width="50px" height="50px" marginTop="200px"/></div> }>
       <Provider store={store}>
         <App />
       </Provider>
-    </React.Suspense>
-  </React.StrictMode>,
+    </Suspense>
+  </StrictMode>,
   document.getElementById('root')
 );
 

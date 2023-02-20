@@ -1,4 +1,4 @@
-import { t } from 'i18next';
+
  
 export const objApi = {
     one_week:"Bir haftalik tarif",

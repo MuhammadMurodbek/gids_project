@@ -1,4 +1,4 @@
-import Reac, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { Wrapper } from './style'
 import { TextTitle } from '../../../styles/textTitle/index.style'
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom'
 import { Grid } from '@material-ui/core';
 import { getApiResponse } from "../../../hooks/response_get"
 import Spinner from "../../../components/molecules/loading.spinner"
-import { objApi } from "../reklama/external"
 import { useTranslation } from 'react-i18next'
 import moment from "moment"
 

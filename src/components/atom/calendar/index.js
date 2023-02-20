@@ -1,18 +1,18 @@
 import React, { useState, useCallback, useEffect } from "react";
 import { Calendar } from "./index.style";
 import { DatePicker, Space } from "antd";
-import "antd/dist/antd.css";
+import "antd/dist/antd.min.css";
 import moment from "moment";
 
 const dateFormatList = ["DD-MM-YYYY", "DD/MM/YY"];
 const Index = (props) => {
-    const {state, setState, field, errorText, placeholder, placeholderValue} = props
+    const { setState, field, errorText, placeholder, placeholderValue} = props
     const [time, setTime] = useState(null)
     const onChange = useCallback ((date, dateString) => {
         setTime(date)
         const dateTime = moment( new Date (date)).format('YYYY-MM-DD')
         if(setState){setState(prev=>{return {...prev, [field]:dateTime}})}
-    },[state, time])
+    },[ field,setState])
   
     const inputSelect = document.querySelectorAll('.ant-picker-input input')[0]
     const inputSelect2 = document.querySelectorAll('.ant-picker-input input')[1]
@@ -25,7 +25,7 @@ const Index = (props) => {
         var v = e.target.value;
           if (v.match(/^\d{2}$/) !== null) {
               e.target.value = v + '-';
-          } else if (v.match(/^\d{2}\-\d{2}$/) !== null) {
+          } else if (v.match(/^\d{2}-\d{2}$/) !== null) {
               e.target.value = v + '-';
           }
       }) 
@@ -35,7 +35,7 @@ const Index = (props) => {
       var v = e.target.value;
         if (v.match(/^\d{2}$/) !== null) {
             e.target.value = v + '-';
-        } else if (v.match(/^\d{2}\-\d{2}$/) !== null) {
+        } else if (v.match(/^\d{2}-\d{2}$/) !== null) {
             e.target.value = v + '-';
         }
     })  
@@ -44,7 +44,7 @@ const Index = (props) => {
       var v = e.target.value;
         if (v.match(/^\d{2}$/) !== null) {
             e.target.value = v + '-';
-        } else if (v.match(/^\d{2}\-\d{2}$/) !== null) {
+        } else if (v.match(/^\d{2}-\d{2}$/) !== null) {
             e.target.value = v + '-';
         }
     })  
@@ -53,7 +53,7 @@ const Index = (props) => {
       var v = e.target.value;
         if (v.match(/^\d{2}$/) !== null) {
             e.target.value = v + '-';
-        } else if (v.match(/^\d{2}\-\d{2}$/) !== null) {
+        } else if (v.match(/^\d{2}-\d{2}$/) !== null) {
             e.target.value = v + '-';
         }
     })  

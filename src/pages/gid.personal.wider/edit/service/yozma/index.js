@@ -16,20 +16,18 @@ const Index = () => {
     const { t } = useTranslation()
     const [state, setState] = useState(objDefault)
     const [apiValue, setApiValue] = useState(objDefault)
-    const [load, setLoad] = useState({ success: '', error: '' })
     // console.log(state?.can_oral_translate?.label)
     useEffect(() => {
         if (apiValue) {
-            let obj = state
-            obj.daily_workload = apiValue?.daily_workload
-            obj.always_online = apiValue?.always_online ? t("Pismenniy_Xizmatlar.ha") : t("Pismenniy_Xizmatlar.yoq")
-            obj.express_order = apiValue?.express_order ? t("Pismenniy_Xizmatlar.ha") : t("Pismenniy_Xizmatlar.yoq")
-            obj.weekend_order = apiValue?.weekend_order ? t("Pismenniy_Xizmatlar.ha") : t("Pismenniy_Xizmatlar.yoq")
-            obj.edit_text = apiValue?.edit_text ? t("Pismenniy_Xizmatlar.ha") : t("Pismenniy_Xizmatlar.yoq")
-            setState(() => obj)
+            state.daily_workload = apiValue?.daily_workload
+            state.always_online = apiValue?.always_online ? t("Pismenniy_Xizmatlar.ha") : t("Pismenniy_Xizmatlar.yoq")
+            state.express_order = apiValue?.express_order ? t("Pismenniy_Xizmatlar.ha") : t("Pismenniy_Xizmatlar.yoq")
+            state.weekend_order = apiValue?.weekend_order ? t("Pismenniy_Xizmatlar.ha") : t("Pismenniy_Xizmatlar.yoq")
+            state.edit_text = apiValue?.edit_text ? t("Pismenniy_Xizmatlar.ha") : t("Pismenniy_Xizmatlar.yoq")
+            setState(() => state)
             // console.log(obj)
         }
-    }, [apiValue])
+    }, [apiValue,state,t])
     // const getRole = JSON.parse(localStorage.getItem("user_token"))
     return (
         <div>
@@ -76,7 +74,7 @@ const Index = () => {
                     </div>
                 </Grid>
             </Grid>
-            <Todos state={state} setApiValue={setApiValue} setLoad={setLoad} />
+            <Todos state={state} setApiValue={setApiValue}  />
 
         </div>
     )

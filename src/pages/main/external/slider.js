@@ -9,14 +9,11 @@ import { TextTitle } from "../../../styles/textTitle/index.style"
 import { FlexContainer } from "../../../styles/flex.container"
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import { useTranslation } from 'react-i18next';
 
-import bu from './sliderimg/buhoromijoz.webp'
 import sa from './sliderimg/smarqand.webp'
 import to from './sliderimg/toshkentmijoz.webp'
 
 function SampleNextArrow(props) {
-    const { t } = useTranslation()
     const { style, onClick } = props;
     return (
         <ChevronLeftIcon

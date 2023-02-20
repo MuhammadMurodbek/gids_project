@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{lazy} from 'react'
 import {
     WrapperAll,
     ComponentOne,
@@ -8,35 +8,54 @@ import {
     ContainerLast,
 } from "./index.style"
 import ExtSearch from "../../components/extended.search"
-// import mainPicture from "../../assets/img/guid.svg"
-//  import mainPicture from "../../assets/img/about/g222.png"
- import mainPicture from "../../assets/img/image.jpg"
- 
-import Grid from '@material-ui/core/Grid';
-import Button from "../../components/atom/button"
-import ImgContainer from "../../components/molecules/img.container"
 import imageSecond from "../../assets/img/sec_con.svg"
 import imageThird from "../../assets/img/main_picture_3.svg"
 import { FlexContainer } from "../../styles/flex.container"
 import TimeLine from "./external/timeline"
 import { TextTitle } from "../../styles/textTitle/index.style"
 import { Container } from "../../styles/container/index.style"
-import { Paper } from '@material-ui/core';
-import SliderComponent from "./external/slider"
 import { Link } from 'react-router-dom'
-import Box from "@material-ui/core/Box";
-import img21 from '../../assets/img/about/right.png'
+// import Box from "@material-ui/core/Box";
 import { useTranslation } from 'react-i18next'
 import { getLabelCountrySecond } from "../../custom/function"
 import { useHistory } from "react-router-dom"
 import { media, mediaFlexButtons, mediaBtn, mediaTextField, mediaTextFieldSec, mediaContainer } from "./_media"
-// import AccountMenu from '../../components/atom/user_account';
-import Slider from "react-slick";
+import { Paper } from '@material-ui/core';
+// import Slider from "react-slick";
+import './main1.css'
+
+// import mainPicture from "../../assets/img/image.jpg"
+ 
+// import Grid from '@material-ui/core/Grid';
+// import Button from "../../components/atom/button"
+
+
+// import ImgContainer from "../../components/molecules/img.container"
+import mainPicture from "../../assets/img/image.jpg";
 import img1 from '../../assets/img/main/samarqand.webp'
 import img2 from '../../assets/img/main/ee.jpg'
 import img3 from '../../assets/img/main/we.jpg'
 import img4 from '../../assets/img/main/wee.jpg'
-import './main1.css'
+
+const ImgContainer = lazy(() => import("../../components/molecules/img.container"))
+const Button  = lazy(() => import("../../components/atom/button"));
+const Grid = lazy(() => import("@material-ui/core/Grid"));
+const Slider = lazy(() => import("react-slick"));
+
+const Box = lazy(() => import("@material-ui/core/Box"));
+const SliderComponent = lazy(() => import("./external/slider"));
+
+// const ExtSearch = lazy(() => import("../../components/extended.search"));
+// const imageSecond = lazy(() => import("../../assets/img/sec_con.svg"));
+// const imageThird = lazy(() => import("../../assets/img/main_picture_3.svg"));
+
+// const mainPicture = lazy(() => import("../../assets/img/image.jpg"));
+
+// const img1 = lazy(() => import("../../assets/img/main/samarqand.webp"));
+// const img2 = lazy(() => import("../../assets/img/main/ee.jpg"));
+// const img3 = lazy(() => import("../../assets/img/main/we.jpg"));
+// const img4 = lazy(() => import("../../assets/img/main/wee.jpg"));
+const img21 =lazy(() =>import('../../assets/img/about/right.png'));
 
 
 const settings = {
@@ -80,8 +99,8 @@ const settings = {
 };
 
 const Index = () => {
-    const countryGlobal = JSON.parse(localStorage.getItem("countryGlobal"))
-    React.useMemo(() => { getLabelCountrySecond(1) }, [countryGlobal])
+    // const countryGlobal = JSON.parse(localStorage.getItem("countryGlobal"))
+    React.useMemo(() => { getLabelCountrySecond(1) }, [])
     const getRole = JSON.parse(localStorage.getItem("user_token"))
     const { t } = useTranslation()
     const history = useHistory()

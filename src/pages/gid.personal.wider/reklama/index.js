@@ -14,7 +14,6 @@ import { useTranslation } from 'react-i18next';
 import { getApiResponse, postApiResponse } from "../../../hooks/response_get"
 import Spinner from "../../../components/molecules/loading.spinner"
 
-import { objApi, objApiText } from "./external"
 import moment from 'moment';    
 export default function Index() {
     const history = useHistory()
@@ -43,7 +42,7 @@ export default function Index() {
         } else if (myTarifPay.error && !myTarifPay.data?.data?.tariff[0] === 'not enough money') {
             Modal.error({ title: t("tariflar.xatolik"), content: t("tariflar.qaytaUrining")})
         }
-    }, [myTarifPay])
+    }, [myTarifPay, t])
     
     const objApi2 = {
         one_week:t("tariflar.birHafta"),

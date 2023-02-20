@@ -1,17 +1,20 @@
-import React from 'react';
-import MainPage from "./pages"
+import {lazy, Fragment} from 'react';
 import GlobalStyle from "./styles/global"
-import {getGlobals, getResponseRegion} from "./hooks/response_get"
+
+// const GlobalStyle = lazy(() => import("./styles/global"));
+const MainPage = lazy(() => import("./pages"));
+
+
 const App =()=>{
   // useEffect(() => {
     // getGlobals()
     // getResponseRegion('https://countriesnow.space/api/v0.1/countries')
   // },[])
   return (
-    <React.Fragment>
+    <Fragment>
       <GlobalStyle/>
       <MainPage/>
-    </React.Fragment>
+    </Fragment>
   );
 }
 

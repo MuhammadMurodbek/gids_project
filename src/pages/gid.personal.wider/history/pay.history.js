@@ -1,4 +1,4 @@
-import Reac, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { Wrapper } from './style'
 import { TextTitle } from '../../../styles/textTitle/index.style'
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
@@ -8,7 +8,6 @@ import { getApiResponse } from "../../../hooks/response_get"
 import Spinner from "../../../components/molecules/loading.spinner"
 import moment from "moment"
 import { useTranslation } from 'react-i18next';
-import { t } from 'i18next';
 
 export default function Index() {
     const { t } = useTranslation()
